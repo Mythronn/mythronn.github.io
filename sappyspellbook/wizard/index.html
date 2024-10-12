@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wizard Spellbook</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="topnav">
+    <a href="file:///D:/LARP/Spellbook%20Project/bard-spellbook/dist/index.html" class="Bard" >BARD</a>
+    <a href="file:///D:/LARP/Spellbook%20Project/druid-spellbook/dist/index.html" class="Druid" >DRUID</a>
+    <a href="file:///D:/LARP/Spellbook%20Project/healer-spellbook/dist/index.html" class="Healer" >HEALER</a>
+    <a href="file:///D:/LARP/Spellbook%20Project/wizard-spellbook/dist/index.html" class="Wizard" >WIZARD</a>
+  </div>
+   <div class="ui-body ui-body-a ui-corner-all">
+     <H1>Wizard Spellbook</H1>
+  <p>
+    <b>Required Level:</b> <input type="number" id="reqLevel" name="reqLevel"  value = "1" size = "2" disabled>
+     <span class="ltp" id="ltp" hidden> ()</p></span> 
+     <p>
+    <button id="listToggle" class="fantasy-button" type="button" onclick="resetPoints(1)">Reset points</button>
+    <button id="toggle" class="fantasy-button" type="button" onclick="toggleList()">Toggle List</button>
+    <button id="saveList" class="fantasy-button" type="button" onclick="saveList()" hidden>Save List</button>
+    <BR><BR>
+  <b>Garb:</b> Yellow sash and medieval/sword and sorcery looking garb<br>
+  <b>Look The Part:</b> 1 extra point of magic at the Wizards highest level<br>
+  <b>Armor:</b> None<br>
+  <b>Shields:</b> None<br>
+  <b>Weapons:</b> Dagger, Magic Staff<br><br>
+  <b>Magic-user:</b> Wizards may purchase five points of magic from each level.<br> Unused points from higher levels can be rolled down to lower levels.<br> A list of all magic purchased must be carried at all times.<br>
+  </p>
+          <h2>1st Level Spells <input type="number" id="level1Points" name="level1Points"  value = "5" size = "2" disabled ></h2>
+     <div class="listOnly" id="lvl1List">Test</div>
+          <table data-role="table" id="table-lvl1" data-mode="columntoggle" class="ui-body-d ui-shadow table-stripe ui-responsive ui-table ui-table-columntoggle" data-column-btn-theme="b" data-column-btn-text="Columns to display..." data-column-popup-theme="a" style="display: block;">
+           <thead>
+             <tr class="ui-bar-d">
+               <th data-priority="1" data-colstart="1" class="ui-table-priority-1">Purchased</th>
+               <th data-priority="2" data-colstart="2" class="ui-table-priority-2">Name</th>
+               <th data-priority="3" data-colstart="3" class="ui-table-priority-3">Cost</th>
+               <th data-priority="4" data-colstart="4" class="ui-table-priority-4">Max</th>
+             </tr>
+           </thead>
+           <tbody>
+             <tr>
+               
+               <th class="ui-table-priority-1">
+                 <button id="Banishplus" class="fantasy-button" type="button" onclick="pointPlus(0)">+</button>
+                 <button id="Banishminus" class="fantasy-button" type="button" onclick="pointMinus(0)">-</button>
+                 <input type="number" id="Banishval" name="Banishval"  value = "0" size = "2" disabled >               
+               </th>
+               <td class="ui-table-priority-2" onclick="popFunc('banishPopup', 0)">
+                    <div class="popup" >
+                      <span class="popuptext" id="banishPopup"></span>
+                      </div>Banish
+               </td>
+               
+               <td class="ui-table-priority-2" id="0cost">1</td>
+               <td class="ui-table-priority-3" id="0max">2</td>
+             </tr>
+             <tr>
+               <th class="ui-table-priority-1">
+                 <button id="Cancelplus" class="fantasy-button" type="button" onclick="pointPlus(1)">+</button>
+                 <button id="Cancelminus" class="fantasy-button" type="button" onclick="pointMinus(1)">-</button>
+                 <input type="number" id="Cancelval" name="Cancelval"  value = "0" size = "2" disabled >               
+               </th>
+                <td class="ui-table-priority-2" onclick="popFunc('cancelPopup', 1)">
+                    <div class="popup" >
+                      <span class="popuptext" id="cancelPopup"></span>
+                      </div>Cancel
+               </td>
+               <td class="ui-table-priority-2" id="1cost">0</td>
+               <td class="ui-table-priority-3" id="1max">1</td>
+             </tr>
+             <tr>
+               <th class="ui-table-priority-1">  <button id="WeaponShortplus" class="fantasy-button" type="button" onclick="pointPlus(2)">+</button> <button id="WeaponShortminus" class="fantasy-button" type="button" onclick="pointMinus(2)">-</button> <input type="number" id="WeaponShortval" name="WeaponShortval"  value = "0" size = "2" disabled > </th>
+               <td class="ui-table-priority-2" onclick="popFunc('WeaponShortPopup', 2)"> <div class="popup" ><span class="popuptext" id="WeaponShortPopup"></span></div>Weapon Short</td>
+               <td class="ui-table-priority-2" id="2cost">2</td>
+               <td class="ui-table-priority-3" id="2max">1</td>
+             </tr>
+             <tr>
+              <th class="ui-table-priority-1">  <button id="Experiencedplus" class="fantasy-button" type="button" disabled onclick="pointPlus(3)">+</button> <button id="Experiencedminus" class="fantasy-button" type="button" onclick="pointMinus(3)">-</button> <input type="number" id="Experiencedval" name="Experiencedval"  value = "0" size = "2" disabled > <BR><BR>
+    <select id="exp1"class="dropdown" name="exp1" onchange="processExpChange()">
+     <option value="Select Spell">Select Spell</option>
+     <option value="Astral Intervention">Astral Intervention</option>
+     <option value="Banish">Banish</option>
+     <option value="Break Concentration">Break Concentration</option>
+     <option value="Destroy Armor">Destroy Armor</option>
+     <option value="Dimensional Rift">Dimensional Rift</option>
+     <option value="Dragged Below">Dragged Below</option>
+     <option value="Force Barrier">Force Barrier</option>
+     <option value="Greater Mend">Greater Mend</option>
+     <option value="Heat Weapon">Heat Weapon</option>
+     <option value="Hold Person">Hold Person</option>
+     <option value="Icy Blast">Icy Blast</option>
+     <option value="Mend">Mend</option>
+     <option value="Planar Grounding">Planar Grounding</option>
+     <option value="Ravage">Ravage</option>
+     <option value="Release">Release</option>
+     <option value="Shatter">Shatter</option>
+     <option value="Shatter Weapon">Shatter Weapon</option>
+     <option value="Suppress Aura">Suppress Aura</option>
+     <option value="Teleport">Teleport</option>
+     <option value="Throw">Throw</option>
+   </select>
+   <select id="exp2" class="dropdown" name="exp2" onchange="processExpChange()" disabled>      
+     <option value="Select Spell">Select Spell</option>
+     <option value="Astral Intervention">Astral Intervention</option>
+     <option value="Banish">Banish</option>
+     <option value="Break Concentration">Break Concentration</option>
+     <option value="Destroy Armor">Destroy Armor</option>
+     <option value="Dimensional Rift">Dimensional Rift</option>
+     <option value="Dragged Below">Dragged Below</option>
+     <option value="Force Barrier">Force Barrier</option>
+     <option value="Greater Mend">Greater Mend</option>
+     <option value="Heat Weapon">Heat Weapon</option>
+     <option value="Hold Person">Hold Person</option>
+     <option value="Icy Blast">Icy Blast</option>
+     <option value="Mend">Mend</option>
+     <option value="Planar Grounding">Planar Grounding</option>
+     <option value="Ravage">Ravage</option>
+     <option value="Release">Release</option>
+     <option value="Shatter">Shatter</option>
+     <option value="Shatter Weapon">Shatter Weapon</option>
+     <option value="Suppress Aura">Suppress Aura</option>
+     <option value="Teleport">Teleport</option>
+     <option value="Throw">Throw</option>
+   </select>
+              </th>
+              <td id="experiencedtext" class="ui-table-priority-2" onclick="popFunc('ExperiencedPopup', 3)"><div class="popup" ><span class="popuptext" id="ExperiencedPopup"></span></div>Experienced</td>
+              <td class="ui-table-priority-2" id="3cost">2</td>
+              <td class="ui-table-priority-3" id="3max">2</td>
+            </tr>
+             <tr>
+               <th class="ui-table-priority-1">  <button id="ForceBarrierplus" class="fantasy-button" type="button" onclick="pointPlus(4)">+</button> <button id="ForceBarrierminus" class="fantasy-button" type="button" onclick="pointMinus(4)">-</button> <input type="number" id="ForceBarrierval" name="ForceBarrierval"  value = "0" size = "2" disabled > </th>
+               <td class="ui-table-priority-2" onclick="popFunc('ForceBarrierPopup', 4)"> <div class="popup" ><span class="popuptext" id="ForceBarrierPopup"></span></div>Force Barrier</td>
+               <td class="ui-table-priority-2" id="4cost">1</td>
+               <td class="ui-table-priority-3" id="4max">-</td>
+             </tr>
+             <tr>
+              <th class="ui-table-priority-1">  <button id="ForceBoltplus" class="fantasy-button" type="button" onclick="pointPlus(5)">+</button> <button id="ForceBoltminus" class="fantasy-button" type="button" onclick="pointMinus(5)">-</button> <input type="number" id="ForceBoltval" name="ForceBoltval"  value = "0" size = "2" disabled > </th>
+ 
+              <td class="ui-table-priority-2" onclick="popFunc('ForceBoltPopup', 5)"><div class="popup" ><span class="popuptext" id="ForceBoltPopup"></span></div>Force Bolt</td>
+ 
+              <td class="ui-table-priority-2" id="5cost">1</td>
+              <td class="ui-table-priority-3" id="5max">-</td>
+            </tr>
+             <tr>
+               <th class="ui-table-priority-1">  <button id="HeatWeaponplus" class="fantasy-button" type="button" onclick="pointPlus(6)">+</button> <button id="HeatWeaponminus" class="fantasy-button" type="button" onclick="pointMinus(6)">-</button> <input type="number" id="HeatWeaponval" name="HeatWeaponval"  value = "0" size = "2" disabled > </th>
+  
+               <td class="ui-table-priority-2" onclick="popFunc('Heat WeaponPopup', 6)"><div class="popup" ><span class="popuptext" id="Heat WeaponPopup"></span></div>Heat Weapon</td>
+  
+               <td class="ui-table-priority-2" id="6cost">1</td>
+               <td class="ui-table-priority-3" id="6max">-</td>
+             </tr>
+             <tr>
+              <th class="ui-table-priority-1">  <button id="Mendplus" class="fantasy-button" type="button" onclick="pointPlus(7)">+</button> <button id="Mendminus" class="fantasy-button" type="button" onclick="pointMinus(7)">-</button> <input type="number" id="Mendval" name="Mendval"  value = "0" size = "2" disabled > </th>
+              <td class="ui-table-priority-2" onclick="popFunc('MendPopup', 7)"><div class="popup" ><span class="popuptext" id="MendPopup"></span></div>Mend</td>
+ 
+              <td class="ui-table-priority-2" id="7cost">1</td>
+              <td class="ui-table-priority-3" id="7max">-</td>
+            </tr>
+             <tr>
+               <th class="ui-table-priority-1">  <button id="Shoveplus" class="fantasy-button" type="button" onclick="pointPlus(8)">+</button> <button id="Shoveminus" class="fantasy-button" type="button" onclick="pointMinus(8)">-</button> <input type="number" id="Shoveval" name="Shoveval"  value = "0" size = "2" disabled > </th>
+               <td class="ui-table-priority-2" onclick="popFunc('ShovePopup', 8)"><div class="popup" ><span class="popuptext" id="ShovePopup"></span></div>Shove</td>
+  
+               <td class="ui-table-priority-2" id="8cost">1</td>
+               <td class="ui-table-priority-3" id="8max">-</td>
+             </tr>
+             
+           </tbody>
+         </table>
+  
+          <h2>2nd Level Spells <input type="number" id="level2Points" name="level2Points"  value = "5" size = "2" disabled ></h2>
+  <div class="listOnly" id="lvl2List"></div>
+          <table data-role="table" id="table-lvl2" data-mode="columntoggle" class="ui-body-d ui-shadow table-stripe ui-responsive ui-table ui-table-columntoggle" data-column-btn-theme="b" data-column-btn-text="Columns to display..." data-column-popup-theme="a"style="display: block;">
+           <thead>
+             <tr class="ui-bar-d">
+               <th data-priority="1" data-colstart="1" class="ui-table-priority-1">Purchased</th>
+               <th data-priority="2" data-colstart="2" class="ui-table-priority-2">Name</th>
+               <th data-priority="3" data-colstart="3" class="ui-table-priority-3">Cost</th>
+               <th data-priority="4" data-colstart="4" class="ui-table-priority-4">Max</th>
+             </tr>
+           </thead>
+           <tbody>
+             <tr>
+               <th class="ui-table-priority-1">  <button id="AstralInterventionplus" class="fantasy-button" type="button" onclick="pointPlus(9)">+</button> <button id="AstralInterventionminus" class="fantasy-button" type="button" onclick="pointMinus(9)">-</button> <input type="number" id="AstralInterventionval" name="AstralInterventionval"  value = "0" size = "2" disabled > </th>
+               <td class="ui-table-priority-2" onclick="popFunc('AstralInterventionPopup', 9)"><div class="popup" ><span class="popuptext" id="AstralInterventionPopup"></span></div>Astral Intervention</td>
+  
+               <td class="ui-table-priority-2" id="9cost">1</td>
+               <td class="ui-table-priority-3" id="9max">-</td>
+             </tr>
+             <tr>
+               <th class="ui-table-priority-1">  <button id="BreakConcentrationplus" class="fantasy-button" type="button" onclick="pointPlus(10)">+</button> <button id="BreakConcentrationminus" class="fantasy-button" type="button" onclick="pointMinus(10)">-</button> <input type="number" id="BreakConcentrationval" name="BreakConcentrationval"  value = "0" size = "2" disabled > </th>
+               <td class="ui-table-priority-2" onclick="popFunc('BreakConcentrationPopup', 10)"><div class="popup" ><span class="popuptext" id="BreakConcentrationPopup"></span></div>Break Concentration</td>
+  
+               <td class="ui-table-priority-2" id="10cost">1</td>
+               <td class="ui-table-priority-3" id="10max">1</td>
+             </tr>
+             <tr>
+               <th class="ui-table-priority-1">  <button id="Entangleplus" class="fantasy-button" type="button" onclick="pointPlus(11)">+</button> <button id="Entangleminus" class="fantasy-button" type="button" onclick="pointMinus(11)">-</button> <input type="number" id="Entangleval" name="Entangleval"  value = "0" size = "2" disabled > </th>
+  
+               <td class="ui-table-priority-2" onclick="popFunc('EntanglePopup', 11)"><div class="popup" ><span class="popuptext" id="EntanglePopup"></span></div>Entangle</td>
+  
+               <td class="ui-table-priority-2" id="11cost">1</td>
+               <td class="ui-table-priority-3" id="11max">2</td>
+             </tr>
+             <tr>
+               <th class="ui-table-priority-1">  <button id="Innateplus" class="fantasy-button" type="button" onclick="pointPlus(12)">+</button> <button id="Innateminus" class="fantasy-button" type="button" onclick="pointMinus(12)">-</button> <input type="number" id="Innateval" name="Innateval"  value = "0" size = "2" disabled > </th>
+  
+               <td class="ui-table-priority-2" onclick="popFunc('InnatePopup', 12)"><div class="popup" ><span class="popuptext" id="InnatePopup"></span></div>Innate</td>
+  
+               <td class="ui-table-priority-2" id="12cost">1</td>
+               <td class="ui-table-priority-3" id="12max">-</td>
+             </tr>
+             <tr>
+               <th class="ui-table-priority-1">  <button id="PlanarGroundingplus" class="fantasy-button" type="button" onclick="pointPlus(13)">+</button> <button id="PlanarGroundingminus" class="fantasy-button" type="button" onclick="pointMinus(13)">-</button> <input type="number" id="PlanarGroundingval" name="PlanarGroundingval"  value = "0" size = "2" disabled > </th>
+  
+               <td class="ui-table-priority-2" onclick="popFunc('PlanarGroundingPopup', 13)"><div class="popup" ><span class="popuptext" id="PlanarGroundingPopup"></span></div>Planar Grounding</td>
+  
+               <td class="ui-table-priority-2" id="13cost">1</td>
+               <td class="ui-table-priority-3" id="13max">2</td>
+             </tr>
+             <tr>
+               <th class="ui-table-priority-1">  <button id="Releaseplus" class="fantasy-button" type="button" onclick="pointPlus(14)">+</button> <button id="Releaseminus" class="fantasy-button" type="button" onclick="pointMinus(14)">-</button> <input type="number" id="Releaseval" name="Releaseval"  value = "0" size = "2" disabled > </th>
+  
+               <td class="ui-table-priority-2" onclick="popFunc('ReleasePopup', 14)"><div class="popup" ><span class="popuptext" id="ReleasePopup"></span></div>Release</td>
+  
+               <td class="ui-table-priority-2" id="14cost">1</td>
+               <td class="ui-table-priority-3" id="14max">-</td>
+             </tr>
+             <tr>
+               <th class="ui-table-priority-1">  <button id="SuppressionBoltplus" class="fantasy-button" type="button" onclick="pointPlus(15)">+</button> <button id="SuppressionBoltminus" class="fantasy-button" type="button" onclick="pointMinus(15)">-</button> <input type="number" id="SuppressionBoltval" name="SuppressionBoltval"  value = "0" size = "2" disabled > </th>
+               <td class="ui-table-priority-2" onclick="popFunc('SuppressionBoltPopup', 15)"><div class="popup" ><span class="popuptext" id="SuppressionBoltPopup"></span></div>Suppression Bolt</td>
+  
+               <td class="ui-table-priority-2" id="15cost">1</td>
+               <td class="ui-table-priority-3" id="15max">3</td>
+             </tr>
+             <tr>
+               <th class="ui-table-priority-1">  <button id="Teleportplus" class="fantasy-button" type="button" onclick="pointPlus(16)">+</button> <button id="Teleportminus" class="fantasy-button" type="button" onclick="pointMinus(16)">-</button> <input type="number" id="Teleportval" name="Teleportval"  value = "0" size = "2" disabled > </th>
+               <td class="ui-table-priority-2" onclick="popFunc('TeleportPopup', 16)"><div class="popup" ><span class="popuptext" id="TeleportPopup"></span></div>Teleport</td>
+  
+               <td class="ui-table-priority-2" id="16cost">1</td>
+               <td class="ui-table-priority-3" id="16max">2</td>
+             </tr>
+           </tbody>
+         </table>
+          <h2>3rd Level Spells <input type="number" id="level3Points" name="level3Points"  value = "5" size = "2" disabled ></h2>
+  <div class="listOnly" id="lvl3List"></div>
+          <table data-role="table" id="table-lvl3" data-mode="columntoggle" class="ui-body-d ui-shadow table-stripe ui-responsive ui-table ui-table-columntoggle" data-column-btn-theme="b" data-column-btn-text="Columns to display..." data-column-popup-theme="a"style="display: block;">
+           <thead>
+             <tr class="ui-bar-d">
+               <th data-priority="1" data-colstart="1" class="ui-table-priority-1">Purchased</th>
+               <th data-priority="2" data-colstart="2" class="ui-table-priority-2">Name</th>
+               <th data-priority="3" data-colstart="3" class="ui-table-priority-3">Cost</th>
+               <th data-priority="4" data-colstart="4" class="ui-table-priority-4">Max</th>
+             </tr>
+           </thead>
+           <tbody>
+             <tr>
+               <th class="ui-table-priority-1">  <button id="DispelMagicplus" class="fantasy-button" type="button" onclick="pointPlus(17)">+</button> <button id="DispelMagicminus" class="fantasy-button" type="button" onclick="pointMinus(17)">-</button> <input type="number" id="DispelMagicval" name="DispelMagicval"  value = "0" size = "2" disabled > </th>
+               <td class="ui-table-priority-2" onclick="popFunc('DispelMagicPopup', 17)"><div class="popup" ><span class="popuptext" id="DispelMagicPopup"></span></div>Dispel Magic</td>
+  
+               <td class="ui-table-priority-2" id="17cost">1</td>
+               <td class="ui-table-priority-3" id="17max">2</td>
+             </tr>
+             <tr>
+               <th class="ui-table-priority-1">  <button id="DraggedBelowplus" class="fantasy-button" type="button" onclick="pointPlus(18)">+</button> <button id="DraggedBelowminus" class="fantasy-button" type="button" onclick="pointMinus(18)">-</button> <input type="number" id="DraggedBelowval" name="DraggedBelowval"  value = "0" size = "2" disabled > </th>
+  
+               <td class="ui-table-priority-2" onclick="popFunc('DraggedBelowPopup', 18)"><div class="popup" ><span class="popuptext" id="DraggedBelowPopup"></span></div>Dragged Below</td>
+  
+               <td class="ui-table-priority-2" id="18cost">1</td>
+               <td class="ui-table-priority-3" id="18max">-</td>
+             </tr>
+             <tr>
+               <th class="ui-table-priority-1">  <button id="Extensionplus" class="fantasy-button" type="button" onclick="pointPlus(19)">+</button> <button id="Extensionminus" class="fantasy-button" type="button" onclick="pointMinus(19)">-</button> <input type="number" id="Extensionval" name="Extensionval"  value = "0" size = "2" disabled > </th>
+               <td class="ui-table-priority-2" onclick="popFunc('ExtensionPopup', 19)"><div class="popup" ><span class="popuptext" id="ExtensionPopup"></span></div>Extension</td>
+  
+               <td class="ui-table-priority-2" id="19cost">1</td>
+               <td class="ui-table-priority-3" id="19max">-</td>
+             </tr>
+             <tr>
+               <th class="ui-table-priority-1">  <button id="GreaterMendplus" class="fantasy-button" type="button" onclick="pointPlus(20)">+</button> <button id="GreaterMendminus" class="fantasy-button" type="button" onclick="pointMinus(20)">-</button> <input type="number" id="GreaterMendval" name="GreaterMendval"  value = "0" size = "2" disabled > </th>
+               <td class="ui-table-priority-2" onclick="popFunc('GreaterMendPopup', 20)"><div class="popup" ><span class="popuptext" id="GreaterMendPopup"></span></div>Greater Mend</td>
+  
+               <td class="ui-table-priority-2" id="20cost">1</td>
+               <td class="ui-table-priority-3" id="20max">-</td>
+             </tr>
+             <tr>
+               <th class="ui-table-priority-1">  <button id="HoldPersonplus" class="fantasy-button" type="button" onclick="pointPlus(21)">+</button> <button id="HoldPersonminus" class="fantasy-button" type="button" onclick="pointMinus(21)">-</button> <input type="number" id="HoldPersonval" name="HoldPersonval"  value = "0" size = "2" disabled > </th>
+               <td class="ui-table-priority-2" onclick="popFunc('HoldPersonPopup', 21)"><div class="popup" ><span class="popuptext" id="HoldPersonPopup"></span></div>Hold Person</td>
+  
+               <td class="ui-table-priority-2" id="21cost">1</td>
+               <td class="ui-table-priority-3" id="21max">2</td>
+             </tr>
+             <tr>
+               <th class="ui-table-priority-1">  <button id="Iceballplus" class="fantasy-button" type="button" onclick="pointPlus(22)">+</button> <button id="Iceballminus" class="fantasy-button" type="button" onclick="pointMinus(22)">-</button> <input type="number" id="Iceballval" name="Iceballval"  value = "0" size = "2" disabled > </th>
+               <td class="ui-table-priority-2" onclick="popFunc('IceballPopup', 22)"><div class="popup" ><span class="popuptext" id="IceballPopup"></span></div>Iceball</td>
+  
+               <td class="ui-table-priority-2" id="22cost">1</td>
+               <td class="ui-table-priority-3" id="22max">3</td>
+             </tr>
+             <tr>
+               <th class="ui-table-priority-1">  <button id="LightningBoltplus" class="fantasy-button" type="button" onclick="pointPlus(23)">+</button> <button id="LightningBoltminus" class="fantasy-button" type="button" onclick="pointMinus(23)">-</button> <input type="number" id="LightningBoltval" name="LightningBoltval"  value = "0" size = "2" disabled > </th>
+               <td class="ui-table-priority-2" onclick="popFunc('LightningBoltPopup', 23)"><div class="popup" ><span class="popuptext" id="LightningBoltPopup"></span></div>Lightning Bolt</td>
+  
+               <td class="ui-table-priority-2" id="23cost">1</td>
+               <td class="ui-table-priority-3" id="23max">4</td>
+             </tr>
+             <tr>
+               <th class="ui-table-priority-1">  <button id="Ravageplus" class="fantasy-button" type="button" onclick="pointPlus(24)">+</button> <button id="Ravageminus" class="fantasy-button" type="button" onclick="pointMinus(24)">-</button> <input type="number" id="Ravageval" name="Ravageval"  value = "0" size = "2" disabled > </th>
+               <td class="ui-table-priority-2" onclick="popFunc('RavagePopup', 24)"><div class="popup" ><span class="popuptext" id="RavagePopup"></span></div>Ravage</td>
+  
+               <td class="ui-table-priority-2" id="24cost">1</td>
+               <td class="ui-table-priority-3" id="24max">-</td>
+             </tr>
+             <tr>
+               <th class="ui-table-priority-1">  <button id="ShatterWeapon" class="fantasy-button" type="button" onclick="pointPlus(25)">+</button> <button id="ShatterWeaponminus" class="fantasy-button" type="button" onclick="pointMinus(25)">-</button> <input type="number" id="ShatterWeaponval" name="ShatterWeaponval"  value = "0" size = "2" disabled > </th>
+               <td class="ui-table-priority-2" onclick="popFunc('ShatterWeaponPopup', 25)"><div class="popup" ><span class="popuptext" id="ShatterWeaponPopup"></span></div>Shatter Weapon</td>
+  
+               <td class="ui-table-priority-2" id="25cost">1</td>
+               <td class="ui-table-priority-3" id="25max">-</td>
+             </tr>
+             <tr>
+              <th class="ui-table-priority-1">  <button id="Throwplus" class="fantasy-button" type="button" onclick="pointPlus(26)">+</button> <button id="Throwminus" class="fantasy-button" type="button" onclick="pointMinus(26)">-</button> <input type="number" id="Throwval" name="Throwval"  value = "0" size = "2" disabled > </th>
+              <td class="ui-table-priority-2" onclick="popFunc('ThrowPopup', 26)"><div class="popup" ><span class="popuptext" id="ThrowPopup"></span></div>Throw</td>
+ 
+              <td class="ui-table-priority-2" id="26cost">1</td>
+              <td class="ui-table-priority-3" id="26max">-</td>
+            </tr>
+           </tbody>
+         </table>
+          <h2>4th Level Spells <input type="number" id="level4Points" name="level4Points"  value = "5" size = "2" disabled ></h2>
+  <div class="listOnly" id="lvl4List"></div>
+          <table data-role="table" id="table-lvl4" data-mode="columntoggle" class="ui-body-d ui-shadow table-stripe ui-responsive ui-table ui-table-columntoggle" data-column-btn-theme="b" data-column-btn-text="Columns to display..." data-column-popup-theme="a"style="display: block;">
+           <thead>
+             <tr class="ui-bar-d">
+               <th data-priority="1" data-colstart="1" class="ui-table-priority-1">Purchased</th>
+               <th data-priority="2" data-colstart="2" class="ui-table-priority-2">Name</th>
+               <th data-priority="3" data-colstart="3" class="ui-table-priority-3">Cost</th>
+               <th data-priority="4" data-colstart="4" class="ui-table-priority-4">Max</th>
+             </tr>
+           </thead>
+           <tbody>
+             <tr>
+               <th class="ui-table-priority-1">  <button id="DestroyArmorplus" class="fantasy-button" type="button" onclick="pointPlus(27)">+</button> <button id="DestroyArmorminus" class="fantasy-button" type="button" onclick="pointMinus(27)">-</button> <input type="number" id="DestroyArmorval" name="DestroyArmorval"  value = "0" size = "2" disabled > </th>
+               <td class="ui-table-priority-2" onclick="popFunc('DestroyArmorPopup', 27)"><div class="popup" ><span class="popuptext" id="DestroyArmorPopup"></span></div>Destroy Armor</td>
+  
+               <td class="ui-table-priority-2" id="27cost">4</td>
+               <td class="ui-table-priority-3" id="27max">1</td>
+             </tr>
+             <tr>
+               <th class="ui-table-priority-1">  <button id="DimensionalRiftplus" class="fantasy-button" type="button" onclick="pointPlus(28)">+</button> <button id="DimensionalRiftminus" class="fantasy-button" type="button" onclick="pointMinus(28)">-</button> <input type="number" id="DimensionalRiftval" name="DimensionalRiftval"  value = "0" size = "2" disabled > </th>
+               <td class="ui-table-priority-2" onclick="popFunc('DimensionalRiftPopup', 28)"><div class="popup" ><span class="popuptext" id="DimensionalRiftPopup"></span></div>Dimensional Rift</td>
+  
+               <td class="ui-table-priority-2" id="28cost">2</td>
+               <td class="ui-table-priority-3" id="28max">2</td>
+             </tr>
+             <tr>
+               <th class="ui-table-priority-1">  <button id="Fireballplus" class="fantasy-button" type="button" onclick="pointPlus(29)">+</button> <button id="Fireballminus" class="fantasy-button" type="button" onclick="pointMinus(29)">-</button> <input type="number" id="Fireballval" name="Fireballval"  value = "0" size = "2" disabled > </th>
+               <td class="ui-table-priority-2" onclick="popFunc('FireballPopup', 29)"><div class="popup" ><span class="popuptext" id="FireballPopup"></span></div>Fireball</td>
+  
+               <td class="ui-table-priority-2" id="29cost">1</td>
+               <td class="ui-table-priority-3" id="29max">2</td>
+             </tr>
+             <tr>
+               <th class="ui-table-priority-1">  <button id="IcyBlastplus" class="fantasy-button" type="button" onclick="pointPlus(30)">+</button> <button id="IcyBlastminus" class="fantasy-button" type="button" onclick="pointMinus(30)">-</button> <input type="number" id="IcyBlastval" name="IcyBlastval"  value = "0" size = "2" disabled > </th>
+               <td class="ui-table-priority-2" onclick="popFunc('IcyBlastPopup', 30)"><div class="popup" ><span class="popuptext" id="IcyBlastPopup"></span></div>Icy Blast</td>
+  
+               <td class="ui-table-priority-2" id="30cost">1</td>
+               <td class="ui-table-priority-3" id="30max">2</td>
+             </tr>
+             <tr>
+               <th class="ui-table-priority-1">  <button id="Shatterplus" class="fantasy-button" type="button" onclick="pointPlus(31)">+</button> <button id="Shatterminus" class="fantasy-button" type="button" onclick="pointMinus(31)">-</button> <input type="number" id="Shatterval" name="Shatterval"  value = "0" size = "2" disabled > </th>
+               <td class="ui-table-priority-2" onclick="popFunc('ShatterPopup', 31)"><div class="popup" ><span class="popuptext" id="ShatterPopup"></span></div>Shatter</td>
+  
+               <td class="ui-table-priority-2" id="31cost">1</td>
+               <td class="ui-table-priority-3" id="31max">-</td>
+             </tr>
+             <tr>
+               <th class="ui-table-priority-1">  <button id="SuppressAuraplus" class="fantasy-button" type="button" onclick="pointPlus(32)">+</button> <button id="SuppressAuraminus" class="fantasy-button" type="button" onclick="pointMinus(32)">-</button> <input type="number" id="SuppressAuraval" name="SuppressAuraval"  value = "0" size = "2" disabled > </th>
+               <td class="ui-table-priority-2" onclick="popFunc('SuppressAuraPopup', 32)"><div class="popup" ><span class="popuptext" id="SuppressAuraPopup"></span></div>Suppress Aura</td>
+  
+               <td class="ui-table-priority-2" id="32cost">1</td>
+               <td class="ui-table-priority-3" id="32max">2</td>
+             </tr>
+             <tr>
+               <th class="ui-table-priority-1">  <button id="Swiftplus" class="fantasy-button" type="button" onclick="pointPlus(33)">+</button> <button id="Swiftminus" class="fantasy-button" type="button" onclick="pointMinus(33)">-</button> <input type="number" id="Swiftval" name="Swiftval"  value = "0" size = "2" disabled > </th>
+               <td class="ui-table-priority-2" onclick="popFunc('SwiftPopup', 33)"><div class="popup" ><span class="popuptext" id="SwiftPopup"></span></div>Swift</td>
+  
+               <td class="ui-table-priority-2" id="33cost">1</td>
+               <td class="ui-table-priority-3" id="33max">2</td>
+             </tr>
+             <tr>
+               <th class="ui-table-priority-1">  <button id="Vampirismplus" class="fantasy-button" type="button" onclick="pointPlus(34)">+</button> <button id="Vampirismminus" class="fantasy-button" type="button" onclick="pointMinus(34)">-</button> <input type="number" id="Vampirismval" name="Vampirismval"  value = "0" size = "2" disabled > </th>
+               <td class="ui-table-priority-2" onclick="popFunc('VampirismPopup', 34)"><div class="popup" ><span class="popuptext" id="VampirismPopup"></span></div>Vampirism</td>
+  
+               <td class="ui-table-priority-2" id="34cost">1</td>
+               <td class="ui-table-priority-3" id="34max">2</td>
+             </tr>
+             <tr>
+              <th class="ui-table-priority-1">  <button id="Woundingplus" class="fantasy-button" type="button" onclick="pointPlus(35)">+</button> <button id="Woundingminus" class="fantasy-button" type="button" onclick="pointMinus(35)">-</button> <input type="number" id="Woundingval" name="Woundingval"  value = "0" size = "2" disabled > </th>
+              <td class="ui-table-priority-2" onclick="popFunc('WoundingPopup', 35)"><div class="popup" ><span class="popuptext" id="WoundingPopup"></span></div>Wounding</td>
+ 
+              <td class="ui-table-priority-2" id="35cost">1</td>
+              <td class="ui-table-priority-3" id="35max">-</td>
+            </tr>
+           </tbody>
+         </table>
+          <h2>5th Level Spells <input type="number" id="level5Points" name="level5Points"  value = "5" size = "2" disabled ></h2>
+  <div class="listOnly" id="lvl5List"></div>
+          <table data-role="table" id="table-lvl5" data-mode="columntoggle" class="ui-body-d ui-shadow table-stripe ui-responsive ui-table ui-table-columntoggle" data-column-btn-theme="b" data-column-btn-text="Columns to display..." data-column-popup-theme="a"style="display: block;">
+           <thead>
+             <tr class="ui-bar-d">
+               <th data-priority="1" data-colstart="1" class="ui-table-priority-1">Purchased</th>
+               <th data-priority="2" data-colstart="2" class="ui-table-priority-2">Name</th>
+               <th data-priority="3" data-colstart="3" class="ui-table-priority-3">Cost</th>
+               <th data-priority="4" data-colstart="4" class="ui-table-priority-4">Max</th>
+             </tr>
+           </thead>
+           <tbody>
+             <tr>
+               <th class="ui-table-priority-1">  <button id="Ambulantplus" class="fantasy-button" type="button" onclick="pointPlus(36)">+</button> <button id="Ambulantminus" class="fantasy-button" type="button" onclick="pointMinus(36)">-</button> <input type="number" id="Ambulantval" name="Ambulantval"  value = "0" size = "2" disabled > </th>
+               <td class="ui-table-priority-2" onclick="popFunc('AmbulantPopup', 36)"><div class="popup" ><span class="popuptext" id="AmbulantPopup"></span></div>Ambulant</td>
+  
+               <td class="ui-table-priority-2" id="36cost">1</td>
+               <td class="ui-table-priority-3" id="36max">2</td>
+             </tr>
+             <tr>
+               <th class="ui-table-priority-1">  <button id="Contagionplus" class="fantasy-button" type="button" onclick="pointPlus(37)">+</button> <button id="Contagionminus" class="fantasy-button" type="button" onclick="pointMinus(37)">-</button> <input type="number" id="Contagionval" name="Contagionval"  value = "0" size = "2" disabled > </th>
+               <td class="ui-table-priority-2" onclick="popFunc('ContagionPopup', 37)"><div class="popup" ><span class="popuptext" id="ContagionPopup"></span></div>Contagion</td>
+  
+               <td class="ui-table-priority-2" id="37cost">5</td>
+               <td class="ui-table-priority-3" id="37max">1</td>
+             </tr>
+             <tr>
+               <th class="ui-table-priority-1">  <button id="LongWeaponplus" class="fantasy-button" type="button" onclick="pointPlus(38)">+</button> <button id="LongWeaponminus" class="fantasy-button" type="button" onclick="pointMinus(38)">-</button> <input type="number" id="LongWeaponval" name="LongWeaponval"  value = "0" size = "2" disabled > </th>
+               <td class="ui-table-priority-2" onclick="popFunc('LongWeaponPopup', 38)"><div class="popup" ><span class="popuptext" id="LongWeaponPopup"></span></div>Long Weapon</td>
+  
+               <td class="ui-table-priority-2" id="38cost">1</td>
+               <td class="ui-table-priority-3" id="38max">-</td>
+             </tr>
+             <tr>
+               <th class="ui-table-priority-1">  <button id="PhaseBoltplus" class="fantasy-button" type="button" onclick="pointPlus(39)">+</button> <button id="PhaseBoltminus" class="fantasy-button" type="button" onclick="pointMinus(39)">-</button> <input type="number" id="PhaseBoltval" name="PhaseBoltval"  value = "0" size = "2" disabled > </th>
+               <td class="ui-table-priority-2" onclick="popFunc('PhaseBoltPopup', 39)"><div class="popup" ><span class="popuptext" id="PhaseBoltPopup"></span></div>Phase Bolt</td>
+  
+               <td class="ui-table-priority-2" id="39cost">1</td>
+               <td class="ui-table-priority-3" id="39max">2</td>
+             </tr>
+             <tr>
+               <th class="ui-table-priority-1">  <button id="Pyrotechnicsplus" class="fantasy-button" type="button" onclick="pointPlus(40)">+</button> <button id="Pyrotechnicsminus" class="fantasy-button" type="button" onclick="pointMinus(40)">-</button> <input type="number" id="Pyrotechnicsval" name="Pyrotechnicsval"  value = "0" size = "2" disabled > </th>
+               <td class="ui-table-priority-2" onclick="popFunc('PyrotechnicsPopup', 40)"><div class="popup" ><span class="popuptext" id="PyrotechnicsPopup"></span></div>Pyrotechnics</td>
+  
+               <td class="ui-table-priority-2" id="40cost">1</td>
+               <td class="ui-table-priority-3" id="40max">2</td>
+             </tr>
+             <tr>
+               <th class="ui-table-priority-1">  <button id="StealLifeEssenceplus" class="fantasy-button" type="button" onclick="pointPlus(41)">+</button> <button id="StealLifeEssenceminus" class="fantasy-button" type="button" onclick="pointMinus(41)">-</button> <input type="number" id="StealLifeEssenceval" name="StealLifeEssenceval"  value = "0" size = "2" disabled > </th>
+               <td class="ui-table-priority-2" onclick="popFunc('StealLifeEssencePopup', 41)"><div class="popup" ><span class="popuptext" id="StealLifeEssencePopup"></span></div>Steal Life Essence</td>
+  
+               <td class="ui-table-priority-2" id="41cost">1</td>
+               <td class="ui-table-priority-3" id="41max">2</td>
+             </tr>
+             <tr>
+               <th class="ui-table-priority-1">  <button id="VoidTouchedplus" class="fantasy-button" type="button" onclick="pointPlus(42)">+</button> <button id="VoidTouchedminus" class="fantasy-button" type="button" onclick="pointMinus(42)">-</button> <input type="number" id="VoidTouchedval" name="VoidTouchedval"  value = "0" size = "2" disabled > </th>
+               <td class="ui-table-priority-2" onclick="popFunc('VoidTouchedPopup', 42)"><div class="popup" ><span class="popuptext" id="VoidTouchedPopup"></span></div>Void Touched</td>
+  
+               <td class="ui-table-priority-2" id="42cost">1</td>
+               <td class="ui-table-priority-3" id="42max">2</td>
+             </tr>
+             <tr>
+              <th class="ui-table-priority-1">  <button id="WardSelfplus" class="fantasy-button" type="button" onclick="pointPlus(43)">+</button> <button id="WardSelfminus" class="fantasy-button" type="button" onclick="pointMinus(43)">-</button> <input type="number" id="WardSelfval" name="WardSelfval"  value = "0" size = "2" disabled > </th>
+              <td class="ui-table-priority-2" onclick="popFunc('WardSelfPopup', 43)"><div class="popup" ><span class="popuptext" id="WardSelfPopup"></span></div>Ward Self</td>
+ 
+              <td class="ui-table-priority-2" id="43cost">1</td>
+              <td class="ui-table-priority-3" id="43max">2</td>
+            </tr>
+           </tbody>
+         </table>
+          <h2>6th Level Spells <input type="number" id="level6Points" name="level6Points"  value = "6" size = "2" disabled ></h2>
+     <div class="listOnly" id="lvl6List"></div>
+          <table data-role="table" id="table-lvl6" data-mode="columntoggle" class="ui-body-d ui-shadow table-stripe ui-responsive ui-table ui-table-columntoggle" data-column-btn-theme="b" data-column-btn-text="Columns to display..." data-column-popup-theme="a"style="display: block;">
+           <thead>
+             <tr class="ui-bar-d">
+               <th data-priority="1" data-colstart="1" class="ui-table-priority-1">Purchased</th>
+               <th data-priority="2" data-colstart="2" class="ui-table-priority-2">Name</th>
+               <th data-priority="3" data-colstart="3" class="ui-table-priority-3">Cost</th>
+               <th data-priority="4" data-colstart="4" class="ui-table-priority-4">Max</th>
+             </tr>
+           </thead>
+           <tbody>
+             <tr>
+               <th class="ui-table-priority-1">  <button id="Battlemageplus" class="fantasy-button" type="button" onclick="pointPlus(44)">+</button> <button id="Battlemageminus" class="fantasy-button" type="button" onclick="pointMinus(44)">-</button> <input type="number" id="Battlemageval" name="Battlemageval"  value = "0" size = "2" disabled > </th>
+               <td class="ui-table-priority-2" onclick="popFunc('BattlemagePopup', 44)"><div class="popup" ><span class="popuptext" id="BattlemagePopup"></span></div>Battlemage</td>
+  
+               <td class="ui-table-priority-2" id="44cost">1</td>
+               <td class="ui-table-priority-3" id="44max">1</td>
+             </tr>
+             <tr>
+               <th class="ui-table-priority-1">  <button id="ElementalBarrageplus" class="fantasy-button" type="button" onclick="pointPlus(45)">+</button> <button id="ElementalBarrageminus" class="fantasy-button" type="button" onclick="pointMinus(45)">-</button> <input type="number" id="ElementalBarrageval" name="ElementalBarrageval"  value = "0" size = "2" disabled > </th>
+               <td class="ui-table-priority-2" onclick="popFunc('ElementalBarragePopup', 45)"><div class="popup" ><span class="popuptext" id="ElementalBarragePopup"></span></div>Elemental Barrage</td>
+  
+               <td class="ui-table-priority-2" id="45cost">1</td>
+               <td class="ui-table-priority-3" id="45max">-</td>
+             </tr>
+             <tr>
+               <th class="ui-table-priority-1">  <button id="Evokerplus" class="fantasy-button" type="button" onclick="pointPlus(46)">+</button> <button id="Evokerminus" class="fantasy-button" type="button" onclick="pointMinus(46)">-</button> <input type="number" id="Evokerval" name="Evokerval"  value = "0" size = "2" disabled > </th>
+  
+               <td class="ui-table-priority-2" onclick="popFunc('EvokerPopup', 46)"><div class="popup" ><span class="popuptext" id="EvokerPopup"></span></div>Evoker</td>
+  
+               <td class="ui-table-priority-2" id="46cost">1</td>
+               <td class="ui-table-priority-3" id="46max">-</td>
+             </tr>
+             <tr>
+               <th class="ui-table-priority-1">  <button id="FingerofDeathplus" class="fantasy-button" type="button" onclick="pointPlus(47)">+</button> <button id="FingerofDeathminus" class="fantasy-button" type="button" onclick="pointMinus(47)">-</button> <input type="number" id="FingerofDeathval" name="FingerofDeathval"  value = "0" size = "2" disabled > </th>
+               <td class="ui-table-priority-2" onclick="popFunc('FingerofDeathPopup', 47)"><div class="popup" ><span class="popuptext" id="FingerofDeathPopup"></span></div>Finger of Death</td>
+  
+               <td class="ui-table-priority-2" id="47cost">1</td>
+               <td class="ui-table-priority-3" id="47max">2</td>
+             </tr>
+             <tr>
+               <th class="ui-table-priority-1">  <button id="Persistentplus" class="fantasy-button" type="button" onclick="pointPlus(48, true)">+</button> <button id="Persistentminus" class="fantasy-button" type="button" onclick="pointMinus(48)">-</button> <input type="number" id="Persistentval" name="Persistentval"  value = "0" size = "2" disabled > </th>
+               <td class="ui-table-priority-2" onclick="popFunc('PersistentPopup', 48)"><div class="popup" ><span class="popuptext" id="PersistentPopup"></span></div>Persistent</td>
+  
+               <td class="ui-table-priority-2" id="48cost">2</td>
+               <td class="ui-table-priority-3" id="48max">1</td>
+             </tr>
+             <tr>
+               <th class="ui-table-priority-1">  <button id="ProtectionfromMagicplus" class="fantasy-button" type="button" onclick="pointPlus(49)">+</button> <button id="ProtectionfromMagicminus" class="fantasy-button" type="button" onclick="pointMinus(49)">-</button> <input type="number" id="ProtectionfromMagicval" name="ProtectionfromMagicval"  value = "0" size = "2" disabled > </th>
+               <td class="ui-table-priority-2" onclick="popFunc('ProtectionfromMagicPopup', 49)"><div class="popup" ><span class="popuptext" id="ProtectionfromMagicPopup"></span></div>Protection from Magic</td>
+  
+               <td class="ui-table-priority-2" id="49cost">1</td>
+               <td class="ui-table-priority-3" id="49max">1</td>
+             </tr>
+             <tr>
+               <th class="ui-table-priority-1">  <button id="SphereofAnnihilationplus" class="fantasy-button" type="button" onclick="pointPlus(50)">+</button> <button id="SphereofAnnihilationminus" class="fantasy-button" type="button" onclick="pointMinus(50)">-</button> <input type="number" id="SphereofAnnihilationval" name="SphereofAnnihilationval"  value = "0" size = "2" disabled > </th>
+               <td class="ui-table-priority-2" onclick="popFunc('SphereofAnnihilationPopup', 50)"><div class="popup" ><span class="popuptext" id="SphereofAnnihilationPopup"></span></div>Sphere of Annihilation</td>
+  
+               <td class="ui-table-priority-2" id="50cost">2</td>
+               <td class="ui-table-priority-3" id="50max">1</td>
+             </tr>
+             <tr>
+               <th class="ui-table-priority-1">  <button id="Warlockplus" class="fantasy-button" type="button" onclick="pointPlus(51)">+</button> <button id="Warlockminus" class="fantasy-button" type="button" onclick="pointMinus(51)">-</button> <input type="number" id="Warlockval" name="Warlockval"  value = "0" size = "2" disabled > </th>
+               <td class="ui-table-priority-2" onclick="popFunc('WarlockPopup', 51)"><div class="popup" ><span class="popuptext" id="WarlockPopup"></span></div>Warlock</td>
+  
+               <td class="ui-table-priority-2" id="51cost">1</td>
+               <td class="ui-table-priority-3" id="51max">-</td>
+             </tr>
+             <tr>
+              <th class="ui-table-priority-1">  <button id="WordofMendingplus" class="fantasy-button" type="button" onclick="pointPlus(52)">+</button> <button id="WordofMendingminus" class="fantasy-button" type="button" onclick="pointMinus(52)">-</button> <input type="number" id="WordofMendingval" name="WordofMendingval"  value = "0" size = "2" disabled > </th>
+              <td class="ui-table-priority-2" onclick="popFunc('Word of MendingPopup', 52)"><div class="popup" ><span class="popuptext" id="Word of MendingPopup"></span></div>Word of Mending</td>
+ 
+              <td class="ui-table-priority-2" id="52cost">1</td>
+              <td class="ui-table-priority-3" id="52max">-</td>
+            </tr>
+           </tbody>
+         </table>
+       </div>
+    
+    <div id="medievalAlert" class="modal">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h2>Limitation</h2>
+          </div>
+          <div class="modal-body">
+              <p>!</p>
+          </div>
+          <div class="modal-footer">
+              <button id="alertCloseButton" class="modal-button">OK</button>
+          </div>
+      </div>
+  </div>
+ 
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>
