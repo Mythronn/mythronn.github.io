@@ -569,19 +569,10 @@ const Barkskin = {
   purchased: 0, 
   level: 1,
   cost: 1,
-  max: 2, charge: "", use: 1, per: "Refresh",
+  max: 2, charge: "Charge x10", use: 1, per: "Refresh",
   pointTotalId: "Barkskinval",
   name: "Barkskin", type: "Enchantment",
-  text: "<p2>Barkskin</p2><BR><p3>Freq:</p3>  1/Refresh<BR><p3>Type:</p3>  Enchantment<BR><p3>School:</p3> Protection<BR><p3>Range:</p3> Touch: Others<BR><p3>Incant:</p3> <I>I enchant thee with barkskin</I> x3<BR><p3>Materials:</p3> White strip<BR><p3>Effect:</p3> Bearer gains one point of Magic Armor"
-};
-const Cancel = {
-  purchased: 0,
-  level: 1,
-  cost: 0,
-  max: 1, charge: "", use: -1, per: "",
-  pointTotalId: "Cancelval",
-  name: "Cancel", type: "Neutral",
-  text: "<p2>Cancel</p2><BR><p3>Freq:</p3>  Unlimited<BR><p3>Type:</p3>  Neutral<BR><p3>School:</p3> Neutral<BR><p3>Range:</p3> Touch<BR><p3>Incant:</p3> <I>My work shall be undone</I> x3<BR><p3>Effect:</p3> Remove an Enchantment cast by the caster"
+  text: "<p2>Barkskin</p2><BR><p3>Freq:</p3>  1/Ref Chg x10<BR><p3>Type:</p3>  Enchantment<BR><p3>School:</p3> Protection<BR><p3>Range:</p3> Touch: Others<BR><p3>Incant:</p3> <I>I enchant thee with barkskin</I> x3<BR><p3>Materials:</p3> White strip<BR><p3>Effect:</p3> Bearer gains one point of Magic Armor"
 };
 const Entangle = {
   purchased: 0,
@@ -625,10 +616,10 @@ const ImbueArmor = {
   purchased: 0,
   level: 1,
   cost: 1,
-  max: 31, charge: "", use: 1, per: "Refresh",
+  max: 31, charge: "", use: 1, per: "Life",
   pointTotalId: "ImbueArmorval",
   name: "Imbue Armor", type: "Enchantment",
-  text: "<p2>Imbue Armor</p2><BR><p3>Freq:</p3>  1/Refresh<BR><p3>Type:</p3>  Enchantment<BR><p3>School:</p3> Protection<BR><p3>Range:</p3> Touch: Others<BR><p3>Incant:</p3> <I>I enchant thee with Imbued Armor</I> x3<BR><p3>Materials:</p3> White Strip<BR><p3>Effect:</p3> All armor worn by the bearer gains a +1 modifier. This modifier may allow the armor to exceed the maximum value for its type, up to the bearer’s class maximum<BR><p3>Notes:</p3> Does not apply to magic armor. A player may only benefit from one instance of Imbue Armor, or similar magic and abilities that increase Armor Points, at a time"
+  text: "<p2>Imbue Armor</p2><BR><p3>Freq:</p3>  1/Life<BR><p3>Type:</p3>  Enchantment<BR><p3>School:</p3> Protection<BR><p3>Range:</p3> Touch: Others<BR><p3>Incant:</p3> <I>I enchant thee with Imbued Armor</I> x3<BR><p3>Materials:</p3> White Strip<BR><p3>Effect:</p3> All armor worn by the bearer gains a +1 modifier. This modifier may allow the armor to exceed the maximum value for its type, up to the bearer’s class maximum<BR><p3>Notes:</p3> Does not apply to magic armor. A player may only benefit from one instance of Imbue Armor, or similar magic and abilities that increase Armor Points, at a time"
 };
 const Mend = {
   purchased: 0,
@@ -637,7 +628,7 @@ const Mend = {
   max: 31, charge: "", use: 1, per: "Life",
   pointTotalId: "Mendval",
   name: "Mend", type: "Verbal",
-  text: "<p2>Mend</p2><BR><p3>Freq:</p3> 1/Life<BR><p3>Type:</p3>  Verbal<BR><p3>School:</p3> Sorcery<BR><p3>Range:</p3> Touch<BR><p3>Incant:</p3> <I>I make this item whole again</I> x5<BR><p3>Effect:</p3> Destroyed item is repaired, or one point of armor in one location is repaired"
+  text: "<p2>Mend</p2><BR><p3>Freq:</p3> 1/Life<BR><p3>Type:</p3>  Verbal<BR><p3>School:</p3> Sorcery<BR><p3>Range:</p3> Touch<BR><p3>Incant:</p3> <I>I make this item whole again</I> x5<BR><p3>Effect:</p3> Destroyed or damaged item is repaired, or one point of armor in one location is repaired"
 };
 
 /*__________________________________________*/
@@ -667,7 +658,7 @@ const GiftofEarth = {
   max: 2, charge: "", use: 1, per: "Refresh",
   pointTotalId: "GiftofEarthval",
   name: "Gift of Earth", type: "Enchantment",
-  text: "<p2>Gift of Earth</p2><BR><p3>Freq:</p3>  1/Refresh<BR><p3>Type:</p3>  Enchantment<BR><p3>School:</p3> Protection<BR><p3>Range:</p3> Touch: Others<BR><p3>Incant:</p3> <I>I grant thee a gift of the earth</I> x3<BR><p3>Materials:</p3> White Strip<BR><p3>Effect:</p3> Bearer gains two points of magic armor and is affected as per Greater Harden. Bearer is Suppressed"
+  text: "<p2>Gift of Earth</p2><BR><p3>Freq:</p3>  1/Refresh<BR><p3>Type:</p3>  Enchantment<BR><p3>School:</p3> Protection<BR><p3>Range:</p3> Touch: Others<BR><p3>Incant:</p3> <I>I grant thee a gift of the earth</I> x3<BR><p3>Materials:</p3> White Strip<BR><p3>Effect:</p3> Bearer gains one point of magic armor and is affected as per Harden."
 };
 const Heal = {
   purchased: 0,
@@ -676,16 +667,16 @@ const Heal = {
   max: 31, charge: "", use: 1, per: "Life",
   pointTotalId: "Healval",
   name: "Heal", type: "Verbal",
-  text: "<p2>Heal</p2><BR><p3>Freq:</p3>  1/Life<BR><p3>Type:</p3>  Verbal<BR><p3>School:</p3> Spirit<BR><p3>Range:</p3> Touch<BR><p3>Incant:</p3> <I>Sword Cut, spear stab, mace smash, arrow jab,<BR>Let the white light of healing descend on thee<BR>Let the white light of healing stop thy spilling blood<BR>Let the white light of healing mend thy bones<BR>Let the white light of healing close thy wounds<BR>Let the white light of healing restore thy vigor<BR>The white light of healing hath healed thee</I><BR><p3>Materials:</p3> None<BR><p3>Effect:</p3> Target player heals a Wound"
+  text: "<p2>Heal</p2><BR><p3>Freq:</p3>  1/Life<BR><p3>Type:</p3>  Verbal<BR><p3>School:</p3> Spirit<BR><p3>Range:</p3> Touch<BR><p3>Incant:</p3> <I>The white light of healing hath healed thee x5</I><BR><p3>Materials:</p3> None<BR><p3>Effect:</p3> Target player heals a Wound"
 };
-const Iceball = {
+const ForceBolt = {
   purchased: 0,
   level: 2,
   cost: 1,
   max: 2, charge: "", use: 2, per: "Ball",
-  pointTotalId: "Iceballval",
-  name: "Iceball", type: "Ball",
-  text: "<p2>Iceball</p2><BR><p3>Freq:</p3> 2 Balls/Unlimited<BR><p3>Type:</p3>  Magic Ball<BR><p3>School:</p3> Subdual<BR><p3>Range:</p3> Ball<BR><p3>Incant:</p3> <I>The strength of ice is mine to evoke</I> x3<BR><p3>Materials:</p3> White Magic Ball<BR><p3>Effect:</p3> Target player becomes Frozen for 60 seconds. Engulfing"
+  pointTotalId: "ForceBoltval",
+  name: "Force Bolt", type: "Ball",
+  text: "<p2>Force Bolt</p2><BR><p3>Freq:</p3> 2 Balls/Unlimited<BR><p3>Type:</p3>  Magic Ball<BR><p3>School:</p3> Sorcery<BR><p3>Range:</p3> Touch: Ball<BR><p3>Incant:</p3> <I>Forcebolt</I> x3<BR><p3>Materials:</p3> Blue Magic Ball<BR><p3>Effect:</p3> Force Bolt will have one of the following effects on the object first struck:<BR>1. A weapon hit is destroyed<BR>2. Armor hit with Armor Points remaining is subject to Armor Breaking<BR>3. A player hit receives a Wound to that hit location"
 };
 const Innate = {
   purchased: 0,
@@ -828,14 +819,14 @@ const FlameBlade = {
   name: "Flame Blade", type: "Enchantment",
   text: "<p2>Flame Blade</p2><BR><p3>Freq:</p3>  1/Refresh<BR><p3>Type:</p3>  Enchantment<BR><p3>School:</p3> Flame<BR><p3>Range:</p3> Touch: Others<BR><p3>Incant:</p3> <I>The element of fire shall infuse your weapons</I> x3<BR><p3>Materials:</p3> Red Strip and White Strip<BR><p3>Effect:</p3> Bearer’s melee weapons are Armor Breaking and Shield Crushing. Bearer and weapons they hold are Immune to Flame"
 };
-const ForceBolt = {
+const Iceball = {
   purchased: 0,
   level: 4,
   cost: 1,
-  max: 2, charge: "", use: 2, per: "Ball",
-  pointTotalId: "ForceBoltval",
-  name: "Force Bolt", type: "Ball",
-  text: "<p2>Force Bolt</p2><BR><p3>Freq:</p3> 2 Balls/Unlimited<BR><p3>Type:</p3>  Magic Ball<BR><p3>School:</p3> Sorcery<BR><p3>Range:</p3> Touch: Ball<BR><p3>Incant:</p3> <I>Forcebolt</I> x3<BR><p3>Materials:</p3> Blue Magic Ball<BR><p3>Effect:</p3> Force Bolt will have one of the following effects on the object first struck:<BR>1. A weapon hit is destroyed<BR>2. Armor hit with Armor Points remaining is subject to Armor Breaking<BR>3. A player hit receives a Wound to that hit location"
+  max: 2, charge: "", use: 1, per: "Ball",
+  pointTotalId: "Iceballval",
+  name: "Iceball", type: "Ball",
+  text: "<p2>Iceball</p2><BR><p3>Freq:</p3> 1 Balls/Unlimited<BR><p3>Type:</p3>  Magic Ball<BR><p3>School:</p3> Subdual<BR><p3>Range:</p3> Ball<BR><p3>Incant:</p3> <I>The strength of ice is mine to evoke</I> x3<BR><p3>Materials:</p3> White Magic Ball<BR><p3>Effect:</p3> Target player becomes Frozen for 60 seconds. Engulfing"
 };
 const GiftofWater = {
   purchased: 0,
@@ -1041,9 +1032,9 @@ const WordofMending = {
   name: "Word of Mending", type: "Verbal",
   text: "<p2>Word of Mending</p2><BR><p3>Freq:</p3>  1/Refresh<BR><p3>Type:</p3>  Verbal<BR><p3>School:</p3> Sorcery<BR><p3>Range:</p3> Touch<BR><p3>Incant:</p3> <I>Spedoinkle</I><BR><p3>Effect:</p3> All equipment carried by target player is repaired. All armor worn by target player is restored to full value<BR><p3>Limitations:</p3>May not be cast within 20’ of a living enemy"
 };
-const abilityCount = 51;
+const abilityCount = 50;
 const abilities = [Ranger, //0
-Cancel, //1
+WordofMending, //1
 Entangle, //2
 WeaponShort, //3
 Experienced, //4
@@ -1054,7 +1045,7 @@ ShieldSmall, //8
 CorrosiveMist, //9
 GiftofEarth, //10
 Heal, //11
-Iceball, //12
+ForceBolt, //12
 Innate, //13
 Poison, //14
 Release, //15
@@ -1070,7 +1061,7 @@ Regeneration, //24
 Stoneskin, //25
 WeaponLong, //26
 FlameBlade, //27
-ForceBolt, //28
+Iceball, //28
 GiftofWater, //29
 Golem, //30
 Lycanthropy, //31
@@ -1091,8 +1082,7 @@ ImbueWeapon, //45
 NaturalizeMagic, //46
 Barkskin, //47
 SnaringVines, //48
-Summoner, //49
-WordofMending //50
+Summoner //49
 ];
 function medievalAlert(message) {
     const modal = document.getElementById('medievalAlert');

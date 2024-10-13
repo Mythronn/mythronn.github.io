@@ -68,20 +68,7 @@
              <td class="ui-table-priority-2" id="47cost">1</td>
              <td class="ui-table-priority-3" id="47max">2</td>
            </tr>
-           <tr>
-             <th class="ui-table-priority-1">
-               <button id="Cancelplus" class="fantasy-button" type="button" onclick="pointPlus(1)">+</button>
-               <button id="Cancelminus" class="fantasy-button" type="button" onclick="pointMinus(1)">-</button>
-               <input type="number" id="Cancelval" name="Cancelval"  value = "0" size = "2" disabled >               
-             </th>
-              <td class="ui-table-priority-2" onclick="popFunc('cancelPopup', 1)">
-                  <div class="popup" >
-                    <span class="popuptext" id="cancelPopup"></span>
-                    </div>Cancel
-             </td>
-             <td class="ui-table-priority-2" id="1cost">0</td>
-             <td class="ui-table-priority-3" id="1max">1</td>
-           </tr>
+           
            <tr>
              <th class="ui-table-priority-1">  <button id="Entangleplus" class="fantasy-button" type="button" onclick="pointPlus(2)">+</button> <button id="Entangleminus" class="fantasy-button" type="button" onclick="pointMinus(2)">-</button> <input type="number" id="Entangleval" name="Entangleval"  value = "0" size = "2" disabled > </th>
              <td class="ui-table-priority-2" onclick="popFunc('EntanglePopup', 2)"> <div class="popup" ><span class="popuptext" id="EntanglePopup"></span></div>Entangle</td>
@@ -189,14 +176,12 @@
              <td class="ui-table-priority-3" id="11max">-</td>
            </tr>
            <tr>
-             <th class="ui-table-priority-1">  <button id="Iceballplus" class="fantasy-button" type="button" onclick="pointPlus(12)">+</button> <button id="Iceballminus" class="fantasy-button" type="button" onclick="pointMinus(12)">-</button> <input type="number" id="Iceballval" name="Iceballval"  value = "0" size = "2" disabled > </th>
+            <th class="ui-table-priority-1">  <button id="ForceBoltplus" class="fantasy-button" type="button" onclick="pointPlus(12)">+</button> <button id="ForceBoltminus" class="fantasy-button" type="button" onclick="pointMinus(12)">-</button> <input type="number" id="ForceBoltval" name="ForceBoltval"  value = "0" size = "2" disabled > </th>
+            <td class="ui-table-priority-2" onclick="popFunc('Force BoltPopup', 12)"><div class="popup" ><span class="popuptext" id="Force BoltPopup"></span></div>Force Bolt</td>
 
-             <td class="ui-table-priority-2" onclick="popFunc('IceballPopup', 12)"><div class="popup" ><span class="popuptext" id="IceballPopup"></span></div>Iceball</td>
-
-             <td class="ui-table-priority-2" id="12cost">1</td>
-             <td class="ui-table-priority-3" id="12max">2</td>
-           </tr>
-           <tr>
+            <td class="ui-table-priority-2" id="12cost">1</td>
+            <td class="ui-table-priority-3" id="12max">2</td>
+          </tr>
              <th class="ui-table-priority-1">  <button id="Innateplus" class="fantasy-button" type="button" onclick="pointPlus(13)">+</button> <button id="Innateminus" class="fantasy-button" type="button" onclick="pointMinus(13)">-</button> <input type="number" id="Innateval" name="Innateval"  value = "0" size = "2" disabled > </th>
 
              <td class="ui-table-priority-2" onclick="popFunc('InnatePopup', 13)"><div class="popup" ><span class="popuptext" id="InnatePopup"></span></div>Innate</td>
@@ -332,12 +317,14 @@
              <td class="ui-table-priority-3" id="27max">2</td>
            </tr>
            <tr>
-             <th class="ui-table-priority-1">  <button id="ForceBoltplus" class="fantasy-button" type="button" onclick="pointPlus(28)">+</button> <button id="ForceBoltminus" class="fantasy-button" type="button" onclick="pointMinus(28)">-</button> <input type="number" id="ForceBoltval" name="ForceBoltval"  value = "0" size = "2" disabled > </th>
-             <td class="ui-table-priority-2" onclick="popFunc('Force BoltPopup', 28)"><div class="popup" ><span class="popuptext" id="Force BoltPopup"></span></div>Force Bolt</td>
+            <th class="ui-table-priority-1">  <button id="Iceballplus" class="fantasy-button" type="button" onclick="pointPlus(28)">+</button> <button id="Iceballminus" class="fantasy-button" type="button" onclick="pointMinus(28)">-</button> <input type="number" id="Iceballval" name="Iceballval"  value = "0" size = "2" disabled > </th>
 
-             <td class="ui-table-priority-2" id="28cost">1</td>
-             <td class="ui-table-priority-3" id="28max">2</td>
-           </tr>
+            <td class="ui-table-priority-2" onclick="popFunc('IceballPopup', 28)"><div class="popup" ><span class="popuptext" id="IceballPopup"></span></div>Iceball</td>
+
+            <td class="ui-table-priority-2" id="28cost">1</td>
+            <td class="ui-table-priority-3" id="28max">2</td>
+          </tr>
+          <tr>           
            <tr>
              <th class="ui-table-priority-1">  <button id="GiftofWaterplus" class="fantasy-button" type="button" onclick="pointPlus(29)">+</button> <button id="GiftofWaterminus" class="fantasy-button" type="button" onclick="pointMinus(29)">-</button> <input type="number" id="GiftofWaterval" name="GiftofWaterval"  value = "0" size = "2" disabled > </th>
              <td class="ui-table-priority-2" onclick="popFunc('Gift of WaterPopup', 29)"><div class="popup" ><span class="popuptext" id="Gift of WaterPopup"></span></div>Gift of Water</td>
@@ -516,11 +503,11 @@
              <td class="ui-table-priority-3" id="49max">1</td>
            </tr>
            <tr>
-             <th class="ui-table-priority-1">  <button id="WordofMendingplus" class="fantasy-button" type="button" onclick="pointPlus(50)">+</button> <button id="WordofMendingminus" class="fantasy-button" type="button" onclick="pointMinus(50)">-</button> <input type="number" id="WordofMendingval" name="WordofMendingval"  value = "0" size = "2" disabled > </th>
-             <td class="ui-table-priority-2" onclick="popFunc('Word of MendingPopup', 50)"><div class="popup" ><span class="popuptext" id="Word of MendingPopup"></span></div>Word of Mending</td>
+             <th class="ui-table-priority-1">  <button id="WordofMendingplus" class="fantasy-button" type="button" onclick="pointPlus(1)">+</button> <button id="WordofMendingminus" class="fantasy-button" type="button" onclick="pointMinus(1)">-</button> <input type="number" id="WordofMendingval" name="WordofMendingval"  value = "0" size = "2" disabled > </th>
+             <td class="ui-table-priority-2" onclick="popFunc('Word of MendingPopup', 1)"><div class="popup" ><span class="popuptext" id="Word of MendingPopup"></span></div>Word of Mending</td>
 
-             <td class="ui-table-priority-2" id="50cost">1</td>
-             <td class="ui-table-priority-3" id="50max">-</td>
+             <td class="ui-table-priority-2" id="1cost">1</td>
+             <td class="ui-table-priority-3" id="1max">-</td>
            </tr>
          </tbody>
        </table>
