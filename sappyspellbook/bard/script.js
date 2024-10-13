@@ -772,7 +772,7 @@ const Mend = {
   name: "Mend", type: "Verbal",  freq: "	1/Life",
   school: "Sorcery", range: "Touch", materials: "",
   incant: "I make this item whole again x5", 
-  effect: "Destroyed item is repaired, or one point of armor in one location is repaired", 
+  effect: "Destroyed or damaged item is repaired, or one point of armor in one location is repaired", 
   limitations: "",
   notes: "",
   text: ""
@@ -897,14 +897,14 @@ const Amplification = {
   purchased: 0,
   level: 4,
   cost: 1,
-  max: 31, charge: "", use: 1, per: "Refresh",
+  max: 4, charge: "", use: 1, per: "Refresh",
   pointTotalId: "Amplificationval",
-  name: "Amplification", type: "Verbal",  freq: "1/Ref",
-  school: "Sorcery", range: "Touch:Others", materials: "",
-  incant: "My power amplifies thine", 
-  effect: "Target player’s next Verbal magic is affected as per Extension", 
+  name: "Amplification", type: "Enchantment",  freq: "1/Ref",
+  school: "Sorcery", range: "Self/Touch", materials: "Yellow Strip",
+  incant: "My power amplifies thy voice x3", 
+  effect: "Bearer gains Extension 1/refresh Charge x3. Other sources of extension may not be utilized while Amplification is worn.", 
   limitations: "",
-  notes: "",
+  notes: "Does not use up any purchased instances of Extension.",
   text: ""
 };
 const LongWeapon = {
@@ -958,9 +958,9 @@ const SongofDeflection = {
   name: "Song of Deflection", type: "Enchantment",  freq: "Unlimited",
   school: "Protection", range: "Self", materials: "No strip required",
   incant: "I sing of my nimble acrobatics", 
-  effect: "Bearer does not receive Wounds from ammunition, thrown javelins, rocks, and throwing weapons. Bearer must Chant 'Song of Deflection' or sing a song regarding their acrobatic prowess. Singing in place of the normal Chant is still a Chant and must follow all Chant rules", 
+  effect: "Bearer is unaffected by ammunition, thrown javelins, rocks, and throwing weapons. Engulfing effects from those objects, such as Pinning Arrow, do not affect the player. Bearer must Chant 'Song of Deflection'", 
   limitations: "",
-  notes: "",
+  notes: "Does not protect the bearer against Magic Balls.",
   text: ""
 };
 const SongofPower = {
@@ -1187,7 +1187,7 @@ const SilverTongue = {
   pointTotalId: "SilverTongueval",
   name: "Silver Tongue", type: "Enchantment",  freq: "1/Ref",
   school: "Sorcery", range: "Self/Touch", materials: "Yellow Strip",
-  incant: "The seething sea ceaseth and thus the seething sea sufficeth us x2", 
+  incant: "My power quickens thine x3", 
   effect: "Bearer gains Swift 1/refresh Charge x3. Other sources of Swift may not be utilized while Silver Tongue is worn", 
   limitations: "",
   notes: "Does not use up any purchased instances of Swift",
@@ -1222,7 +1222,7 @@ const Stun = {
   text: ""
 };
 
-const abilityCount = 44;
+const abilityCount = 43;
 const abilities = [Dervish, //0
   Confidence, //1
   WeaponShort, //2
@@ -1261,12 +1261,11 @@ const abilities = [Dervish, //0
   Lost, //35
   SongofSurvival, //36
   CombatCaster, //37
-  Cancel, //38
+  Stun, //38
   Armor1Point2, //39
   Legend, //40
   SilverTongue, //41
-  SongofInterference, //42
-  Stun, //43
+  SongofInterference //42
   ];
 function medievalAlert(message) {
     const modal = document.getElementById('medievalAlert');
