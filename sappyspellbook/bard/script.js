@@ -590,20 +590,6 @@ var pointsSpent = [0, 0,  0,  0,  0,  0,  0];
 |||||||||||||||||||||||||||||||||||
 |||||||||||||||||||||||||||||||||||
 */
-const Cancel = {
-  purchased: 0,
-  level: 1,
-  cost: 0,
-  max: 1, charge: "", use: -1, per: "",
-  pointTotalId: "Cancelval",
-  name: "Cancel", type: "Neutral",  freq: "Unlimited",
-  school: "Neutral", range: "Touch", materials: "",
-  incant: "My work shall be undone x3", 
-  effect: "Remove an Enchantment cast by the caster", 
-  limitations: "",
-  notes: "",
-  text: ""
-};
 const Confidence = {
   purchased: 0, 
   level: 1,
@@ -1214,7 +1200,7 @@ const Stun = {
   max: 31, charge: "", use: 1, per: "Refresh",
   pointTotalId: "Stunval",
   name: "Stun", type: "Verbal",  freq: "1/Ref",
-  school: "Sorcery", range: "20", materials: "Black Magic Ball",
+  school: "Sorcery", range: "20", materials: "",
   incant: "By the power of white light I stun thee x3", 
   effect: "Target player is Stunned for 30 seconds", 
   limitations: "",
