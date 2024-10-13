@@ -166,7 +166,7 @@ function toggleList(){
         if(abilities[k].name == "Experienced" && abilities[k].purchased == 1){
           levelList[i] = levelList[i] + " [" + abilities[k].selectedAbility1 + "]";
         }
-        if(abilities[k].type == "Ball"){
+        if(abilities[k].type == "Magic Ball"){
           levelList[i] = levelList[i] + ": " + abilities[k].use * abilities[k].purchased + " Balls";
         }
         if(abilities[k].type == "Meta-Magic"){
