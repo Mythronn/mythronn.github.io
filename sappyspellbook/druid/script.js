@@ -769,7 +769,7 @@ const GreaterMend = {
   max: 31, charge: "", use: 1, per: "Refresh",
   pointTotalId: "GreaterMendval",
   name: "Greater Mend", type: "Verbal",
-  text: "<p2>Greater Mend</p2><BR><p3>Freq:</p3>  1/Refresh<BR><p3>Type:</p3>  Verbal<BR><p3>School:</p3> Sorcery<BR><p3>Range:</p3> Touch<BR><p3>Incant:</p3> <I>Return this [object name] to its former glory</I> x5<BR><p3>Effect:</p3> Will repair a destroyed item or restore all armor points in one location"
+  text: "<p2>Greater Mend</p2><BR><p3>Freq:</p3>  1/Refresh<BR><p3>Type:</p3>  Verbal<BR><p3>School:</p3> Sorcery<BR><p3>Range:</p3> Touch<BR><p3>Incant:</p3> <I>Return this [object name] to its former glory</I> x5<BR><p3>Effect:</p3> Will repair a destroyed or damaged item or restore all armor points in one location"
 };
 const IcyBlast = {
   purchased: 0,

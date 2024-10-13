@@ -115,20 +115,24 @@
     <select id="exp1"class="dropdown" name="exp1" onchange="processExpChange()">
      <option value="Select Spell">Select Spell</option>
      <option value="Banish">Banish</option>
+     <option value="Dispel Magic">Dispel Magic</option>
      <option value="Greater Heal">Greater Heal</option>
      <option value="Greater Release">Greater Release</option>
      <option value="Mend">Mend</option>
      <option value="Shove">Shove</option>
      <option value="Teleport">Teleport</option>
+     <option value="Raise Dead">Raise Dead</option>
    </select>
    <select id="exp2" class="dropdown" name="exp2" onchange="processExpChange()" disabled>      
     <option value="Select Spell">Select Spell</option>
     <option value="Banish">Banish</option>
+    <option value="Dispel Magic">Dispel Magic</option>
     <option value="Greater Heal">Greater Heal</option>
     <option value="Greater Release">Greater Release</option>
     <option value="Mend">Mend</option>
     <option value="Shove">Shove</option>
     <option value="Teleport">Teleport</option>
+    <option value="Raise Dead">Raise Dead</option>
    </select>
               </th>
               <td id="experiencedtext" class="ui-table-priority-2" onclick="popFunc('ExperiencedPopup', 5)"><div class="popup" ><span class="popuptext" id="ExperiencedPopup"></span></div>Experienced</td>
@@ -312,8 +316,8 @@
                <td class="ui-table-priority-3" id="25max">-</td>
              </tr>
              <tr>
-              <th class="ui-table-priority-1">  <button id="UndeadMinionplus" class="fantasy-button" type="button" onclick="pointPlus(26)">+</button> <button id="UndeadMinionminus" class="fantasy-button" type="button" onclick="pointMinus(26)">-</button> <input type="number" id="UndeadMinionval" name="UndeadMinionval"  value = "0" size = "2" disabled > </th>
-              <td class="ui-table-priority-2" onclick="popFunc('UndeadMinionPopup', 26)"><div class="popup" ><span class="popuptext" id="UndeadMinionPopup"></span></div>Undead Minion</td>
+              <th class="ui-table-priority-1">  <button id="RaiseDeadplus" class="fantasy-button" type="button" onclick="pointPlus(26)">+</button> <button id="RaiseDeadminus" class="fantasy-button" type="button" onclick="pointMinus(26)">-</button> <input type="number" id="RaiseDeadval" name="RaiseDeadval"  value = "0" size = "2" disabled > </th>
+              <td class="ui-table-priority-2" onclick="popFunc('RaiseDeadPopup', 26)"><div class="popup" ><span class="popuptext" id="RaiseDeadPopup"></span></div>Raise Dead</td>
  
               <td class="ui-table-priority-2" id="26cost">1</td>
               <td class="ui-table-priority-3" id="26max">-</td>
@@ -380,7 +384,14 @@
   
                <td class="ui-table-priority-2" id="33cost">1</td>
                <td class="ui-table-priority-3" id="33max">2</td>
-             </tr>             
+             </tr>
+             <tr>
+              <th class="ui-table-priority-1">  <button id="DispelMagicplus" class="fantasy-button" type="button" onclick="pointPlus(37)">+</button> <button id="DispelMagicminus" class="fantasy-button" type="button" onclick="pointMinus(37)">-</button> <input type="number" id="DispelMagicval" name="DispelMagicval"  value = "0" size = "2" disabled > </th>
+              <td class="ui-table-priority-2" onclick="popFunc('DispelMagicPopup', 37)"><div class="popup" ><span class="popuptext" id="DispelMagicPopup"></span></div>Dispel Magic</td>
+ 
+              <td class="ui-table-priority-2" id="37cost">1</td>
+              <td class="ui-table-priority-3" id="37max">-</td>
+            </tr>             
            </tbody>
          </table>
           <h2>5th Level Spells <input type="number" id="level5Points" name="level5Points"  value = "5" size = "2" disabled ></h2>
@@ -415,14 +426,7 @@
   
                <td class="ui-table-priority-2" id="36cost">1</td>
                <td class="ui-table-priority-3" id="36max">-</td>
-             </tr>
-             <tr>
-               <th class="ui-table-priority-1">  <button id="DispelMagicplus" class="fantasy-button" type="button" onclick="pointPlus(37)">+</button> <button id="DispelMagicminus" class="fantasy-button" type="button" onclick="pointMinus(37)">-</button> <input type="number" id="DispelMagicval" name="DispelMagicval"  value = "0" size = "2" disabled > </th>
-               <td class="ui-table-priority-2" onclick="popFunc('DispelMagicPopup', 37)"><div class="popup" ><span class="popuptext" id="DispelMagicPopup"></span></div>Dispel Magic</td>
-  
-               <td class="ui-table-priority-2" id="37cost">1</td>
-               <td class="ui-table-priority-3" id="37max">-</td>
-             </tr>
+             </tr>             
              <tr>
                <th class="ui-table-priority-1">  <button id="EnlightenedSoulplus" class="fantasy-button" type="button" onclick="pointPlus(38)">+</button> <button id="EnlightenedSoulminus" class="fantasy-button" type="button" onclick="pointMinus(38)">-</button> <input type="number" id="EnlightenedSoulval" name="EnlightenedSoulval"  value = "0" size = "2" disabled > </th>
                <td class="ui-table-priority-2" onclick="popFunc('EnlightenedSoulPopup', 38)"><div class="popup" ><span class="popuptext" id="EnlightenedSoulPopup"></span></div>Enlightened Soul</td>
@@ -438,8 +442,8 @@
                <td class="ui-table-priority-3" id="39max">-</td>
              </tr>
              <tr>
-               <th class="ui-table-priority-1">  <button id="GreaterUndeadMinionplus" class="fantasy-button" type="button" onclick="pointPlus(40)">+</button> <button id="GreaterUndeadMinionminus" class="fantasy-button" type="button" onclick="pointMinus(40)">-</button> <input type="number" id="GreaterUndeadMinionval" name="GreaterUndeadMinionval"  value = "0" size = "2" disabled > </th>
-               <td class="ui-table-priority-2" onclick="popFunc('GreaterUndeadMinionPopup', 40)"><div class="popup" ><span class="popuptext" id="GreaterUndeadMinionPopup"></span></div>Greater Undead Minion</td>
+               <th class="ui-table-priority-1">  <button id="UndeadMinionplus" class="fantasy-button" type="button" onclick="pointPlus(40)">+</button> <button id="UndeadMinionminus" class="fantasy-button" type="button" onclick="pointMinus(40)">-</button> <input type="number" id="UndeadMinionval" name="UndeadMinionval"  value = "0" size = "2" disabled > </th>
+               <td class="ui-table-priority-2" onclick="popFunc('UndeadMinionPopup', 40)"><div class="popup" ><span class="popuptext" id="UndeadMinionPopup"></span></div>Undead Minion</td>
   
                <td class="ui-table-priority-2" id="40cost">2</td>
                <td class="ui-table-priority-3" id="40max">-</td>
@@ -523,11 +527,11 @@
                <td class="ui-table-priority-3" id="49max">4</td>
              </tr>
              <tr>
-               <th class="ui-table-priority-1">  <button id="Warderplus" class="fantasy-button" type="button" onclick="pointPlus(50)">+</button> <button id="Warderminus" class="fantasy-button" type="button" onclick="pointMinus(50)">-</button> <input type="number" id="Warderval" name="Warderval"  value = "0" size = "2" disabled > </th>
-               <td class="ui-table-priority-2" onclick="popFunc('WarderPopup', 50)"><div class="popup" ><span class="popuptext" id="WarderPopup"></span></div>Warder</td>
+               <th class="ui-table-priority-1">  <button id="Warderplus" class="fantasy-button" type="button" onclick="pointPlus(2)">+</button> <button id="Warderminus" class="fantasy-button" type="button" onclick="pointMinus(2)">-</button> <input type="number" id="Warderval" name="Warderval"  value = "0" size = "2" disabled > </th>
+               <td class="ui-table-priority-2" onclick="popFunc('WarderPopup', 2)"><div class="popup" ><span class="popuptext" id="WarderPopup"></span></div>Warder</td>
   
-               <td class="ui-table-priority-2" id="50cost">2</td>
-               <td class="ui-table-priority-3" id="50max">1</td>
+               <td class="ui-table-priority-2" id="2cost">2</td>
+               <td class="ui-table-priority-3" id="2max">1</td>
              </tr>
            </tbody>
          </table>

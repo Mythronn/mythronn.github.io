@@ -173,10 +173,10 @@ function toggleList(){
         if(abilities[k].type == "Verbal"){
           levelList[i] = levelList[i] + ": " + abilities[k].use * abilities[k].purchased + "/" + abilities[k].per + " " + abilities[k].charge;
         }
-        if(abilities[k].type == "Enchantment" && (abilities[k].school == "Protection") && abilities[50].purchased == 1){
+        if(abilities[k].type == "Enchantment" && (abilities[k].school == "Protection") && abilities[2].purchased == 1){
           levelList[i] = levelList[i] + ": " + abilities[k].use * abilities[k].purchased * 2 + "/" + abilities[k].per + " " + abilities[k].charge;
         }        
-        if(abilities[k].type == "Enchantment" && !((abilities[k].school == "Protection") && abilities[50].purchased == 1)){
+        if(abilities[k].type == "Enchantment" && !((abilities[k].school == "Protection") && abilities[2].purchased == 1)){
           levelList[i] = levelList[i] + ": " + abilities[k].use * abilities[k].purchased + "/" + abilities[k].per + " " + abilities[k].charge;
         }
        }
@@ -294,6 +294,12 @@ function processExpChange(){
     else{
       abilities[47].charge = "";
     }
+    if(abilities[5].selectedAbility1 == "Dispel Magic" || abilities[5].selectedAbility2 == "Dispel Magic"){
+      abilities[37].charge = "Charge x5";
+    }
+    else{
+      abilities[37].charge = "";
+    }
     if(abilities[5].selectedAbility1 == "Greater Heal" || abilities[5].selectedAbility2 == "Greater Heal"){
       abilities[29].charge = "Charge x5";
     }
@@ -324,6 +330,12 @@ function processExpChange(){
     else{
       abilities[33].charge = "";
     }
+    if(abilities[5].selectedAbility1 == "Raise Dead" || abilities[5].selectedAbility2 == "Raise Dead"){
+      abilities[26].charge = "Charge x5";
+    }
+    else{
+      abilities[26].charge = "";
+    }
     createURL();
  }
 /*##################################*/
@@ -353,7 +365,7 @@ function necromancerCheck(index){ //Necro
 /*##################################*/
 function warderCheck(index){ //warder
   var a = index;
-  if(abilities[50].purchased > 0){
+  if(abilities[2].purchased > 0){
     if(abilities[a].school == "Command" || abilities[a].school == "Subdual"|| abilities[a].school == "Death"){
       
        return false;
@@ -619,7 +631,7 @@ const Banish = {
   incant: "The Spirits banish thee from this place  x3", 
   effect: "Target Insubstantial player must return to their base where their Insubstantial State immediately ends", 
   limitations: "",
-  notes: "The target's Insubstantial State is replaced with a new insubstantial state from Banish. If the Insubstantial State is ended before reaching the base, the rest of the effect is ended as well. If Banish is cast on self, the caster may end this Insubstantial state at any time by using the exit incantation for Insubstantial. A player bearing Undead Minion or Greater Undead Minion who is currently Insubstantial has their Enchantment removed",
+  notes: "The target's Insubstantial State is replaced with a new insubstantial state from Banish. If the Insubstantial State is ended before reaching the base, the rest of the effect is ended as well. If Banish is cast on self, the caster may end this Insubstantial state at any time by using the exit incantation for Insubstantial.",
   text: ""
 };
 const BlessingAgainstWounds = {
@@ -716,7 +728,7 @@ const Heal = {
   pointTotalId: "Healval",
   name: "Heal", type: "Verbal",  freq: "Unlimited",
   school: "Spirit", range: "Touch", materials: "",
-  incant: "Sword Cut, spear stab, mace smash, arrow jab, Let the white light of healing descend on thee, Let the white light of healing stop thy spilling blood, Let the white light of healing mend thy bones, Let the white light of healing close thy wounds, Let the white light of healing restore thy vigor, The white light of healing hath healed thee", 
+  incant: "The white light of healing hath healed thee x5", 
   effect: "Target player heals a Wound", 
   limitations: "",
   notes: "",
@@ -959,7 +971,7 @@ const Mend = {
   name: "Mend", type: "Verbal",  freq: "1/Life",
   school: "Sorcery", range: "Touch", materials: "",
   incant: "I make this item whole again x5", 
-  effect: "Destroyed item is repaired, or one point of armor in one location is repaired", 
+  effect: "Destroyed or damaged item is repaired, or one point of armor in one location is repaired", 
   limitations: "",
   notes: "",
   text: ""
@@ -978,17 +990,17 @@ const Resurrect = {
   notes: "",
   text: ""
 };
-const UndeadMinion = {
+const RaiseDead = {
   purchased: 0,
   level: 3,
   cost: 1,
-  max: 31, charge: "", use: 1, per: "Refresh",
-  pointTotalId: "UndeadMinionval",
-  name: "Undead Minion", type: "Enchantment",  freq: "1/Ref",
-  school: "Death", range: "Touch: Others", materials: "Yellow Strip",
-  incant: "Flesh rots, bones break, skulls sigh, spirits take let the power of my will descend on thee let the power of my will restore thy spirit let the power of my will knit thy corpse let the power of my will give thee direction let the power of my will cheat thy death by the power of my will, arise my minion!", 
-  effect: "1. Bearer does not die or respawn as normal 2. Bearer is Cursed, Fragile, and Suppressed 3. When the bearer would normally die, they instead become Insubstantial, remove all Wounds, and must return to the caster as soon as possible. Insubstantial players may not move more than 10’ from the caster and may not speak. The caster may touch the player and then Incant “Rise and fight again” x10 to end this Insubstantial State so long as no living enemies are within 10’ of the bearer 4. If this Enchantment's Insubstantial is removed from the Bearer in any other manner than outlined in item 3 (or prevented entirely) this Enchantment is removed 5. If the caster dies, this Enchantment is removed the next time the bearer returns to the caster 6. If the Enchantment is removed, the bearer dies 7. For the duration of the Enchantment, the bearer may treat the caster as a base for the purposes of the effects which require the bearer to go to their base 8. Dead players who have not moved from where they died may be targeted by Undead Minion and are immediately returned to life with all Wounds removed and the Insubstantial State applied", 
-  limitations: "1. The Insubstantial State imposed by Undead Minion can be removed or prevented by any Magic or Ability which would normally be capable of removing Insubstantial or preventing Insubstantial such as Tracking, Planar Grounding, Release, or similar Magic and Abilities 2. If Banish or Dimensional Rift is cast on the bearer while they are Insubstantial, the Enchantment is removed, even if the player is unaffected by Banish/Dimensional Rift 3. The caster may not have more than three active Greater Undead Minion and Undead Minion Enchantments combined",
+  max: 31, charge: "", use: 1, per: "Life",
+  pointTotalId: "RaiseDeadval",
+  name: "Raise Dead", type: "Verbal",  freq: "1/Life",
+  school: "Death", range: "Touch: Others", materials: "",
+  incant: "Rise and fight again x5", 
+  effect: "Target Dead player who has not moved from where they died is returned to life and is Cursed. Target is also Suppressed for 30 seconds. Non-Persistent Enchantments on the player are removed before the player returns to life. Any Wounds on the player are healed.", 
+  limitations: "",
   notes: "",
   text: ""
 };
@@ -1016,9 +1028,9 @@ const CircleofProtection = {
   name: "Circle of Protection", type: "Enchantment",  freq: "1/Ref Chg x10",
   school: "Protection", range: "Self", materials: "",
   incant: "Circle of Protection x3", 
-  effect: "The caster and up to five willing players in physical contact with the caster become Insubstantial. The caster may end Circle of Protection at any time by ending his Insubstantial State with the standard Incantation. If the caster stops being Insubstantial by any means, the Enchantment ends. Players under the effect of Circle of Protection may use magic and abilities on players under the effect of the same Circle of Protection as though they were not Insubstantial", 
+  effect: "The caster and up to five willing players within six inches of the caster become Insubstantial. The caster may end Circle of Protection for all targets at any time by ending their Insubstantial State with the standard Incantation. All targets: Lose all other States and Ongoing Effects. May not move from their starting location.Are unaffected by abilities that require the player to move. May use magic and abilities on players under the effect of the same Circle of Protection as though they were not Insubstantial. May end the effects of Circle of Protection on themselves at any time with the standard Incantation.", 
   limitations: "",
-  notes: "Effects which would normally remove the Insubstantial State (Tracking, Release, etc) will remove this Enchantment. If a player affected by CoP is required to move by another effect, they do not move until CoP ends. If that other effect ends before CoP is removed, then the player does not need to move at all. Example One: A player affected by CoP is affected by Teleport. They cannot move until CoP ends, after which point they will remain Insubstantial and complete the Teleport movement as intended Example Two: A player affected by CoP is affected by Awe. They cannot move away from the other player until CoP ends; however, if they remain affected by the CoP for 30 seconds, Awe will expire naturally without the player having to move Example Three: A player affected by CoP is affected by Shove. They cannot move until CoP ends, after which point they must immediately fulfill the movement requirement of Shove Example Four: A player affected by CoP is affected by Banish. Banish applies a new Insubstantial state and completely replaces CoP. The target must immediately move and fulfill the effect of Banish",
+  notes: "",
   text: ""
 };
 const GreaterHeal = {
@@ -1043,7 +1055,7 @@ const ImbueShield = {
   pointTotalId: "ImbueShieldval",
   name: "Imbue Shield", type: "Enchantment",  freq: "2/Ref",
   school: "Protection", range: "Touch: Others", materials: "White Strip",
-  incant: "This shield shall neither break or bend x3", 
+  incant: "This shield shall neither bend nor break x3", 
   effect: "Shield wielded by the player cannot be destroyed. Engulfing effects hitting the shield are ignored", 
   limitations: "",
   notes: "",
@@ -1091,6 +1103,20 @@ const Teleport = {
   notes: "If the player’s Insubstantial state is removed before they have reached their destination, the effects of Teleport end. If Teleport is cast on self, the caster may end this Insubstantial state at any time by using the exit incantation for Insubstantial",
   text: ""
 };
+const DispelMagic = {
+  purchased: 0,
+  level: 4,
+  cost: 1,
+  max: 31, charge: "", use: 1, per: "Refresh",
+  pointTotalId: "DispelMagicval",
+  name: "Dispel Magic", type: "Verbal",  freq: "1/Ref",
+  school: "Sorcery", range: "20", materials: "",
+  incant: "By my power I dispel that magic x3", 
+  effect: "All Enchantments on target are removed", 
+  limitations: "",
+  notes: "Will always remove enchantments if successfully cast on a valid target, regardless of the player’s Traits, States, Immunities, Ongoing Effects, or Enchantments (except Sleight of Mind)",
+  text: ""
+};
 /*__________________________________________*/
 const Abeyance = {
   purchased: 0,
@@ -1134,20 +1160,7 @@ const BlessedAura = {
   notes: "",
   text: ""
 };
-const DispelMagic = {
-  purchased: 0,
-  level: 5,
-  cost: 1,
-  max: 31, charge: "", use: 1, per: "Refresh",
-  pointTotalId: "DispelMagicval",
-  name: "Dispel Magic", type: "Verbal",  freq: "1/Ref",
-  school: "Sorcery", range: "20", materials: "",
-  incant: "By my power I dispel that magic x3", 
-  effect: "All Enchantments on target are removed", 
-  limitations: "",
-  notes: "Will always remove enchantments if successfully cast on a valid target, regardless of the player’s Traits, States, Immunities, Ongoing Effects, or Enchantments (except Sleight of Mind)",
-  text: ""
-};
+
 const EnlightenedSoul = {
   purchased: 0,
   level: 5,
@@ -1171,22 +1184,22 @@ const GreaterResurrect = {
   name: "Greater Resurrect", type: "Verbal",  freq: "1/Ref",
   school: "Spirit", range: "Touch", materials: "",
   incant: "By the grace of the divine thou art resurrected x5", 
-  effect: "Target Dead player who has not moved from where they died is returned to life. Enchantments on the player are retained. Any wounds on the player are healed. Works regardless of any States on the target", 
+  effect: "Target Dead player who has not moved from where they died is returned to life. Enchantments on the player are retained. Any wounds on the player are healed. Works regardless of any States on the target, and removes Cursed if present.", 
   limitations: "",
   notes: "",
   text: ""
 };
-const GreaterUndeadMinion = {
+const UndeadMinion = {
   purchased: 0,
   level: 5,
   cost: 2,
   max: 31, charge: "", use: 1, per: "Refresh",
-  pointTotalId: "GreaterUndeadMinionval",
-  name: "Greater Undead Minion", type: "Enchantment",  freq: "1/Ref",
+  pointTotalId: "UndeadMinionval",
+  name: "Undead Minion", type: "Enchantment",  freq: "1/Ref",
   school: "Death", range: "Touch: Others", materials: "Yellow Strip",
   incant: "Flesh rots, bones break, skulls sigh, spirits take let the power of my will descend on thee let the power of my will restore thy spirit let the power of my will knit thy corpse let the power of my will give thee direction let the power of my will cheat thy death by the power of my will, arise my greater minion!", 
-  effect: "1. Bearer does not die or respawn as normal 2. Bearer is Cursed and Suppressed 3. When the bearer would normally die, they instead become Insubstantial, remove all Wounds, and must return to the caster as soon as possible. Insubstantial players may not move more than 10’ from the caster and may not speak. The caster may touch the player and then Incant “Rise and fight again” x5 to end this Insubstantial State so long as no living enemies are within 10’ of the bearer. 4. If this Enchantment's Insubstantial is removed from the Bearer in any other manner than outlined in item 3 (or prevented entirely) this Enchantment is removed 5. If the caster dies, this Enchantment is removed the next time the bearer returns to the caster 6. If the Enchantment is removed, the bearer dies 7. For the duration of the Enchantment, the bearer may treat the caster as a base for the purposes of the effects which require the bearer to go to their base 8. Dead players who have not moved from where they died may be targeted by Greater Undead Minion and are immediately returned to life with all Wounds removed and the Insubstantial State applied",
-  limitations: "1. The Insubstantial State imposed by Greater Undead Minion can be removed or prevented by any Magic or Ability which would normally be capable of removing Insubstantial or preventing Insubstantial such as Tracking, Planar Grounding, Release, or similar Magic and Abilities 2. If Banish or Dimensional Rift is cast on the bearer while they are Insubstantial, the Enchantment is removed, even if the player is unaffected by Banish/ Dimensional Rift 3. The caster may not have more than three active Greater Undead Minion and Undead Minion Enchantments combined",
+  effect: "When the bearer dies, they must return to the caster. While the bearer is enchanted, the caster gains Raise Dead (Unlimited) (m) which can only be cast with the bearer as the target, and ignores the requirement for the bearer to have not moved from where they died. For the duration of the Enchantment, the bearer may treat the caster as a base for the purposes of the effects which require the bearer to go to their base. This enchantment is persistent, and remains active while the bearer is dead.",
+  limitations: "The caster may not have more than three active Undead Minion Enchantments.",
   notes: "",
   text: ""
 };
@@ -1244,7 +1257,7 @@ const Necromancer = {
   name: "Necromancer", type: "Archetype",  freq: "",
   school: "Neutral", range: "", materials: "",
   incant: "", 
-  effect: "All magic purchased in the Death School becomes Charge x3. You may have a combined total of five active Greater Undead Minion and Undead Minion Enchantments", 
+  effect: "All magic purchased in the Death School becomes Charge x3. You may have five active Undead Minion Enchantments.", 
   limitations: "You may not purchase any Enchantments from the Protection School",
   notes: "",
   text: ""
@@ -1334,10 +1347,10 @@ const Warder = {
   text: ""
 };
 
-const abilityCount = 51;
+const abilityCount = 50;
 const abilities = [Priest,	//0
   BlessingAgainstWounds,	//1
-  Cancel,	//2
+  Warder,	//2
   ShieldSmall,	//3
   WeaponShort,	//4
   Experienced,	//5
@@ -1361,7 +1374,7 @@ const abilities = [Priest,	//0
   Iceball,	//23
   Mend,	//24
   Resurrect,	//25
-  UndeadMinion,	//26
+  RaiseDead,	//26
   BlessingAgainstHarm,	//27
   CircleofProtection,	//28
   GreaterHeal,	//29
@@ -1375,7 +1388,7 @@ const abilities = [Priest,	//0
   DispelMagic,	//37
   EnlightenedSoul,	//38
   GreaterResurrect,	//39
-  GreaterUndeadMinion,	//40
+  UndeadMinion,	//40
   StealLifeEssence,	//41
   AncestralArmor,	//42
   MassHealing,	//43
@@ -1384,8 +1397,8 @@ const abilities = [Priest,	//0
   PhoenixTears,	//46
   Banish,	//47
   ProtectionfromMagic,	//48
-  Stun,	//49
-  Warder	//50  
+  Stun	//49
+  
 ];
 function medievalAlert(message) {
     const modal = document.getElementById('medievalAlert');
