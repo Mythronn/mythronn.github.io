@@ -769,21 +769,7 @@ const Banish = {
   incant: "The Spirits banish thee from this place  x3", 
   effect: "Target Insubstantial player must return to their base where their Insubstantial State immediately ends", 
   limitations: "",
-  notes: "The target's Insubstantial State is replaced with a new insubstantial state from Banish. If the Insubstantial State is ended before reaching the base, the rest of the effect is ended as well. If Banish is cast on self, the caster may end this Insubstantial state at any time by using the exit incantation for Insubstantial. A player bearing Undead Minion or Greater Undead Minion who is currently Insubstantial has their Enchantment removed",
-  text: ""
-};
-const Cancel = {
-  purchased: 0,
-  level: 1,
-  cost: 0,
-  max: 1, charge: "", use: -1, per: "",
-  pointTotalId: "Cancelval",
-  name: "Cancel", type: "Neutral",  freq: "Unlimited",
-  school: "Neutral", range: "Touch", materials: "",
-  incant: "My work shall be undone x3", 
-  effect: "Remove an Enchantment cast by the caster", 
-  limitations: "",
-  notes: "",
+  notes: "The target's Insubstantial State is replaced with a new insubstantial state from Banish. If the Insubstantial State is ended before reaching the base, the rest of the effect is ended as well. If Banish is cast on self, the caster may end this Insubstantial state at any time by using the exit incantation for Insubstantial.",
   text: ""
 };
 const WeaponShort = {
@@ -834,7 +820,7 @@ const ForceBolt = {
   purchased: 0,
   level: 1,
   cost: 1,
-  max: 4, charge: "", use: 3, per: "Ball",
+  max: 8, charge: "", use: 3, per: "Ball",
   pointTotalId: "ForceBoltval",
   name: "Force Bolt", type: "Magic Ball",  freq: "3 Balls/Unlimited",
   school: "Sorcery", range: "Ball", materials: "Blue Magic Ball",
@@ -1108,7 +1094,7 @@ const Ravage = {
   pointTotalId: "Ravageval",
   name: "Ravage", type: "Verbal",  freq: "2/Life",
   school: "Death", range: "20", materials: "",
-  incant: "Death shall ravage thy flesh and make thee fragile x3", 
+  incant: "Death shall make thee fragile x3", 
   effect: "Target player is Fragile", 
   limitations: "",
   notes: "",
@@ -1182,7 +1168,7 @@ const Fireball = {
   name: "Fireball", type: "Magic Ball",  freq: "1 Ball Unlimited",
   school: "Flame", range: "Ball", materials: "Red Magic Ball",
   incant: "The flame of fire is mine to evoke x3", 
-  effect: "Fireball will have one of the following effects on the object first struck: 1. A weapon hit is destroyed 2. A shield hit is subject to Shield Destroying 3. Armor hit with Armor Points remaining is subject to Armor Destroying 4. A player hit receives a Wounds Kill Wound to that hit location", 
+  effect: "Fireball will have one of the following effects on the object first struck: 1. A weapon hit is destroyed 2. A shield hit is subject to Shield Destroying 3. Armor hit with Armor Points remaining is subject to Armor Destroying. 4. A player hit dies.", 
   limitations: "",
   notes: "",
   text: ""
@@ -1482,9 +1468,9 @@ const SphereofAnnihilation = {
   name: "Sphere of Annihilation", type: "Magic Ball",  freq: "1 Ball Unlimited",
   school: "Sorcery", range: "Ball", materials: "Black Magic Ball",
   incant: "The power of void is mine to evoke x3", 
-  effect: "Sphere of Annihilation will have one of the following effects on the object first struck: 1. A weapon hit is destroyed 2. A shield hit is subject to Shield Destroying 3. A player hit dies and is Cursed", 
+  effect: "Sphere of Annihilation ignores armor and enchantments and will have one of the following effects on the object first struck: A weapon struck is destroyed. A shield struck is subject to Shield Destroying. A player struck dies and is Cursed.", 
   limitations: "",
-  notes: "Ignores armor. Enchantments which affect equipment, such as Imbue Shield or Harden, do not function against Sphere of Annihilation",
+  notes: "Missile Block nullifies the effects of Sphere of Annihilation.",
   text: ""
 };
 const Warlock = {
@@ -1516,9 +1502,9 @@ const WordofMending = {
   text: ""
 };
 
-const abilityCount = 53;
+const abilityCount = 52;
 const abilities = [Banish, //0
-  Cancel, //1
+  WordofMending, //1
   WeaponShort, //2
   Experienced, //3
   ForceBarrier, //4
@@ -1568,8 +1554,8 @@ const abilities = [Banish, //0
   Persistent, //48
   ProtectionfromMagic, //49
   SphereofAnnihilation, //50
-  Warlock, //51
-  WordofMending //52
+  Warlock //51
+   
 ];
 function medievalAlert(message) {
     const modal = document.getElementById('medievalAlert');
