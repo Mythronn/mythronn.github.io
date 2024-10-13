@@ -127,7 +127,7 @@ function toggleList(){
   }
   for(let i = 1; i < 7; i++){
     levelList = ["", "", "", "", "", "", ""];
-    for(let k = 0; k < 51; k++){
+    for(let k = 0; k < abilityCount; k++){
       if(abilities[k].level == i && abilities[k].purchased > 0){
         levelList[i] = levelList[i] + "<BR>" + abilities[k].purchased +"x "+ abilities[k].name; 
         if(abilities[k].name == "Experienced" && abilities[k].purchased == 2){
@@ -167,7 +167,7 @@ function toggleList(){
 /*##################################*/
 function updateTable(){
   var cell;
-  for(let i = 0; i < 51; i++){
+  for(let i = 0; i < abilityCount; i++){
     cell = document.getElementById(i + "max");
     if(abilities[i].max == 31){
       cell.innerHTML = "-";
@@ -195,7 +195,7 @@ function resetPoints(fullReset){
     processRangerMinus();
     abilities[0].purchased = 0;
   }
-  for(let i = 0; i < 51; i++){
+  for(let i = 0; i < abilityCount; i++){
     abilities[i].purchased = 0;
     document.getElementById(abilities[i].pointTotalId).value = 0;
   }
@@ -453,7 +453,7 @@ function processRangerPlus(){
   abilities[8].cost = 0;
   abilities[26].cost = 0;
   abilities[35].cost = 0;
-  for(let i = 0; i < 51; i++){
+  for(let i = 0; i < abilityCount; i++){
     if(abilities[i].type == "Enchantment"){
       abilities[i].cost = abilities[i].cost * 2;
     }
@@ -466,7 +466,7 @@ function processRangerMinus(){
   abilities[8].cost = 4;
   abilities[26].cost = 4;
   abilities[35].cost = 5;
-  for(let i = 0; i < 51; i++){
+  for(let i = 0; i < abilityCount; i++){
     if(abilities[i].type == "Enchantment"){
       abilities[i].cost = abilities[i].cost / 2;
     }
@@ -480,7 +480,7 @@ function checkRangerPlus(index){
   var enchantedCost = [0,0,0,0,0,0,0];
   var tempAvailablePoints = [0,0,0,0,0,0,0];
   var tempCost = 0;
-  for(let i = 0; i < 51; i++){
+  for(let i = 0; i < abilityCount; i++){
     if(abilities[i].type == "Enchantment"){
       enchantedCost[abilities[i].level] = enchantedCost[abilities[i].level] + (abilities[i].cost * abilities[i].purchased);
     }
