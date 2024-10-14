@@ -30,6 +30,7 @@ document.addEventListener("DOMContentLoaded", function() {
       abilities[i].text += "<p3>Notes:</p3>  " + abilities[i].notes + "<BR>"; 
     }
   }
+  updateTable();
   //console.log("The DOM is fully loaded.");
 });
 /*##################################*/
@@ -984,7 +985,7 @@ const Swift = {
   max: 2, charge: "", use: 1, per: "Life",
   pointTotalId: "Swiftval",
   name: "Swift", type: "Meta-Magic",  freq: "1/Life",
-  school: "Neutral", range: "Touch: Others", materials: "",
+  school: "Neutral", range: "", materials: "",
   incant: "Swift", 
   effect: "Magic and abilities require only a single iteration of the incantation. For multi-line Incantations use the last line", 
   limitations: "May only be used on Magic and Abilities at a range of Ball, Touch, or Self. May not be used on the Charge incantation",

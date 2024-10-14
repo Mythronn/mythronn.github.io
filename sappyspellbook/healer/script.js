@@ -30,6 +30,7 @@ document.addEventListener("DOMContentLoaded", function() {
       abilities[i].text += "<p3>Notes:</p3>  " + abilities[i].notes + "<BR>"; 
     }
   }
+  updateTable();
   //console.log("The DOM is fully loaded.");
 });
 /*##################################*/
@@ -1240,7 +1241,7 @@ const MassHealing = {
   cost: 1,
   max: 1, charge: "", use: 1, per: "Refresh",
   pointTotalId: "MassHealingval",
-  name: "Mass Healing", type: "Verbal",  freq: "1/Ref",
+  name: "Mass Healing", type: "Enchantment",  freq: "1/Ref",
   school: "Spirit", range: "Self", materials: "Five Yellow Strips",
   incant: "Let the powers of healing flow through me x3", 
   effect: "Caster may Heal a player by touching them, stating 'I grant thee healing'. Bearer must remove an Enchantment strip after each use of Heal", 

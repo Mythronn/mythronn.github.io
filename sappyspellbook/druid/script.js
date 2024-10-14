@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
   parseURL();
+  updateTable();
   //console.log("The DOM is fully loaded.");
 });
 /*##################################*/
@@ -790,7 +791,7 @@ const Extension = {
   max: 2, charge: "", use: 1, per: "Life",
   pointTotalId: "Extensionval",
   name: "Extension", type: "Meta-Magic",
-  text: "<p2>Extension</p2><BR><p3>Freq:</p3>  1/Life<BR><p3>Type:</p3>  Meta-Magic<BR><p3>School:</p3> Neutral<BR><p3>Range:</p3> Touch: Others<BR><p3>Incant:</p3> <I>Extension</I><BR><p3>Effect:</p3> Verbal becomes 50. Only works on verbals with a range of 20"
+  text: "<p2>Extension</p2><BR><p3>Freq:</p3>  1/Life<BR><p3>Type:</p3>  Meta-Magic<BR><p3>School:</p3> Neutral<BR><p3>Incant:</p3> <I>Extension</I><BR><p3>Effect:</p3> Verbal becomes 50. Only works on verbals with a range of 20"
 };
 const GiftofFire = {
   purchased: 0,
@@ -835,7 +836,7 @@ const Stoneskin = {
   max: 2, charge: "", use: 1, per: "Refresh",
   pointTotalId: "Stoneskinval",
   name: "Stoneskin", type: "Enchantment",
-  text: "<p2>Stoneskin</p2><BR><p3>Freq:</p3>  1/Refresh<BR><p3>Type:</p3>  Protection<BR><p3>School:</p3> Neutral<BR><p3>Range:</p3> Touch: Others<BR><p3>Incant:</p3> <I>May nature protect thee from all forms of attack</I> x3<BR><p3>Materials:</p3> White Strip<BR><p3>Effect:</p3> Bearer gains 2 points of Magic armor affected as per Ancestral Armor"
+  text: "<p2>Stoneskin</p2><BR><p3>Freq:</p3>  1/Refresh<BR><p3>Type:</p3>  Enchantment<BR><p3>School:</p3> Protection<BR><p3>Range:</p3> Touch: Others<BR><p3>Incant:</p3> <I>May nature protect thee from all forms of attack</I> x3<BR><p3>Materials:</p3> White Strip<BR><p3>Effect:</p3> Bearer gains 2 points of Magic armor affected as per Ancestral Armor"
 };
 
 /*__________________________________________*/
@@ -1042,7 +1043,7 @@ const Ranger = {
   max: 1, charge: "", use: -1, per: "",
   pointTotalId: "Rangerval",
   name: "Ranger", type: "Archetype",
-  text: "<p2>Ranger</p2><BR><p3>Freq:</p3>  N/A<BR><p3>Type:</p3>  Neutral<BR><p3>Type:</p3>  Archetype<BR><p3>School:</p3> Neutral<BR><p3>Effect:</p3> The cost of all available Equipment is reduced to zero points. May use bows so long as a shield is not carried. The cost of all Enchantments is doubled"
+  text: "<p2>Ranger</p2><BR><p3>Freq:</p3>  N/A<BR><p3>Type:</p3>  Archetype<BR><p3>School:</p3> Neutral<BR><p3>Effect:</p3> The cost of all available Equipment is reduced to zero points. May use bows so long as a shield is not carried. The cost of all Enchantments is doubled"
 };
 const SnaringVines = {
   purchased: 0,
