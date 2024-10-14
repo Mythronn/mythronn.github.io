@@ -453,11 +453,30 @@ function processRangerPlus(){
   abilities[8].cost = 0;
   abilities[26].cost = 0;
   abilities[35].cost = 0;
-  for(let i = 0; i < abilityCount; i++){
-    if(abilities[i].type == "Enchantment"){
-      abilities[i].cost = abilities[i].cost * 2;
-    }
-  }
+  
+  abilities[47].cost = 2;
+  abilities[6].cost = 2;
+  abilities[9].cost = 2;
+  abilities[10].cost = 2;
+  abilities[14].cost = 2;
+  abilities[17].cost = 2;
+  abilities[18].cost = 2; 
+  abilities[21].cost = 2; 
+  abilities[24].cost = 2;
+  abilities[25].cost = 2;
+  abilities[27].cost = 4;
+  abilities[29].cost = 2;
+  abilities[30].cost = 2;
+  abilities[31].cost = 2;
+  abilities[36].cost = 2;
+  abilities[37].cost = 2;
+  abilities[38].cost = 2;
+  abilities[39].cost = 2;
+  abilities[40].cost = 2;
+  abilities[42].cost = 2;
+  abilities[45].cost = 2;
+  abilities[46].cost = 2; 
+  abilities[48].cost = 2;
   updateTable();
 }
 /*##################################*/
@@ -466,11 +485,31 @@ function processRangerMinus(){
   abilities[8].cost = 4;
   abilities[26].cost = 4;
   abilities[35].cost = 5;
-  for(let i = 0; i < abilityCount; i++){
-    if(abilities[i].type == "Enchantment"){
-      abilities[i].cost = abilities[i].cost / 2;
-    }
-  }
+  
+  abilities[47].cost = 1;
+  abilities[6].cost = 1;
+  abilities[9].cost = 1;
+  abilities[10].cost = 1;
+  abilities[14].cost = 1;
+  abilities[17].cost = 1;
+  abilities[18].cost = 1; 
+  abilities[21].cost = 1; 
+  abilities[24].cost = 1;
+  abilities[25].cost = 1;
+  abilities[27].cost = 2;
+  abilities[29].cost = 1;
+  abilities[30].cost = 1;
+  abilities[31].cost = 1;
+  abilities[36].cost = 1;
+  abilities[37].cost = 1;
+  abilities[38].cost = 1;
+  abilities[39].cost = 1;
+  abilities[40].cost = 1;
+  abilities[42].cost = 1;
+  abilities[45].cost = 1;
+  abilities[46].cost = 1; 
+  abilities[48].cost = 1;
+  updateTable();
 }
 /*##################################*/
 function checkRangerPlus(index){
