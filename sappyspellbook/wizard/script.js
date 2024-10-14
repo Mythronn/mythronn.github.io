@@ -462,7 +462,7 @@ function evokerCheck(index){
 function warlockCheck(index){
   var a = index;
   if(abilities[51].purchased > 0){
-    if(abilities[a].type == "Verbal" && !(abilities[a].school == "Death" || abilities[a].School == "Flame")){
+    if(abilities[a].type == "Verbal" && !(abilities[a].school == "Death" || abilities[a].school == "Flame")){
       
        return false;
        }
@@ -472,7 +472,7 @@ function warlockCheck(index){
   }  
   if(abilities[a].name == "Warlock"){
     for(let i = 0; i < abilityCount; i++){
-      if((abilities[i].type == "Verbal" && !(abilities[i].School == "Death" || abilities[i].School == "Flame")) && abilities[i].purchased > 0){
+      if((abilities[i].type == "Verbal" && !(abilities[i].school == "Death" || abilities[i].school == "Flame")) && abilities[i].purchased > 0){
         
         return false; 
         }
