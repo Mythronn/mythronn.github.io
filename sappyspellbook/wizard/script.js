@@ -995,7 +995,7 @@ const DispelMagic = {
   cost: 1,
   max: 31, charge: "Charge x3", use: 1, per: "Refresh",
   pointTotalId: "DispelMagicval",
-  name: "DispelMagic", type: "Verbal",  freq: "1/Ref Chg x3",
+  name: "Dispel Magic", type: "Verbal",  freq: "1/Ref Chg x3",
   school: "Sorcery", range: "20", materials: "",
   incant: "By my power I dispel that magic x3", 
   effect: "All Enchantments on target are removed", 
