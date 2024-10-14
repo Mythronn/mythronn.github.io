@@ -295,7 +295,7 @@ function processExpChange(){
       abilities[47].charge = "";
     }
     if(abilities[5].selectedAbility1 == "Dispel Magic" || abilities[5].selectedAbility2 == "Dispel Magic"){
-      abilities[37].charge = "Charge x5";
+      abilities[37].charge = "Charge x10";
     }
     else{
       abilities[37].charge = "";
