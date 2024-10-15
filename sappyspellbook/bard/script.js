@@ -303,12 +303,6 @@ function processExpChange(fromUser){
     if(abilities[3].purchased == 2){
       document.getElementById("Experiencedplus").disabled = false;
     }
-    if(abilities[3].selectedAbility1 == "Amplification" || abilities[3].selectedAbility2 == "Amplification"){
-      abilities[21].charge = "Charge x10";
-    }
-    else{
-      abilities[21].charge = "";
-    }
     if(abilities[3].selectedAbility1 == "Awe" || abilities[3].selectedAbility2 == "Awe"){
       abilities[15].charge = "Charge x5";
     }
