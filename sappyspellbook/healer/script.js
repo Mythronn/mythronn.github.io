@@ -1415,7 +1415,17 @@ function saveList(){
     const blob = new Blob([textToSave], { type: 'text/plain' });
     const link = document.createElement('a');
     link.href = URL.createObjectURL(blob);
-    link.download = 'list.txt'; 
+    link.download = document.title + '.txt'; 
     link.click();
     URL.revokeObjectURL(link.href);
+}
+
+function titleList(){
+  const newTitle = prompt("Enter a title for this list:");
+  if (newTitle) {
+    document.title = newTitle;
+    document.getElementById('titleShow').innerHTML = newTitle;
+  } else {
+    console.log("Title change cancelled.");
+  }
 }
