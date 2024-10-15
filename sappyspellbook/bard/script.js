@@ -283,11 +283,11 @@ function updateExperienced(){
     document.getElementById("exp1").disabled = true;
     document.getElementById("exp2").disabled = true;
   }
-  processExpChange();
+  processExpChange(0);
   updateTable();
 }
 /*##################################*/
-function processExpChange(){  
+function processExpChange(fromUser){  
     if(abilities[3].purchased == 0){
       if(document.getElementById("exp1").value != "Select Spell"){
         document.getElementById("Experiencedplus").disabled = false;
@@ -376,6 +376,10 @@ function processExpChange(){
       abilities[29].charge = "";
     }
     createURL();
+    if(fromUser == 1){
+      pointPlus(3);
+    }
+    
  }
 /*##################################*/
 function legendCheck(index){
