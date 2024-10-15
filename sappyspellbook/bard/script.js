@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 window.addEventListener('hashchange', function() {
   var referrer = document.referrer;
-  console.log("The referrer is: "referrer);
+  console.log("The referrer is: " + referrer);
   //if (referrer === "" || !referrer.includes(window.location.origin)) 
     
     parseURL();
