@@ -190,11 +190,13 @@ function toggleList(){
       tables[i].style.display = "none";
       lists[i].style.display = "block";
       document.getElementById("saveList").hidden = false;
+      document.getElementById("titleList").hidden = false;
     }
     else{
       tables[i].style.display = "block";
       lists[i].style.display = "none";
       document.getElementById("saveList").hidden = true;
+      document.getElementById("titleList").hidden = true;
     } 
   }   
 }
