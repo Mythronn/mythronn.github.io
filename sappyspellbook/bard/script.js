@@ -35,12 +35,12 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 window.addEventListener('hashchange', function() {
   var referrer = document.referrer;
-  console.log(referrer);
-  if (referrer === "" || !referrer.includes(window.location.origin)) {
+  console.log("The referrer is: "referrer);
+  //if (referrer === "" || !referrer.includes(window.location.origin)) 
     
     parseURL();
     updateTable();;
-}
+
   
 });
 
