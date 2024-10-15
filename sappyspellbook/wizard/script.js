@@ -33,6 +33,14 @@ document.addEventListener("DOMContentLoaded", function() {
   updateTable();
   //console.log("The DOM is fully loaded.");
 });
+window.addEventListener('hashchange', function() {
+  var referrer = document.referrer;
+  //console.log("The referrer is: " + referrer);
+  //if (referrer === "" || !referrer.includes(window.location.origin)) 
+    
+    parseURL();
+    updateTable();;  
+});
 /*##################################*/
 function parseURL(){
   fullurl = window.location.href.split("/");
