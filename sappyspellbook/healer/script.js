@@ -156,7 +156,6 @@ function toggleList(){
   var tables = [];
   var lists = [];
   var levelList = ["", "", "", "", "", "", ""];
-  window.history.pushState({}, "", "#Test")
   
   for(let i = 1; i < 7; i++){
     tables[i] = document.getElementById("table-lvl" + i);
