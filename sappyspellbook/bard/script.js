@@ -193,11 +193,13 @@ function toggleList(){
       tables[i].style.display = "none";
       lists[i].style.display = "block";
       document.getElementById("saveList").hidden = false;
+      document.getElementById("titleList").hidden = false;
     }
     else{
       tables[i].style.display = "block";
       lists[i].style.display = "none";
       document.getElementById("saveList").hidden = true;
+      document.getElementById("titleList").hidden = true;
     } 
   }   
 }
@@ -1268,7 +1270,16 @@ function saveList(){
     const blob = new Blob([textToSave], { type: 'text/plain' });
     const link = document.createElement('a');
     link.href = URL.createObjectURL(blob);
-    link.download = 'list.txt'; 
+    link.download = document.title + '.txt'; 
     link.click();
     URL.revokeObjectURL(link.href);
+}
+
+function changeTitle() {
+  const newTitle = prompt("Enter a title for this list:");
+  if (newTitle) {
+    document.title = newTitle;
+  } else {
+    console.log("Title change cancelled.");
+  }
 }
