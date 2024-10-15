@@ -1,7 +1,41 @@
-input[type='number']{
-    width: 29px;
-    text-align: right;
+/*input stuff */
+input[type="number"] {
+  width: 30px;
+  height: 16px;
+  background: #f4e2c0;
+  border: 2px solid #4b2c20;
+  border-radius: 8px;
+  box-shadow: inset -3px -3px 6px rgba(0, 0, 0, 0.2), 
+              inset 3px 3px 6px rgba(255, 255, 255, 0.5);
+  font-size: 16px;
+  color: #000000;
+  text-align: center;
+  pointer-events: none;  /* Disable interaction */
+  -moz-appearance: textfield;  /* Hide arrows in Firefox */
+  -webkit-appearance: none;    /* Hide arrows in Chrome, Safari */
+  appearance: none;            /* Modern browsers fallback */
 }
+
+input[type="number"]::placeholder {
+  color: #8b6f4d;
+  opacity: 1; 
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none; /* Hide arrows in WebKit browsers */
+  margin: 0;
+}
+
+input[type="number"]::-moz-focus-outer {
+  border: none; /* Prevent Firefox focus outline */
+}
+
+input[type="number"]:focus {
+  outline: none;
+  border-color: #764a3b;
+}
+/*list stuff */
 .listOnly{
   font-size: medium;
   font-family: helvetica;
