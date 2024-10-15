@@ -34,6 +34,7 @@ document.addEventListener("DOMContentLoaded", function() {
   //console.log("The DOM is fully loaded.");
 });
 window.addEventListener('hashchange', function() {
+  var referrer = document.referrer;
   if (referrer === "" || !referrer.includes(window.location.origin)) {
     resetPoints(1);
     parseURL();
