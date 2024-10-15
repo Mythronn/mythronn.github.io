@@ -35,8 +35,9 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 window.addEventListener('hashchange', function() {
   var referrer = document.referrer;
+  console.log(referrer);
   if (referrer === "" || !referrer.includes(window.location.origin)) {
-    resetPoints(1);
+    
     parseURL();
     updateTable();;
 }
