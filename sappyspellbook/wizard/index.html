@@ -80,8 +80,8 @@
                <td class="ui-table-priority-3" id="2max">1</td>
              </tr>
              <tr>
-              <th class="ui-table-priority-1">  <button id="Experiencedplus" class="fantasy-button" type="button" disabled onclick="pointPlus(3)">+</button> <button id="Experiencedminus" class="fantasy-button" type="button" onclick="pointMinus(3)">-</button> <input type="number" id="Experiencedval" name="Experiencedval"  value = "0" size = "2" disabled > <BR><BR>
-    <select id="exp1"class="dropdown" name="exp1" onchange="processExpChange()">
+              <th class="ui-table-priority-1">  <button id="Experiencedplus" class="fantasy-button" type="button" disabled onclick="pointPlus(3)" hidden>+</button> <button id="Experiencedminus" class="fantasy-button" type="button" onclick="pointMinus(3)">-</button> <input type="number" id="Experiencedval" name="Experiencedval"  value = "0" size = "2" disabled > <BR><BR>
+    <select id="exp1"class="dropdown" name="exp1" onchange="processExpChange(1)">
      <option value="Select Spell">Select Spell</option>
      <option value="Astral Intervention">Astral Intervention</option>
      <option value="Banish">Banish</option>
@@ -104,7 +104,7 @@
      <option value="Teleport">Teleport</option>
      <option value="Throw">Throw</option>
    </select>
-   <select id="exp2" class="dropdown" name="exp2" onchange="processExpChange()" disabled>      
+   <select id="exp2" class="dropdown" name="exp2" onchange="processExpChange(1)" disabled>      
      <option value="Select Spell">Select Spell</option>
      <option value="Astral Intervention">Astral Intervention</option>
      <option value="Banish">Banish</option>

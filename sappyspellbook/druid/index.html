@@ -93,8 +93,8 @@
              <td class="ui-table-priority-3" id="3max">2</td>
            </tr>
            <tr>
-             <th class="ui-table-priority-1">  <button id="Experiencedplus" class="fantasy-button" type="button" disabled onclick="pointPlus(4)">+</button> <button id="Experiencedminus" class="fantasy-button" type="button" onclick="pointMinus(4)">-</button> <input type="number" id="Experiencedval" name="Experiencedval"  value = "0" size = "2" disabled > <BR><BR>
-   <select id="exp1"class="dropdown" name="exp1" onchange="processExpChange()">
+             <th class="ui-table-priority-1">  <button id="Experiencedplus" class="fantasy-button" type="button" disabled onclick="pointPlus(4)" hidden>+</button> <button id="Experiencedminus" class="fantasy-button" type="button" onclick="pointMinus(4)">-</button> <input type="number" id="Experiencedval" name="Experiencedval"  value = "0" size = "2" disabled > <BR><BR>
+   <select id="exp1"class="dropdown" name="exp1" onchange="processExpChange(1)">
      <option value="Select Spell">Select Spell</option>
     <option value="Dispel Magic">Dispel Magic</option>
     <option value="Greater Mend">Greater Mend</option>
@@ -104,7 +104,7 @@
     <option value="Release">Release</option>
     <option value="Teleport">Teleport</option>
   </select>
-  <select id="exp2" class="dropdown" name="exp2" onchange="processExpChange()" disabled>
+  <select id="exp2" class="dropdown" name="exp2" onchange="processExpChange(1)" disabled>
     <option value="Select Spell">Select Spell</option>
     <option value="Dispel Magic">Dispel Magic</option>
     <option value="Greater Mend">Greater Mend</option>
