@@ -1279,7 +1279,7 @@ function titleList(){
   const newTitle = prompt("Enter a title for this list:");
   if (newTitle) {
     document.title = newTitle;
-    document.getElementById('titleList').innerHTML = newTitle;
+    document.getElementById('titleShow').innerHTML = newTitle;
   } else {
     console.log("Title change cancelled.");
   }
