@@ -1275,10 +1275,11 @@ function saveList(){
     URL.revokeObjectURL(link.href);
 }
 
-function titleList() {
+function titleList(){
   const newTitle = prompt("Enter a title for this list:");
   if (newTitle) {
     document.title = newTitle;
+    document.getElementById('titleList').innerHTML = newTitle;
   } else {
     console.log("Title change cancelled.");
   }
