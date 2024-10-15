@@ -1,13 +1,13 @@
 /*input stuff */
 input[type="number"] {
-  width: 30px;
+  width: 20px;
   height: 16px;
   background: #f4e2c0;
   border: 2px solid #4b2c20;
   border-radius: 8px;
   box-shadow: inset -3px -3px 6px rgba(0, 0, 0, 0.2), 
               inset 3px 3px 6px rgba(255, 255, 255, 0.5);
-  font-size: 16px;
+  font-size: 14px;
   color: #000000;
   text-align: center;
   pointer-events: none;  /* Disable interaction */
