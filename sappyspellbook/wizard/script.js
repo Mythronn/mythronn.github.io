@@ -597,22 +597,48 @@ function updatePointsAvailable(){
   document.getElementById("ltp5").hidden = true;
   document.getElementById("ltp6").hidden = true;
   if(reqLevel == 1 && ltpReq == false){
-      document.getElementById("ltp1").hidden = false;
+    document.getElementById("ltp1").innerText = "(+1 with Look the Part)";
+    document.getElementById("ltp1").hidden = false;
   }
-  if(reqLevel == 2 && ltpReq == false){
+  else if(reqLevel == 2 && ltpReq == false){
+      document.getElementById("ltp2").innerText = "(+1 with Look the Part)";
       document.getElementById("ltp2").hidden = false;
   }
-  if(reqLevel == 3 && ltpReq == false){
+  else if(reqLevel == 3 && ltpReq == false){
+      document.getElementById("ltp3").innerText = "(+1 with Look the Part)";
       document.getElementById("ltp3").hidden = false;
   }
-  if(reqLevel == 4 && ltpReq == false){
+  else if(reqLevel == 4 && ltpReq == false){
+      document.getElementById("ltp4").innerText = "(+1 with Look the Part)";
       document.getElementById("ltp4").hidden = false;
   }
-  if(reqLevel == 5 && ltpReq == false){
+  else if(reqLevel == 5 && ltpReq == false){
+      document.getElementById("ltp5").innerText = "(+1 with Look the Part)";
       document.getElementById("ltp5").hidden = false;
   }
-  if(reqLevel == 6 && ltpReq == false){
-      document.getElementById("ltp6").hidden = false;
+  else if(reqLevel == 1 && ltpReq == true){
+    document.getElementById("ltp1").innerText = "(Look the Part Required)";
+    document.getElementById("ltp1").hidden = false;
+  }
+  else if(reqLevel == 2 && ltpReq == true){
+      document.getElementById("ltp2").innerText = "(Look the Part Required)";
+      document.getElementById("ltp2").hidden = false;
+  }
+  else if(reqLevel == 3 && ltpReq == true){
+      document.getElementById("ltp3").innerText = "(Look the Part Required)";
+      document.getElementById("ltp3").hidden = false;
+  }
+  else if(reqLevel == 4 && ltpReq == true){
+      document.getElementById("ltp4").innerText = "(Look the Part Required)";
+      document.getElementById("ltp4").hidden = false;
+  }
+  else if(reqLevel == 5 && ltpReq == true){
+      document.getElementById("ltp5").innerText = "(Look the Part Required)";
+      document.getElementById("ltp5").hidden = false;
+  }
+  else if(reqLevel == 6 && ltpReq == true){
+    document.getElementById("ltp6").innerText = "(Look the Part Required)";
+    document.getElementById("ltp6").hidden = false;
   }
   createURL();
 }     
