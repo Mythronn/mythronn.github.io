@@ -477,6 +477,7 @@ function updatePointsAvailable(){
   if(temp == 31){
     document.getElementById("ltpCheckBox").disabled = false;
   }
+  temp = 0;
 
   if(ltpChecked){
     for(let i = 1; i < 7; i++){
