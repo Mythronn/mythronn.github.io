@@ -62,7 +62,8 @@ function parseURL(){
       abilities[3].selectedAbility1 = exps[1].replace("_", " ");
       abilities[3].selectedAbility2 = exps[2].replace("_", " ");
       if(exps[3] != null && exps[3] != ""){
-        document.title = (document.title).replace("_", " ")
+        document.title = (exps[3]).replace("_", " ")
+        document.getElementById('titleShow').innerHTML = document.title;
       }
       reprocessPoints(0);
   }
