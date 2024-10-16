@@ -522,22 +522,27 @@ function updatePointsAvailable(){
   else if(reqLevel == 1 && ltpReq == true){
     document.getElementById("ltp1").innerText = "(Look the Part Required)";
     document.getElementById("ltp1").hidden = false;
+    document.getElementById("level2Points").value = 5;
   }
   else if(reqLevel == 2 && ltpReq == true){
       document.getElementById("ltp2").innerText = "(Look the Part Required)";
       document.getElementById("ltp2").hidden = false;
+      document.getElementById("level3Points").value = 5;
   }
   else if(reqLevel == 3 && ltpReq == true){
       document.getElementById("ltp3").innerText = "(Look the Part Required)";
       document.getElementById("ltp3").hidden = false;
+      document.getElementById("level4Points").value = 5;
   }
   else if(reqLevel == 4 && ltpReq == true){
       document.getElementById("ltp4").innerText = "(Look the Part Required)";
       document.getElementById("ltp4").hidden = false;
+      document.getElementById("level5Points").value = 5;
   }
   else if(reqLevel == 5 && ltpReq == true){
       document.getElementById("ltp5").innerText = "(Look the Part Required)";
       document.getElementById("ltp5").hidden = false;
+      document.getElementById("level6Points").value = 5;
   }
   else if(reqLevel == 6 && ltpReq == true){
     document.getElementById("ltp6").innerText = "(Look the Part Required)";
