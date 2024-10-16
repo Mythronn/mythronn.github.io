@@ -61,7 +61,7 @@ function parseURL(){
       exps = url.split("-");
       abilities[3].selectedAbility1 = exps[1].replace("_", " ");
       abilities[3].selectedAbility2 = exps[2].replace("_", " ");
-      if(abiliites[4] != null && abiliites[4] != ""){
+      if(exps[3] != null && exps[3] != ""){
         document.title = (document.title).replace("_", " ")
       }
       reprocessPoints(0);
