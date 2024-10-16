@@ -65,16 +65,32 @@ function parseURL(){
         document.title = (exps[3]).replace("_", " ")
         document.getElementById('titleShow').innerHTML = document.title;
       }
+      if(exps[4] != null && exps[4] != ""){
+        if(exps[4] == 1){
+          document.getElementById("ltpCheckBox").checked = true;
+        }
+        if(exps[4] == 0){
+          document.getElementById("ltpCheckBox").checked = false;
+        }
+      }
       reprocessPoints(0);
   }
 }
 /*##################################*/
 function createURL(){
   let s = "#";
+  let chk = 0;
+  if(document.getElementById("ltpCheckBox").checked){
+    chk = 1
+  }
+  else{
+    chk = 0;
+  }
+  
   for(let i = 0; i < abilityCount; i++){
       s += encodeMap(abilities[i].purchased);
   }
-  s += "-" + (abilities[3].selectedAbility1).replace(" ", "_") + "-" + (abilities[3].selectedAbility2).replace(" ", "_") + "-" + (document.title).replace(" ", "_");
+  s += "-" + (abilities[3].selectedAbility1).replace(" ", "_") + "-" + (abilities[3].selectedAbility2).replace(" ", "_") + "-" + (document.title).replace(" ", "_") + "-" + chk;
   s = replaceRepeatingZeros(s);
   window.history.pushState({}, "", s);
 }
