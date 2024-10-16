@@ -461,6 +461,7 @@ function checkPointsAvailable(index){
 /*##################################*/
 function updatePointsAvailable(){  
   reqLevel = 1;
+  let ltpReq = false;
   for(let i = 1; i < 7; i++){
     document.getElementById("level"+i+"Points").value = pointsAvailable[i];
   }
@@ -473,11 +474,19 @@ function updatePointsAvailable(){
   if(reqLevel == 6 && pointsAvailable[6] == 0 || reqLevel == 5 && pointsAvailable[6] == 5 || reqLevel == 4 && pointsAvailable[5] == 4 || reqLevel == 3 && pointsAvailable[4] == 4 || reqLevel == 2 && pointsAvailable[3] == 4 || reqLevel == 1 && pointsAvailable[2] == 4){
     document.getElementById("ltp").hidden = false;
     document.getElementById("ltp").innerText = "(Look the Part Required)";
+    ltpReq = true;
   }
   else{
     document.getElementById("ltp").hidden = true;
     document.getElementById("ltp").innerText = "";
+    ltpReq = false;
   }
+  if(reqLevel == 1 && ltpReq == false){
+      document.getElementById("ltp1").hidden = false;
+  }
+  if(reqLevel == 1 && ltpReq == true){
+    document.getElementById("ltp1").hidden = true;
+}
   createURL();
 }     
 /*##################################*/
