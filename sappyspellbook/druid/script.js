@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
   parseURL();
+  updatePointsAvailable();
   updateTable();
   //console.log("The DOM is fully loaded.");
 });
@@ -338,6 +339,7 @@ function summonerCheck(index){
 }
 /*##################################*/
 function pointPlus(index, fromClick) { 
+  document.getElementById("ltpCheckBox").disabled = true;
   var a = index;
   tempCost = 0;
   if(abilities[a].max == abilities[a].purchased){
@@ -390,23 +392,52 @@ function checkPointsAvailable(index){
   for(let i = abilities[a].level; i < 7; i++){
     tempPoints = tempPoints + pointsAvailable[i];
   }
+  if(document.getElementById("ltpCheckBox").checked == false){
+    tempPoints--;
+  }
   return (tempPoints >= abilities[a].cost); 
 }
 /*##################################*/
 function updatePointsAvailable(){  
   reqLevel = 1;
   let ltpReq = false;
+  let ltpChecked = document.getElementById("ltpCheckBox").checked;
+  let tempCount = 0;
+  let level6value = 0;
   for(let i = 1; i < 7; i++){
     document.getElementById("level"+i+"Points").value = pointsAvailable[i];
+    tempCount = tempCount + pointsAvailable[i];
   }
-  for(let i = 1; i < 7; i++){
-    if(pointsSpent[i] > 0 || pointsAvailable[i] < 4 || (i == 6 && pointsAvailable[i] < 5)){
-      reqLevel = i;
+  if(tempCount == 31){
+    document.getElementById("ltpCheckBox").disabled = false;
+  }
+  
+
+  if(ltpChecked){
+    for(let i = 1; i < 7; i++){
+      if(pointsSpent[i] > 0 || pointsAvailable[i] < 4 || (i == 6 && pointsAvailable[i] < 5)){
+        reqLevel = i;
+      }
     }
   }
+  else{
+    for(let i = 1; i < 7; i++){
+      if(pointsSpent[i] > 0 || pointsAvailable[i] < 5 || (i == 6 && pointsAvailable[i] < 6)){
+        reqLevel = i;
+      }
+    }
+  }
+  
+
+  level6value = document.getElementById("level6Points").value;
+  if(level6value > 0){
+    document.getElementById("level6Points").value = level6value - 1;
+  }
+
+
   document.getElementById("reqLevel").value = reqLevel;
-  if(reqLevel == 6 && pointsAvailable[6] == 0 || reqLevel == 5 && pointsAvailable[6] == 5 || reqLevel == 4 && pointsAvailable[5] == 4 || reqLevel == 3 && pointsAvailable[4] == 4 || reqLevel == 2 && pointsAvailable[3] == 4 || reqLevel == 1 && pointsAvailable[2] == 4){
-    document.getElementById("ltp").hidden = false;
+  if(ltpChecked && reqLevel == 6 && pointsAvailable[6] == 0 || reqLevel == 5 && pointsAvailable[6] == 5 || reqLevel == 4 && pointsAvailable[5] == 4 || reqLevel == 3 && pointsAvailable[4] == 4 || reqLevel == 2 && pointsAvailable[3] == 4 || reqLevel == 1 && pointsAvailable[2] == 4){
+    document.getElementById("ltp").hidden = true;
     document.getElementById("ltp").innerText = "(Look the Part Required)";
     ltpReq = true;
   }
@@ -421,52 +452,55 @@ function updatePointsAvailable(){
   document.getElementById("ltp4").hidden = true;
   document.getElementById("ltp5").hidden = true;
   document.getElementById("ltp6").hidden = true;
-  if(reqLevel == 1 && ltpReq == false){
-    document.getElementById("ltp1").innerText = "(+1 with Look the Part)";
-    document.getElementById("ltp1").hidden = false;
+  if(ltpChecked && reqLevel == 1 && ltpReq == false){
+     document.getElementById("level1Points").value = pointsAvailable[1] + 1;
   }
-  else if(reqLevel == 2 && ltpReq == false){
-      document.getElementById("ltp2").innerText = "(+1 with Look the Part)";
-      document.getElementById("ltp2").hidden = false;
+  else if(ltpChecked && reqLevel == 2 && ltpReq == false){
+    document.getElementById("level2Points").value = pointsAvailable[2] + 1;
   }
-  else if(reqLevel == 3 && ltpReq == false){
-      document.getElementById("ltp3").innerText = "(+1 with Look the Part)";
-      document.getElementById("ltp3").hidden = false;
+  else if(ltpChecked && reqLevel == 3 && ltpReq == false){
+    document.getElementById("level3Points").value = pointsAvailable[3] + 1;
   }
-  else if(reqLevel == 4 && ltpReq == false){
-      document.getElementById("ltp4").innerText = "(+1 with Look the Part)";
-      document.getElementById("ltp4").hidden = false;
+  else if(ltpChecked && reqLevel == 4 && ltpReq == false){
+    document.getElementById("level4Points").value = pointsAvailable[4] + 1;
   }
-  else if(reqLevel == 5 && ltpReq == false){
-      document.getElementById("ltp5").innerText = "(+1 with Look the Part)";
-      document.getElementById("ltp5").hidden = false;
+  else if(ltpChecked && reqLevel == 5 && ltpReq == false){
+    document.getElementById("level5Points").value = pointsAvailable[5] + 1;
   }
-  else if(reqLevel == 1 && ltpReq == true){
+  else if(ltpChecked && reqLevel == 6 && ltpReq == false){
+    document.getElementById("level6Points").value = pointsAvailable[6];
+}
+  else if(ltpChecked && reqLevel == 1 && ltpReq == true){
     document.getElementById("ltp1").innerText = "(Look the Part Required)";
     document.getElementById("ltp1").hidden = false;
+    document.getElementById("level2Points").value = 5;
   }
-  else if(reqLevel == 2 && ltpReq == true){
+  else if(ltpChecked && reqLevel == 2 && ltpReq == true){
       document.getElementById("ltp2").innerText = "(Look the Part Required)";
       document.getElementById("ltp2").hidden = false;
+      document.getElementById("level3Points").value = 5;
   }
-  else if(reqLevel == 3 && ltpReq == true){
+  else if(ltpChecked && reqLevel == 3 && ltpReq == true){
       document.getElementById("ltp3").innerText = "(Look the Part Required)";
       document.getElementById("ltp3").hidden = false;
+      document.getElementById("level4Points").value = 5;
   }
-  else if(reqLevel == 4 && ltpReq == true){
+  else if(ltpChecked && reqLevel == 4 && ltpReq == true){
       document.getElementById("ltp4").innerText = "(Look the Part Required)";
       document.getElementById("ltp4").hidden = false;
+      document.getElementById("level5Points").value = 5;
   }
-  else if(reqLevel == 5 && ltpReq == true){
+  else if(ltpChecked && reqLevel == 5 && ltpReq == true){
       document.getElementById("ltp5").innerText = "(Look the Part Required)";
       document.getElementById("ltp5").hidden = false;
+      document.getElementById("level6Points").value = 5;
   }
-  else if(reqLevel == 6 && ltpReq == true){
+  else if(ltpChecked && reqLevel == 6 && ltpReq == true){
     document.getElementById("ltp6").innerText = "(Look the Part Required)";
     document.getElementById("ltp6").hidden = false;
   }
   createURL();
-}     
+}
 /*##################################*/
 function pointMinus(index) {
   var a = index;    
