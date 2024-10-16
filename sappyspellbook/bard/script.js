@@ -462,6 +462,7 @@ function checkPointsAvailable(index){
 function updatePointsAvailable(){  
   reqLevel = 1;
   let ltpReq = false;
+  let level6value = 0;
   for(let i = 1; i < 7; i++){
     document.getElementById("level"+i+"Points").value = pointsAvailable[i];
   }
@@ -471,9 +472,9 @@ function updatePointsAvailable(){
     }
   }
 
-  if(reqLevel < 6){
-    document.getElementById("level6Points").value = 5;
-    document.getElementById("level"+(reqLevel + 1)+"Points") += 1;
+  level6value = document.getElementById("level6Points").value;
+  if(level6value > 0){
+    document.getElementById("level6Points").value = level6value - 1;
   }
 
 
