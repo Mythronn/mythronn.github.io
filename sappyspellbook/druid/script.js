@@ -633,7 +633,7 @@ const Entangle = {
   cost: 1,
   max: 2, charge: "", use: 2, per: "Ball",
   pointTotalId: "Entangleval",
-  name: "Entangle", type: "Ball",
+  name: "Entangle", type: "Magic Ball",
   text: "<p2>Entangle</p2><BR><p3>Freq:</p3> 2 Balls/Unlimited<BR><p3>Type:</p3>  Magic Ball<BR><p3>School:</p3> Subdual<BR><p3>Range:</p3> Ball<BR><p3>Incant:</p3> <I>The strength of earth is mine to evoke</I> x3<BR><p3>Materials:</p3> Brown Magic Ball<BR><p3>Effect:</p3> Target is Stopped for 60 seconds. Engulfing"
 };
 const WeaponShort = {
@@ -728,7 +728,7 @@ const ForceBolt = {
   cost: 1,
   max: 2, charge: "", use: 2, per: "Ball",
   pointTotalId: "ForceBoltval",
-  name: "Force Bolt", type: "Ball",
+  name: "Force Bolt", type: "Magic Ball",
   text: "<p2>Force Bolt</p2><BR><p3>Freq:</p3> 2 Balls/Unlimited<BR><p3>Type:</p3>  Magic Ball<BR><p3>School:</p3> Sorcery<BR><p3>Range:</p3> Touch: Ball<BR><p3>Incant:</p3> <I>Forcebolt</I> x3<BR><p3>Materials:</p3> Blue Magic Ball<BR><p3>Effect:</p3> Force Bolt will have one of the following effects on the object first struck:<BR>1. A weapon hit is destroyed<BR>2. Armor hit with Armor Points remaining is subject to Armor Breaking<BR>3. A player hit receives a Wound to that hit location"
 };
 const Innate = {
@@ -878,7 +878,7 @@ const Iceball = {
   cost: 1,
   max: 2, charge: "", use: 1, per: "Ball",
   pointTotalId: "Iceballval",
-  name: "Iceball", type: "Ball",
+  name: "Iceball", type: "Magic Ball",
   text: "<p2>Iceball</p2><BR><p3>Freq:</p3> 1 Balls/Unlimited<BR><p3>Type:</p3>  Magic Ball<BR><p3>School:</p3> Subdual<BR><p3>Range:</p3> Ball<BR><p3>Incant:</p3> <I>The strength of ice is mine to evoke</I> x3<BR><p3>Materials:</p3> White Magic Ball<BR><p3>Effect:</p3> Target player becomes Frozen for 60 seconds. Engulfing"
 };
 const GiftofWater = {
