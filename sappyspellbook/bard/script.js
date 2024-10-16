@@ -481,12 +481,30 @@ function updatePointsAvailable(){
     document.getElementById("ltp").innerText = "";
     ltpReq = false;
   }
+  document.getElementById("ltp1").hidden = true;
+  document.getElementById("ltp2").hidden = true;
+  document.getElementById("ltp3").hidden = true;
+  document.getElementById("ltp4").hidden = true;
+  document.getElementById("ltp5").hidden = true;
+  document.getElementById("ltp6").hidden = true;
   if(reqLevel == 1 && ltpReq == false){
       document.getElementById("ltp1").hidden = false;
   }
-  if(reqLevel == 1 && ltpReq == true){
-    document.getElementById("ltp1").hidden = true;
-}
+  if(reqLevel == 2 && ltpReq == false){
+      document.getElementById("ltp2").hidden = false;
+  }
+  if(reqLevel == 3 && ltpReq == false){
+      document.getElementById("ltp3").hidden = false;
+  }
+  if(reqLevel == 4 && ltpReq == false){
+      document.getElementById("ltp4").hidden = false;
+  }
+  if(reqLevel == 5 && ltpReq == false){
+      document.getElementById("ltp5").hidden = false;
+  }
+  if(reqLevel == 6 && ltpReq == false){
+      document.getElementById("ltp6").hidden = false;
+  }
   createURL();
 }     
 /*##################################*/
