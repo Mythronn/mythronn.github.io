@@ -30,6 +30,7 @@ document.addEventListener("DOMContentLoaded", function() {
       abilities[i].text += "<p3>Notes:</p3>  " + abilities[i].notes + "<BR>"; 
     }
   }
+  updatePointsAvailable();
   updateTable();
   //console.log("The DOM is fully loaded.");
 });
