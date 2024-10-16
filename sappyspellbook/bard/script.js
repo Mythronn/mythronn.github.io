@@ -515,6 +515,10 @@ function updatePointsAvailable(){
       document.getElementById("ltp5").innerText = "(+1 with Look the Part)";
       document.getElementById("ltp5").hidden = false;
   }
+  else if(reqLevel == 6 && ltpReq == false){
+    document.getElementById("ltp6").innerText = "(+1 with Look the Part)";
+    document.getElementById("ltp6").hidden = false;
+}
   else if(reqLevel == 1 && ltpReq == true){
     document.getElementById("ltp1").innerText = "(Look the Part Required)";
     document.getElementById("ltp1").hidden = false;
