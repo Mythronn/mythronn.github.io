@@ -35,11 +35,16 @@ input[type="number"]:focus {
   outline: none;
   border-color: #764a3b;
 }
+
 /*list stuff */
 .listOnly{
   font-size: medium;
   font-family: helvetica;
   display: none;
+}
+
+.ltpLable{
+  font-size: small;
 }
 
 /* Table Container */

@@ -42,6 +42,10 @@ font-family: helvetica;
 display: none;
 }
 
+.ltpLable{
+  font-size: small;
+}
+
 /* Table Container */
 .table-container {
   max-width: 800px;
