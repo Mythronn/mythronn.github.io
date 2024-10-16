@@ -66,10 +66,10 @@ function parseURL(){
         document.getElementById('titleShow').innerHTML = document.title;
       }
       if(exps[4] != null && exps[4] != ""){
-        if(exps[4] == 1){
+        if(exps[4] == "ltp"){
           document.getElementById("ltpCheckBox").checked = true;
         }
-        if(exps[4] == 0){
+        if(exps[4] == "no"){
           document.getElementById("ltpCheckBox").checked = false;
         }
       }
@@ -79,12 +79,12 @@ function parseURL(){
 /*##################################*/
 function createURL(){
   let s = "#";
-  let chk = 0;
+  let chk = "no";
   if(document.getElementById("ltpCheckBox").checked){
-    chk = 1
+    chk = "no"
   }
   else{
-    chk = 0;
+    chk = "ltp";
   }
   
   for(let i = 0; i < abilityCount; i++){
