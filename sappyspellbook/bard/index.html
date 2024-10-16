@@ -31,11 +31,12 @@
      <H1><span id="titleShow">Bard Spellbook</span></H1>
   <p>
     <a href="https://mythronn.github.io/sappyspellbook/">Version: 8.6.2</a><BR>
-      <input type="checkbox" id="ltpCheckBox" name="ltpCheckBox" value="True">
+      
   
-    <b>Required Level:</b> <input type="number" id="reqLevel" name="reqLevel"  value = "1" size = "2" disabled>
-    <label for="ltpCheckBox" onclick="updatePointsAvailable()"> Look the Part</label><BR>
-     <span class="ltp" id="ltp" hidden> ()</p></span> 
+    <b>Required Level:</b> <input type="number" id="reqLevel" name="reqLevel"  value = "1" size = "2" disabled><span class="ltp" id="ltp" hidden> ()</p></span> 
+    
+      <input type="checkbox" id="ltpCheckBox" name="ltpCheckBox" value="True" onclick="updatePointsAvailable()"><label for="ltpCheckBox" > Look the Part</label><BR>
+      
      <p>
     <button id="listToggle" class="fantasy-button" type="button" onclick="resetPoints(1)">Reset points</button>
     <button id="toggle" class="fantasy-button" type="button" onclick="toggleList()">Toggle List</button><BR>
