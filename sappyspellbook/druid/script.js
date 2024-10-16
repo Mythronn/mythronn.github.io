@@ -1143,7 +1143,7 @@ const Ranger = {
   max: 1, charge: "", use: -1, per: "",
   pointTotalId: "Rangerval",
   name: "Ranger", type: "Archetype",
-  text: "<p2>Ranger</p2><BR><p3>Freq:</p3>  N/A<BR><p3>Type:</p3>  Archetype<BR><p3>School:</p3> Neutral<BR><p3>Effect:</p3> The cost of all available Equipment is reduced to zero points. May use bows so long as a shield is not carried. The cost of all Enchantments is doubled"
+  text: "<p2>Ranger</p2><BR><p3>Freq:</p3>  N/A<BR><p3>Type:</p3>  Archetype<BR><p3>School:</p3> Neutral<BR><p3>Effect:</p3>  May use Bows. The cost of all available Equipment is reduced to zero points. The cost of all Enchantments is doubled."
 };
 const SnaringVines = {
   purchased: 0,
