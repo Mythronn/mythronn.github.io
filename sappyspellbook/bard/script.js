@@ -61,6 +61,9 @@ function parseURL(){
       exps = url.split("-");
       abilities[3].selectedAbility1 = exps[1].replace("_", " ");
       abilities[3].selectedAbility2 = exps[2].replace("_", " ");
+      if(abiliites[4] != null && abiliites[4] != ""){
+        document.title = (document.title).replace("_", " ")
+      }
       reprocessPoints(0);
   }
 }
@@ -70,7 +73,7 @@ function createURL(){
   for(let i = 0; i < abilityCount; i++){
       s += encodeMap(abilities[i].purchased);
   }
-  s += "-" + (abilities[3].selectedAbility1).replace(" ", "_") + "-" + (abilities[3].selectedAbility2).replace(" ", "_") + "-";
+  s += "-" + (abilities[3].selectedAbility1).replace(" ", "_") + "-" + (abilities[3].selectedAbility2).replace(" ", "_") + "-" + (document.title).replace(" ", "_");
   s = replaceRepeatingZeros(s);
   window.history.pushState({}, "", s);
 }
@@ -1362,7 +1365,13 @@ document.getElementById('alertCloseButton').addEventListener('click', function()
     document.getElementById('medievalAlert').style.display = 'none';
 });
 function saveList(){
-    const textToSave = document.title + " (Bard Level " + document.getElementById("reqLevel").value + ")" + document.getElementById("ltp").innerText + " \n   Level 1 \n" + document.getElementById("lvl1List").innerText + "\n   Level 2 \n" + document.getElementById("lvl2List").innerText + "\n   Level 3 \n" + document.getElementById("lvl3List").innerText + "\n   Level 4 \n" + document.getElementById("lvl4List").innerText + "\n   Level 5 \n" + document.getElementById("lvl5List").innerText + "\n   Level 6 \n" + document.getElementById("lvl6List").innerText;
+    if(document.title == "Bard Spellbook"){
+      const textToSave = "Bard Level " + document.getElementById("reqLevel").value + document.getElementById("ltp").innerText + " \n   Level 1 \n" + document.getElementById("lvl1List").innerText + "\n   Level 2 \n" + document.getElementById("lvl2List").innerText + "\n   Level 3 \n" + document.getElementById("lvl3List").innerText + "\n   Level 4 \n" + document.getElementById("lvl4List").innerText + "\n   Level 5 \n" + document.getElementById("lvl5List").innerText + "\n   Level 6 \n" + document.getElementById("lvl6List").innerText;
+    }
+    else{
+      const textToSave = document.title + " \n(Bard Level " + document.getElementById("reqLevel").value + ")" + document.getElementById("ltp").innerText + " \n   Level 1 \n" + document.getElementById("lvl1List").innerText + "\n   Level 2 \n" + document.getElementById("lvl2List").innerText + "\n   Level 3 \n" + document.getElementById("lvl3List").innerText + "\n   Level 4 \n" + document.getElementById("lvl4List").innerText + "\n   Level 5 \n" + document.getElementById("lvl5List").innerText + "\n   Level 6 \n" + document.getElementById("lvl6List").innerText;
+    }
+    
     const blob = new Blob([textToSave], { type: 'text/plain' });
     const link = document.createElement('a');
     link.href = URL.createObjectURL(blob);
@@ -1376,6 +1385,7 @@ function titleList(){
   if (newTitle) {
     document.title = newTitle;
     document.getElementById('titleShow').innerHTML = newTitle;
+    createURL();
   } else {
     console.log("Title change cancelled.");
   }
