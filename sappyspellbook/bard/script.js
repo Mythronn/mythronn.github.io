@@ -504,7 +504,7 @@ function updatePointsAvailable(){
 
   document.getElementById("reqLevel").value = reqLevel;
   if(ltpChecked && reqLevel == 6 && pointsAvailable[6] == 0 || reqLevel == 5 && pointsAvailable[6] == 5 || reqLevel == 4 && pointsAvailable[5] == 4 || reqLevel == 3 && pointsAvailable[4] == 4 || reqLevel == 2 && pointsAvailable[3] == 4 || reqLevel == 1 && pointsAvailable[2] == 4){
-    document.getElementById("ltp").hidden = false;
+    document.getElementById("ltp").hidden = true;
     document.getElementById("ltp").innerText = "(Look the Part Required)";
     ltpReq = true;
   }
