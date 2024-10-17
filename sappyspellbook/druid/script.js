@@ -1273,7 +1273,7 @@ function titleList(){
   let newTitle = prompt("Enter a title for this list:");
   if (newTitle) {
     newTitle = newTitle.replace(/[^a-zA-Z0-9 ]/g, '');
-    newTitle = newTitle.replace(/ /g, "_");
+    //newTitle = newTitle.replace(/ /g, "_");
     document.title = newTitle;
     document.getElementById('titleShow').innerHTML = newTitle;
     createURL();
