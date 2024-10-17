@@ -48,25 +48,47 @@ function parseURL(){
   url = fullurl[fullurl.length-1];
   url = url.replace("index.html", "");
   var exps = [];
+  console.log(url);
   if(url.length > 1 && url[0] == "#"){
     url = expandZeros(url);
     url = url.replace("#", "");
       for(let i = 0; i < abilityCount; i++){
+          //console.log(abilities[i].name);
           abilities[i].purchased = decodeMap(url[i]);         
       }
       exps = url.split("-");
       abilities[5].selectedAbility1 = exps[1].replace("_", " ");
       abilities[5].selectedAbility2 = exps[2].replace("_", " ");
+      if(exps[3] != null && exps[3] != ""){
+        document.title = (exps[3]).replace("_", " ")
+        document.getElementById('titleShow').innerHTML = document.title;
+      }
+      if(exps[4] != null && exps[4] != ""){
+        if(exps[4] == "ltp"){
+          document.getElementById("ltpCheckBox").checked = true;
+        }
+        if(exps[4] == "no"){
+          document.getElementById("ltpCheckBox").checked = false;
+        }
+      }
       reprocessPoints(0);
   }
 }
 /*##################################*/
 function createURL(){
   let s = "#";
+  let chk = "no";
+  if(document.getElementById("ltpCheckBox").checked){
+    chk = "ltp"
+  }
+  else{
+    chk = "no";
+  }
+  
   for(let i = 0; i < abilityCount; i++){
       s += encodeMap(abilities[i].purchased);
   }
-  s += "-" + (abilities[5].selectedAbility1).replace(" ", "_") + "-" + (abilities[5].selectedAbility2).replace(" ", "_") + "-";
+  s += "-" + (abilities[5].selectedAbility1).replace(" ", "_") + "-" + (abilities[5].selectedAbility2).replace(" ", "_") + "-" + (document.title).replace(" ", "_") + "-" + chk;
   s = replaceRepeatingZeros(s);
   window.history.pushState({}, "", s);
 }
@@ -1510,7 +1532,13 @@ document.getElementById('alertCloseButton').addEventListener('click', function()
     document.getElementById('medievalAlert').style.display = 'none';
 });
 function saveList(){
-    const textToSave = document.title + " (Healer Level " + document.getElementById("reqLevel").value + ")" + document.getElementById("ltp").innerText + " \n   Level 1 \n" + document.getElementById("lvl1List").innerText + "\n   Level 2 \n" + document.getElementById("lvl2List").innerText + "\n   Level 3 \n" + document.getElementById("lvl3List").innerText + "\n   Level 4 \n" + document.getElementById("lvl4List").innerText + "\n   Level 5 \n" + document.getElementById("lvl5List").innerText + "\n   Level 6 \n" + document.getElementById("lvl6List").innerText;
+  let textToSave = "";
+    if(document.title == "Healer Spellbook"){
+      textToSave = "Healer Level " + document.getElementById("reqLevel").value + document.getElementById("ltp").innerText + " \n   Level 1 \n" + document.getElementById("lvl1List").innerText + "\n   Level 2 \n" + document.getElementById("lvl2List").innerText + "\n   Level 3 \n" + document.getElementById("lvl3List").innerText + "\n   Level 4 \n" + document.getElementById("lvl4List").innerText + "\n   Level 5 \n" + document.getElementById("lvl5List").innerText + "\n   Level 6 \n" + document.getElementById("lvl6List").innerText;
+    }
+    else{
+      textToSave = document.title + " \n(Healer Level " + document.getElementById("reqLevel").value + ")" + document.getElementById("ltp").innerText + " \n   Level 1 \n" + document.getElementById("lvl1List").innerText + "\n   Level 2 \n" + document.getElementById("lvl2List").innerText + "\n   Level 3 \n" + document.getElementById("lvl3List").innerText + "\n   Level 4 \n" + document.getElementById("lvl4List").innerText + "\n   Level 5 \n" + document.getElementById("lvl5List").innerText + "\n   Level 6 \n" + document.getElementById("lvl6List").innerText;
+    }    
     const blob = new Blob([textToSave], { type: 'text/plain' });
     const link = document.createElement('a');
     link.href = URL.createObjectURL(blob);
@@ -1520,10 +1548,13 @@ function saveList(){
 }
 
 function titleList(){
-  const newTitle = prompt("Enter a title for this list:");
+  let newTitle = prompt("Enter a title for this list:");
   if (newTitle) {
+    newTitle = newTitle.replace(/[^a-zA-Z0-9 ]/g, '');
+    console.log(newTitle);
     document.title = newTitle;
     document.getElementById('titleShow').innerHTML = newTitle;
+    createURL();
   } else {
     console.log("Title change cancelled.");
   }
