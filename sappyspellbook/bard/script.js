@@ -1399,7 +1399,7 @@ function saveList(){
 }
 
 function titleList(){
-  const newTitle = prompt("Enter a title for this list:");
+  let newTitle = prompt("Enter a title for this list:");
   if (newTitle) {
     newTitle = newTitle.replace(/[^a-zA-Z0-9 ]/g, '');
     console.log(newTitle);
