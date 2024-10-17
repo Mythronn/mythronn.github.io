@@ -435,3 +435,43 @@ a:hover {
 a:active { 
   text-decoration: none; 
 }
+
+.toast {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  width: 180px;
+  background-color: #5e3921FF;
+  color: #fff;
+  text-align: left;
+  border-radius: 10px;
+  border-color: #000000;
+  border-style: solid;
+  padding: 10px 10px 10px 10px;
+  font-family: ariel;
+  font-size: large;
+}
+.toast.show {
+  display: block;
+  opacity: 1;
+}
+.toast {
+	opacity: 1;
+	animation-name: fadeOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-out;
+	animation-duration: 3s;
+}
+
+@keyframes fadeOpacity {
+	100% {
+		opacity: 1;
+	}
+  20% {
+		opacity: 1;
+	}
+	0% {
+		opacity: 0;
+	}
+}

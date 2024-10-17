@@ -592,7 +592,7 @@ function updatePointsAvailable(){
 function pointMinus(index) {
   var a = index;    
   if(abilities[a].purchased == 0){
-    medievalAlert("You can't go into the negatives!");
+    showToast("You can't go into the negatives!");
     return 0;
   } 
   if(abilities[a].name == "Dervish"){
@@ -1408,4 +1408,14 @@ function titleList(){
   } else {
     console.log("Title change cancelled.");
   }
+}
+
+function showToast(message) {
+  let duration = 3000;
+  const toast = document.getElementById('toastMessage');
+  toast.textContent = message;
+  toast.classList.add('show');
+  setTimeout(() => {
+    toast.classList.remove('show');
+  }, duration);
 }
