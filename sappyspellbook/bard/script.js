@@ -436,7 +436,7 @@ function pointPlus(index, fromClick) {
     return false;
   }
   if(!checkDervishPlus(a)){
-    showToast("You don't have the points to add Dervish. Enchantments too expensive.");
+    showToast("You don't have the points to add Dervish.");
     return false;
   }
   if(abilities[a].name == "Dervish"){
