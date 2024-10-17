@@ -90,7 +90,7 @@ function createURL(){
   for(let i = 0; i < abilityCount; i++){
       s += encodeMap(abilities[i].purchased);
   }
-  s += "-" + (abilities[3].selectedAbility1).replace(" ", "_") + "-" + (abilities[3].selectedAbility2).replace(" ", "_") + "-" + (document.title).replace(" ", "_") + "-" + chk;
+  s += "-" + (abilities[3].selectedAbility1).replace(/ /g, "_") + "-" + (abilities[3].selectedAbility2).replace(/ /g, "_") + "-" + (document.title).replace(/ /g, "_") + "-" + chk;
   s = replaceRepeatingZeros(s);
   window.history.pushState({}, "", s);
 }
@@ -1401,7 +1401,7 @@ function titleList(){
   let newTitle = prompt("Enter a title for this list:");
   if (newTitle) {
     newTitle = newTitle.replace(/[^a-zA-Z0-9 ]/g, '');
-    newTitle = newTitle.replace(" ", "_");
+    newTitle = newTitle.replace(/ /g, "_");
     document.title = newTitle;
     document.getElementById('titleShow').innerHTML = newTitle;
     createURL();
