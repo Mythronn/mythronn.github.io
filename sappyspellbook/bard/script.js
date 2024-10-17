@@ -427,16 +427,16 @@ function pointPlus(index, fromClick) {
   var a = index;
   tempCost = 0;
   if(abilities[a].max == abilities[a].purchased){
-    medievalAlert("Cannot exceed max for " + abilities[a].name);
+    showToast("Cannot exceed max for " + abilities[a].name);
     return false;
   }
   
   if(legendCheck(a) == false){
-    medievalAlert("Legends never purchase Swift.");
+    showToast("Legends never purchase Swift.");
     return false;
   }
   if(!checkDervishPlus(a)){
-    medievalAlert("You don't have the points to add Dervish. Enchantments too expensive.");
+    showToast("You don't have the points to add Dervish. Enchantments too expensive.");
     return false;
   }
   if(abilities[a].name == "Dervish"){
@@ -468,7 +468,7 @@ function pointPlus(index, fromClick) {
     }
   }
   else{
-    medievalAlert("Not enough available points to buy " + abilities[a].name);
+    showToast("Not enough available points to buy " + abilities[a].name);
     return false;
   }
 }
@@ -1372,15 +1372,6 @@ const abilities = [Dervish, //0
   SilverTongue, //41
   SongofInterference //42
   ];
-function medievalAlert(message) {
-    const modal = document.getElementById('medievalAlert');
-    const modalBody = modal.querySelector('.modal-body p');
-    modalBody.textContent = message;
-    modal.style.display = 'flex';
-}
-document.getElementById('alertCloseButton').addEventListener('click', function() {
-    document.getElementById('medievalAlert').style.display = 'none';
-});
 function saveList(){
   let textToSave = "";
     if(document.title == "Bard Spellbook"){
