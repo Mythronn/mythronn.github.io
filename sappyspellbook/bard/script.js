@@ -81,10 +81,10 @@ function createURL(){
   let s = "#";
   let chk = "no";
   if(document.getElementById("ltpCheckBox").checked){
-    chk = "no"
+    chk = "ltp"
   }
   else{
-    chk = "ltp";
+    chk = "no";
   }
   
   for(let i = 0; i < abilityCount; i++){
