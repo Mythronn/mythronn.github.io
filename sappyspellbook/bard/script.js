@@ -454,7 +454,7 @@ function pointPlus(index, fromClick) {
     tempCost = abilities[a].cost;
     for(let i = abilities[a].level; i < 7; i++){
       if(tempCost > pointsAvailable[i]){
-        if(tempCost == abilities[a].cost && i == abilities[a].level){
+        if(i == abilities[a].level){
           higherLevelPoints[i] += tempCost - pointsAvailable[i];
         }
 
