@@ -228,6 +228,7 @@ function resetPoints(fullReset){
     abilities[0].purchased = 0;
   }
   processAvatarofNatureMinus();
+  processSummonerMinus();
 
   for(let i = 0; i < abilityCount; i++){
     abilities[i].purchased = 0;
@@ -399,6 +400,9 @@ function pointPlus(index, fromClick) {
     if(abilities[a].name == "Avatar of Nature"){
       processAvatarofNaturePlus();
     }
+    if(abilities[a].name == "Summoner"){
+      processSummonerPlus();
+    }
     tempCost = abilities[a].cost;
     for(let i = abilities[a].level; i < 7; i++){
       if(tempCost > pointsAvailable[i]){
@@ -558,6 +562,9 @@ function pointMinus(index) {
   if(abilities[a].name == "Avatar of Nature"){
     processAvatarofNatureMinus();
   }
+  if(abilities[a].name == "Summoner"){
+    processSummonerMinus();
+  }
   abilities[a].purchased--;
   reprocessPoints();
   return 0;
@@ -653,6 +660,25 @@ function processAvatarofNatureMinus(){
   abilities[29].text = abilities[29].text.replace("SELF", "Touch: Others"); 
   abilities[31].text = abilities[31].text.replace("SELF", "Touch: Others"); 
 }
+
+function processSummonerPlus(){
+  for(let i = 0; i < abilityCount; i++){
+    if(abilities[i].type == "Enchantment"){
+      abilities[i].text = abilities[i].text.replace("</p3>  1/Refresh", "</p3>  2/Refresh");
+      abilities[i].text = abilities[i].text.replace("</p3>  1/Life", "</p3>  2/Life");
+    }
+  }
+}
+
+function processSummonerMinus(){
+  for(let i = 0; i < abilityCount; i++){
+    if(abilities[i].type == "Enchantment"){
+      abilities[i].text = abilities[i].text.replace("</p3>  2/Refresh", "</p3>  1/Refresh");
+      abilities[i].text = abilities[i].text.replace("</p3>  2/Life", "</p3>  1/Life");
+    }
+  }
+}
+
 /*##################################*/
 function processRangerMinus(){
   abilities[3].cost = 2;
@@ -785,7 +811,7 @@ const Barkskin = {
   max: 2, charge: "Charge x10", use: 1, per: "Refresh",
   pointTotalId: "Barkskinval",
   name: "Barkskin", type: "Enchantment",
-  text: "<p2>Barkskin</p2><BR><p3>Freq:</p3>  1/Ref Chg x10<BR><p3>Type:</p3>  Enchantment<BR><p3>School:</p3> Protection<BR><p3>Range:</p3> Touch: Others<BR><p3>Incant:</p3> <I>I enchant thee with barkskin</I> x3<BR><p3>Materials:</p3> White strip<BR><p3>Effect:</p3> Bearer gains one point of Magic Armor"
+  text: "<p2>Barkskin</p2><BR><p3>Freq:</p3>  1/Refresh Chg x10<BR><p3>Type:</p3>  Enchantment<BR><p3>School:</p3> Protection<BR><p3>Range:</p3> Touch: Others<BR><p3>Incant:</p3> <I>I enchant thee with barkskin</I> x3<BR><p3>Materials:</p3> White strip<BR><p3>Effect:</p3> Bearer gains one point of Magic Armor"
 };
 const Entangle = {
   purchased: 0,
@@ -907,7 +933,7 @@ const Poison = {
   max: 31, charge: "", use: 1, per: "Life",
   pointTotalId: "Poisonval",
   name: "Poison", type: "Enchantment",
-  text: "<p2>Poison</p2><BR><p3>Freq:</p3> 1/Life<BR><p3>Type:</p3>  Enchantment<BR><p3>School:</p3> Death<BR><p3>Range:</p3> Touch: Others<BR><p3>Incant:</p3> <I>I coat these weapons with a deadly poison</I> x2<BR><p3>Materials:</p3> Red Strip<BR><p3>Effect:</p3> The next Wound dealt by the bearer in melee is Wounds Kill"
+  text: "<p2>Poison</p2><BR><p3>Freq:</p3>  1/Life<BR><p3>Type:</p3>  Enchantment<BR><p3>School:</p3> Death<BR><p3>Range:</p3> Touch: Others<BR><p3>Incant:</p3> <I>I coat these weapons with a deadly poison</I> x2<BR><p3>Materials:</p3> Red Strip<BR><p3>Effect:</p3> The next Wound dealt by the bearer in melee is Wounds Kill"
 };
 const Release = {
   purchased: 0,
