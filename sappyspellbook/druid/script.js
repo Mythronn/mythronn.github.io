@@ -384,7 +384,6 @@ function pointPlus(index, fromClick) {
   if(checkPointsAvailable(a)){
     if(abilities[a].name == "Avatar of Nature"){
       processAvatarofNaturePlus();
-      console.log(abilities[47].text);
     }
     tempCost = abilities[a].cost;
     for(let i = abilities[a].level; i < 7; i++){
@@ -611,34 +610,34 @@ function processRangerPlus(){
   updateTable();
 }
 function processAvatarofNaturePlus(){
-  abilities[47].text.replace("Touch: Others", "SELF"); 
-  abilities[6].text.replace("Touch: Others", "SELF"); 
-  abilities[9].text.replace("Self/Touch", "SELF");  
-  abilities[10].text.replace("Touch: Others", "SELF"); 
-  abilities[14].text.replace("Touch: Others", "SELF"); 
-  abilities[17].text.replace("Touch: Others", "SELF"); 
-  abilities[18].text.replace("Touch: Others", "SELF"); 
-  abilities[21].text.replace("Touch: Others", "SELF"); 
-  abilities[24].text.replace("Touch: Others", "SELF"); 
-  abilities[25].text.replace("Touch: Others", "SELF"); 
-  abilities[27].text.replace("Touch: Others", "SELF"); 
-  abilities[29].text.replace("Touch: Others", "SELF"); 
-  abilities[31].text.replace("Touch: Others", "SELF"); 
+  abilities[47].text = abilities[47].text.replace("Touch: Others", "SELF"); 
+  abilities[6].text = abilities[6].text.replace("Touch: Others", "SELF"); 
+  abilities[9].text = abilities[9].text.replace("Self/Touch", "SELF");  
+  abilities[10].text = abilities[10].text.replace("Touch: Others", "SELF"); 
+  abilities[14].text = abilities[14].text.replace("Touch: Others", "SELF"); 
+  abilities[17].text = abilities[17].text.replace("Touch: Others", "SELF"); 
+  abilities[18].text = abilities[18].text.replace("Touch: Others", "SELF"); 
+  abilities[21].text = abilities[21].text.replace("Touch: Others", "SELF"); 
+  abilities[24].text = abilities[24].text.replace("Touch: Others", "SELF"); 
+  abilities[25].text = abilities[25].text.replace("Touch: Others", "SELF"); 
+  abilities[27].text = abilities[27].text.replace("Touch: Others", "SELF"); 
+  abilities[29].text = abilities[29].text.replace("Touch: Others", "SELF"); 
+  abilities[31].text = abilities[31].text.replace("Touch: Others", "SELF"); 
 }
 function processAvatarofNatureMinus(){
-  abilities[47].text.replace("SELF", "Touch: Others"); 
-  abilities[6].text.replace("SELF", "Touch: Others"); 
-  abilities[9].text.replace("SELF", "Self/Touch");  
-  abilities[10].text.replace("SELF", "Touch: Others"); 
-  abilities[14].text.replace("SELF", "Touch: Others"); 
-  abilities[17].text.replace("SELF", "Touch: Others"); 
-  abilities[18].text.replace("SELF", "Touch: Others"); 
-  abilities[21].text.replace("SELF", "Touch: Others"); 
-  abilities[24].text.replace("SELF", "Touch: Others"); 
-  abilities[25].text.replace("SELF", "Touch: Others"); 
-  abilities[27].text.replace("SELF", "Touch: Others"); 
-  abilities[29].text.replace("SELF", "Touch: Others"); 
-  abilities[31].text.replace("SELF", "Touch: Others"); 
+  abilities[47].text = abilities[47].text.replace("SELF", "Touch: Others"); 
+  abilities[6].text = abilities[6].text.replace("SELF", "Touch: Others"); 
+  abilities[9].text = abilities[9].text.replace("SELF", "Self/Touch");  
+  abilities[10].text = abilities[10].text.replace("SELF", "Touch: Others"); 
+  abilities[14].text = abilities[14].text.replace("SELF", "Touch: Others"); 
+  abilities[17].text = abilities[17].text.replace("SELF", "Touch: Others"); 
+  abilities[18].text = abilities[18].text.replace("SELF", "Touch: Others"); 
+  abilities[21].text = abilities[21].text.replace("SELF", "Touch: Others"); 
+  abilities[24].text = abilities[24].text.replace("SELF", "Touch: Others"); 
+  abilities[25].text = abilities[25].text.replace("SELF", "Touch: Others"); 
+  abilities[27].text = abilities[27].text.replace("SELF", "Touch: Others"); 
+  abilities[29].text = abilities[29].text.replace("SELF", "Touch: Others"); 
+  abilities[31].text = abilities[31].text.replace("SELF", "Touch: Others"); 
 }
 /*##################################*/
 function processRangerMinus(){
