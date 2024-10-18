@@ -59,10 +59,10 @@ function parseURL(){
           abilities[i].purchased = decodeMap(url[i]);         
       }
       exps = url.split("-");
-      abilities[3].selectedAbility1 = exps[1].replace("_", " ");
-      abilities[3].selectedAbility2 = exps[2].replace("_", " ");
+      abilities[3].selectedAbility1 = exps[1].replace(/_/g, " ");
+      abilities[3].selectedAbility2 = exps[2].replace(/_/g, " ");
       if(exps[3] != null && exps[3] != ""){
-        document.title = (exps[3]).replace("_", " ")
+        document.title = (exps[3]).replace(/_/g, " ");
         document.getElementById('titleShow').innerHTML = document.title;
       }
       if(exps[4] != null && exps[4] != ""){
