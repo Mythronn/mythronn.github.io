@@ -275,6 +275,7 @@ function resetPoints(fullReset){
   }
   pointsAvailable = [0, 5,  5,  5,  5,  5,  6];
   pointsSpent = [0, 0,  0,  0,  0,  0,  0];
+  higherLevelPoints = [0, 0,  0,  0,  0,  0,  0]; 
   if(fullReset == 1){
     document.getElementById("exp1").value = "Select Spell";
     document.getElementById("exp2").value = "Select Spell";
