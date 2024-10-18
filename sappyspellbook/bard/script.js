@@ -454,7 +454,7 @@ function pointPlus(index, fromClick) {
     tempCost = abilities[a].cost;
     for(let i = abilities[a].level; i < 7; i++){
       if(tempCost > pointsAvailable[i]){
-        if(tempCost == abilities[a].cost){
+        if(tempCost == abilities[a].cost && i == abilities[a].level){
           higherLevelPoints[i] += tempCost - pointsAvailable[i];
         }
 
@@ -551,6 +551,30 @@ function updatePointsAvailable(){
   document.getElementById("ltp4").hidden = true;
   document.getElementById("ltp5").hidden = true;
   document.getElementById("ltp6").hidden = true;
+
+  document.getElementById("hlp1").innerText = " ";
+  document.getElementById("hlp2").innerText = " ";
+  document.getElementById("hlp3").innerText = " ";
+  document.getElementById("hlp4").innerText = " ";
+  document.getElementById("hlp5").innerText = " ";
+
+  if(higherLevelPoints[1] != 0){
+    document.getElementById("hlp1").innerText = " " + higherLevelPoints[1] + " Higher Level Points spent here";
+  }
+  if(higherLevelPoints[2] != 0){
+    document.getElementById("hlp2").innerText = " " + higherLevelPoints[2] + " Higher Level Points spent here";
+  }
+  if(higherLevelPoints[3] != 0){
+    document.getElementById("hlp3").innerText = " " + higherLevelPoints[3] + " Higher Level Points spent here";
+  }
+  if(higherLevelPoints[4] != 0){
+    document.getElementById("hlp4").innerText = " " + higherLevelPoints[4] + " Higher Level Points spent here";
+  }
+  if(higherLevelPoints[5] != 0){
+    document.getElementById("hlp5").innerText = " " + higherLevelPoints[5] + " Higher Level Points spent here";
+  }
+  
+  
   if(ltpChecked && reqLevel == 1 && ltpReq == false){
      document.getElementById("level1Points").value = pointsAvailable[1] + 1;
   }
@@ -573,36 +597,37 @@ function updatePointsAvailable(){
     document.getElementById("ltp1").innerText = "(Look the Part Required)";
     document.getElementById("ltp1").hidden = false;
     document.getElementById("level2Points").value = 5;
+    document.getElementById("hlp1").innerText = " ";
   }
   else if(ltpChecked && reqLevel == 2 && ltpReq == true){
       document.getElementById("ltp2").innerText = "(Look the Part Required)";
       document.getElementById("ltp2").hidden = false;
       document.getElementById("level3Points").value = 5;
+      document.getElementById("hlp2").innerText = " ";
   }
   else if(ltpChecked && reqLevel == 3 && ltpReq == true){
       document.getElementById("ltp3").innerText = "(Look the Part Required)";
       document.getElementById("ltp3").hidden = false;
       document.getElementById("level4Points").value = 5;
+      document.getElementById("hlp3").innerText = " ";
   }
   else if(ltpChecked && reqLevel == 4 && ltpReq == true){
       document.getElementById("ltp4").innerText = "(Look the Part Required)";
       document.getElementById("ltp4").hidden = false;
       document.getElementById("level5Points").value = 5;
+      document.getElementById("hlp4").innerText = " ";
   }
   else if(ltpChecked && reqLevel == 5 && ltpReq == true){
       document.getElementById("ltp5").innerText = "(Look the Part Required)";
       document.getElementById("ltp5").hidden = false;
       document.getElementById("level6Points").value = 5;
+      document.getElementById("hlp5").innerText = " ";
   }
   else if(ltpChecked && reqLevel == 6 && ltpReq == true){
     document.getElementById("ltp6").innerText = "(Look the Part Required)";
     document.getElementById("ltp6").hidden = false;
   }
-  document.getElementById("hlp1").innerText = " " + higherLevelPoints[1] + " Higher Level Points spent here";
-  document.getElementById("hlp2").innerText = " " + higherLevelPoints[2] + " Higher Level Points spent here";
-  document.getElementById("hlp3").innerText = " " + higherLevelPoints[3] + " Higher Level Points spent here";
-  document.getElementById("hlp4").innerText = " " + higherLevelPoints[4] + " Higher Level Points spent here";
-  document.getElementById("hlp5").innerText = " " + higherLevelPoints[5] + " Higher Level Points spent here";
+  
   createURL();
 }     
 /*##################################*/
