@@ -1,7 +1,25 @@
 document.addEventListener("DOMContentLoaded", function() {
   parseURL();
   for(let i = 0; i < abilityCount; i++){
-    abilities[i].text = "<p2>" + abilities[i].name + "</p2><BR>"; 
+    updateAbilityText(i);
+  }
+  updatePointsAvailable();
+  updateTable();
+  //console.log("The DOM is fully loaded.");
+});
+
+window.addEventListener('hashchange', function() {
+  var referrer = document.referrer;
+  //console.log("The referrer is: " + referrer);
+  //if (referrer === "" || !referrer.includes(window.location.origin)) 
+    
+    parseURL();
+    updateTable();;  
+});
+
+function updateAbilityText(index){
+  let i = index;
+  abilities[i].text = "<p2>" + abilities[i].name + "</p2><BR>"; 
     if(abilities[i].freq != ""){
       abilities[i].text += "<p3>Freq:</p3>  " + abilities[i].freq + "<BR>"; 
     }
@@ -29,19 +47,7 @@ document.addEventListener("DOMContentLoaded", function() {
     if(abilities[i].notes != ""){
       abilities[i].text += "<p3>Notes:</p3>  " + abilities[i].notes + "<BR>"; 
     }
-  }
-  updatePointsAvailable();
-  updateTable();
-  //console.log("The DOM is fully loaded.");
-});
-window.addEventListener('hashchange', function() {
-  var referrer = document.referrer;
-  //console.log("The referrer is: " + referrer);
-  //if (referrer === "" || !referrer.includes(window.location.origin)) 
-    
-    parseURL();
-    updateTable();;  
-});
+}
 
 
 /*##################################*/

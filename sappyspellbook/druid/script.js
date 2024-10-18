@@ -227,6 +227,8 @@ function resetPoints(fullReset){
     processRangerMinus();
     abilities[0].purchased = 0;
   }
+  processAvatarofNatureMinus();
+
   for(let i = 0; i < abilityCount; i++){
     abilities[i].purchased = 0;
     document.getElementById(abilities[i].pointTotalId).value = 0;
@@ -378,7 +380,11 @@ function pointPlus(index, fromClick) {
     processRangerPlus();
   }
   
+  
   if(checkPointsAvailable(a)){
+    if(abilities[a].name == "Avatar of Nature"){
+      processAvatarofNaturePlus();
+    }
     tempCost = abilities[a].cost;
     for(let i = abilities[a].level; i < 7; i++){
       if(tempCost > pointsAvailable[i]){
@@ -535,6 +541,9 @@ function pointMinus(index) {
   if(abilities[a].name == "Ranger"){
     processRangerMinus();
   }  
+  if(abilities[a].name == "Avatar of Nature"){
+    processAvatarofNatureMinus();
+  }
   abilities[a].purchased--;
   reprocessPoints();
   return 0;
@@ -599,6 +608,36 @@ function processRangerPlus(){
   abilities[46].cost = 2; 
   abilities[48].cost = 2;
   updateTable();
+}
+function processAvatarofNaturePlus(){
+  abilities[47].text.replace("Touch: Others", "SELF"); 
+  abilities[6].text.replace("Touch: Others", "SELF"); 
+  abilities[9].text.replace("Self/Touch", "SELF");  
+  abilities[10].text.replace("Touch: Others", "SELF"); 
+  abilities[14].text.replace("Touch: Others", "SELF"); 
+  abilities[17].text.replace("Touch: Others", "SELF"); 
+  abilities[18].text.replace("Touch: Others", "SELF"); 
+  abilities[21].text.replace("Touch: Others", "SELF"); 
+  abilities[24].text.replace("Touch: Others", "SELF"); 
+  abilities[25].text.replace("Touch: Others", "SELF"); 
+  abilities[27].text.replace("Touch: Others", "SELF"); 
+  abilities[29].text.replace("Touch: Others", "SELF"); 
+  abilities[31].text.replace("Touch: Others", "SELF"); 
+}
+function processAvatarofNatureMinus(){
+  abilities[47].text.replace("SELF", "Touch: Others"); 
+  abilities[6].text.replace("SELF", "Touch: Others"); 
+  abilities[9].text.replace("SELF", "Self/Touch");  
+  abilities[10].text.replace("SELF", "Touch: Others"); 
+  abilities[14].text.replace("SELF", "Touch: Others"); 
+  abilities[17].text.replace("SELF", "Touch: Others"); 
+  abilities[18].text.replace("SELF", "Touch: Others"); 
+  abilities[21].text.replace("SELF", "Touch: Others"); 
+  abilities[24].text.replace("SELF", "Touch: Others"); 
+  abilities[25].text.replace("SELF", "Touch: Others"); 
+  abilities[27].text.replace("SELF", "Touch: Others"); 
+  abilities[29].text.replace("SELF", "Touch: Others"); 
+  abilities[31].text.replace("SELF", "Touch: Others"); 
 }
 /*##################################*/
 function processRangerMinus(){
@@ -1214,7 +1253,7 @@ Attuned, //17
 BearStrength, //18
 DispelMagic, //19
 Extension, //20
-GiftofFire, //021
+GiftofFire, //21
 GreaterMend, //22
 IcyBlast, //23
 Regeneration, //24
