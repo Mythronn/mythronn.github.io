@@ -293,45 +293,59 @@ function processExpChange(fromUser){
     }
     if(abilities[4].selectedAbility1 == "Mend" || abilities[4].selectedAbility2 == "Mend"){
       abilities[7].charge = "Charge x5";
+      abilities[7].text = abilities[7].text.replace("Life<BR>", "Life CHARGE x5<BR>");
     }
     else{
       abilities[7].charge = "";
+      abilities[7].text = abilities[7].text.replace("Life CHARGE x5<BR>", "Life<BR>");
     }
     if(abilities[4].selectedAbility1 == "Greater Mend" || abilities[4].selectedAbility2 == "Greater Mend"){
       abilities[22].charge = "Charge x10";
+      abilities[22].text = abilities[22].text.replace("Refresh<BR>", "Refresh CHARGE x10<BR>");
     }
     else{
       abilities[22].charge = "";
+      abilities[22].text = abilities[22].text.replace("Refresh CHARGE x10<BR>", "Refresh<BR>");
     }
     if(abilities[4].selectedAbility1 == "Icy Blast" || abilities[4].selectedAbility2 == "Icy Blast"){
       abilities[23].charge = "Charge x5";
+      abilities[23].text = abilities[23].text.replace("Life<BR>", "Life CHARGE x5<BR>");
     }
     else{
       abilities[23].charge = "";
+      abilities[23].text = abilities[23].text.replace("Life CHARGE x5<BR>", "Life<BR>");
     }
     if(abilities[4].selectedAbility1 == "Heal" || abilities[4].selectedAbility2 == "Heal"){
       abilities[11].charge = "Charge x5";
+      abilities[11].text = abilities[11].text.replace("Life<BR>", "Life CHARGE x5<BR>");
     }
     else{
       abilities[11].charge = "";
+      abilities[11].text = abilities[11].text.replace("Life CHARGE x5<BR>", "Life<BR>");
     }
     if(abilities[4].selectedAbility1 == "Release" || abilities[4].selectedAbility2 == "Release"){
       abilities[15].charge = "Charge x5";
+      abilities[15].text = abilities[15].text.replace("Life<BR>", "Life CHARGE x5<BR>");
     }
     else{
       abilities[15].charge = "";
+      abilities[15].text = abilities[15].text.replace("Life CHARGE x5<BR>", "Life<BR>");
     }
     if(abilities[4].selectedAbility1 == "Teleport" || abilities[4].selectedAbility2 == "Teleport"){
       abilities[33].charge = "Charge x5";
+      abilities[33].text = abilities[33].text.replace("Life<BR>", "Life CHARGE x5<BR>");
     }
     else{
       abilities[33].charge = "";
+      abilities[33].text = abilities[33].text.replace("Life CHARGE x5<BR>", "Life<BR>");
     }
     if(abilities[4].selectedAbility1 == "Dispel Magic" || abilities[4].selectedAbility2 == "Dispel Magic"){
       abilities[19].charge = "Charge x10";
+      abilities[19].text = abilities[19].text.replace("Refresh<BR>", "Refresh CHARGE x10<BR>")
     }
     else{
       abilities[19].charge = "";
+      abilities[19].text = abilities[19].text.replace("Refresh CHARGE x10<BR>", "Refresh<BR>");
     }
     createURL();
     if(fromUser == 1){
