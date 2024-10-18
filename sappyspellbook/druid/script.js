@@ -384,6 +384,7 @@ function pointPlus(index, fromClick) {
   if(checkPointsAvailable(a)){
     if(abilities[a].name == "Avatar of Nature"){
       processAvatarofNaturePlus();
+      console.log(abilities[47].text);
     }
     tempCost = abilities[a].cost;
     for(let i = abilities[a].level; i < 7; i++){
