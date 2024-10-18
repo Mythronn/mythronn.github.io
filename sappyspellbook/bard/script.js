@@ -453,7 +453,12 @@ function pointPlus(index, fromClick) {
     tempCost = abilities[a].cost;
     for(let i = abilities[a].level; i < 7; i++){
       if(tempCost > pointsAvailable[i]){
+        if(tempCost == abilities[a].cost){
+          higherLevelPoints[i] += tempCost - pointsAvailable[i];
+        }
+
         tempCost = tempCost - pointsAvailable[i];
+        
         pointsAvailable[i] = 0;
       }
       else{
@@ -592,6 +597,11 @@ function updatePointsAvailable(){
     document.getElementById("ltp6").innerText = "(Look the Part Required)";
     document.getElementById("ltp6").hidden = false;
   }
+  document.getElementById("hlp1").innerText = " " + higherLevelPoints[1] + " Higher Level Points spent here";
+  document.getElementById("hlp2").innerText = " " + higherLevelPoints[2] + " Higher Level Points spent here";
+  document.getElementById("hlp3").innerText = " " + higherLevelPoints[3] + " Higher Level Points spent here";
+  document.getElementById("hlp4").innerText = " " + higherLevelPoints[4] + " Higher Level Points spent here";
+  document.getElementById("hlp5").innerText = " " + higherLevelPoints[5] + " Higher Level Points spent here";
   createURL();
 }     
 /*##################################*/
@@ -709,7 +719,7 @@ var popup = document.getElementById(elementId);
 
 var pointsAvailable = [0, 5,  5,  5,  5,  5,  6];
 var pointsSpent = [0, 0,  0,  0,  0,  0,  0];
-
+var higherLevelPoints = [0, 0,  0,  0,  0,  0,  0];
 
 /*ABILITY DATA
 |||||||||||||||||||||||||||||||||||
