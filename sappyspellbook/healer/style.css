@@ -270,93 +270,6 @@ body {
 }
 
 
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed;
-    z-index: 1000; /* On top of everything else */
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7); /* Dark translucent background */
-    justify-content: center;
-    align-items: center;  
-}
-
-/* Modal Content Box */
-.modal-content {
-    background-color: #eae0cc; /* Rich medieval brown #8b5e3c*/
-    border: 4px solid #a05a2c; /* Ornate border */
-    border-radius: 15px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7); /* Shadow for depth */
-    width: 400px; /* Set the width */
-    max-width: 90%; /* Responsive on small screens */
-    padding: 20px;
-    text-align: center;
-    font-family: 'MedievalSharp', cursive;
-  /* Fantasy font */
-    color: #000; 
-  font-size:22px;
-  
-    /*text-shadow: 1px 1px 2px #3b2f2c;  Text shadow for depth */
-}
-
-/* Modal Header */
-.modal-header h2 {
-    font-size: 1.8em;
-    margin: 0;
-    padding-bottom: 10px;
-    border-bottom: 2px solid #a05a2c; /* Ornate line under header */
-    color: #a05a2c;
-    text-transform: uppercase;
-}
-
-/* Modal Body */
-.modal-body {
-    margin-top: 20px;
-    font-size: 1.2em;
-}
-
-/* Modal Footer (for buttons) */
-.modal-footer {
-    margin-top: 30px;
-  
-}
-
-/* Button in the modal */
-.modal-button {
-    background-color: #80461B; /* Button brown */
-    color: #fff;
-    padding: 10px 20px;
-    border: 3px solid #a05a2c;
-    border-radius: 10px;
-    font-family: 'MedievalSharp', cursive;
-    text-transform: uppercase;
-    font-size: 1.1em;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.modal-button:hover {
-    background-color: #c47f3b;
-    border-color: #e5a057;
-}
-
-/* Animation for modal */
-@keyframes medievalModalFade {
-    from {
-        opacity: 0;
-        transform: scale(0.9);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
-.modal-content {
-    animation: medievalModalFade 0.3s ease;
-}
 .ltp{
   float: none;
 }
@@ -432,4 +345,44 @@ text-decoration: none;
 } 
 a:active { 
 text-decoration: none; 
+}
+
+.toast {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  width: 180px;
+  background-color: #0047AB;
+  color: #fff;
+  text-align: left;
+  border-radius: 10px;
+  border-color: #000000;
+  border-style: solid;
+  padding: 10px 10px 10px 10px;
+  font-family: ariel;
+  font-size: large;
+}
+.toast.show {
+  display: block;
+  opacity: 1;
+}
+.toast {
+	opacity: 1;
+	animation-name: fadeOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-out;
+	animation-duration: 3s;
+}
+
+@keyframes fadeOpacity {
+	100% {
+		opacity: 1;
+	}
+  20% {
+		opacity: 1;
+	}
+	0% {
+		opacity: 0;
+	}
 }

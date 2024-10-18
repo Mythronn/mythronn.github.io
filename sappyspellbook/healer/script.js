@@ -428,15 +428,15 @@ function pointPlus(index, fromClick) {
   var a = index;
   tempCost = 0;
   if(abilities[a].max == abilities[a].purchased){
-    medievalAlert("Cannot exceed max for " + abilities[a].name);
+    showToast("Cannot exceed max for " + abilities[a].name);
     return false;
   }
   if(necromancerCheck(a) == false){
-    medievalAlert("Necromancers may not purchase any Enchantments from the Protection School.");
+    showToast("Necromancers may not purchase any Enchantments from the Protection School.");
     return false;
   }
   if(warderCheck(a) == false){
-    medievalAlert("Warders may not purchase any magic from the Death, Command, or Subdual Schools.");
+    showToast("Warders may not purchase any magic from the Death, Command, or Subdual Schools.");
     return false;
   }
   if(abilities[a].name == "Priest"){
@@ -471,7 +471,7 @@ function pointPlus(index, fromClick) {
     }
   }
   else{
-    medievalAlert("Not enough available points to buy " + abilities[a].name);
+    showToast("Not enough available points to buy " + abilities[a].name);
     return false;
   }
 }
@@ -595,12 +595,12 @@ function updatePointsAvailable(){
 function pointMinus(index) {
   var a = index;    
   if(abilities[a].purchased == 0){
-    medievalAlert("You can't go into the negatives!");
+    showToast("You can't go into the negatives!");
     return 0;
   }  
   /*I dont think we need this 
   if(!checkPriestMinus(a)){
-    medievalAlert("You don't have the points to remove Priest. Heal too expensive.");
+    showToast("You don't have the points to remove Priest. Heal too expensive.");
     return 0;
   }*/
   if(abilities[a].name == "Priest"){
@@ -1522,15 +1522,7 @@ const abilities = [Priest,	//0
   Stun	//49
   
 ];
-function medievalAlert(message) {
-    const modal = document.getElementById('medievalAlert');
-    const modalBody = modal.querySelector('.modal-body p');
-    modalBody.textContent = message;
-    modal.style.display = 'flex';
-}
-document.getElementById('alertCloseButton').addEventListener('click', function() {
-    document.getElementById('medievalAlert').style.display = 'none';
-});
+
 function saveList(){
   let textToSave = "";
     if(document.title == "Healer Spellbook"){
@@ -1558,4 +1550,14 @@ function titleList(){
   } else {
     console.log("Title change cancelled.");
   }
+}
+
+function showToast(message) {
+  let duration = 3000;
+  const toast = document.getElementById('toastMessage');
+  toast.textContent = message;
+  toast.classList.add('show');
+  setTimeout(() => {
+    toast.classList.remove('show');
+  }, duration);
 }

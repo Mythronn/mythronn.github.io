@@ -1372,6 +1372,7 @@ const abilities = [Dervish, //0
   SilverTongue, //41
   SongofInterference //42
   ];
+  
 function saveList(){
   let textToSave = "";
     if(document.title == "Bard Spellbook"){

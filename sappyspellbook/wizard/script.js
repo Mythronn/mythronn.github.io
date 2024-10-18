@@ -522,23 +522,23 @@ function pointPlus(index, fromClick) {
   var a = index;
   tempCost = 0;
   if(abilities[a].max == abilities[a].purchased){
-    medievalAlert("Cannot exceed max for " + abilities[a].name);
+    showToast("Cannot exceed max for " + abilities[a].name);
     return false;
   }
   if(battlemageCheck(a) == false){
-    medievalAlert("Battlemages may not purchase Enchantments or Magic Balls");
+    showToast("Battlemages may not purchase Enchantments or Magic Balls");
     return false;
   }
   if(evokerCheck(a) == false){
-    medievalAlert("Evokers can only purchase verbals of range Touch or Self.");
+    showToast("Evokers can only purchase verbals of range Touch or Self.");
     return false;
   }
   if(warlockCheck(a) == false){
-    medievalAlert("Warlocks may not purchase Verbals from any School other than the Death and Flame Schools.");
+    showToast("Warlocks may not purchase Verbals from any School other than the Death and Flame Schools.");
     return false;
   }
   /*if(!checkRangerPlus(a)){
-    medievalAlert("You don't have the points to add Ranger. Enchantments too expensive.");
+    showToast("You don't have the points to add Ranger. Enchantments too expensive.");
     return false;
   }
   if(abilities[a].name == "Ranger"){
@@ -576,7 +576,7 @@ function pointPlus(index, fromClick) {
     }
   }
   else{
-    medievalAlert("Not enough available points to buy " + abilities[a].name);
+    showToast("Not enough available points to buy " + abilities[a].name);
     return false;
   }
 }
@@ -700,11 +700,11 @@ function updatePointsAvailable(){
 function pointMinus(index) {
   var a = index;    
   if(abilities[a].purchased == 0){
-    medievalAlert("You can't go into the negatives!");
+    showToast("You can't go into the negatives!");
     return 0;
   }  
   /*if(!checkRangerMinus(a)){
-    medievalAlert("You don't have the points to remove Ranger. Equipment too expensive.");
+    showToast("You don't have the points to remove Ranger. Equipment too expensive.");
     return 0;
   }*/
   if(abilities[a].name == "Battlemage"){
@@ -1677,15 +1677,7 @@ const abilities = [Banish, //0
   Warlock //51
    
 ];
-function medievalAlert(message) {
-    const modal = document.getElementById('medievalAlert');
-    const modalBody = modal.querySelector('.modal-body p');
-    modalBody.textContent = message;
-    modal.style.display = 'flex';
-}
-document.getElementById('alertCloseButton').addEventListener('click', function() {
-    document.getElementById('medievalAlert').style.display = 'none';
-});
+
 function saveList(){
   let textToSave = "";
     if(document.title == "Wizard Spellbook"){
@@ -1713,4 +1705,14 @@ function titleList(){
   } else {
     console.log("Title change cancelled.");
   }
+}
+
+function showToast(message) {
+  let duration = 3000;
+  const toast = document.getElementById('toastMessage');
+  toast.textContent = message;
+  toast.classList.add('show');
+  setTimeout(() => {
+    toast.classList.remove('show');
+  }, duration);
 }
