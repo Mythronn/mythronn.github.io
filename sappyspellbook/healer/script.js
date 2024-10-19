@@ -219,12 +219,22 @@ function toggleList(){
       lists[i].style.display = "block";
       document.getElementById("saveList").hidden = false;
       document.getElementById("titleList").hidden = false;
+      document.getElementById("hlp1").hidden = true;
+      document.getElementById("hlp2").hidden = true;
+      document.getElementById("hlp3").hidden = true;
+      document.getElementById("hlp4").hidden = true;
+      document.getElementById("hlp5").hidden = true;
     }
     else{
       tables[i].style.display = "block";
       lists[i].style.display = "none";
       document.getElementById("saveList").hidden = true;
       document.getElementById("titleList").hidden = true;
+      document.getElementById("hlp1").hidden = false;
+      document.getElementById("hlp2").hidden = false;
+      document.getElementById("hlp3").hidden = false;
+      document.getElementById("hlp4").hidden = false;
+      document.getElementById("hlp5").hidden = false;
     } 
   }   
 }
@@ -266,6 +276,7 @@ function resetPoints(fullReset){
   }
   pointsAvailable = [0, 5,  5,  5,  5,  5,  6];
   pointsSpent = [0, 0,  0,  0,  0,  0,  0];
+  higherLevelPoints = [0, 0,  0,  0,  0,  0,  0]; 
   if(fullReset == 1){
     document.getElementById("exp1").value = "Select Spell";
     document.getElementById("exp2").value = "Select Spell";
@@ -450,6 +461,10 @@ function pointPlus(index, fromClick) {
     tempCost = abilities[a].cost;
     for(let i = abilities[a].level; i < 7; i++){
       if(tempCost > pointsAvailable[i]){
+        if(i == abilities[a].level){
+          higherLevelPoints[i] += tempCost - pointsAvailable[i];
+        }
+
         tempCost = tempCost - pointsAvailable[i];
         pointsAvailable[i] = 0;
       }
@@ -542,6 +557,29 @@ function updatePointsAvailable(){
   document.getElementById("ltp4").hidden = true;
   document.getElementById("ltp5").hidden = true;
   document.getElementById("ltp6").hidden = true;
+
+  document.getElementById("hlp1").innerText = " ";
+  document.getElementById("hlp2").innerText = " ";
+  document.getElementById("hlp3").innerText = " ";
+  document.getElementById("hlp4").innerText = " ";
+  document.getElementById("hlp5").innerText = " ";
+
+  if(higherLevelPoints[1] != 0){
+    document.getElementById("hlp1").innerText = " " + higherLevelPoints[1] + " Higher Level Point(s) spent here";
+  }
+  if(higherLevelPoints[2] != 0){
+    document.getElementById("hlp2").innerText = " " + higherLevelPoints[2] + " Higher Level Point(s) spent here";
+  }
+  if(higherLevelPoints[3] != 0){
+    document.getElementById("hlp3").innerText = " " + higherLevelPoints[3] + " Higher Level Point(s) spent here";
+  }
+  if(higherLevelPoints[4] != 0){
+    document.getElementById("hlp4").innerText = " " + higherLevelPoints[4] + " Higher Level Point(s) spent here";
+  }
+  if(higherLevelPoints[5] != 0){
+    document.getElementById("hlp5").innerText = " " + higherLevelPoints[5] + " Higher Level Point(s) spent here";
+  }
+
   if(ltpChecked && reqLevel == 1 && ltpReq == false){
      document.getElementById("level1Points").value = pointsAvailable[1] + 1;
   }
@@ -564,26 +602,31 @@ function updatePointsAvailable(){
     document.getElementById("ltp1").innerText = "(Look the Part Required)";
     document.getElementById("ltp1").hidden = false;
     document.getElementById("level2Points").value = 5;
+    document.getElementById("hlp1").innerText = " ";
   }
   else if(ltpChecked && reqLevel == 2 && ltpReq == true){
       document.getElementById("ltp2").innerText = "(Look the Part Required)";
       document.getElementById("ltp2").hidden = false;
       document.getElementById("level3Points").value = 5;
+      document.getElementById("hlp2").innerText = " ";
   }
   else if(ltpChecked && reqLevel == 3 && ltpReq == true){
       document.getElementById("ltp3").innerText = "(Look the Part Required)";
       document.getElementById("ltp3").hidden = false;
       document.getElementById("level4Points").value = 5;
+      document.getElementById("hlp3").innerText = " ";
   }
   else if(ltpChecked && reqLevel == 4 && ltpReq == true){
       document.getElementById("ltp4").innerText = "(Look the Part Required)";
       document.getElementById("ltp4").hidden = false;
       document.getElementById("level5Points").value = 5;
+      document.getElementById("hlp4").innerText = " ";
   }
   else if(ltpChecked && reqLevel == 5 && ltpReq == true){
       document.getElementById("ltp5").innerText = "(Look the Part Required)";
       document.getElementById("ltp5").hidden = false;
       document.getElementById("level6Points").value = 5;
+      document.getElementById("hlp5").innerText = " ";
   }
   else if(ltpChecked && reqLevel == 6 && ltpReq == true){
     document.getElementById("ltp6").innerText = "(Look the Part Required)";
@@ -735,7 +778,7 @@ var popup = document.getElementById(elementId);
 
 var pointsAvailable = [0, 5,  5,  5,  5,  5,  6];
 var pointsSpent = [0, 0,  0,  0,  0,  0,  0];
-
+var higherLevelPoints = [0, 0,  0,  0,  0,  0,  0];
 
 /*ABILITY DATA
 |||||||||||||||||||||||||||||||||||
