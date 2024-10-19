@@ -518,19 +518,19 @@ function updatePointsAvailable(){
   document.getElementById("hlp5").innerText = " ";
 
   if(higherLevelPoints[1] != 0){
-    document.getElementById("hlp1").innerText = " " + higherLevelPoints[1] + " Higher Level Point(s) spent here";
+    document.getElementById("hlp1").innerText = " " + higherLevelPoints[1] + " Higher Level Point(s)";
   }
   if(higherLevelPoints[2] != 0){
-    document.getElementById("hlp2").innerText = " " + higherLevelPoints[2] + " Higher Level Point(s) spent here";
+    document.getElementById("hlp2").innerText = " " + higherLevelPoints[2] + " Higher Level Point(s)";
   }
   if(higherLevelPoints[3] != 0){
-    document.getElementById("hlp3").innerText = " " + higherLevelPoints[3] + " Higher Level Point(s) spent here";
+    document.getElementById("hlp3").innerText = " " + higherLevelPoints[3] + " Higher Level Point(s)";
   }
   if(higherLevelPoints[4] != 0){
-    document.getElementById("hlp4").innerText = " " + higherLevelPoints[4] + " Higher Level Point(s) spent here";
+    document.getElementById("hlp4").innerText = " " + higherLevelPoints[4] + " Higher Level Point(s)";
   }
   if(higherLevelPoints[5] != 0){
-    document.getElementById("hlp5").innerText = " " + higherLevelPoints[5] + " Higher Level Point(s) spent here";
+    document.getElementById("hlp5").innerText = " " + higherLevelPoints[5] + " Higher Level Point(s)";
   }
 
   if(ltpChecked && reqLevel == 1 && ltpReq == false){
