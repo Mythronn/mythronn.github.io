@@ -231,12 +231,22 @@ function toggleList(){
       lists[i].style.display = "block";
       document.getElementById("saveList").hidden = false;
       document.getElementById("titleList").hidden = false;
+      document.getElementById("hlp1").hidden = true;
+      document.getElementById("hlp2").hidden = true;
+      document.getElementById("hlp3").hidden = true;
+      document.getElementById("hlp4").hidden = true;
+      document.getElementById("hlp5").hidden = true;
     }
     else{
       tables[i].style.display = "block";
       lists[i].style.display = "none";
       document.getElementById("saveList").hidden = true;
       document.getElementById("titleList").hidden = true;
+      document.getElementById("hlp1").hidden = false;
+      document.getElementById("hlp2").hidden = false;
+      document.getElementById("hlp3").hidden = false;
+      document.getElementById("hlp4").hidden = false;
+      document.getElementById("hlp5").hidden = false;
     } 
   }   
 }
