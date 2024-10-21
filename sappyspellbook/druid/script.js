@@ -900,7 +900,7 @@ const ImbueArmor = {
   max: 31, charge: "", use: 1, per: "Life",
   pointTotalId: "ImbueArmorval",
   name: "Imbue Armor", type: "Enchantment",
-  text: "<p2>Imbue Armor</p2><BR><p3>Freq:</p3>  1/Life<BR><p3>Type:</p3>  Enchantment<BR><p3>School:</p3> Protection<BR><p3>Range:</p3> Other<BR><p3>Incant:</p3> <I>I enchant thee with Imbued Armor</I> x3<BR><p3>Materials:</p3> White Strip<BR><p3>Effect:</p3> All armor worn by the bearer gains a +1 modifier. This modifier may allow the armor to exceed the maximum value for its type, up to the bearer’s class maximum<BR><p3>Notes:</p3> Does not apply to magic armor. A player may only benefit from one instance of Imbue Armor, or similar magic and abilities that increase Armor Points, at a time"
+  text: "<p2>Imbue Armor</p2><BR><p3>Freq:</p3>  1/Life<BR><p3>Type:</p3>  Enchantment<BR><p3>School:</p3> Protection<BR><p3>Range:</p3> Other<BR><p3>Incant:</p3> <I>I enchant thee with Imbued Armor</I> x3<BR><p3>Materials:</p3> White Strip<BR><p3>Effect:</p3> All armor worn by the bearer gains a +1 modifier. This modifier may allow the armor to exceed the maximum value for its type, up to the bearer’s class maximum<BR><p3>Limitations:</p3>  Does not apply to magic armor. A player may only benefit from one instance of Imbue Armor.<BR><p3>Notes:</p3> When this enchantment is removed, the bearer loses 1 current and maximum Armor Point in each location."
 };
 const Mend = {
   purchased: 0,
@@ -930,7 +930,7 @@ const CorrosiveMist = {
   max: 1, charge: "", use: 1, per: "Refresh",
   pointTotalId: "CorrosiveMistval",
   name: "Corrosive Mist", type: "Enchantment",
-  text: "<p2>Corrosive Mist</p2><BR><p3>Freq:</p3>  1/Refresh<BR><p3>Type:</p3>  Enchantment<BR><p3>School:</p3> Death<BR><p3>Range:</p3> Touch<BR><p3>Incant:</p3> <I>The mists of corrosion surround thee</I> x3<BR><p3>Materials:</p3>Materials: Three Red Strips<BR><p3>Effect:</p3> Bearer may cast Destroy Armor by announcing <I>the mists of corrosion destroy your [armor location] armor</I>. Bearer must remove a strip after each use of Destroy Armor<BR><p3>Notes:</p3> Corrosive Mist is removed when the last strip is removed"
+  text: "<p2>Corrosive Mist</p2><BR><p3>Freq:</p3>  1/Refresh<BR><p3>Type:</p3>  Enchantment<BR><p3>School:</p3> Death<BR><p3>Range:</p3> Touch<BR><p3>Incant:</p3> <I>The mists of corrosion surround thee</I> x3<BR><p3>Materials:</p3> Three Red Strips<BR><p3>Effect:</p3> Bearer may cast Destroy Armor (m) by announcing <I>[Player] the mists of corrosion destroy your [armor location] armor</I>. Bearer must remove a strip after each use of Destroy Armor<BR><p3>Notes:</p3> Corrosive Mist is removed when the last strip is removed"
 };
 const GiftofEarth = {
   purchased: 0,
@@ -966,7 +966,7 @@ const Innate = {
   max: 4, charge: "", use: 1, per: "Refresh",
   pointTotalId: "Innateval",
   name: "Innate", type: "Meta-Magic",
-  text: "<p2>Innate</p2><BR><p3>Freq:</p3>  1/Refresh<BR><p3>Type:</p3>  Meta-Magic<BR><p3>School:</p3> Neutral<BR><p3>Range:</p3> N/A<BR><p3>Incant:</p3> <I>Innate</I> <BR><p3>Effect:</p3> May be used to instantly Charge a single magic by stating the name of the magic"
+  text: "<p2>Innate</p2><BR><p3>Freq:</p3>  1/Refresh<BR><p3>Type:</p3>  Meta-Magic<BR><p3>School:</p3> Neutral<BR><p3>Range:</p3> N/A<BR><p3>Incant:</p3> <I>Innate</I> <BR><p3>Effect:</p3> May be used to instantly Charge a single magic or ability by stating its name."
 };
 const Poison = {
   purchased: 0,
@@ -993,7 +993,7 @@ const Stoneform = {
   max: 31, charge: "Charge x3", use: 1, per: "Refresh",
   pointTotalId: "Stoneformval",
   name: "Stoneform", type: "Verbal",
-  text: "<p2>Stoneform</p2><BR><p3>Freq:</p3> 1/Refresh Chg x3<BR><p3>Type:</p3>  Verbal<BR><p3>School:</p3> Protection<BR><p3>Range:</p3> Self<BR><p3>Incant:</p3> <I>I take the form of stone</I><BR><p3>Effect:</p3> Caster is Frozen. May end this State at any time by saying <I>the earth release me</I> x2"
+  text: "<p2>Stoneform</p2><BR><p3>Freq:</p3> 1/Refresh Chg x3<BR><p3>Type:</p3>  Verbal<BR><p3>School:</p3> Protection<BR><p3>Range:</p3> Self<BR><p3>Incant:</p3> <I>I take the form of stone</I><BR><p3>Effect:</p3> Caster is Frozen. May end this State at any time by saying <I>The earth release me</I> x2"
 };
 
 /*__________________________________________*/
@@ -1041,7 +1041,7 @@ const GiftofFire = {
   max: 2, charge: "", use: 1, per: "Refresh",
   pointTotalId: "GiftofFireval",
   name: "Gift of Fire", type: "Enchantment",
-  text: "<p2>Gift of Fire</p2><BR><p3>Freq:</p3>  1/Refresh<BR><p3>Type:</p3>  Enchantment<BR><p3>School:</p3> Flame<BR><p3>Range:</p3> Other<BR><p3>Incant:</p3> <I>I grant thee a gift of the fire</I> x3<BR><p3>Materials:</p3> Red Strip and White Strip<BR><p3>Effect:</p3> Bearer is Immune to Flame and gains Heat Weapon 1/Refresh Charge x3"
+  text: "<p2>Gift of Fire</p2><BR><p3>Freq:</p3>  1/Refresh<BR><p3>Type:</p3>  Enchantment<BR><p3>School:</p3> Flame<BR><p3>Range:</p3> Other<BR><p3>Incant:</p3> <I>I grant thee a gift of the fire</I> x3<BR><p3>Materials:</p3> Red Strip and White Strip<BR><p3>Effect:</p3> Bearer gains Heat Weapon 1/Refresh Charge x3 (m) and is Immune to Flame."
 };
 const GreaterMend = {
   purchased: 0,
@@ -1050,7 +1050,7 @@ const GreaterMend = {
   max: 31, charge: "", use: 1, per: "Refresh",
   pointTotalId: "GreaterMendval",
   name: "Greater Mend", type: "Verbal",
-  text: "<p2>Greater Mend</p2><BR><p3>Freq:</p3>  1/Refresh<BR><p3>Type:</p3>  Verbal<BR><p3>School:</p3> Sorcery<BR><p3>Range:</p3> Touch<BR><p3>Incant:</p3> <I>Return this [object name] to its former glory</I> x5<BR><p3>Effect:</p3> Will repair a destroyed or damaged item or restore all armor points in one location"
+  text: "<p2>Greater Mend</p2><BR><p3>Freq:</p3>  1/Refresh<BR><p3>Type:</p3>  Verbal<BR><p3>School:</p3> Sorcery<BR><p3>Range:</p3> Touch<BR><p3>Incant:</p3> <I>Return this [object name] to its former glory</I> x5<BR><p3>Effect:</p3> Will restore all armor points in one location or repair a damaged or broken item. "
 };
 const IcyBlast = {
   purchased: 0,
@@ -1068,7 +1068,7 @@ const Regeneration = {
   max: 31, charge: "", use: 1, per: "Refresh",
   pointTotalId: "Regenerationval",
   name: "Regeneration", type: "Enchantment",
-  text: "<p2>Regeneration</p2><BR><p3>Freq:</p3>  1/Refresh<BR><p3>Type:</p3>  Enchantment<BR><p3>School:</p3> Spirit<BR><p3>Range:</p3> Other<BR><p3>Incant:</p3> <I>I grant thee the power of regeneration</I> x3<BR><p3>Materials:</p3> Yellow strip<BR><p3>Effect:</p3> Bearer gains unlimited use of Heal (self-only) Unlimited (Swift)<BR><p3>Limitations: The Heal granted by Regeneration may not be used within 10’ of a living enemy</p3>" 
+  text: "<p2>Regeneration</p2><BR><p3>Freq:</p3>  1/Refresh<BR><p3>Type:</p3>  Enchantment<BR><p3>School:</p3> Spirit<BR><p3>Range:</p3> Other<BR><p3>Incant:</p3> <I>I grant thee the power of regeneration</I> x3<BR><p3>Materials:</p3> Yellow strip<BR><p3>Effect:</p3> Bearer gains unlimited use of Heal (self-only) Unlimited (Swift)<BR><p3>Limitations:</p3> The Heal granted by Regeneration may not be used within 10’ of a living enemy<BR><p3>Notes:</p3> Bearer must state Swift normally" 
 };
 const Stoneskin = {
   purchased: 0,
@@ -1107,7 +1107,7 @@ const Iceball = {
   max: 2, charge: "", use: 1, per: "Ball",
   pointTotalId: "Iceballval",
   name: "Iceball", type: "Magic Ball",
-  text: "<p2>Iceball</p2><BR><p3>Freq:</p3> 1 Balls/Unlimited<BR><p3>Type:</p3>  Magic Ball<BR><p3>School:</p3> Subdual<BR><p3>Range:</p3> Ball<BR><p3>Incant:</p3> <I>The strength of ice is mine to evoke</I> x3<BR><p3>Materials:</p3> White Magic Ball<BR><p3>Effect:</p3> Target player becomes Frozen for 60 seconds. Engulfing"
+  text: "<p2>Iceball</p2><BR><p3>Freq:</p3> 1 Ball/Unlimited<BR><p3>Type:</p3>  Magic Ball<BR><p3>School:</p3> Subdual<BR><p3>Range:</p3> Ball<BR><p3>Incant:</p3> <I>The strength of ice is mine to evoke</I> x3<BR><p3>Materials:</p3> White Magic Ball<BR><p3>Effect:</p3> Target player becomes Frozen for 60 seconds. Engulfing"
 };
 const GiftofWater = {
   purchased: 0,
@@ -1266,7 +1266,7 @@ const ImbueWeapon = {
   max: 31, charge: "", use: 1, per: "Refresh",
   pointTotalId: "ImbueWeaponval",
   name: "Imbue Weapon", type: "Enchantment",
-  text: "<p2>Imbue Weapon</p2><BR><p3>Freq:</p3>  1/Refresh<BR><p3>Type:</p3>  Enchantment<BR><p3>School:</p3> Death<BR><p3>Range:</p3> Touch<BR><p3>Incant:</p3> <I>I enchant thee to slay all foes</I> x3<BR><p3>Materials:</p3> Red Strip<BR><p3>Effect:</p3> Melee weapons wielded by the bearer are Wounds Kill"
+  text: "<p2>Imbue Weapon</p2><BR><p3>Freq:</p3>  1/Refresh<BR><p3>Type:</p3>  Enchantment<BR><p3>School:</p3> Death<BR><p3>Range:</p3> Other<BR><p3>Incant:</p3> <I>I enchant thee to slay all foes</I> x3<BR><p3>Materials:</p3> Red Strip<BR><p3>Effect:</p3> Melee weapons wielded by the bearer are Wounds Kill"
 };
 const NaturalizeMagic = {
   purchased: 0,
