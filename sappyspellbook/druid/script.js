@@ -673,41 +673,41 @@ function processRangerPlus(){
   updateTable();
 }
 function processAvatarofNaturePlus(){
-  abilities[47].text = abilities[47].text.replace("Touch: Others", "SELF"); 
-  abilities[6].text = abilities[6].text.replace("Touch: Others", "SELF"); 
-  abilities[9].text = abilities[9].text.replace("Self/Touch", "SELF");  
-  abilities[10].text = abilities[10].text.replace("Touch: Others", "SELF"); 
-  abilities[14].text = abilities[14].text.replace("Touch: Others", "SELF"); 
-  abilities[17].text = abilities[17].text.replace("Touch: Others", "SELF"); 
-  abilities[18].text = abilities[18].text.replace("Touch: Others", "SELF"); 
-  abilities[21].text = abilities[21].text.replace("Touch: Others", "SELF"); 
-  abilities[24].text = abilities[24].text.replace("Touch: Others", "SELF"); 
-  abilities[25].text = abilities[25].text.replace("Touch: Others", "SELF"); 
-  abilities[27].text = abilities[27].text.replace("Touch: Others", "SELF"); 
-  abilities[29].text = abilities[29].text.replace("Touch: Others", "SELF"); 
-  abilities[31].text = abilities[31].text.replace("Touch: Others", "SELF"); 
+  abilities[47].text = abilities[47].text.replace("Other", "SELF"); 
+  abilities[6].text = abilities[6].text.replace("Other", "SELF"); 
+  abilities[9].text = abilities[9].text.replace("Touch", "SELF");  
+  abilities[10].text = abilities[10].text.replace("Other", "SELF"); 
+  abilities[14].text = abilities[14].text.replace("Other", "SELF"); 
+  abilities[17].text = abilities[17].text.replace("Other", "SELF"); 
+  abilities[18].text = abilities[18].text.replace("Other", "SELF"); 
+  abilities[21].text = abilities[21].text.replace("Other", "SELF"); 
+  abilities[24].text = abilities[24].text.replace("Other", "SELF"); 
+  abilities[25].text = abilities[25].text.replace("Other", "SELF"); 
+  abilities[27].text = abilities[27].text.replace("Other", "SELF"); 
+  abilities[29].text = abilities[29].text.replace("Other", "SELF"); 
+  abilities[31].text = abilities[31].text.replace("Other", "SELF"); 
 }
 function processAvatarofNatureMinus(){
-  abilities[47].text = abilities[47].text.replace("SELF", "Touch: Others"); 
-  abilities[6].text = abilities[6].text.replace("SELF", "Touch: Others"); 
-  abilities[9].text = abilities[9].text.replace("SELF", "Self/Touch");  
-  abilities[10].text = abilities[10].text.replace("SELF", "Touch: Others"); 
-  abilities[14].text = abilities[14].text.replace("SELF", "Touch: Others"); 
-  abilities[17].text = abilities[17].text.replace("SELF", "Touch: Others"); 
-  abilities[18].text = abilities[18].text.replace("SELF", "Touch: Others"); 
-  abilities[21].text = abilities[21].text.replace("SELF", "Touch: Others"); 
-  abilities[24].text = abilities[24].text.replace("SELF", "Touch: Others"); 
-  abilities[25].text = abilities[25].text.replace("SELF", "Touch: Others"); 
-  abilities[27].text = abilities[27].text.replace("SELF", "Touch: Others"); 
-  abilities[29].text = abilities[29].text.replace("SELF", "Touch: Others"); 
-  abilities[31].text = abilities[31].text.replace("SELF", "Touch: Others"); 
+  abilities[47].text = abilities[47].text.replace("SELF", "Other"); 
+  abilities[6].text = abilities[6].text.replace("SELF", "Other"); 
+  abilities[9].text = abilities[9].text.replace("SELF", "Touch");  
+  abilities[10].text = abilities[10].text.replace("SELF", "Other"); 
+  abilities[14].text = abilities[14].text.replace("SELF", "Other"); 
+  abilities[17].text = abilities[17].text.replace("SELF", "Other"); 
+  abilities[18].text = abilities[18].text.replace("SELF", "Other"); 
+  abilities[21].text = abilities[21].text.replace("SELF", "Other"); 
+  abilities[24].text = abilities[24].text.replace("SELF", "Other"); 
+  abilities[25].text = abilities[25].text.replace("SELF", "Other"); 
+  abilities[27].text = abilities[27].text.replace("SELF", "Other"); 
+  abilities[29].text = abilities[29].text.replace("SELF", "Other"); 
+  abilities[31].text = abilities[31].text.replace("SELF", "Other"); 
 }
 
 function processSummonerPlus(){
   for(let i = 0; i < abilityCount; i++){
     if(abilities[i].type == "Enchantment"){
-      abilities[i].text = abilities[i].text.replace("</p3>  1/Refresh", "</p3>  2/Refresh");
-      abilities[i].text = abilities[i].text.replace("</p3>  1/Life", "</p3>  2/Life");
+      abilities[i].text = abilities[i].text.replace("</p3>  1/Refresh", "</p3>  2/REFRESH");
+      abilities[i].text = abilities[i].text.replace("</p3>  1/Life", "</p3>  2/LIFE");
     }
   }
 }
@@ -715,8 +715,8 @@ function processSummonerPlus(){
 function processSummonerMinus(){
   for(let i = 0; i < abilityCount; i++){
     if(abilities[i].type == "Enchantment"){
-      abilities[i].text = abilities[i].text.replace("</p3>  2/Refresh", "</p3>  1/Refresh");
-      abilities[i].text = abilities[i].text.replace("</p3>  2/Life", "</p3>  1/Life");
+      abilities[i].text = abilities[i].text.replace("</p3>  2/REFRESH", "</p3>  1/Refresh");
+      abilities[i].text = abilities[i].text.replace("</p3>  2/LIFE", "</p3>  1/Life");
     }
   }
 }
@@ -853,7 +853,7 @@ const Barkskin = {
   max: 2, charge: "Charge x10", use: 1, per: "Refresh",
   pointTotalId: "Barkskinval",
   name: "Barkskin", type: "Enchantment",
-  text: "<p2>Barkskin</p2><BR><p3>Freq:</p3>  1/Refresh Chg x10<BR><p3>Type:</p3>  Enchantment<BR><p3>School:</p3> Protection<BR><p3>Range:</p3> Touch: Others<BR><p3>Incant:</p3> <I>I enchant thee with barkskin</I> x3<BR><p3>Materials:</p3> White strip<BR><p3>Effect:</p3> Bearer gains one point of Magic Armor"
+  text: "<p2>Barkskin</p2><BR><p3>Freq:</p3>  1/Refresh Chg x10<BR><p3>Type:</p3>  Enchantment<BR><p3>School:</p3> Protection<BR><p3>Range:</p3> Other<BR><p3>Incant:</p3> <I>I enchant thee with barkskin</I> x3<BR><p3>Materials:</p3> White strip<BR><p3>Effect:</p3> Bearer gains one point of Magic Armor"
 };
 const Entangle = {
   purchased: 0,
@@ -900,7 +900,7 @@ const ImbueArmor = {
   max: 31, charge: "", use: 1, per: "Life",
   pointTotalId: "ImbueArmorval",
   name: "Imbue Armor", type: "Enchantment",
-  text: "<p2>Imbue Armor</p2><BR><p3>Freq:</p3>  1/Life<BR><p3>Type:</p3>  Enchantment<BR><p3>School:</p3> Protection<BR><p3>Range:</p3> Touch: Others<BR><p3>Incant:</p3> <I>I enchant thee with Imbued Armor</I> x3<BR><p3>Materials:</p3> White Strip<BR><p3>Effect:</p3> All armor worn by the bearer gains a +1 modifier. This modifier may allow the armor to exceed the maximum value for its type, up to the bearer’s class maximum<BR><p3>Notes:</p3> Does not apply to magic armor. A player may only benefit from one instance of Imbue Armor, or similar magic and abilities that increase Armor Points, at a time"
+  text: "<p2>Imbue Armor</p2><BR><p3>Freq:</p3>  1/Life<BR><p3>Type:</p3>  Enchantment<BR><p3>School:</p3> Protection<BR><p3>Range:</p3> Other<BR><p3>Incant:</p3> <I>I enchant thee with Imbued Armor</I> x3<BR><p3>Materials:</p3> White Strip<BR><p3>Effect:</p3> All armor worn by the bearer gains a +1 modifier. This modifier may allow the armor to exceed the maximum value for its type, up to the bearer’s class maximum<BR><p3>Notes:</p3> Does not apply to magic armor. A player may only benefit from one instance of Imbue Armor, or similar magic and abilities that increase Armor Points, at a time"
 };
 const Mend = {
   purchased: 0,
@@ -930,7 +930,7 @@ const CorrosiveMist = {
   max: 1, charge: "", use: 1, per: "Refresh",
   pointTotalId: "CorrosiveMistval",
   name: "Corrosive Mist", type: "Enchantment",
-  text: "<p2>Corrosive Mist</p2><BR><p3>Freq:</p3>  1/Refresh<BR><p3>Type:</p3>  Enchantment<BR><p3>School:</p3> Death<BR><p3>Range:</p3> Self/Touch<BR><p3>Incant:</p3> <I>The mists of corrosion surround thee</I> x3<BR><p3>Materials:</p3>Materials: Three Red Strips<BR><p3>Effect:</p3> Bearer may cast Destroy Armor by announcing <I>the mists of corrosion destroy your [armor location] armor</I>. Bearer must remove a strip after each use of Destroy Armor<BR><p3>Notes:</p3> Corrosive Mist is removed when the last strip is removed"
+  text: "<p2>Corrosive Mist</p2><BR><p3>Freq:</p3>  1/Refresh<BR><p3>Type:</p3>  Enchantment<BR><p3>School:</p3> Death<BR><p3>Range:</p3> Touch<BR><p3>Incant:</p3> <I>The mists of corrosion surround thee</I> x3<BR><p3>Materials:</p3>Materials: Three Red Strips<BR><p3>Effect:</p3> Bearer may cast Destroy Armor by announcing <I>the mists of corrosion destroy your [armor location] armor</I>. Bearer must remove a strip after each use of Destroy Armor<BR><p3>Notes:</p3> Corrosive Mist is removed when the last strip is removed"
 };
 const GiftofEarth = {
   purchased: 0,
@@ -939,7 +939,7 @@ const GiftofEarth = {
   max: 2, charge: "", use: 1, per: "Refresh",
   pointTotalId: "GiftofEarthval",
   name: "Gift of Earth", type: "Enchantment",
-  text: "<p2>Gift of Earth</p2><BR><p3>Freq:</p3>  1/Refresh<BR><p3>Type:</p3>  Enchantment<BR><p3>School:</p3> Protection<BR><p3>Range:</p3> Touch: Others<BR><p3>Incant:</p3> <I>I grant thee a gift of the earth</I> x3<BR><p3>Materials:</p3> White Strip<BR><p3>Effect:</p3> Bearer gains one point of magic armor and is affected as per Harden."
+  text: "<p2>Gift of Earth</p2><BR><p3>Freq:</p3>  1/Refresh<BR><p3>Type:</p3>  Enchantment<BR><p3>School:</p3> Protection<BR><p3>Range:</p3> Other<BR><p3>Incant:</p3> <I>I grant thee a gift of the earth</I> x3<BR><p3>Materials:</p3> White Strip<BR><p3>Effect:</p3> Bearer gains one point of magic armor and is affected as per Harden."
 };
 const Heal = {
   purchased: 0,
@@ -966,7 +966,7 @@ const Innate = {
   max: 4, charge: "", use: 1, per: "Refresh",
   pointTotalId: "Innateval",
   name: "Innate", type: "Meta-Magic",
-  text: "<p2>Innate</p2><BR><p3>Freq:</p3>  1/Refresh<BR><p3>Type:</p3>  Meta-Magic<BR><p3>School:</p3> Neutral<BR><p3>Range:</p3> Touch: Others<BR><p3>Incant:</p3> <I>Innate</I> <BR><p3>Effect:</p3> May be used to instantly Charge a single magic by stating the name of the magic"
+  text: "<p2>Innate</p2><BR><p3>Freq:</p3>  1/Refresh<BR><p3>Type:</p3>  Meta-Magic<BR><p3>School:</p3> Neutral<BR><p3>Range:</p3> N/A<BR><p3>Incant:</p3> <I>Innate</I> <BR><p3>Effect:</p3> May be used to instantly Charge a single magic by stating the name of the magic"
 };
 const Poison = {
   purchased: 0,
@@ -975,7 +975,7 @@ const Poison = {
   max: 31, charge: "", use: 1, per: "Life",
   pointTotalId: "Poisonval",
   name: "Poison", type: "Enchantment",
-  text: "<p2>Poison</p2><BR><p3>Freq:</p3>  1/Life<BR><p3>Type:</p3>  Enchantment<BR><p3>School:</p3> Death<BR><p3>Range:</p3> Touch: Others<BR><p3>Incant:</p3> <I>I coat these weapons with a deadly poison</I> x2<BR><p3>Materials:</p3> Red Strip<BR><p3>Effect:</p3> The next Wound dealt by the bearer in melee is Wounds Kill"
+  text: "<p2>Poison</p2><BR><p3>Freq:</p3>  1/Life<BR><p3>Type:</p3>  Enchantment<BR><p3>School:</p3> Death<BR><p3>Range:</p3> Other<BR><p3>Incant:</p3> <I>I coat these weapons with a deadly poison</I> x2<BR><p3>Materials:</p3> Red Strip<BR><p3>Effect:</p3> The next Wound dealt by the bearer in melee is Wounds Kill"
 };
 const Release = {
   purchased: 0,
@@ -1005,7 +1005,7 @@ const Attuned = {
   max: 2, charge: "", use: 1, per: "Refresh",
   pointTotalId: "Attunedval",
   name: "Attuned", type: "Enchantment",
-  text: "<p2>Attuned</p2><BR><p3>Freq:</p3>  1/Refresh<BR><p3>Type:</p3>  Enchantment<BR><p3>School:</p3> Sorcery<BR><p3>Range:</p3> Touch: Others<BR><p3>Incant:</p3> <I>I enchant thee with attune</I> x3<BR><p3>Materials:</p3> Yellow strip<BR><p3>Effect:</p3> May wear an additional Enchantment. Attuned does not count towards the bearer’s Enchantment limit<BR><p3>Limitations:</p3> This ability may not be used in conjunction with any other similar ability or magic<BR><p3>Notes:</p3> If Attuned is removed, the bearer chooses which (m) Enchantments to lose to meet their new Enchantment limit, if necessary"
+  text: "<p2>Attuned</p2><BR><p3>Freq:</p3>  1/Refresh<BR><p3>Type:</p3>  Enchantment<BR><p3>School:</p3> Sorcery<BR><p3>Range:</p3> Other<BR><p3>Incant:</p3> <I>I enchant thee with attune</I> x3<BR><p3>Materials:</p3> Yellow strip<BR><p3>Effect:</p3> May wear an additional Enchantment. Attuned does not count towards the bearer’s Enchantment limit<BR><p3>Limitations:</p3> This ability may not be used in conjunction with any other similar ability or magic<BR><p3>Notes:</p3> If Attuned is removed, the bearer chooses which (m) Enchantments to lose to meet their new Enchantment limit, if necessary"
 };
 const BearStrength = {
   purchased: 0,
@@ -1014,7 +1014,7 @@ const BearStrength = {
   max: 31, charge: "", use: 1, per: "Refresh",
   pointTotalId: "BearStrengthval",
   name: "Bear Strength", type: "Enchantment",
-  text: "<p2>Bear Strength</p2><BR><p3>Freq:</p3>  1/Refresh<BR><p3>Type:</p3>  Enchantment<BR><p3>School:</p3> Sorcery<BR><p3>Range:</p3> Touch: Others<BR><p3>Incant:</p3> <I>I enchant thee with the strength of the bear</I> x3<BR><p3>Materials:</p3> Red Strip<BR><p3>Effect:</p3> Bearer’s melee weapons are Shield Crushing"
+  text: "<p2>Bear Strength</p2><BR><p3>Freq:</p3>  1/Refresh<BR><p3>Type:</p3>  Enchantment<BR><p3>School:</p3> Sorcery<BR><p3>Range:</p3> Other<BR><p3>Incant:</p3> <I>I enchant thee with the strength of the bear</I> x3<BR><p3>Materials:</p3> Red Strip<BR><p3>Effect:</p3> Bearer’s melee weapons are Shield Crushing"
 };
 const DispelMagic = {
   purchased: 0,
@@ -1041,7 +1041,7 @@ const GiftofFire = {
   max: 2, charge: "", use: 1, per: "Refresh",
   pointTotalId: "GiftofFireval",
   name: "Gift of Fire", type: "Enchantment",
-  text: "<p2>Gift of Fire</p2><BR><p3>Freq:</p3>  1/Refresh<BR><p3>Type:</p3>  Enchantment<BR><p3>School:</p3> Flame<BR><p3>Range:</p3> Touch: Others<BR><p3>Incant:</p3> <I>I grant thee a gift of the fire</I> x3<BR><p3>Materials:</p3> Red Strip and White Strip<BR><p3>Effect:</p3> Bearer is Immune to Flame and gains Heat Weapon 1/Refresh Charge x3"
+  text: "<p2>Gift of Fire</p2><BR><p3>Freq:</p3>  1/Refresh<BR><p3>Type:</p3>  Enchantment<BR><p3>School:</p3> Flame<BR><p3>Range:</p3> Other<BR><p3>Incant:</p3> <I>I grant thee a gift of the fire</I> x3<BR><p3>Materials:</p3> Red Strip and White Strip<BR><p3>Effect:</p3> Bearer is Immune to Flame and gains Heat Weapon 1/Refresh Charge x3"
 };
 const GreaterMend = {
   purchased: 0,
@@ -1068,7 +1068,7 @@ const Regeneration = {
   max: 31, charge: "", use: 1, per: "Refresh",
   pointTotalId: "Regenerationval",
   name: "Regeneration", type: "Enchantment",
-  text: "<p2>Regeneration</p2><BR><p3>Freq:</p3>  1/Refresh<BR><p3>Type:</p3>  Enchantment<BR><p3>School:</p3> Spirit<BR><p3>Range:</p3> Touch: Others<BR><p3>Incant:</p3> <I>I grant thee the power of regeneration</I> x3<BR><p3>Materials:</p3> Yellow strip<BR><p3>Effect:</p3> Bearer gains unlimited use of Heal (self-only) Unlimited (Swift)<BR><p3>Limitations: The Heal granted by Regeneration may not be used within 10’ of a living enemy</p3>" 
+  text: "<p2>Regeneration</p2><BR><p3>Freq:</p3>  1/Refresh<BR><p3>Type:</p3>  Enchantment<BR><p3>School:</p3> Spirit<BR><p3>Range:</p3> Other<BR><p3>Incant:</p3> <I>I grant thee the power of regeneration</I> x3<BR><p3>Materials:</p3> Yellow strip<BR><p3>Effect:</p3> Bearer gains unlimited use of Heal (self-only) Unlimited (Swift)<BR><p3>Limitations: The Heal granted by Regeneration may not be used within 10’ of a living enemy</p3>" 
 };
 const Stoneskin = {
   purchased: 0,
@@ -1077,7 +1077,7 @@ const Stoneskin = {
   max: 2, charge: "", use: 1, per: "Refresh",
   pointTotalId: "Stoneskinval",
   name: "Stoneskin", type: "Enchantment",
-  text: "<p2>Stoneskin</p2><BR><p3>Freq:</p3>  1/Refresh<BR><p3>Type:</p3>  Enchantment<BR><p3>School:</p3> Protection<BR><p3>Range:</p3> Touch: Others<BR><p3>Incant:</p3> <I>May nature protect thee from all forms of attack</I> x3<BR><p3>Materials:</p3> White Strip<BR><p3>Effect:</p3> Bearer gains 2 points of Magic armor affected as per Ancestral Armor"
+  text: "<p2>Stoneskin</p2><BR><p3>Freq:</p3>  1/Refresh<BR><p3>Type:</p3>  Enchantment<BR><p3>School:</p3> Protection<BR><p3>Range:</p3> Other<BR><p3>Incant:</p3> <I>May nature protect thee from all forms of attack</I> x3<BR><p3>Materials:</p3> White Strip<BR><p3>Effect:</p3> Bearer gains 2 points of Magic armor affected as per Ancestral Armor"
 };
 
 /*__________________________________________*/
@@ -1098,7 +1098,7 @@ const FlameBlade = {
   max: 2, charge: "", use: 1, per: "Refresh",
   pointTotalId: "FlameBladeval",
   name: "Flame Blade", type: "Enchantment",
-  text: "<p2>Flame Blade</p2><BR><p3>Freq:</p3>  1/Refresh<BR><p3>Type:</p3>  Enchantment<BR><p3>School:</p3> Flame<BR><p3>Range:</p3> Touch: Others<BR><p3>Incant:</p3> <I>The element of fire shall infuse your weapons</I> x3<BR><p3>Materials:</p3> Red Strip and White Strip<BR><p3>Effect:</p3> Bearer’s melee weapons are Armor Breaking and Shield Crushing. Bearer and weapons they hold are Immune to Flame"
+  text: "<p2>Flame Blade</p2><BR><p3>Freq:</p3>  1/Refresh<BR><p3>Type:</p3>  Enchantment<BR><p3>School:</p3> Flame<BR><p3>Range:</p3> Other<BR><p3>Incant:</p3> <I>The element of fire shall infuse your weapons</I> x3<BR><p3>Materials:</p3> Red Strip and White Strip<BR><p3>Effect:</p3> Bearer’s melee weapons are Armor Breaking and Shield Crushing. Bearer and weapons they hold are Immune to Flame"
 };
 const Iceball = {
   purchased: 0,
@@ -1116,7 +1116,7 @@ const GiftofWater = {
   max: 2, charge: "", use: 1, per: "Refresh",
   pointTotalId: "GiftofWaterval",
   name: "Gift of Water", type: "Enchantment",
-  text: "<p2>Gift of Water</p2><BR><p3>Freq:</p3>  1/Refresh<BR><p3>Type:</p3>  Enchantment<BR><p3>School:</p3> Sorcery<BR><p3>Range:</p3> Touch: Others<BR><p3>Incant:</p3> <I>I grant thee a gift of the water</I> x3<BR><p3>Materials:</p3> White Strip and Yellow Strip<BR><p3>Effect:</p3> Bearer gains one point of magic armor and Heal (self- only) unlimited (m)"
+  text: "<p2>Gift of Water</p2><BR><p3>Freq:</p3>  1/Refresh<BR><p3>Type:</p3>  Enchantment<BR><p3>School:</p3> Sorcery<BR><p3>Range:</p3> Other<BR><p3>Incant:</p3> <I>I grant thee a gift of the water</I> x3<BR><p3>Materials:</p3> White Strip and Yellow Strip<BR><p3>Effect:</p3> Bearer gains one point of magic armor and Heal (self- only) unlimited (m)"
 };
 const Golem = {
   purchased: 0,
@@ -1125,7 +1125,7 @@ const Golem = {
   max: 31, charge: "", use: 1, per: "Refresh",
   pointTotalId: "Golemval",
   name: "Golem", type: "Enchantment",
-  text: "<p2>Golem</p2><BR><p3>Freq:</p3>  1/Refresh<BR><p3>Type:</p3>  Enchantment<BR><p3>School:</p3> Sorcery<BR><p3>Range:</p3> Touch: Others<BR><p3>Incant:</p3> <I>From earth and clay I form thee</I> x3<BR><p3>Materials:</p3> White Strip and Red Strip<BR><p3>Effect:</p3> Bearer is Immune to Death. Bearer is Cursed. Bearer can remove a Wound via Mend. Bearer may use the caster as an alternate respawn point while the caster is alive. Bearer may treat the caster as a base for the purposes of the effects which require the teammate to go to their base. Non-magical armor worn affected as per Imbue Armor. All Enchantments worn by the Bearer, including Golem, are Persistent while Golem is worn<BR><p3>Limitations:</p3> A caster may only have a single Golem Enchantment active at a time<BR><p3>Notes:</p3> Greater Mend and Word of Mending will not remove a wound"
+  text: "<p2>Golem</p2><BR><p3>Freq:</p3>  1/Refresh<BR><p3>Type:</p3>  Enchantment<BR><p3>School:</p3> Sorcery<BR><p3>Range:</p3> Other<BR><p3>Incant:</p3> <I>From earth and clay I form thee</I> x3<BR><p3>Materials:</p3> White Strip and Red Strip<BR><p3>Effect:</p3> Bearer is Immune to Death. Bearer is Cursed. Bearer can remove a Wound via Mend. Bearer may use the caster as an alternate respawn point while the caster is alive. Bearer may treat the caster as a base for the purposes of the effects which require the teammate to go to their base. Non-magical armor worn affected as per Imbue Armor. All Enchantments worn by the Bearer, including Golem, are Persistent while Golem is worn<BR><p3>Limitations:</p3> A caster may only have a single Golem Enchantment active at a time<BR><p3>Notes:</p3> Greater Mend and Word of Mending will not remove a wound"
 };
 const Lycanthropy = {
   purchased: 0,
@@ -1134,7 +1134,7 @@ const Lycanthropy = {
   max: 2, charge: "", use: 1, per: "Refresh",
   pointTotalId: "Lycanthropyval",
   name: "Lycanthropy", type: "Enchantment",
-  text: "<p2>Lycanthropy</p2><BR><p3>Freq:</p3>  1/Refresh<BR><p3>Type:</p3>  Enchantment<BR><p3>School:</p3> Death<BR><p3>Range:</p3> Touch: Others<BR><p3>Incant:</p3> <I>Stalked in the forest, too close to hide, I’ll be upon thee by the moonlight side</I> x3<BR><p3>Materials:</p3> White Strip and Red Strip<BR><p3>Effect:</p3> Bearer gains two points of magic armor. Bearer’s melee weapons are Shield Crushing. Bearer is Immune to Command"
+  text: "<p2>Lycanthropy</p2><BR><p3>Freq:</p3>  1/Refresh<BR><p3>Type:</p3>  Enchantment<BR><p3>School:</p3> Death<BR><p3>Range:</p3> Other<BR><p3>Incant:</p3> <I>Stalked in the forest, too close to hide, I’ll be upon thee by the moonlight side</I> x3<BR><p3>Materials:</p3> White Strip and Red Strip<BR><p3>Effect:</p3> Bearer gains two points of magic armor. Bearer’s melee weapons are Shield Crushing. Bearer is Immune to Command"
 };
 const Swift = {
   purchased: 0,
@@ -1182,7 +1182,7 @@ const EssenceGraft = {
   max: 31, charge: "", use: 1, per: "Refresh",
   pointTotalId: "EssenceGraftval",
   name: "Essence Graft", type: "Enchantment",
-  text: "<p2>Essence Graft</p2><BR><p3>Freq:</p3>  1/Refresh<BR><p3>Type:</p3>  Enchantment<BR><p3>School:</p3> Sorcery<BR><p3>Range:</p3> Touch: Others<BR><p3>Incant:</p3> <I>I enchant thee with essence graft</I> x3<BR><p3>Materials:</p3> Yellow strip<BR><p3>Effect:</p3> Bearer may wear up to three additional Enchantments. Essence Graft does not count towards the bearer’s Enchantment limit<BR><p3>Limitations:</p3> Bearer may only wear (m) Enchantments from the caster of Essence Graft. This ability may not be used in conjunction with any other similar ability or magic<BR><p3>Notes:</p3> If Essence Graft is removed, the bearer chooses which (m) Enchantments to lose to meet their new Enchantment limit, if necessary"
+  text: "<p2>Essence Graft</p2><BR><p3>Freq:</p3>  1/Refresh<BR><p3>Type:</p3>  Enchantment<BR><p3>School:</p3> Sorcery<BR><p3>Range:</p3> Other<BR><p3>Incant:</p3> <I>I enchant thee with essence graft</I> x3<BR><p3>Materials:</p3> Yellow strip<BR><p3>Effect:</p3> Bearer may wear up to three additional Enchantments. Essence Graft does not count towards the bearer’s Enchantment limit<BR><p3>Limitations:</p3> Bearer may only wear (m) Enchantments from the caster of Essence Graft. This ability may not be used in conjunction with any other similar ability or magic<BR><p3>Notes:</p3> If Essence Graft is removed, the bearer chooses which (m) Enchantments to lose to meet their new Enchantment limit, if necessary"
 };
 const GiftofAir = {
   purchased: 0,
@@ -1191,7 +1191,7 @@ const GiftofAir = {
   max: 2, charge: "", use: 1, per: "Refresh",
   pointTotalId: "GiftofAirval",
   name: "Gift of Air", type: "Enchantment",
-  text: "<p2>Gift of Air</p2><BR><p3>Freq:</p3>  1/Refresh<BR><p3>Type:</p3>  Enchantment<BR><p3>School:</p3> Protection<BR><p3>Range:</p3> Touch: Others<BR><p3>Incant:</p3> <I>I grant thee a gift of the air</I> x3<BR><p3>Materials:</p3> White Strip<BR><p3>Effect:</p3> The effects of a melee weapon or projectile which just struck the bearer are ignored, instead the bearer announces “Gift of Air” and becomes Insubstantial. If the bearer is wearing armor it is affected as normal in addition to triggering Gift of Air. Bearer may choose to return directly to their base immediately after Gift of Air activates. Melee weapons with the Armor Breaking, Armor Destroying, Shield Crushing, or Shield Destroying Special Effects will affect the bearer as normal and do not trigger Gift of Air.<BR><p3>Limitations:</p3> Bearer may not wield weapons or shields<BR><p3>Notes:</p3> Bearer may end the Insubstantial state caused by Gift of Air at any time with the standard Incantation"
+  text: "<p2>Gift of Air</p2><BR><p3>Freq:</p3>  1/Refresh<BR><p3>Type:</p3>  Enchantment<BR><p3>School:</p3> Protection<BR><p3>Range:</p3> Other<BR><p3>Incant:</p3> <I>I grant thee a gift of the air</I> x3<BR><p3>Materials:</p3> White Strip<BR><p3>Effect:</p3> The effects of a melee weapon or projectile which just struck the bearer are ignored, instead the bearer announces “Gift of Air” and becomes Insubstantial. If the bearer is wearing armor it is affected as normal in addition to triggering Gift of Air. Bearer may choose to return directly to their base immediately after Gift of Air activates. Melee weapons with the Armor Breaking, Armor Destroying, Shield Crushing, or Shield Destroying Special Effects will affect the bearer as normal and do not trigger Gift of Air.<BR><p3>Limitations:</p3> Bearer may not wield weapons or shields<BR><p3>Notes:</p3> Bearer may end the Insubstantial state caused by Gift of Air at any time with the standard Incantation"
 };
 const HeartoftheSwarm = {
   purchased: 0,
@@ -1200,7 +1200,7 @@ const HeartoftheSwarm = {
   max: 2, charge: "", use: 1, per: "Refresh",
   pointTotalId: "HeartoftheSwarmval",
   name: "Heart of the Swarm", type: "Enchantment",
-  text: "<p2>Heart of the Swarm</p2><BR><p3>Freq:</p3>  1/Refresh<BR><p3>Type:</p3>  Enchantment<BR><p3>School:</p3> Spirit<BR><p3>Range:</p3> Touch: Others<BR><p3>Incant:</p3> <I>Let all those who oppose the hive feel the wrath of the swarm</I> x3<BR><p3>Materials:</p3> Yellow strip<BR><p3>Effect:</p3> Bearer is Stopped. Any player on the bearer’s team may use the bearer as their respawn point as per the normal game rules. Players respawning at the caster do so by announcing <I>My life for the swarm.</I> Players on the bearer’s team may treat the bearer as a base for the purposes of the effects which require the teammate to go to their base<BR><p3>Limitations:</p3> Players can not respawn at the bearer if there are living enemy players or a game objective within 20’ of the bearer"
+  text: "<p2>Heart of the Swarm</p2><BR><p3>Freq:</p3>  1/Refresh<BR><p3>Type:</p3>  Enchantment<BR><p3>School:</p3> Spirit<BR><p3>Range:</p3> Other<BR><p3>Incant:</p3> <I>Let all those who oppose the hive feel the wrath of the swarm</I> x3<BR><p3>Materials:</p3> Yellow strip<BR><p3>Effect:</p3> Bearer is Stopped. Any player on the bearer’s team may use the bearer as their respawn point as per the normal game rules. Players respawning at the caster do so by announcing <I>My life for the swarm.</I> Players on the bearer’s team may treat the bearer as a base for the purposes of the effects which require the teammate to go to their base<BR><p3>Limitations:</p3> Players can not respawn at the bearer if there are living enemy players or a game objective within 20’ of the bearer"
 };
 const Ironskin = {
   purchased: 0,
@@ -1209,7 +1209,7 @@ const Ironskin = {
   max: 2, charge: "", use: 1, per: "Refresh",
   pointTotalId: "Ironskinval",
   name: "Ironskin", type: "Enchantment",
-  text: "<p2>Ironskin</p2><BR><p3>Freq:</p3>  1/Refresh<BR><p3>Type:</p3>  Enchantment<BR><p3>School:</p3> Protection<BR><p3>Range:</p3> Touch: Others<BR><p3>Incant:</p3> <I>I enchant thee with Ironskin</I> x3<BR><p3>Materials:</p3> White Strip<BR><p3>Effect:</p3> Bearer is Immune to Flame and gains two points Magic Armor affected as per Ancestral Armor"
+  text: "<p2>Ironskin</p2><BR><p3>Freq:</p3>  1/Refresh<BR><p3>Type:</p3>  Enchantment<BR><p3>School:</p3> Protection<BR><p3>Range:</p3> Other<BR><p3>Incant:</p3> <I>I enchant thee with Ironskin</I> x3<BR><p3>Materials:</p3> White Strip<BR><p3>Effect:</p3> Bearer is Immune to Flame and gains two points Magic Armor affected as per Ancestral Armor"
 };
 const PoisonGlands = {
   purchased: 0,
@@ -1218,7 +1218,7 @@ const PoisonGlands = {
   max: 2, charge: "", use: 1, per: "Refresh",
   pointTotalId: "PoisonGlandsval",
   name: "Poison Glands", type: "Enchantment",
-  text: "<p2>Poison Glands</p2><BR><p3>Freq:</p3>  1/Refresh<BR><p3>Type:</p3>  Enchantment<BR><p3>School:</p3> Death<BR><p3>Range:</p3> Touch: Others<BR><p3>Incant:</p3> <I>Thou shalt secrete poison from thy venomous glands</I> x3<BR><p3>Materials:</p3> Red strip<BR><p3>Effect:</p3> Bearer gains self-only Poison (ex) 1/Refresh Charge x3"
+  text: "<p2>Poison Glands</p2><BR><p3>Freq:</p3>  1/Refresh<BR><p3>Type:</p3>  Enchantment<BR><p3>School:</p3> Death<BR><p3>Range:</p3> Other<BR><p3>Incant:</p3> <I>Thou shalt secrete poison from thy venomous glands</I> x3<BR><p3>Materials:</p3> Red strip<BR><p3>Effect:</p3> Bearer gains self-only Poison (ex) 1/Refresh Charge x3"
 };
 const Resurrect = {
   purchased: 0,
@@ -1236,7 +1236,7 @@ const TrollBlood = {
   max: 2, charge: "", use: 1, per: "Refresh",
   pointTotalId: "TrollBloodval",
   name: "Troll Blood", type: "Enchantment",
-  text: "<p2>Troll Blood</p2><BR><p3>Freq:</p3>  1/Refresh<BR><p3>Type:</p3>  Enchantment<BR><p3>School:</p3> Protection<BR><p3>Range:</p3> Touch: Others<BR><p3>Incant:</p3> <I>The blood of the trolls sustains thee</I> x3<BR><p3>Materials:</p3> Three White Strips<BR><p3>Effect:</p3> Enchanted player does not die as normal. When the player would otherwise die they instead ignore the triggering effect as though it had not occurred, remove a strip, and become Frozen for 30 seconds. The bearer is treated as though they have the effects of Regeneration in addition to the above<BR><p3>Notes:</p3> Troll Blood is removed when the last strip is removed"
+  text: "<p2>Troll Blood</p2><BR><p3>Freq:</p3>  1/Refresh<BR><p3>Type:</p3>  Enchantment<BR><p3>School:</p3> Protection<BR><p3>Range:</p3> Other<BR><p3>Incant:</p3> <I>The blood of the trolls sustains thee</I> x3<BR><p3>Materials:</p3> Three White Strips<BR><p3>Effect:</p3> Enchanted player does not die as normal. When the player would otherwise die they instead ignore the triggering effect as though it had not occurred, remove a strip, and become Frozen for 30 seconds. The bearer is treated as though they have the effects of Regeneration in addition to the above<BR><p3>Notes:</p3> Troll Blood is removed when the last strip is removed"
 };
 
 /*__________________________________________*/
