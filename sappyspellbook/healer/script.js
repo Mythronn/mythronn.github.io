@@ -374,11 +374,11 @@ function processExpChange(fromUser){
     else{
       abilities[33].charge = "";
     }
-    if(abilities[5].selectedAbility1 == "Raise Dead" || abilities[5].selectedAbility2 == "Raise Dead"){
+    if((abilities[5].selectedAbility1 == "Raise Dead" || abilities[5].selectedAbility2 == "Raise Dead") && abilities[44].purchased == 0){
       abilities[26].charge = "Charge x5";
     }
     else{
-      abilities[26].charge = "";
+      if(abilities[44].purchased == 0){abilities[44].charge = "";}      
     }
     createURL();
     if(fromUser == 1){
