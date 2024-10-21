@@ -1125,7 +1125,7 @@ const Golem = {
   max: 31, charge: "", use: 1, per: "Refresh",
   pointTotalId: "Golemval",
   name: "Golem", type: "Enchantment",
-  text: "<p2>Golem</p2><BR><p3>Freq:</p3>  1/Refresh<BR><p3>Type:</p3>  Enchantment<BR><p3>School:</p3> Sorcery<BR><p3>Range:</p3> Other<BR><p3>Incant:</p3> <I>From earth and clay I form thee</I> x3<BR><p3>Materials:</p3> White Strip and Red Strip<BR><p3>Effect:</p3> Bearer is Immune to Death. Bearer is Cursed. Bearer can remove a Wound via Mend. Bearer may use the caster as an alternate respawn point while the caster is alive. Bearer may treat the caster as a base for the purposes of the effects which require the teammate to go to their base. Non-magical armor worn affected as per Imbue Armor. All Enchantments worn by the Bearer, including Golem, are Persistent while Golem is worn<BR><p3>Limitations:</p3> A caster may only have a single Golem Enchantment active at a time<BR><p3>Notes:</p3> Greater Mend and Word of Mending will not remove a wound"
+  text: "<p2>Golem</p2><BR><p3>Freq:</p3>  1/Refresh<BR><p3>Type:</p3>  Enchantment<BR><p3>School:</p3> Sorcery<BR><p3>Range:</p3> Other<BR><p3>Incant:</p3> <I>From earth and clay I form thee</I> x3<BR><p3>Materials:</p3>  White Strip and Yellow Strip<BR><p3>Effect:</p3> Bearer is Immune to Death. Bearer is Cursed. Bearer can remove a Wound via Mend. Bearer may use the caster as an alternate respawn point while the caster is alive. Bearer may treat the caster as a base for the purposes of the effects which require the teammate to go to their base. Non-magical armor worn affected as per Imbue Armor. All Enchantments worn by the Bearer, including Golem, are Persistent while Golem is worn<BR><p3>Limitations:</p3> A caster may only have a single Golem Enchantment active at a time<BR><p3>Notes:</p3> Greater Mend and Word of Mending will not remove a wound"
 };
 const Lycanthropy = {
   purchased: 0,
@@ -1143,7 +1143,7 @@ const Swift = {
   max: 2, charge: "", use: 1, per: "Life",
   pointTotalId: "Swiftval",
   name: "Swift", type: "Meta-Magic",
-  text: "<p2>Swift</p2><BR><p3>Freq:</p3> 1/Life<BR><p3>Type:</p3>  Meta-Magic<BR><p3>School:</p3> Neutral<BR><p3>Incant:</p3> <I>Swift</I><BR><p3>Effect:</p3> Magic and abilities require only a single iteration of the incantation. For multi-line Incantations use the last line<BR><p3>Limitations:</p3> May only be used on Magic and Abilities at a range of Ball, Touch, or Self. May not be used on the Charge incantation"
+  text: "<p2>Swift</p2><BR><p3>Freq:</p3> 1/Life<BR><p3>Type:</p3>  Meta-Magic<BR><p3>School:</p3> Neutral<BR><p3>Incant:</p3> <I>Swift</I><BR><p3>Effect:</p3> Magic and abilities require only a single iteration of the incantation. For multi-line Incantations use the last line<BR><p3>Limitations:</p3>  May only be used on Magic and Abilities at a range of Touch, Other, or Self, or on Magic Balls. May not be used on the Charge incantation."
 };
 const Teleport = {
   purchased: 0,
@@ -1164,7 +1164,7 @@ const Ambulant = {
   max: 2, charge: "", use: 1, per: "Life",
   pointTotalId: "Ambulantval",
   name: "Ambulant", type: "Meta-Magic",
-  text: "<p2>Ambulant</p2><BR><p3>Freq:</p3> 1/Life<BR><p3>Type:</p3>  Meta-Magic<BR><p3>School:</p3> Neutral<BR><p3>Incant:</p3> <I>Ambulant</I><BR><p3>Effect:</p3> An incantation may be said while moving. May be cast while moving<BR><p3>Limitations:</p3> May not be used on the Charge incantation"
+  text: "<p2>Ambulant</p2><BR><p3>Freq:</p3> 1/Life<BR><p3>Type:</p3>  Meta-Magic<BR><p3>School:</p3> Neutral<BR><p3>Incant:</p3> <I>Ambulant</I><BR><p3>Effect:</p3> An incantation may be said while moving. <BR><p3>Limitations:</p3> May not be used on the Charge incantation  <BR><p3>Notes:</p3> Using Ambulant allows both the target indication and Ambulant to be said while moving, but not other Meta-Magics."
 };
 const WeaponGreat = {
   purchased: 0,
@@ -1191,7 +1191,7 @@ const GiftofAir = {
   max: 2, charge: "", use: 1, per: "Refresh",
   pointTotalId: "GiftofAirval",
   name: "Gift of Air", type: "Enchantment",
-  text: "<p2>Gift of Air</p2><BR><p3>Freq:</p3>  1/Refresh<BR><p3>Type:</p3>  Enchantment<BR><p3>School:</p3> Protection<BR><p3>Range:</p3> Other<BR><p3>Incant:</p3> <I>I grant thee a gift of the air</I> x3<BR><p3>Materials:</p3> White Strip<BR><p3>Effect:</p3> The effects of a melee weapon or projectile which just struck the bearer are ignored, instead the bearer announces “Gift of Air” and becomes Insubstantial. If the bearer is wearing armor it is affected as normal in addition to triggering Gift of Air. Bearer may choose to return directly to their base immediately after Gift of Air activates. Melee weapons with the Armor Breaking, Armor Destroying, Shield Crushing, or Shield Destroying Special Effects will affect the bearer as normal and do not trigger Gift of Air.<BR><p3>Limitations:</p3> Bearer may not wield weapons or shields<BR><p3>Notes:</p3> Bearer may end the Insubstantial state caused by Gift of Air at any time with the standard Incantation"
+  text: "<p2>Gift of Air</p2><BR><p3>Freq:</p3>  1/Refresh<BR><p3>Type:</p3>  Enchantment<BR><p3>School:</p3> Protection<BR><p3>Range:</p3> Other<BR><p3>Incant:</p3> <I>I grant thee a gift of the air</I> x3<BR><p3>Materials:</p3> White Strip<BR><p3>Effect:</p3>  The effects of a melee weapon or projectile weapon which just struck the bearer are ignored, instead the bearer announces “Gift of Air” and becomes Insubstantial. If the bearer is wearing armor it is affected as normal in addition to triggering Gift of Air. Bearer may choose to return directly to their base immediately after Gift of Air activates. Melee weapons with the Siege, Armor Breaking, Armor Destroying, Shield Crushing, or Shield Destroying Special Effects will affect the bearer as normal and do not trigger Gift of Air.<BR><p3>Limitations:</p3> Bearer may not wield weapons or shields<BR><p3>Notes:</p3> This Enchantment can be removed by Dispel Magic and similar Magic and Abilities. If the Insubstantial State is ended, the player is not required to continue returning to base. Caster may end this Insubstantial state at any time by using the exit incantation for Insubstantial."
 };
 const HeartoftheSwarm = {
   purchased: 0,
@@ -1227,7 +1227,7 @@ const Resurrect = {
   max: 31, charge: "", use: 1, per: "Refresh",
   pointTotalId: "Resurrectval",
   name: "Resurrect", type: "Verbal",
-  text: "<p2>Resurrect</p2><BR><p3>Freq:</p3>  1/Refresh<BR><p3>Type:</p3>  Verbal<BR><p3>School:</p3> Spirit<BR><p3>Range:</p3> Touch<BR><p3>Incant:</p3> <I>Sword Cut, spear stab, mace smash, arrow jab,<BR>Let the white light of healing descend on thee<BR>Let the white light of healing stop thy spilling blood<BR>Let the white light of healing mend thy bones<BR>Let the white light of healing close thy wounds.<BR>Let the white light of healing restore thy vigor.<BR>The white light of healing hath resurrected thee.</I><BR><p3>Effect:</p3> Target Dead player who has not moved from where they died is returned to life. Non-Persistent Enchantments on the player are removed before the player returns to life. Any Wounds on the player are healed"
+  text: "<p2>Resurrect</p2><BR><p3>Freq:</p3>  1/Refresh<BR><p3>Type:</p3>  Verbal<BR><p3>School:</p3> Spirit<BR><p3>Range:</p3> Touch<BR><p3>Incant:</p3> <I>Sword Cut, spear stab, mace smash, arrow jab,<BR>Let the white light of healing descend on thee<BR>Let the white light of healing stop thy spilling blood<BR>Let the white light of healing mend thy bones<BR>Let the white light of healing close thy wounds.<BR>Let the white light of healing restore thy vigor.<BR>The white light of healing hath resurrected thee.</I><BR><p3>Effect:</p3> Target Dead player who has not moved more than 5' from where they died is returned to life. Non-Persistent Enchantments on the player are removed before the player returns to life. Any Wounds on the player are healed."
 };
 const TrollBlood = {
   purchased: 0,
@@ -1275,7 +1275,7 @@ const NaturalizeMagic = {
   max: 2, charge: "", use: 1, per: "Refresh",
   pointTotalId: "NaturalizeMagicval",
   name: "Naturalize Magic", type: "Enchantment",
-  text: "<p2>Naturalize Magic</p2><BR><p3>Freq:</p3>  1/Refresh<BR><p3>Type:</p3>  Enchantment<BR><p3>School:</p3> Sorcery<BR><p3>Range:</p3> Self<BR><p3>Incant:</p3> <I>I shall restore the balance</I> x3<BR><p3>Materials:</p3> Five Red Strips<BR><p3>Effect:</p3> Bearer may cast Dispel Magic by announcing <I>[Player] thou art dispelled.</I> Bearer must remove an Enchantment strip after each use of Dispel Magic and the Enchantment is removed when the last strip is removed"
+  text: "<p2>Naturalize Magic</p2><BR><p3>Freq:</p3>  1/Refresh<BR><p3>Type:</p3>  Enchantment<BR><p3>School:</p3> Sorcery<BR><p3>Range:</p3> Self<BR><p3>Incant:</p3> <I>I shall restore the balance</I> x3<BR><p3>Materials:</p3> Five Red Strips<BR><p3>Effect:</p3> Bearer may cast Dispel Magic (m) by announcing <I>[Player] thou art dispelled</I> and removing an enchantment strip. Enchantment is removed when the last strip is removed."
 };
 const Ranger = {
   purchased: 0,
@@ -1293,7 +1293,7 @@ const SnaringVines = {
   max: 1, charge: "", use: 1, per: "Refresh",
   pointTotalId: "SnaringVinesval",
   name: "Snaring Vines", type: "Enchantment",
-  text: "<p2>Snaring Vines</p2><BR><p3>Freq:</p3>  1/Refresh<BR><p3>Type:</p3>  Enchantment<BR><p3>School:</p3> Command<BR><p3>Range:</p3> Self<BR><p3>Incant:</p3> <I>The hands of the earth rise to your bidding</I> x3<BR><p3>Materials:</p3> Three Red Strips<BR><p3>Effect:</p3> Bearer may cast Hold Person by announcing <I>[Player] stop at my command.</I> Bearer must remove an Enchantment strip after each use of Hold Person<BR><p3>Notes:</p3> Snaring Vines is removed when the last strip is removed"
+  text: "<p2>Snaring Vines</p2><BR><p3>Freq:</p3>  1/Refresh<BR><p3>Type:</p3>  Enchantment<BR><p3>School:</p3> Command<BR><p3>Range:</p3> Self<BR><p3>Incant:</p3> <I>The hands of the earth rise to your bidding</I> x3<BR><p3>Materials:</p3> Three Red Strips<BR><p3>Effect:</p3> Bearer may cast Hold Person (m) by announcing <I>[Player] stop at my command.</I> and removing an enchantment strip. Enchantment is removed when the last strip is removed."
 };
 const Summoner = {
   purchased: 0,
