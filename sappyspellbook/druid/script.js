@@ -167,7 +167,7 @@ function toggleList(){
           levelList[i] = levelList[i] + " [" + abilities[k].selectedAbility1 + "]";
         }
         if(abilities[k].type == "Magic Ball"){
-          levelList[i] = levelList[i] + ": " + abilities[k].use * abilities[k].purchased + " Balls";
+          levelList[i] = levelList[i] + ": " + abilities[k].use * abilities[k].purchased + " Ball(s)";
         }
         if(abilities[k].type == "Verbal"){
           levelList[i] = levelList[i] + ": " + abilities[k].use * abilities[k].purchased + "/" + abilities[k].per + " " + abilities[k].charge;
@@ -957,7 +957,7 @@ const ForceBolt = {
   max: 2, charge: "", use: 2, per: "Ball",
   pointTotalId: "ForceBoltval",
   name: "Force Bolt", type: "Magic Ball",
-  text: "<p2>Force Bolt</p2><BR><p3>Freq:</p3> 2 Balls/Unlimited<BR><p3>Type:</p3>  Magic Ball<BR><p3>School:</p3> Sorcery<BR><p3>Range:</p3> Touch: Ball<BR><p3>Incant:</p3> <I>Forcebolt</I> x3<BR><p3>Materials:</p3> Blue Magic Ball<BR><p3>Effect:</p3> Force Bolt will have one of the following effects on the object first struck:<BR>1. A weapon hit is destroyed<BR>2. Armor hit with Armor Points remaining is subject to Armor Breaking<BR>3. A player hit receives a Wound to that hit location"
+  text: "<p2>Force Bolt</p2><BR><p3>Freq:</p3> 2 Balls/Unlimited<BR><p3>Type:</p3>  Magic Ball<BR><p3>School:</p3> Sorcery<BR><p3>Range:</p3> Ball<BR><p3>Incant:</p3> <I>Forcebolt</I> x3<BR><p3>Materials:</p3> Blue Magic Ball<BR><p3>Effect:</p3> Force Bolt will have one of the following effects on the object first struck:<BR>1. A weapon hit is destroyed<BR>2. Armor hit with Armor Points remaining is subject to Armor Breaking<BR>3. A player hit receives a Wound to that hit location"
 };
 const Innate = {
   purchased: 0,
