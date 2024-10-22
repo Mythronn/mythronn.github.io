@@ -206,7 +206,7 @@ body {
   color: #fff;
   text-align: left;
   border-radius: 10px;
-  border-color: #000000;
+  border-color: #CCCCFF;
   border-style: solid;
   padding: 10px 10px 10px 10px;
   position: absolute;
@@ -360,7 +360,7 @@ a:active {
   color: #fff;
   text-align: left;
   border-radius: 10px;
-  border-color: #000000;
+  border-color: #CCCCFF;
   border-style: solid;
   padding: 10px 10px 10px 10px;
   font-family: ariel;
