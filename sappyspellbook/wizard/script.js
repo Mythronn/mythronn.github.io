@@ -273,6 +273,7 @@ function resetPoints(fullReset){
   }
   processBattlemageMinus();
   processEvokerMinus();
+  processWarlockMinus();
   for(let i = 0; i < abilityCount; i++){
     abilities[i].purchased = 0;
     document.getElementById(abilities[i].pointTotalId).value = 0;
@@ -554,21 +555,18 @@ function pointPlus(index, fromClick) {
     showToast("Warlocks may not purchase Verbals from any School other than the Death and Flame Schools.");
     return false;
   }
-  /*if(!checkRangerPlus(a)){
-    showToast("You don't have the points to add Ranger. Enchantments too expensive.");
-    return false;
-  }
-  if(abilities[a].name == "Ranger"){
-    processRangerPlus();
-  }*/
-  if(abilities[a].name == "Battlemage"){
-    processBattlemagePlus();
-  }
-  if(abilities[a].name == "Evoker"){
-    processEvokerPlus();
-  }
+  
   
   if(checkPointsAvailable(a)){
+    if(abilities[a].name == "Battlemage"){
+      processBattlemagePlus();
+    }
+    if(abilities[a].name == "Evoker"){
+      processEvokerPlus();
+    }
+    if(abilities[a].name == "Warlock"){
+      processWarlockPlus();
+    }
     tempCost = abilities[a].cost;
     for(let i = abilities[a].level; i < 7; i++){
       if(tempCost > pointsAvailable[i]){
@@ -761,6 +759,9 @@ function pointMinus(index) {
   if(abilities[a].name == "Evoker"){
     processEvokerMinus();
   } 
+  if(abilities[a].name == "Warlock"){
+    processWarlockMinus();
+  } 
   abilities[a].purchased--;
   reprocessPoints(a);
   return 0;
@@ -797,9 +798,13 @@ function reprocessPoints(index){
 
 function processBattlemagePlus(){
   abilities[36].per = "Unlimited";
+  abilities[36].freq = "Unlimited";
+  updateAbilityText(36);
 }
 function processBattlemageMinus(){
   abilities[36].per = "Life";
+  abilities[36].freq = "1/Life";
+  updateAbilityText(36);
 }
 function processEvokerPlus(){
   abilities[45].charge = "CHARGE x10";
@@ -811,7 +816,42 @@ function processEvokerMinus(){
   abilities[45].freq = "1/Ref";
   updateAbilityText(45);
 }
-
+function processWarlockPlus(){
+  abilities[6].freq = "2/Life";
+  abilities[18].freq = "2/Ref";
+  abilities[24].freq = "4/Life";
+  abilities[27].freq = "4/Ref";
+  abilities[35].freq = "2/Ref Chg x3";
+  abilities[40].freq = "2/Ref";
+  abilities[41].freq = "2/Life";
+  abilities[47].freq = "2/Ref";
+  updateAbilityText(6);
+  updateAbilityText(18);
+  updateAbilityText(24);
+  updateAbilityText(27);
+  updateAbilityText(35);
+  updateAbilityText(40);
+  updateAbilityText(41);
+  updateAbilityText(47);
+}
+function processWarlockMinus(){
+  abilities[6].freq = "1/Life";
+  abilities[18].freq = "1/Ref";
+  abilities[24].freq = "2/Life";
+  abilities[27].freq = "2/Ref";
+  abilities[35].freq = "1/Ref Chg x3";
+  abilities[40].freq = "1/Ref";
+  abilities[41].freq = "1/Life";
+  abilities[47].freq = "1/Ref";
+  updateAbilityText(6);
+  updateAbilityText(18);
+  updateAbilityText(24);
+  updateAbilityText(27);
+  updateAbilityText(35);
+  updateAbilityText(40);
+  updateAbilityText(41);
+  updateAbilityText(47);
+}
 
 function popFunc(elementId, index) {
   const elements = document.getElementsByClassName("popuptext");
