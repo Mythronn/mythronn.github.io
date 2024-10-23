@@ -472,7 +472,7 @@ function processExpChange(fromUser){
       updateAbilityText(30); 
     }
     else{
-      abilities[10].charge = "";
+      abilities[30].charge = "";
       abilities[30].freq = "1/Ref";
       updateAbilityText(30); 
     }
