@@ -793,7 +793,7 @@ function updatePointsAvailable(){
   document.getElementById("hlp5").innerText = " ";
 
   if(higherLevelPoints[1] != 0){
-    document.getElementById("hlp1").innerText = " " + higherLevelPoints[1] + " Higher Level Point(s)";
+    document.getElementById("hlp1").innerText = " " + higherLevelPoints[1] + " Higher Level Point(s) " + freeableFrom(1);
   }
   if(higherLevelPoints[2] != 0){
     document.getElementById("hlp2").innerText = " " + higherLevelPoints[2] + " Higher Level Point(s)";
@@ -862,6 +862,50 @@ function updatePointsAvailable(){
   }
   createURL();
 }
+
+function freeableFrom(index){
+  let lvl = index;
+  let highestLevel = 0;
+  let highestPoints = 0;
+  let tempBorrowed = higherLevelPoints[lvl];
+  let borrows = [0,0,0,0,0,0];
+  let outputString = "";
+  if(higherLevelPoints[lvl] == 0){
+    return "";
+  }
+  for(let i = lvl; i < 7; i++){
+    if(higherLevelPoints[i] == 0){
+      highestLevel = i;
+      highestPoints = pointsSpent[highestLevel]; 
+      i = 7;
+    }
+  }
+  for(let i = highestLevel; i > lvl; i--){
+    if(i == highestLevel && tempBorrowed > highestPoints && tempBorrowed > 0){
+      borrows[i] = highestPoints;
+      tempBorrowed = tempBorrowed - highestPoints;
+    }
+    else if(i == highestLevel && tempBorrowed <= highestPoints && tempBorrowed > 0){
+      borrows[i] = tempBorrowed;
+      tempBorrowed = 0;
+    }
+    else if(i != highestLevel && tempBorrowed >= 5 && tempBorrowed > 0){
+      borrows[i] = 5;
+      tempBorrowed = tempBorrowed - 5;
+    }
+    else if(i != highestLevel && tempBorrowed < 5 && tempBorrowed > 0){
+      borrows[i] = tempBorrowed;
+      tempBorrowed =0;
+    }
+  }
+  for(let i = lvl; i < 7; i++){
+    if(borrows[i] > 1){
+      outputString = outputString + "Level " + i + ": " + borrows[i] + " ";
+    }
+  }
+  return ""; //placeholder
+}
+
 /*##################################*/
 function pointMinus(index) {
   var a = index;    
