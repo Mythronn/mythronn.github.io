@@ -86,7 +86,7 @@ h2{
 }
 
 
-/* Table Header */
+/* Table Header Old table header color  #ab0000*/
 table {
     width: 100%;
     table-layout: fixed;
@@ -97,7 +97,7 @@ table {
   -webkit-tap-highlight-color: transparent;
 }
 th {
-    background-color: #ab0000;
+    background-color: #b66060;
     color: #fff;
     padding: 6px;
     font-size: 1.4 em;
