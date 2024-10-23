@@ -736,24 +736,24 @@ function reprocessPoints(index){
 
 /*##################################*/
 function processNecromancerPlus(){
-  abilities(26).charge = "Charge x3";
-  abilities(40).charge = "Charge x3";
-  abilities(41).charge = "Charge x3";
-  abilities(26).freq = "1/Life Chg x3";
-  abilities(40).freq = "1/Ref Chg x3";
-  abilities(41).freq = "1/Life Chg x3";
+  abilities[26].charge = "Charge x3";
+  abilities[40].charge = "Charge x3";
+  abilities[41].charge = "Charge x3";
+  abilities[26].freq = "1/Life Chg x3";
+  abilities[40].freq = "1/Ref Chg x3";
+  abilities[41].freq = "1/Life Chg x3";
   updateAbilityText(26);
   updateAbilityText(40);
   updateAbilityText(41);  
 }
 /*##################################*/
 function processNecromancerMinus(){
-  abilities(26).charge = "";
-  abilities(40).charge = "";
-  abilities(41).charge = "";
-  abilities(26).freq = "1/Life";
-  abilities(40).freq = "1/Ref";
-  abilities(41).freq = "1/Life";
+  abilities[26].charge = "";
+  abilities[40].charge = "";
+  abilities[41].charge = "";
+  abilities[26].freq = "1/Life";
+  abilities[40].freq = "1/Ref";
+  abilities[41].freq = "1/Life";
   updateAbilityText(26);
   updateAbilityText(40);
   updateAbilityText(41);
