@@ -793,7 +793,7 @@ function updatePointsAvailable(){
   document.getElementById("hlp5").innerText = " ";
 
   if(higherLevelPoints[1] != 0){
-    document.getElementById("hlp1").innerText = " " + higherLevelPoints[1] + " Higher Level Point(s) G " + freeableFrom(1);
+    document.getElementById("hlp1").innerText = " " + higherLevelPoints[1] + " Higher Level Point(s) G " + freeableFrom(1, ltpChecked, reqLevel);
   }
   if(higherLevelPoints[2] != 0){
     document.getElementById("hlp2").innerText = " " + higherLevelPoints[2] + " Higher Level Point(s)";
@@ -863,8 +863,10 @@ function updatePointsAvailable(){
   createURL();
 }
 
-function freeableFrom(index){
+function freeableFrom(index, c, rl){
   let lvl = index;
+  let lookThePart = c;
+  let reqLvl = rl;
   let highestLevel = 0;
   let highestPoints = 0;
   let tempBorrowed = higherLevelPoints[lvl];
@@ -876,7 +878,13 @@ function freeableFrom(index){
   for(let i = lvl; i < 7; i++){
     if(higherLevelPoints[i] == 0){
       highestLevel = i;
-      highestPoints = pointsSpent[highestLevel]; 
+      if(i == reqLvl && lookThePart == true){
+        highestPoints = 6 - pointsAvailable[highestLevel]; 
+      }
+      else{
+        highestPoints = 5 - pointsAvailable[highestLevel]; 
+      }
+      
       i = 7;
     }
   }
