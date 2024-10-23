@@ -1,7 +1,25 @@
 document.addEventListener("DOMContentLoaded", function() {
   parseURL();
   for(let i = 0; i < abilityCount; i++){
-    abilities[i].text = "<p2>" + abilities[i].name + "</p2><BR>"; 
+    updateAbilityText(i);
+  }
+  updatePointsAvailable();
+  updateTable();
+  //console.log("The DOM is fully loaded.");
+});
+
+window.addEventListener('hashchange', function() {
+  var referrer = document.referrer;
+  //console.log("The referrer is: " + referrer);
+  //if (referrer === "" || !referrer.includes(window.location.origin)) 
+    
+    parseURL();
+    updateTable();;  
+});
+
+function updateAbilityText(index){
+  let i = index;
+  abilities[i].text = "<p2>" + abilities[i].name + "</p2><BR>"; 
     if(abilities[i].freq != ""){
       abilities[i].text += "<p3>Freq:</p3>  " + abilities[i].freq + "<BR>"; 
     }
@@ -29,19 +47,7 @@ document.addEventListener("DOMContentLoaded", function() {
     if(abilities[i].notes != ""){
       abilities[i].text += "<p3>Notes:</p3>  " + abilities[i].notes + "<BR>"; 
     }
-  }
-  updatePointsAvailable();
-  updateTable();
-  //console.log("The DOM is fully loaded.");
-});
-window.addEventListener('hashchange', function() {
-  var referrer = document.referrer;
-  //console.log("The referrer is: " + referrer);
-  //if (referrer === "" || !referrer.includes(window.location.origin)) 
-    
-    parseURL();
-    updateTable();;  
-});
+}
 /*##################################*/
 function parseURL(){
   fullurl = window.location.href.split("/");
@@ -270,6 +276,7 @@ function resetPoints(fullReset){
     abilities[0].purchased = 0;
   }
   processNecromancerMinus();
+  processWarderMinus();
   for(let i = 0; i < abilityCount; i++){
     abilities[i].purchased = 0;
     document.getElementById(abilities[i].pointTotalId).value = 0;
@@ -334,51 +341,86 @@ function processExpChange(fromUser){
     }
     if(abilities[5].selectedAbility1 == "Banish" || abilities[5].selectedAbility2 == "Banish"){
       abilities[47].charge = "Charge x5";
+      abilities[47].freq = "1/Life CHARGE x5";
+      updateAbilityText(47); 
     }
     else{
       abilities[47].charge = "";
+      abilities[47].freq = "1/Life";
+      updateAbilityText(47);
     }
     if(abilities[5].selectedAbility1 == "Dispel Magic" || abilities[5].selectedAbility2 == "Dispel Magic"){
-      abilities[37].charge = "Charge x10";
+      abilities[37].charge = "Charge x10";      
+      abilities[37].freq = "1/Ref CHARGE x10";
+      updateAbilityText(37); 
     }
     else{
       abilities[37].charge = "";
+      abilities[37].freq = "1/Ref";
+      updateAbilityText(37);
     }
     if(abilities[5].selectedAbility1 == "Greater Heal" || abilities[5].selectedAbility2 == "Greater Heal"){
       abilities[29].charge = "Charge x5";
+      abilities[29].freq = "1/Life CHARGE x5";
+      updateAbilityText(29); 
     }
     else{
       abilities[29].charge = "";
+      abilities[29].freq = "1/Life";
+      updateAbilityText(29);
     }
     if(abilities[5].selectedAbility1 == "Greater Release" || abilities[5].selectedAbility2 == "Greater Release"){
       abilities[12].charge = "Charge x10";
+      abilities[12].freq = "1/Ref CHARGE x10";
+      updateAbilityText(12);
     }
     else{
       abilities[12].charge = "";
+      abilities[12].freq = "1/Ref";
+      updateAbilityText(12);
     }
     if(abilities[5].selectedAbility1 == "Mend" || abilities[5].selectedAbility2 == "Mend"){
       abilities[24].charge = "Charge x5";
+      abilities[24].freq = "1/Life CHARGE x5";
+      updateAbilityText(24);
     }
     else{
       abilities[24].charge = "";
+      abilities[24].freq = "1/Life";
+      updateAbilityText(24);
     }
     if(abilities[5].selectedAbility1 == "Shove" || abilities[5].selectedAbility2 == "Shove"){
       abilities[16].charge = "Charge x5";
+      abilities[16].freq = "1/Life CHARGE x5";
+      updateAbilityText(16);
     }
     else{
       abilities[16].charge = "";
+      abilities[16].freq = "1/Life";
+      updateAbilityText(16);
     }
     if(abilities[5].selectedAbility1 == "Teleport" || abilities[5].selectedAbility2 == "Teleport"){
       abilities[33].charge = "Charge x5";
+      abilities[33].freq = "1/Life CHARGE x5";
+      updateAbilityText(33);
     }
     else{
       abilities[33].charge = "";
+      abilities[33].freq = "1/Life";
+      updateAbilityText(33);
     }
     if((abilities[5].selectedAbility1 == "Raise Dead" || abilities[5].selectedAbility2 == "Raise Dead") && abilities[44].purchased == 0){
       abilities[26].charge = "Charge x5";
+      abilities[26].freq = "1/Life CHARGE x5";
+      updateAbilityText(26);
     }
     else{
-      if(abilities[44].purchased == 0){abilities[44].charge = "";}      
+      if(abilities[44].purchased == 0)
+        {
+          abilities[26].charge = "";
+          abilities[26].freq = "1/Life";
+          updateAbilityText(26);
+        }      
     }
     createURL();
     if(fromUser == 1){
@@ -450,14 +492,18 @@ function pointPlus(index, fromClick) {
     showToast("Warders may not purchase any magic from the Death, Command, or Subdual Schools.");
     return false;
   }
-  if(abilities[a].name == "Priest"){
-    processPriestPlus();
-  }
-  if(abilities[a].name == "Necromancer"){
-    processNecromancerPlus();
-  }
+  
   
   if(checkPointsAvailable(a)){
+    if(abilities[a].name == "Priest"){
+      processPriestPlus();
+    }
+    if(abilities[a].name == "Necromancer"){
+      processNecromancerPlus();
+    }
+    if(abilities[a].name == "Warder"){
+      processWarderPlus();
+    }
     tempCost = abilities[a].cost;
     for(let i = abilities[a].level; i < 7; i++){
       if(tempCost > pointsAvailable[i]){
@@ -652,6 +698,9 @@ function pointMinus(index) {
   if(abilities[a].name == "Necromancer"){
     processNecromancerMinus();
   } 
+  if(abilities[a].name == "Warder"){
+    processWarderMinus();
+  }
   abilities[a].purchased--;
   reprocessPoints();
   return 0;
@@ -675,8 +724,7 @@ function reprocessPoints(index){
       pointPlus(i, false);
       tempPurchased[i]--;
     }
-  }
-  
+  }  
     abilities[5].selectedAbility1 = temp1;
     abilities[5].selectedAbility2 = temp2;
     document.getElementById("exp1").value = temp1;
@@ -688,29 +736,39 @@ function reprocessPoints(index){
 
 /*##################################*/
 function processNecromancerPlus(){
-  for(let i = 0; i < abilityCount; i++){
-    if(abilities[i].school == "Death"){
-      abilities[i].charge = "Charge x3";
-    }
-  }  
+  abilities(26).charge = "Charge x3";
+  abilities(40).charge = "Charge x3";
+  abilities(41).charge = "Charge x3";
+  abilities(26).freq = "1/Life Chg x3";
+  abilities(40).freq = "1/Ref Chg x3";
+  abilities(41).freq = "1/Life Chg x3";
+  updateAbilityText(26);
+  updateAbilityText(40);
+  updateAbilityText(41);  
 }
 /*##################################*/
 function processNecromancerMinus(){
-  for(let i = 0; i < abilityCount; i++){
-    if(abilities[i].school == "Death"){
-      abilities[i].charge = "";
-    }
-  }  
+  abilities(26).charge = "";
+  abilities(40).charge = "";
+  abilities(41).charge = "";
+  abilities(26).freq = "1/Life";
+  abilities(40).freq = "1/Ref";
+  abilities(41).freq = "1/Life";
+  updateAbilityText(26);
+  updateAbilityText(40);
+  updateAbilityText(41);
 }
+
 /*##################################*/
 function processPriestPlus(){
   abilities[7].cost = 0;
   for(let i = 0; i < abilityCount; i++){
     if(abilities[i].type == "Meta-Magic"){
-      abilities[i].freq = "1/Life Chg x3";
+      abilities[i].freq = "1/Life CHG x3";
       abilities[i].use = 1;
       abilities[i].per = "Life";
       abilities[i].charge = "Charge x3";
+      updateAbilityText(i);
     }
   }
   updateTable();
@@ -724,44 +782,74 @@ function processPriestMinus(){
       abilities[i].use = 1;
       abilities[i].per = "Life";
       abilities[i].charge = "";
+      updateAbilityText(i);
     }
     if(abilities[i].name == "Ambulant"){
       abilities[i].freq = "1/Ref";
       abilities[i].per = "Refresh";
+      updateAbilityText(i);
     }
   }
 }
+/*##################################*/
+function processWarderPlus(){
+  abilities[1].freq = "2/Life";
+  abilities[6].freq = "2/Ref";
+  abilities[9].freq = "2/Life";
+  abilities[18].freq = "2/Ref";
+  abilities[22].freq = "2/Ref";
+  abilities[27].freq = "2/Ref";
+  abilities[28].freq = "2/Ref Chg x10";
+  abilities[30].freq = "4/Ref";
+  abilities[31].freq = "2/Ref";
+  abilities[36].freq = "2/Ref";
+  abilities[38].freq = "2/Ref";
+  abilities[42].freq = "2/Ref";
+  abilities[48].freq = "2/Ref";
+  updateAbilityText(1);
+  updateAbilityText(6);
+  updateAbilityText(9);
+  updateAbilityText(18);
+  updateAbilityText(22);
+  updateAbilityText(27);
+  updateAbilityText(28);
+  updateAbilityText(30);
+  updateAbilityText(31);
+  updateAbilityText(36);
+  updateAbilityText(38);
+  updateAbilityText(42);
+  updateAbilityText(48);
+}
+/*##################################*/
+function processWarderMinus(){
+  abilities[1].freq = "1/Life";
+  abilities[6].freq = "1/Ref";
+  abilities[9].freq = "1/Life";
+  abilities[18].freq = "1/Ref";
+  abilities[22].freq = "1/Ref";
+  abilities[27].freq = "1/Ref";
+  abilities[28].freq = "1/Ref Chg x10";
+  abilities[30].freq = "2/Ref";
+  abilities[31].freq = "1/Ref";
+  abilities[36].freq = "1/Ref";
+  abilities[38].freq = "1/Ref";
+  abilities[42].freq = "1/Ref";
+  abilities[48].freq = "1/Ref";
+  updateAbilityText(1);
+  updateAbilityText(6);
+  updateAbilityText(9);
+  updateAbilityText(18);
+  updateAbilityText(22);
+  updateAbilityText(27);
+  updateAbilityText(28);
+  updateAbilityText(30);
+  updateAbilityText(31);
+  updateAbilityText(36);
+  updateAbilityText(38);
+  updateAbilityText(42);
+  updateAbilityText(48);
+}
 
-/*I don't think we need this ##################################*/
-/*function checkPriestMinus(index){
-  if(abilities[index].name != "Priest"){
-    return true;
-  }
-  var healCost = 0;
-  var tempAvailablePoints = [0,0,0,0,0,0,0];
-  healCost = abilities[7].purchased;
-  
-  for(let i = 1; i < 7; i++){
-    tempAvailablePoints[i] = pointsAvailable[i];
-  }
-  tempAvailablePoints[6] = tempAvailablePoints[6] + 1;
-  
-    
-    for(let i = j; i < 7; i++){
-      if(tempCost > tempAvailablePoints[i]){
-        tempCost = tempCost - tempAvailablePoints[i];
-        tempAvailablePoints[i] = 0;
-      }
-      else{
-        tempAvailablePoints[i] = tempAvailablePoints[i] - tempCost;
-        tempCost = 0;
-      }
-      if(i == 6 && tempCost > 0){
-        return false;
-      }
-    }
-  return true;
-}*/
 /*##################################*/
 function popFunc(elementId, index) {
   const elements = document.getElementsByClassName("popuptext");
@@ -877,7 +965,7 @@ const Harden = {
   cost: 1,
   max: 31, charge: "", use: 1, per: "Refresh",
   pointTotalId: "Hardenval",
-  name: "Harden", type: "Enchantment",  freq: "1/Refresh",
+  name: "Harden", type: "Enchantment",  freq: "1/Ref",
   school: "Protection", range: "Other", materials: "White Strip",
   incant: "<I>I enchant thee with Harden</I> x3", 
   effect: "Bearer's weapons or shield may only be destroyed by Magic Balls/Verbals which destroy objects e.g. Fireball or Pyrotechnics", 
@@ -1562,8 +1650,7 @@ const abilities = [Priest,	//0
   PhoenixTears,	//46
   Banish,	//47
   ProtectionfromMagic,	//48
-  Stun	//49
-  
+  Stun	//49  
 ];
 
 function saveList(){
