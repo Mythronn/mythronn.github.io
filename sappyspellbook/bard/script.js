@@ -279,6 +279,7 @@ function resetPoints(fullReset){
   }
   
   processDervishMinus();
+  processLegendMinus();
   for(let i = 0; i < abilityCount; i++){
     abilities[i].purchased = 0;
     document.getElementById(abilities[i].pointTotalId).value = 0;
@@ -344,69 +345,135 @@ function processExpChange(fromUser){
     }
     if(abilities[3].selectedAbility1 == "Awe" || abilities[3].selectedAbility2 == "Awe"){
       abilities[15].charge = "Charge x5";
+      abilities[15].freq = "1/Life CHARGE x5";
+      if(abilities[0].purchased > 0){abilities[15].freq = "2/Life CHARGE x5";}
+      updateAbilityText(15);
     }
     else{
       abilities[15].charge = "";
+      abilities[15].freq = "1/Life";
+      if(abilities[0].purchased > 0){abilities[15].freq = "2/Life";}
+      updateAbilityText(15);
     }
     if(abilities[3].selectedAbility1 == "Break Concentration" || abilities[3].selectedAbility2 == "Break Concentration"){
-      abilities[17].charge = "Charge x5";
+      abilities[17].charge = "Charge x10";
+      abilities[17].freq = "1/Ref CHARGE x10";
+      if(abilities[0].purchased > 0){abilities[17].freq = "2/Ref CHARGE x10";}
+      updateAbilityText(17);
     }
     else{
       abilities[17].charge = "";
+      abilities[17].freq = "1/Ref";
+      if(abilities[0].purchased > 0){abilities[17].freq = "2/Ref";}
+      updateAbilityText(17);
     }
     if(abilities[3].selectedAbility1 == "Empower" || abilities[3].selectedAbility2 == "Empower"){
       abilities[8].charge = "Charge x10";
+      abilities[8].freq = "2/Ref CHARGE x10";
+      if(abilities[0].purchased > 0){abilities[8].freq = "4/Ref CHARGE x10";}
+      updateAbilityText(8);
     }
     else{
       abilities[8].charge = "";
+      abilities[8].freq = "2/Ref";
+      if(abilities[0].purchased > 0){abilities[8].freq = "4/Ref";}
+      updateAbilityText(8);
     }
     if(abilities[3].selectedAbility1 == "Greater Release" || abilities[3].selectedAbility2 == "Greater Release"){
       abilities[10].charge = "Charge x10";
+      abilities[10].freq = "1/Ref CHARGE x10";
+      if(abilities[0].purchased > 0){abilities[10].freq = "2/Ref CHARGE x10";}
+      updateAbilityText(10);
     }
     else{
       abilities[10].charge = "";
+      abilities[10].freq = "1/Ref";
+      if(abilities[0].purchased > 0){abilities[10].freq = "2/Ref";}
+      updateAbilityText(10);
     }
     if(abilities[3].selectedAbility1 == "Insult" || abilities[3].selectedAbility2 == "Insult"){
-      abilities[10].charge = "Charge x5";
+      abilities[4].charge = "Charge x5";
+      abilities[4].freq = "1/Life CHARGE x5";
+      if(abilities[0].purchased > 0){abilities[4].freq = "2/Life CHARGE x5";}
+      updateAbilityText(4);
     }
     else{
-      abilities[10].charge = "";
+      abilities[4].charge = "";
+      abilities[4].freq = "1/Life";
+      if(abilities[0].purchased > 0){abilities[4].freq = "2/Life";}
+      updateAbilityText(4);
     }
     if(abilities[3].selectedAbility1 == "Mend" || abilities[3].selectedAbility2 == "Mend"){
       abilities[12].charge = "Charge x5";
+      abilities[12].freq = "1/Life CHARGE x5";
+      if(abilities[0].purchased > 0){abilities[12].freq = "2/Life CHARGE x5";}
+      updateAbilityText(12);
     }
     else{
       abilities[12].charge = "";
+      abilities[12].freq = "1/Life";
+      if(abilities[0].purchased > 0){abilities[12].freq = "2/Life";}
+      updateAbilityText(12);
     }
     if(abilities[3].selectedAbility1 == "Release" || abilities[3].selectedAbility2 == "Release"){
       abilities[5].charge = "Charge x5";
+      abilities[5].freq = "1/Life CHARGE x5";
+      if(abilities[0].purchased > 0){abilities[5].freq = "2/Life CHARGE x5";}
+      updateAbilityText(5);
     }
     else{
       abilities[5].charge = "";
+      abilities[5].freq = "1/Life";
+      if(abilities[0].purchased > 0){abilities[5].freq = "2/Life";}
+      updateAbilityText(5);
     }
     if(abilities[3].selectedAbility1 == "Restoration" || abilities[3].selectedAbility2 == "Restoration"){
       abilities[23].charge = "Charge x10";
+      abilities[23].freq = "1/Ref CHARGE x10";
+      if(abilities[0].purchased > 0){abilities[23].freq = "2/Ref CHARGE x10";}
+      updateAbilityText(23);
     }
     else{
       abilities[23].charge = "";
+      abilities[23].freq = "1/Ref";
+      if(abilities[0].purchased > 0){abilities[23].freq = "2/Ref";}
+      updateAbilityText(23);
     }
     if(abilities[3].selectedAbility1 == "Shove" || abilities[3].selectedAbility2 == "Shove"){
       abilities[6].charge = "Charge x5";
+      abilities[6].freq = "1/Life CHARGE x5";
+      if(abilities[0].purchased > 0){abilities[6].freq = "2/Life CHARGE x5";}
+      updateAbilityText(6);
     }
     else{
       abilities[6].charge = "";
+      abilities[6].freq = "1/Life";
+      if(abilities[0].purchased > 0){abilities[6].freq = "2/Life";}
+      updateAbilityText(6);
     }
     if(abilities[3].selectedAbility1 == "Suppress Aura" || abilities[3].selectedAbility2 == "Suppress Aura"){
       abilities[27].charge = "Charge x10";
+      abilities[27].freq = "1/Ref CHARGE x10";
+      if(abilities[0].purchased > 0){abilities[27].freq = "2/Ref CHARGE x10";}
+      updateAbilityText(27);
     }
     else{
       abilities[27].charge = "";
+      abilities[27].freq = "1/Ref";
+      if(abilities[0].purchased > 0){abilities[27].freq = "2/Ref";}
+      updateAbilityText(27);
     }
     if(abilities[3].selectedAbility1 == "Terror" || abilities[3].selectedAbility2 == "Terror"){
       abilities[29].charge = "Charge x10";
+      abilities[29].freq = "1/Ref CHARGE x10";
+      if(abilities[0].purchased > 0){abilities[29].freq = "2/Ref CHARGE x10";}
+      updateAbilityText(29);
     }
     else{
       abilities[29].charge = "";
+      abilities[29].freq = "1/Ref";
+      if(abilities[0].purchased > 0){abilities[29].freq = "2/Ref";}
+      updateAbilityText(29);
     }
     createURL();
     if(fromUser == 1){
@@ -456,11 +523,15 @@ function pointPlus(index, fromClick) {
     showToast("You don't have the points to add Dervish.");
     return false;
   }
-  if(abilities[a].name == "Dervish"){
-    processDervishPlus();
-  }
+  
   
   if(checkPointsAvailable(a)){
+    if(abilities[a].name == "Dervish"){
+      processDervishPlus();
+    }
+    if(abilities[a].name == "Legend"){
+      processLegendPlus();
+    }
     tempCost = abilities[a].cost;
     for(let i = abilities[a].level; i < 7; i++){
       if(tempCost > pointsAvailable[i]){
@@ -650,6 +721,9 @@ function pointMinus(index) {
   if(abilities[a].name == "Dervish"){
     processDervishMinus();
   }
+  if(abilities[a].name == "Legend"){
+    processLegendMinus();
+  }
   abilities[a].purchased--;
   reprocessPoints(a);
   return 0;
@@ -691,10 +765,41 @@ function processDervishPlus(){
   abilities[22].cost = 6;
   abilities[33].cost = 6;
   abilities[39].cost = 4;
+
+  abilities[1].freq = "2/Ref Chg x5";
+  abilities[4].freq = "2/Life";
+  abilities[5].freq = "2/Life";
+  abilities[6].freq = "2/Life";
+  abilities[8].freq = "4/Ref";
+  abilities[10].freq = "2/Ref";
+  abilities[12].freq = "2Life";
+  abilities[15].freq = "2/Life";
+  abilities[17].freq = "2/Ref";
+  abilities[23].freq = "2/Ref";
+  abilities[27].freq = "2/Ref";
+  abilities[29].freq = "2/Ref";
+  abilities[30].freq = "2/Ref";
+  abilities[35].freq = "2/Life";
+  abilities[38].freq = "2/Ref";
+
+  updateAbilityText(1);	
+  updateAbilityText(4);	
+  updateAbilityText(5);	
+  updateAbilityText(6);	
+  updateAbilityText(8);	
+  updateAbilityText(10);	
+  updateAbilityText(12);	
+  updateAbilityText(15);	
+  updateAbilityText(17);
+  updateAbilityText(23);	
+  updateAbilityText(27);	
+  updateAbilityText(29);	
+  updateAbilityText(30);	
+  updateAbilityText(35);	
+  updateAbilityText(38);	
+  
   updateTable();
 }
-
-
 function processDervishMinus(){
   abilities[2].cost = 2;
   abilities[9].cost = 3;
@@ -702,6 +807,47 @@ function processDervishMinus(){
   abilities[22].cost = 3;
   abilities[33].cost = 3;
   abilities[39].cost = 2;
+  
+  abilities[1].freq = "1/Ref Chg x5";
+  abilities[4].freq = "1/Life";
+  abilities[5].freq = "1/Life";
+  abilities[6].freq = "1/Life";
+  abilities[8].freq = "2/Ref";
+  abilities[10].freq = "1/Ref";
+  abilities[12].freq = "1Life";
+  abilities[15].freq = "1/Life";
+  abilities[17].freq = "1/Ref";
+  abilities[23].freq = "1/Ref";
+  abilities[27].freq = "1/Ref";
+  abilities[29].freq = "1/Ref";
+  abilities[30].freq = "1/Ref";
+  abilities[35].freq = "1/Life";
+  abilities[38].freq = "1/Ref";
+
+  updateAbilityText(1);	
+  updateAbilityText(4);	
+  updateAbilityText(5);	
+  updateAbilityText(6);	
+  updateAbilityText(8);	
+  updateAbilityText(10);	
+  updateAbilityText(12);	
+  updateAbilityText(15);	
+  updateAbilityText(17);
+  updateAbilityText(23);	
+  updateAbilityText(27);	
+  updateAbilityText(29);	
+  updateAbilityText(30);	
+  updateAbilityText(35);	
+  updateAbilityText(38);
+  updateTable();
+}
+
+function processLegendPlus(){
+  abilities[18].freq = "2/Life";
+  updateTable();
+}
+function processLegendMinus(){
+  abilities[18].freq = "1/Life";
   updateTable();
 }
 
