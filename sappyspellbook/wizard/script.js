@@ -878,7 +878,7 @@ function freeableFrom(index, c, rl){
   }
   for(let i = lvl; i < 7; i++){
     tempTotal = tempTotal + pointsSpent[i];
-    if(tempTotal > (5 * i)){
+    if(tempTotal > (5 * i) && !(i == reqLvl && lookThePart == true && (tempTotal == (5 * i) + 1))){
       console.log("Not highest level: " + i);
     }
     else{
