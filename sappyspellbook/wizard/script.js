@@ -903,7 +903,7 @@ function freeableFrom(index){
       outputString = outputString + "Level " + i + ": " + borrows[i] + " ";
     }
   }
-  return ""; //placeholder
+  return outputString; //placeholder
 }
 
 /*##################################*/
