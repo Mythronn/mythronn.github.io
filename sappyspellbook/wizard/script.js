@@ -872,19 +872,17 @@ function freeableFrom(index, c, rl){
   let tempBorrowed = higherLevelPoints[lvl];
   let borrows = [0,0,0,0,0,0];
   let outputString = "";
+  let tempTotal = 0;
   if(higherLevelPoints[lvl] == 0){
     return "";
   }
-  for(let i = lvl + Math.ceil(pointsSpent[lvl] / 5) - 1; i < 7; i++){
-    if(higherLevelPoints[i] == 0){
+  for(let i = lvl; i < 7; i++){
+    tempTotal = tempTotal + pointsSpent[i];
+    if(tempTotal > (5 * i)){
+      console.log("Not highest level: " + i);
+    }
+    else{
       highestLevel = i;
-      if(i == reqLvl && lookThePart == true){
-        highestPoints = 6 - pointsAvailable[highestLevel]; 
-      }
-      else{
-        highestPoints = 5 - pointsAvailable[highestLevel]; 
-      }
-      
       i = 7;
     }
   }
