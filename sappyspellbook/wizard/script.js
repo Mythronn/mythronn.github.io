@@ -796,16 +796,16 @@ function updatePointsAvailable(){
     document.getElementById("hlp1").innerText = " " + higherLevelPoints[1] + " Higher Level Point(s) " + freeableFrom(1, ltpChecked, reqLevel, ltpReq);
   }
   if(higherLevelPoints[2] != 0){
-    document.getElementById("hlp2").innerText = " " + higherLevelPoints[2] + " Higher Level Point(s)" + freeableFrom(1, ltpChecked, reqLevel, ltpReq);
+    document.getElementById("hlp2").innerText = " " + higherLevelPoints[2] + " Higher Level Point(s)" + freeableFrom(2, ltpChecked, reqLevel, ltpReq);
   }
   if(higherLevelPoints[3] != 0){
-    document.getElementById("hlp3").innerText = " " + higherLevelPoints[3] + " Higher Level Point(s)" + freeableFrom(1, ltpChecked, reqLevel, ltpReq);
+    document.getElementById("hlp3").innerText = " " + higherLevelPoints[3] + " Higher Level Point(s)" + freeableFrom(3, ltpChecked, reqLevel, ltpReq);
   }
   if(higherLevelPoints[4] != 0){
-    document.getElementById("hlp4").innerText = " " + higherLevelPoints[4] + " Higher Level Point(s)" + freeableFrom(1, ltpChecked, reqLevel, ltpReq);
+    document.getElementById("hlp4").innerText = " " + higherLevelPoints[4] + " Higher Level Point(s)" + freeableFrom(4, ltpChecked, reqLevel, ltpReq);
   }
   if(higherLevelPoints[5] != 0){
-    document.getElementById("hlp5").innerText = " " + higherLevelPoints[5] + " Higher Level Point(s)" + freeableFrom(1, ltpChecked, reqLevel, ltpReq);
+    document.getElementById("hlp5").innerText = " " + higherLevelPoints[5] + " Higher Level Point(s)" + freeableFrom(5, ltpChecked, reqLevel, ltpReq);
   }
 
   if(ltpChecked && reqLevel == 1 && ltpReq == false){
