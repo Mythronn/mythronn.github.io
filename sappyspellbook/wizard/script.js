@@ -793,19 +793,19 @@ function updatePointsAvailable(){
   document.getElementById("hlp5").innerText = " ";
 
   if(higherLevelPoints[1] != 0){
-    document.getElementById("hlp1").innerText = " " + higherLevelPoints[1] + " Higher Level Point(s) G " + freeableFrom(1, ltpChecked, reqLevel);
+    document.getElementById("hlp1").innerText = " " + higherLevelPoints[1] + " Higher Level Point(s) " + freeableFrom(1, ltpChecked, reqLevel, ltpReq);
   }
   if(higherLevelPoints[2] != 0){
-    document.getElementById("hlp2").innerText = " " + higherLevelPoints[2] + " Higher Level Point(s)";
+    document.getElementById("hlp2").innerText = " " + higherLevelPoints[2] + " Higher Level Point(s)" + freeableFrom(1, ltpChecked, reqLevel, ltpReq);
   }
   if(higherLevelPoints[3] != 0){
-    document.getElementById("hlp3").innerText = " " + higherLevelPoints[3] + " Higher Level Point(s)";
+    document.getElementById("hlp3").innerText = " " + higherLevelPoints[3] + " Higher Level Point(s)" + freeableFrom(1, ltpChecked, reqLevel, ltpReq);
   }
   if(higherLevelPoints[4] != 0){
-    document.getElementById("hlp4").innerText = " " + higherLevelPoints[4] + " Higher Level Point(s)";
+    document.getElementById("hlp4").innerText = " " + higherLevelPoints[4] + " Higher Level Point(s)" + freeableFrom(1, ltpChecked, reqLevel, ltpReq);
   }
   if(higherLevelPoints[5] != 0){
-    document.getElementById("hlp5").innerText = " " + higherLevelPoints[5] + " Higher Level Point(s)";
+    document.getElementById("hlp5").innerText = " " + higherLevelPoints[5] + " Higher Level Point(s)" + freeableFrom(1, ltpChecked, reqLevel, ltpReq);
   }
 
   if(ltpChecked && reqLevel == 1 && ltpReq == false){
@@ -863,8 +863,9 @@ function updatePointsAvailable(){
   createURL();
 }
 
-function freeableFrom(index, c, rl){
+function freeableFrom(index, c, rl, r){
   let lvl = index;
+  let req = r;
   let lookThePart = c;
   let reqLvl = rl;
   let highestLevel = 0;
@@ -879,12 +880,12 @@ function freeableFrom(index, c, rl){
   for(let i = lvl; i < 7; i++){
     tempTotal = tempTotal + pointsSpent[i];
     if(tempTotal > (5 * i) && !(i == reqLvl && lookThePart == true && (tempTotal == (5 * i) + 1))){
-      console.log("Not highest level: " + i);
     }
     else{
       highestLevel = i;
       if(i == reqLvl && lookThePart == true){
-        highestPoints = 6 - pointsAvailable[highestLevel]; 
+        highestPoints = 5 - pointsAvailable[highestLevel]; 
+        console.log(i + " HP:" + highestPoints);
       }
       else{
         highestPoints = 5 - pointsAvailable[highestLevel]; 
@@ -895,6 +896,9 @@ function freeableFrom(index, c, rl){
   for(let i = highestLevel; i > lvl; i--){
     if(i == highestLevel && tempBorrowed > highestPoints && tempBorrowed > 0){
       borrows[i] = highestPoints;
+      if(req || highestLevel == 6){
+        borrows[i]++;
+      }
       tempBorrowed = tempBorrowed - highestPoints;
     }
     else if(i == highestLevel && tempBorrowed <= highestPoints && tempBorrowed > 0){
