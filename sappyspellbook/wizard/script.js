@@ -875,7 +875,7 @@ function freeableFrom(index, c, rl){
   if(higherLevelPoints[lvl] == 0){
     return "";
   }
-  for(let i = lvl; i < 7; i++){
+  for(let i = lvl + Math.floor(pointsSpent[i] / 5); i < 7; i++){
     if(higherLevelPoints[i] == 0){
       highestLevel = i;
       if(i == reqLvl && lookThePart == true){
