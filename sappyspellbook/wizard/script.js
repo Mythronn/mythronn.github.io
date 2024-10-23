@@ -793,7 +793,7 @@ function updatePointsAvailable(){
   document.getElementById("hlp5").innerText = " ";
 
   if(higherLevelPoints[1] != 0){
-    document.getElementById("hlp1").innerText = " " + higherLevelPoints[1] + " Higher Level Point(s) " + freeableFrom(1);
+    document.getElementById("hlp1").innerText = " " + higherLevelPoints[1] + " Higher Level Point(s) G " + freeableFrom(1);
   }
   if(higherLevelPoints[2] != 0){
     document.getElementById("hlp2").innerText = " " + higherLevelPoints[2] + " Higher Level Point(s)";
