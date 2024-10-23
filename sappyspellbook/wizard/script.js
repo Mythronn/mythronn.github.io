@@ -907,7 +907,7 @@ function freeableFrom(index, c, rl){
     }
   }
   for(let i = lvl; i < 7; i++){
-    if(borrows[i] > 1){
+    if(borrows[i] > 0){
       outputString = outputString + "Level " + i + ": " + borrows[i] + " ";
     }
   }
