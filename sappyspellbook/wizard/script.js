@@ -338,123 +338,243 @@ function processExpChange(fromUser){
     }
     if(abilities[3].selectedAbility1 == "Astral Intervention" || abilities[3].selectedAbility2 == "Astral Intervention"){
       abilities[9].charge = "Charge x5";
+      abilities[9].freq = "1/Life CHARGE x5";
+      updateAbilityText(9); 
     }
     else{
       abilities[9].charge = "";
+      abilities[9].freq = "1/Life";
+      updateAbilityText(9); 
     }
     if(abilities[3].selectedAbility1 == "Banish" || abilities[3].selectedAbility2 == "Banish"){
       abilities[0].charge = "Charge x5";
+      abilities[0].freq = "1/Life CHARGE x5";
+      updateAbilityText(0); 
     }
     else{
       abilities[0].charge = "";
+      abilities[0].freq = "1/Life";
+      updateAbilityText(0); 
     }
     if(abilities[3].selectedAbility1 == "Break Concentration" || abilities[3].selectedAbility2 == "Break Concentration"){
       abilities[10].charge = "Charge x5";
+      abilities[10].freq = "1/Life CHARGE x5";
+      updateAbilityText(10); 
     }
     else{
       abilities[10].charge = "";
+      abilities[10].freq = "1/Life";
+      updateAbilityText(10); 
     }
     if(abilities[3].selectedAbility1 == "Destroy Armor" || abilities[3].selectedAbility2 == "Destroy Armor"){
       abilities[27].charge = "Charge x10";
+      if(abilities[51].purchased > 0){
+        abilities[27].freq = "4/Ref CHARGE x10"; //warlock
+      }
+      else{
+        abilities[27].freq = "2/Ref CHARGE x10"; //no warlock
+      }      
+      updateAbilityText(27); 
     }
     else{
       abilities[27].charge = "";
+      if(abilities[51].purchased > 0){
+        abilities[27].freq = "4/Ref"; //warlock
+      }
+      else{
+        abilities[27].freq = "2/Ref"; //no warlock
+      }
+      updateAbilityText(27); 
     }
     if(abilities[3].selectedAbility1 == "Dimensional Rift" || abilities[3].selectedAbility2 == "Dimensional Rift"){
       abilities[28].charge = "Charge x10";
+      abilities[28].freq = "1/Ref CHARGE x10";
+      updateAbilityText(28); 
     }
     else{
       abilities[28].charge = "";
+      abilities[28].freq = "1/Ref";
+      updateAbilityText(28); 
     }
     if(abilities[3].selectedAbility1 == "Dragged Below" || abilities[3].selectedAbility2 == "Dragged Below"){
       abilities[18].charge = "Charge x10";
+      if(abilities[51].purchased > 0){
+        abilities[18].freq = "2/Ref CHARGE x10"; //warlock
+      }
+      else{
+        abilities[18].freq = "1/Ref CHARGE x10"; //no warlock
+      }
+      updateAbilityText(18); 
     }
     else{
       abilities[18].charge = "";
+      if(abilities[51].purchased > 0){
+        abilities[18].freq = "2/Ref"; //warlock
+      }
+      else{
+        abilities[18].freq = "1/Ref"; //no warlock
+      }
+      updateAbilityText(18); 
     }
     if(abilities[3].selectedAbility1 == "Force Barrier" || abilities[3].selectedAbility2 == "Force Barrier"){
       abilities[4].charge = "Charge x5";
+      abilities[4].freq = "1/Life CHARGE x5";
+      updateAbilityText(4); 
     }
     else{
       abilities[4].charge = "";
+      abilities[4].freq = "1/Life";
+      updateAbilityText(4); 
     }
     if(abilities[3].selectedAbility1 == "Greater Mend" || abilities[3].selectedAbility2 == "Greater Mend"){
       abilities[20].charge = "Charge x10";
+      abilities[20].freq = "1/Ref CHARGE x10";
+      updateAbilityText(20); 
     }
     else{
       abilities[20].charge = "";
+      abilities[20].freq = "1/Ref";
+      updateAbilityText(20); 
     }
     if(abilities[3].selectedAbility1 == "Heat Weapon" || abilities[3].selectedAbility2 == "Heat Weapon"){
       abilities[6].charge = "Charge x5";
+      if(abilities[51].purchased > 0){
+        abilities[6].freq = "2/Life CHARGE x5"; //warlock
+      }
+      else{
+        abilities[6].freq = "1/Life CHARGE x5"; //no warlock
+      }
+      updateAbilityText(6); 
     }
     else{
       abilities[6].charge = "";
+      if(abilities[51].purchased > 0){
+        abilities[6].freq = "2/Life"; //warlock
+      }
+      else{
+        abilities[6].freq = "1/Life"; //no warlock
+      }
+      updateAbilityText(6); 
     }
     if(abilities[3].selectedAbility1 == "Hold Person" || abilities[3].selectedAbility2 == "Hold Person"){
       abilities[21].charge = "Charge x5";
+      abilities[21].freq = "1/Life CHARGE x5";
+      updateAbilityText(21); 
     }
     else{
       abilities[21].charge = "";
+      abilities[21].freq = "1/Life";
+      updateAbilityText(21); 
     }
     if(abilities[3].selectedAbility1 == "Icy Blast" || abilities[3].selectedAbility2 == "Icy Blast"){
       abilities[30].charge = "Charge x10";
+      abilities[30].freq = "1/Ref CHARGE x10";
+      updateAbilityText(30); 
     }
     else{
       abilities[10].charge = "";
+      abilities[30].freq = "1/Ref";
+      updateAbilityText(30); 
     }
     if(abilities[3].selectedAbility1 == "Mend" || abilities[3].selectedAbility2 == "Mend"){
       abilities[7].charge = "Charge x5";
+      abilities[7].freq = "1/Life CHARGE x5";
+      updateAbilityText(7); 
     }
     else{
       abilities[7].charge = "";
+      abilities[7].freq = "1/Life";
+      updateAbilityText(7); 
     }
     if(abilities[3].selectedAbility1 == "Planar Grounding" || abilities[3].selectedAbility2 == "Planar Grounding"){
       abilities[13].charge = "Charge x10";
+      abilities[13].freq = "1/Ref CHARGE x10";
+      updateAbilityText(13); 
     }
     else{
       abilities[13].charge = "";
+      abilities[13].freq = "1/Ref";
+      updateAbilityText(13); 
     }
     if(abilities[3].selectedAbility1 == "Ravage" || abilities[3].selectedAbility2 == "Ravage"){
       abilities[24].charge = "Charge x5";
+      if(abilities[51].purchased > 0){
+        abilities[24].freq = "4/Life CHARGE x5"; //warlock
+      }
+      else{
+        abilities[24].freq = "2/Life CHARGE x5"; //no warlock
+      }
+      updateAbilityText(24); 
     }
     else{
       abilities[24].charge = "";
+      if(abilities[51].purchased > 0){
+        abilities[24].freq = "4/Life"; //warlock
+      }
+      else{
+        abilities[24].freq = "2/Life"; //no warlock
+      }
+      updateAbilityText(24); 
     }
     if(abilities[3].selectedAbility1 == "Release" || abilities[3].selectedAbility2 == "Release"){
       abilities[14].charge = "Charge x5";
+      abilities[14].freq = "1/Life CHARGE x5";
+      updateAbilityText(14); 
     }
     else{
       abilities[14].charge = "";
+      abilities[14].freq = "1/Life";
+      updateAbilityText(14); 
     }
     if(abilities[3].selectedAbility1 == "Shatter" || abilities[3].selectedAbility2 == "Shatter"){
       abilities[31].charge = "Charge x10";
+      abilities[31].freq = "1/Ref CHARGE x10";
+      updateAbilityText(31); 
     }
     else{
       abilities[31].charge = "";
+      abilities[31].freq = "1/Ref";
+      updateAbilityText(31); 
     }
     if(abilities[3].selectedAbility1 == "Shatter Weapon" || abilities[3].selectedAbility2 == "Shatter Weapon"){
       abilities[25].charge = "Charge x10";
+      abilities[25].freq = "1/Ref CHARGE x10";
+      updateAbilityText(25); 
     }
     else{
       abilities[25].charge = "";
+      abilities[25].freq = "1/Ref";
+      updateAbilityText(25); 
     }
     if(abilities[3].selectedAbility1 == "Suppress Aura" || abilities[3].selectedAbility2 == "Suppress Aura"){
       abilities[32].charge = "Charge x10";
+      abilities[32].freq = "1/Ref CHARGE x10";
+      updateAbilityText(32); 
     }
     else{
       abilities[32].charge = "";
+      abilities[32].freq = "1/Ref";
+      updateAbilityText(32); 
     }
     if(abilities[3].selectedAbility1 == "Teleport" || abilities[3].selectedAbility2 == "Teleport"){
       abilities[16].charge = "Charge x5";
+      abilities[16].freq = "1/Life CHARGE x5";
+      updateAbilityText(16); 
     }
     else{
       abilities[16].charge = "";
+      abilities[16].freq = "1/Life";
+      updateAbilityText(16); 
     }
     if(abilities[3].selectedAbility1 == "Throw" || abilities[3].selectedAbility2 == "Throw"){
       abilities[26].charge = "Charge x10";
+      abilities[26].freq = "1/Ref CHARGE x10";
+      updateAbilityText(26); 
     }
     else{
       abilities[26].charge = "";
+      abilities[26].freq = "1/Ref";
+      updateAbilityText(26); 
     }
     createURL();
     if(fromUser == 1){
