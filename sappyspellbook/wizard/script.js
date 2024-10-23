@@ -883,6 +883,12 @@ function freeableFrom(index, c, rl){
     }
     else{
       highestLevel = i;
+      if(i == reqLvl && lookThePart == true){
+        highestPoints = 6 - pointsAvailable[highestLevel]; 
+      }
+      else{
+        highestPoints = 5 - pointsAvailable[highestLevel]; 
+      }
       i = 7;
     }
   }
