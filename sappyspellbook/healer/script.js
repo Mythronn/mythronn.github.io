@@ -275,8 +275,7 @@ function resetPoints(fullReset){
     processPriestMinus();
     abilities[0].purchased = 0;
   }
-  processNecromancerMinus();
-  processWarderMinus();
+  
   for(let i = 0; i < abilityCount; i++){
     abilities[i].purchased = 0;
     document.getElementById(abilities[i].pointTotalId).value = 0;
@@ -292,6 +291,8 @@ function resetPoints(fullReset){
   if(fullReset){
     updateExperienced();
   }
+  processNecromancerMinus();
+  processWarderMinus();
   updatePointsAvailable();
 }
 /*##################################*/
