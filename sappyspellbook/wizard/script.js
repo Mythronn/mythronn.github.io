@@ -793,19 +793,19 @@ function updatePointsAvailable(){
   document.getElementById("hlp5").innerText = " ";
 
   if(higherLevelPoints[1] != 0){
-    document.getElementById("hlp1").innerText = " " + higherLevelPoints[1] + " from " + freeableFrom(1, ltpChecked, reqLevel, ltpReq);
+    document.getElementById("hlp1").innerText = " +" + higherLevelPoints[1] + " " + freeableFrom(1, ltpChecked, reqLevel, ltpReq);
   }
   if(higherLevelPoints[2] != 0){
-    document.getElementById("hlp2").innerText = " " + higherLevelPoints[2] + " from " + freeableFrom(2, ltpChecked, reqLevel, ltpReq);
+    document.getElementById("hlp2").innerText = " +" + higherLevelPoints[2] + " " + freeableFrom(2, ltpChecked, reqLevel, ltpReq);
   }
   if(higherLevelPoints[3] != 0){
-    document.getElementById("hlp3").innerText = " " + higherLevelPoints[3] + " from " + freeableFrom(3, ltpChecked, reqLevel, ltpReq);
+    document.getElementById("hlp3").innerText = " +" + higherLevelPoints[3] + " " + freeableFrom(3, ltpChecked, reqLevel, ltpReq);
   }
   if(higherLevelPoints[4] != 0){
-    document.getElementById("hlp4").innerText = " " + higherLevelPoints[4] + " from " + freeableFrom(4, ltpChecked, reqLevel, ltpReq);
+    document.getElementById("hlp4").innerText = " +" + higherLevelPoints[4] + " " + freeableFrom(4, ltpChecked, reqLevel, ltpReq);
   }
   if(higherLevelPoints[5] != 0){
-    document.getElementById("hlp5").innerText = " " + higherLevelPoints[5] + " from " + freeableFrom(5, ltpChecked, reqLevel, ltpReq);
+    document.getElementById("hlp5").innerText = " +" + higherLevelPoints[5] + " " + freeableFrom(5, ltpChecked, reqLevel, ltpReq);
   }
 
   if(ltpChecked && reqLevel == 1 && ltpReq == false){
@@ -870,62 +870,42 @@ function freeableFrom(index, c, rl, r){
   let lookThePartChecked = c;
   let reqLvl = rl;
   let highestLevel = 0;
-  let highestPoints = 0;
-  let tempBorrowed = higherLevelPoints[lvl];
-  let borrows = [0,0,0,0,0,0];
   let outputString = "";
   let tempTotal = 0;
-  let base = 0;
   if(higherLevelPoints[lvl] == 0){
     return "";
   }
-  for(let i = lvl; i < 7; i++){
-    base = i - lvl + 1;
-    tempTotal = tempTotal + pointsSpent[i];
-    if(tempTotal > (5 * base) && !(i == reqLvl && lookThePartChecked == true && (tempTotal == (5 * base) + 1))){
-    }
-    else{
-      highestLevel = i;
-      if(i == reqLvl && lookThePartChecked == true){
-        highestPoints = 5 - pointsAvailable[highestLevel]; 
-        console.log("highest points: " + highestPoints + " at level: " + highestLevel);
-        
+  if(lookThePartChecked == false){
+    tempTotal = higherLevelPoints[lvl];
+    for(let i = lvl + 1; i < 7; i++){
+      if(tempTotal + (higherLevelPoints[i] - 5) <= 0 && higherLevelPoints[i] == 0){
+        highestLevel = i;
+        i = 7;
       }
-      else{
-        highestPoints = 5 - pointsAvailable[highestLevel]; 
-      }
-      i = 7;
+      tempTotal = tempTotal + (higherLevelPoints[i] - 5);
     }
-  }
+    console.log(higherLevelPoints[highestLevel] + " " + pointsAvailable[highestLevel] + " " + highestLevel);
+   }
+    
+   if(lookThePartChecked == true){
+    tempTotal = higherLevelPoints[lvl];
+    for(let i = lvl + 1; i < 7; i++){
+      if(tempTotal + (higherLevelPoints[i] - 5) <= 0 && higherLevelPoints[i] == 0){
+        highestLevel = i;
+        i = 7;
+      }
+      if(req == true && i == reqLevel){
+         highestLevel = i;
+        i = 7;
+         }
+      tempTotal = tempTotal + (higherLevelPoints[i] - 5);
+    }
+    console.log(higherLevelPoints[highestLevel] + " " + pointsAvailable[highestLevel] + " " + highestLevel);
+   }
   
-  for(let i = highestLevel; i > lvl; i--){
-    if(i == highestLevel && tempBorrowed > highestPoints && tempBorrowed > 0){
-      borrows[i] = highestPoints;
-      if(req || highestLevel == 6){
-        borrows[i]++;
-      }
-      tempBorrowed = tempBorrowed - highestPoints;
-    }
-    else if(i == highestLevel && tempBorrowed <= highestPoints && tempBorrowed > 0){
-      borrows[i] = tempBorrowed;
-      tempBorrowed = 0;
-    }
-    else if(i != highestLevel && tempBorrowed >= 5 && tempBorrowed > 0){
-      borrows[i] = 5;
-      tempBorrowed = tempBorrowed - 5;
-    }
-    else if(i != highestLevel && tempBorrowed < 5 && tempBorrowed > 0){
-      borrows[i] = tempBorrowed;
-      tempBorrowed =0;
-    }
-  }
-
-  for(let i = lvl; i < 7; i++){
-    if(borrows[i] > 0){
-      outputString = outputString + "[Lvl " + i + ": " + borrows[i] + "] ";
-    }
-  }
-  return outputString; //placeholder
+    outputString = "[Level " + highestLevel + "]";
+    
+  return outputString; 
 }
 
 /*##################################*/
