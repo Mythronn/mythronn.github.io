@@ -793,19 +793,19 @@ function updatePointsAvailable(){
   document.getElementById("hlp5").innerText = " ";
 
   if(higherLevelPoints[1] != 0){
-    document.getElementById("hlp1").innerText = " " + higherLevelPoints[1] + " Higher Level Point(s) " + freeableFrom(1, ltpChecked, reqLevel, ltpReq);
+    document.getElementById("hlp1").innerText = " " + higherLevelPoints[1] + " from " + freeableFrom(1, ltpChecked, reqLevel, ltpReq);
   }
   if(higherLevelPoints[2] != 0){
-    document.getElementById("hlp2").innerText = " " + higherLevelPoints[2] + " Higher Level Point(s)" + freeableFrom(2, ltpChecked, reqLevel, ltpReq);
+    document.getElementById("hlp2").innerText = " " + higherLevelPoints[2] + " from " + freeableFrom(2, ltpChecked, reqLevel, ltpReq);
   }
   if(higherLevelPoints[3] != 0){
-    document.getElementById("hlp3").innerText = " " + higherLevelPoints[3] + " Higher Level Point(s)" + freeableFrom(3, ltpChecked, reqLevel, ltpReq);
+    document.getElementById("hlp3").innerText = " " + higherLevelPoints[3] + " from " + freeableFrom(3, ltpChecked, reqLevel, ltpReq);
   }
   if(higherLevelPoints[4] != 0){
-    document.getElementById("hlp4").innerText = " " + higherLevelPoints[4] + " Higher Level Point(s)" + freeableFrom(4, ltpChecked, reqLevel, ltpReq);
+    document.getElementById("hlp4").innerText = " " + higherLevelPoints[4] + " from " + freeableFrom(4, ltpChecked, reqLevel, ltpReq);
   }
   if(higherLevelPoints[5] != 0){
-    document.getElementById("hlp5").innerText = " " + higherLevelPoints[5] + " Higher Level Point(s)" + freeableFrom(5, ltpChecked, reqLevel, ltpReq);
+    document.getElementById("hlp5").innerText = " " + higherLevelPoints[5] + " from " + freeableFrom(5, ltpChecked, reqLevel, ltpReq);
   }
 
   if(ltpChecked && reqLevel == 1 && ltpReq == false){
@@ -864,9 +864,10 @@ function updatePointsAvailable(){
 }
 
 function freeableFrom(index, c, rl, r){
+  console.log("level: " + index + " LTP Checked: " + c + " ReqLevel: " + rl + " is ltp required:" + r);
   let lvl = index;
   let req = r;
-  let lookThePart = c;
+  let lookThePartChecked = c;
   let reqLvl = rl;
   let highestLevel = 0;
   let highestPoints = 0;
@@ -874,18 +875,21 @@ function freeableFrom(index, c, rl, r){
   let borrows = [0,0,0,0,0,0];
   let outputString = "";
   let tempTotal = 0;
+  let base = 0;
   if(higherLevelPoints[lvl] == 0){
     return "";
   }
   for(let i = lvl; i < 7; i++){
+    base = i - lvl + 1;
     tempTotal = tempTotal + pointsSpent[i];
-    if(tempTotal > (5 * i) && !(i == reqLvl && lookThePart == true && (tempTotal == (5 * i) + 1))){
+    if(tempTotal > (5 * base) && !(i == reqLvl && lookThePartChecked == true && (tempTotal == (5 * base) + 1))){
     }
     else{
       highestLevel = i;
-      if(i == reqLvl && lookThePart == true){
+      if(i == reqLvl && lookThePartChecked == true){
         highestPoints = 5 - pointsAvailable[highestLevel]; 
-        console.log(i + " HP:" + highestPoints);
+        console.log("highest points: " + highestPoints + " at level: " + highestLevel);
+        
       }
       else{
         highestPoints = 5 - pointsAvailable[highestLevel]; 
@@ -893,6 +897,7 @@ function freeableFrom(index, c, rl, r){
       i = 7;
     }
   }
+  
   for(let i = highestLevel; i > lvl; i--){
     if(i == highestLevel && tempBorrowed > highestPoints && tempBorrowed > 0){
       borrows[i] = highestPoints;
@@ -914,9 +919,10 @@ function freeableFrom(index, c, rl, r){
       tempBorrowed =0;
     }
   }
+
   for(let i = lvl; i < 7; i++){
     if(borrows[i] > 0){
-      outputString = outputString + "Level " + i + ": " + borrows[i] + " ";
+      outputString = outputString + "[Lvl " + i + ": " + borrows[i] + "] ";
     }
   }
   return outputString; //placeholder
