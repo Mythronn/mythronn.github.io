@@ -612,19 +612,19 @@ function updatePointsAvailable(){
   document.getElementById("hlp5").innerText = " ";
 
   if(higherLevelPoints[1] != 0){
-    document.getElementById("hlp1").innerText = " " + higherLevelPoints[1] + " Higher Level Point(s)";
+    document.getElementById("hlp1").innerText = " +" + higherLevelPoints[1] + " " + freeableFrom(1, ltpChecked, reqLevel, ltpReq);
   }
   if(higherLevelPoints[2] != 0){
-    document.getElementById("hlp2").innerText = " " + higherLevelPoints[2] + " Higher Level Point(s)";
+    document.getElementById("hlp2").innerText = " +" + higherLevelPoints[2] + " " + freeableFrom(2, ltpChecked, reqLevel, ltpReq);
   }
   if(higherLevelPoints[3] != 0){
-    document.getElementById("hlp3").innerText = " " + higherLevelPoints[3] + " Higher Level Point(s)";
+    document.getElementById("hlp3").innerText = " +" + higherLevelPoints[3] + " " + freeableFrom(3, ltpChecked, reqLevel, ltpReq);
   }
   if(higherLevelPoints[4] != 0){
-    document.getElementById("hlp4").innerText = " " + higherLevelPoints[4] + " Higher Level Point(s)";
+    document.getElementById("hlp4").innerText = " +" + higherLevelPoints[4] + " " + freeableFrom(4, ltpChecked, reqLevel, ltpReq);
   }
   if(higherLevelPoints[5] != 0){
-    document.getElementById("hlp5").innerText = " " + higherLevelPoints[5] + " Higher Level Point(s)";
+    document.getElementById("hlp5").innerText = " +" + higherLevelPoints[5] + " " + freeableFrom(5, ltpChecked, reqLevel, ltpReq);
   }
 
   if(ltpChecked && reqLevel == 1 && ltpReq == false){
@@ -681,6 +681,52 @@ function updatePointsAvailable(){
   }
   createURL();
 }
+
+function freeableFrom(index, c, rl, r){
+  console.log("level: " + index + " LTP Checked: " + c + " ReqLevel: " + rl + " is ltp required:" + r);
+  let lvl = index;
+  let req = r;
+  let lookThePartChecked = c;
+  let reqLvl = rl;
+  let highestLevel = 0;
+  let outputString = "";
+  let tempTotal = 0;
+  if(higherLevelPoints[lvl] == 0){
+    return "";
+  }
+  if(lookThePartChecked == false){
+    tempTotal = higherLevelPoints[lvl];
+    for(let i = lvl + 1; i < 7; i++){
+      if(tempTotal + (higherLevelPoints[i] - 5) <= 0 && higherLevelPoints[i] == 0){
+        highestLevel = i;
+        i = 7;
+      }
+      tempTotal = tempTotal + (higherLevelPoints[i] - 5);
+    }
+    console.log(higherLevelPoints[highestLevel] + " " + pointsAvailable[highestLevel] + " " + highestLevel);
+   }
+    
+   if(lookThePartChecked == true){
+    tempTotal = higherLevelPoints[lvl];
+    for(let i = lvl + 1; i < 7; i++){
+      if(tempTotal + (higherLevelPoints[i] - 5) <= 0 && higherLevelPoints[i] == 0){
+        highestLevel = i;
+        i = 7;
+      }
+      if(req == true && i == reqLevel){
+         highestLevel = i;
+        i = 7;
+         }
+      tempTotal = tempTotal + (higherLevelPoints[i] - 5);
+    }
+    console.log(higherLevelPoints[highestLevel] + " " + pointsAvailable[highestLevel] + " " + highestLevel);
+   }
+  
+    outputString = "[Level " + highestLevel + "]";
+    
+  return outputString; 
+}
+
 /*##################################*/
 function pointMinus(index) {
   var a = index;    
