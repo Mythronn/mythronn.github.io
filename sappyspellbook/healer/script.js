@@ -709,14 +709,16 @@ function freeableFrom(index, c, rl, r){
    if(lookThePartChecked == true){
     tempTotal = higherLevelPoints[lvl];
     for(let i = lvl + 1; i < 7; i++){
-      if(tempTotal + (higherLevelPoints[i] - 5) <= 0 && higherLevelPoints[i] == 0 && (pointsSpent[i] + pointsAvailable[i]) < 5 ){
-        highestLevel = i;
-        i = 7;
-      }
+
       if(tempTotal + (higherLevelPoints[i] - 5) <= 0 && higherLevelPoints[i] == 0 && i == reqLevel && (pointsSpent[i] + pointsAvailable[i]) < 6 ){
         highestLevel = i;
         i = 7;
       }
+      if(tempTotal + (higherLevelPoints[i] - 5) <= 0 && higherLevelPoints[i] == 0 && (pointsSpent[i] + pointsAvailable[i]) < 5 ){
+        highestLevel = i;
+        i = 7;
+      }
+      
       if(req == true && i == reqLevel){
          highestLevel = i;
         i = 7;
