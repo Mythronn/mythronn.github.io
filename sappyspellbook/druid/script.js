@@ -669,11 +669,17 @@ function reprocessPoints(index){
   for(let i = 0; i < abilityCount; i++){
     tempPurchased[i] = abilities[i].purchased;
   }   
-  resetPoints(0);  
+  resetPoints(0);
+  while(tempPurchased[47] > 0){
+    pointPlus(47, false);
+    tempPurchased[47]--; //WARNING THIS IS A CRAZY HACK. BANISH IS CAUSE PROBLEM
+  }   
   for(let i = 0; i < abilityCount; i++){
     while(tempPurchased[i] > 0){
-      pointPlus(i, false);
-      tempPurchased[i]--;
+      if(i != 47){
+        pointPlus(i, false);
+        tempPurchased[i]--;
+      }
     }
   }
   
