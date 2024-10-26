@@ -1,3 +1,5 @@
+@import
+url('https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap'); 
 /*input stuff */
 input[type="number"] {
   width: 20px;
@@ -148,8 +150,7 @@ td:last-child, th:last-child {
 }
 
 /* Fonts and Extras */
-@import
-url('https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap'); 
+
 body {
     background-color: #eae0cc;
     font-family: "MedievalSharp", bold;
