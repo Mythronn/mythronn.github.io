@@ -25,6 +25,8 @@ body {
     text-align: center;
     padding: 10px 0;
     /*border-bottom: 3px solid #764a3b;*/
+    display:inline-block;
+    margin-top: 10;
   }
   
   .topnav a {
@@ -85,28 +87,107 @@ body {
     background-color: #FFD700;
     color: black;    
   }
+/*MIDNAV ***************************/
+    .midnav a.Anti-Paladin {
+        background-image: linear-gradient(rgb(51, 51, 51), rgb(255, 255, 255));
+        color: rgb(0, 0, 0);
+    }
+    .midnav a.Corruptor {
+        background-image: linear-gradient(rgb(51, 51, 51), rgb(255, 255, 255));
+        color: rgb(0, 0, 0);
+    }
+    .midnav a.Infernal {
+        background-image: linear-gradient(rgb(51, 51, 51), rgb(255, 255, 255));
+        color: rgb(0, 0, 0);
+    }
 
-  .midnav a.Infernal {
-    background-image: linear-gradient(rgb(51, 51, 51), rgb(255, 255, 255));
+    .midnav a.Archer {
+        background-color: #ff6600;
+        color: White;
+    }
+    .midnav a.Sniper {
+        background-color: #ff6600;
+        color: White;
+    }
+    .midnav a.Artificer {
+        background-color: #ff6600;
+        color: black;    
+    }
+
+    .midnav a.Assassin {
+    background-color: #000000;
+    color: White;
+    }
+    .midnav a.Ruffian {
+    background-color: #000000;
+    color: White;
+    }
+    .midnav a.Spy {
+    background-color: #000000;
+    color: rgb(255, 255, 255);    
+    }
+
+    .midnav a.Barbarian {
+    background-color: #ffffff;
     color: rgb(0, 0, 0);
-    margin-top: 5px;
-  }
-  .midnav a.Druid {
-    background-color: #83441a;
-    color: White;
-    margin-top: 5px;
-  }
-  .midnav a.Healer {
-    background-color: #ac0404;
-    color: White;
-    margin-top: 5px;
-  }
-  .midnav a.Wizard {
-    background-color: #FFD700;
+    }
+    .midnav a.Raider {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    }
+    .midnav a.Berserker {
+    background-color: #ffffff;
     color: black;    
-    margin-top: 5px;
-  }
-  
+    }
+    .midnav a.Monk {
+    background-color: #7c7c7c;
+    color: White;
+    }
+    .midnav a.Medium {
+    background-color: #7c7c7c;
+    color: White;
+    }
+    .midnav a.Mystic {
+    background-color: #7c7c7c;
+    color: rgb(255, 255, 255);    
+    }
+    .midnav a.Paladin {
+    background-image: linear-gradient(rgb(255, 217, 0), rgb(255, 255, 255));
+    color: White;
+    }
+    .midnav a.Guardian {
+    background-image: linear-gradient(rgb(255, 217, 0), rgb(255, 255, 255));
+    color: White;
+    }
+    .midnav a.Justiciar {
+    background-image: linear-gradient(rgb(255, 217, 0), rgb(255, 255, 255));
+    color: black;    
+    }
+    .midnav a.Scout {
+    background-color: #00a800;
+    color: White;
+    }
+    .midnav a.Hunter {
+    background-color: #00a800;
+    color: White;
+    }
+    .midnav a.Apex {
+    background-color: #00a800;
+    color: black;    
+    }
+    .midnav a.Warrior {
+    background-color: #8400b8;
+    color: White;
+    }
+    .midnav a.Marauder {
+    background-color: #8400b8;
+    color: White;
+    }
+    .midnav a.Juggernaut {
+    background-color: #8400b8;
+    color: black;    
+    }
+
   /* Section Styling */
   .ui-body {
     margin: 40px auto;
