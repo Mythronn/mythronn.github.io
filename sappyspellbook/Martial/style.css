@@ -1,0 +1,173 @@
+/* style.css */
+
+/* Global Styles */
+body {
+    margin-top: 0;
+    padding-top: 0;
+    font-family: 'Helvetica';
+    background: url('https://www.transparenttextures.com/patterns/aged-paper.png') #f4e2c0;
+    color: #4b2c20;
+  }
+  
+  /* Navigation Bar */
+  .topnav {
+    font-family: 'MedievalSharp';
+    background-color: #2e1a13;
+    overflow: hidden;
+    text-align: center;
+    padding: 10px 0;
+    border-bottom: 3px solid #764a3b;
+  }
+  
+  .topnav a {
+    color: #f2f2f2;
+    text-align: center;
+    padding: 5px 10px;
+    font-size: 18px;
+    
+    border-style: solid;
+    border-width: 0px;
+    border-radius: 20px;
+    border-color: #202020;
+    cursor: pointer;
+    transform: scale(1.1);
+  }
+  
+  .topnav a:hover {
+    color: #f2f2f2;
+    text-align: center;
+    padding: 5px 10px;
+    font-size: 18px;
+    
+    border-style: solid;
+    border-width: 0px;
+    border-radius: 20px;
+    border-color: #202020;
+    cursor: pointer;
+    transform: scale(1.1);
+  }
+  
+  .topnav a.Bard {
+    background-color: #0047AB;
+    color: White;
+  }
+  .topnav a.Druid {
+    background-color: #83441a;
+    color: White;
+  }
+  .topnav a.Healer {
+    background-color: #ac0404;
+    color: White;
+  }
+  .topnav a.Wizard {
+    background-color: #FFD700;
+    color: black;
+    
+  }
+  
+  /* Section Styling */
+  .ui-body {
+    margin: 40px auto;
+    padding: 20px;
+    width: 80%;
+    max-width: 800px;
+    background-image: linear-gradient(rgb(255, 208, 147), rgb(255, 255, 255));
+    border: 2px solid #4b2c20;
+    border-radius: 15px;
+    box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.5);
+  }
+  
+  h1, h3 {
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    font-family: 'MedievalSharp', cursive;
+    border-bottom-width: 1px;
+    border-bottom: 2px dotted  #4b2c20;
+    padding: 20px;
+    margin-top: 0px;
+  }
+  
+  h2{
+    
+  }
+  
+  p {
+    line-height: 2;
+  }
+  
+  /* Link Styling */
+  a {
+    color: #4b2c20; 
+    text-decoration: none;
+  }
+  
+  a:hover {
+    color: #764a3b;
+    text-decoration: none;
+  }
+  
+  /* Modal Styling */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow: auto;
+  }
+  
+  .modal-content {
+    background-color: #f4e2c0;
+    margin: 10% auto;
+    padding: 20px;
+    border: 2px solid #4b2c20;
+    border-radius: 15px;
+    width: 50%;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.8);
+  }
+  
+  .modal-header h2 {
+    margin: 0;
+    text-align: center;
+    color: #4b2c20;
+  }
+  
+  .modal-body p {
+    font-size: 18px;
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  .modal-footer {
+    text-align: center;
+  }
+  
+  .modal-button {
+    background-color: #4b2c20;
+    color: #f4e2c0;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+  }
+  
+  .modal-button:hover {
+    background-color: #764a3b;
+  }
+  
+  /* Animations */
+  @keyframes medieval-fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  .ui-body {
+    animation: medieval-fade-in 1s ease-in-out;
+  }
+  
