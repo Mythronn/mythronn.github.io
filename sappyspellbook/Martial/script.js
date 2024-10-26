@@ -3,30 +3,30 @@ document.addEventListener("DOMContentLoaded", function() {
   });
   
   function showText(archetype){
-    document.getElementById("Anti-Paladin").hidden = true; 
-    document.getElementById("Corruptor").hidden = true;      
-    document.getElementById("Infernal").hidden = true;     
-    document.getElementById("Archer").hidden = true;    
-    document.getElementById("Sniper").hidden = true;  
-    document.getElementById("Artificer").hidden = true;     
-    document.getElementById("Assassin").hidden = true;     
-    document.getElementById("Ruffian").hidden = true;   
-    document.getElementById("Spy").hidden = true;  
-    document.getElementById("Barbarian").hidden = true;   
-    document.getElementById("Raider").hidden = true;    
-    document.getElementById("Berserker").hidden = true;     
-    document.getElementById("Monk").hidden = true;     
-    document.getElementById("Medium").hidden = true;     
-    document.getElementById("Mystic").hidden = true;   
-    document.getElementById("Paladin").hidden = true;    
-    document.getElementById("Guardian").hidden = true;    
-    document.getElementById("Justicar").hidden = true;     
-    document.getElementById("Scout").hidden = true;     
-    document.getElementById("Hunter").hidden = true;    
-    document.getElementById("Apex").hidden = true;     
-    document.getElementById("Warrior").hidden = true;     
-    document.getElementById("Marauder").hidden = true;    
-    document.getElementById("Juggernaut").hidden = true;
+    document.getElementById("Anti-PaladinText").hidden = true; 
+    document.getElementById("CorruptorText").hidden = true;      
+    document.getElementById("InfernalText").hidden = true;     
+    document.getElementById("ArcherText").hidden = true;    
+    document.getElementById("SniperText").hidden = true;  
+    document.getElementById("ArtificerText").hidden = true;     
+    document.getElementById("AssassinText").hidden = true;     
+    document.getElementById("RuffianText").hidden = true;   
+    document.getElementById("SpyText").hidden = true;  
+    document.getElementById("BarbarianText").hidden = true;   
+    document.getElementById("RaiderText").hidden = true;    
+    document.getElementById("BerserkerText").hidden = true;     
+    document.getElementById("MonkText").hidden = true;     
+    document.getElementById("MediumText").hidden = true;     
+    document.getElementById("MysticText").hidden = true;   
+    document.getElementById("PaladinText").hidden = true;    
+    document.getElementById("GuardianText").hidden = true;    
+    document.getElementById("JusticarText").hidden = true;     
+    document.getElementById("ScoutText").hidden = true;     
+    document.getElementById("HunterText").hidden = true;    
+    document.getElementById("ApexText").hidden = true;     
+    document.getElementById("WarriorText").hidden = true;     
+    document.getElementById("MarauderText").hidden = true;    
+    document.getElementById("JuggernautText").hidden = true;
     document.getElementById(archetype).hidden = false; //<---show
   }
   
