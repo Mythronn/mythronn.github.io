@@ -130,8 +130,9 @@ body {
     margin-top: 0px;
   }
   
-  h2{
-    
+  tr{
+    border-color: #202020;
+    border-width: 1px;
   }
   
   p {
