@@ -290,7 +290,7 @@ body {
 
   tr{
     border-color: #202020;
-    border-width: 1px;
+    border: 1px solid;
   }
   
   p {
