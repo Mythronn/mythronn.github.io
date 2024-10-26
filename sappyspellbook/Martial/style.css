@@ -1,5 +1,6 @@
 /* style.css */
-
+@import
+url('https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap'); 
 /* Global Styles */
 body {
     margin-top: 0;
@@ -254,6 +255,10 @@ body {
     margin-top: 0px;
   }
   
+  h2 {
+    font-family: 'MedievalSharp', cursive;
+  }
+
   tr{
     border-color: #202020;
     border-width: 1px;
