@@ -10,9 +10,7 @@ body {
     color: #4b2c20;
   }
 
-  .prompt{
-    text-align: center;
-  }
+ 
   
   /* Navigation Bar */
   .topnav {
@@ -281,6 +279,9 @@ body {
     border-bottom: 2px dotted  #4b2c20;
     padding: 20px;
     margin-top: 0px;
+  }
+  .prompt{
+    text-align: center;
   }
   
   h2 {
