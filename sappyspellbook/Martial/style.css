@@ -178,19 +178,19 @@ body {
         margin-top: 10;    
     }
     .midnav a.Paladin {
-        background-image: linear-gradient(rgb(255, 166, 0), rgb(255, 228, 154));
+        background-image: linear-gradient(rgb(255, 166, 0), rgb(255, 248, 230));
         color: black;        
         display:inline-block;
         margin-top: 10;
     }
     .midnav a.Guardian {
-        background-image: linear-gradient(rgb(255, 217, 0), rgb(255, 255, 255));
+        background-image: linear-gradient(rgb(255, 166, 0), rgb(255, 248, 230));
         color: black;        
         display:inline-block;
         margin-top: 10;
     }
     .midnav a.Justiciar {
-        background-image: linear-gradient(rgb(255, 217, 0), rgb(255, 255, 255));
+        background-image: linear-gradient(rgb(255, 166, 0), rgb(255, 248, 230));
         color: black;        
         display:inline-block;
         margin-top: 10;    
