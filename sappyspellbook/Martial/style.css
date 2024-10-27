@@ -98,6 +98,7 @@ body {
         display:inline-block;
         margin-top: 10px;
         margin-right: 5px;
+        margin-left: 5px;
     }
     .midnav a.Archer {
         background-color: #ff6600;
@@ -133,6 +134,7 @@ body {
         display:inline-block;
         margin-top: 10px;
         margin-right: 5px;
+        margin-left: 5px;
     }
     .midnav a.Scout {
         background-color: #00a800;
