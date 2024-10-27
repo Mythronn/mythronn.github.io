@@ -28,14 +28,7 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("MarauderText").hidden = true;    
     document.getElementById("JuggernautText").hidden = true;
     document.getElementById(archetype).hidden = false; //<---show
+
+    document.getElementById(archetype).scrollIntoView({ behavior: "smooth" });
   }
   
-  function medievalAlert(message) {
-      const modal = document.getElementById('medievalAlert');
-      const modalBody = modal.querySelector('.modal-body p');
-      modalBody.textContent = message;
-      modal.style.display = 'flex';
-  }
-  document.getElementById('alertCloseButton').addEventListener('click', function() {
-      document.getElementById('medievalAlert').style.display = 'none';
-  });
