@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
     console.log("The DOM is fully loaded.");
+    document.getElementById("buttons").scrollIntoView({ behavior: "smooth" });
   });
   
   function showText(archetype){
