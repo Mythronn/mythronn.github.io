@@ -508,7 +508,129 @@
 </div>
 <div class="ui-body ui-body-a ui-corner-all" id="AssassinText" hidden>
     <h2>Assassin</h2>
+    <p><b>Garb:</b> Black sash and medieval/sword and sorcery-looking garb<BR>
+       <b>Look The Part:</b> Poison (Self) 1/Life (ex)<BR>
+       <b>Armor:</b> 2pts<BR>
+       <b>Shields:</b> None<BR>
+       <b>Weapons:</b> Dagger, Short, Long, Light Throwing, Heavy Throwing, Bow
+    </p>
+
+    <table>
+        <tr>
+            <th>Level</th>
+            <th>Abilities</th>
+        </tr>
+        <tr>
+            <td>1st</td>
+            <td><b>Trickery</b> (T)<BR>
+                <b>Assassinate</b> Unlimited (ex) (Ambulant)<BR>
+                <b>Shadow Step</b> 2/Life (ex) (Ambulant)
+            </td>
+        </tr>
+        <tr>
+            <td>2nd</td>
+            <td>Pick one:<BR>
+                <b>Poison</b> (Self) 1/Life Charge x3 (ex)<BR>
+                <b>Poison Arrow</b> - 2 Arrows / Unlimited (ex)
+            </td>
+        </tr>
+        <tr>
+            <td>3rd</td>
+            <td><b>Blink</b> 2/Life (ex) (Ambulant)</td>
+        </tr>
+        <tr>
+            <td>4th</td>
+            <td><b>Hold Person</b> 1/Life (m)</td>
+        </tr>
+        <tr>
+            <td>5th</td>
+            <td><b>Teleport</b> (Self) 2/Life (ex)</td>
+        </tr>
+        <tr>
+            <td>6th</td>
+            <td><b>Coup de Grace</b> 1/Life (m)</td>
+        </tr>
+    </table>
+
+    <h3>Class Abilities</h3>
+    <p><b>Trickery</b><BR>
+       T: Granted as Trait S: Sorcery R: Self<BR>
+       E: Player may use Shadow Step, Teleport, and Blink as if they were not Insubstantial, if they are already willingly Insubstantial. Doing so removes the original Insubstantial effect.
+    </p>
+
+    <p><b>Shadow Step</b><BR>
+       T: Verbal S: Sorcery R: Self<BR>
+       I: “I step into the shadows”<BR>
+       E: Player becomes Insubstantial.<BR>
+       N: Caster may end this Insubstantial state at any time by using the exit incantation for Insubstantial.
+    </p>
+
+    <p><b>Assassinate</b><BR>
+       T: Verbal S: Death R: 50'<BR>
+       I: “Assassinate”<BR>
+       E: The target is Cursed.<BR>
+       L: May only be used immediately upon killing an enemy.<BR>
+       N: Assassinate targets the killed enemy and does not require verbal targeting.
+    </p>
+
+    <p><b>Poison</b><BR>
+       T: Enchantment S: Death R: Self<BR>
+       I: “I coat these weapons with a deadly poison” x2<BR>
+       M: Red strip<BR>
+       E: The next Wound dealt by the bearer in melee is Wounds Kill.<BR>
+       N: If the target does not actually receive a Wound, e.g., by a Resistance, Poison is not expended.
+    </p>
+
+    <p><b>Poison Arrow</b><BR>
+       T: Specialty Arrow S: Death<BR>
+       I: “Poison Arrow”<BR>
+       M: Arrow with green head cover labeled ‘Poison’.<BR>
+       E: This arrow is Wounds Kill.
+    </p>
+
+    <p><b>Blink</b><BR>
+       T: Verbal S: Sorcery R: Self<BR>
+       I: “I vanish from sight”<BR>
+       E: Player becomes Insubstantial. While Insubstantial in this way, player can move as they wish as long as they remain within 50' from their starting point.<BR>
+       L: Caster may not end State within 10' of a living enemy.<BR>
+       N: If the Insubstantial State is ended, the rest of the effect is ended as well. Caster may end this Insubstantial state at any time by using the exit incantation for Insubstantial.
+    </p>
+
+    <p><b>Hold Person</b><BR>
+       T: Verbal S: Command R: 20ft<BR>
+       I: “I command thee to stop” x3<BR>
+       E: Target player becomes Stopped for 30 seconds.
+    </p>
+
+    <p><b>Teleport</b><BR>
+       T: Verbal S: Sorcery R: Self<BR>
+       I: “I travel through the aether” x5<BR>
+       E: Target willing player becomes Insubstantial and moves directly to a chosen location chosen by the caster at the time of casting. This must be a fixed location (not relative to a player or to a moveable object). Upon arrival, they must immediately end the effect as per Insubstantial.<BR>
+       N: If the player's Insubstantial state is removed before they have reached their destination, the effects of Teleport end. If Teleport is cast on self, the caster may end this Insubstantial state at any time by using the exit incantation for Insubstantial.
+    </p>
+
+    <p><b>Coup de Grace</b><BR>
+       T: Verbal S: Death R: 20'<BR>
+       I: “Death shall come for thee” x3<BR>
+       E: Target player dies.<BR>
+       L: Target must be Wounded when the caster begins the Incantation.<BR>
+       N: Even if the target has no Wounds at the end of the Incantation they will still die.
+    </p>
+
+    <h3>Optional Archetypes</h3>
+    <p><b>Ruffian</b><BR>
+       T: Archetype S: Neutral<BR>
+       E: Regain a use of Coup de Grace if you successfully cast Assassinate on a player after killing them with a thrown weapon. You do not gain the effect if the dead player is unaffected by Assassinate.<BR>
+       L: May not wield Long weapons or Bows.
+    </p>
+
+    <p><b>Spy</b><BR>
+       T: Archetype S: Neutral<BR>
+       E: Blink and Shadow Step become Charge x3.<BR>
+       L: May not wear Armor.
+    </p>
 </div>
+
 <div class="ui-body ui-body-a ui-corner-all" id="RuffianText" hidden>
     <h2>Ruffian</h2>
 </div>
@@ -517,7 +639,111 @@
 </div>
 <div class="ui-body ui-body-a ui-corner-all" id="BarbarianText" hidden>
     <h2>Barbarian</h2>
+    <p><b>Garb:</b> White sash and medieval/sword and sorcery-looking garb<BR>
+       <b>Look The Part:</b> Rage 1/Refresh Charge x10 (ex) (Ambulant)<BR>
+       <b>Armor:</b> 3pts<BR>
+       <b>Shields:</b> Medium<BR>
+       <b>Weapons:</b> All Melee, Javelins, Rocks
+    </p>
+
+    <table>
+        <tr>
+            <th>Level</th>
+            <th>Abilities</th>
+        </tr>
+        <tr>
+            <td>1st</td>
+            <td><b>Berserk</b> (T)<BR>
+                <b>Immune to Command</b> (T)<BR>
+                <b>Immune to Subdual</b> (T)
+            </td>
+        </tr>
+        <tr>
+            <td>2nd</td>
+            <td><b>Rage</b> 1/Refresh Charge x10 (ex) (Ambulant)</td>
+        </tr>
+        <tr>
+            <td>3rd</td>
+            <td><b>Adrenaline</b> - Unlimited (ex)</td>
+        </tr>
+        <tr>
+            <td>4th</td>
+            <td><b>Rage</b> 1/Refresh Charge x10 (ex) (Ambulant)</td>
+        </tr>
+        <tr>
+            <td>5th</td>
+            <td><b>Brutal Strike</b> 1/Life Charge x3 (ex) (Ambulant)</td>
+        </tr>
+        <tr>
+            <td>6th</td>
+            <td><b>Blood and Thunder</b> - Unlimited (ex)</td>
+        </tr>
+    </table>
+
+    <h3>Class Abilities</h3>
+    <p><b>Berserk</b><BR>
+       T: Granted as Trait S: Sorcery R: Self<BR>
+       E: Bearer's melee weapons are Armor Breaking.
+    </p>
+
+    <p><b>Rage</b><BR>
+       T: Verbal S: Sorcery R: Self<BR>
+       I: “I am filled with rage!"<BR>
+       E: Caster is unaffected by Verbal magic and abilities and their weapons are Shield Crushing and Armor Breaking for seven seconds. Caster must chant this time out loud, as per Chanting; failure to count ends the effect.
+    </p>
+
+    <p><b>Adrenaline</b><BR>
+       T: Verbal S: Spirit R: Self<BR>
+       I: “Adrenaline”<BR>
+       E: Player heals a wound.<BR>
+       L: Kill Trigger.
+    </p>
+
+    <p><b>Brutal Strike</b><BR>
+       T: Verbal S: Death R: Unlimited<BR>
+       I: “And stay down!”<BR>
+       E: Target is Cursed. Target is also Suppressed for 30 seconds.<BR>
+       L: Wound Trigger.<BR>
+       N: Brutal Strike targets the wounded or dead player and does not require verbal targeting.
+    </p>
+
+    <p><b>Blood and Thunder</b><BR>
+       T: Verbal S: Spirit R: Self<BR>
+       I: “Blood and Thunder!”<BR>
+       E: Player gains Blessing Against Wounds.<BR>
+       L: Kill Trigger.<BR>
+       N: Player must still wear a white strip to denote Blessing Against Wounds.
+    </p>
+
+    <p><b>Blessing Against Wounds</b><BR>
+       T: Enchantment S: Protection R: Self<BR>
+       M: White strip<BR>
+       E: Resistant to Wounds. Does not count towards a player's Enchantment limit.<BR>
+       L: May not be worn with any other Enchantments from the Protection School unless the other Enchantment is (ex).
+    </p>
+
+    <h3>Optional Archetypes</h3>
+    <p><b>Raider</b><BR>
+       T: Archetype S: Neutral<BR>
+       E: Player may choose to use Adrenaline for its usual effect or to instantly charge Brutal Strike. Brutal Strike becomes 3/Life Charge x3. Gain Harden (Self) 1/Life (ex).<BR>
+       L: May not wield Shields, and loses all instances of Rage.
+    </p>
+
+    <p><b>Harden</b><BR>
+       T: Enchantment S: Protection R: Self<BR>
+       I: “I enchant thee with Harden” x3<BR>
+       M: White strip<BR>
+       E: Bearer's weapons or shield may only be destroyed or damaged by Magic Balls/Verbals which destroy objects, e.g., Fireball or Pyrotechnics.<BR>
+       L: Will only affect either the weapons or the shield of the bearer, not both.
+    </p>
+
+    <p><b>Berserker</b><BR>
+       T: Archetype S: Neutral<BR>
+       E: Player may choose to use Adrenaline for its usual effect or to instantly charge Rage.<BR>
+       L: May not wear Armor, and loses all instances of Blood and Thunder.
+    </p>
 </div>
+
 <div class="ui-body ui-body-a ui-corner-all" id="RaiderText" hidden>
     <h2>Raider</h2>
 </div>
@@ -526,7 +752,111 @@
 </div>
 <div class="ui-body ui-body-a ui-corner-all" id="MonkText" hidden>
     <h2>Monk</h2>
+    <p><b>Garb:</b> Grey sash and medieval/sword and sorcery-looking garb<BR>
+       <b>Look The Part:</b> Heal 1/Life (ex)<BR>
+       <b>Armor:</b> 1pt<BR>
+       <b>Shields:</b> None<BR>
+       <b>Weapons:</b> All Melee, Heavy Thrown
+    </p>
+
+    <h3>Class Abilities</h3>
+    <p><b>Enlightened Soul</b><BR>
+       T: Granted as Trait S: Protection R: Self<BR>
+       E: Player is unaffected by Verbal magic used at a Range greater than Touch.<BR>
+       L: Affects beneficial and harmful magic.<BR>
+       N: Does not affect (ex) abilities or abilities used at a Range of Touch.
+    </p>
+
+    <p><b>Missile Block</b><BR>
+       T: Granted as Trait S: Protection R: Self<BR>
+       E: Player can block arrows, projectile weapons, and magic balls with their wielded weapons and hands, nullifying any touched by them.<BR>
+       N: Engulfing effects from blocked projectiles do not activate.
+    </p>
+
+    <p><b>Innate</b><BR>
+       T: Meta-Magic S: Neutral<BR>
+       I: “Innate”<BR>
+       E: Instantly charges a single magic or ability by stating its name.
+    </p>
+
+    <h3>Class Spells</h3>
+    <p><b>Heal</b><BR>
+       T: Verbal S: Spirit R: Touch<BR>
+       I: “The white light of healing hath healed thee.” x5<BR>
+       E: Target player heals a wound.
+    </p>
+
+    <p><b>Banish</b><BR>
+       T: Verbal S: Spirit R: 20'<BR>
+       I: “The spirits banish thee from this place” x3<BR>
+       E: Target Insubstantial player must return to their base, ending their Insubstantial State upon arrival.<BR>
+       N: If the Insubstantial State ends before reaching the base, the effect ends.
+    </p>
+
+    <p><b>Sanctuary</b><BR>
+       T: Verbal S: Protection R: Self<BR>
+       I: “Sanctuary”<BR>
+       E: Player and equipment are unaffected by hostile actions within 20'. Player must chant “sanctuary.”<BR>
+       L: Cannot carry weapons or game objectives, or impede others while in Sanctuary. May end Sanctuary by ceasing to chant.<BR>
+       N: Susceptible to Phase Bolt and Phase Arrow.
+    </p>
+
+    <p><b>Resurrect</b><BR>
+       T: Verbal S: Spirit R: Touch<BR>
+       I: Full incantation required (see original description)<BR>
+       E: Target Dead player (who has not moved more than 5' from where they died) returns to life, healed of Wounds, and all non-Persistent Enchantments are removed.
+    </p>
+
+    <h3>Optional Archetypes</h3>
+    <p><b>Medium</b><BR>
+       T: Archetype S: Neutral<BR>
+       E: Gain Blessing Against Wounds (Touch) 1/Life (ex), Sever Spirit 1/Life Charge x3 (ex), and Swift 2/Life. Spirit abilities become Charge x3.<BR>
+       L: May not wear Armor or wield Great weapons.
+    </p>
+
+    <p><b>Blessing Against Wounds</b><BR>
+       T: Enchantment S: Protection R: Touch<BR>
+       I: “I enchant thee against wounds” x3<BR>
+       M: White strip<BR>
+       E: Resistant to Wounds. Does not count towards Enchantment limit.<BR>
+       L: Cannot be worn with other Protection Enchantments unless (ex).
+    </p>
+
+    <p><b>Sever Spirit</b><BR>
+       T: Verbal S: Spirit R: 20'<BR>
+       I: “The spirits lay a curse on thee.” x3<BR>
+       E: Targets dead players only, who are then Cursed and have all Enchantments removed.<BR>
+       N: Always removes enchantments on valid targets regardless of Traits or Immunities.
+    </p>
+
+    <p><b>Swift</b><BR>
+       T: Meta-Magic S: Neutral<BR>
+       I: “Swift”<BR>
+       E: Reduces multi-line incantations to the last line only.<BR>
+       L: May only be used on magic with Ball, Touch, or Self range, and not on Charge incantations.
+    </p>
+
+    <p><b>Mystic</b><BR>
+       T: Archetype S: Neutral<BR>
+       E: Gain Force Bolt 4 Balls/Unlimited (m) and Suppression Bolt 1 Ball/Unlimited (m).<BR>
+       L: Cannot wield Great weapons or Heavy Thrown.
+    </p>
+
+    <p><b>Force Bolt</b><BR>
+       T: Magic Ball S: Sorcery<BR>
+       I: “Forcebolt” x3<BR>
+       M: Blue Magic Ball<BR>
+       E: A hit destroys a weapon, Armor, or inflicts a Wound.
+    </p>
+
+    <p><b>Suppression Bolt</b><BR>
+       T: Magic Ball S: Subdual<BR>
+       I: “The strength of suppression is mine to evoke” x3<BR>
+       M: Purple Magic Ball<BR>
+       E: Target is Suppressed for 60 seconds. Engulfing effect.
+    </p>
 </div>
+
 <div class="ui-body ui-body-a ui-corner-all" id="MediumText" hidden>
     <h2>Medium</h2>
 </div>
@@ -535,7 +865,86 @@
 </div>
 <div class="ui-body ui-body-a ui-corner-all" id="PaladinText" hidden>
     <h2>Paladin</h2>
+    <p><b>Garb:</b> Metallic gold sash and medieval/sword and sorcery-looking garb. Knights may wear a white belt and a white phoenix Class Symbol instead.<BR>
+       <b>Requirements:</b> Must be 6th level in at least one class.<BR>
+       <b>Look The Part:</b> Awe 1/Life (m)<BR>
+       <b>Armor:</b> 4pts<BR>
+       <b>Shields:</b> Large<BR>
+       <b>Weapons:</b> All Melee, Javelins
+    </p>
+
+    <h3>Class Abilities</h3>
+    <p><b>Awe</b><BR>
+       T: Verbal S: Command R: 20'<BR>
+       I: “I command thee awed” x3<BR>
+       E: Target may not attack or cast magic at the caster or their equipment and must stay 20' away. Lasts 30 seconds.<BR>
+       N: Effect is negated if the caster attacks the target, casts another spell at them, or dies.
+    </p>
+
+    <p><b>Greater Heal</b><BR>
+       T: Verbal S: Spirit R: Touch<BR>
+       I: “By the grace of the divine thou art healed” x5<BR>
+       E: Heals all wounds. Ignores the Cursed State.
+    </p>
+
+    <p><b>Extend Immunities</b><BR>
+       T: Enchantment S: Protection R: Other<BR>
+       I: “May the blessing of my god protect thee” x3<BR>
+       M: White strip<BR>
+       E: Grants either Immune to Command or Immune to Death.<BR>
+       L: The type must be chosen at casting and cannot be changed. Only one instance can be active at a time.
+    </p>
+
+    <p><b>Greater Resurrect</b><BR>
+       T: Verbal S: Spirit R: Touch<BR>
+       I: “By the grace of the divine thou art resurrected” x5<BR>
+       E: Returns a Dead player (who has not moved more than 5' from where they died) to life, healing all wounds and removing Cursed if present.<BR>
+       N: Enchantments on the player are retained.
+    </p>
+
+    <p><b>Protection from Magic</b><BR>
+       T: Enchantment S: Protection R: Touch<BR>
+       I: “I enchant thee with protection from magic” x3<BR>
+       M: White strip<BR>
+       E: Bearer is unaffected by magic from any school. Upon death, the player is Cursed.<BR>
+       N: Does not interact with other Enchantments worn by the bearer.
+    </p>
+
+    <h3>Optional Archetypes</h3>
+    <p><b>Guardian</b><BR>
+       T: Archetype S: Neutral<BR>
+       E: Gain Imbue Shield (Touch) 1/Life (m) and Martyr (Other) 2/Life Charge x3 (ex).<BR>
+       L: Loses all instances of Protection from Magic and Extend Immunities. May only have one instance of Imbue Shield active at a time.
+    </p>
+
+    <p><b>Imbue Shield</b><BR>
+       T: Enchantment S: Protection R: Touch<BR>
+       I: “This shield shall neither bend nor break” x3<BR>
+       M: White strip<BR>
+       E: Shield wielded by the player cannot be destroyed or damaged. Engulfing effects hitting the shield are ignored.
+    </p>
+
+    <p><b>Martyr</b><BR>
+       T: Verbal S: Spirit R: Other<BR>
+       I: “Thy burdens are mine to bear.”<BR>
+       E: Removes a single State from a willing target player, transferring it to the caster for 10 seconds.<BR>
+       L: Cannot be cast while Cursed.
+    </p>
+
+    <p><b>Justiciar</b><BR>
+       T: Archetype S: Neutral<BR>
+       E: Gain Smite 1/Life Charge x10 (m).<BR>
+       L: May not wield Shields and loses all instances of Greater Resurrect.
+    </p>
+
+    <p><b>Smite</b><BR>
+       T: Verbal S: Sorcery R: 20'<BR>
+       I: “The power of the divine smites thee!” x3<BR>
+       E: Caster's weapons gain Shield Crushing, Armor Breaking, and Wounds Kill against the target and their equipment.<BR>
+       L: Effect ends if the caster attacks another player, casts another spell, or if the caster or target dies.
+    </p>
 </div>
+
 <div class="ui-body ui-body-a ui-corner-all" id="GuardianText" hidden>
     <h2>Guardian</h2>
 </div>
@@ -544,7 +953,111 @@
 </div>
 <div class="ui-body ui-body-a ui-corner-all" id="ScoutText" hidden>
     <h2>Scout</h2>
+    <p><b>Garb:</b> Green sash and medieval/sword and sorcery-looking garb.<BR>
+       <b>Look The Part:</b> Heal 1/Life (ex)<BR>
+       <b>Armor:</b> 3pts<BR>
+       <b>Shields:</b> Small<BR>
+       <b>Weapons:</b> Dagger, Short, Long, Heavy Thrown, Bow
+    </p>
+
+    <h3>Scout Abilities By Level</h3>
+    <table>
+        <tr><td>1st</td><td>Tracking 2/Life Charge x3 (ex) (Ambulant)</td></tr>
+        <tr><td>2nd</td><td>Heal 1/Life (ex), Release 1/Life Charge x3 (ex)</td></tr>
+        <tr><td>3rd</td><td>Dispel Magic 1/Refresh Charge x5 (ex), Shadow Step 1/Life (ex)</td></tr>
+        <tr><td>4th</td><td>Evolution (T)</td></tr>
+        <tr><td>5th</td><td>Choose one: Hold Person 1/Life (m) or Pinning Arrow - 1 Arrow / Unlimited (ex)</td></tr>
+        <tr><td>6th</td><td>Adaptive Protection (Self) 1/Life (ex)</td></tr>
+    </table>
+    <p><b>Optional – Pick One:</b> Hunter (A) or Apex (A)</p>
+
+    <h3>Class Abilities</h3>
+    <p><b>Heal</b><BR>
+       T: Verbal S: Spirit R: Touch<BR>
+       I: “The white light of healing hath healed thee.” x5<BR>
+       E: Target player heals a wound.
+    </p>
+
+    <p><b>Tracking</b><BR>
+       T: Verbal S: Sorcery R: 20ft<BR>
+       I: “Tracking” x3<BR>
+       E: Ends the Insubstantial effect on target Insubstantial player.
+    </p>
+
+    <p><b>Release</b><BR>
+       T: Verbal S: Sorcery R: Touch<BR>
+       I: “From thy bindings thou art released” x5<BR>
+       E: Removes a single ongoing effect or State from the target (caster’s choice).<BR>
+       L: Cannot remove Cursed.
+    </p>
+
+    <p><b>Shadow Step</b><BR>
+       T: Verbal S: Sorcery R: Self<BR>
+       I: “I step into the shadows”<BR>
+       E: Player becomes Insubstantial.<BR>
+       N: Caster may end this Insubstantial state by using the exit incantation for Insubstantial.
+    </p>
+
+    <p><b>Dispel Magic</b><BR>
+       T: Verbal S: Sorcery R: 20'<BR>
+       I: “By my power I dispel that magic” x3<BR>
+       E: Removes all Enchantments on the target.<BR>
+       N: Always removes enchantments if successfully cast, regardless of the target’s Traits, States, Immunities, or Enchantments (except Sleight of Mind).
+    </p>
+
+    <p><b>Evolution</b><BR>
+       T: Granted as Trait S: Sorcery R: Self<BR>
+       E: Player may wear an additional Enchantment. Does not count towards Enchantment limit.<BR>
+       N: Works with Attuned, Essence Graft, or Phoenix Tears, as long as other limitations are met.
+    </p>
+
+    <p><b>Hold Person</b><BR>
+       T: Verbal S: Command R: 20'<BR>
+       I: “I command thee to stop” x3<BR>
+       E: Target player becomes Stopped for 30 seconds.
+    </p>
+
+    <p><b>Pinning Arrow</b><BR>
+       T: Specialty Arrow S: Sorcery<BR>
+       I: “Pinning Arrow”<BR>
+       M: Arrow with yellow head cover labeled ‘Pinning’.<BR>
+       E: Target struck by this arrow is Stopped for 30 seconds (Engulfing).
+    </p>
+
+    <p><b>Adaptive Protection</b><BR>
+       T: Enchantment S: Protection R: Self<BR>
+       I: “I enchant thee with this protection” x3<BR>
+       M: White strip<BR>
+       E: Bearer becomes Immune to one of the following Schools: Death, Flame, Subdual, Command, Sorcery (chosen at casting).
+    </p>
+
+    <h3>Optional Archetypes</h3>
+    <p><b>Hunter</b><BR>
+       T: Archetype S: Neutral<BR>
+       E: May wield Great Weapons and Javelins. Hold Person becomes 1/Life Charge x3.<BR>
+       L: May not wield Shields. Loses all instances of Release and Evolution.
+    </p>
+
+    <p><b>Apex</b><BR>
+       T: Archetype S: Neutral<BR>
+       E: Gain Mutation (T), Adaptive Blessing (Self) 1/Life Charge x5 (ex) (Swift).<BR>
+       L: Loses all instances of Evolution, Hold Person, Pinning Arrow, and Adaptive Protection.
+    </p>
+
+    <p><b>Mutation</b><BR>
+       T: Granted as a Trait S: Sorcery R: Self<BR>
+       E: Enchantments worn by the player are Persistent.
+    </p>
+
+    <p><b>Adaptive Blessing</b><BR>
+       T: Enchantment S: Protection R: Self<BR>
+       I: “I enchant thee with this blessing” x3<BR>
+       M: White strip<BR>
+       E: Bearer becomes Resistant to one of the following Schools: Death, Flame, Subdual, Command, Sorcery (chosen at casting).<BR>
+       L: Cannot be worn with other Enchantments from the Protection School unless the other Enchantment is (ex).
+    </p>
 </div>
+
 <div class="ui-body ui-body-a ui-corner-all" id="HunterText" hidden>
     <h2>Hunter</h2>
 </div>
@@ -553,7 +1066,106 @@
 </div>
 <div class="ui-body ui-body-a ui-corner-all" id="WarriorText" hidden>
     <h2>Warrior</h2>
+    <p><b>Garb:</b> Purple sash and medieval/sword and sorcery-looking garb.<br>
+       <b>Look The Part:</b> Insult 1/Life (m) (Ambulant)<br>
+       <b>Armor:</b> 6pts<br>
+       <b>Shields:</b> Large<br>
+       <b>Weapons:</b> All Melee, Javelins
+    </p>
+
+    <h3>Warrior Abilities By Level</h3>
+    <table>
+        <tr><td>1st</td><td>Harden (Self) 1/Life (ex)</td></tr>
+        <tr><td>2nd</td><td>Scavenge - Unlimited (ex)</td></tr>
+        <tr><td>3rd</td><td>True Grit 2/Refresh (ex)</td></tr>
+        <tr><td>4th</td><td>Insult 1/Life (m) (Ambulant)</td></tr>
+        <tr><td>5th</td><td>Shake It Off 1/Refresh Charge x3 (ex)</td></tr>
+        <tr><td>6th</td><td>Ancestral Armor (Self) 3/Refresh (ex) (Swift)</td></tr>
+    </table>
+    <p><b>Optional – Pick One:</b> Marauder (A) or Juggernaut (A)</p>
+
+    <h3>Class Abilities</h3>
+    <p><b>Insult</b><br>
+       T: Verbal S: Command R: 20'<br>
+       I: “I command thy attention” x3<br>
+       E: Target can only attack or cast magic at the caster or their equipment for 30 seconds or until either party dies. If another party attacks or casts magic on the target, they may attack the offending party as well.<br>
+       N: Target may still charge and throw Magic Balls at the caster.
+    </p>
+
+    <p><b>Harden</b><br>
+       T: Enchantment S: Protection R: Self<br>
+       I: “I enchant thee with harden” x3<br>
+       M: White strip<br>
+       E: Bearer’s weapons or shield can only be destroyed by Magic Balls/Verbals that destroy objects.<br>
+       L: Only affects either weapons or shield, not both.
+    </p>
+
+    <p><b>Scavenge</b><br>
+       T: Verbal S: Sorcery R: Self<br>
+       I: “Scavenge”<br>
+       E: Repairs a destroyed or damaged item, or restores one point of armor in one location.<br>
+       L: Kill Trigger.
+    </p>
+
+    <p><b>True Grit</b><br>
+       T: Verbal S: Spirit R: Self<br>
+       I: “The wicked flee when I pursue” immediately after dying<br>
+       E: Player returns to life with wounds healed and is immediately Frozen for 30 seconds.<br>
+       N: Enchantments on the player are retained.
+    </p>
+
+    <p><b>Shake It Off</b><br>
+       T: Verbal S: Spirit R: Self<br>
+       I: “I shall overcome”<br>
+       E: 10 seconds after activation, player may remove any States or Effects from themselves.<br>
+       N: Can be activated even while under effects like Stunned or Suppressed.
+    </p>
+
+    <p><b>Ancestral Armor</b><br>
+       T: Enchantment S: Protection R: Self<br>
+       I: “May this armor protect thee from all forms of harm.”<br>
+       M: White strip<br>
+       E: Ignore effects of a Magic Ball, projectile, or melee weapon that struck armor, reducing armor by one point in the location struck. Continues until removed by Dispel Magic or similar.<br>
+       L: Phase Arrow and Phase Bolt interact with armor as if Ancestral Armor is not present.<br>
+       N: Engulfing Effects and abilities that ignore armor do not trigger Ancestral Armor.
+    </p>
+
+    <h3>Optional Archetypes</h3>
+    <p><b>Marauder</b><br>
+       T: Archetype S: Neutral<br>
+       E: Scavenge can either repair or instantly Charge an ability. Insult becomes 1/Life Charge x5.<br>
+       L: Max Armor reduced to 4pts. Cannot wield Large shields.
+    </p>
+
+    <p><b>Juggernaut</b><br>
+       T: Archetype S: Neutral<br>
+       E: Replaces Harden with Greater Harden (Self) (ex) at the same frequency. Gain Phoenix Tears (Self) 3/Refresh (ex) (Swift) and Imbue Armor (T).<br>
+       L: Loses all instances of Ancestral Armor and True Grit.
+    </p>
+
+    <p><b>Greater Harden</b><br>
+       T: Enchantment S: Protection R: Self<br>
+       I: “I enchant thee with Greater Harden” x3<br>
+       M: White strip<br>
+       E: Shields and weapons wielded by the player are affected as per Harden.
+    </p>
+
+    <p><b>Phoenix Tears</b><br>
+       T: Enchantment S: Spirit R: Self<br>
+       I: “May the tears of the phoenix wash over thee” x3<br>
+       M: Two white strips<br>
+       E: Prevents death. When the player would otherwise die, they remove a strip and become Frozen for 30 seconds. After Frozen ends, the player’s wounds are healed, all states that death or respawning would remove are cleared, ongoing effects expire, equipment is repaired, and non-persistent enchantments are removed except Phoenix Tears.<br>
+       N: Phoenix Tears is removed when the last strip is removed.
+    </p>
+
+    <p><b>Imbue Armor</b><br>
+       T: Granted as a Trait S: Protection R: Self<br>
+       E: Adds 1 Armor Point to each location's current and maximum rating, up to the bearer’s class maximum.<br>
+       L: Does not apply to magical armor. A player may only benefit from one instance of Imbue Armor.<br>
+       N: When removed, the bearer loses 1 current and maximum Armor Point in each location.
+    </p>
 </div>
+
 <div class="ui-body ui-body-a ui-corner-all" id="MarauderText" hidden>
     <h2>Marauder</h2>
 </div>
