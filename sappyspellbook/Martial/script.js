@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("MarauderText").hidden = true;    
     document.getElementById("JuggernautText").hidden = true;
     document.getElementById(archetype).hidden = false; //<---show
-
+    console.log(archetype);
     document.getElementById(archetype).scrollIntoView({ behavior: "smooth" });
   }
   
