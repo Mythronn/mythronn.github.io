@@ -1762,88 +1762,248 @@
        <b>Weapons:</b> All Melee, Javelins
     </p>
 
-    <h3>Class Abilities</h3>
-    <p><b>Awe</b><BR>
-       T: Verbal S: Command R: 20'<BR>
-       I: “I command thee awed” x3<BR>
-       E: Target may not attack or cast magic at the caster or their equipment and must stay 20' away. Lasts 30 seconds.<BR>
-       N: Effect is negated if the caster attacks the target, casts another spell at them, or dies.
-    </p>
-
-    <p><b>Greater Heal</b><BR>
-       T: Verbal S: Spirit R: Touch<BR>
-       I: “By the grace of the divine thou art healed” x5<BR>
-       E: Heals all wounds. Ignores the Cursed State.
-    </p>
-
-    <p><b>Extend Immunities</b><BR>
-       T: Enchantment S: Protection R: Other<BR>
-       I: “May the blessing of my god protect thee” x3<BR>
-       M: White strip<BR>
-       E: Grants either Immune to Command or Immune to Death.<BR>
-       L: The type must be chosen at casting and cannot be changed. Only one instance can be active at a time.
-    </p>
-
-    <p><b>Greater Resurrect</b><BR>
-       T: Verbal S: Spirit R: Touch<BR>
-       I: “By the grace of the divine thou art resurrected” x5<BR>
-       E: Returns a Dead player (who has not moved more than 5' from where they died) to life, healing all wounds and removing Cursed if present.<BR>
-       N: Enchantments on the player are retained.
-    </p>
-
-    <p><b>Protection from Magic</b><BR>
-       T: Enchantment S: Protection R: Touch<BR>
-       I: “I enchant thee with protection from magic” x3<BR>
-       M: White strip<BR>
-       E: Bearer is unaffected by magic from any school. Upon death, the player is Cursed.<BR>
-       N: Does not interact with other Enchantments worn by the bearer.
-    </p>
+    <table>
+        <tr>
+            <th>Level</th>
+            <th>Abilities</th>
+        </tr>
+        <tr>
+            <td>1st</td>
+            <td><b>Immune to Command</b> (T)<BR>
+                <b>Immune to Death</b> (T)
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2nd</td>
+            <td><b>Greater Heal</b> </td>
+        </tr>
+        <TR><TD></TD><TD>1/Life Charge x3 (m)<BR>
+            T: Verbal S: Spirit R: Touch<BR>
+            I: “By the grace of the divine thou art healed” x5<BR>
+            E: Heals all wounds. Ignores the Cursed State.
+             </TD></TR>
+        <tr>
+            <td>3rd</td>
+            <td><b>Extend Immunities</b></td>
+        </tr>
+        <TR><TD></TD><TD>1/Refresh Charge x5 (ex)<BR>
+            T: Enchantment S: Protection R: Other<BR>
+            I: “May the blessing of my god protect thee” x3<BR>
+            M: White strip<BR>
+            E: Grants either Immune to Command or Immune to Death.<BR>
+            L: The type must be chosen at casting and cannot be changed. Only one instance can be active at a time.</TD></TR>
+        <tr>
+            <td>4th</td>
+            <td><b>Greater Resurrect</b> </td>
+        </tr>
+        <TR><TD></TD><TD>1/Life (m)<BR>
+            T: Verbal S: Spirit R: Touch<BR>
+            I: “By the grace of the divine thou art resurrected” x5<BR>
+            E: Returns a Dead player (who has not moved more than 5' from where they died) to life, healing all wounds and removing Cursed if present.<BR>
+            N: Enchantments on the player are retained.
+             </TD></TR>
+        <tr>
+            <td>5th</td>
+            <td><b>Awe</b></td>
+        </tr>
+        <TR><TD></TD><TD>1/Life (m)<BR>
+            T: Verbal S: Command R: 20'<BR>
+            I: “I command thee awed” x3<BR>
+            E: Target may not attack or cast magic at the caster or their equipment and must stay 20' away. Lasts 30 seconds.<BR>
+            N: Effect is negated if the caster attacks the target, casts another spell at them, or dies.</TD></TR>
+        <tr>
+            <td>6th</td>
+            <td><b>Protection from Magic</b></td>
+        </tr>
+        <TR><TD></TD><TD>(Touch) 2/Refresh (m)<BR>
+            T: Enchantment S: Protection R: Touch<BR>
+            I: “I enchant thee with protection from magic” x3<BR>
+            M: White strip<BR>
+            E: Bearer is unaffected by magic from any school. Upon death, the player is Cursed.<BR>
+            N: Does not interact with other Enchantments worn by the bearer.</TD></TR>
+    </table>  
 
     <h3>Optional Archetypes</h3>
     <p><b>Guardian</b><BR>
-       T: Archetype S: Neutral<BR>
-       E: Gain Imbue Shield (Touch) 1/Life (m) and Martyr (Other) 2/Life Charge x3 (ex).<BR>
-       L: Loses all instances of Protection from Magic and Extend Immunities. May only have one instance of Imbue Shield active at a time.
-    </p>
-
-    <p><b>Imbue Shield</b><BR>
-       T: Enchantment S: Protection R: Touch<BR>
-       I: “This shield shall neither bend nor break” x3<BR>
-       M: White strip<BR>
-       E: Shield wielded by the player cannot be destroyed or damaged. Engulfing effects hitting the shield are ignored.
-    </p>
-
-    <p><b>Martyr</b><BR>
-       T: Verbal S: Spirit R: Other<BR>
-       I: “Thy burdens are mine to bear.”<BR>
-       E: Removes a single State from a willing target player, transferring it to the caster for 10 seconds.<BR>
-       L: Cannot be cast while Cursed.
-    </p>
-
-    <p><b>Justiciar</b><BR>
-       T: Archetype S: Neutral<BR>
-       E: Gain Smite 1/Life Charge x10 (m).<BR>
-       L: May not wield Shields and loses all instances of Greater Resurrect.
-    </p>
-
-    <p><b>Smite</b><BR>
-       T: Verbal S: Sorcery R: 20'<BR>
-       I: “The power of the divine smites thee!” x3<BR>
-       E: Caster's weapons gain Shield Crushing, Armor Breaking, and Wounds Kill against the target and their equipment.<BR>
-       L: Effect ends if the caster attacks another player, casts another spell, or if the caster or target dies.
-    </p>
+        T: Archetype S: Neutral<BR>
+        E: Gain Imbue Shield (Touch) 1/Life (m) and Martyr (Other) 2/Life Charge x3 (ex).<BR>
+        L: Loses all instances of Protection from Magic and Extend Immunities. May only have one instance of Imbue Shield active at a time.
+     </p>
+ 
+     <p><b>Justiciar</b><BR>
+        T: Archetype S: Neutral<BR>
+        E: Gain Smite 1/Life Charge x10 (m).<BR>
+        L: May not wield Shields and loses all instances of Greater Resurrect.
+     </p>
+         
 </div>
 
 <!--#######################################################--> 
 
+
 <div class="ui-body ui-body-a ui-corner-all" id="GuardianText" hidden>
     <h2>Guardian</h2>
+    <p><b>Garb:</b> Metallic gold sash and medieval/sword and sorcery-looking garb. Knights may wear a white belt and a white phoenix Class Symbol instead.<BR>
+        <b>Requirements:</b> Must be 6th level in at least one class.<BR>
+        <b>Look The Part:</b> Awe 1/Life (m)<BR>
+        <b>Armor:</b> 4pts<BR>
+        <b>Shields:</b> Large<BR>
+        <b>Weapons:</b> All Melee, Javelins
+    </p>
+
+    <table>
+        <tr>
+            <th>Level</th>
+            <th>Abilities</th>
+        </tr>
+        <tr>
+            <td>N/A</td>
+            <td><b>Immune to Command</b> (T)<BR>
+                <b>Immune to Death</b> (T)
+            </td>
+        </tr>
+        
+        <tr>
+            <td>N/A</td>
+            <td><b>Greater Heal</b> </td>
+        </tr>
+        <TR><TD></TD><TD>1/Life Charge x3 (m)<BR>
+            T: Verbal S: Spirit R: Touch<BR>
+            I: “By the grace of the divine thou art healed” x5<BR>
+            E: Heals all wounds. Ignores the Cursed State.
+                </TD></TR>
+        <tr>
+            <td>N/A</td>
+            <td><b>Martyr</b></td>
+        </tr>
+        <TR><TD></TD><TD>(Other) 2/Life Charge x3 (ex).<BR>
+            T: Verbal S: Spirit R: Other<BR>
+            I: “Thy burdens are mine to bear.”<BR>
+            E: Removes a single State from a willing target player, transferring it to the caster for 10 seconds.<BR>
+            L: Cannot be cast while Cursed.</TD></TR>
+        <tr>
+            <td>N/A</td>
+            <td><b>Greater Resurrect</b> </td>
+        </tr>
+        <TR><TD></TD><TD>1/Life (m)<BR>
+            T: Verbal S: Spirit R: Touch<BR>
+            I: “By the grace of the divine thou art resurrected” x5<BR>
+            E: Returns a Dead player (who has not moved more than 5' from where they died) to life, healing all wounds and removing Cursed if present.<BR>
+            N: Enchantments on the player are retained.
+                </TD></TR>
+        <tr>
+            <td>N/A</td>
+            <td><b>Awe</b></td>
+        </tr>
+        <TR><TD></TD><TD>1/Life (m)<BR>
+            T: Verbal S: Command R: 20'<BR>
+            I: “I command thee awed” x3<BR>
+            E: Target may not attack or cast magic at the caster or their equipment and must stay 20' away. Lasts 30 seconds.<BR>
+            N: Effect is negated if the caster attacks the target, casts another spell at them, or dies.</TD></TR>
+        <tr>
+            <td>N/A</td>
+            <td><b>Imbue Shield</b></td>
+        </tr>
+        <TR><TD></TD><TD>(Touch) 1/Life (m)<BR>
+            T: Enchantment S: Protection R: Touch<BR>
+            I: “This shield shall neither bend nor break” x3<BR>
+            M: White strip<BR>
+            E: Shield wielded by the player cannot be destroyed or damaged. Engulfing effects hitting the shield are ignored.</TD></TR>
+    </table>  
+
+    <h3>Archetype Info</h3>
+    <p><b>Guardian</b><BR>
+        T: Archetype S: Neutral<BR>
+        E: Gain Imbue Shield (Touch) 1/Life (m) and Martyr (Other) 2/Life Charge x3 (ex).<BR>
+        L: Loses all instances of Protection from Magic and Extend Immunities. May only have one instance of Imbue Shield active at a time.
+        </p>
+            
 </div>
 
 <!--#######################################################--> 
 
 <div class="ui-body ui-body-a ui-corner-all" id="JusticarText" hidden>
-    <h2>Justicar</h2>
+    
+        <h2>Justiciar</h2>
+        <p><b>Garb:</b> Metallic gold sash and medieval/sword and sorcery-looking garb. Knights may wear a white belt and a white phoenix Class Symbol instead.<BR>
+            <b>Requirements:</b> Must be 6th level in at least one class.<BR>
+            <b>Look The Part:</b> Awe 1/Life (m)<BR>
+            <b>Armor:</b> 4pts<BR>
+            <b>Shields:</b> NONE<BR>
+            <b>Weapons:</b> All Melee, Javelins
+        </p>
+
+        <table>
+            <tr>
+                <th>Level</th>
+                <th>Abilities</th>
+            </tr>
+            <tr>
+                <td>N/A</td>
+                <td><b>Immune to Command</b> (T)<BR>
+                    <b>Immune to Death</b> (T)
+                </td>
+            </tr>
+            
+            <tr>
+                <td>N/A</td>
+                <td><b>Greater Heal</b> </td>
+            </tr>
+            <TR><TD></TD><TD>1/Life Charge x3 (m)<BR>
+                T: Verbal S: Spirit R: Touch<BR>
+                I: “By the grace of the divine thou art healed” x5<BR>
+                E: Heals all wounds. Ignores the Cursed State.
+                    </TD></TR>
+            <tr>
+                <td>N/A</td>
+                <td><b>Extend Immunities</b></td>
+            </tr>
+            <TR><TD></TD><TD>1/Refresh Charge x5 (ex)<BR>
+                T: Enchantment S: Protection R: Other<BR>
+                I: “May the blessing of my god protect thee” x3<BR>
+                M: White strip<BR>
+                E: Grants either Immune to Command or Immune to Death.<BR>
+                L: The type must be chosen at casting and cannot be changed. Only one instance can be active at a time.</TD></TR>
+            <tr>
+                <td>N/A</td>
+                <td><b>Smite</b> </td>
+            </tr>
+            <TR><TD></TD><TD>1/Life Charge x10 (m)<BR>
+                T: Verbal S: Sorcery R: 20'<BR>
+                I: “The power of the divine smites thee!” x3<BR>
+                E: Caster's weapons gain Shield Crushing, Armor Breaking, and Wounds Kill against the target and their equipment.<BR>
+                L: Effect ends if the caster attacks another player, casts another spell, or if the caster or target dies.
+                    </TD></TR>
+            <tr>
+                <td>N/A</td>
+                <td><b>Awe</b></td>
+            </tr>
+            <TR><TD></TD><TD>1/Life (m)<BR>
+                T: Verbal S: Command R: 20'<BR>
+                I: “I command thee awed” x3<BR>
+                E: Target may not attack or cast magic at the caster or their equipment and must stay 20' away. Lasts 30 seconds.<BR>
+                N: Effect is negated if the caster attacks the target, casts another spell at them, or dies.</TD></TR>
+            <tr>
+                <td>N/A</td>
+                <td><b>Protection from Magic</b></td>
+            </tr>
+            <TR><TD></TD><TD>(Touch) 2/Refresh (m)<BR>
+                T: Enchantment S: Protection R: Touch<BR>
+                I: “I enchant thee with protection from magic” x3<BR>
+                M: White strip<BR>
+                E: Bearer is unaffected by magic from any school. Upon death, the player is Cursed.<BR>
+                N: Does not interact with other Enchantments worn by the bearer.</TD></TR>
+        </table>  
+
+        <h3>Archetype Info</h3>
+        
+            <p><b>Justiciar</b><BR>
+            T: Archetype S: Neutral<BR>
+            E: Gain Smite 1/Life Charge x10 (m).<BR>
+            L: May not wield Shields and loses all instances of Greater Resurrect.
+            </p>
+           
 </div>
 
 <!--#######################################################--> 
