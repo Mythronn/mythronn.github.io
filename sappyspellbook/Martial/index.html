@@ -1402,7 +1402,7 @@
 
 <div class="ui-body ui-body-a ui-corner-all" id="MonkText" hidden>
     <h2>Monk</h2>
-    <p><b>Garb:</b> Grey sash and medieval/sword and sorcery-looking garb<BR>
+    <p><b>Garb:</b> Grey sash and medieval/sword and sorcery looking garb<BR>
        <b>Look The Part:</b> Heal 1/Life (ex)<BR>
        <b>Armor:</b> 1pt<BR>
        <b>Shields:</b> None<BR>
@@ -1420,9 +1420,12 @@
         </tr>
         <tr><td></td><td>(T)<BR>
             T: Granted as Trait S: Protection R: Self<BR>
-            E: Player is unaffected by Verbal magic used at a Range greater than Touch.<BR>
-            L: Affects beneficial and harmful magic.<BR>
-            N: Does not affect (ex) abilities or abilities used at a Range of Touch.</td></tr>
+            E: Player is unaffected by Verbal magic used at a Range
+            greater than Touch.<BR>
+            L: Affects beneficial magic as well as harmful magic.<BR>
+            N: Does not affect (ex) abilities, abilities with a Range of
+            Touch, or abilities whose Range is greater than Touch but
+            are used at a Range of Touch anyway.</td></tr>
         <tr>
             <td>1st</td>
             <td><b>Missile Block(T)</b> <BR>
@@ -1430,8 +1433,13 @@
         </tr>
         <TR><TD></TD><TD>(T)<BR>
             T: Granted as Trait S: Protection R: Self<BR>
-            E: Player can block arrows, projectile weapons, and magic balls with their wielded weapons and hands, nullifying any touched by them.<BR>
-            N: Engulfing effects from blocked projectiles do not activate.</td></tr>
+            E: Player is allowed to block arrows, projectile weapons
+            and magic balls with their wielded weapons and hands
+            including wielded thrown weapons without penalty. Any
+            arrow, projectile weapon or magic ball touched by their
+            wielded weapon or hand is nullified.<BR>
+            N: Engulfing effects from blocked arrows, projectile
+            weapons and magic balls do not activate.</td></tr>
         <tr>
             <td>2nd</td>
             <td><b>Banish</b> </td>
@@ -1439,8 +1447,14 @@
         <TR><TD></TD><TD>1/Life Charge x5 (ex)<BR>
             T: Verbal S: Spirit R: 20'<BR>
             I: “The spirits banish thee from this place” x3<BR>
-            E: Target Insubstantial player must return to their base, ending their Insubstantial State upon arrival.<BR>
-            N: If the Insubstantial State ends before reaching the base, the effect ends.
+            E: Target Insubstantial player must return to their base
+            where their Insubstantial State immediately ends.<BR>
+            N: The target's Insubstantial State is replaced with a new
+            insubstantial state from Banish. If the Insubstantial State
+            is ended before reaching the base, the rest of the effect
+            is ended as well. If Banish is cast on self, the caster may
+            end this Insubstantial state at any time by using the exit
+            incantation for Insubstantial.
         </TD></TR>
         <tr>
             <td>3rd</td>
@@ -1460,7 +1474,7 @@
         <TR><TD></TD><TD>1/Life Charge x3 (ex)<BR>
             T: Verbal S: Spirit R: Touch<BR>
             I: “The white light of healing hath healed thee.” x5<BR>
-            E: Target player heals a wound.
+            E: Target player heals a wound.<BR>
         </TD></TR>
         <tr>
             <td>5th</td>
@@ -1468,15 +1482,19 @@
         </tr>
         <TR><TD></TD><TD>1/Refresh Charge x5 (m)<BR>
             T: Verbal S: Spirit R: Touch<BR>
-            I: “Sword Cut, spear stab mace smash, arrow jab,<BR>
-            Let the white light of healing descend on thee.<BR>
-            Let the white light of healing stop thy spilling blood.<BR>
-            Let the white light of healing mend thy bones.<BR>
-            Let the white light of healing close thy wounds.<BR>
-            Let the white light of healing restore thy vigor.<BR>
+            I: “Sword Cut, spear stab mace smash, arrow jab,
+            Let the white light of healing descend on thee.
+            Let the white light of healing stop thy spilling blood.
+            Let the white light of healing mend thy bones.
+            Let the white light of healing close thy wounds.
+            Let the white light of healing restore thy vigor.
             The white light of healing hath resurrected thee.”<BR>
-            E: Target Dead player who has not moved more than 5' from where they died returns to life, healed of Wounds, and all non-Persistent Enchantments are removed.
-        </TD></TR>
+            E: Target Dead player who has not moved more than 5'
+            from where they died is returned to life. Non-Persistent
+            Enchantments on the player are removed before the
+            player returns to life. Any Wounds on the player
+            are healed.<BR>
+            </TD></TR>
         <tr>
             <td>6th</td>
             <td><b>Innate</b></td>
@@ -1484,19 +1502,20 @@
         <TR><TD></TD><TD>2/Refresh (ex)<BR>
             T: Meta-Magic S: Neutral<BR>
             I: “Innate”<BR>
-            E: Instantly charges a single magic or ability by stating its name.</TD></TR>
+            E: May be used to instantly Charge a single magic or
+            ability by stating its name.</TD></TR>
     </table>
     <h3>Optional Archetypes</h3>
     <p><b>Medium</b><BR>
-       T: Archetype S: Neutral<BR>
-       E: Gain Blessing Against Wounds (Touch) 1/Life (ex), Sever Spirit 1/Life Charge x3 (ex), and Swift 2/Life. Spirit abilities become Charge x3.<BR>
-       L: May not wear Armor or wield Great weapons.
+        T: Archetype S: Neutral<BR>
+        E: Gain Blessing Against Wounds (Touch) 1/Life (ex), Sever Spirit 1/Life Charge x3 (ex), and Swift 2/Life. Abilities in the Spirit school become Charge x3<BR>
+        L: May not wear Armor and may not wield Great weapons.
     </p>
 
     <p><b>Mystic</b><BR>
        T: Archetype S: Neutral<BR>
-       E: Gain Force Bolt 4 Balls/Unlimited (m) and Suppression Bolt 1 Ball/Unlimited (m).<BR>
-       L: Cannot wield Great weapons or Heavy Thrown.
+       E: Gain Force Bolt 4 Balls/Unlimited (m). Gain Suppression Bolt 1 Ball/Unlimited (m).<BR>
+       L: May not wield Great weapons nor Heavy Thrown.
     </p>
 </div>
 
@@ -1522,9 +1541,12 @@
         </tr>
         <tr><td></td><td>(T)<BR>
             T: Granted as Trait S: Protection R: Self<BR>
-            E: Player is unaffected by Verbal magic used at a Range greater than Touch.<BR>
-            L: Affects beneficial and harmful magic.<BR>
-            N: Does not affect (ex) abilities or abilities used at a Range of Touch.</td></tr>
+            E: Player is unaffected by Verbal magic used at a Range
+            greater than Touch.<BR>
+            L: Affects beneficial magic as well as harmful magic.<BR>
+            N: Does not affect (ex) abilities, abilities with a Range of
+            Touch, or abilities whose Range is greater than Touch but
+            are used at a Range of Touch anyway.</td></tr>
         <tr>
             <td>N/A</td>
             <td><b>Missile Block(T)</b> <BR>
@@ -1532,8 +1554,13 @@
         </tr>
         <TR><TD></TD><TD>(T)<BR>
             T: Granted as Trait S: Protection R: Self<BR>
-            E: Player can block arrows, projectile weapons, and magic balls with their wielded weapons and hands, nullifying any touched by them.<BR>
-            N: Engulfing effects from blocked projectiles do not activate.</td></tr>
+                E: Player is allowed to block arrows, projectile weapons
+                and magic balls with their wielded weapons and hands
+                including wielded thrown weapons without penalty. Any
+                arrow, projectile weapon or magic ball touched by their
+                wielded weapon or hand is nullified.<BR>
+                N: Engulfing effects from blocked arrows, projectile
+                weapons and magic balls do not activate.</td></tr>
         <tr>
             <td>N/A</td>
             <td><b>Banish</b> </td>
@@ -1541,8 +1568,14 @@
         <TR><TD></TD><TD>1/Life Charge x3 (ex)<BR>
             T: Verbal S: Spirit R: 20'<BR>
             I: “The spirits banish thee from this place” x3<BR>
-            E: Target Insubstantial player must return to their base, ending their Insubstantial State upon arrival.<BR>
-            N: If the Insubstantial State ends before reaching the base, the effect ends.
+            E: Target Insubstantial player must return to their base
+            where their Insubstantial State immediately ends.<BR>
+            N: The target's Insubstantial State is replaced with a new
+            insubstantial state from Banish. If the Insubstantial State
+            is ended before reaching the base, the rest of the effect
+            is ended as well. If Banish is cast on self, the caster may
+            end this Insubstantial state at any time by using the exit
+            incantation for Insubstantial.
         </TD></TR>
         <tr>
             <td>N/A</td>
@@ -1562,7 +1595,7 @@
         <TR><TD></TD><TD>1/Life Charge x3 (ex)<BR>
             T: Verbal S: Spirit R: Touch<BR>
             I: “The white light of healing hath healed thee.” x5<BR>
-            E: Target player heals a wound.
+            E: Target player heals a wound.<BR>
         </TD></TR>
         <tr>
             <td>N/A</td>
@@ -1570,14 +1603,18 @@
         </tr>
         <TR><TD></TD><TD>1/Refresh Charge x3 (m)<BR>
             T: Verbal S: Spirit R: Touch<BR>
-            I: “Sword Cut, spear stab mace smash, arrow jab,<BR>
-            Let the white light of healing descend on thee.<BR>
-            Let the white light of healing stop thy spilling blood.<BR>
-            Let the white light of healing mend thy bones.<BR>
-            Let the white light of healing close thy wounds.<BR>
-            Let the white light of healing restore thy vigor.<BR>
+            I: “Sword Cut, spear stab mace smash, arrow jab,
+            Let the white light of healing descend on thee.
+            Let the white light of healing stop thy spilling blood.
+            Let the white light of healing mend thy bones.
+            Let the white light of healing close thy wounds.
+            Let the white light of healing restore thy vigor.
             The white light of healing hath resurrected thee.”<BR>
-            E: Target Dead player who has not moved more than 5' from where they died returns to life, healed of Wounds, and all non-Persistent Enchantments are removed.
+            E: Target Dead player who has not moved more than 5'
+            from where they died is returned to life. Non-Persistent
+            Enchantments on the player are removed before the
+            player returns to life. Any Wounds on the player
+            are healed.<BR>
         </TD></TR>
         <tr>
             <td>N/A</td>
@@ -1586,7 +1623,8 @@
         <TR><TD></TD><TD>2/Refresh (ex)<BR>
             T: Meta-Magic S: Neutral<BR>
             I: “Innate”<BR>
-            E: Instantly charges a single magic or ability by stating its name.</TD></TR>
+            E: May be used to instantly Charge a single magic or
+            ability by stating its name.</TD></TR>
 
             <tr>
                 <td>N/A</td>
@@ -1596,8 +1634,11 @@
                 T: Enchantment S: Protection R: Touch<BR>
                 I: “I enchant thee against wounds” x3<BR>
                 M: White strip<BR>
-                E: Resistant to Wounds. Does not count towards Enchantment limit.<BR>
-                L: Cannot be worn with other Protection Enchantments unless (ex).</TD></TR>
+                E: Resistant to Wounds. Does not count towards a
+                players Enchantment limit.<BR>
+                L: May not be worn with any other Enchantments
+                from the Protection School unless the other
+                Enchantment is (ex).</TD></TR>
 
             <tr>
                 <td>N/A</td>
@@ -1606,8 +1647,12 @@
             <TR><TD></TD><TD>1/Life Charge x3 (ex)<BR>
                 T: Verbal S: Spirit R: 20'<BR>
                 I: “The spirits lay a curse on thee.” x3<BR>
-                E: Targets dead players only, who are then Cursed and have all Enchantments removed.<BR>
-                N: Always removes enchantments on valid targets regardless of Traits or Immunities.</TD></TR>
+                E: May only target dead players. Player is Cursed. Any
+                Enchantments on the player are removed.<BR>
+                N: Will always remove enchantments if successfully
+                cast on a valid target, regardless of the player's
+                Traits, States, Immunities, Ongoing Effects,
+                or Enchantments.</TD></TR>
 
             <tr>
                 <td>N/A</td>
@@ -1616,14 +1661,18 @@
             <TR><TD></TD><TD>2/Life<BR>
                 T: Meta-Magic S: Neutral<BR>
                 I: “Swift”<BR>
-                E: Reduces multi-line incantations to the last line only.<BR>
-                L: May only be used on magic with Ball, Touch, or Self range, and not on Charge incantations.</TD></TR>
+                E: Magic and abilities require only a single iteration
+                of the incantation. For multi-line Incantations use the
+                last line.<BR>
+                L: May only be used on Magic and Abilities at a
+                range of Ball, Touch, or Self. May not be used on the
+                Charge incantation.</TD></TR>
     </table>
     <h3>Archetype Info</h3>
     <p><b>Medium</b><BR>
        T: Archetype S: Neutral<BR>
-       E: Gain Blessing Against Wounds (Touch) 1/Life (ex), Sever Spirit 1/Life Charge x3 (ex), and Swift 2/Life. Spirit abilities become Charge x3.<BR>
-       L: May not wear Armor or wield Great weapons.
+       E: Gain Blessing Against Wounds (Touch) 1/Life (ex), Sever Spirit 1/Life Charge x3 (ex), and Swift 2/Life. Abilities in the Spirit school become Charge x3<BR>
+       L: May not wear Armor and may not wield Great weapons.
     </p>
 </div>
 
@@ -1649,9 +1698,12 @@
         </tr>
         <tr><td></td><td>(T)<BR>
             T: Granted as Trait S: Protection R: Self<BR>
-            E: Player is unaffected by Verbal magic used at a Range greater than Touch.<BR>
-            L: Affects beneficial and harmful magic.<BR>
-            N: Does not affect (ex) abilities or abilities used at a Range of Touch.</td></tr>
+            E: Player is unaffected by Verbal magic used at a Range
+            greater than Touch.<BR>
+            L: Affects beneficial magic as well as harmful magic.<BR>
+            N: Does not affect (ex) abilities, abilities with a Range of
+            Touch, or abilities whose Range is greater than Touch but
+            are used at a Range of Touch anyway.</td></tr>
         <tr>
             <td>N/A</td>
             <td><b>Missile Block(T)</b> <BR>
@@ -1659,8 +1711,13 @@
         </tr>
         <TR><TD></TD><TD>(T)<BR>
             T: Granted as Trait S: Protection R: Self<BR>
-            E: Player can block arrows, projectile weapons, and magic balls with their wielded weapons and hands, nullifying any touched by them.<BR>
-            N: Engulfing effects from blocked projectiles do not activate.</td></tr>
+            E: Player is allowed to block arrows, projectile weapons
+            and magic balls with their wielded weapons and hands
+            including wielded thrown weapons without penalty. Any
+            arrow, projectile weapon or magic ball touched by their
+            wielded weapon or hand is nullified.<BR>
+            N: Engulfing effects from blocked arrows, projectile
+            weapons and magic balls do not activate.</td></tr>
         <tr>
             <td>N/A</td>
             <td><b>Banish</b> </td>
@@ -1668,8 +1725,14 @@
         <TR><TD></TD><TD>1/Life Charge x5 (ex)<BR>
             T: Verbal S: Spirit R: 20'<BR>
             I: “The spirits banish thee from this place” x3<BR>
-            E: Target Insubstantial player must return to their base, ending their Insubstantial State upon arrival.<BR>
-            N: If the Insubstantial State ends before reaching the base, the effect ends.
+            E: Target Insubstantial player must return to their base
+            where their Insubstantial State immediately ends.<BR>
+            N: The target's Insubstantial State is replaced with a new
+            insubstantial state from Banish. If the Insubstantial State
+            is ended before reaching the base, the rest of the effect
+            is ended as well. If Banish is cast on self, the caster may
+            end this Insubstantial state at any time by using the exit
+            incantation for Insubstantial.
         </TD></TR>
         <tr>
             <td>N/A</td>
@@ -1689,7 +1752,7 @@
         <TR><TD></TD><TD>1/Life Charge x3 (ex)<BR>
             T: Verbal S: Spirit R: Touch<BR>
             I: “The white light of healing hath healed thee.” x5<BR>
-            E: Target player heals a wound.
+            E: Target player heals a wound.<BR>
         </TD></TR>
         <tr>
             <td>N/A</td>
@@ -1697,14 +1760,18 @@
         </tr>
         <TR><TD></TD><TD>1/Refresh Charge x5 (m)<BR>
             T: Verbal S: Spirit R: Touch<BR>
-            I: “Sword Cut, spear stab mace smash, arrow jab,<BR>
-            Let the white light of healing descend on thee.<BR>
-            Let the white light of healing stop thy spilling blood.<BR>
-            Let the white light of healing mend thy bones.<BR>
-            Let the white light of healing close thy wounds.<BR>
-            Let the white light of healing restore thy vigor.<BR>
+            I: “Sword Cut, spear stab mace smash, arrow jab,
+            Let the white light of healing descend on thee.
+            Let the white light of healing stop thy spilling blood.
+            Let the white light of healing mend thy bones.
+            Let the white light of healing close thy wounds.
+            Let the white light of healing restore thy vigor.
             The white light of healing hath resurrected thee.”<BR>
-            E: Target Dead player who has not moved more than 5' from where they died returns to life, healed of Wounds, and all non-Persistent Enchantments are removed.
+            E: Target Dead player who has not moved more than 5'
+            from where they died is returned to life. Non-Persistent
+            Enchantments on the player are removed before the
+            player returns to life. Any Wounds on the player
+            are healed.
         </TD></TR>
         <tr>
             <td>N/A</td>
@@ -1713,7 +1780,8 @@
         <TR><TD></TD><TD>2/Refresh (ex)<BR>
             T: Meta-Magic S: Neutral<BR>
             I: “Innate”<BR>
-            E: Instantly charges a single magic or ability by stating its name.</TD></TR>
+            E: May be used to instantly Charge a single magic or
+            ability by stating its name.</TD></TR>
 
         <tr>
             <td>N/A</td>
@@ -1723,7 +1791,13 @@
             T: Magic Ball S: Sorcery<BR>
             I: “Forcebolt” x3<BR>
             M: Blue Magic Ball<BR>
-            E: A hit destroys a weapon, Armor, or inflicts a Wound.</TD></TR>
+            E: Force Bolt will have one of the following effects on
+            the object first struck:<BR>
+            1. A weapon hit is destroyed<BR>
+            2. Armor hit with Armor Points remaining is
+            subject to Armor Breaking.<BR>
+            3. A player hit receives a Wound to that
+            hit location.</TD></TR>
 
         <tr>
             <td>N/A</td>
@@ -1733,13 +1807,13 @@
             T: Magic Ball S: Subdual<BR>
             I: “The strength of suppression is mine to evoke” x3<BR>
             M: Purple Magic Ball<BR>
-            E: Target is Suppressed for 60 seconds. Engulfing effect.</TD></TR>
+            E: Target is Suppressed for 60 seconds. Engulfing.</TD></TR>
     </table>
     <h3>Archetype Info</h3>
     <p><b>Mystic</b><BR>
-       T: Archetype S: Neutral<BR>
-       E: Gain Force Bolt 4 Balls/Unlimited (m) and Suppression Bolt 1 Ball/Unlimited (m).<BR>
-       L: Cannot wield Great weapons or Heavy Thrown.
+        T: Archetype S: Neutral<BR>
+        E: Gain Force Bolt 4 Balls/Unlimited (m). Gain Suppression Bolt 1 Ball/Unlimited (m).<BR>
+        L: May not wield Great weapons nor Heavy Thrown.
     </p>
 </div>
 
