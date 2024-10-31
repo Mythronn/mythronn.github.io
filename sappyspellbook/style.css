@@ -5,7 +5,7 @@ body {
   margin-top: 0;
   padding-top: 0;
   font-family: 'Helvetica';
-  background: url('https://www.transparenttextures.com/patterns/aged-paper.png') #f4e2c0;
+  background-color: #EAE0CC;
   color: #4b2c20;
 }
 
@@ -61,8 +61,13 @@ body {
 }
 .topnav a.Wizard {
   background-color: #FFD700;
-  color: black;
-  
+  color: black;  
+}
+.topnav a.Martial {
+  background-color: #8c00ff;
+  border-color: #c57eff;
+  border-width: 2;
+  color: rgb(255, 255, 255);  
 }
 
 /* Section Styling */

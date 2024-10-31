@@ -148,10 +148,9 @@ td:last-child, th:last-child {
 }
 
 /* Fonts and Extras */
-@import
-url('https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap'); 
+
 body {
-  background-color: #eae0cc;
+  background-color: #eae0cc; 
   font-family: "MedievalSharp", bold;
 font-size: Small;
 }
