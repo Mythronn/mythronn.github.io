@@ -105,10 +105,9 @@ h1, h3 {
   padding: 20px;
   margin-top: 0px;
 }
-
-h2{
-  
-}
+.unofficial {
+  text-align: center;
+ }
 
 p {
   line-height: 2;
