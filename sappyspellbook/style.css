@@ -23,6 +23,7 @@ body {
   overflow: hidden;
   text-align: center;
   padding: 10px ;
+  border-width: 1;
 }
 
 .topnav a {
