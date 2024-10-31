@@ -40,10 +40,10 @@ body {
 }
 
 a.Martial {
-  background-color: #8c00ff;
-  border-color: #c57eff;
+  background-image: linear-gradient(rgb(255, 166, 0), rgb(255, 248, 230));
+  border-color: #000000;
   border-style: solid;
-  border-width: 2;
+  border-width: 1;
   border-radius: 20px;
   cursor: pointer;
   padding: 5px 10px;
