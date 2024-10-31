@@ -102,7 +102,7 @@ h1, h3 {
   font-family: 'MedievalSharp', cursive;
   border-bottom-width: 1px;
   border-bottom: 2px dotted  #4b2c20;
-  padding: 20px;
+  padding: 10px;
   margin-top: 0px;
 }
 .unofficial {
@@ -110,7 +110,7 @@ h1, h3 {
  }
 
 p {
-  line-height: 2;
+  line-height: 1;
 }
 
 /* Link Styling */
