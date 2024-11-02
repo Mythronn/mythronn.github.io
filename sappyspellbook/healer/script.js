@@ -423,8 +423,9 @@ function processExpChange(fromUser){
           updateAbilityText(26);
         }      
     }
-    //createURL(); checking to see if this fixes the reload error on iPhones
+    
     if(fromUser == 1){
+      createURL(); //checking to see if this fixes the reload error on iPhones
       pointPlus(5);
     }
  }
