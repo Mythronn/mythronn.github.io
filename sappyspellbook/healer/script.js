@@ -423,7 +423,7 @@ function processExpChange(fromUser){
           updateAbilityText(26);
         }      
     }
-    createURL();
+    //createURL(); checking to see if this fixes the reload error on iPhones
     if(fromUser == 1){
       pointPlus(5);
     }
@@ -773,7 +773,7 @@ function reprocessPoints(index){
     while(tempPurchased[i] > 0){
       if(i != 47){
         pointPlus(i, false);
-      tempPurchased[i]--;
+        tempPurchased[i]--;
 
       }
       
