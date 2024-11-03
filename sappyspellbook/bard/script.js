@@ -292,9 +292,9 @@ function resetPoints(fullReset){
     document.getElementById("exp2").value = "Select Spell";
     document.getElementById("ltp").innerText = "";
   }
-  if(fullReset){
-    
+  if(fullReset){    
     updateExperienced();
+    createURL(); //new
   }
   updatePointsAvailable();
 }
@@ -475,9 +475,10 @@ function processExpChange(fromUser){
       if(abilities[0].purchased > 0){abilities[29].freq = "2/Ref";}
       updateAbilityText(29);
     }
-    createURL();
+    //createURL(); OLD
     if(fromUser == 1){
       pointPlus(3);
+      createURL(); //new//new checking to see if this fixes the reload error on iPhones
     }
     
  }
@@ -553,8 +554,8 @@ function pointPlus(index, fromClick) {
         updatePointsAvailable();
         updateExperienced();
         if(fromClick){ 
-          reprocessPoints(a);   
-              
+          reprocessPoints(a);
+          createURL();   //new              
         }
         return 0;
       }      
@@ -578,8 +579,11 @@ function checkPointsAvailable(index){
   return (tempPoints >= abilities[a].cost); 
 }
 /*##################################*/
-function updatePointsAvailable(){  
+function updatePointsAvailable(fc){  
   reqLevel = 1;
+  if(fc == 'ltp'){
+    createURL();
+  }
   let ltpReq = false;
   let ltpChecked = document.getElementById("ltpCheckBox").checked;
   let tempCount = 0;
@@ -709,7 +713,7 @@ function updatePointsAvailable(){
     document.getElementById("ltp6").hidden = false;
   }
   
-  createURL();
+  //createURL(); OLD
 }
 
 function freeableFrom(index, c, rl, r){
@@ -771,6 +775,7 @@ function pointMinus(index) {
   }
   abilities[a].purchased--;
   reprocessPoints(a);
+  createURL(); //new
   return 0;
 }
 /*##################################*/
