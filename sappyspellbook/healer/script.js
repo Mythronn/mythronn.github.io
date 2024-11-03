@@ -352,14 +352,14 @@ function processExpChange(fromUser){
       updateAbilityText(47);
     }
     if(abilities[5].selectedAbility1 == "Dispel Magic" || abilities[5].selectedAbility2 == "Dispel Magic"){
-      abilities[37].charge = "Charge x10";      
-      abilities[37].freq = "1/Ref CHARGE x10";
-      updateAbilityText(37); 
+      abilities[34].charge = "Charge x10";      
+      abilities[34].freq = "1/Ref CHARGE x10";
+      updateAbilityText(34); 
     }
     else{
-      abilities[37].charge = "";
-      abilities[37].freq = "1/Ref";
-      updateAbilityText(37);
+      abilities[34].charge = "";
+      abilities[34].freq = "1/Ref";
+      updateAbilityText(34);
     }
     if(abilities[5].selectedAbility1 == "Greater Heal" || abilities[5].selectedAbility2 == "Greater Heal"){
       abilities[29].charge = "Charge x5";
@@ -862,7 +862,7 @@ function processWarderPlus(){
   abilities[28].freq = "2/Ref Chg x10";
   abilities[30].freq = "4/Ref";
   abilities[31].freq = "2/Ref";
-  abilities[36].freq = "2/Ref";
+  abilities[37].freq = "2/Ref";
   abilities[38].freq = "2/Ref";
   abilities[42].freq = "2/Ref";
   abilities[48].freq = "2/Ref";
@@ -875,7 +875,7 @@ function processWarderPlus(){
   updateAbilityText(28);
   updateAbilityText(30);
   updateAbilityText(31);
-  updateAbilityText(36);
+  updateAbilityText(37);
   updateAbilityText(38);
   updateAbilityText(42);
   updateAbilityText(48);
@@ -891,7 +891,7 @@ function processWarderMinus(){
   abilities[28].freq = "1/Ref Chg x10";
   abilities[30].freq = "2/Ref";
   abilities[31].freq = "1/Ref";
-  abilities[36].freq = "1/Ref";
+  abilities[37].freq = "1/Ref";
   abilities[38].freq = "1/Ref";
   abilities[42].freq = "1/Ref";
   abilities[48].freq = "1/Ref";
@@ -904,7 +904,7 @@ function processWarderMinus(){
   updateAbilityText(28);
   updateAbilityText(30);
   updateAbilityText(31);
-  updateAbilityText(36);
+  updateAbilityText(37);
   updateAbilityText(38);
   updateAbilityText(42);
   updateAbilityText(48);
@@ -1695,10 +1695,10 @@ const abilities = [Priest,	//0
   ProtectionfromProjectiles,	//31
   Swift,	//32
   Teleport,	//33
-  Abeyance,	//34
-  Ambulant,	//35
-  BlessedAura,	//36
-  DispelMagic,	//37
+  DispelMagic,	//34
+  Abeyance,	//35
+  Ambulant,	//36
+  BlessedAura,	//37  
   EnlightenedSoul,	//38
   GreaterResurrect,	//39
   UndeadMinion,	//40
