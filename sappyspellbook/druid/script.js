@@ -18,7 +18,7 @@ function parseURL(){
   url = fullurl[fullurl.length-1];
   url = url.replace("index.html", "");
   var exps = [];
-  console.log(url);
+  //console.log(url);
   if(url.length > 1 && url[0] == "#"){
     url = expandZeros(url);
     url = url.replace("#", "");
@@ -291,7 +291,7 @@ function processExpChange(fromUser){
     if(abilities[4].purchased == 0){
       if(document.getElementById("exp1").value != "Select Spell"){
         document.getElementById("Experiencedplus").disabled = false;
-        console.log(document.getElementById("exp1").value);
+        //console.log(document.getElementById("exp1").value);
       }
       else{document.getElementById("Experiencedplus").disabled = true}
     }
@@ -595,7 +595,7 @@ function updatePointsAvailable(fc){
 }
 
 function freeableFrom(index, c, rl, r){
-  console.log("level: " + index + " LTP Checked: " + c + " ReqLevel: " + rl + " is ltp required:" + r);
+  //console.log("level: " + index + " LTP Checked: " + c + " ReqLevel: " + rl + " is ltp required:" + r);
   let lvl = index;
   let req = r;
   let lookThePartChecked = c;
@@ -615,7 +615,7 @@ function freeableFrom(index, c, rl, r){
       }
       tempTotal = tempTotal + (higherLevelPoints[i] - 5);
     }
-    console.log(higherLevelPoints[highestLevel] + " " + pointsAvailable[highestLevel] + " " + highestLevel);
+    //console.log(higherLevelPoints[highestLevel] + " " + pointsAvailable[highestLevel] + " " + highestLevel);
    }
     
    if(lookThePartChecked == true){
@@ -631,7 +631,7 @@ function freeableFrom(index, c, rl, r){
          }
       tempTotal = tempTotal + (higherLevelPoints[i] - 5);
     }
-    console.log(higherLevelPoints[highestLevel] + " " + pointsAvailable[highestLevel] + " " + highestLevel);
+    //console.log(higherLevelPoints[highestLevel] + " " + pointsAvailable[highestLevel] + " " + highestLevel);
    }
   
     outputString = "[Level " + highestLevel + "]";

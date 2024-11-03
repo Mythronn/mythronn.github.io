@@ -54,7 +54,7 @@ function parseURL(){
   url = fullurl[fullurl.length-1];
   url = url.replace("index.html", "");
   var exps = [];
-  console.log(url);
+  //console.log(url);
   if(url.length > 1 && url[0] == "#"){
     url = expandZeros(url);
     url = url.replace("#", "");
@@ -586,7 +586,7 @@ function processExpChange(fromUser){
 /*##################################*/
 function battlemageCheck(index){
   var a = index;
-  console.log(abilities[a].type);
+  //console.log(abilities[a].type);
   if(abilities[44].purchased > 0){
     if(abilities[a].type == "Magic Ball" || abilities[a].type == "Enchantment"){
       
@@ -869,7 +869,7 @@ function updatePointsAvailable(fc){
 }
 
 function freeableFrom(index, c, rl, r){
-  console.log("level: " + index + " LTP Checked: " + c + " ReqLevel: " + rl + " is ltp required:" + r);
+  //console.log("level: " + index + " LTP Checked: " + c + " ReqLevel: " + rl + " is ltp required:" + r);
   let lvl = index;
   let req = r;
   let lookThePartChecked = c;
@@ -889,7 +889,7 @@ function freeableFrom(index, c, rl, r){
       }
       tempTotal = tempTotal + (higherLevelPoints[i] - 5);
     }
-    console.log(higherLevelPoints[highestLevel] + " " + pointsAvailable[highestLevel] + " " + highestLevel);
+    //console.log(higherLevelPoints[highestLevel] + " " + pointsAvailable[highestLevel] + " " + highestLevel);
    }
     
    if(lookThePartChecked == true){
@@ -905,7 +905,7 @@ function freeableFrom(index, c, rl, r){
          }
       tempTotal = tempTotal + (higherLevelPoints[i] - 5);
     }
-    console.log(higherLevelPoints[highestLevel] + " " + pointsAvailable[highestLevel] + " " + highestLevel);
+    //console.log(higherLevelPoints[highestLevel] + " " + pointsAvailable[highestLevel] + " " + highestLevel);
    }
   
     outputString = "[Level " + highestLevel + "]";
