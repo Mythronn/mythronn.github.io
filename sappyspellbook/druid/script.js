@@ -169,6 +169,9 @@ function toggleList(){
         if(abilities[k].type == "Magic Ball"){
           levelList[i] = levelList[i] + ": " + abilities[k].use * abilities[k].purchased + " Ball(s)";
         }
+        if(abilities[k].type == "Meta-Magic"){ //adding metamagic support
+          levelList[i] = levelList[i] + ": " + abilities[k].use * abilities[k].purchased + "/" + abilities[k].per + " " + abilities[k].charge;
+        }
         if(abilities[k].type == "Verbal"){
           levelList[i] = levelList[i] + ": " + abilities[k].use * abilities[k].purchased + "/" + abilities[k].per + " " + abilities[k].charge;
         }
