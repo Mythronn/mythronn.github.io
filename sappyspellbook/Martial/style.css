@@ -193,6 +193,7 @@ body {
   a {
     color: #4b2c20; 
     text-decoration: none;
+    cursor: pointer;
   }
   
   a:hover {
