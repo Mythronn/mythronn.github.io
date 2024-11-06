@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("MysticText").hidden = true;   
     document.getElementById("PaladinText").hidden = true;    
     document.getElementById("GuardianText").hidden = true;    
-    document.getElementById("JusticarText").hidden = true;     
+    document.getElementById("JusticiarText").hidden = true;     
     document.getElementById("ScoutText").hidden = true;     
     document.getElementById("HunterText").hidden = true;    
     document.getElementById("ApexText").hidden = true;     
