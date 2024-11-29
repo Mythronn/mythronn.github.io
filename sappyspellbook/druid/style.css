@@ -13,7 +13,7 @@ input[type="number"] {
   color: #000000;
   text-align: center;
   pointer-events: none;  /* Disable interaction */
-  -moz-appearance: textfield;  /* Hide arrows in Firefox */
+  -moz-appearance: textfield !important;  /* Hide arrows in Firefox */
   -webkit-appearance: none;    /* Hide arrows in Chrome, Safari */
   appearance: none;            /* Modern browsers fallback */
 }
