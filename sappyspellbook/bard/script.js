@@ -187,8 +187,8 @@ function toggleList(){
   var tables = [];
   var lists = [];
   var levelList = ["", "", "", "", "", "", ""];
-  
-  
+  var curLevel = document.getElementById("reqLevel").value;
+    
   for(let i = 1; i < 7; i++){
     tables[i] = document.getElementById("table-lvl" + i);
     lists[i] = document.getElementById("lvl" + i + "List");
@@ -236,6 +236,27 @@ function toggleList(){
       document.getElementById("hlp3").hidden = true;
       document.getElementById("hlp4").hidden = true;
       document.getElementById("hlp5").hidden = true;
+      document.getElementById("level1Points").hidden = true;
+      document.getElementById("level2Points").hidden = true;
+      document.getElementById("level3Points").hidden = true;
+      document.getElementById("level4Points").hidden = true;
+      document.getElementById("level5Points").hidden = true;
+      document.getElementById("level6Points").hidden = true;
+      if(curLevel < 2){
+        document.getElementById("2ndHeader").hidden = true;
+      }
+      if(curLevel < 3){
+        document.getElementById("3rdHeader").hidden = true;
+      }
+      if(curLevel < 4){
+        document.getElementById("4thHeader").hidden = true;
+      }
+      if(curLevel < 5){
+        document.getElementById("5thHeader").hidden = true;
+      }
+      if(curLevel < 6){
+        document.getElementById("6thHeader").hidden = true;
+      }
     }
     else{
       tables[i].style.display = "block";
@@ -247,6 +268,18 @@ function toggleList(){
       document.getElementById("hlp3").hidden = false;
       document.getElementById("hlp4").hidden = false;
       document.getElementById("hlp5").hidden = false;
+      document.getElementById("level1Points").hidden = false;
+      document.getElementById("level2Points").hidden = false;
+      document.getElementById("level3Points").hidden = false;
+      document.getElementById("level4Points").hidden = false;
+      document.getElementById("level5Points").hidden = false;
+      document.getElementById("level6Points").hidden = false;
+      document.getElementById("1stHeader").hidden = false;
+      document.getElementById("2ndHeader").hidden = false;
+      document.getElementById("3rdHeader").hidden = false;
+      document.getElementById("4thHeader").hidden = false;
+      document.getElementById("5thHeader").hidden = false;
+      document.getElementById("6thHeader").hidden = false;
     } 
   }   
 }
