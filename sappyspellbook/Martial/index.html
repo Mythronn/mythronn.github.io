@@ -26,7 +26,7 @@
     <a href="https://mythronn.github.io/sappyspellbook/healer/" class="Healer" >HEALER</a>
     <a href="https://mythronn.github.io/sappyspellbook/wizard/" class="Wizard" >WIZARD</a>
   </div>
-  <a href="https://mythronn.github.io/sappyspellbook/">Version: 8.6.2</a>
+  <a href="https://mythronn.github.io/sappyspellbook/">Version: 8.6.3</a>
    <div class="ui-body ui-body-a ui-corner-all" id="buttons">
      <H1>Martial Classes</H1>
  
@@ -55,7 +55,7 @@
         <a   class="Monk" onclick="showText('MysticText')" >MYSTIC</a>
         <a   class="Paladin" onclick="showText('PaladinText')" >PALADIN</a>
         <a   class="Paladin" onclick="showText('GuardianText')" >GUARDIAN</a>
-        <a   class="Paladin" onclick="showText('JusticiarText')" >JUSTICIAR</a>
+        <a   class="Paladin" onclick="showText('InquisitorText')" >INQUISITOR</a>
         <a   class="Scout" onclick="showText('ScoutText')" >SCOUT</a>
         <a   class="Scout" onclick="showText('HunterText')" >HUNTER</a>
         <a   class="Scout" onclick="showText('ApexText')" >APEX</a>
@@ -174,14 +174,15 @@
         <h3>Optional Archetypes</h3>
     <p><a class="Anti-Paladin" onclick="showText('CorruptorText')"><b>Corruptor</b></a><BR> <!--Testing archetype links-->
         T: Archetype S: Neutral<BR>
-        E: Gain Void Touched (Touch) 2/Refresh (m). All uses of
+        E: Gain Void Touched (Self) 2/Refresh (m). All uses of
         Terror become 1/Life Charge x10.<BR>
         L: May not wield Great Weapons or Javelins and loses all
         instances of Flame Blade.
     </p>
     <p><a class="Anti-Paladin" onclick="showText('InfernalText')"><b>Infernal</b></a><BR>
         T: Archetype S: Neutral<BR>
-        E: Gain Fireball 2 Ball / Unlimited (m).<BR>
+        E: Gain Fireball 2 Ball / Unlimited (m). Flame Blade
+        becomes (Self) 2/Refresh Charge x5.<BR>
         L: May not wield a shield, and loses all instances of Steal
         Life Essence.
     </p>
@@ -279,8 +280,8 @@
             <tr>
                 <td></td>
                     <td>
-                        <u>(Touch) 2/Refresh (m)</u><BR>
-                        T: Enchantment S: Sorcery R: Touch<BR>
+                        <u>(Self) 2/Refresh (m)</u><BR>
+                        T: Enchantment S: Sorcery R: Self<BR>
                         I: <I>“Embrace the old ones and surrender thyself”</I> x3<BR>
                         M: Red strip and white strip<BR>
                         E: Melee weapons wielded by bearer are Armor Breaking.
@@ -299,10 +300,16 @@
         <h3>Archetype Info</h3>
     <p><b>Corruptor</b><BR>
         T: Archetype S: Neutral<BR>
-        E: Gain Void Touched (Touch) 2/Refresh (m). All uses of
+        E: Gain Void Touched (Self) 2/Refresh (m). All uses of
         Terror become 1/Life Charge x10.<BR>
         L: May not wield Great Weapons or Javelins and loses all
-        instances of Flame Blade.
+        instances of Flame Blade.<BR><BR>
+        <b>Shadow Step</b><BR>
+        <u>2/Life (ex) (Ambulant)</u><BR>
+            T: Verbal S: Sorcery R: Self<BR>
+            I: <I>“I step into the shadows”</I><BR>
+            E: Player becomes Insubstantial.<BR>
+            N: Caster may end this Insubstantial state at any time by using the exit incantation for Insubstantial.
     </p>
 </div>
 
@@ -539,21 +546,24 @@
         E: May physically carry any number of Specialty
         Arrows of each type. The frequency of each type
         of Specialty Arrow ability becomes 1 Arrow/Life
-        Charge x3. Gain Precision (Ambulant) (Unlimited)
+        Charge x3. Gain Momentum (Ambulant) (Unlimited)
         (ex).<BR>
         L: May not fire normal arrows.
     </p>
     <p><a class="Archer" onclick="showText('ArtificerText')"><b>Artificer</b></a><BR>
         T: Archetype S: Neutral<BR>
         E: May wield a Small Shield. Gain Greater Mend 2/Refresh
-        Charge x10 (ex). Mend becomes 2/Life Charge x3.
-        Casting Mend on Weapons or Shields does not consume a
+        Charge x10 (ex). Mend becomes 2/Life Charge x3 (ex).
+        Casting Mend on weapons or ahields does not consume a
         use of Mend.<BR>
-        L: Lose all arrow choices at 1st, 3rd, and 5th level. Gain
-        Pinning Arrow 3 Arrow / Unlimited (ex). Look the Part
-        becomes an additional Pinning Arrow.<BR>
-        N: Player must still have a use of Mend remaining to cast on
-        Weapons or Shields.
+        L: Rather than the normal amount of Specialty Arrows for
+        an Archer, gain:<BR>
+         - Pinning Arrow 3 Arrow / Unlimited (ex)<BR>
+         - Phase Arrow 1 Arrow / Unlimited (ex)<BR>
+         - Suppression Arrow 1 Arrow / Unlimited (ex)<BR>
+        Look the Part becomes a fourth Pinning Arrow.<BR>
+        N: Player must still have a use of Mend remaining to
+        cast on weapons or shields.
     </p>  
 </div>
 
@@ -599,12 +609,13 @@
                 E: Destroyed or damaged item is repaired. One point of armor in one location is repaired.
             </td>
         </tr>
-        <tr><td>N/A</td><td><b>Precision</b></td></tr>
+        <tr><td>N/A</td><td><b>Momentum</b></td></tr>
         <tr><td></td><td>
             <u>(Ambulant) (Unlimited) (ex)</u><BR>
             T: Verbal S: Sorcery R: Self<BR>
-            I: <I>“Precision”</I><BR>
-            E: Caster may instantly Charge a Specialty Arrow.<BR>
+            I: <I>“Momentum”</I><BR>
+            E: May be used to instantly Charge a single ability by stating
+            its name.<BR>
             L: Kill Trigger</td></tr>       
 
     </table>
@@ -651,7 +662,7 @@
         E: May physically carry any number of Specialty
         Arrows of each type. The frequency of each type
         of Specialty Arrow ability becomes 1 Arrow/Life
-        Charge x3. Gain Precision (Ambulant) (Unlimited)
+        Charge x3. Gain Momentum (Ambulant) (Unlimited)
         (ex).<BR>
         L: May not fire normal arrows.
     </p>    
@@ -778,7 +789,9 @@
 <div class="ui-body ui-body-a ui-corner-all" id="AssassinText" hidden>
     <h2>Assassin</h2>
     <p><b>Garb:</b> Black sash and medieval/sword and sorcery-looking garb<BR>
-       <b>Look The Part:</b> Poison (Self) 1/Life (ex)<BR>
+       <b>Look The Part:</b> Pick one:<BR>
+       Poison (Self) 1/Life Charge x3 (ex)<BR>
+       Poison Arrow - 1 Arrow / Unlimited (ex) <BR>
        <b>Armor:</b> 2pts<BR>
        <b>Shields:</b> None<BR>
        <b>Weapons:</b> Dagger, Short, Long, Light Throwing, Heavy Throwing, Bow
@@ -818,7 +831,8 @@
         <tr><td></td><td><u>2/Life (ex) (Ambulant)</u><BR>
             T: Verbal S: Sorcery R: Self<BR>
             I: <I>“I step into the shadows”</I><BR>
-            E: Player becomes Insubstantial.<BR>
+            E: Player becomes Insubstantial. Shadow Step may be cast
+            while moving.<BR>
             N: Caster may end this Insubstantial state at any time by using the exit incantation for Insubstantial.</td></tr>
         <tr>
             <td>2nd</td>
@@ -1227,13 +1241,14 @@
     <h3>Optional Archetypes</h3>
     <p><a class="Barbarian" onclick="showText('RaiderText')"><b>Raider</b></a><BR>
        T: Archetype S: Neutral<BR>
-       E: Player may choose to use Adrenaline for its usual effect or to instantly charge Brutal Strike. Brutal Strike becomes 3/Life Charge x3. Gain Harden (Self) 1/Life (ex).<BR>
+       E: Player may choose to use Adrenaline for its usual effect
+       or to instantly charge Brutal Strike. Brutal Strike becomes 3/Life Charge x3 (ex). Gain Harden (Self) 1/Life (ex).<BR>
        L: May not wield Shields, and loses all instances of Rage.
     </p>
 
     <p><a class="Barbarian" onclick="showText('BerserkerText')"><b>Berserker</b></a><BR>
        T: Archetype S: Neutral<BR>
-       E: Player may choose to use Adrenaline for its usual effect or to instantly charge Rage.<BR>
+       E: Gain Momentum Unlimited (ex) (Ambulant).<BR>
        L: May not wear Armor, and loses all instances of Blood and Thunder.
     </p>
 </div>
@@ -1276,7 +1291,7 @@
             T: Enchantment S: Protection R: Self<BR>
             I: <I>“I enchant thee with Harden”</I> x3<BR>
             M: White strip<BR>
-            E: Bearer's weapons or shield may only be destroyed or damaged by Magic Balls/Verbals which destroy objects, e.g., Fireball or Pyrotechnics.<BR>
+            E: Bearer's wielded weapons or shield may only be destroyed or damaged by Magic Balls/Verbals which destroy objects, e.g., Fireball or Pyrotechnics.<BR>
             L: Will only affect either the weapons or the shield of the bearer, not both.
              </TD></TR>
         <tr>
@@ -1385,12 +1400,21 @@
             E: Target is Cursed. Target is also Suppressed for 30 seconds.<BR>
             L: Wound Trigger.<BR>
             N: Brutal Strike targets the wounded or dead player and does not require verbal targeting.</TD></TR>        
+        <tr>
+            <td>N/A</td>
+            <td><b>Momentum</b></td>
+        </tr>
+        <TR><TD></TD><TD> <u>1/Life Charge x3 (ex) (Ambulant)</u><BR>
+            T: Verbal S: Sorcery R: Self<BR>
+            I: <I>“Momentum”</I><BR>
+            E: May be used to instantly Charge a single ability by stating its name.<BR>
+            L: Kill Trigger.</TD></TR>
     </table>  
 
     <h3>Archetype Info</h3>
     <p><b>Berserker</b><BR>
        T: Archetype S: Neutral<BR>
-       E: Player may choose to use Adrenaline for its usual effect or to instantly charge Rage.<BR>
+       E: Gain Momentum Unlimited (ex) (Ambulant).<BR>
        L: May not wear Armor, and loses all instances of Blood and Thunder.
     </p>
 </div>
@@ -1460,9 +1484,9 @@
         <TR><TD></TD><TD><u>1/Life Charge x5 (ex) (Ambulant)</u><BR>
             T: Verbal S: Protection R: Self<BR>
             I: <I>“Sanctuary”</I><BR>
-            E: Player and equipment are unaffected by hostile actions within 20'. Player must chant “sanctuary.”<BR>
-            L: Cannot carry weapons or game objectives, or impede others while in Sanctuary. May end Sanctuary by ceasing to chant.<BR>
-            N: Susceptible to Phase Bolt and Phase Arrow.
+            E: Player and their carried equipment are unaffected by hostile actions originating from within 20'. Must Chant “sanctuary”. Player may end Sanctuary at any time by ceasing to chant and declaring “No longer in sanctuary” or by by picking up a weapon with their hand.<BR>
+            L: If the player is voluntarily touching (other than blocking) or carrying weapons in any fashion (tucked under arms, tied to thongs, etc) at any point during Sanctuary then they may only voluntarily end Sanctuary within 20' of a friendly base, and must continue chanting until there. Player may not cast this ability while they have any weapons in hand. Cannot interact with game items nor game objectives, nor impede the play of other people in any manner, and must immediately move to avoid such situations. May not come within 20' of a nonfriendly base.<BR>
+            N: The exit declaration must be audible out to 20 feet.
         </TD></TR>
         <tr>
             <td>4th</td>
@@ -1496,7 +1520,7 @@
             <td>6th</td>
             <td><b>Innate</b></td>
         </tr>
-        <TR><TD></TD><TD><u>2/Refresh (ex)</u><BR>
+        <TR><TD></TD><TD><u>1/Life (ex)</u><BR>
             T: Meta-Magic S: Neutral<BR>
             I: <I>“Innate”</I><BR>
             E: May be used to instantly Charge a single magic or
@@ -1511,7 +1535,7 @@
 
     <p><a class="Monk" onclick="showText('MysticText')"><b>Mystic</b></a><BR>
        T: Archetype S: Neutral<BR>
-       E: Gain Force Bolt 4 Balls/Unlimited (m). Gain Suppression Bolt 1 Ball/Unlimited (m).<BR>
+       E: Gain Force Bolt 4 Balls/Unlimited (m). Gain Suppression Bolt 2 Balls/Unlimited (m).<BR>
        L: May not wield Great weapons nor Heavy Thrown.
     </p>
 </div>
@@ -1581,9 +1605,9 @@
         <TR><TD></TD><TD><u>1/Life Charge x5 (ex) (Ambulant)</u><BR>
             T: Verbal S: Protection R: Self<BR>
             I: <I>“Sanctuary”</I><BR>
-            E: Player and equipment are unaffected by hostile actions within 20'. Player must chant “sanctuary.”<BR>
-            L: Cannot carry weapons or game objectives, or impede others while in Sanctuary. May end Sanctuary by ceasing to chant.<BR>
-            N: Susceptible to Phase Bolt and Phase Arrow.
+            E: Player and their carried equipment are unaffected by hostile actions originating from within 20'. Must Chant “sanctuary”. Player may end Sanctuary at any time by ceasing to chant and declaring “No longer in sanctuary” or by by picking up a weapon with their hand.<BR>
+            L: If the player is voluntarily touching (other than blocking) or carrying weapons in any fashion (tucked under arms, tied to thongs, etc) at any point during Sanctuary then they may only voluntarily end Sanctuary within 20' of a friendly base, and must continue chanting until there. Player may not cast this ability while they have any weapons in hand. Cannot interact with game items nor game objectives, nor impede the play of other people in any manner, and must immediately move to avoid such situations. May not come within 20' of a nonfriendly base.<BR>
+            N: The exit declaration must be audible out to 20 feet.
         </TD></TR>
         <tr>
             <td>N/A</td>
@@ -1617,7 +1641,7 @@
             <td>N/A</td>
             <td><b>Innate</b></td>
         </tr>
-        <TR><TD></TD><TD><u>2/Refresh (ex)</u><BR>
+        <TR><TD></TD><TD><u>1/Life (ex)</u><BR>
             T: Meta-Magic S: Neutral<BR>
             I: <I>“Innate”</I><BR>
             E: May be used to instantly Charge a single magic or
@@ -1738,9 +1762,9 @@
         <TR><TD></TD><TD><u>1/Life Charge x5 (ex) (Ambulant)</u><BR>
             T: Verbal S: Protection R: Self<BR>
             I: <I>“Sanctuary”</I><BR>
-            E: Player and equipment are unaffected by hostile actions within 20'. Player must chant “sanctuary.”<BR>
-            L: Cannot carry weapons or game objectives, or impede others while in Sanctuary. May end Sanctuary by ceasing to chant.<BR>
-            N: Susceptible to Phase Bolt and Phase Arrow.
+            E: Player and their carried equipment are unaffected by hostile actions originating from within 20'. Must Chant “sanctuary”. Player may end Sanctuary at any time by ceasing to chant and declaring “No longer in sanctuary” or by by picking up a weapon with their hand.<BR>
+            L: If the player is voluntarily touching (other than blocking) or carrying weapons in any fashion (tucked under arms, tied to thongs, etc) at any point during Sanctuary then they may only voluntarily end Sanctuary within 20' of a friendly base, and must continue chanting until there. Player may not cast this ability while they have any weapons in hand. Cannot interact with game items nor game objectives, nor impede the play of other people in any manner, and must immediately move to avoid such situations. May not come within 20' of a nonfriendly base.<BR>
+            N: The exit declaration must be audible out to 20 feet.
         </TD></TR>
         <tr>
             <td>N/A</td>
@@ -1774,7 +1798,7 @@
             <td>N/A</td>
             <td><b>Innate</b></td>
         </tr>
-        <TR><TD></TD><TD><u>2/Refresh (ex)</u><BR>
+        <TR><TD></TD><TD><u>1/Life (ex)</u><BR>
             T: Meta-Magic S: Neutral<BR>
             I: <I>“Innate”</I><BR>
             E: May be used to instantly Charge a single magic or
@@ -1800,7 +1824,7 @@
             <td>N/A</td>
             <td><b>Suppression Bolt</b></td>
         </tr>
-        <TR><TD></TD><TD><u>1 Ball/Unlimited (m)</u><BR>
+        <TR><TD></TD><TD><u>2 Balls/Unlimited (m)</u><BR>
             T: Magic Ball S: Subdual<BR>
             I: <I>“The strength of suppression is mine to evoke”</I> x3<BR>
             M: Purple Magic Ball<BR>
@@ -1809,7 +1833,7 @@
     <h3>Archetype Info</h3>
     <p><b>Mystic</b><BR>
         T: Archetype S: Neutral<BR>
-        E: Gain Force Bolt 4 Balls/Unlimited (m). Gain Suppression Bolt 1 Ball/Unlimited (m).<BR>
+        E: Gain Force Bolt 4 Balls/Unlimited (m). Gain Suppression Bolt 2 Balls/Unlimited (m).<BR>
         L: May not wield Great weapons nor Heavy Thrown.
     </p>
 </div>
@@ -1895,10 +1919,10 @@
         L: Loses all instances of Protection from Magic and Extend Immunities. May only have one instance of Imbue Shield active at a time.
      </p>
  
-     <p><a class="Paladin" onclick="showText('JusticiarText')"><b>Justiciar</b></a><BR>
+     <p><a class="Paladin" onclick="showText('InquisitorText')"><b>Inquisitor</b></a><BR>
         T: Archetype S: Neutral<BR>
-        E: Gain Smite 1/Life Charge x10 (m).<BR>
-        L: May not wield Shields and loses all instances of Greater Resurrect.
+        E: Gain Sacred Blades (Self) 1/Life (ex).<BR>
+        L: Player loses all instances of Greater Resurrect and Awe.
      </p>
          
 </div>
@@ -1989,14 +2013,14 @@
 
 <!--########################################################--> 
 
-<div class="ui-body ui-body-a ui-corner-all" id="JusticiarText" hidden>
+<div class="ui-body ui-body-a ui-corner-all" id="InquisitorText" hidden>
     
-        <h2>Justiciar</h2>
+        <h2>Inquisitor</h2>
         <p><b>Garb:</b> Metallic gold sash and medieval/sword and sorcery-looking garb. Knights may wear a white belt and a white phoenix Class Symbol instead.<BR>
             <b>Requirements:</b> Must be 6th level in at least one class.<BR>
-            <b>Look The Part:</b> Awe 1/Life (m)<BR>
+            <b>Look The Part:</b> NONE<BR>
             <b>Armor:</b> 4pts<BR>
-            <b>Shields:</b> NONE<BR>
+            <b>Shields:</b> Large<BR>
             <b>Weapons:</b> All Melee, Javelins
         </p>
 
@@ -2033,23 +2057,14 @@
                 L: Type of Ability must be chosen at the time of casting and may not be changed. The caster may only have one instance of Extend Immunities active at a time.</TD></TR>
             <tr>
                 <td>N/A</td>
-                <td><b>Smite</b> </td>
+                <td><b>Sacred Blades</b> </td>
             </tr>
-            <TR><TD></TD><TD><u>1/Life Charge x10 (m)</u><BR>
-                T: Verbal S: Sorcery R: 20'<BR>
-                I: <I>“The power of the divine smites thee!”</I> x3<BR>
-                E: Caster's weapons are Shield Crushing, Armor Breaking, and Wounds Kill against the target and their carried equipment.<BR>
-                L: If the caster attacks a player other than the target, begins casting another spell, or the caster or target dies, this spell's effect ends.
+            <TR><TD></TD><TD><u>1/Life (ex)</u><BR>
+                T: Enchantment S: Sorcery R: Self<BR>
+                I: <I>“I sanctify these weapons to smite the wicked”</I> x2<BR>
+                M: White strip and Red strip<BR>
+                E: Bearer's wielded weapons are affected as per Harden. Bearer's wielded melee weapons ignore magic armor and resistances that prevent wounds.
                     </TD></TR>
-            <tr>
-                <td>N/A</td>
-                <td><b>Awe</b></td>
-            </tr>
-            <TR><TD></TD><TD><u>1/Life (m)</u><BR>
-                T: Verbal S: Command R: 20'<BR>
-                I: <I>“I command thee awed”</I> x3<BR>
-                E: Target may not attack or cast magic at the caster or their carried equipment. Target must remain at least 20' away from the caster unless forced there by another Magic or Ability. Lasts 30 seconds.<BR>
-                N: If the caster attacks the target, begins casting another magic at the target or their carried equipment, or dies, this spell's effect is negated.</TD></TR>
             <tr>
                 <td>N/A</td>
                 <td><b>Protection from Magic</b></td>
@@ -2064,10 +2079,10 @@
 
         <h3>Archetype Info</h3>
         
-            <p><b>Justiciar</b><BR>
+            <p><b>Inquisitor</b><BR>
             T: Archetype S: Neutral<BR>
-            E: Gain Smite 1/Life Charge x10 (m).<BR>
-            L: May not wield Shields and loses all instances of Greater Resurrect.
+            E: Gain Sacred Blades (Self) 1/Life (ex).<BR>
+            L: Player loses all instances of Greater Resurrect and Awe.
             </p>
            
 </div>
@@ -2138,22 +2153,13 @@
             <td>3rd</td>
             <td><b>Shadow Step</b></td>
         </tr>
-        <TR><TD></TD><TD><u>1/Life (ex)</u><BR>
+        <TR><TD></TD><TD><u>1/Life (ex) (Ambulant)</u><BR>
             T: Verbal S: Sorcery R: Self<BR>
             I: <I>“I step into the shadows”</I><BR>
-            E: Player becomes Insubstantial.<BR>
+            E: Player becomes Insubstantial. Shadow Step may be cast while moving.<BR>
             N: Caster may end this Insubstantial state at any time by using the exit incantation for Insubstantial.</TD></TR>
         <tr>
              <td>4th</td>
-             <td><b>Evolution</b> </td>
-         </tr>
-         <TR><TD></TD><TD>(<u>T</u>)<BR>
-            T: Granted as Trait S: Sorcery R: Self<BR>
-                E: May wear an additional Enchantment. Evolution does not count towards the bearer's Enchantment limit.<BR>
-                N: This ability does work in conjunction with Attuned, Essence Graft, or Phoenix Tears so long as the other limitations of those Enchantments are followed.
-              </TD></TR>
-         <tr>
-             <td>5th</td>
              <td><b>Choose one:</b></td>
          </tr>
          <TR><TD></TD><TD>Hold Person<BR>
@@ -2168,6 +2174,16 @@
             I: <I>“Pinning Arrow”</I><BR>
             M: Arrow with yellow head cover labeled ‘Pinning’.<BR>
             E: A player struck by this arrow is Stopped for 30 seconds. Engulfing.</TD></TR>
+         
+        <tr>
+             <td>5th</td>
+             <td><b>Evolution</b> </td>
+         </tr>
+         <TR><TD></TD><TD>(<u>T</u>)<BR>
+            T: Granted as Trait S: Sorcery R: Self<BR>
+                E: May wear an additional Enchantment. Evolution does not count towards the bearer's Enchantment limit.<BR>
+                N: This ability does work in conjunction with Attuned, Essence Graft, or Phoenix Tears so long as the other limitations of those Enchantments are followed.
+              </TD></TR>
          <tr>
              <td>6th</td>
              <td><b>Adaptive Protection</b></td>
@@ -2181,9 +2197,13 @@
  
      <h3>Optional Archetypes</h3>
     <p><a class="Scout" onclick="showText('HunterText')"><b>Hunter</b></a><BR>
-       T: Archetype S: Neutral<BR>
-       E: May wield Great Weapons and Javelins. Hold Person becomes 1/Life Charge x3.<BR>
-       L: May not wield Shields. Loses all instances of Release and Evolution.
+        T: Archetype S: Neutral<BR>
+        E: May wield Great Weapons and Javelins. <BR>
+            Pick one:<BR>
+            - Hold Person becomes 1/Life Charge x3 (ex).<BR>
+            - Pinning Arrow becomes 2 Arrow / Unlimited (ex)<BR>
+        L: May not wield Shields. Loses all instances of Release and Evolution.
+        N: You only gain the benefit of an option if you already have that ability.
     </p>
 
     <p><a class="Scout" onclick="showText('ApexText')"><b>Apex</b></a><BR>
@@ -2247,10 +2267,10 @@
             <td>N/A</td>
             <td><b>Shadow Step</b></td>
         </tr>
-        <TR><TD></TD><TD><u>1/Life (ex)</u><BR>
+        <TR><TD></TD><TD><u>1/Life (ex) (Ambulant)</u><BR>
             T: Verbal S: Sorcery R: Self<BR>
             I: <I>“I step into the shadows”</I><BR>
-            E: Player becomes Insubstantial.<BR>
+            E: Player becomes Insubstantial. Shadow Step may be cast while moving.<BR>
             N: Caster may end this Insubstantial state at any time by using the exit incantation for Insubstantial.</TD></TR>
         
          <tr>
@@ -2264,7 +2284,7 @@
             E: Target player becomes Stopped for 30 seconds.<BR>
                 <BR>
             Pinning Arrow <BR>
-            <u>1 Arrow / Unlimited (ex)</u><BR>
+            <u>2 Arrow / Unlimited (ex)</u><BR>
             T: Specialty Arrow S: Sorcery<BR>
             I: <I>“Pinning Arrow”</I><BR>
             M: Arrow with yellow head cover labeled ‘Pinning’.<BR>
@@ -2283,8 +2303,12 @@
      <h3>Archetype Info</h3>
     <p><b>Hunter</b><BR>
        T: Archetype S: Neutral<BR>
-       E: May wield Great Weapons and Javelins. Hold Person becomes 1/Life Charge x3.<BR>
+       E: May wield Great Weapons and Javelins. <BR>
+        Pick one:<BR>
+        - Hold Person becomes 1/Life Charge x3 (ex).<BR>
+        - Pinning Arrow becomes 2 Arrow / Unlimited (ex)<BR>
        L: May not wield Shields. Loses all instances of Release and Evolution.
+       N: You only gain the benefit of an option if you already have that ability.
     </p>
 </div>
 
@@ -2354,10 +2378,10 @@
             <td>N/A</td>
             <td><b>Shadow Step</b></td>
         </tr>
-        <TR><TD></TD><TD><u>1/Life (ex)</u><BR>
+        <TR><TD></TD><TD><u>1/Life (ex) (Ambulant)</u><BR>
             T: Verbal S: Sorcery R: Self<BR>
             I: <I>“I step into the shadows”</I><BR>
-            E: Player becomes Insubstantial.<BR>
+            E: Player becomes Insubstantial. Shadow Step may be cast while moving.<BR>
             N: Caster may end this Insubstantial state at any time by using the exit incantation for Insubstantial.</TD></TR>
         <tr>
              <td>N/A</td>
@@ -2417,7 +2441,7 @@
             T: Enchantment S: Protection R: Self<br>
             I: <I>“I enchant thee with harden”</I> x3<br>
             M: White strip<br>
-            E: Bearer's weapons or shield may only be destroyed by Magic Balls/Verbals which destroy objects, e.g. Fireball or Pyrotechnics.<br>
+            E: Bearer's wielded weapons or shield may only be destroyed by Magic Balls/Verbals which destroy objects, e.g. Fireball or Pyrotechnics.<br>
             L: Will only affect either the weapons or the shield of the bearer, not both.</TD></TR>
         <tr>
             <td>2nd</td>
@@ -2459,7 +2483,7 @@
             <td>6th</td>
             <td><b>Ancestral Armor</b></td>
         </tr>
-        <TR><TD></TD><TD><u>(Self) 3/Refresh (ex) (Swift)</u><br>
+        <TR><TD></TD><TD><u>(Self) 3/Refresh Charge x10 (ex) (Swift)</u><br>
             T: Enchantment S: Protection R: Self<br>
             I: <I>“May this armor protect thee from all forms of harm.”</I> <br>
             M: White strip<br>
@@ -2471,8 +2495,8 @@
     <h3>Optional Archetypes</h3>
     <p><a class="Warrior" onclick="showText('MarauderText')"><b>Marauder</b></a><br>
        T: Archetype S: Neutral<br>
-       E: Player may choose to use Scavenge for its usual effect or to instantly Charge an ability. Insult becomes 1/Life Charge x5.<br>
-       L: Maximum Armor becomes 4pts. May not wield Large shields.
+       E: Gain Momentum Unlimited (ex) (Ambulant). Insult becomes 1/Life Charge x5 (m) (Ambulant).<br>
+       L: Maximum Armor becomes 4pts. May not wield Large shields. Ancestral Armor is no longer chargeable.
     </p>
 
     <p><a class="Warrior" onclick="showText('JuggernautText')"><b>Juggernaut</b></a><br>
@@ -2507,7 +2531,7 @@
              T: Enchantment S: Protection R: Self<br>
              I: <I>“I enchant thee with harden”</I> x3<br>
              M: White strip<br>
-             E: Bearer's weapons or shield may only be destroyed by Magic Balls/Verbals which destroy objects, e.g. Fireball or Pyrotechnics.<br>
+             E: Bearer's wielded weapons or shield may only be destroyed by Magic Balls/Verbals which destroy objects, e.g. Fireball or Pyrotechnics.<br>
              L: Will only affect either the weapons or the shield of the bearer, not both.</TD></TR>
          <tr>
              <td>N/A</td>
@@ -2558,13 +2582,22 @@
              E: The effects of a Magic Ball, projectile weapon, or melee weapon which just struck armor worn by the player are ignored, even if the object would not otherwise affect the armor. The armor loses one point of value in the location struck. This effect will not trigger if the armor has no points left in the location struck. Ancestral Armor is not expended after use and will continue to provide protection until removed with Dispel Magic or similar magic or abilities.<BR>
              L: Phase Arrow and Phase Bolt interact with armor worn by the bearer as though Ancestral Armor was not present.<BR>
              N: Engulfing Effects that do not strike the bearer's armor and abilities that ignore armor entirely do not trigger Ancestral Armor.</TD></TR>
+        <tr>
+        <td>N/A</td>
+        <td><b>Momentum</b></td>
+        </tr>
+        <TR><TD></TD><TD> <u>1/Life Charge x3 (ex) (Ambulant)</u><BR>
+            T: Verbal S: Sorcery R: Self<BR>
+            I: <I>“Momentum”</I><BR>
+            E: May be used to instantly Charge a single ability by stating its name.<BR>
+            L: Kill Trigger.</TD></TR>
      </table>  
  
      <h3>Archetype Info</h3>
      <p><b>Marauder</b><br>
-        T: Archetype S: Neutral<br>        
-        E: Player may choose to use Scavenge for its usual effect or to instantly Charge an ability. Insult becomes 1/Life Charge x5.<br>
-        L: Maximum Armor becomes 4pts. May not wield Large shields.
+       T: Archetype S: Neutral<br>
+       E: Gain Momentum Unlimited (ex) (Ambulant). Insult becomes 1/Life Charge x5 (m) (Ambulant).<br>
+       L: Maximum Armor becomes 4pts. May not wield Large shields. Ancestral Armor is no longer chargeable.
      </p>
  
      
