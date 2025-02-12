@@ -1229,7 +1229,7 @@ const Lycanthropy = {
   max: 2, charge: "", use: 1, per: "Refresh",
   pointTotalId: "Lycanthropyval",
   name: "Lycanthropy", type: "Enchantment",
-  text: "<p2>Lycanthropy</p2><BR><p3>Freq:</p3>  1/Refresh<BR><p3>Type:</p3>  Enchantment<BR><p3>School:</p3> Death<BR><p3>Range:</p3> Other<BR><p3>Incant:</p3> <I>I enchant thee with Lycanthopy</I> x3<BR><p3>Materials:</p3> White Strip and Red Strip<BR><p3>Effect:</p3> Bearer gains two points of magic armor. Bearer’s melee weapons are Shield Crushing. Bearer is Immune to Command"
+  text: "<p2>Lycanthropy</p2><BR><p3>Freq:</p3>  1/Refresh<BR><p3>Type:</p3>  Enchantment<BR><p3>School:</p3> Death<BR><p3>Range:</p3> Other<BR><p3>Incant:</p3> <I>I enchant thee with Lycanthopy</I> x3<BR><p3>Materials:</p3> White Strip and Red Strip<BR><p3>Effect:</p3> Bearer gains two points of magic armor. Bearer’s wielded melee weapons are Shield Crushing. Bearer is Immune to Command"
 };
 const Swift = {
   purchased: 0,
