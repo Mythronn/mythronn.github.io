@@ -183,6 +183,10 @@ function expandZeros(input) {
   });
 }
 /*##################################*/
+function toggleIncants(){
+  showIncants = !showIncants;
+}
+/*##################################*/
 function toggleList(){
   var tables = [];
   var lists = [];
@@ -221,6 +225,9 @@ function toggleList(){
         }      
         if(abilities[k].type == "Verbal" && abilities[0].purchased <= 0){
           levelList[i] = levelList[i] + ": " + abilities[k].use * abilities[k].purchased + "/" + abilities[k].per + " " + abilities[k].charge;
+        }
+        if(showIncants){
+          levelList[i] = levelList[i] + "<BR>" + abilities[k].incant;
         }
        }
     }
@@ -985,6 +992,7 @@ var popup = document.getElementById(elementId);
 var pointsAvailable = [0, 5,  5,  5,  5,  5,  6];
 var pointsSpent = [0, 0,  0,  0,  0,  0,  0];
 var higherLevelPoints = [0, 0,  0,  0,  0,  0,  0];
+var showIncants = false;
 
 /*ABILITY DATA
 |||||||||||||||||||||||||||||||||||
