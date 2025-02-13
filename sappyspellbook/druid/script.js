@@ -150,7 +150,7 @@ function toggleIncants(){
   toggleList("incants");
 }
 /*##################################*/
-function toggleList(){
+function toggleList(incantOnly){
   var tables = [];
   var lists = [];
   var levelList = ["", "", "", "", "", "", ""];
