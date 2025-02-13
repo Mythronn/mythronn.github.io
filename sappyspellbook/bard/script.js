@@ -185,9 +185,10 @@ function expandZeros(input) {
 /*##################################*/
 function toggleIncants(){
   showIncants = !showIncants;
+  toggleList("IncantOnly");
 }
 /*##################################*/
-function toggleList(){
+function toggleList(incantOnly){
   var tables = [];
   var lists = [];
   var levelList = ["", "", "", "", "", "", ""];
@@ -227,11 +228,11 @@ function toggleList(){
           levelList[i] = levelList[i] + ": " + abilities[k].use * abilities[k].purchased + "/" + abilities[k].per + " " + abilities[k].charge;
         }
         if(showIncants){
-          levelList[i] = levelList[i] + "<BR>" + abilities[k].incant;
+          levelList[i] = levelList[i] + "<BR>- " + abilities[k].incant;
         }
        }
     }
-    if(tables[i].style.display == "block"){
+    if(tables[i].style.display == "block" && IncantOnly != "IncantOnly"){
       levelList[i] = levelList[i].slice(4);
       lists[i].innerHTML = levelList[i];
       tables[i].style.display = "none";
@@ -266,7 +267,7 @@ function toggleList(){
         document.getElementById("6thHeader").hidden = true;
       }
     }
-    else{
+    else if(IncantOnly != "IncantOnly"){
       tables[i].style.display = "block";
       lists[i].style.display = "none";
       document.getElementById("saveList").hidden = true;
