@@ -181,7 +181,12 @@ function expandZeros(input) {
   });
 }
 /*##################################*/
-function toggleList(){
+function toggleIncants(){
+  showIncants = !showIncants;
+  toggleList("incants");
+}
+/*##################################*/
+function toggleList(incantOnly){
   var tables = [];
   var lists = [];
   var levelList = ["", "", "", "", "", "", ""];
@@ -217,15 +222,20 @@ function toggleList(){
         if(abilities[k].type == "Verbal" && !((abilities[k].school == "Death" || abilities[k].school == "Flame") && abilities[51].purchased == 1)){
           levelList[i] = levelList[i] + ": " + abilities[k].use * abilities[k].purchased + "/" + abilities[k].per + " " + abilities[k].charge;
         }
+        if(showIncants && abilities[k].incant != ""){
+          levelList[i] = levelList[i] + "<BR>- " + abilities[k].incant;
+        }
        }
     }
-    if(tables[i].style.display == "block"){
-      levelList[i] = levelList[i].slice(4);
-      lists[i].innerHTML = levelList[i];
+    levelList[i] = levelList[i].slice(4);
+    lists[i].innerHTML = levelList[i];
+    if(tables[i].style.display == "block" && incantOnly != 'incants'){
+      
       tables[i].style.display = "none";
       lists[i].style.display = "block";
       document.getElementById("saveList").hidden = false;
       document.getElementById("titleList").hidden = false;
+      document.getElementById("toggleIncants").hidden = false;
       document.getElementById("hlp1").hidden = true;
       document.getElementById("hlp2").hidden = true;
       document.getElementById("hlp3").hidden = true;
@@ -253,11 +263,12 @@ function toggleList(){
         document.getElementById("6thHeader").hidden = true;
       }
     }
-    else{
+    else if(incantOnly != 'incants'){
       tables[i].style.display = "block";
       lists[i].style.display = "none";
       document.getElementById("saveList").hidden = true;
       document.getElementById("titleList").hidden = true;
+      document.getElementById("toggleIncants").hidden = true;
       document.getElementById("hlp1").hidden = false;
       document.getElementById("hlp2").hidden = false;
       document.getElementById("hlp3").hidden = false;
@@ -1075,6 +1086,7 @@ var popup = document.getElementById(elementId);
 var pointsAvailable = [0, 5,  5,  5,  5,  5,  6];
 var pointsSpent = [0, 0,  0,  0,  0,  0,  0];
 var higherLevelPoints = [0, 0,  0,  0,  0,  0,  0];
+var showIncants = false;
 
 
 /*ABILITY DATA

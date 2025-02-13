@@ -181,7 +181,12 @@ function expandZeros(input) {
   });
 }
 /*##################################*/
-function toggleList(){
+function toggleIncants(){
+  showIncants = !showIncants;
+  toggleList("incants");
+}
+/*##################################*/
+function toggleList(incantOnly){
   var tables = [];
   var lists = [];
   var levelList = ["", "", "", "", "", "", ""];
@@ -217,15 +222,20 @@ function toggleList(){
         if(abilities[k].type == "Enchantment" && !((abilities[k].school == "Protection") && abilities[2].purchased == 1)){
           levelList[i] = levelList[i] + ": " + abilities[k].use * abilities[k].purchased + "/" + abilities[k].per + " " + abilities[k].charge;
         }
+        if(showIncants && abilities[k].incant != ""){
+          levelList[i] = levelList[i] + "<BR>- " + abilities[k].incant;
+        }
        }
     }
-    if(tables[i].style.display == "block"){
-      levelList[i] = levelList[i].slice(4);
-      lists[i].innerHTML = levelList[i];
+    levelList[i] = levelList[i].slice(4);
+    lists[i].innerHTML = levelList[i];
+    if(tables[i].style.display == "block" && incantOnly != 'incants'){
+      
       tables[i].style.display = "none";
       lists[i].style.display = "block";
       document.getElementById("saveList").hidden = false;
       document.getElementById("titleList").hidden = false;
+      document.getElementById("toggleIncants").hidden = false;
       document.getElementById("hlp1").hidden = true;
       document.getElementById("hlp2").hidden = true;
       document.getElementById("hlp3").hidden = true;
@@ -253,11 +263,12 @@ function toggleList(){
         document.getElementById("6thHeader").hidden = true;
       }
     }
-    else{
+    else if(incantOnly != 'incants'){
       tables[i].style.display = "block";
       lists[i].style.display = "none";
       document.getElementById("saveList").hidden = true;
       document.getElementById("titleList").hidden = true;
+      document.getElementById("toggleIncants").hidden = true;
       document.getElementById("hlp1").hidden = false;
       document.getElementById("hlp2").hidden = false;
       document.getElementById("hlp3").hidden = false;
@@ -961,6 +972,7 @@ var popup = document.getElementById(elementId);
 var pointsAvailable = [0, 5,  5,  5,  5,  5,  6];
 var pointsSpent = [0, 0,  0,  0,  0,  0,  0];
 var higherLevelPoints = [0, 0,  0,  0,  0,  0,  0];
+var showIncants = false;
 
 /*ABILITY DATA
 |||||||||||||||||||||||||||||||||||
@@ -1544,7 +1556,7 @@ const UndeadMinion = {
   pointTotalId: "UndeadMinionval",
   name: "Undead Minion", type: "Enchantment",  freq: "1/Ref",
   school: "Death", range: "Other", materials: "Yellow Strip",
-  incant: "<I>Flesh rots, bones break, skulls sigh, spirits take let the power of my will descend on thee let the power of my will restore thy spirit let the power of my will knit thy corpse let the power of my will give thee direction let the power of my will cheat thy death by the power of my will, arise my minion!</I>", 
+  incant: "<I>Flesh rots, bones break, skulls sigh, spirits take.<BR> Let the power of my will descend on thee.<BR> Let the power of my will restore thy spirit.<BR> Let the power of my will knit thy corpse.<BR> Let the power of my will give thee direction.<BR> Let the power of my will cheat thy death.<BR> By the power of my will, arise my minion!</I>", 
   effect: "Bearer is Cursed. When the bearer dies, they must return to the caster. While the bearer is enchanted, the caster gains Raise Dead (Unlimited) (m) which can only be cast with the bearer as the target, and ignores the requirement for the bearer to have not moved from where they died. For the duration of the Enchantment, the bearer may treat the caster as a base for the purposes of the effects which require the bearer to go to their base. This enchantment is Persistent, and remains active while the bearer is dead.",
   limitations: "The caster may not have more than three active Undead Minion Enchantments.",
   notes: "",
@@ -1575,7 +1587,7 @@ const AncestralArmor = {
   pointTotalId: "AncestralArmorval",
   name: "Ancestral Armor", type: "Enchantment",  freq: "1/Ref",
   school: "Protection", range: "Other", materials: "White Strip",
-  incant: "<I>May this armor protect thee from all forms of harm. May the flames of the fire not burn thee. May the bolts from the heavens not strike thee. May the arrows of your enemies not pierce thee. May this armor protect thee from all forms of harm.</I>", 
+  incant: "<I>May this armor protect thee from all forms of harm.<BR> May the flames of the fire not burn thee.<BR> May the bolts from the heavens not strike thee.<BR> May the arrows of your enemies not pierce thee.<BR> May this armor protect thee from all forms of harm.</I>", 
   effect: "The effects of a Magic Ball, projectile weapon, or melee weapon which just struck armor worn by the player are ignored, even if the object would not otherwise affect the armor. The armor loses one point of value in the location struck. This effect will not trigger if the armor has no points left in the location struck. Ancestral Armor is not expended after use and will continue to provide protection until removed with Dispel Magic or similar magic or abilities", 
   limitations: "Phase Arrow and Phase Bolt interact with armor worn by the bearer as though Ancestral Armor was not present",
   notes: "Engulfing Effects that do not strike the bearer's armor and abilities that ignore armor entirely do not trigger Ancestral Armor",
