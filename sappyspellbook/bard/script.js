@@ -185,7 +185,7 @@ function expandZeros(input) {
 /*##################################*/
 function toggleIncants(){
   showIncants = !showIncants;
-  toggleList("IncantOnly");
+  toggleList("incants");
 }
 /*##################################*/
 function toggleList(incantOnly){
@@ -232,7 +232,7 @@ function toggleList(incantOnly){
         }
        }
     }
-    if(tables[i].style.display == "block" && IncantOnly != "IncantOnly"){
+    if(tables[i].style.display == "block" && incantOnly != "incants"){
       levelList[i] = levelList[i].slice(4);
       lists[i].innerHTML = levelList[i];
       tables[i].style.display = "none";
@@ -267,7 +267,7 @@ function toggleList(incantOnly){
         document.getElementById("6thHeader").hidden = true;
       }
     }
-    else if(IncantOnly != "IncantOnly"){
+    else if(incantOnly != "incants"){
       tables[i].style.display = "block";
       lists[i].style.display = "none";
       document.getElementById("saveList").hidden = true;
