@@ -232,9 +232,10 @@ function toggleList(incantOnly){
         }
        }
     }
-    if(tables[i].style.display == "block" && incantOnly != "incants"){
-      levelList[i] = levelList[i].slice(4);
-      lists[i].innerHTML = levelList[i];
+    levelList[i] = levelList[i].slice(4);
+    lists[i].innerHTML = levelList[i];
+    if(tables[i].style.display == "block" && incantOnly != 'incants'){
+      
       tables[i].style.display = "none";
       lists[i].style.display = "block";
       document.getElementById("saveList").hidden = false;
@@ -267,7 +268,7 @@ function toggleList(incantOnly){
         document.getElementById("6thHeader").hidden = true;
       }
     }
-    else if(incantOnly != "incants"){
+    else if(incantOnly != 'incants'){
       tables[i].style.display = "block";
       lists[i].style.display = "none";
       document.getElementById("saveList").hidden = true;
