@@ -227,7 +227,7 @@ function toggleList(incantOnly){
         if(abilities[k].type == "Verbal" && abilities[0].purchased <= 0){
           levelList[i] = levelList[i] + ": " + abilities[k].use * abilities[k].purchased + "/" + abilities[k].per + " " + abilities[k].charge;
         }
-        if(showIncants){
+        if(showIncants && abilities[k].incant != ""){
           levelList[i] = levelList[i] + "<BR>- " + abilities[k].incant;
         }
        }
