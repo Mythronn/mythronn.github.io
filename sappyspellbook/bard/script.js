@@ -400,15 +400,15 @@ function processExpChange(fromUser){
       updateAbilityText(15);
     }
     if(abilities[3].selectedAbility1 == "Break Concentration" || abilities[3].selectedAbility2 == "Break Concentration"){
-      abilities[17].charge = "Charge x10";
-      abilities[17].freq = "1/Ref CHARGE x10";
-      if(abilities[0].purchased > 0){abilities[17].freq = "2/Ref CHARGE x10";}
+      abilities[17].charge = "Charge x5";
+      abilities[17].freq = "1/Life CHARGE x5";
+      if(abilities[0].purchased > 0){abilities[17].freq = "2/Life CHARGE x5";}
       updateAbilityText(17);
     }
     else{
       abilities[17].charge = "";
-      abilities[17].freq = "1/Ref";
-      if(abilities[0].purchased > 0){abilities[17].freq = "2/Ref";}
+      abilities[17].freq = "1/Life";
+      if(abilities[0].purchased > 0){abilities[17].freq = "2/Life";}
       updateAbilityText(17);
     }
     if(abilities[3].selectedAbility1 == "Empower" || abilities[3].selectedAbility2 == "Empower"){
@@ -868,7 +868,7 @@ function processDervishPlus(){
   abilities[10].freq = "2/Ref";
   abilities[12].freq = "2Life";
   abilities[15].freq = "2/Life";
-  abilities[17].freq = "2/Ref";
+  abilities[17].freq = "2/Life";
   abilities[23].freq = "2/Ref";
   abilities[27].freq = "2/Ref";
   abilities[29].freq = "2/Ref";
@@ -910,7 +910,7 @@ function processDervishMinus(){
   abilities[10].freq = "1/Ref";
   abilities[12].freq = "1Life";
   abilities[15].freq = "1/Life";
-  abilities[17].freq = "1/Ref";
+  abilities[17].freq = "1/Life";
   abilities[23].freq = "1/Ref";
   abilities[27].freq = "1/Ref";
   abilities[29].freq = "1/Ref";
