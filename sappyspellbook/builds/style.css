@@ -1,0 +1,41 @@
+a.Bard {
+  background-color: #0047AB;
+  color: White;
+}
+a.Druid {
+  background-color: #83441a;
+  color: White;
+}
+a.Healer {
+  background-color: #ac0404;
+  color: White;
+}
+a.Wizard {
+  background-color: #FFD700;
+  color: black;
+  
+}
+.midnav a {
+    /* color: #f2f2f2; */
+    text-align: center;
+    padding: 5px 10px;
+    /* font-size: 16px; */
+    margin: 1px;
+
+    font-family: 'MedievalSharp';
+    /*background-color: #2e1a13;*/
+    overflow: hidden;
+
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 20px;
+    border-color: #202020;
+    cursor: pointer;
+    transform: scale(1.1);
+    
+    display:inline-block;
+    margin-top: 10px;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
