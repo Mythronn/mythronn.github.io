@@ -5,11 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Wizard Spellbook</title>
   <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="./style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
 
   <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7JR53Y27TN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-7JR53Y27TN');
+</script>
 </head>
 <body>
     <div class="topnav">
@@ -17,19 +26,20 @@
       <a href="https://mythronn.github.io/sappyspellbook/druid/" class="Druid" >DRUID</a>
       <a href="https://mythronn.github.io/sappyspellbook/healer/" class="Healer" >HEALER</a>
       <a href="https://mythronn.github.io/sappyspellbook/wizard/" class="Wizard" >WIZARD</a>
-      <a href="https://mythronn.github.io/sappyspellbook/Martial/" class="Martial" >MARTIAL</a>
-  </div>
+    </div>
   <a href="https://mythronn.github.io/sappyspellbook/">Version: 8.6.3</a><BR>
-    <div style="display:none" id="ltpCheckBox"></div>
-    <div style="display:none" id="level1Points"></div>
-    <div style="display:none" id="level2Points"></div>
-    <div style="display:none" id="level3Points"></div>
-    <div style="display:none" id="level4Points"></div>
-    <div style="display:none" id="level5Points"></div>
-    <div style="display:none" id="level6Points"></div>
-    <div class="ui-body ui-body-a ui-corner-all">
-  <p>
-        <h1><span id="titleShow">Color Game</span></h1>
+
+  <div class="ui-body ui-body-a ui-corner-all" id="buttons">
+    <H1>Quizzes</H1>
+    <div class="prompt"><b>Assorted Quizzes</b></span>
+    <div role="main" class="ui-content">
+      <div class="mainblock">      
+        <div class="midnav">
+          <a href="https://mythronn.github.io/sappyspellbook/quizzes/colors.html" class="Colors">COLORS</a>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <div id="toastMessage" class="toast"></div>
 <!-- partial -->

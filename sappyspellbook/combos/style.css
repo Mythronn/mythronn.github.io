@@ -1,0 +1,23 @@
+
+.midnav div {
+    text-align: left;
+    padding: 5px 10px;
+    font-size: 16px;
+    margin: 1px;
+
+    overflow: hidden;
+
+    /* border-style: solid;
+    border-width: 1px;
+    border-radius: 20px;
+    border-color: #20202081; */
+    cursor: pointer;
+    transform: scale(1.1);
+    
+    /* display:inline-block; */
+    margin-top: 10px;
+    margin-right: 5px;
+    margin-left: 5px;
+    background-image: rgba(251, 0, 0, 0.7);
+    color: rgb(0, 0, 0);        
+}

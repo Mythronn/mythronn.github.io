@@ -19,63 +19,20 @@ function loadScript(caster){
 // loadScript("wizard")
 
 // https://wiki.amtgard.com/Sash
-// var colors = {
-//   "Anti-Paladin" : ["Silver", "#C0C0C0"]
-//   ,"Archer" : ["Orange", "#ff6600" ]
-// }
-
-function getColor(backgroundColors, selector) {
-  // Parse parent and child selectors
-  const [parentSelector, childSelector] = selector.split(' ');
-
-  // Create parent element (e.g., .midnav or .topnav)
-  const parentElement = document.createElement('div');
-  parentElement.className = parentSelector.replace('.', '');
-
-  // Create child element (e.g., <a class="Archer">)
-  const [childTag, childClass] = childSelector.split('.');
-  const childElement = document.createElement(childTag || 'div');
-  if (childClass) childElement.className = childClass;
-
-  // Nest child inside parent
-  parentElement.appendChild(childElement);
-  document.body.appendChild(parentElement);
-
-  // Get computed background color
-  const computedStyle = window.getComputedStyle(childElement);
-  backgroundColors[selector] = computedStyle.backgroundColor;
-
-  // Cleanup
-  document.body.removeChild(parentElement);
+var colors = {
+  "AntiPaladin" : ["Silver", "#C0C0C0"]
+  , "Archer"    : ["Orange", "#ff6600"]
+  , "Assassin"  : ["Black", "#000000"]
+  , "Barbarian" : ["White", "#ffffff"]
+  , "Bard"      : ["Blue", "#0047AB"]
+  , "Druid"     : ["Brown", "#83441a"]
+  , "Healer"    : ["Red", "#ac0404"]
+  , "Monk"      : ["Grey", "#7c7c7c"]
+  , "Paladin"   : ["Gold", "#D3AF37"]
+  , "Peasant"   : ["No Sash, no Garb", "#"]
+  , "Reeve"     : ["Black and White, Checkered or Striped", "#"]
+  , "Scout"     : ["Green", "#00a800"]
+  , "Warrior"   : ["Purple", "#8400b8"]
+  , "Wizard"    : ["Yellow", "#FFD700"]
+  , "Monster"   : ["No sash, appropriate garb", "#"]
 }
-
-function loadExternalCSS(cssUrl, classGroups) {
-  return new Promise((resolve, reject) => {
-    const link = document.createElement('link');
-    link.rel = 'stylesheet';
-    link.href = cssUrl;
-    console.log(link)
-
-    link.onload = () => {
-      const backgroundColors = {};
-
-      classGroups[0].forEach(martial => {
-        getColor(backgroundColors, ".midnav a."+martial)
-      });
-      classGroups[1].forEach(caster => {
-        getColor(backgroundColors, ".topnav a."+caster)
-      });
-
-      resolve(backgroundColors);
-    };
-
-    link.onerror = () => reject(new Error(`Failed to load CSS: ${cssUrl}`));
-
-    document.head.appendChild(link);
-  });
-}
-
-var selectors = [["Anti-Paladin", "Archer", "Assassin", "Barbarian", "Monk", "Paladin", "Peasant", "Reeve", "Scout", "Warrior", "Monster"], ["Bard", "Druid", "Healer", "Wizard"]]
-var colors = loadExternalCSS('../Martial/style.css', selectors)
-  .then(colors => console.log('Background Colors:', colors))
-  .catch(err => console.error(err));
