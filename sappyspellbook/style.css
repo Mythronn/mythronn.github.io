@@ -103,6 +103,11 @@ a.Builds {
   color: black;  
 }
 
+.topnav a.Martial {
+  background-image: linear-gradient(rgb(255, 166, 0), rgb(255, 248, 230));
+  color: black;
+  font-size: 18px;
+}
 
 /* Section Styling */
 .ui-body {

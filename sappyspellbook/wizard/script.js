@@ -1894,6 +1894,8 @@ const abilities = [Banish, //0
    
 ];
 
+function getAbilities(){return abilities}
+
 function saveList(){
   let textToSave = "";
     if(document.title == "Wizard Spellbook"){
