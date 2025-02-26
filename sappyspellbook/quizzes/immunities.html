@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Class Color Match Game</title>
+  <title>Class Immunity Match Game</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -29,7 +29,6 @@
       cursor: pointer;
       font-size: 16px;
     }
-
     .details {
       font-size: 20px;
       margin-top: 20px;
@@ -39,11 +38,11 @@
   </style>
   <link rel="stylesheet" href="../style.css">
   <link rel="stylesheet" href="./style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
 
-  <!-- Google tag (gtag.js) -->
+  Google tag (gtag.js)
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-7JR53Y27TN"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -51,7 +50,7 @@
   gtag('js', new Date());
 
   gtag('config', 'G-7JR53Y27TN');
-</script>
+</script> -->
 <script  src="./script.js"></script>
 </head>
 <body>
@@ -61,17 +60,18 @@
   </div>
   <a href="https://mythronn.github.io/sappyspellbook/">Version: 8.6.3</a>
 
-  <h1>Class Color Match Game</h1>
-  <h2>Which class matches this color?</h2>
+  <h1>Class Immunity Match Game</h1>
+  <h2>Which immunity matches this class color?</h2>
   <div id="game-container">
-    <div class="button-container"><button class="class-button" id="description"></button></div>
+    <div class="button-container"><button class="class-button" id="description">Color</button></div>
     <div class="button-container"><button class="class-button" id="score">Score: 0</button></div>
     <div class="button-container" id="button-container"></div>
   </div>
 
   <script>
     // https://wiki.amtgard.com/Sash
-    const classes = getClassColorImmunity()
+    var classes = getClassColorImmunity()
+    classes["Others"] = ["Other", "", ["None"]]
 
     const gameContainer = document.getElementById('game-container')
     const buttonContainer = document.getElementById('button-container')
@@ -83,7 +83,7 @@
     function getRandomClass() {
       const keys = Object.keys(classes)
       var newClass = keys[Math.floor(Math.random() * keys.length)]
-      return newClass != currentClass ? newClass : getRandomClass()
+      return newClass != currentClass && newClass != "Others" ? newClass : getRandomClass()
     }
 
     function startGame() {
@@ -102,17 +102,22 @@
     function createButtons() {
       buttonContainer.innerHTML = ""
       Object.keys(classes).forEach(cls => {
-        const button = document.createElement('button')
-        button.innerText = cls
-        button.className = 'class-button'
-        button.onclick = () => checkAnswer(cls)
-        buttonContainer.appendChild(button)
+        if(classes[cls][2].length > 0){
+          const button = document.createElement('button')
+          button.innerText = classes[cls][2].join(", ")
+          button.className = 'class-button'
+          button.onclick = () => checkAnswer(cls)
+          buttonContainer.appendChild(button)
+        }
       });
     }
-
+    
     function checkAnswer(selectedClass) {
-      const correctButton = [...document.getElementsByClassName('class-button')].find(btn => btn.innerText === currentClass)
-      const point = selectedClass === currentClass
+      const buttons = [...document.getElementsByClassName('class-button')]
+      const immunities = classes[currentClass][2]
+      const properAnswer = immunities.length == 0 ? "None" : immunities.join(", ")
+      const correctButton = buttons.find(btn => btn.innerText === properAnswer)
+      const point = correctButton.innerText === properAnswer
 
       scoreDisplay.style.backgroundColor = point ? "green" : "red"
       scoreDisplay.style.transition = "background-color 0.3s ease"
@@ -120,7 +125,7 @@
       correctButton.style.backgroundColor = "green"
       correctButton.style.transition = "background-color 0.3s ease"
       setTimeout(() => correctButton.style.backgroundColor = "", 300)
-
+      
       score += point*2 - 1
       scoreDisplay.innerText = `Score: ${score}`
       gameLoop()
