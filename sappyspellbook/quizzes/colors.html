@@ -55,6 +55,7 @@
 
   gtag('config', 'G-7JR53Y27TN');
 </script>
+<script  src="./script.js"></script>
 </head>
 <body>
   <div class="topnav">
@@ -73,23 +74,7 @@
 
   <script>
     // https://wiki.amtgard.com/Sash
-    const classes = {
-      "Anti-Paladin": ["Silver", "#C0C0C0"],
-      "Archer": ["Orange", "#ff6600"],
-      "Assassin": ["Black", "#000000"],
-      "Barbarian": ["White", "#ffffff"],
-      "Bard": ["Blue", "#0047AB"],
-      "Druid": ["Brown", "#83441a"],
-      "Healer": ["Red", "#ac0404"],
-      "Monk": ["Grey", "#7c7c7c"],
-      "Monster": ["No sash, appropriate garb", ""],
-      "Paladin": ["Gold", "#D3AF37"],
-      "Peasant": ["No Sash, no Garb", ""],
-      "Reeve": ["Black and White, Checkered or Striped", ""],
-      "Scout": ["Green", "#00a800"],
-      "Warrior": ["Purple", "#8400b8"],
-      "Wizard": ["Yellow", "#FFD700"]
-    };
+    const classes = getClassColorImmunity()
 
     const gameContainer = document.getElementById('game-container');
     const buttonContainer = document.getElementById('button-container');
