@@ -29,6 +29,10 @@
       cursor: pointer;
       font-size: 16px;
     }
+    /* .correct-answer {
+      background-color: white !important;
+      transition: background-color 1s ease;
+    } */
     .details {
       font-size: 20px;
       margin-top: 20px;
@@ -78,13 +82,13 @@
       "Druid": ["Brown", "#83441a"],
       "Healer": ["Red", "#ac0404"],
       "Monk": ["Grey", "#7c7c7c"],
+      "Monster": ["No sash, appropriate garb", ""],
       "Paladin": ["Gold", "#D3AF37"],
       "Peasant": ["No Sash, no Garb", ""],
       "Reeve": ["Black and White, Checkered or Striped", ""],
       "Scout": ["Green", "#00a800"],
       "Warrior": ["Purple", "#8400b8"],
-      "Wizard": ["Yellow", "#FFD700"],
-      "Monster": ["No sash, appropriate garb", ""]
+      "Wizard": ["Yellow", "#FFD700"]
     };
 
     const gameContainer = document.getElementById('game-container');
@@ -125,7 +129,15 @@
     }
 
     function checkAnswer(selectedClass) {
-        score += (selectedClass === currentClass)*2 - 1
+        const correctButton = [...document.getElementsByClassName('class-button')].find(btn => btn.innerText === currentClass);
+        const point = selectedClass === currentClass
+        scoreDisplay.style.backgroundColor = point ? "green" : "red"
+        scoreDisplay.style.transition = "background-color 0.3s ease";
+        setTimeout(() => scoreDisplay.style.backgroundColor = "", 300);
+        correctButton.style.backgroundColor = "green";
+        correctButton.style.transition = "background-color 0.3s ease";
+        setTimeout(() => correctButton.style.backgroundColor = "", 300);
+        score += point*2 - 1
         scoreDisplay.innerText = `Score: ${score}`
         gameLoop()
     }
