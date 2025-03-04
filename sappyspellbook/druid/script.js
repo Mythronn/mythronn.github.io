@@ -1522,6 +1522,8 @@ SnaringVines, //48
 Summoner //49
 ];
 
+function getAbilities(){return abilities}
+
 function saveList(){
   let textToSave = "";
     if(document.title == "Druid Spellbook"){

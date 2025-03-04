@@ -1,0 +1,48 @@
+.topnav a.Quizzes {
+  background-image: linear-gradient(#ab95bc, #ccdedf);
+  border-color: #000000;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 20px;
+  cursor: pointer;
+  padding: 5px 10px;
+  color: black;  
+  font-size: 22px;
+}
+
+.topnav a.Home {
+  border-color: #000000;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 20px;
+  cursor: pointer;
+  padding: 5px 10px;
+  color: black;  
+  font-size: 22px;
+  background-color: #EAE0CC;
+  color: #4b2c20;
+}
+
+.midnav a {
+  /* color: #f2f2f2; */
+  text-align: center;
+  padding: 5px 10px;
+  /* font-size: 16px; */
+  margin: 1px;
+
+  font-family: 'MedievalSharp';
+  /*background-color: #2e1a13;*/
+  overflow: hidden;
+
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 20px;
+  border-color: #202020;
+  cursor: pointer;
+  transform: scale(1.1);
+  
+  display:inline-block;
+  margin-top: 10px;
+  margin-right: 5px;
+  margin-left: 5px;
+}

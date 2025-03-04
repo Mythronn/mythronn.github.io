@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Class Immunity Match Game</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    #game-container {
+      padding: 20px;
+      border-radius: 10px;
+      color: #fff;
+    }
+    .button-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    .class-button {
+      margin: 5px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    .details {
+      font-size: 20px;
+      margin-top: 20px;
+      background-color: white;
+      color: black;
+    }
+  </style>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="./style.css">
+  <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
+
+  Google tag (gtag.js)
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7JR53Y27TN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-7JR53Y27TN');
+</script> -->
+<script  src="./script.js"></script>
+</head>
+<body>
+  <div class="topnav">
+    <a href="https://mythronn.github.io/sappyspellbook/" class="Home" >HOME</a>
+    <a href="https://mythronn.github.io/sappyspellbook/quizzes/" class="Quizzes" >QUIZZES</a>
+  </div>
+  <a href="https://mythronn.github.io/sappyspellbook/">Version: 8.6.3</a>
+  
+  <div class="ui-body ui-body-a ui-corner-all" id="buttons">
+    <h1>Class Immunity Match Game</h1>
+    <div class="prompt"><b>Which immunities matches the class color?</b></span></div>
+
+    <div id="game-container">
+      <div class="button-container"><button class="class-button" id="description">Color</button></div>
+      <div class="button-container"><button class="class-button" id="score">Score: 0</button></div>
+      <div class="button-container" id="button-container"></div>
+    </div>
+  </div>
+
+  <script>
+    // https://wiki.amtgard.com/Sash
+    var classes = getClassColorImmunity()
+    classes["Others"] = ["Other", "", ["None"]]
+
+    const gameContainer = document.getElementById('game-container')
+    const buttonContainer = document.getElementById('button-container')
+    const description = document.getElementById('description')
+    const scoreDisplay = document.getElementById('score')
+    let score = 0
+    let currentClass = ""
+
+    function getRandomClass() {
+      const keys = Object.keys(classes)
+      var newClass = keys[Math.floor(Math.random() * keys.length)]
+      return newClass != currentClass && newClass != "Others" ? newClass : getRandomClass()
+    }
+
+    function startGame() {
+      gameLoop()
+      createButtons()
+    }
+
+    function gameLoop(){
+      currentClass = getRandomClass()
+      description.innerHTML = classes[currentClass][0]
+      var hexColor = classes[currentClass][1]
+      gameContainer.style.backgroundColor = "rgba(0,0,0,0)"
+      if(hexColor != "") gameContainer.style.backgroundColor = hexColor
+    }
+
+    function createButtons() {
+      buttonContainer.innerHTML = ""
+      Object.keys(classes).forEach(cls => {
+        if(classes[cls][2].length > 0){
+          const button = document.createElement('button')
+          button.innerText = classes[cls][2].join(", ")
+          button.className = 'class-button'
+          button.onclick = () => checkAnswer(cls)
+          buttonContainer.appendChild(button)
+        }
+      });
+    }
+    
+    function checkAnswer(selectedClass) {
+      const buttons = [...document.getElementsByClassName('class-button')]
+      const immunities = classes[currentClass][2]
+      const properAnswer = immunities.length == 0 ? "None" : immunities.join(", ")
+      const correctButton = buttons.find(btn => btn.innerText === properAnswer)
+      const point = correctButton.innerText === properAnswer
+
+      scoreDisplay.style.backgroundColor = point ? "green" : "red"
+      scoreDisplay.style.transition = "background-color 0.3s ease"
+      setTimeout(() => scoreDisplay.style.backgroundColor = "", 300)
+      correctButton.style.backgroundColor = "green"
+      correctButton.style.transition = "background-color 0.3s ease"
+      setTimeout(() => correctButton.style.backgroundColor = "", 300)
+
+      score += point*2 - 1
+      scoreDisplay.innerText = `Score: ${score}`
+      gameLoop()
+    }
+
+    // Start the game on load
+    window.onload = startGame;
+  </script>
+</body>
+</html>

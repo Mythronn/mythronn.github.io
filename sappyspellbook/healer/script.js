@@ -1759,6 +1759,8 @@ const abilities = [Priest,	//0
   Stun	//49  
 ];
 
+function getAbilities(){return abilities}
+
 function saveList(){
   let textToSave = "";
     if(document.title == "Healer Spellbook"){
