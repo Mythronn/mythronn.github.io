@@ -126,15 +126,15 @@
         startGame()
     }
 
-    document.getElementById('level-select').addEventListener('click', function() {
+    document.getElementById('level-select').addEventListener('change', function() {
         level = parseInt(this.value)
         updateAbilities()
     })
-    document.getElementById('class-select').addEventListener('click', function() {
+    document.getElementById('class-select').addEventListener('change', function() {
         className = this.value;
         updateAbilities()
     });
-    document.getElementById('property-select').addEventListener('click', function() {
+    document.getElementById('property-select').addEventListener('change', function() {
         property = this.value;
         updateAbilities()
     });
