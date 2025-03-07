@@ -111,11 +111,18 @@
     var abilitiesLC = {}
     var currentAbilityID = ""
 
+    function redactSpellName(spell){
+      spell.effect = spell.effect.replace(new RegExp(spell.name, "ig"), "X").trim()
+      // console.log(spell.name + " - " +spell.effect)
+      return spell
+    }
+
     function updateAbilities(){
         abilitiesLC = abilities[className].filter( i => i["level"] == level && i["incant"].length > 0 ).sort( (a,b) => a["name"].localeCompare(b["name"]) )
         if(className == "druid"){
           abilitiesLC = abilitiesLC.map( i => parseSpellText(i))
         }
+        abilitiesLC = abilitiesLC.map( i => redactSpellName(i))
         startGame()
     }
 
