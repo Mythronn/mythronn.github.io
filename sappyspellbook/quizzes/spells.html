@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Class Immunity Match Game</title>
+  <title>Class Color Match Game</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -29,6 +29,7 @@
       cursor: pointer;
       font-size: 16px;
     }
+
     .details {
       font-size: 20px;
       margin-top: 20px;
@@ -38,11 +39,11 @@
   </style>
   <link rel="stylesheet" href="../style.css">
   <link rel="stylesheet" href="./style.css">
-  <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
 
-  Google tag (gtag.js)
+  <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-7JR53Y27TN"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -50,7 +51,7 @@
   gtag('js', new Date());
 
   gtag('config', 'G-7JR53Y27TN');
-</script> -->
+</script>
 <script  src="./script.js"></script>
 </head>
 <body>
@@ -61,8 +62,32 @@
   <a href="https://mythronn.github.io/sappyspellbook/">Version: 8.6.3</a>
   
   <div class="ui-body ui-body-a ui-corner-all" id="buttons">
-    <h1>Class Immunity Match Game</h1>
-    <div class="prompt"><b>Which immunities matches the class color?</b></span></div>
+    <h1>Spell Quiz Match Game</h1>
+    <div class="prompt"><b>Which 
+        level 
+        <select id="level-select">
+            <!-- <option value="All">All</option> -->
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+        </select>
+        <select id="class-select">
+            <!-- <option value="All">All</option> -->
+            <option value="bard">Bard</option>
+            <option value="druid">Druid</option>
+            <option value="healer">Healer</option>
+            <option value="wizard">Wizard</option>
+        </select>
+        spell matches the 
+        <select id="property-select">
+            <option value="incant">Incantation</option>
+            <option value="effect">Effect</option>
+        </select>
+        ?
+        </b></span></div>
 
     <div id="game-container">
       <div class="button-container"><button class="class-button" id="description">Color</button></div>
@@ -72,26 +97,42 @@
   </div>
 
   <script>
-    // https://wiki.amtgard.com/Sash
-    var classes = getClassColorImmunity()
-    // delete classes["Monster"]
-    // delete classes["Reeve"]
-    // classes["Others"] = ["Other", "", ["None"]]
-    classes = Object.fromEntries(
-      Object.entries(classes).filter(([key, value]) => value[2].length > 0)
-    );
-
     const gameContainer = document.getElementById('game-container')
     const buttonContainer = document.getElementById('button-container')
     const description = document.getElementById('description')
     const scoreDisplay = document.getElementById('score')
     let score = 0
-    let currentClass = ""
+    
+    const abilities = getCasterAbilities()
+    var level = 1
+    var className = "bard"
+    var property = "incant"
 
-    function getRandomClass() {
-      const keys = Object.keys(classes)
-      var newClass = keys[Math.floor(Math.random() * keys.length)]
-      return newClass != currentClass && newClass != "Others" ? newClass : getRandomClass()
+    var abilitiesLC = {}
+    var currentAbilityID = ""
+
+    function updateAbilities(){
+        abilitiesLC = abilities[className].filter( i => i["level"] == level && i["incant"].length > 0 ).sort( (a,b) => a["name"].localeCompare(b["name"]) )
+        startGame()
+    }
+
+    document.getElementById('level-select').addEventListener('click', function() {
+        level = parseInt(this.value)
+        updateAbilities()
+    })
+    document.getElementById('class-select').addEventListener('click', function() {
+        className = this.value;
+        updateAbilities()
+    });
+    document.getElementById('property-select').addEventListener('click', function() {
+        property = this.value;
+        updateAbilities()
+    });
+
+    function getRandomSpell() {
+      const keys = Object.keys(abilitiesLC)
+      var newAbilityID = keys[Math.floor(Math.random() * keys.length)]
+      return newAbilityID != currentAbilityID ? newAbilityID : getRandomSpell()
     }
 
     function startGame() {
@@ -100,32 +141,25 @@
     }
 
     function gameLoop(){
-      currentClass = getRandomClass()
-      description.innerHTML = classes[currentClass][0]
-      var hexColor = classes[currentClass][1]
-      gameContainer.style.backgroundColor = "rgba(0,0,0,0)"
-      if(hexColor != "") gameContainer.style.backgroundColor = hexColor
+      currentAbilityID = getRandomSpell()
+      console.log("current Ability = " + abilitiesLC[currentAbilityID]["name"])
+      description.innerHTML = abilitiesLC[currentAbilityID][property]
     }
 
     function createButtons() {
       buttonContainer.innerHTML = ""
-      Object.keys(classes).forEach(cls => {
-        if(classes[cls][2].length > 0){
-          const button = document.createElement('button')
-          button.innerText = classes[cls][2].join(", ")
-          button.className = 'class-button'
-          button.onclick = () => checkAnswer(cls)
-          buttonContainer.appendChild(button)
-        }
+      Object.keys(abilitiesLC).forEach(cls => {
+        const button = document.createElement('button')
+        button.innerText = abilitiesLC[cls]['name']
+        button.className = 'class-button'
+        button.onclick = () => checkAnswer(cls)
+        buttonContainer.appendChild(button)
       });
     }
-    
-    function checkAnswer(selectedClass) {
-      const buttons = [...document.getElementsByClassName('class-button')]
-      const immunities = classes[currentClass][2]
-      const properAnswer = immunities.length == 0 ? "None" : immunities.join(", ")
-      const correctButton = buttons.find(btn => btn.innerText === properAnswer)
-      const point = correctButton.innerText === properAnswer
+
+    function checkAnswer(selectedAbilityID) {
+      const correctButton = [...document.getElementsByClassName('class-button')].find(btn => btn.innerText === abilitiesLC[currentAbilityID]["name"])
+      const point = selectedAbilityID === currentAbilityID
 
       scoreDisplay.style.backgroundColor = point ? "green" : "red"
       scoreDisplay.style.transition = "background-color 0.3s ease"
@@ -139,8 +173,6 @@
       gameLoop()
     }
 
-    // Start the game on load
-    window.onload = startGame;
   </script>
 </body>
 </html>
