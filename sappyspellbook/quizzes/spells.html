@@ -81,7 +81,7 @@
             <option value="healer">Healer</option>
             <option value="wizard">Wizard</option>
         </select>
-        spell matches the 
+        spell <br> matches the 
         <select id="property-select">
             <option value="incant">Incantation</option>
             <option value="effect">Effect</option>
@@ -183,6 +183,8 @@
       scoreDisplay.innerText = `Score: ${score}`
       gameLoop()
     }
+
+    window.onload = setTimeout(() => updateAbilities(), 200)
 
   </script>
 </body>
