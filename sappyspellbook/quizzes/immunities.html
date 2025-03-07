@@ -74,7 +74,12 @@
   <script>
     // https://wiki.amtgard.com/Sash
     var classes = getClassColorImmunity()
-    classes["Others"] = ["Other", "", ["None"]]
+    // delete classes["Monster"]
+    // delete classes["Reeve"]
+    // classes["Others"] = ["Other", "", ["None"]]
+    classes = Object.fromEntries(
+      Object.entries(classes).filter(([key, value]) => value[2].length > 0)
+    );
 
     const gameContainer = document.getElementById('game-container')
     const buttonContainer = document.getElementById('button-container')

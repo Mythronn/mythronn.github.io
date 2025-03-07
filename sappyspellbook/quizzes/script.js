@@ -1,4 +1,4 @@
-function loadScript(caster){
+function loadScript(abilities, caster){
   const iframe = document.createElement('iframe');
   iframe.style.display = 'none';
   document.body.appendChild(iframe);
@@ -15,10 +15,10 @@ function loadScript(caster){
 
 function getCasterAbilities(){
   var abilities = {}
-  loadScript("bard")
-  loadScript("druid")
-  loadScript("healer")
-  loadScript("wizard")
+  loadScript(abilities, "bard")
+  loadScript(abilities, "druid")
+  loadScript(abilities, "healer")
+  loadScript(abilities, "wizard")
   return abilities
 }
 

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Class Color Match Game</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    #game-container {
+      padding: 20px;
+      border-radius: 10px;
+      color: #fff;
+    }
+    .button-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    .class-button {
+      margin: 5px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .details {
+      font-size: 20px;
+      margin-top: 20px;
+      background-color: white;
+      color: black;
+    }
+  </style>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
+
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7JR53Y27TN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-7JR53Y27TN');
+</script>
+<script  src="./script.js"></script>
+</head>
+<body>
+  <div class="topnav">
+    <a href="https://mythronn.github.io/sappyspellbook/" class="Home" >HOME</a>
+    <a href="https://mythronn.github.io/sappyspellbook/quizzes/" class="Quizzes" >QUIZZES</a>
+  </div>
+  <a href="https://mythronn.github.io/sappyspellbook/">Version: 8.6.3</a>
+  
+  <div class="ui-body ui-body-a ui-corner-all" id="buttons">
+    <h1>Spell Quiz Match Game</h1>
+    <div class="prompt"><b>Which 
+        level 
+        <select id="level-select">
+            <!-- <option value="All">All</option> -->
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+        </select>
+        <select id="class-select">
+            <!-- <option value="All">All</option> -->
+            <option value="bard">Bard</option>
+            <option value="druid">Druid</option>
+            <option value="healer">Healer</option>
+            <option value="wizard">Wizard</option>
+        </select>
+        spell matches the 
+        <select id="property-select">
+            <option value="incant">Incantation</option>
+            <option value="effect">Effect</option>
+        </select>
+        ?
+        </b></span></div>
+
+      <div id="game-container">
+        <div class="button-container"><button class="class-button" id="score">Score: 0</button></div>
+        <div class="button-container" id="button-container"></div>
+        <div class="button-container"><button class="class-button" id="description">Color</button></div>
+      </div>
+  </div>
+
+  <script>
+    const gameContainer = document.getElementById('game-container')
+    const buttonContainer = document.getElementById('button-container')
+    const description = document.getElementById('description')
+    const scoreDisplay = document.getElementById('score')
+    let score = 0
+    
+    const abilities = getCasterAbilities()
+    var level = 1
+    var className = "bard"
+    var property = "incant"
+
+    var abilitiesLC = {}
+    var currentAbilityID = ""
+
+    function updateAbilities(){
+        abilitiesLC = abilities[className].filter( i => i["level"] == level && i["incant"].length > 0 ).sort( (a,b) => a["name"].localeCompare(b["name"]) )
+        startGame()
+    }
+
+    document.getElementById('level-select').addEventListener('click', function() {
+        level = parseInt(this.value)
+        updateAbilities()
+    })
+    document.getElementById('class-select').addEventListener('click', function() {
+        className = this.value;
+        updateAbilities()
+    });
+    document.getElementById('property-select').addEventListener('click', function() {
+        property = this.value;
+        updateAbilities()
+    });
+
+    function getRandomSpell() {
+      const keys = Object.keys(abilitiesLC)
+      var newAbilityID = keys[Math.floor(Math.random() * keys.length)]
+      return newAbilityID != currentAbilityID ? newAbilityID : getRandomSpell()
+    }
+
+    function startGame() {
+      gameLoop()
+      createButtons()
+    }
+
+    function gameLoop(){
+      currentAbilityID = getRandomSpell()
+      console.log("current Ability = " + abilitiesLC[currentAbilityID]["name"])
+      description.innerHTML = abilitiesLC[currentAbilityID][property] ? abilitiesLC[currentAbilityID][property] : abilitiesLC[currentAbilityID]["text"]
+    }
+
+    function createButtons() {
+      buttonContainer.innerHTML = ""
+      Object.keys(abilitiesLC).forEach(cls => {
+        const button = document.createElement('button')
+        button.innerText = abilitiesLC[cls]['name']
+        button.className = 'class-button'
+        button.onclick = () => checkAnswer(cls)
+        buttonContainer.appendChild(button)
+      });
+    }
+
+    function checkAnswer(selectedAbilityID) {
+      const correctButton = [...document.getElementsByClassName('class-button')].find(btn => btn.innerText === abilitiesLC[currentAbilityID]["name"])
+      const point = selectedAbilityID === currentAbilityID
+
+      scoreDisplay.style.backgroundColor = point ? "green" : "red"
+      scoreDisplay.style.transition = "background-color 0.3s ease"
+      setTimeout(() => scoreDisplay.style.backgroundColor = "", 300)
+      correctButton.style.backgroundColor = "green"
+      correctButton.style.transition = "background-color 0.3s ease"
+      setTimeout(() => correctButton.style.backgroundColor = "", 300)
+
+      score += point*2 - 1
+      scoreDisplay.innerText = `Score: ${score}`
+      gameLoop()
+    }
+
+  </script>
+</body>
+</html>
