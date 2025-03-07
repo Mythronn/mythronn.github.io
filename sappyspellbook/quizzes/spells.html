@@ -111,20 +111,30 @@
     var abilitiesLC = {}
     var currentAbilityID = ""
 
+    function redactSpellName(spell){
+      spell.effect = spell.effect.replace(new RegExp(spell.name, "ig"), "X").trim()
+      // console.log(spell.name + " - " +spell.effect)
+      return spell
+    }
+
     function updateAbilities(){
         abilitiesLC = abilities[className].filter( i => i["level"] == level && i["incant"].length > 0 ).sort( (a,b) => a["name"].localeCompare(b["name"]) )
+        if(className == "druid"){
+          abilitiesLC = abilitiesLC.map( i => parseSpellText(i))
+        }
+        abilitiesLC = abilitiesLC.map( i => redactSpellName(i))
         startGame()
     }
 
-    document.getElementById('level-select').addEventListener('click', function() {
+    document.getElementById('level-select').addEventListener('change', function() {
         level = parseInt(this.value)
         updateAbilities()
     })
-    document.getElementById('class-select').addEventListener('click', function() {
+    document.getElementById('class-select').addEventListener('change', function() {
         className = this.value;
         updateAbilities()
     });
-    document.getElementById('property-select').addEventListener('click', function() {
+    document.getElementById('property-select').addEventListener('change', function() {
         property = this.value;
         updateAbilities()
     });
@@ -143,7 +153,8 @@
     function gameLoop(){
       currentAbilityID = getRandomSpell()
       console.log("current Ability = " + abilitiesLC[currentAbilityID]["name"])
-      description.innerHTML = abilitiesLC[currentAbilityID][property] ? abilitiesLC[currentAbilityID][property] : abilitiesLC[currentAbilityID]["text"]
+      // description.innerHTML = abilitiesLC[currentAbilityID][property] ? abilitiesLC[currentAbilityID][property] : abilitiesLC[currentAbilityID]["text"]
+      description.innerHTML = abilitiesLC[currentAbilityID][property]
     }
 
     function createButtons() {
