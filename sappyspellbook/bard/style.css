@@ -357,7 +357,7 @@ a:active {
 .toast {
   display: none;
   position: fixed;
-  bottom: 20px;
+  bottom: 50px;
   left: 20px;
   width: 180px;
   background-color: #0047AB;
@@ -398,7 +398,7 @@ footer {
   font-family: 'MedievalSharp';
   background-color: #2e1a13;
   overflow: hidden;
-  text-align: center;
+  text-align: left;
   padding: 0px 10px;
   border-top: 3px solid #764a3b;
   font-size: large;
