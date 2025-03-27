@@ -246,12 +246,6 @@ function toggleList(incantOnly){
       document.getElementById("hlp3").hidden = true;
       document.getElementById("hlp4").hidden = true;
       document.getElementById("hlp5").hidden = true;
-      document.getElementById("level1Points").hidden = true;
-      document.getElementById("level2Points").hidden = true;
-      document.getElementById("level3Points").hidden = true;
-      document.getElementById("level4Points").hidden = true;
-      document.getElementById("level5Points").hidden = true;
-      document.getElementById("level6Points").hidden = true;
       if(curLevel < 2){
         document.getElementById("2ndHeader").hidden = true;
       }
@@ -279,12 +273,6 @@ function toggleList(incantOnly){
       document.getElementById("hlp3").hidden = false;
       document.getElementById("hlp4").hidden = false;
       document.getElementById("hlp5").hidden = false;
-      document.getElementById("level1Points").hidden = false;
-      document.getElementById("level2Points").hidden = false;
-      document.getElementById("level3Points").hidden = false;
-      document.getElementById("level4Points").hidden = false;
-      document.getElementById("level5Points").hidden = false;
-      document.getElementById("level6Points").hidden = false;
       document.getElementById("1stHeader").hidden = false;
       document.getElementById("2ndHeader").hidden = false;
       document.getElementById("3rdHeader").hidden = false;
@@ -755,6 +743,55 @@ function updatePointsAvailable(fc){
   else if(ltpChecked && reqLevel == 6 && ltpReq == true){
     document.getElementById("ltp6").innerText = "(Look the Part Required)";
     document.getElementById("ltp6").hidden = false;
+  }
+
+  if(reqLevel == 1){    
+    document.getElementById("level1Points").hidden = false;
+    document.getElementById("level2Points").hidden = true;
+    document.getElementById("level3Points").hidden = true;
+    document.getElementById("level4Points").hidden = true;
+    document.getElementById("level5Points").hidden = true;
+    document.getElementById("level6Points").hidden = true;
+  }
+  else if(reqLevel == 2){    
+    document.getElementById("level1Points").hidden = false;
+    document.getElementById("level2Points").hidden = false;
+    document.getElementById("level3Points").hidden = true;
+    document.getElementById("level4Points").hidden = true;
+    document.getElementById("level5Points").hidden = true;
+    document.getElementById("level6Points").hidden = true;
+  }
+  else if(reqLevel == 3){    
+    document.getElementById("level1Points").hidden = false;
+    document.getElementById("level2Points").hidden = false;
+    document.getElementById("level3Points").hidden = false;
+    document.getElementById("level4Points").hidden = true;
+    document.getElementById("level5Points").hidden = true;
+    document.getElementById("level6Points").hidden = true;
+  }
+  else if(reqLevel == 4){    
+    document.getElementById("level1Points").hidden = false;
+    document.getElementById("level2Points").hidden = false;
+    document.getElementById("level3Points").hidden = false;
+    document.getElementById("level4Points").hidden = false;
+    document.getElementById("level5Points").hidden = true;
+    document.getElementById("level6Points").hidden = true;
+  }
+  else if(reqLevel == 5){    
+    document.getElementById("level1Points").hidden = false;
+    document.getElementById("level2Points").hidden = false;
+    document.getElementById("level3Points").hidden = false;
+    document.getElementById("level4Points").hidden = false;
+    document.getElementById("level5Points").hidden = false;
+    document.getElementById("level6Points").hidden = true;
+  }
+  else if(reqLevel == 6){    
+    document.getElementById("level1Points").hidden = false;
+    document.getElementById("level2Points").hidden = false;
+    document.getElementById("level3Points").hidden = false;
+    document.getElementById("level4Points").hidden = false;
+    document.getElementById("level5Points").hidden = false;
+    document.getElementById("level6Points").hidden = false;
   }
   
   //createURL(); OLD
