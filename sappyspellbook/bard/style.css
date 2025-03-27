@@ -357,7 +357,7 @@ a:active {
 .toast {
   display: none;
   position: fixed;
-  bottom: 50px;
+  bottom: 60px;
   left: 20px;
   width: 180px;
   background-color: #0047AB;
