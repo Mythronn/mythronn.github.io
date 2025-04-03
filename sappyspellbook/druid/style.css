@@ -156,6 +156,8 @@ body {
     background-color: #eae0cc;
     font-family: "MedievalSharp", bold;
   font-size: Small;
+  padding-top: 0;
+  margin-top: 0;
 }
 
 .fantasy-button {
@@ -395,4 +397,20 @@ a:active {
 	0% {
 		opacity: 0;
 	}
+}
+
+footer {
+  font-family: 'MedievalSharp';
+  background-color: #2e1a13;
+  overflow: hidden;
+  text-align: left;
+  padding: 0px 10px;
+  border-top: 3px solid #764a3b;
+  font-size: large;
+  color: #ffffff;
+  
+  position: fixed;
+  bottom: 0;
+  left: 8px;
+  right: 8px;
 }
