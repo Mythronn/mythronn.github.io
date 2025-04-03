@@ -205,12 +205,6 @@ function toggleList(incantOnly){
       document.getElementById("hlp3").hidden = true;
       document.getElementById("hlp4").hidden = true;
       document.getElementById("hlp5").hidden = true;
-      document.getElementById("level1Points").hidden = true;
-      document.getElementById("level2Points").hidden = true;
-      document.getElementById("level3Points").hidden = true;
-      document.getElementById("level4Points").hidden = true;
-      document.getElementById("level5Points").hidden = true;
-      document.getElementById("level6Points").hidden = true;
       if(curLevel < 2){
         document.getElementById("2ndHeader").hidden = true;
       }
