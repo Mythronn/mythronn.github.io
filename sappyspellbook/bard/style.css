@@ -158,6 +158,10 @@ body {
     font-family: "MedievalSharp", bold;
   font-size: Small;
   margin-bottom: 80px;
+    padding-top: 0;
+    margin-top: 0;
+    
+
 }
 
 .fantasy-button {
@@ -278,14 +282,6 @@ body {
 .ltp{
   float: none;
 }
-
-
-body{
-padding-top: 0;
-margin-top: 0;
-}
-
-
 .topnav {
   font-family: 'MedievalSharp';
   background-color: #2e1a13;

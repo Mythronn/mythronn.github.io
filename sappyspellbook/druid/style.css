@@ -156,8 +156,9 @@ body {
     background-color: #eae0cc;
     font-family: "MedievalSharp", bold;
   font-size: Small;
-  padding-top: 0;
-  margin-top: 0;
+  margin-bottom: 80px;
+    padding-top: 0;
+    margin-top: 0;
 }
 
 .fantasy-button {
