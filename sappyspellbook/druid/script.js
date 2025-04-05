@@ -232,12 +232,6 @@ function toggleList(incantOnly){
       document.getElementById("hlp3").hidden = false;
       document.getElementById("hlp4").hidden = false;
       document.getElementById("hlp5").hidden = false;
-      document.getElementById("level1Points").hidden = false;
-      document.getElementById("level2Points").hidden = false;
-      document.getElementById("level3Points").hidden = false;
-      document.getElementById("level4Points").hidden = false;
-      document.getElementById("level5Points").hidden = false;
-      document.getElementById("level6Points").hidden = false;
       document.getElementById("1stHeader").hidden = false;
       document.getElementById("2ndHeader").hidden = false;
       document.getElementById("3rdHeader").hidden = false;

@@ -152,9 +152,14 @@ td:last-child, th:last-child {
 /* Fonts and Extras */
 
 body {
-    background-color: #eae0cc;
-    font-family: "MedievalSharp", bold;
-  font-size: Small;
+  background-color: #eae0cc;
+  font-family: "MedievalSharp", bold;
+font-size: Small;
+margin-bottom: 80px;
+  padding-top: 0;
+  margin-top: 0;
+  
+
 }
 
 .fantasy-button {
@@ -275,10 +280,6 @@ body {
   float: none;
 }
 
-body{
-padding-top: 0;
-margin-top: 0;
-}
 
 
 .topnav {
@@ -391,4 +392,20 @@ text-decoration: none;
 	0% {
 		opacity: 0;
 	}
+}
+
+footer {
+  font-family: 'MedievalSharp';
+  background-color: #2e1a13;
+  overflow: hidden;
+  text-align: left;
+  padding: 3px 3px 3px 3px;
+  border-top: 3px solid #764a3b;
+  font-size: large;
+  color: #ffffff;
+  
+  position: fixed;
+  bottom: 0;
+  left: 8px;
+  right: 8px;
 }
