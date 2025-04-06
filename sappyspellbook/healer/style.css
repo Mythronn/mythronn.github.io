@@ -357,7 +357,7 @@ text-decoration: none;
 .toast {
   display: none;
   position: fixed;
-  bottom: 20px;
+  bottom: 60px;
   left: 20px;
   width: 180px;
   background-color: #8B0000;
