@@ -1603,7 +1603,7 @@ const CombatCaster = {
   name: "Combat Caster", type: "Archetype",  freq: "",
   school: "Neutral", range: "", materials: "",
   incant: "", 
-  effect: "Does not require an empty hand to cast Magic", 
+  effect: "Does not require an empty hand to cast abilities", 
   limitations: "",
   notes: "",
   text: ""
