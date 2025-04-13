@@ -1084,7 +1084,7 @@ const Confidence = {
   name: "Confidence", type: "Verbal",  freq: "1/Ref Chg x5",
   school: "Sorcery", range: "Other", materials: "",
   incant: "<I>My power grants thee confidence</I>", 
-  effect: "Target player may instantly Charge a single Magic or Ability", 
+  effect: "Target player may instantly Charge a single ability", 
   limitations: "May not be used within 20' of a living enemy.",
   notes: "",
   text: ""
@@ -1128,7 +1128,7 @@ const Insult = {
   name: "Insult", type: "Verbal",  freq: "1/Life",
   school: "Command", range: "20", materials: "",
   incant: "<I>I command thy attention</I> x3", 
-  effect: "Target is unable to attack or cast magic at anyone other than the caster or their carried equipment for 30 seconds, or until either party dies. If the target of Insult is attacked or has magic cast on them or their carried equipment by someone other than the caster, the target of Insult becomes able to choose to attack the offending party as well.", 
+  effect: "Target is unable to attack or cast Magical abilities at anyone other than the caster or their carried equipment for 30 seconds, or until either party dies. If the target of Insult is attacked or has Magical abilities cast on them or their carried equipment by someone other than the caster, the target of Insult becomes able to choose to attack the offending party as well.", 
   limitations: "The target may still charge and throw Magic Balls at the caster.",
   notes: "",
   text: ""
@@ -1187,7 +1187,7 @@ const Empower = {
   name: "Empower", type: "Verbal",  freq: "2/Ref",
   school: "Sorcery", range: "Other", materials: "",
   incant: "<I>I empower thee</I>", 
-  effect: "Target player regains one use of any per-life Ability or Magic they have expended", 
+  effect: "Target player regains one use of any per-life Ability they have expended", 
   limitations: "Does not function on Empower, Confidence, or Restoration",
   notes: "Does not allow a player to have more than their maximum uses of a Magic or Ability.",
   text: ""
@@ -1215,9 +1215,9 @@ const GreaterRelease = {
   name: "Greater Release", type: "Verbal",  freq: "1/Ref",
   school: "Sorcery", range: "20", materials: "",
   incant: "<I>From all thine afflictions thou art released</I> x2", 
-  effect: "All ongoing effects and States are removed from the target. The caster may choose to leave some States or effects in place", 
+  effect: "All ongoing effects and States are removed from the target. The caster may choose to leave some States or effects in place. Greater Release may target Dead players.", 
   limitations: "",
-  notes: "Greater Release may target Dead players. When used to end a State or Ongoing Effect imposed by a magic or ability with multiple effects, all other States and Ongoing Effects from the same source are also ended",
+  notes: "When used to end a State or Ongoing Effect imposed by a magic or ability with multiple effects, all other States and Ongoing Effects from the same source are also ended",
   text: ""
 };
 const Innate = {
@@ -1229,7 +1229,7 @@ const Innate = {
   name: "Innate", type: "Meta-Magic",  freq: "1/Ref",
   school: "Neutral", range: "", materials: "",
   incant: "<I>Innate</I>", 
-  effect: "May be used to instantly Charge a single magic or ability by stating its name.", 
+  effect: "May be used to instantly Charge a single ability by stating its name.", 
   limitations: "",
   notes: "",
   text: ""
@@ -1257,7 +1257,7 @@ const SongofBattle = {
   name: "Song of Battle", type: "Enchantment",  freq: "Unlimited",
   school: "Protection", range: "Self", materials: "",
   incant: "<I>I sing of my legendary prowess</I>", 
-  effect: "Bearer’s weapons are Armor Breaking. Bearer must Chant 'Song of Battle' or sing a song regarding their martial prowess. Singing in place of the normal Chant is still a Chant and must follow all Chant rules", 
+  effect: "Bearer's wielded melee weapons are Armor Breaking. Bearer must Chant “Song of Battle” or sing a song regarding their martial prowess. Singing in place of the normal Chant is still a Chant and must follow all Chant rules.", 
   limitations: "",
   notes: "",
   text: ""
@@ -1286,7 +1286,7 @@ const Awe = {
   name: "Awe", type: "Verbal",  freq: "1/Life",
   school: "Command", range: "20", materials: "",
   incant: "<I>I command thee awed</I> x3", 
-  effect: "Target may not attack or cast magic at the caster or their carried equipment. Target must remain at least 20’ away from the caster unless forced there by another Magic or Ability. Lasts 30 seconds", 
+  effect: "Target may not attack or cast Magical abilities at the caster or their carried equipment. Target must remain at least 20’ away from the caster unless forced there by another ability. Lasts 30 seconds", 
   limitations: "",
   notes: "If the caster attacks the target, begins casting another magic at the target or their carried equipment, or dies, this spell’s effect is negated",
   text: ""
@@ -1300,7 +1300,7 @@ const BattlefieldTriage = {
   name: "Battlefield Triage", type: "Enchantment",  freq: "1/Ref",
   school: "Spirit", range: "Touch", materials: "3 Yellow strips",
   incant: "<I>Be a bastion of healing</I> x3", 
-  effect: "Bearer may cast Heal (m) by announcing “[Player] thou art made whole” and removing an enchantment strip. Enchantment is removed when the last strip is removed.", 
+  effect: "Bearer may cast Heal (m) by incanting “[Player] thou art made whole” and removing an enchantment strip. Enchantment is removed when the last strip is removed.", 
   limitations: "",
   notes: "",
   text: ""
@@ -1356,7 +1356,7 @@ const SongofFreedom = {
   name: "Song of Freedom", type: "Enchantment",  freq: "Unlimited",
   school: "Protection", range: "Self", materials: "",
   incant: "<I>I sing of my unquenchable wanderlust</I>", 
-  effect: "Bearer can not receive the States Stopped, Frozen, or Insubstantial unless caused by the bearer or other enchantments they carry. Bearer must Chant Song of Freedom or sing a song of roving or rambling. Singing in place of the normal Chant is still a Chant and must follow all Chant rules", 
+  effect: "Bearer cannot receive the States Stopped, Frozen, or Insubstantial unless caused by the bearer or other enchantments they carry. Bearer must Chant 'Song of Freedom' or sing a song of roving or rambling. Singing in place of the normal Chant is still a Chant and must follow all Chant rules", 
   limitations: "",
   notes: "",
   text: ""
@@ -1373,7 +1373,7 @@ const Amplification = {
   name: "Amplification", type: "Enchantment",  freq: "1/Ref",
   school: "Sorcery", range: "Touch", materials: "Yellow Strip",
   incant: "<I>My power amplifies thy voice</I> x3", 
-  effect: "Bearer gains Extension 1/refresh Charge x3. Other sources of extension may not be utilized while Amplification is worn.", 
+  effect: "Bearer gains Extension 1/refresh Charge x3 (m). Other sources of extension may not be utilized while Amplification is worn.", 
   limitations: "",
   notes: "Does not use up any purchased instances of Extension.",
   text: ""
@@ -1401,7 +1401,7 @@ const Restoration = {
   name: "Restoration", type: "Verbal",  freq: "1/Ref",
   school: "Sorcery", range: "Other", materials: "",
   incant: "<I>I restore thee to thy full potency</I>", 
-  effect: "Player has all uses of their per-life Magic and Abilities restored", 
+  effect: "Player has all uses of their per-life Abilities restored", 
   limitations: "Does not function on Empower, Confidence, or Restoration",
   notes: "",
   text: ""
@@ -1415,7 +1415,7 @@ const SleightofMind = {
   name: "Sleight of Mind", type: "Enchantment",  freq: "1/Ref",
   school: "Sorcery", range: "Other", materials: "Yellow Strip",
   incant: "<I>May thy power remain</I> x3", 
-  effect: "Enchantments worn by the bearer, other than Sleight of Mind, are not removed by Dispel Magic or similar Magic and Abilities. Does not count towards the bearer’s Enchantment Limit", 
+  effect: "Enchantments worn by the bearer, other than Sleight of Mind, are not removed by Dispel Magic or similar Abilities. Does not count towards the bearer’s Enchantment Limit", 
   limitations: "",
   notes: "",
   text: ""
@@ -1429,7 +1429,7 @@ const SongofDeflection = {
   name: "Song of Deflection", type: "Enchantment",  freq: "Unlimited",
   school: "Protection", range: "Self", materials: "",
   incant: "<I>I sing of my nimble acrobatics</I>", 
-  effect: "Bearer is unaffected by ammunition, thrown javelins, rocks, and throwing weapons. Engulfing effects from those objects, such as Pinning Arrow, do not affect the player. Bearer must Chant “Song of Deflection” or sing a song of their acrobatic prowess. Singing in place of the normal Chant is still a Chant and must follow all Chant rules", 
+  effect: "Bearer is unaffected by ammunition, thrown javelins, rocks, and thrown weapons. Engulfing effects from those objects, such as Pinning Arrow, do not affect the player. Bearer must Chant “Song of Deflection” or sing a song of their acrobatic prowess. Singing in place of the normal Chant is still a Chant and must follow all Chant rules", 
   limitations: "",
   notes: "Does not protect the bearer against Magic Balls.",
   text: ""
@@ -1471,8 +1471,8 @@ const Swift = {
   name: "Swift", type: "Meta-Magic",  freq: "1/Life",
   school: "Neutral", range: "", materials: "",
   incant: "<I>Swift</I>", 
-  effect: "Magic and abilities require only a single iteration of the incantation. For multi-line Incantations use the last line", 
-  limitations: "May only be used on Magic and Abilities at a range of Touch, Other, or Self, or on Magic Balls. May not be used on the Charge incantation.",
+  effect: "Abilities require only a single iteration of the incantation. For multi-line Incantations use the last line", 
+  limitations: "May only be used on abilities at a range of Touch, Other, or Self, or on Magic Balls. May not be used on the Charge incantation.",
   notes: "",
   text: ""
 };
@@ -1485,9 +1485,9 @@ const Terror = {
   name: "Terror", type: "Verbal",  freq: "1/Ref",
   school: "Death", range: "20", materials: "",
   incant: "<I>Death makes thee terrified</I> x3", 
-  effect: "Target may not attack or cast magic at the caster or their carried equipment. Target must remain at least 50’ away from the caster unless forced there by another Magic or Ability. Lasts 30 seconds", 
+  effect: "Target may not attack or cast Magical abilities at the caster or their carried equipment. Target must remain at least 50’ away from the caster unless forced there by another ability. Lasts 30 seconds", 
   limitations: "",
-  notes: "If the caster attacks the target, begins casting another magic at the target or their carried equipment, or dies, this spell’s effect is negated",
+  notes: "If the caster attacks the target, begins casting another magical ability at the target or their carried equipment, or dies, this ability’s effect is negated",
   text: ""
 };
 
@@ -1502,7 +1502,7 @@ const Agoraphobia = {
   name: "Agoraphobia", type: "Verbal",  freq: "1/Ref",
   school: "Command", range: "20", materials: "",
   incant: "<I>I command thee to be alone</I> x3", 
-  effect: "Target must remain at least 20’ away from all other living players unless forced there by another Magic or Ability. Lasts 30 seconds.", 
+  effect: "Target must remain at least 20’ away from all other living players unless forced there by another ability. Lasts 30 seconds.", 
   limitations: "",
   notes: "",
   text: ""
@@ -1530,7 +1530,7 @@ const Discordia = {
   name: "Discordia", type: "Enchantment",  freq: "1/Ref",
   school: "Command", range: "Self", materials: "Five red strips",
   incant: "<I>My discordant melodies shall stymie my foes</I> x3", 
-  effect: "Bearer may cast Break Concentration (m) by announcing “[Player] thou art suppressed” and removing an enchantment strip. Enchantment is removed when the last strip is removed.", 
+  effect: "Bearer may cast Break Concentration (m) by incanting “[Player] thou art suppressed” and removing an enchantment strip. Enchantment is removed when the last strip is removed.", 
   limitations: "",
   notes: "",
   text: ""
@@ -1586,7 +1586,7 @@ const SongofSurvival = {
   name: "Song of Survival", type: "Enchantment",  freq: "Unlimited",
   school: "Protection", range: "Self", materials: "",
   incant: "<I>I sing of my numerous close calls</I>", 
-  effect: "When the bearer would otherwise die, they instead announce “Song of Survival” and become Insubstantial. The caster treats the triggering event as though it had no effect on them other than triggering Song of Survival. Song of Survival immediately ends and bearer must stop their Chant. Bearer may choose to return directly to their base immediately after Song of Survival activates. Bearer must Chant “Song of Survival” or sing a song regarding their many escapes from certain doom. Singing in place of the normal Chant is still a Chant and must follow all Chant rules.", 
+  effect: "When the bearer would otherwise die, they instead declare “Song of Survival” and become Insubstantial. The caster treats the triggering event as though it had no effect on them other than triggering Song of Survival. Song of Survival immediately ends and bearer must stop their Chant. Bearer may choose to return directly to their base immediately after Song of Survival activates. Bearer must Chant “Song of Survival” or sing a song regarding their many escapes from certain doom. Singing in place of the normal Chant is still a Chant and must follow all Chant rules.", 
   limitations: "Once Song of Survival has activated to protect the bearer it may not be cast nor activated again on the same life.",
   notes: "Bearer may end the Insubstantial state caused by Song of Survival at any time with the standard Incantation. If the Insubstantial State is ended by any means before reaching the base, the rest of the effect is ended as well.",
   text: ""
@@ -1659,7 +1659,7 @@ const SilverTongue = {
   name: "Silver Tongue", type: "Enchantment",  freq: "1/Ref",
   school: "Sorcery", range: "Touch", materials: "Yellow Strip",
   incant: "<I>My power quickens thine</I> x3", 
-  effect: "Bearer gains Swift 1/refresh Charge x3. Other sources of Swift may not be utilized while Silver Tongue is worn", 
+  effect: "Bearer gains Swift 1/refresh Charge x3 (m). Other sources of Swift may not be utilized while Silver Tongue is worn", 
   limitations: "",
   notes: "Does not use up any purchased instances of Swift",
   text: ""
