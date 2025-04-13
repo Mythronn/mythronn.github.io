@@ -1146,7 +1146,7 @@ const Harden = {
   name: "Harden", type: "Enchantment",  freq: "1/Ref",
   school: "Protection", range: "Other", materials: "White Strip",
   incant: "<I>I enchant thee with Harden</I> x3", 
-  effect: "Bearer's  wielded weapons or shield may only be destroyed by Magic Balls/Verbals which destroy objects e.g. Fireball or Pyrotechnics", 
+  effect: "Bearer's wielded weapons or shield may only be destroyed or damaged by Magic Balls/Verbals which destroy objects e.g. Fireball or Pyrotechnics", 
   limitations: "Will only affect either the weapons or the shield of the bearer, not both",
   notes: "",
   text: ""
@@ -1261,7 +1261,7 @@ const Innate = {
   name: "Innate", type: "Meta-Magic",  freq: "1/Life",
   school: "Neutral", range: "", materials: "",
   incant: "<I>Innate</I>", 
-  effect: "May be used to instantly Charge a single magic or ability by stating its name.", 
+  effect: "May be used to instantly Charge a single ability by stating its name.", 
   limitations: "",
   notes: "",
   text: ""
@@ -1459,7 +1459,7 @@ const CircleofProtection = {
   name: "Circle of Protection", type: "Enchantment",  freq: "1/Ref Chg x10",
   school: "Protection", range: "Self", materials: "",
   incant: "<I>Circle of Protection</I> x3", 
-  effect: "The caster and up to five willing players within Touch range of the caster immediately have all States and Ongoing Effects removed and then become Insubstantial. All targets: - May not move from their starting location, and are unaffected by abilities that allow or require the player to move. - May use magic and abilities on players and their carried equipment who became Insubstantial due to the same casting of Circle of Protection as though they were not Insubstantial. - May end this Insubstantial state at any time by using the exit incantation for Insubstantial. The caster may end Circle of Protection for all targets at any time by using the exit incantation for Insubstantial. If the Insubstantial state is ended for a target, the ongoing effects of Circle of Protection no longer apply to that player", 
+  effect: "The caster and up to five willing players within Touch range of the caster immediately have all States and Ongoing Effects removed and then become Insubstantial. All targets: - May not move from their starting location, and are unaffected by abilities that allow or require the player to move. - May use abilities on players and their carried equipment who became Insubstantial due to the same casting of Circle of Protection as though they were not Insubstantial. - May end this Insubstantial state at any time by using the exit incantation for Insubstantial. The caster may end Circle of Protection for all targets at any time by using the exit incantation for Insubstantial. If the Insubstantial state is ended for a target, the ongoing effects of Circle of Protection no longer apply to that player", 
   limitations: "",
   notes: "If a player is prevented from becoming Insubstantial, they are unaffected by Circle of Protection.",
   text: ""
@@ -1487,7 +1487,7 @@ const ImbueShield = {
   name: "Imbue Shield", type: "Enchantment",  freq: "2/Ref",
   school: "Protection", range: "Other", materials: "White Strip",
   incant: "<I>This shield shall neither bend nor break</I> x3", 
-  effect: "Shield wielded by the player cannot be destroyed. Engulfing effects hitting the shield are ignored", 
+  effect: "Shield wielded by the player cannot be destroyed nor damaged. Engulfing effects hitting the wielded shield are ignored.", 
   limitations: "",
   notes: "",
   text: ""
@@ -1501,7 +1501,7 @@ const ProtectionfromProjectiles = {
   name: "Protection from Projectiles", type: "Enchantment",  freq: "1/Ref",
   school: "Protection", range: "Other", materials: "White Strip",
   incant: "<I>I enchant thee with Protection from Projectiles</I> x3", 
-  effect: "Bearer is unaffected by ammunition, thrown javelins, rocks, and throwing weapons. Engulfing effects from those objects, such as Pinning Arrow, do not affect the player", 
+  effect: "Bearer is unaffected by ammunition, thrown javelins, rocks, and thrown weapons. Engulfing effects from those objects, such as Pinning Arrow, do not affect the player", 
   limitations: "",
   notes: "Equipment can still be affected by the above. Does not protect bearer against Magic Balls",
   text: ""
@@ -1515,8 +1515,8 @@ const Swift = {
   name: "Swift", type: "Meta-Magic",  freq: "	1/Life",
   school: "Neutral", range: "", materials: "",
   incant: "<I>Swift</I>", 
-  effect: "Magic and abilities require only a single iteration of the incantation. For multi-line Incantations use the last line", 
-  limitations: ": May only be used on Magic and Abilities at a range of Touch, Other, or Self, or on Magic Balls. May not be used on the Charge incantation.",
+  effect: "Abilities require only a single iteration of the incantation. For multi-line Incantations use the last line", 
+  limitations: ": May only be used on abilities at a range of Touch, Other, or Self, or on Magic Balls. May not be used on the Charge incantation.",
   notes: "",
   text: ""
 };
@@ -1586,7 +1586,7 @@ const BlessedAura = {
   name: "Blessed Aura", type: "Enchantment",  freq: "1/Ref",
   school: "Protection", range: "Other", materials: "White Strip",
   incant: "<I>I enchant thy person, arms, and armor</I> x3", 
-  effect: "Resistant to all effects from the next source which would inflict a Wound, Death, State, or negatively affect them or their carried or worn equipment. Does not trigger against effects cast by the player", 
+  effect: "Resistant to all effects from the next source which would inflict a Wound, Death, State, or negatively affect them or their carried equipment. Does not trigger against effects cast by the player", 
   limitations: "",
   notes: "",
   text: ""
@@ -1601,8 +1601,8 @@ const EnlightenedSoul = {
   name: "Enlightened Soul", type: "Enchantment",  freq: "1/Ref",
   school: "Protection", range: "Other", materials: "White Strip",
   incant: "<I>A distant magic has no hold upon thy now enlightened soul</I> x3", 
-  effect: "Player is unaffected by Verbal magic used at a Range greater than Touch", 
-  limitations: "Affects beneficial magic as well as harmful magic.",
+  effect: "Player is unaffected by Verbal Magical abilities used at a Range greater than Touch.", 
+  limitations: "Affects beneficial as well as harmful Magical abilities.",
   notes: "Does not affect (ex) abilities, abilities with a Range of Touch, or abilities whose Range is greater than Touch but are used at a Range of Touch anyway",
   text: ""
 };
@@ -1660,7 +1660,7 @@ const AncestralArmor = {
   name: "Ancestral Armor", type: "Enchantment",  freq: "1/Ref",
   school: "Protection", range: "Other", materials: "White Strip",
   incant: "<I>May this armor protect thee from all forms of harm.<BR>- May the flames of the fire not burn thee.<BR>- May the bolts from the heavens not strike thee.<BR>- May the arrows of your enemies not pierce thee.<BR>- May this armor protect thee from all forms of harm.</I>", 
-  effect: "The effects of a Magic Ball, projectile weapon, or melee weapon which just struck armor worn by the player are ignored, even if the object would not otherwise affect the armor. The armor loses one point of value in the location struck. This effect will not trigger if the armor has no points left in the location struck. Ancestral Armor is not expended after use and will continue to provide protection until removed with Dispel Magic or similar magic or abilities", 
+  effect: "The effects of a Magic Ball, projectile weapon, or melee weapon which just struck armor worn by the player are ignored, even if the object would not otherwise affect the armor. The armor loses one point of value in the location struck. This effect will not trigger if the armor has no points left in the location struck. Ancestral Armor is not expended after use and will continue to provide protection until removed with Dispel Magic or similar abilities", 
   limitations: "Phase Arrow and Phase Bolt interact with armor worn by the bearer as though Ancestral Armor was not present",
   notes: "Engulfing Effects that do not strike the bearer's armor and abilities that ignore armor entirely do not trigger Ancestral Armor",
   text: ""
@@ -1674,7 +1674,7 @@ const MassHealing = {
   name: "Mass Healing", type: "Enchantment",  freq: "1/Ref",
   school: "Spirit", range: "Self", materials: "Five Yellow Strips",
   incant: "<I>Let the powers of healing flow through me</I> x3", 
-  effect: "Caster may Heal (m) a player at Touch range, stating “I grant thee healing” and removing an enchantment strip. Enchantment is removed when the last strip is removed.", 
+  effect: "Caster may Heal (m) a player at Touch stating “I grant thee healing” and removing an enchantment strip. Enchantment is removed when the last strip is removed.", 
   limitations: "",
   notes: "The effect is not an incantation, and so is not stopped by suppression, and may be used while moving, etc.",
   text: ""
@@ -1688,8 +1688,8 @@ const Necromancer = {
   name: "Necromancer", type: "Archetype",  freq: "",
   school: "Neutral", range: "", materials: "",
   incant: "", 
-  effect: "All magic purchased in the Death School becomes Charge x3. You may have a combined total of five active Undead Minion Enchantments.", 
-  limitations: "You may not purchase any Magic from the Protection School.",
+  effect: "All abilities purchased in the Death School become Charge x3. You may have a combined total of five Undead Minion Enchantments. ", 
+  limitations: "You may not purchase any abilities from the Protection School.",
   notes: "",
   text: ""
 };
@@ -1716,9 +1716,9 @@ const PhoenixTears = {
   name: "Phoenix Tears", type: "Enchantment",  freq: "1/Ref",
   school: "Spirit", range: "Other", materials: "Two White Strips",
   incant: "<I>May the tears of the phoenix wash over thee</I> x3", 
-  effect: "Enchanted player does not die as normal. When the player would otherwise die they instead remove a strip and become Frozen for 30 seconds. When the Frozen State is ended, the bearer is affected as follows: <BR>1. All Wounds are removed. <BR>2. All States that would be removed by Death or Respawning are removed. <BR>3. All ongoing effects with a timer expire. <BR>4. All of their carried or worn equipment is fully repaired. <BR>5. All non-persistent enchantments, other than Phoenix Tears, are removed. Additionally Phoenix Tears allows you to wear an extra Enchantment from the Protection School. This extra enchantment is considered Persistent as long as Phoenix Tears is present. The additional Enchantment is not removed once Phoenix Tears is removed. ", 
+  effect: "Enchanted player does not die as normal. When the player would otherwise die they instead remove a strip and become Frozen for 30 seconds. When the Frozen State is ended, the bearer is affected as follows: <BR>1. All Wounds are removed. <BR>2. All States that would be removed by Death or Respawning are removed. <BR>3. All ongoing effects with a timer expire. <BR>4. All of their carried equipment is fully repaired. <BR>5. All non-persistent enchantments, other than Phoenix Tears, are removed. Additionally Phoenix Tears allows you to wear an extra Enchantment from the Protection School. This extra enchantment is considered Persistent as long as Phoenix Tears is present. The additional Enchantment is not removed once Phoenix Tears is removed. ", 
   limitations: "",
-  notes: "Phoenix Tears is removed when the last strip is removed",
+  notes: "Phoenix Tears is removed when the last strip is removed. If Phoenix Tears is removed, the bearer chooses which (m) Enchantments to lose to meet their new Enchantment limit, if necessary.",
   text: ""
 };
 const Priest = {
@@ -1730,7 +1730,7 @@ const Priest = {
   name: "Priest", type: "Archetype",  freq: "",
   school: "Neutral", range: "", materials: "",
   incant: "", 
-  effect: "Meta-magic may only be used on Spirit magics. All Meta-Magics purchased become 1/Life Charge x3. Heal costs zero points", 
+  effect: "Meta-magic may only be used on Spirit abilities. All Meta-Magics purchased become 1/Life Charge x3. Heal costs zero points", 
   limitations: "",
   notes: "",
   text: ""
@@ -1744,7 +1744,7 @@ const ProtectionfromMagic = {
   name: "Protection from Magic", type: "Enchantment",  freq: "1/Ref",
   school: "Protection", range: "Other", materials: "White Strip",
   incant: "<I>I enchant thee with protection from magic</I> x3", 
-  effect: "Bearer is unaffected by magic from any school. Upon death the player is Cursed", 
+  effect: "Bearer is unaffected by Magical abilities from any school. Upon death the player is Cursed.", 
   limitations: "",
   notes: "This effect does not interact with other Enchantments worn by the bearer.",
   text: ""
@@ -1772,7 +1772,7 @@ const Warder = {
   name: "Warder", type: "Archetype",  freq: "",
   school: "Neutral", range: "", materials: "",
   incant: "", 
-  effect: "All Magic purchased in the Protection School gives double the uses. Example: 1/Life Charge x3 becomes 2/life Charge x3, 2/life becomes 4/life", 
+  effect: "All abilities purchased in the Protection School give double the uses. Example: 1/Life Charge x3 becomes 2/life Charge x3, 2/life becomes 4/life", 
   limitations: "Player may not purchase any magic from the Death, Command, or Subdual Schools",
   notes: "",
   text: ""
