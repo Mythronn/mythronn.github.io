@@ -1275,7 +1275,7 @@ const Shove = {
   name: "Shove", type: "Verbal",  freq: "1/Life Chg x3",
   school: "Sorcery", range: "20", materials: "",
   incant: "<I>My power shoves thee</I> x3", 
-  effect: " Target player is moved back 20' in a straight line away from the caster. Works on Stopped players. If the caster is the target, the caster may choose the direction they move.", 
+  effect: "Target player is moved back 20' in a straight line away from the caster. Works on Stopped players. If the caster is the target, the caster may choose the direction they move.", 
   limitations: "",
   notes: "",
   text: ""
@@ -1334,7 +1334,7 @@ const Innate = {
   name: "Innate", type: "Meta-Magic",  freq: "1/Ref",
   school: "Neutral", range: "", materials: "",
   incant: "<I>Innate</I>", 
-  effect: "May be used to instantly Charge a single magic or ability by stating its name.", 
+  effect: "May be used to instantly Charge a single ability by stating its name.", 
   limitations: "",
   notes: "",
   text: ""
@@ -1531,7 +1531,7 @@ const Throw = {
   name: "Throw", type: "Verbal",  freq: "1/Ref",
   school: "Sorcery", range: "20", materials: "",
   incant: "<I>My power throws thee</I> x3", 
-  effect: "Target player is moved back 50’ in a straight line away from the caster. Works on Stopped players", 
+  effect: "Target player is moved 50’ in a straight line away from the caster. Works on Stopped players. If the caster is the target, the caster may choose the direction they move.", 
   limitations: "",
   notes: "",
   text: ""
@@ -1632,8 +1632,8 @@ const Swift = {
   name: "Swift", type: "Meta-Magic",  freq: "	1/Life",
   school: "Neutral", range: "", materials: "",
   incant: "<I>Swift</I>", 
-  effect: "Magic and abilities require only a single iteration of the incantation. For multi-line Incantations use the last line", 
-  limitations: "May only be used on Magic and Abilities at a range of Touch, Other, or Self, or on Magic Balls. May not be used on the Charge incantation.",
+  effect: "Abilities require only a single iteration of the incantation. For multi-line Incantations use the last line", 
+  limitations: "May only be used on abilities at a range of Touch, Other, or Self, or on Magic Balls. May not be used on the Charge incantation.",
   notes: "",
   text: ""
 };
@@ -1691,7 +1691,7 @@ const Contagion = {
   name: "Contagion", type: "Enchantment",  freq: "1/Ref",
   school: "Death", range: "Other", materials: "Red Strip",
   incant: "<I>May thou bear this plague to all</I> x3", 
-  effect: "All melee weapons wielded by player are Wounds Kill. Bearer is Fragile", 
+  effect: "Bearers wielded melee weapons are Wounds Kill. Bearer is Fragile", 
   limitations: "",
   notes: "",
   text: ""
@@ -1719,9 +1719,9 @@ const PhaseBolt = {
   name: "Phase Bolt", type: "Magic Ball",  freq: "1 Ball Unlimited",
   school: "Sorcery", range: "Ball", materials: "Grey Magic Ball",
   incant: "<I>The power of sorcery is mine to evoke</I> x3", 
-  effect: "This Magic Ball does not interact with other ongoing Magic, Abilities, nor Traits. Example: This Magic Ball is not stopped by Stoneskin, Protection from Projectiles, and does not trigger the effects of Gift of Air, Troll Blood, Missile Block, or similar Magic or Abilities. Will have one of the following effects: <BR>1. A weapon hit is destroyed <BR>2. Armor hit with Armor Points remaining is subject to Armor Breaking. <BR>3. A player hit receives a Wound in that hit location", 
+  effect: "This Magic Ball does not interact with other ongoing abilities nor Traits. Example: This Magic Ball is not stopped by Stoneskin, Protection from Projectiles, and does not trigger the effects of Gift of Air, Troll Blood, Missile Block, or similar abilities. Will have one of the following effects: <BR>1. A weapon hit is destroyed <BR>2. Armor hit with Armor Points remaining is subject to Armor Breaking. <BR>3. A player hit receives a Wound in that hit location", 
   limitations: "",
-  notes: "Does not supercede the Frozen, Insubstantial, or Out of Game States",
+  notes: "Does not supercede the Frozen, Insubstantial, or Invulnerable States",
   text: ""
 };
 const Pyrotechnics = {
@@ -1733,7 +1733,7 @@ const Pyrotechnics = {
   name: "Pyrotechnics", type: "Verbal",  freq: "1/Ref",
   school: "Flame", range: "50", materials: "",
   incant: "<I>I call upon the element of flame to destroy thy belongings</I> x3", 
-  effect: "All shields and weapons carried or worn by the target player are destroyed", 
+  effect: "All shields and weapons carried by the target player are destroyed", 
   limitations: "Only affects shields and weapons carried or worn when the Verbal is completed",
   notes: "Pyrotechnics targets the player but affects their equipment. Immunities, resistances, and other protections will only protect the equipment from Pyrotechnics if they specifically extend to the equipment, such as Blessed Aura or Flame Blade. Abilities like Enlightened Soul, Protection from Magic, and Adaptive Protection (Flame) do not extend to equipment and thus cannot protect from Pyrotechnics",
   text: ""
@@ -1761,7 +1761,7 @@ const VoidTouched = {
   name: "Void Touched", type: "Enchantment",  freq: "1/Ref",
   school: "Sorcery", range: "Other", materials: "Red Strip and White Strip",
   incant: "<I>Embrace the old ones and surrender thyself</I> x3", 
-  effect: "Melee weapons wielded by bearer are Armor Breaking. Bearer gains Shadow Step 1/Refresh Charge x30 (ex), Steal Life Essence Unlimited (ex), and is unaffected by Magic from the Sorcery, Spirit, and Death Schools. May still benefit from their own Steal Life Essence. Player is Cursed.", 
+  effect: "Bearer's wielded melee weapons are Armor Breaking. Bearer gains Shadow Step 1/Refresh Charge x30 (ex), Steal Life Essence Unlimited (ex), and is unaffected by Magical abilities from the Sorcery, Spirit, and Death Schools. May still benefit from their own Steal Life Essence. Player is Cursed.", 
   limitations: "",
   notes: "This effect does not interact with other Enchantments worn by the bearer",
   text: ""
@@ -1820,7 +1820,7 @@ const Evoker = {
   name: "Evoker", type: "Archetype",  freq: "",
   school: "Neutral", range: "", materials: "",
   incant: "", 
-  effect: "Verbals purchased may only be of range Touch or Self. Elemental Barrage becomes Charge x10", 
+  effect: "May not purchase Verbals with a range of 20' or 50'. Elemental Barrage becomes Charge x10. ", 
   limitations: "",
   notes: "Elemental Barrage must still be purchased",
   text: ""
@@ -1862,7 +1862,7 @@ const ProtectionfromMagic = {
   name: "Protection from Magic", type: "Enchantment",  freq: "1/Ref",
   school: "Protection", range: "Other", materials: "White Strip",
   incant: "<I>I enchant thee with protection from magic</I> x3", 
-  effect: "Bearer is unaffected by magic from any school. Upon death the player is Cursed", 
+  effect: "Bearer is unaffected by Magical abilities from any school. Upon death the player is Cursed. ", 
   limitations: "",
   notes: "This effect does not interact with other Enchantments worn by the bearer.",
   text: ""
@@ -1878,7 +1878,7 @@ const SphereofAnnihilation = {
   incant: "<I>The power of void is mine to evoke</I> x3", 
   effect: "Sphere of Annihilation ignores armor and enchantments and will have one of the following effects on the object first struck: <BR>A weapon struck is destroyed. <BR>A shield struck is subject to Shield Destroying. <BR>A player struck dies and is Cursed.", 
   limitations: "",
-  notes: "Missile Block nullifies the effects of Sphere of Annihilation.",
+  notes: "Does not ignore Traits, such as Missile Block.",
   text: ""
 };
 const Warlock = {
