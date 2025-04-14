@@ -213,7 +213,10 @@ function toggleList(incantOnly){
         if(abilities[k].type == "Meta-Magic"){
           levelList[i] = levelList[i] + ": " + abilities[k].use * abilities[k].purchased + "/" + abilities[k].per + " " + abilities[k].charge;
         }
-        if(abilities[k].type == "Verbal"){
+        if(abilities[k].type == "Verbal" && (abilities[k].school == "Protection") && abilities[2].purchased == 1){
+          levelList[i] = levelList[i] + ": " + abilities[k].use * abilities[k].purchased * 2 + "/" + abilities[k].per + " " + abilities[k].charge;
+        }
+        if(abilities[k].type == "Verbal" && !((abilities[k].school == "Protection") && abilities[2].purchased == 1)){
           levelList[i] = levelList[i] + ": " + abilities[k].use * abilities[k].purchased + "/" + abilities[k].per + " " + abilities[k].charge;
         }
         if(abilities[k].type == "Enchantment" && (abilities[k].school == "Protection") && abilities[2].purchased == 1){
@@ -1456,7 +1459,7 @@ const CircleofProtection = {
   cost: 1,
   max: 1, charge: "Charge x10", use: 1, per: "Refresh",
   pointTotalId: "CircleofProtectionval",
-  name: "Circle of Protection", type: "Enchantment",  freq: "1/Ref Chg x10",
+  name: "Circle of Protection", type: "Verbal",  freq: "1/Ref Chg x10",
   school: "Protection", range: "Self", materials: "",
   incant: "<I>Circle of Protection</I> x3", 
   effect: "The caster and up to five willing players within Touch range of the caster immediately have all States and Ongoing Effects removed and then become Insubstantial. All targets: - May not move from their starting location, and are unaffected by abilities that allow or require the player to move. - May use abilities on players and their carried equipment who became Insubstantial due to the same casting of Circle of Protection as though they were not Insubstantial. - May end this Insubstantial state at any time by using the exit incantation for Insubstantial. The caster may end Circle of Protection for all targets at any time by using the exit incantation for Insubstantial. If the Insubstantial state is ended for a target, the ongoing effects of Circle of Protection no longer apply to that player", 
