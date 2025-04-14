@@ -470,7 +470,7 @@ function processExpChange(fromUser){
 function necromancerCheck(index){ //Necro
   var a = index;
   if(abilities[44].purchased > 0){
-    if(abilities[a].type == "Enchantment" && abilities[a].school == "Protection" ){
+    if(abilities[a].school == "Protection" ){
       
        return false;
        }
@@ -480,7 +480,7 @@ function necromancerCheck(index){ //Necro
   }  
   if(abilities[a].name == "Necromancer"){
     for(let i = 0; i < abilityCount; i++){
-      if((abilities[i].type == "Enchantment" && abilities[i].school == "Protection" ) && abilities[i].purchased > 0){
+      if((abilities[i].school == "Protection" ) && abilities[i].purchased > 0){
         
         return false; 
         }
@@ -524,11 +524,11 @@ function pointPlus(index, fromClick) {
     return false;
   }
   if(necromancerCheck(a) == false){
-    showToast("Necromancers may not purchase any Enchantments from the Protection School.");
+    showToast("Necromancers may not purchase any abilities from the Protection School.");
     return false;
   }
   if(warderCheck(a) == false){
-    showToast("Warders may not purchase any magic from the Death, Command, or Subdual Schools.");
+    showToast("Warders may not purchase any abilities from the Death, Command, or Subdual Schools.");
     return false;
   }
   
@@ -1776,7 +1776,7 @@ const Warder = {
   school: "Neutral", range: "", materials: "",
   incant: "", 
   effect: "All abilities purchased in the Protection School give double the uses. Example: 1/Life Charge x3 becomes 2/life Charge x3, 2/life becomes 4/life", 
-  limitations: "Player may not purchase any magic from the Death, Command, or Subdual Schools",
+  limitations: "Player may not purchase any abilities from the Death, Command, or Subdual Schools.",
   notes: "",
   text: ""
 };
