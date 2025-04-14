@@ -1178,7 +1178,7 @@ const Release = {
   school: "Sorcery", range: "Touch", materials: "",
   incant: "<I>From thy bindings thou art released</I> x3", 
   effect: "A single ongoing effect or State is removed from the target. Casters choice", 
-  limitations: "Cannot remove Cursed. When used to end a State or Ongoing Effect imposed by a magic or ability with multiple effects, all other States and Ongoing Effects from the same source are also ended",
+  limitations: "Cannot remove Cursed. When used to end a State or Ongoing Effect imposed by an ability with multiple effects, all other States and Ongoing Effects from the same source are also ended",
   notes: "",
   text: ""
 };
@@ -1238,7 +1238,7 @@ const GreaterRelease = {
   incant: "<I>From all thine afflictions thou art released</I> x2", 
   effect: "All ongoing effects and States are removed from the target. The caster may choose to leave some States or effects in place", 
   limitations: "",
-  notes: "Greater Release may target Dead players. When used to end a State or Ongoing Effect imposed by a magic or ability with multiple effects, all other States and Ongoing Effects from the same source are also ended",
+  notes: "Greater Release may target Dead players. When used to end a State or Ongoing Effect imposed by an ability with multiple effects, all other States and Ongoing Effects from the same source are also ended",
   text: ""
 };
 const HoldPerson = {

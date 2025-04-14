@@ -1177,7 +1177,7 @@ const Release = {
   pointTotalId: "Releaseval",
   name: "Release", type: "Verbal",
   incant: "<I>From thy bindings thou art released</I> x5", 
-  text: "<p2>Release</p2><BR><p3>Freq:</p3> 1/Life<BR><p3>Type:</p3>  Verbal<BR><p3>School:</p3> Sorcery<BR><p3>Range:</p3> Touch<BR><p3>Incant:</p3> <I>From thy bindings thou art released</I> x5<BR><p3>Effect:</p3>  A single ongoing effect or State is removed from the target. Casters choice<BR><p3>Limitations:</p3> Cannot remove Cursed. When used to end a State or Ongoing Effect imposed by a magic or ability with multiple effects, all other States and Ongoing Effects from the same source are also ended"
+  text: "<p2>Release</p2><BR><p3>Freq:</p3> 1/Life<BR><p3>Type:</p3>  Verbal<BR><p3>School:</p3> Sorcery<BR><p3>Range:</p3> Touch<BR><p3>Incant:</p3> <I>From thy bindings thou art released</I> x5<BR><p3>Effect:</p3>  A single ongoing effect or State is removed from the target. Casters choice<BR><p3>Limitations:</p3> Cannot remove Cursed. When used to end a State or Ongoing Effect imposed by an ability with multiple effects, all other States and Ongoing Effects from the same source are also ended"
 };
 const Stoneform = {
   purchased: 0,

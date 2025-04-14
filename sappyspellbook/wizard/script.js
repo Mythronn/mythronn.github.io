@@ -1363,7 +1363,7 @@ const Release = {
   school: "Sorcery", range: "Touch", materials: "",
   incant: "<I>From thy bindings thou art released</I> x5", 
   effect: "A single ongoing effect or State is removed from the target. Casters choice", 
-  limitations: "Cannot remove Cursed. When used to end a State or Ongoing Effect imposed by a magic or ability with multiple effects, all other States and Ongoing Effects from the same source are also ended",
+  limitations: "Cannot remove Cursed. When used to end a State or Ongoing Effect imposed by an ability with multiple effects, all other States and Ongoing Effects from the same source are also ended",
   notes: "",
   text: ""
 };
@@ -1734,7 +1734,7 @@ const Pyrotechnics = {
   school: "Flame", range: "50", materials: "",
   incant: "<I>I call upon the element of flame to destroy thy belongings</I> x3", 
   effect: "All shields and weapons carried by the target player are destroyed", 
-  limitations: "Only affects shields and weapons carried or worn when the Verbal is completed",
+  limitations: "Only affects shields and weapons carried when the Verbal is completed",
   notes: "Pyrotechnics targets the player but affects their equipment. Immunities, resistances, and other protections will only protect the equipment from Pyrotechnics if they specifically extend to the equipment, such as Blessed Aura or Flame Blade. Abilities like Enlightened Soul, Protection from Magic, and Adaptive Protection (Flame) do not extend to equipment and thus cannot protect from Pyrotechnics",
   text: ""
 };
