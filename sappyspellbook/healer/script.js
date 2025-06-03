@@ -1631,9 +1631,9 @@ const UndeadMinion = {
   pointTotalId: "UndeadMinionval",
   name: "Undead Minion", type: "Enchantment",  freq: "1/Ref",
   school: "Death", range: "Other", materials: "Yellow Strip",
-  incant: "<I>Flesh rots, bones break, skulls sigh, spirits take.<BR>- Let the power of my will descend on thee.<BR>- Let the power of my will restore thy spirit.<BR>- Let the power of my will knit thy corpse.<BR>- Let the power of my will give thee direction.<BR>- Let the power of my will cheat thy death.<BR>- By the power of my will, arise my minion!</I>", 
-  effect: "Bearer is Cursed. When the bearer dies, they must return to the caster. While the bearer is enchanted, the caster gains Raise Dead (Unlimited) (m) which can only be cast with the bearer as the target, and ignores the requirement for the bearer to have not moved from where they died. For the duration of the Enchantment, the bearer may treat the caster as a base for the purposes of the effects which require the bearer to go to their base. This enchantment is Persistent, and remains active while the bearer is dead.",
-  limitations: "The caster may not have more than three active Undead Minion Enchantments.",
+  incant: "<I>By the power of my will, arise my minion!</I> x5", 
+  effect: "Bearer is Cursed and cannot Respawn. While the bearer is enchanted, the caster gains Raise Dead (Unlimited) (m) which can only be cast with the bearer as the target, and ignores the requirement for the bearer to have not moved from where they died. For the duration of the Enchantment, the bearer may treat the caster as a base for the purposes of the effects which require the bearer to go to their base. This enchantment is Persistent, and remains active while the bearer is dead.",
+  limitations: "The caster may not have more than three Undead Minion Enchantments.",
   notes: "",
   text: ""
 };

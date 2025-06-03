@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("SniperText").hidden = true;  
     document.getElementById("ArtificerText").hidden = true;     
     document.getElementById("AssassinText").hidden = true;     
-    document.getElementById("RuffianText").hidden = true;   
+    document.getElementById("RogueText").hidden = true;   
     document.getElementById("SpyText").hidden = true;  
     document.getElementById("BarbarianText").hidden = true;   
     document.getElementById("RaiderText").hidden = true;    

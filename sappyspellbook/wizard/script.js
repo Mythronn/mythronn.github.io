@@ -1719,9 +1719,9 @@ const PhaseBolt = {
   name: "Phase Bolt", type: "Magic Ball",  freq: "1 Ball Unlimited",
   school: "Sorcery", range: "Ball", materials: "Grey Magic Ball",
   incant: "<I>The power of sorcery is mine to evoke</I> x3", 
-  effect: "This Magic Ball does not interact with other ongoing abilities nor Traits. Example: This Magic Ball is not stopped by Stoneskin, Protection from Projectiles, and does not trigger the effects of Gift of Air, Troll Blood, Missile Block, or similar abilities. Will have one of the following effects: <BR>1. A weapon hit is destroyed <BR>2. Armor hit with Armor Points remaining is subject to Armor Breaking. <BR>3. A player hit receives a Wound in that hit location", 
+  effect: "This Magic Ball is Phasing. Additionally, will have one of the following effects: <BR>1. A weapon hit is destroyed <BR>2. Armor hit with Armor Points remaining is subject to Armor Breaking. <BR>3. A player hit receives a wound in that hit location.", 
   limitations: "",
-  notes: "Does not supercede the Frozen, Insubstantial, or Invulnerable States",
+  notes: "",
   text: ""
 };
 const Pyrotechnics = {
@@ -1876,9 +1876,9 @@ const SphereofAnnihilation = {
   name: "Sphere of Annihilation", type: "Magic Ball",  freq: "1 Ball Unlimited",
   school: "Sorcery", range: "Ball", materials: "Black Magic Ball",
   incant: "<I>The power of void is mine to evoke</I> x3", 
-  effect: "Sphere of Annihilation ignores armor and enchantments and will have one of the following effects on the object first struck: <BR>A weapon struck is destroyed. <BR>A shield struck is subject to Shield Destroying. <BR>A player struck dies and is Cursed.", 
-  limitations: "",
-  notes: "Does not ignore Traits, such as Missile Block.",
+  effect: "This Magic Ball is Phasing and ignores armor. Additionally, will have one of the following effects:<BR> 1. A weapon hit is destroyed<BR> 2. A shield hit is subject to Shield Destroying.<BR> 3. A player hit dies and is Cursed.", 
+  limitations: "Unlike most Phasing effects, Sphere of Annihilation does not ignore Traits, such as Missile Block. ",
+  notes: "",
   text: ""
 };
 const Warlock = {
