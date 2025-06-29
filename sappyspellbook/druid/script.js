@@ -796,9 +796,12 @@ function reprocessPoints(index){
     tempPurchased[i] = abilities[i].purchased;
   }   
   resetPoints(0);
-  while(tempPurchased[47] > 0){
+  while(tempPurchased[47] > 0){//WARNING THIS IS A CRAZY HACK. BARKSKIN/BANISH IS CAUSE PROBLEM
+    if(tempPurchased[0] > 0){
+      abilities[47].cost = 2;
+    }
     pointPlus(47, false);
-    tempPurchased[47]--; //WARNING THIS IS A CRAZY HACK. BANISH IS CAUSE PROBLEM
+    tempPurchased[47]--; 
   }   
   for(let i = 0; i < abilityCount; i++){
     while(tempPurchased[i] > 0){
