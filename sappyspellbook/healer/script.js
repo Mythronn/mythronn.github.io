@@ -238,6 +238,7 @@ function toggleList(incantOnly){
       lists[i].style.display = "block";
       document.getElementById("saveList").hidden = false;
       document.getElementById("titleList").hidden = false;
+      document.getElementById("printCards").hidden = false;
       document.getElementById("toggleIncants").hidden = false;
       document.getElementById("hlp1").hidden = true;
       document.getElementById("hlp2").hidden = true;
@@ -1850,6 +1851,105 @@ function saveList(){
     link.download = document.title + '.txt'; 
     link.click();
     URL.revokeObjectURL(link.href);
+}
+
+function printCards(){
+  let textToSave = "";
+  if (showIncants != true){
+    toggleIncants();
+  }
+  if(document.title == "Healer Spellbook"){
+    textToSave = "Healer Level " + document.getElementById("reqLevel").value + document.getElementById("ltp").innerText + " \n   Level 1 \n" + document.getElementById("lvl1List").innerText + "\n   Level 2 \n" + document.getElementById("lvl2List").innerText + "\n   Level 3 \n" + document.getElementById("lvl3List").innerText + "\n   Level 4 \n" + document.getElementById("lvl4List").innerText + "\n   Level 5 \n" + document.getElementById("lvl5List").innerText + "\n   Level 6 \n" + document.getElementById("lvl6List").innerText;
+  }
+  else{
+    textToSave = document.title + " \n(Healer Level " + document.getElementById("reqLevel").value + ")" + document.getElementById("ltp").innerText + " \n   Level 1 \n" + document.getElementById("lvl1List").innerText + "\n   Level 2 \n" + document.getElementById("lvl2List").innerText + "\n   Level 3 \n" + document.getElementById("lvl3List").innerText + "\n   Level 4 \n" + document.getElementById("lvl4List").innerText + "\n   Level 5 \n" + document.getElementById("lvl5List").innerText + "\n   Level 6 \n" + document.getElementById("lvl6List").innerText;
+  }
+  const textData = textToSave;
+
+  const lines = textData.split('\n');
+  const title = lines[0];
+  const entries = [];
+
+  let currentLevel = '';
+  for (let i = 1; i < lines.length; i++) {
+    const line = lines[i].trim();
+    if (line.startsWith('Level')) {
+      currentLevel = line;
+    } else if (line.startsWith('-')) {
+      if (entries.length > 0) {
+        entries[entries.length - 1].flavor = line.slice(1).trim();
+      }
+    } else if (line) {
+      entries.push({ level: currentLevel, text: line, flavor: '' });
+    }
+  }
+
+// Split into 3 cards
+  numchunks = 3
+  chunks = []
+  if (entries.length < 9){
+    numchunks = 1;
+    chunks = [entries];
+  } else if (entries.length < 19){
+    numchunks = 2;
+    const chunkSize = Math.ceil(entries.length / numchunks);
+    chunks = [entries.slice(0, chunkSize), entries.slice(chunkSize, 2 * chunkSize)];
+  } else {
+    const chunkSize = Math.ceil(entries.length / numchunks);
+    chunks = [entries.slice(0, chunkSize), entries.slice(chunkSize, 2 * chunkSize), entries.slice(2 * chunkSize)];
+  }
+
+  const htmlContent = `
+<html>
+<head>
+  <title>Printable Spell Cards</title>
+  <style>
+    @media print {
+      body {
+        margin: 0;
+        padding: 0;
+      }
+    }
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .card {
+      width: 4.5in;
+      height: 2.6in;
+      box-sizing: border-box;
+      border: 1px solid #000;
+      padding: 0.2in;
+      margin: 0.2in;
+      display: inline-block;
+      vertical-align: top;
+      font-size: 10pt;
+    }
+    .entry {
+      margin-bottom: 0.2em;
+    }
+    .title {
+      font-weight: bold;
+      margin-bottom: 0.5em;
+    }
+  </style>
+</head>
+<body>
+    ${chunks.map(chunk => `
+    <div class="card">
+      <div class="title">${title}</div>
+      ${chunk.map(entry => `
+        <div class="entry">${entry.text}${entry.flavor ? ' - ' + entry.flavor : ''}</div>
+        `).join('')}
+    </div>
+      `).join('')}
+  <script>window.onload = () => window.print();</script>
+</body>
+</html>
+  `;
+
+  const blob = new Blob([htmlContent], { type: 'text/html' });
+  const url = URL.createObjectURL(blob);
+  window.open(url, '_blank');
 }
 
 function titleList(){

@@ -8,9 +8,9 @@ window.addEventListener('hashchange', function() {
   var referrer = document.referrer;
   //console.log("The referrer is: " + referrer);
   //if (referrer === "" || !referrer.includes(window.location.origin)) 
-    
-    parseURL();
-    updateTable();;  
+
+  parseURL();
+  updateTable();;  
 });
 /*##################################*/
 function parseURL(){
@@ -22,26 +22,26 @@ function parseURL(){
   if(url.length > 1 && url[0] == "#"){
     url = expandZeros(url);
     url = url.replace("#", "");
-      for(let i = 0; i < abilityCount; i++){
+    for(let i = 0; i < abilityCount; i++){
           //console.log(abilities[i].name);
-          abilities[i].purchased = decodeMap(url[i]);         
+      abilities[i].purchased = decodeMap(url[i]);         
+    }
+    exps = url.split("-");
+    abilities[4].selectedAbility1 = exps[1].replace(/_/g, " ");
+    abilities[4].selectedAbility2 = exps[2].replace(/_/g, " ");
+    if(exps[3] != null && exps[3] != ""){
+      document.title = (exps[3]).replace(/_/g, " ");
+      document.getElementById('titleShow').innerHTML = document.title;
+    }
+    if(exps[4] != null && exps[4] != ""){
+      if(exps[4] == "ltp"){
+        document.getElementById("ltpCheckBox").checked = true;
       }
-      exps = url.split("-");
-      abilities[4].selectedAbility1 = exps[1].replace(/_/g, " ");
-      abilities[4].selectedAbility2 = exps[2].replace(/_/g, " ");
-      if(exps[3] != null && exps[3] != ""){
-        document.title = (exps[3]).replace(/_/g, " ");
-        document.getElementById('titleShow').innerHTML = document.title;
+      if(exps[4] == "no"){
+        document.getElementById("ltpCheckBox").checked = false;
       }
-      if(exps[4] != null && exps[4] != ""){
-        if(exps[4] == "ltp"){
-          document.getElementById("ltpCheckBox").checked = true;
-        }
-        if(exps[4] == "no"){
-          document.getElementById("ltpCheckBox").checked = false;
-        }
-      }
-      reprocessPoints(0);
+    }
+    reprocessPoints(0);
   }
 }
 /*##################################*/
@@ -56,7 +56,7 @@ function createURL(){
   }
   
   for(let i = 0; i < abilityCount; i++){
-      s += encodeMap(abilities[i].purchased);
+    s += encodeMap(abilities[i].purchased);
   }
   s += "-" + (abilities[4].selectedAbility1).replace(/ /g, "_") + "-" + (abilities[4].selectedAbility2).replace(/ /g, "_") + "-" + (document.title).replace(/ /g, "_") + "-" + chk;
   s = replaceRepeatingZeros(s);
@@ -189,15 +189,16 @@ function toggleList(incantOnly){
         if(showIncants && abilities[k].incant != ""){
           levelList[i] = levelList[i] + "<BR>- " + abilities[k].incant;
         }
-       }
+      }
     }
     levelList[i] = levelList[i].slice(4);
     lists[i].innerHTML = levelList[i];
     if(tables[i].style.display == "block" && incantOnly != 'incants'){
-      
+
       tables[i].style.display = "none";
       lists[i].style.display = "block";
       document.getElementById("saveList").hidden = false;
+      document.getElementById("printCards").hidden = false;
       document.getElementById("titleList").hidden = false;
       document.getElementById("toggleIncants").hidden = false;
       document.getElementById("hlp1").hidden = true;
@@ -226,6 +227,7 @@ function toggleList(incantOnly){
       lists[i].style.display = "none";
       document.getElementById("saveList").hidden = true;
       document.getElementById("titleList").hidden = true;
+      document.getElementById("printCards").hidden = true;
       document.getElementById("toggleIncants").hidden = true;
       document.getElementById("hlp1").hidden = false;
       document.getElementById("hlp2").hidden = false;
@@ -299,7 +301,7 @@ function updateExperienced(){
   abilities[4].selectedAbility2 = document.getElementById("exp2").value;
   
   if(abilities[4].purchased == 0){
-  document.getElementById("experiencedtext").innerHTML = "<div class=\"popup\" ><span class=\"popuptext\" id=\"ExperiencedPopup\"></span></div>Experienced";
+    document.getElementById("experiencedtext").innerHTML = "<div class=\"popup\" ><span class=\"popuptext\" id=\"ExperiencedPopup\"></span></div>Experienced";
     document.getElementById("exp1").disabled = false;
     document.getElementById("exp2").disabled = true;
     document.getElementById("exp1").value = "Select Spell";
@@ -307,14 +309,14 @@ function updateExperienced(){
   }
   
   if(abilities[4].purchased == 1){    
-  document.getElementById("experiencedtext").innerHTML = "<div class=\"popup\" ><span class=\"popuptext\" id=\"ExperiencedPopup\"></span></div>Experienced<BR>[" + abilities[4].selectedAbility1 + "]";
+    document.getElementById("experiencedtext").innerHTML = "<div class=\"popup\" ><span class=\"popuptext\" id=\"ExperiencedPopup\"></span></div>Experienced<BR>[" + abilities[4].selectedAbility1 + "]";
     document.getElementById("exp1").disabled = true;
     document.getElementById("exp2").disabled = false;
     document.getElementById("exp2").value = "Select Spell";
     abilities[4].selectedAbility2 = "Select Spell";
   }  
   if(abilities[4].purchased == 2){    
-  document.getElementById("experiencedtext").innerHTML = "<div class=\"popup\" ><span class=\"popuptext\" id=\"ExperiencedPopup\"></span></div>Experienced<BR>[" + abilities[4].selectedAbility1 + "]<BR>[" + abilities[4].selectedAbility2 + "]";
+    document.getElementById("experiencedtext").innerHTML = "<div class=\"popup\" ><span class=\"popuptext\" id=\"ExperiencedPopup\"></span></div>Experienced<BR>[" + abilities[4].selectedAbility1 + "]<BR>[" + abilities[4].selectedAbility2 + "]";
     document.getElementById("exp1").disabled = true;
     document.getElementById("exp2").disabled = true;
   }
@@ -323,99 +325,99 @@ function updateExperienced(){
 }
 /*##################################*/
 function processExpChange(fromUser){  
-    if(abilities[4].purchased == 0){
-      if(document.getElementById("exp1").value != "Select Spell"){
-        document.getElementById("Experiencedplus").disabled = false;
+  if(abilities[4].purchased == 0){
+    if(document.getElementById("exp1").value != "Select Spell"){
+      document.getElementById("Experiencedplus").disabled = false;
         //console.log(document.getElementById("exp1").value);
-      }
-      else{document.getElementById("Experiencedplus").disabled = true}
     }
-    if(abilities[4].purchased == 1){
-      if(document.getElementById("exp2").value != "Select Spell"){
-        document.getElementById("Experiencedplus").disabled = false;
-      }
-      else{document.getElementById("Experiencedplus").disabled = true}
-    }
-    if(abilities[4].purchased == 2){
+    else{document.getElementById("Experiencedplus").disabled = true}
+  }
+  if(abilities[4].purchased == 1){
+    if(document.getElementById("exp2").value != "Select Spell"){
       document.getElementById("Experiencedplus").disabled = false;
     }
-    if(abilities[4].selectedAbility1 == "Mend" || abilities[4].selectedAbility2 == "Mend"){
-      abilities[7].charge = "Charge x5";
-      abilities[7].text = abilities[7].text.replace("Life<BR>", "Life CHARGE x5<BR>");
-    }
-    else{
-      abilities[7].charge = "";
-      abilities[7].text = abilities[7].text.replace("Life CHARGE x5<BR>", "Life<BR>");
-    }
-    if(abilities[4].selectedAbility1 == "Greater Mend" || abilities[4].selectedAbility2 == "Greater Mend"){
-      abilities[22].charge = "Charge x10";
-      abilities[22].text = abilities[22].text.replace("Refresh<BR>", "Refresh CHARGE x10<BR>");
-    }
-    else{
-      abilities[22].charge = "";
-      abilities[22].text = abilities[22].text.replace("Refresh CHARGE x10<BR>", "Refresh<BR>");
-    }
-    if(abilities[4].selectedAbility1 == "Icy Blast" || abilities[4].selectedAbility2 == "Icy Blast"){
-      abilities[23].charge = "Charge x5";
-      abilities[23].text = abilities[23].text.replace("Life<BR>", "Life CHARGE x5<BR>");
-    }
-    else{
-      abilities[23].charge = "";
-      abilities[23].text = abilities[23].text.replace("Life CHARGE x5<BR>", "Life<BR>");
-    }
-    if(abilities[4].selectedAbility1 == "Heal" || abilities[4].selectedAbility2 == "Heal"){
-      abilities[11].charge = "Charge x5";
-      abilities[11].text = abilities[11].text.replace("Life<BR>", "Life CHARGE x5<BR>");
-    }
-    else{
-      abilities[11].charge = "";
-      abilities[11].text = abilities[11].text.replace("Life CHARGE x5<BR>", "Life<BR>");
-    }
-    if(abilities[4].selectedAbility1 == "Release" || abilities[4].selectedAbility2 == "Release"){
-      abilities[15].charge = "Charge x5";
-      abilities[15].text = abilities[15].text.replace("Life<BR>", "Life CHARGE x5<BR>");
-    }
-    else{
-      abilities[15].charge = "";
-      abilities[15].text = abilities[15].text.replace("Life CHARGE x5<BR>", "Life<BR>");
-    }
-    if(abilities[4].selectedAbility1 == "Teleport" || abilities[4].selectedAbility2 == "Teleport"){
-      abilities[33].charge = "Charge x5";
-      abilities[33].text = abilities[33].text.replace("Life<BR>", "Life CHARGE x5<BR>");
-    }
-    else{
-      abilities[33].charge = "";
-      abilities[33].text = abilities[33].text.replace("Life CHARGE x5<BR>", "Life<BR>");
-    }
-    if(abilities[4].selectedAbility1 == "Dispel Magic" || abilities[4].selectedAbility2 == "Dispel Magic"){
-      abilities[19].charge = "Charge x10";
-      abilities[19].text = abilities[19].text.replace("Refresh<BR>", "Refresh CHARGE x10<BR>")
-    }
-    else{
-      abilities[19].charge = "";
-      abilities[19].text = abilities[19].text.replace("Refresh CHARGE x10<BR>", "Refresh<BR>");
-    }
+    else{document.getElementById("Experiencedplus").disabled = true}
+  }
+  if(abilities[4].purchased == 2){
+    document.getElementById("Experiencedplus").disabled = false;
+  }
+  if(abilities[4].selectedAbility1 == "Mend" || abilities[4].selectedAbility2 == "Mend"){
+    abilities[7].charge = "Charge x5";
+    abilities[7].text = abilities[7].text.replace("Life<BR>", "Life CHARGE x5<BR>");
+  }
+  else{
+    abilities[7].charge = "";
+    abilities[7].text = abilities[7].text.replace("Life CHARGE x5<BR>", "Life<BR>");
+  }
+  if(abilities[4].selectedAbility1 == "Greater Mend" || abilities[4].selectedAbility2 == "Greater Mend"){
+    abilities[22].charge = "Charge x10";
+    abilities[22].text = abilities[22].text.replace("Refresh<BR>", "Refresh CHARGE x10<BR>");
+  }
+  else{
+    abilities[22].charge = "";
+    abilities[22].text = abilities[22].text.replace("Refresh CHARGE x10<BR>", "Refresh<BR>");
+  }
+  if(abilities[4].selectedAbility1 == "Icy Blast" || abilities[4].selectedAbility2 == "Icy Blast"){
+    abilities[23].charge = "Charge x5";
+    abilities[23].text = abilities[23].text.replace("Life<BR>", "Life CHARGE x5<BR>");
+  }
+  else{
+    abilities[23].charge = "";
+    abilities[23].text = abilities[23].text.replace("Life CHARGE x5<BR>", "Life<BR>");
+  }
+  if(abilities[4].selectedAbility1 == "Heal" || abilities[4].selectedAbility2 == "Heal"){
+    abilities[11].charge = "Charge x5";
+    abilities[11].text = abilities[11].text.replace("Life<BR>", "Life CHARGE x5<BR>");
+  }
+  else{
+    abilities[11].charge = "";
+    abilities[11].text = abilities[11].text.replace("Life CHARGE x5<BR>", "Life<BR>");
+  }
+  if(abilities[4].selectedAbility1 == "Release" || abilities[4].selectedAbility2 == "Release"){
+    abilities[15].charge = "Charge x5";
+    abilities[15].text = abilities[15].text.replace("Life<BR>", "Life CHARGE x5<BR>");
+  }
+  else{
+    abilities[15].charge = "";
+    abilities[15].text = abilities[15].text.replace("Life CHARGE x5<BR>", "Life<BR>");
+  }
+  if(abilities[4].selectedAbility1 == "Teleport" || abilities[4].selectedAbility2 == "Teleport"){
+    abilities[33].charge = "Charge x5";
+    abilities[33].text = abilities[33].text.replace("Life<BR>", "Life CHARGE x5<BR>");
+  }
+  else{
+    abilities[33].charge = "";
+    abilities[33].text = abilities[33].text.replace("Life CHARGE x5<BR>", "Life<BR>");
+  }
+  if(abilities[4].selectedAbility1 == "Dispel Magic" || abilities[4].selectedAbility2 == "Dispel Magic"){
+    abilities[19].charge = "Charge x10";
+    abilities[19].text = abilities[19].text.replace("Refresh<BR>", "Refresh CHARGE x10<BR>")
+  }
+  else{
+    abilities[19].charge = "";
+    abilities[19].text = abilities[19].text.replace("Refresh CHARGE x10<BR>", "Refresh<BR>");
+  }
     //createURL(); OLD
-    if(fromUser == 1){
-      pointPlus(4);
+  if(fromUser == 1){
+    pointPlus(4);
       createURL(); //new//new checking to see if this fixes the reload error on iPhones
     }
- }
+  }
 /*##################################*/
-function summonerCheck(index){
-  var a = index;
-  if(abilities[49].purchased > 0){
-    if(a == 5 || a == 19 || a == 23 || a == 26 || a == 35 || a == 44 ){
+  function summonerCheck(index){
+    var a = index;
+    if(abilities[49].purchased > 0){
+      if(a == 5 || a == 19 || a == 23 || a == 26 || a == 35 || a == 44 ){
        return false;
-       }
-    else{
+     }
+     else{
       return true;
     }
   }  
   if(abilities[a].name == "Summoner"){
     if(abilities[5].purchased != 0 || abilities[19].purchased != 0 || abilities[23].purchased != 0 || abilities[26].purchased != 0 || abilities[35].purchased != 0 || abilities[44].purchased != 0){
       return false; 
-      }
+    }
     else {return true;}
   }
   else{
@@ -575,141 +577,141 @@ function updatePointsAvailable(fc){
   }
 
   if(ltpChecked && reqLevel == 1 && ltpReq == false){
-     document.getElementById("level1Points").value = pointsAvailable[1] + 1;
-  }
-  else if(ltpChecked && reqLevel == 2 && ltpReq == false){
-    document.getElementById("level2Points").value = pointsAvailable[2] + 1;
-  }
-  else if(ltpChecked && reqLevel == 3 && ltpReq == false){
-    document.getElementById("level3Points").value = pointsAvailable[3] + 1;
-  }
-  else if(ltpChecked && reqLevel == 4 && ltpReq == false){
-    document.getElementById("level4Points").value = pointsAvailable[4] + 1;
-  }
-  else if(ltpChecked && reqLevel == 5 && ltpReq == false){
-    document.getElementById("level5Points").value = pointsAvailable[5] + 1;
-  }
-  else if(ltpChecked && reqLevel == 6 && ltpReq == false){
-    document.getElementById("level6Points").value = pointsAvailable[6];
+   document.getElementById("level1Points").value = pointsAvailable[1] + 1;
+ }
+ else if(ltpChecked && reqLevel == 2 && ltpReq == false){
+  document.getElementById("level2Points").value = pointsAvailable[2] + 1;
 }
-  else if(ltpChecked && reqLevel == 1 && ltpReq == true){
-    document.getElementById("ltp1").innerText = "(Look the Part Required)";
-    document.getElementById("ltp1").hidden = false;
-    document.getElementById("level2Points").value = 5;
-    document.getElementById("hlp1").innerText = " ";
-  }
-  else if(ltpChecked && reqLevel == 2 && ltpReq == true){
-      document.getElementById("ltp2").innerText = "(Look the Part Required)";
-      document.getElementById("ltp2").hidden = false;
-      document.getElementById("level3Points").value = 5;
-      document.getElementById("hlp2").innerText = " ";
-  }
-  else if(ltpChecked && reqLevel == 3 && ltpReq == true){
-      document.getElementById("ltp3").innerText = "(Look the Part Required)";
-      document.getElementById("ltp3").hidden = false;
-      document.getElementById("level4Points").value = 5;
-      document.getElementById("hlp3").innerText = " ";
-  }
-  else if(ltpChecked && reqLevel == 4 && ltpReq == true){
-      document.getElementById("ltp4").innerText = "(Look the Part Required)";
-      document.getElementById("ltp4").hidden = false;
-      document.getElementById("level5Points").value = 5;
-      document.getElementById("hlp4").innerText = " ";
-  }
-  else if(ltpChecked && reqLevel == 5 && ltpReq == true){
-      document.getElementById("ltp5").innerText = "(Look the Part Required)";
-      document.getElementById("ltp5").hidden = false;
-      document.getElementById("level6Points").value = 5;
-      document.getElementById("hlp5").innerText = " ";
-  }
-  else if(ltpChecked && reqLevel == 6 && ltpReq == true){
-    document.getElementById("ltp6").innerText = "(Look the Part Required)";
-    document.getElementById("ltp6").hidden = false;
-  }
-  if(reqLevel == 1){    
-    document.getElementById("level1Points").hidden = false;
-    document.getElementById("reqLevel1").hidden = false;
-    document.getElementById("level2Points").hidden = true;
-    document.getElementById("reqLevel2").hidden = true;
-    document.getElementById("level3Points").hidden = true;
-    document.getElementById("reqLevel3").hidden = true;
-    document.getElementById("level4Points").hidden = true;
-    document.getElementById("reqLevel4").hidden = true;
-    document.getElementById("level5Points").hidden = true;
-    document.getElementById("reqLevel5").hidden = true;
-    document.getElementById("level6Points").hidden = true;
-    document.getElementById("reqLevel6").hidden = true;
-  }
-  else if(reqLevel == 2){    
-    document.getElementById("level1Points").hidden = false;
-    document.getElementById("reqLevel1").hidden = false;
-    document.getElementById("level2Points").hidden = false;
-    document.getElementById("reqLevel2").hidden = false;
-    document.getElementById("level3Points").hidden = true;
-    document.getElementById("reqLevel3").hidden = true;
-    document.getElementById("level4Points").hidden = true;
-    document.getElementById("reqLevel4").hidden = true;
-    document.getElementById("level5Points").hidden = true;
-    document.getElementById("reqLevel5").hidden = true;
-    document.getElementById("level6Points").hidden = true;
-    document.getElementById("reqLevel6").hidden = true;
-  }
-  else if(reqLevel == 3){    
-    document.getElementById("level1Points").hidden = false;
-    document.getElementById("reqLevel1").hidden = false;
-    document.getElementById("level2Points").hidden = false;
-    document.getElementById("reqLevel2").hidden = false;
-    document.getElementById("level3Points").hidden = false;
-    document.getElementById("reqLevel3").hidden = false;
-    document.getElementById("level4Points").hidden = true;
-    document.getElementById("reqLevel4").hidden = true;
-    document.getElementById("level5Points").hidden = true;
-    document.getElementById("reqLevel5").hidden = true;
-    document.getElementById("level6Points").hidden = true;
-    document.getElementById("reqLevel6").hidden = true;
-  }
-  else if(reqLevel == 4){    
-    document.getElementById("level1Points").hidden = false;
-    document.getElementById("reqLevel1").hidden = false;
-    document.getElementById("level2Points").hidden = false;
-    document.getElementById("reqLevel2").hidden = false;
-    document.getElementById("level3Points").hidden = false;
-    document.getElementById("reqLevel3").hidden = false;
-    document.getElementById("level4Points").hidden = false;
-    document.getElementById("reqLevel4").hidden = false;
-    document.getElementById("level5Points").hidden = true;
-    document.getElementById("reqLevel5").hidden = true;
-    document.getElementById("level6Points").hidden = true;
-    document.getElementById("reqLevel6").hidden = true;
-  }
-  else if(reqLevel == 5){    
-    document.getElementById("level1Points").hidden = false;
-    document.getElementById("reqLevel1").hidden = false;
-    document.getElementById("level2Points").hidden = false;
-    document.getElementById("reqLevel2").hidden = false;
-    document.getElementById("level3Points").hidden = false;
-    document.getElementById("reqLevel3").hidden = false;
-    document.getElementById("level4Points").hidden = false;
-    document.getElementById("reqLevel4").hidden = false;
-    document.getElementById("level5Points").hidden = false;
-    document.getElementById("reqLevel5").hidden = false;
-    document.getElementById("level6Points").hidden = true;
-    document.getElementById("reqLevel6").hidden = true;
-  }
-  else if(reqLevel == 6){    
-    document.getElementById("level1Points").hidden = false;
-    document.getElementById("reqLevel1").hidden = false;
-    document.getElementById("level2Points").hidden = false;
-    document.getElementById("reqLevel2").hidden = false;
-    document.getElementById("level3Points").hidden = false;
-    document.getElementById("reqLevel3").hidden = false;
-    document.getElementById("level4Points").hidden = false;
-    document.getElementById("reqLevel4").hidden = false;
-    document.getElementById("level5Points").hidden = false;
-    document.getElementById("reqLevel5").hidden = false;
-    document.getElementById("level6Points").hidden = false;
-    document.getElementById("reqLevel6").hidden = false;
-  }
+else if(ltpChecked && reqLevel == 3 && ltpReq == false){
+  document.getElementById("level3Points").value = pointsAvailable[3] + 1;
+}
+else if(ltpChecked && reqLevel == 4 && ltpReq == false){
+  document.getElementById("level4Points").value = pointsAvailable[4] + 1;
+}
+else if(ltpChecked && reqLevel == 5 && ltpReq == false){
+  document.getElementById("level5Points").value = pointsAvailable[5] + 1;
+}
+else if(ltpChecked && reqLevel == 6 && ltpReq == false){
+  document.getElementById("level6Points").value = pointsAvailable[6];
+}
+else if(ltpChecked && reqLevel == 1 && ltpReq == true){
+  document.getElementById("ltp1").innerText = "(Look the Part Required)";
+  document.getElementById("ltp1").hidden = false;
+  document.getElementById("level2Points").value = 5;
+  document.getElementById("hlp1").innerText = " ";
+}
+else if(ltpChecked && reqLevel == 2 && ltpReq == true){
+  document.getElementById("ltp2").innerText = "(Look the Part Required)";
+  document.getElementById("ltp2").hidden = false;
+  document.getElementById("level3Points").value = 5;
+  document.getElementById("hlp2").innerText = " ";
+}
+else if(ltpChecked && reqLevel == 3 && ltpReq == true){
+  document.getElementById("ltp3").innerText = "(Look the Part Required)";
+  document.getElementById("ltp3").hidden = false;
+  document.getElementById("level4Points").value = 5;
+  document.getElementById("hlp3").innerText = " ";
+}
+else if(ltpChecked && reqLevel == 4 && ltpReq == true){
+  document.getElementById("ltp4").innerText = "(Look the Part Required)";
+  document.getElementById("ltp4").hidden = false;
+  document.getElementById("level5Points").value = 5;
+  document.getElementById("hlp4").innerText = " ";
+}
+else if(ltpChecked && reqLevel == 5 && ltpReq == true){
+  document.getElementById("ltp5").innerText = "(Look the Part Required)";
+  document.getElementById("ltp5").hidden = false;
+  document.getElementById("level6Points").value = 5;
+  document.getElementById("hlp5").innerText = " ";
+}
+else if(ltpChecked && reqLevel == 6 && ltpReq == true){
+  document.getElementById("ltp6").innerText = "(Look the Part Required)";
+  document.getElementById("ltp6").hidden = false;
+}
+if(reqLevel == 1){    
+  document.getElementById("level1Points").hidden = false;
+  document.getElementById("reqLevel1").hidden = false;
+  document.getElementById("level2Points").hidden = true;
+  document.getElementById("reqLevel2").hidden = true;
+  document.getElementById("level3Points").hidden = true;
+  document.getElementById("reqLevel3").hidden = true;
+  document.getElementById("level4Points").hidden = true;
+  document.getElementById("reqLevel4").hidden = true;
+  document.getElementById("level5Points").hidden = true;
+  document.getElementById("reqLevel5").hidden = true;
+  document.getElementById("level6Points").hidden = true;
+  document.getElementById("reqLevel6").hidden = true;
+}
+else if(reqLevel == 2){    
+  document.getElementById("level1Points").hidden = false;
+  document.getElementById("reqLevel1").hidden = false;
+  document.getElementById("level2Points").hidden = false;
+  document.getElementById("reqLevel2").hidden = false;
+  document.getElementById("level3Points").hidden = true;
+  document.getElementById("reqLevel3").hidden = true;
+  document.getElementById("level4Points").hidden = true;
+  document.getElementById("reqLevel4").hidden = true;
+  document.getElementById("level5Points").hidden = true;
+  document.getElementById("reqLevel5").hidden = true;
+  document.getElementById("level6Points").hidden = true;
+  document.getElementById("reqLevel6").hidden = true;
+}
+else if(reqLevel == 3){    
+  document.getElementById("level1Points").hidden = false;
+  document.getElementById("reqLevel1").hidden = false;
+  document.getElementById("level2Points").hidden = false;
+  document.getElementById("reqLevel2").hidden = false;
+  document.getElementById("level3Points").hidden = false;
+  document.getElementById("reqLevel3").hidden = false;
+  document.getElementById("level4Points").hidden = true;
+  document.getElementById("reqLevel4").hidden = true;
+  document.getElementById("level5Points").hidden = true;
+  document.getElementById("reqLevel5").hidden = true;
+  document.getElementById("level6Points").hidden = true;
+  document.getElementById("reqLevel6").hidden = true;
+}
+else if(reqLevel == 4){    
+  document.getElementById("level1Points").hidden = false;
+  document.getElementById("reqLevel1").hidden = false;
+  document.getElementById("level2Points").hidden = false;
+  document.getElementById("reqLevel2").hidden = false;
+  document.getElementById("level3Points").hidden = false;
+  document.getElementById("reqLevel3").hidden = false;
+  document.getElementById("level4Points").hidden = false;
+  document.getElementById("reqLevel4").hidden = false;
+  document.getElementById("level5Points").hidden = true;
+  document.getElementById("reqLevel5").hidden = true;
+  document.getElementById("level6Points").hidden = true;
+  document.getElementById("reqLevel6").hidden = true;
+}
+else if(reqLevel == 5){    
+  document.getElementById("level1Points").hidden = false;
+  document.getElementById("reqLevel1").hidden = false;
+  document.getElementById("level2Points").hidden = false;
+  document.getElementById("reqLevel2").hidden = false;
+  document.getElementById("level3Points").hidden = false;
+  document.getElementById("reqLevel3").hidden = false;
+  document.getElementById("level4Points").hidden = false;
+  document.getElementById("reqLevel4").hidden = false;
+  document.getElementById("level5Points").hidden = false;
+  document.getElementById("reqLevel5").hidden = false;
+  document.getElementById("level6Points").hidden = true;
+  document.getElementById("reqLevel6").hidden = true;
+}
+else if(reqLevel == 6){    
+  document.getElementById("level1Points").hidden = false;
+  document.getElementById("reqLevel1").hidden = false;
+  document.getElementById("level2Points").hidden = false;
+  document.getElementById("reqLevel2").hidden = false;
+  document.getElementById("level3Points").hidden = false;
+  document.getElementById("reqLevel3").hidden = false;
+  document.getElementById("level4Points").hidden = false;
+  document.getElementById("reqLevel4").hidden = false;
+  document.getElementById("level5Points").hidden = false;
+  document.getElementById("reqLevel5").hidden = false;
+  document.getElementById("level6Points").hidden = false;
+  document.getElementById("reqLevel6").hidden = false;
+}
   //createURL(); OLD
 }
 
@@ -735,9 +737,9 @@ function freeableFrom(index, c, rl, r){
       tempTotal = tempTotal + (higherLevelPoints[i] - 5);
     }
     //console.log(higherLevelPoints[highestLevel] + " " + pointsAvailable[highestLevel] + " " + highestLevel);
-   }
-    
-   if(lookThePartChecked == true){
+  }
+
+  if(lookThePartChecked == true){
     tempTotal = higherLevelPoints[lvl];
     for(let i = lvl + 1; i < 7; i++){
       if(tempTotal + (higherLevelPoints[i] - 5) <= 0 && higherLevelPoints[i] == 0){
@@ -745,17 +747,17 @@ function freeableFrom(index, c, rl, r){
         i = 7;
       }
       if(req == true && i == reqLevel){
-         highestLevel = i;
-        i = 7;
-         }
-      tempTotal = tempTotal + (higherLevelPoints[i] - 5);
-    }
-    //console.log(higherLevelPoints[highestLevel] + " " + pointsAvailable[highestLevel] + " " + highestLevel);
+       highestLevel = i;
+       i = 7;
+     }
+     tempTotal = tempTotal + (higherLevelPoints[i] - 5);
    }
-  
-    outputString = "[Level " + highestLevel + "]";
-    
-  return outputString; 
+    //console.log(higherLevelPoints[highestLevel] + " " + pointsAvailable[highestLevel] + " " + highestLevel);
+ }
+
+ outputString = "[Level " + highestLevel + "]";
+
+ return outputString; 
 }
 /*##################################*/
 function pointMinus(index) {
@@ -788,8 +790,8 @@ function reprocessPoints(index){
   let temp1 = "";
   let temp2 = "";
   
-    temp1 = abilities[4].selectedAbility1;
-    temp2 = abilities[4].selectedAbility2;
+  temp1 = abilities[4].selectedAbility1;
+  temp2 = abilities[4].selectedAbility2;
   
   var tempPurchased = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
   for(let i = 0; i < abilityCount; i++){
@@ -812,10 +814,10 @@ function reprocessPoints(index){
     }
   }
   
-    abilities[4].selectedAbility1 = temp1;
-    abilities[4].selectedAbility2 = temp2;
-    document.getElementById("exp1").value = temp1;
-    document.getElementById("exp2").value = temp2;
+  abilities[4].selectedAbility1 = temp1;
+  abilities[4].selectedAbility2 = temp2;
+  document.getElementById("exp1").value = temp1;
+  document.getElementById("exp2").value = temp2;
   
   updateExperienced();  
   updatePointsAvailable();
@@ -1006,14 +1008,14 @@ function checkRangerMinus(index){
 /*##################################*/
 function popFunc(elementId, index) {
   const elements = document.getElementsByClassName("popuptext");
-var popup = document.getElementById(elementId);
-    
+  var popup = document.getElementById(elementId);
+
   for (let i = 0; i < elements.length; i++) {
-        if(!(elements[i].id == popup.id)){
-          elements[i].classList.remove("show");
-        }
-    }  
-    popup.innerHTML = abilities[index].text;
+    if(!(elements[i].id == popup.id)){
+      elements[i].classList.remove("show");
+    }
+  }  
+  popup.innerHTML = abilities[index].text;
   popup.classList.toggle("show");
 }
 
@@ -1601,18 +1603,117 @@ function getAbilities(){return abilities}
 
 function saveList(){
   let textToSave = "";
-    if(document.title == "Druid Spellbook"){
-      textToSave = "Druid Level " + document.getElementById("reqLevel").value + document.getElementById("ltp").innerText + " \n   Level 1 \n" + document.getElementById("lvl1List").innerText + "\n   Level 2 \n" + document.getElementById("lvl2List").innerText + "\n   Level 3 \n" + document.getElementById("lvl3List").innerText + "\n   Level 4 \n" + document.getElementById("lvl4List").innerText + "\n   Level 5 \n" + document.getElementById("lvl5List").innerText + "\n   Level 6 \n" + document.getElementById("lvl6List").innerText;
+  if(document.title == "Druid Spellbook"){
+    textToSave = "Druid Level " + document.getElementById("reqLevel").value + document.getElementById("ltp").innerText + " \n   Level 1 \n" + document.getElementById("lvl1List").innerText + "\n   Level 2 \n" + document.getElementById("lvl2List").innerText + "\n   Level 3 \n" + document.getElementById("lvl3List").innerText + "\n   Level 4 \n" + document.getElementById("lvl4List").innerText + "\n   Level 5 \n" + document.getElementById("lvl5List").innerText + "\n   Level 6 \n" + document.getElementById("lvl6List").innerText;
+  }
+  else{
+    textToSave = document.title + " \n(Druid Level " + document.getElementById("reqLevel").value + ")" + document.getElementById("ltp").innerText + " \n   Level 1 \n" + document.getElementById("lvl1List").innerText + "\n   Level 2 \n" + document.getElementById("lvl2List").innerText + "\n   Level 3 \n" + document.getElementById("lvl3List").innerText + "\n   Level 4 \n" + document.getElementById("lvl4List").innerText + "\n   Level 5 \n" + document.getElementById("lvl5List").innerText + "\n   Level 6 \n" + document.getElementById("lvl6List").innerText;
+  }    
+  const blob = new Blob([textToSave], { type: 'text/plain' });
+  const link = document.createElement('a');
+  link.href = URL.createObjectURL(blob);
+  link.download = document.title + '.txt'; 
+  link.click();
+  URL.revokeObjectURL(link.href);
+}
+
+function printCards(){
+  let textToSave = "";
+  if (showIncants != true){
+    toggleIncants();
+  }
+  if(document.title == "Druid Spellbook"){
+    textToSave = "Druid Level " + document.getElementById("reqLevel").value + document.getElementById("ltp").innerText + " \n   Level 1 \n" + document.getElementById("lvl1List").innerText + "\n   Level 2 \n" + document.getElementById("lvl2List").innerText + "\n   Level 3 \n" + document.getElementById("lvl3List").innerText + "\n   Level 4 \n" + document.getElementById("lvl4List").innerText + "\n   Level 5 \n" + document.getElementById("lvl5List").innerText + "\n   Level 6 \n" + document.getElementById("lvl6List").innerText;
+  }
+  else{
+    textToSave = document.title + " \n(Druid Level " + document.getElementById("reqLevel").value + ")" + document.getElementById("ltp").innerText + " \n   Level 1 \n" + document.getElementById("lvl1List").innerText + "\n   Level 2 \n" + document.getElementById("lvl2List").innerText + "\n   Level 3 \n" + document.getElementById("lvl3List").innerText + "\n   Level 4 \n" + document.getElementById("lvl4List").innerText + "\n   Level 5 \n" + document.getElementById("lvl5List").innerText + "\n   Level 6 \n" + document.getElementById("lvl6List").innerText;
+  }
+  const textData = textToSave;
+
+  const lines = textData.split('\n');
+  const title = lines[0];
+  const entries = [];
+
+  let currentLevel = '';
+  for (let i = 1; i < lines.length; i++) {
+    const line = lines[i].trim();
+    if (line.startsWith('Level')) {
+      currentLevel = line;
+    } else if (line.startsWith('-')) {
+      if (entries.length > 0) {
+        entries[entries.length - 1].flavor = line.slice(1).trim();
+      }
+    } else if (line) {
+      entries.push({ level: currentLevel, text: line, flavor: '' });
     }
-    else{
-      textToSave = document.title + " \n(Druid Level " + document.getElementById("reqLevel").value + ")" + document.getElementById("ltp").innerText + " \n   Level 1 \n" + document.getElementById("lvl1List").innerText + "\n   Level 2 \n" + document.getElementById("lvl2List").innerText + "\n   Level 3 \n" + document.getElementById("lvl3List").innerText + "\n   Level 4 \n" + document.getElementById("lvl4List").innerText + "\n   Level 5 \n" + document.getElementById("lvl5List").innerText + "\n   Level 6 \n" + document.getElementById("lvl6List").innerText;
-    }    
-    const blob = new Blob([textToSave], { type: 'text/plain' });
-    const link = document.createElement('a');
-    link.href = URL.createObjectURL(blob);
-    link.download = document.title + '.txt'; 
-    link.click();
-    URL.revokeObjectURL(link.href);
+  }
+
+// Split into 3 cards
+  numchunks = 3
+  chunks = []
+  if (entries.length < 9){
+    numchunks = 1;
+    chunks = [entries];
+  } else if (entries.length < 19){
+    numchunks = 2;
+    const chunkSize = Math.ceil(entries.length / numchunks);
+    chunks = [entries.slice(0, chunkSize), entries.slice(chunkSize, 2 * chunkSize)];
+  } else {
+    const chunkSize = Math.ceil(entries.length / numchunks);
+    chunks = [entries.slice(0, chunkSize), entries.slice(chunkSize, 2 * chunkSize), entries.slice(2 * chunkSize)];
+  }
+
+  const htmlContent = `
+<html>
+<head>
+  <title>Printable Spell Cards</title>
+  <style>
+    @media print {
+      body {
+        margin: 0;
+        padding: 0;
+      }
+    }
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .card {
+      width: 4.5in;
+      height: 2.6in;
+      box-sizing: border-box;
+      border: 1px solid #000;
+      padding: 0.2in;
+      margin: 0.2in;
+      display: inline-block;
+      vertical-align: top;
+      font-size: 10pt;
+    }
+    .entry {
+      margin-bottom: 0.2em;
+    }
+    .title {
+      font-weight: bold;
+      margin-bottom: 0.5em;
+    }
+  </style>
+</head>
+<body>
+    ${chunks.map(chunk => `
+    <div class="card">
+      <div class="title">${title}</div>
+      ${chunk.map(entry => `
+        <div class="entry">${entry.text}${entry.flavor ? ' - ' + entry.flavor : ''}</div>
+        `).join('')}
+    </div>
+      `).join('')}
+  <script>window.onload = () => window.print();</script>
+</body>
+</html>
+  `;
+
+  const blob = new Blob([htmlContent], { type: 'text/html' });
+  const url = URL.createObjectURL(blob);
+  window.open(url, '_blank');
 }
 
 function titleList(){

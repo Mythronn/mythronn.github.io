@@ -12,41 +12,41 @@ window.addEventListener('hashchange', function() {
   var referrer = document.referrer;
   //console.log("The referrer is: " + referrer);
   //if (referrer === "" || !referrer.includes(window.location.origin)) 
-    
-    parseURL();
-    updateTable();;  
+
+  parseURL();
+  updateTable();;  
 });
 
 function updateAbilityText(index){
   let i = index;
   abilities[i].text = "<p2>" + abilities[i].name + "</p2><BR>"; 
-    if(abilities[i].freq != ""){
-      abilities[i].text += "<p3>Freq:</p3>  " + abilities[i].freq + "<BR>"; 
-    }
-    if(abilities[i].type != ""){
-      abilities[i].text += "<p3>Type:</p3>  " + abilities[i].type + "<BR>"; 
-    }
-    if(abilities[i].school != ""){
-      abilities[i].text += "<p3>School:</p3>  " + abilities[i].school + "<BR>"; 
-    }
-    if(abilities[i].range != ""){
-      abilities[i].text += "<p3>Range:</p3>  " + abilities[i].range + "<BR>"; 
-    }
-    if(abilities[i].incant != ""){
-      abilities[i].text += "<p3>Incant:</p3>  " + abilities[i].incant + "<BR>"; 
-    }
-    if(abilities[i].materials != ""){
-      abilities[i].text += "<p3>Materials:</p3>  " + abilities[i].materials + "<BR>"; 
-    }
-    if(abilities[i].effect != ""){
-      abilities[i].text += "<p3>Effect:</p3>  " + abilities[i].effect + "<BR>"; 
-    }
-    if(abilities[i].limitations != ""){
-      abilities[i].text += "<p3>Limitations:</p3>  " + abilities[i].limitations + "<BR>"; 
-    }
-    if(abilities[i].notes != ""){
-      abilities[i].text += "<p3>Notes:</p3>  " + abilities[i].notes + "<BR>"; 
-    }
+  if(abilities[i].freq != ""){
+    abilities[i].text += "<p3>Freq:</p3>  " + abilities[i].freq + "<BR>"; 
+  }
+  if(abilities[i].type != ""){
+    abilities[i].text += "<p3>Type:</p3>  " + abilities[i].type + "<BR>"; 
+  }
+  if(abilities[i].school != ""){
+    abilities[i].text += "<p3>School:</p3>  " + abilities[i].school + "<BR>"; 
+  }
+  if(abilities[i].range != ""){
+    abilities[i].text += "<p3>Range:</p3>  " + abilities[i].range + "<BR>"; 
+  }
+  if(abilities[i].incant != ""){
+    abilities[i].text += "<p3>Incant:</p3>  " + abilities[i].incant + "<BR>"; 
+  }
+  if(abilities[i].materials != ""){
+    abilities[i].text += "<p3>Materials:</p3>  " + abilities[i].materials + "<BR>"; 
+  }
+  if(abilities[i].effect != ""){
+    abilities[i].text += "<p3>Effect:</p3>  " + abilities[i].effect + "<BR>"; 
+  }
+  if(abilities[i].limitations != ""){
+    abilities[i].text += "<p3>Limitations:</p3>  " + abilities[i].limitations + "<BR>"; 
+  }
+  if(abilities[i].notes != ""){
+    abilities[i].text += "<p3>Notes:</p3>  " + abilities[i].notes + "<BR>"; 
+  }
 }
 
 
@@ -60,26 +60,26 @@ function parseURL(){
   if(url.length > 1 && url[0] == "#"){
     url = expandZeros(url);
     url = url.replace("#", "");
-      for(let i = 0; i < abilityCount; i++){
+    for(let i = 0; i < abilityCount; i++){
           //console.log(abilities[i].name);
-          abilities[i].purchased = decodeMap(url[i]);         
+      abilities[i].purchased = decodeMap(url[i]);         
+    }
+    exps = url.split("-");
+    abilities[3].selectedAbility1 = exps[1].replace(/_/g, " ");
+    abilities[3].selectedAbility2 = exps[2].replace(/_/g, " ");
+    if(exps[3] != null && exps[3] != ""){
+      document.title = (exps[3]).replace(/_/g, " ");
+      document.getElementById('titleShow').innerHTML = document.title;
+    }
+    if(exps[4] != null && exps[4] != ""){
+      if(exps[4] == "ltp"){
+        document.getElementById("ltpCheckBox").checked = true;
       }
-      exps = url.split("-");
-      abilities[3].selectedAbility1 = exps[1].replace(/_/g, " ");
-      abilities[3].selectedAbility2 = exps[2].replace(/_/g, " ");
-      if(exps[3] != null && exps[3] != ""){
-        document.title = (exps[3]).replace(/_/g, " ");
-        document.getElementById('titleShow').innerHTML = document.title;
+      if(exps[4] == "no"){
+        document.getElementById("ltpCheckBox").checked = false;
       }
-      if(exps[4] != null && exps[4] != ""){
-        if(exps[4] == "ltp"){
-          document.getElementById("ltpCheckBox").checked = true;
-        }
-        if(exps[4] == "no"){
-          document.getElementById("ltpCheckBox").checked = false;
-        }
-      }
-      reprocessPoints(0);
+    }
+    reprocessPoints(0);
   }
 }
 /*##################################*/
@@ -94,7 +94,7 @@ function createURL(){
   }
   
   for(let i = 0; i < abilityCount; i++){
-      s += encodeMap(abilities[i].purchased);
+    s += encodeMap(abilities[i].purchased);
   }
   s += "-" + (abilities[3].selectedAbility1).replace(/ /g, "_") + "-" + (abilities[3].selectedAbility2).replace(/ /g, "_") + "-" + (document.title).replace(/ /g, "_") + "-" + chk;
   s = replaceRepeatingZeros(s);
@@ -193,7 +193,7 @@ function toggleList(incantOnly){
   var lists = [];
   var levelList = ["", "", "", "", "", "", ""];
   var curLevel = document.getElementById("reqLevel").value;
-    
+
   for(let i = 1; i < 7; i++){
     tables[i] = document.getElementById("table-lvl" + i);
     lists[i] = document.getElementById("lvl" + i + "List");
@@ -230,15 +230,16 @@ function toggleList(incantOnly){
         if(showIncants && abilities[k].incant != ""){
           levelList[i] = levelList[i] + "<BR>- " + abilities[k].incant;
         }
-       }
+      }
     }
     levelList[i] = levelList[i].slice(4);
     lists[i].innerHTML = levelList[i];
     if(tables[i].style.display == "block" && incantOnly != 'incants'){
-      
+
       tables[i].style.display = "none";
       lists[i].style.display = "block";
       document.getElementById("saveList").hidden = false;
+      document.getElementById("printCards").hidden = false;
       document.getElementById("titleList").hidden = false;
       document.getElementById("toggleIncants").hidden = false;
       document.getElementById("hlp1").hidden = true;
@@ -268,6 +269,7 @@ function toggleList(incantOnly){
       document.getElementById("saveList").hidden = true;
       document.getElementById("titleList").hidden = true;
       document.getElementById("toggleIncants").hidden = true;
+      document.getElementById("printCards").hidden = true;
       document.getElementById("hlp1").hidden = false;
       document.getElementById("hlp2").hidden = false;
       document.getElementById("hlp3").hidden = false;
@@ -336,7 +338,7 @@ function updateExperienced(){
   abilities[3].selectedAbility2 = document.getElementById("exp2").value;
   
   if(abilities[3].purchased == 0){
-  document.getElementById("experiencedtext").innerHTML = "<div class=\"popup\" ><span class=\"popuptext\" id=\"ExperiencedPopup\"></span></div>Experienced";
+    document.getElementById("experiencedtext").innerHTML = "<div class=\"popup\" ><span class=\"popuptext\" id=\"ExperiencedPopup\"></span></div>Experienced";
     document.getElementById("exp1").disabled = false;
     document.getElementById("exp2").disabled = true;
     document.getElementById("exp1").value = "Select Spell";
@@ -344,14 +346,14 @@ function updateExperienced(){
   }
   
   if(abilities[3].purchased == 1){    
-  document.getElementById("experiencedtext").innerHTML = "<div class=\"popup\" ><span class=\"popuptext\" id=\"ExperiencedPopup\"></span></div>Experienced<BR>[" + abilities[3].selectedAbility1 + "]";
+    document.getElementById("experiencedtext").innerHTML = "<div class=\"popup\" ><span class=\"popuptext\" id=\"ExperiencedPopup\"></span></div>Experienced<BR>[" + abilities[3].selectedAbility1 + "]";
     document.getElementById("exp1").disabled = true;
     document.getElementById("exp2").disabled = false;
     document.getElementById("exp2").value = "Select Spell";
     abilities[3].selectedAbility2 = "Select Spell";
   }  
   if(abilities[3].purchased == 2){    
-  document.getElementById("experiencedtext").innerHTML = "<div class=\"popup\" ><span class=\"popuptext\" id=\"ExperiencedPopup\"></span></div>Experienced<BR>[" + abilities[3].selectedAbility1 + "]<BR>[" + abilities[3].selectedAbility2 + "]";
+    document.getElementById("experiencedtext").innerHTML = "<div class=\"popup\" ><span class=\"popuptext\" id=\"ExperiencedPopup\"></span></div>Experienced<BR>[" + abilities[3].selectedAbility1 + "]<BR>[" + abilities[3].selectedAbility2 + "]";
     document.getElementById("exp1").disabled = true;
     document.getElementById("exp2").disabled = true;
   }
@@ -360,178 +362,178 @@ function updateExperienced(){
 }
 /*##################################*/
 function processExpChange(fromUser){  
-    if(abilities[3].purchased == 0){
-      if(document.getElementById("exp1").value != "Select Spell"){
-        document.getElementById("Experiencedplus").disabled = false;
-      }
-      else{document.getElementById("Experiencedplus").disabled = true}
-    }
-    if(abilities[3].purchased == 1){
-      if(document.getElementById("exp2").value != "Select Spell"){
-        document.getElementById("Experiencedplus").disabled = false;
-      }
-      else{document.getElementById("Experiencedplus").disabled = true}
-    }
-    if(abilities[3].purchased == 2){
+  if(abilities[3].purchased == 0){
+    if(document.getElementById("exp1").value != "Select Spell"){
       document.getElementById("Experiencedplus").disabled = false;
     }
-    if(abilities[3].selectedAbility1 == "Awe" || abilities[3].selectedAbility2 == "Awe"){
-      abilities[15].charge = "Charge x5";
-      abilities[15].freq = "1/Life CHARGE x5";
-      if(abilities[0].purchased > 0){abilities[15].freq = "2/Life CHARGE x5";}
-      updateAbilityText(15);
+    else{document.getElementById("Experiencedplus").disabled = true}
+  }
+  if(abilities[3].purchased == 1){
+    if(document.getElementById("exp2").value != "Select Spell"){
+      document.getElementById("Experiencedplus").disabled = false;
     }
-    else{
-      abilities[15].charge = "";
-      abilities[15].freq = "1/Life";
-      if(abilities[0].purchased > 0){abilities[15].freq = "2/Life";}
-      updateAbilityText(15);
-    }
-    if(abilities[3].selectedAbility1 == "Break Concentration" || abilities[3].selectedAbility2 == "Break Concentration"){
-      abilities[17].charge = "Charge x5";
-      abilities[17].freq = "1/Life CHARGE x5";
-      if(abilities[0].purchased > 0){abilities[17].freq = "2/Life CHARGE x5";}
-      updateAbilityText(17);
-    }
-    else{
-      abilities[17].charge = "";
-      abilities[17].freq = "1/Life";
-      if(abilities[0].purchased > 0){abilities[17].freq = "2/Life";}
-      updateAbilityText(17);
-    }
-    if(abilities[3].selectedAbility1 == "Empower" || abilities[3].selectedAbility2 == "Empower"){
-      abilities[8].charge = "Charge x10";
-      abilities[8].freq = "2/Ref CHARGE x10";
-      if(abilities[0].purchased > 0){abilities[8].freq = "4/Ref CHARGE x10";}
-      updateAbilityText(8);
-    }
-    else{
-      abilities[8].charge = "";
-      abilities[8].freq = "2/Ref";
-      if(abilities[0].purchased > 0){abilities[8].freq = "4/Ref";}
-      updateAbilityText(8);
-    }
-    if(abilities[3].selectedAbility1 == "Greater Release" || abilities[3].selectedAbility2 == "Greater Release"){
-      abilities[10].charge = "Charge x10";
-      abilities[10].freq = "1/Ref CHARGE x10";
-      if(abilities[0].purchased > 0){abilities[10].freq = "2/Ref CHARGE x10";}
-      updateAbilityText(10);
-    }
-    else{
-      abilities[10].charge = "";
-      abilities[10].freq = "1/Ref";
-      if(abilities[0].purchased > 0){abilities[10].freq = "2/Ref";}
-      updateAbilityText(10);
-    }
-    if(abilities[3].selectedAbility1 == "Insult" || abilities[3].selectedAbility2 == "Insult"){
-      abilities[4].charge = "Charge x5";
-      abilities[4].freq = "1/Life CHARGE x5";
-      if(abilities[0].purchased > 0){abilities[4].freq = "2/Life CHARGE x5";}
-      updateAbilityText(4);
-    }
-    else{
-      abilities[4].charge = "";
-      abilities[4].freq = "1/Life";
-      if(abilities[0].purchased > 0){abilities[4].freq = "2/Life";}
-      updateAbilityText(4);
-    }
-    if(abilities[3].selectedAbility1 == "Mend" || abilities[3].selectedAbility2 == "Mend"){
-      abilities[12].charge = "Charge x5";
-      abilities[12].freq = "1/Life CHARGE x5";
-      if(abilities[0].purchased > 0){abilities[12].freq = "2/Life CHARGE x5";}
-      updateAbilityText(12);
-    }
-    else{
-      abilities[12].charge = "";
-      abilities[12].freq = "1/Life";
-      if(abilities[0].purchased > 0){abilities[12].freq = "2/Life";}
-      updateAbilityText(12);
-    }
-    if(abilities[3].selectedAbility1 == "Release" || abilities[3].selectedAbility2 == "Release"){
-      abilities[5].charge = "Charge x5";
-      abilities[5].freq = "1/Life CHARGE x5";
-      if(abilities[0].purchased > 0){abilities[5].freq = "2/Life CHARGE x5";}
-      updateAbilityText(5);
-    }
-    else{
-      abilities[5].charge = "";
-      abilities[5].freq = "1/Life";
-      if(abilities[0].purchased > 0){abilities[5].freq = "2/Life";}
-      updateAbilityText(5);
-    }
-    if(abilities[3].selectedAbility1 == "Restoration" || abilities[3].selectedAbility2 == "Restoration"){
-      abilities[23].charge = "Charge x10";
-      abilities[23].freq = "1/Ref CHARGE x10";
-      if(abilities[0].purchased > 0){abilities[23].freq = "2/Ref CHARGE x10";}
-      updateAbilityText(23);
-    }
-    else{
-      abilities[23].charge = "";
-      abilities[23].freq = "1/Ref";
-      if(abilities[0].purchased > 0){abilities[23].freq = "2/Ref";}
-      updateAbilityText(23);
-    }
-    if(abilities[3].selectedAbility1 == "Shove" || abilities[3].selectedAbility2 == "Shove"){
-      abilities[6].charge = "Charge x5";
-      abilities[6].freq = "1/Life CHARGE x5";
-      if(abilities[0].purchased > 0){abilities[6].freq = "2/Life CHARGE x5";}
-      updateAbilityText(6);
-    }
-    else{
-      abilities[6].charge = "";
-      abilities[6].freq = "1/Life";
-      if(abilities[0].purchased > 0){abilities[6].freq = "2/Life";}
-      updateAbilityText(6);
-    }
-    if(abilities[3].selectedAbility1 == "Suppress Aura" || abilities[3].selectedAbility2 == "Suppress Aura"){
-      abilities[27].charge = "Charge x10";
-      abilities[27].freq = "1/Ref CHARGE x10";
-      if(abilities[0].purchased > 0){abilities[27].freq = "2/Ref CHARGE x10";}
-      updateAbilityText(27);
-    }
-    else{
-      abilities[27].charge = "";
-      abilities[27].freq = "1/Ref";
-      if(abilities[0].purchased > 0){abilities[27].freq = "2/Ref";}
-      updateAbilityText(27);
-    }
-    if(abilities[3].selectedAbility1 == "Terror" || abilities[3].selectedAbility2 == "Terror"){
-      abilities[29].charge = "Charge x10";
-      abilities[29].freq = "1/Ref CHARGE x10";
-      if(abilities[0].purchased > 0){abilities[29].freq = "2/Ref CHARGE x10";}
-      updateAbilityText(29);
-    }
-    else{
-      abilities[29].charge = "";
-      abilities[29].freq = "1/Ref";
-      if(abilities[0].purchased > 0){abilities[29].freq = "2/Ref";}
-      updateAbilityText(29);
-    }
+    else{document.getElementById("Experiencedplus").disabled = true}
+  }
+  if(abilities[3].purchased == 2){
+    document.getElementById("Experiencedplus").disabled = false;
+  }
+  if(abilities[3].selectedAbility1 == "Awe" || abilities[3].selectedAbility2 == "Awe"){
+    abilities[15].charge = "Charge x5";
+    abilities[15].freq = "1/Life CHARGE x5";
+    if(abilities[0].purchased > 0){abilities[15].freq = "2/Life CHARGE x5";}
+    updateAbilityText(15);
+  }
+  else{
+    abilities[15].charge = "";
+    abilities[15].freq = "1/Life";
+    if(abilities[0].purchased > 0){abilities[15].freq = "2/Life";}
+    updateAbilityText(15);
+  }
+  if(abilities[3].selectedAbility1 == "Break Concentration" || abilities[3].selectedAbility2 == "Break Concentration"){
+    abilities[17].charge = "Charge x5";
+    abilities[17].freq = "1/Life CHARGE x5";
+    if(abilities[0].purchased > 0){abilities[17].freq = "2/Life CHARGE x5";}
+    updateAbilityText(17);
+  }
+  else{
+    abilities[17].charge = "";
+    abilities[17].freq = "1/Life";
+    if(abilities[0].purchased > 0){abilities[17].freq = "2/Life";}
+    updateAbilityText(17);
+  }
+  if(abilities[3].selectedAbility1 == "Empower" || abilities[3].selectedAbility2 == "Empower"){
+    abilities[8].charge = "Charge x10";
+    abilities[8].freq = "2/Ref CHARGE x10";
+    if(abilities[0].purchased > 0){abilities[8].freq = "4/Ref CHARGE x10";}
+    updateAbilityText(8);
+  }
+  else{
+    abilities[8].charge = "";
+    abilities[8].freq = "2/Ref";
+    if(abilities[0].purchased > 0){abilities[8].freq = "4/Ref";}
+    updateAbilityText(8);
+  }
+  if(abilities[3].selectedAbility1 == "Greater Release" || abilities[3].selectedAbility2 == "Greater Release"){
+    abilities[10].charge = "Charge x10";
+    abilities[10].freq = "1/Ref CHARGE x10";
+    if(abilities[0].purchased > 0){abilities[10].freq = "2/Ref CHARGE x10";}
+    updateAbilityText(10);
+  }
+  else{
+    abilities[10].charge = "";
+    abilities[10].freq = "1/Ref";
+    if(abilities[0].purchased > 0){abilities[10].freq = "2/Ref";}
+    updateAbilityText(10);
+  }
+  if(abilities[3].selectedAbility1 == "Insult" || abilities[3].selectedAbility2 == "Insult"){
+    abilities[4].charge = "Charge x5";
+    abilities[4].freq = "1/Life CHARGE x5";
+    if(abilities[0].purchased > 0){abilities[4].freq = "2/Life CHARGE x5";}
+    updateAbilityText(4);
+  }
+  else{
+    abilities[4].charge = "";
+    abilities[4].freq = "1/Life";
+    if(abilities[0].purchased > 0){abilities[4].freq = "2/Life";}
+    updateAbilityText(4);
+  }
+  if(abilities[3].selectedAbility1 == "Mend" || abilities[3].selectedAbility2 == "Mend"){
+    abilities[12].charge = "Charge x5";
+    abilities[12].freq = "1/Life CHARGE x5";
+    if(abilities[0].purchased > 0){abilities[12].freq = "2/Life CHARGE x5";}
+    updateAbilityText(12);
+  }
+  else{
+    abilities[12].charge = "";
+    abilities[12].freq = "1/Life";
+    if(abilities[0].purchased > 0){abilities[12].freq = "2/Life";}
+    updateAbilityText(12);
+  }
+  if(abilities[3].selectedAbility1 == "Release" || abilities[3].selectedAbility2 == "Release"){
+    abilities[5].charge = "Charge x5";
+    abilities[5].freq = "1/Life CHARGE x5";
+    if(abilities[0].purchased > 0){abilities[5].freq = "2/Life CHARGE x5";}
+    updateAbilityText(5);
+  }
+  else{
+    abilities[5].charge = "";
+    abilities[5].freq = "1/Life";
+    if(abilities[0].purchased > 0){abilities[5].freq = "2/Life";}
+    updateAbilityText(5);
+  }
+  if(abilities[3].selectedAbility1 == "Restoration" || abilities[3].selectedAbility2 == "Restoration"){
+    abilities[23].charge = "Charge x10";
+    abilities[23].freq = "1/Ref CHARGE x10";
+    if(abilities[0].purchased > 0){abilities[23].freq = "2/Ref CHARGE x10";}
+    updateAbilityText(23);
+  }
+  else{
+    abilities[23].charge = "";
+    abilities[23].freq = "1/Ref";
+    if(abilities[0].purchased > 0){abilities[23].freq = "2/Ref";}
+    updateAbilityText(23);
+  }
+  if(abilities[3].selectedAbility1 == "Shove" || abilities[3].selectedAbility2 == "Shove"){
+    abilities[6].charge = "Charge x5";
+    abilities[6].freq = "1/Life CHARGE x5";
+    if(abilities[0].purchased > 0){abilities[6].freq = "2/Life CHARGE x5";}
+    updateAbilityText(6);
+  }
+  else{
+    abilities[6].charge = "";
+    abilities[6].freq = "1/Life";
+    if(abilities[0].purchased > 0){abilities[6].freq = "2/Life";}
+    updateAbilityText(6);
+  }
+  if(abilities[3].selectedAbility1 == "Suppress Aura" || abilities[3].selectedAbility2 == "Suppress Aura"){
+    abilities[27].charge = "Charge x10";
+    abilities[27].freq = "1/Ref CHARGE x10";
+    if(abilities[0].purchased > 0){abilities[27].freq = "2/Ref CHARGE x10";}
+    updateAbilityText(27);
+  }
+  else{
+    abilities[27].charge = "";
+    abilities[27].freq = "1/Ref";
+    if(abilities[0].purchased > 0){abilities[27].freq = "2/Ref";}
+    updateAbilityText(27);
+  }
+  if(abilities[3].selectedAbility1 == "Terror" || abilities[3].selectedAbility2 == "Terror"){
+    abilities[29].charge = "Charge x10";
+    abilities[29].freq = "1/Ref CHARGE x10";
+    if(abilities[0].purchased > 0){abilities[29].freq = "2/Ref CHARGE x10";}
+    updateAbilityText(29);
+  }
+  else{
+    abilities[29].charge = "";
+    abilities[29].freq = "1/Ref";
+    if(abilities[0].purchased > 0){abilities[29].freq = "2/Ref";}
+    updateAbilityText(29);
+  }
     //createURL(); OLD
-    if(fromUser == 1){
-      pointPlus(3);
+  if(fromUser == 1){
+    pointPlus(3);
       createURL(); //new//new checking to see if this fixes the reload error on iPhones
     }
     
- }
+  }
 /*##################################*/
-function legendCheck(index){
-  var a = index;
-  if(abilities[40].purchased > 0){
-    if(abilities[a].name == "Swift"){
-      
+  function legendCheck(index){
+    var a = index;
+    if(abilities[40].purchased > 0){
+      if(abilities[a].name == "Swift"){
+
        return false;
-       }
-    else{
+     }
+     else{
       return true;
     }
   }  
   if(abilities[a].name == "Legend"){
     for(let i = 0; i < abilityCount; i++){
       if(abilities[i].name == "Swift" && abilities[i].purchased > 0){
-        
+
         return false; 
-        }
+      }
     }    
   }
   else{
@@ -693,143 +695,143 @@ function updatePointsAvailable(fc){
   
   
   if(ltpChecked && reqLevel == 1 && ltpReq == false){
-     document.getElementById("level1Points").value = pointsAvailable[1] + 1;
-  }
-  else if(ltpChecked && reqLevel == 2 && ltpReq == false){
-    document.getElementById("level2Points").value = pointsAvailable[2] + 1;
-  }
-  else if(ltpChecked && reqLevel == 3 && ltpReq == false){
-    document.getElementById("level3Points").value = pointsAvailable[3] + 1;
-  }
-  else if(ltpChecked && reqLevel == 4 && ltpReq == false){
-    document.getElementById("level4Points").value = pointsAvailable[4] + 1;
-  }
-  else if(ltpChecked && reqLevel == 5 && ltpReq == false){
-    document.getElementById("level5Points").value = pointsAvailable[5] + 1;
-  }
-  else if(ltpChecked && reqLevel == 6 && ltpReq == false){
-    document.getElementById("level6Points").value = pointsAvailable[6];
+   document.getElementById("level1Points").value = pointsAvailable[1] + 1;
+ }
+ else if(ltpChecked && reqLevel == 2 && ltpReq == false){
+  document.getElementById("level2Points").value = pointsAvailable[2] + 1;
 }
-  else if(ltpChecked && reqLevel == 1 && ltpReq == true){
-    document.getElementById("ltp1").innerText = "(Look the Part Required)";
-    document.getElementById("ltp1").hidden = false;
-    document.getElementById("level2Points").value = 5;
-    document.getElementById("hlp1").innerText = " ";
-  }
-  else if(ltpChecked && reqLevel == 2 && ltpReq == true){
-      document.getElementById("ltp2").innerText = "(Look the Part Required)";
-      document.getElementById("ltp2").hidden = false;
-      document.getElementById("level3Points").value = 5;
-      document.getElementById("hlp2").innerText = " ";
-  }
-  else if(ltpChecked && reqLevel == 3 && ltpReq == true){
-      document.getElementById("ltp3").innerText = "(Look the Part Required)";
-      document.getElementById("ltp3").hidden = false;
-      document.getElementById("level4Points").value = 5;
-      document.getElementById("hlp3").innerText = " ";
-  }
-  else if(ltpChecked && reqLevel == 4 && ltpReq == true){
-      document.getElementById("ltp4").innerText = "(Look the Part Required)";
-      document.getElementById("ltp4").hidden = false;
-      document.getElementById("level5Points").value = 5;
-      document.getElementById("hlp4").innerText = " ";
-  }
-  else if(ltpChecked && reqLevel == 5 && ltpReq == true){
-      document.getElementById("ltp5").innerText = "(Look the Part Required)";
-      document.getElementById("ltp5").hidden = false;
-      document.getElementById("level6Points").value = 5;
-      document.getElementById("hlp5").innerText = " ";
-  }
-  else if(ltpChecked && reqLevel == 6 && ltpReq == true){
-    document.getElementById("ltp6").innerText = "(Look the Part Required)";
-    document.getElementById("ltp6").hidden = false;
-  }
+else if(ltpChecked && reqLevel == 3 && ltpReq == false){
+  document.getElementById("level3Points").value = pointsAvailable[3] + 1;
+}
+else if(ltpChecked && reqLevel == 4 && ltpReq == false){
+  document.getElementById("level4Points").value = pointsAvailable[4] + 1;
+}
+else if(ltpChecked && reqLevel == 5 && ltpReq == false){
+  document.getElementById("level5Points").value = pointsAvailable[5] + 1;
+}
+else if(ltpChecked && reqLevel == 6 && ltpReq == false){
+  document.getElementById("level6Points").value = pointsAvailable[6];
+}
+else if(ltpChecked && reqLevel == 1 && ltpReq == true){
+  document.getElementById("ltp1").innerText = "(Look the Part Required)";
+  document.getElementById("ltp1").hidden = false;
+  document.getElementById("level2Points").value = 5;
+  document.getElementById("hlp1").innerText = " ";
+}
+else if(ltpChecked && reqLevel == 2 && ltpReq == true){
+  document.getElementById("ltp2").innerText = "(Look the Part Required)";
+  document.getElementById("ltp2").hidden = false;
+  document.getElementById("level3Points").value = 5;
+  document.getElementById("hlp2").innerText = " ";
+}
+else if(ltpChecked && reqLevel == 3 && ltpReq == true){
+  document.getElementById("ltp3").innerText = "(Look the Part Required)";
+  document.getElementById("ltp3").hidden = false;
+  document.getElementById("level4Points").value = 5;
+  document.getElementById("hlp3").innerText = " ";
+}
+else if(ltpChecked && reqLevel == 4 && ltpReq == true){
+  document.getElementById("ltp4").innerText = "(Look the Part Required)";
+  document.getElementById("ltp4").hidden = false;
+  document.getElementById("level5Points").value = 5;
+  document.getElementById("hlp4").innerText = " ";
+}
+else if(ltpChecked && reqLevel == 5 && ltpReq == true){
+  document.getElementById("ltp5").innerText = "(Look the Part Required)";
+  document.getElementById("ltp5").hidden = false;
+  document.getElementById("level6Points").value = 5;
+  document.getElementById("hlp5").innerText = " ";
+}
+else if(ltpChecked && reqLevel == 6 && ltpReq == true){
+  document.getElementById("ltp6").innerText = "(Look the Part Required)";
+  document.getElementById("ltp6").hidden = false;
+}
 
-  if(reqLevel == 1){    
-    document.getElementById("level1Points").hidden = false;
-    document.getElementById("reqLevel1").hidden = false;
-    document.getElementById("level2Points").hidden = true;
-    document.getElementById("reqLevel2").hidden = true;
-    document.getElementById("level3Points").hidden = true;
-    document.getElementById("reqLevel3").hidden = true;
-    document.getElementById("level4Points").hidden = true;
-    document.getElementById("reqLevel4").hidden = true;
-    document.getElementById("level5Points").hidden = true;
-    document.getElementById("reqLevel5").hidden = true;
-    document.getElementById("level6Points").hidden = true;
-    document.getElementById("reqLevel6").hidden = true;
-  }
-  else if(reqLevel == 2){    
-    document.getElementById("level1Points").hidden = false;
-    document.getElementById("reqLevel1").hidden = false;
-    document.getElementById("level2Points").hidden = false;
-    document.getElementById("reqLevel2").hidden = false;
-    document.getElementById("level3Points").hidden = true;
-    document.getElementById("reqLevel3").hidden = true;
-    document.getElementById("level4Points").hidden = true;
-    document.getElementById("reqLevel4").hidden = true;
-    document.getElementById("level5Points").hidden = true;
-    document.getElementById("reqLevel5").hidden = true;
-    document.getElementById("level6Points").hidden = true;
-    document.getElementById("reqLevel6").hidden = true;
-  }
-  else if(reqLevel == 3){    
-    document.getElementById("level1Points").hidden = false;
-    document.getElementById("reqLevel1").hidden = false;
-    document.getElementById("level2Points").hidden = false;
-    document.getElementById("reqLevel2").hidden = false;
-    document.getElementById("level3Points").hidden = false;
-    document.getElementById("reqLevel3").hidden = false;
-    document.getElementById("level4Points").hidden = true;
-    document.getElementById("reqLevel4").hidden = true;
-    document.getElementById("level5Points").hidden = true;
-    document.getElementById("reqLevel5").hidden = true;
-    document.getElementById("level6Points").hidden = true;
-    document.getElementById("reqLevel6").hidden = true;
-  }
-  else if(reqLevel == 4){    
-    document.getElementById("level1Points").hidden = false;
-    document.getElementById("reqLevel1").hidden = false;
-    document.getElementById("level2Points").hidden = false;
-    document.getElementById("reqLevel2").hidden = false;
-    document.getElementById("level3Points").hidden = false;
-    document.getElementById("reqLevel3").hidden = false;
-    document.getElementById("level4Points").hidden = false;
-    document.getElementById("reqLevel4").hidden = false;
-    document.getElementById("level5Points").hidden = true;
-    document.getElementById("reqLevel5").hidden = true;
-    document.getElementById("level6Points").hidden = true;
-    document.getElementById("reqLevel6").hidden = true;
-  }
-  else if(reqLevel == 5){    
-    document.getElementById("level1Points").hidden = false;
-    document.getElementById("reqLevel1").hidden = false;
-    document.getElementById("level2Points").hidden = false;
-    document.getElementById("reqLevel2").hidden = false;
-    document.getElementById("level3Points").hidden = false;
-    document.getElementById("reqLevel3").hidden = false;
-    document.getElementById("level4Points").hidden = false;
-    document.getElementById("reqLevel4").hidden = false;
-    document.getElementById("level5Points").hidden = false;
-    document.getElementById("reqLevel5").hidden = false;
-    document.getElementById("level6Points").hidden = true;
-    document.getElementById("reqLevel6").hidden = true;
-  }
-  else if(reqLevel == 6){    
-    document.getElementById("level1Points").hidden = false;
-    document.getElementById("reqLevel1").hidden = false;
-    document.getElementById("level2Points").hidden = false;
-    document.getElementById("reqLevel2").hidden = false;
-    document.getElementById("level3Points").hidden = false;
-    document.getElementById("reqLevel3").hidden = false;
-    document.getElementById("level4Points").hidden = false;
-    document.getElementById("reqLevel4").hidden = false;
-    document.getElementById("level5Points").hidden = false;
-    document.getElementById("reqLevel5").hidden = false;
-    document.getElementById("level6Points").hidden = false;
-    document.getElementById("reqLevel6").hidden = false;
-  }
-  
+if(reqLevel == 1){    
+  document.getElementById("level1Points").hidden = false;
+  document.getElementById("reqLevel1").hidden = false;
+  document.getElementById("level2Points").hidden = true;
+  document.getElementById("reqLevel2").hidden = true;
+  document.getElementById("level3Points").hidden = true;
+  document.getElementById("reqLevel3").hidden = true;
+  document.getElementById("level4Points").hidden = true;
+  document.getElementById("reqLevel4").hidden = true;
+  document.getElementById("level5Points").hidden = true;
+  document.getElementById("reqLevel5").hidden = true;
+  document.getElementById("level6Points").hidden = true;
+  document.getElementById("reqLevel6").hidden = true;
+}
+else if(reqLevel == 2){    
+  document.getElementById("level1Points").hidden = false;
+  document.getElementById("reqLevel1").hidden = false;
+  document.getElementById("level2Points").hidden = false;
+  document.getElementById("reqLevel2").hidden = false;
+  document.getElementById("level3Points").hidden = true;
+  document.getElementById("reqLevel3").hidden = true;
+  document.getElementById("level4Points").hidden = true;
+  document.getElementById("reqLevel4").hidden = true;
+  document.getElementById("level5Points").hidden = true;
+  document.getElementById("reqLevel5").hidden = true;
+  document.getElementById("level6Points").hidden = true;
+  document.getElementById("reqLevel6").hidden = true;
+}
+else if(reqLevel == 3){    
+  document.getElementById("level1Points").hidden = false;
+  document.getElementById("reqLevel1").hidden = false;
+  document.getElementById("level2Points").hidden = false;
+  document.getElementById("reqLevel2").hidden = false;
+  document.getElementById("level3Points").hidden = false;
+  document.getElementById("reqLevel3").hidden = false;
+  document.getElementById("level4Points").hidden = true;
+  document.getElementById("reqLevel4").hidden = true;
+  document.getElementById("level5Points").hidden = true;
+  document.getElementById("reqLevel5").hidden = true;
+  document.getElementById("level6Points").hidden = true;
+  document.getElementById("reqLevel6").hidden = true;
+}
+else if(reqLevel == 4){    
+  document.getElementById("level1Points").hidden = false;
+  document.getElementById("reqLevel1").hidden = false;
+  document.getElementById("level2Points").hidden = false;
+  document.getElementById("reqLevel2").hidden = false;
+  document.getElementById("level3Points").hidden = false;
+  document.getElementById("reqLevel3").hidden = false;
+  document.getElementById("level4Points").hidden = false;
+  document.getElementById("reqLevel4").hidden = false;
+  document.getElementById("level5Points").hidden = true;
+  document.getElementById("reqLevel5").hidden = true;
+  document.getElementById("level6Points").hidden = true;
+  document.getElementById("reqLevel6").hidden = true;
+}
+else if(reqLevel == 5){    
+  document.getElementById("level1Points").hidden = false;
+  document.getElementById("reqLevel1").hidden = false;
+  document.getElementById("level2Points").hidden = false;
+  document.getElementById("reqLevel2").hidden = false;
+  document.getElementById("level3Points").hidden = false;
+  document.getElementById("reqLevel3").hidden = false;
+  document.getElementById("level4Points").hidden = false;
+  document.getElementById("reqLevel4").hidden = false;
+  document.getElementById("level5Points").hidden = false;
+  document.getElementById("reqLevel5").hidden = false;
+  document.getElementById("level6Points").hidden = true;
+  document.getElementById("reqLevel6").hidden = true;
+}
+else if(reqLevel == 6){    
+  document.getElementById("level1Points").hidden = false;
+  document.getElementById("reqLevel1").hidden = false;
+  document.getElementById("level2Points").hidden = false;
+  document.getElementById("reqLevel2").hidden = false;
+  document.getElementById("level3Points").hidden = false;
+  document.getElementById("reqLevel3").hidden = false;
+  document.getElementById("level4Points").hidden = false;
+  document.getElementById("reqLevel4").hidden = false;
+  document.getElementById("level5Points").hidden = false;
+  document.getElementById("reqLevel5").hidden = false;
+  document.getElementById("level6Points").hidden = false;
+  document.getElementById("reqLevel6").hidden = false;
+}
+
   //createURL(); OLD
 }
 
@@ -855,9 +857,9 @@ function freeableFrom(index, c, rl, r){
       tempTotal = tempTotal + (higherLevelPoints[i] - 5);
     }
     //console.log(higherLevelPoints[highestLevel] + " " + pointsAvailable[highestLevel] + " " + highestLevel);
-   }
-    
-   if(lookThePartChecked == true){
+  }
+
+  if(lookThePartChecked == true){
     tempTotal = higherLevelPoints[lvl];
     for(let i = lvl + 1; i < 7; i++){
       if(tempTotal + (higherLevelPoints[i] - 5) <= 0 && higherLevelPoints[i] == 0){
@@ -865,17 +867,17 @@ function freeableFrom(index, c, rl, r){
         i = 7;
       }
       if(req == true && i == reqLevel){
-         highestLevel = i;
-        i = 7;
-         }
-      tempTotal = tempTotal + (higherLevelPoints[i] - 5);
-    }
-    //console.log(higherLevelPoints[highestLevel] + " " + pointsAvailable[highestLevel] + " " + highestLevel);
+       highestLevel = i;
+       i = 7;
+     }
+     tempTotal = tempTotal + (higherLevelPoints[i] - 5);
    }
-  
-    outputString = "[Level " + highestLevel + "]";
-    
-  return outputString; 
+    //console.log(higherLevelPoints[highestLevel] + " " + pointsAvailable[highestLevel] + " " + highestLevel);
+ }
+
+ outputString = "[Level " + highestLevel + "]";
+
+ return outputString; 
 }
 /*##################################*/
 function pointMinus(index) {
@@ -901,8 +903,8 @@ function reprocessPoints(index){
   let temp1 = "";
   let temp2 = "";
   
-    temp1 = abilities[3].selectedAbility1;
-    temp2 = abilities[3].selectedAbility2;
+  temp1 = abilities[3].selectedAbility1;
+  temp2 = abilities[3].selectedAbility2;
   
   var tempPurchased = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
   for(let i = 0; i < abilityCount; i++){
@@ -916,10 +918,10 @@ function reprocessPoints(index){
     }
   }
   
-    abilities[3].selectedAbility1 = temp1;
-    abilities[3].selectedAbility2 = temp2;
-    document.getElementById("exp1").value = temp1;
-    document.getElementById("exp2").value = temp2;
+  abilities[3].selectedAbility1 = temp1;
+  abilities[3].selectedAbility2 = temp2;
+  document.getElementById("exp1").value = temp1;
+  document.getElementById("exp2").value = temp2;
   
   updateExperienced();  
   updatePointsAvailable();
@@ -1055,14 +1057,14 @@ function checkDervishPlus(index){
 
 function popFunc(elementId, index) {
   const elements = document.getElementsByClassName("popuptext");
-var popup = document.getElementById(elementId);
-    
+  var popup = document.getElementById(elementId);
+
   for (let i = 0; i < elements.length; i++) {
-        if(!(elements[i].id == popup.id)){
-          elements[i].classList.remove("show");
-        }
-    }  
-    popup.innerHTML = abilities[index].text;
+    if(!(elements[i].id == popup.id)){
+      elements[i].classList.remove("show");
+    }
+  }  
+  popup.innerHTML = abilities[index].text;
   popup.classList.toggle("show");
 }
 
@@ -1737,59 +1739,73 @@ const abilities = [Dervish, //0
   Legend, //40
   SilverTongue, //41
   SongofInterference //42
-  ];
+];
 
 function getAbilities(){return abilities}
 
 function saveList(){
   let textToSave = "";
-    if(document.title == "Bard Spellbook"){
-      textToSave = "Bard Level " + document.getElementById("reqLevel").value + document.getElementById("ltp").innerText + " \n   Level 1 \n" + document.getElementById("lvl1List").innerText + "\n   Level 2 \n" + document.getElementById("lvl2List").innerText + "\n   Level 3 \n" + document.getElementById("lvl3List").innerText + "\n   Level 4 \n" + document.getElementById("lvl4List").innerText + "\n   Level 5 \n" + document.getElementById("lvl5List").innerText + "\n   Level 6 \n" + document.getElementById("lvl6List").innerText;
-    }
-    else{
-      textToSave = document.title + " \n(Bard Level " + document.getElementById("reqLevel").value + ")" + document.getElementById("ltp").innerText + " \n   Level 1 \n" + document.getElementById("lvl1List").innerText + "\n   Level 2 \n" + document.getElementById("lvl2List").innerText + "\n   Level 3 \n" + document.getElementById("lvl3List").innerText + "\n   Level 4 \n" + document.getElementById("lvl4List").innerText + "\n   Level 5 \n" + document.getElementById("lvl5List").innerText + "\n   Level 6 \n" + document.getElementById("lvl6List").innerText;
-    }    
-    const blob = new Blob([textToSave], { type: 'text/plain' });
-    const link = document.createElement('a');
-    link.href = URL.createObjectURL(blob);O
-    link.download = document.title + '.txt'; 
-    link.click();
-    URL.revokeObjectURL(link.href);
+  if(document.title == "Bard Spellbook"){
+    textToSave = "Bard Level " + document.getElementById("reqLevel").value + document.getElementById("ltp").innerText + " \n   Level 1 \n" + document.getElementById("lvl1List").innerText + "\n   Level 2 \n" + document.getElementById("lvl2List").innerText + "\n   Level 3 \n" + document.getElementById("lvl3List").innerText + "\n   Level 4 \n" + document.getElementById("lvl4List").innerText + "\n   Level 5 \n" + document.getElementById("lvl5List").innerText + "\n   Level 6 \n" + document.getElementById("lvl6List").innerText;
+  }
+  else{
+    textToSave = document.title + " \n(Bard Level " + document.getElementById("reqLevel").value + ")" + document.getElementById("ltp").innerText + " \n   Level 1 \n" + document.getElementById("lvl1List").innerText + "\n   Level 2 \n" + document.getElementById("lvl2List").innerText + "\n   Level 3 \n" + document.getElementById("lvl3List").innerText + "\n   Level 4 \n" + document.getElementById("lvl4List").innerText + "\n   Level 5 \n" + document.getElementById("lvl5List").innerText + "\n   Level 6 \n" + document.getElementById("lvl6List").innerText;
+  }    
+  const blob = new Blob([textToSave], { type: 'text/plain' });
+  const link = document.createElement('a');
+  link.href = URL.createObjectURL(blob);O
+  link.download = document.title + '.txt'; 
+  link.click();
+  URL.revokeObjectURL(link.href);
 }
 
 function printCards(){
   let textToSave = "";
-    if(document.title == "Bard Spellbook"){
-      textToSave = "Bard Level " + document.getElementById("reqLevel").value + document.getElementById("ltp").innerText + " \n   Level 1 \n" + document.getElementById("lvl1List").innerText + "\n   Level 2 \n" + document.getElementById("lvl2List").innerText + "\n   Level 3 \n" + document.getElementById("lvl3List").innerText + "\n   Level 4 \n" + document.getElementById("lvl4List").innerText + "\n   Level 5 \n" + document.getElementById("lvl5List").innerText + "\n   Level 6 \n" + document.getElementById("lvl6List").innerText;
-    }
-    else{
-      textToSave = document.title + " \n(Bard Level " + document.getElementById("reqLevel").value + ")" + document.getElementById("ltp").innerText + " \n   Level 1 \n" + document.getElementById("lvl1List").innerText + "\n   Level 2 \n" + document.getElementById("lvl2List").innerText + "\n   Level 3 \n" + document.getElementById("lvl3List").innerText + "\n   Level 4 \n" + document.getElementById("lvl4List").innerText + "\n   Level 5 \n" + document.getElementById("lvl5List").innerText + "\n   Level 6 \n" + document.getElementById("lvl6List").innerText;
-    }
-    const textData = textToSave;
+  if (showIncants != true){
+    toggleIncants();
+  }
+  if(document.title == "Bard Spellbook"){
+    textToSave = "Bard Level " + document.getElementById("reqLevel").value + document.getElementById("ltp").innerText + " \n   Level 1 \n" + document.getElementById("lvl1List").innerText + "\n   Level 2 \n" + document.getElementById("lvl2List").innerText + "\n   Level 3 \n" + document.getElementById("lvl3List").innerText + "\n   Level 4 \n" + document.getElementById("lvl4List").innerText + "\n   Level 5 \n" + document.getElementById("lvl5List").innerText + "\n   Level 6 \n" + document.getElementById("lvl6List").innerText;
+  }
+  else{
+    textToSave = document.title + " \n(Bard Level " + document.getElementById("reqLevel").value + ")" + document.getElementById("ltp").innerText + " \n   Level 1 \n" + document.getElementById("lvl1List").innerText + "\n   Level 2 \n" + document.getElementById("lvl2List").innerText + "\n   Level 3 \n" + document.getElementById("lvl3List").innerText + "\n   Level 4 \n" + document.getElementById("lvl4List").innerText + "\n   Level 5 \n" + document.getElementById("lvl5List").innerText + "\n   Level 6 \n" + document.getElementById("lvl6List").innerText;
+  }
+  const textData = textToSave;
 
-    const lines = textData.split('\n');
-    const title = lines[0];
-    const entries = [];
+  const lines = textData.split('\n');
+  const title = lines[0];
+  const entries = [];
 
-    let currentLevel = '';
-    for (let i = 1; i < lines.length; i++) {
-      const line = lines[i].trim();
-      if (line.startsWith('Level')) {
-        currentLevel = line;
-      } else if (line.startsWith('-')) {
-        if (entries.length > 0) {
-          entries[entries.length - 1].flavor = line.slice(1).trim();
-        }
-      } else if (line) {
-        entries.push({ level: currentLevel, text: line, flavor: '' });
+  let currentLevel = '';
+  for (let i = 1; i < lines.length; i++) {
+    const line = lines[i].trim();
+    if (line.startsWith('Level')) {
+      currentLevel = line;
+    } else if (line.startsWith('-')) {
+      if (entries.length > 0) {
+        entries[entries.length - 1].flavor = line.slice(1).trim();
       }
+    } else if (line) {
+      entries.push({ level: currentLevel, text: line, flavor: '' });
     }
+  }
 
 // Split into 3 cards
-    const chunkSize = Math.ceil(entries.length / 3);
-    const chunks = [entries.slice(0, chunkSize), entries.slice(chunkSize, 2 * chunkSize), entries.slice(2 * chunkSize)];
+  numchunks = 3
+  chunks = []
+  if (entries.length < 9){
+    numchunks = 1;
+    chunks = [entries];
+  } else if (entries.length < 19){
+    numchunks = 2;
+    const chunkSize = Math.ceil(entries.length / numchunks);
+    chunks = [entries.slice(0, chunkSize), entries.slice(chunkSize, 2 * chunkSize)];
+  } else {
+    const chunkSize = Math.ceil(entries.length / numchunks);
+    chunks = [entries.slice(0, chunkSize), entries.slice(chunkSize, 2 * chunkSize), entries.slice(2 * chunkSize)];
+  }
 
-    const htmlContent = `
+  const htmlContent = `
 <html>
 <head>
   <title>Printable Spell Cards</title>
@@ -1824,22 +1840,22 @@ function printCards(){
   </style>
 </head>
 <body>
-      ${chunks.map(chunk => `
+    ${chunks.map(chunk => `
     <div class="card">
       <div class="title">${title}</div>
-        ${chunk.map(entry => `
+      ${chunk.map(entry => `
         <div class="entry">${entry.text}${entry.flavor ? ' - ' + entry.flavor : ''}</div>
-          `).join('')}
-    </div>
         `).join('')}
+    </div>
+      `).join('')}
   <script>window.onload = () => window.print();</script>
 </body>
 </html>
-    `;
+  `;
 
-    const blob = new Blob([htmlContent], { type: 'text/html' });
-    const url = URL.createObjectURL(blob);
-    window.open(url, '_blank');
+  const blob = new Blob([htmlContent], { type: 'text/html' });
+  const url = URL.createObjectURL(blob);
+  window.open(url, '_blank');
 }
 
 function titleList(){
