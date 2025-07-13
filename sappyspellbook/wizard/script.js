@@ -235,6 +235,7 @@ function toggleList(incantOnly){
       lists[i].style.display = "block";
       document.getElementById("saveList").hidden = false;
       document.getElementById("titleList").hidden = false;
+      document.getElementById("printCards").hidden = false;
       document.getElementById("toggleIncants").hidden = false;
       document.getElementById("hlp1").hidden = true;
       document.getElementById("hlp2").hidden = true;
@@ -262,6 +263,7 @@ function toggleList(incantOnly){
       lists[i].style.display = "none";
       document.getElementById("saveList").hidden = true;
       document.getElementById("titleList").hidden = true;
+      document.getElementById("printCards").hidden = true;
       document.getElementById("toggleIncants").hidden = true;
       document.getElementById("hlp1").hidden = false;
       document.getElementById("hlp2").hidden = false;
@@ -1983,6 +1985,135 @@ function saveList(){
     link.click();
     URL.revokeObjectURL(link.href);
 }
+
+function printCards(){
+  let textToSave = "";
+  if (showIncants != true){
+    toggleIncants();
+  }
+  if(document.title == "Wizard Spellbook"){
+    textToSave = "Wizard Level " + document.getElementById("reqLevel").value + document.getElementById("ltp").innerText + " \n   Level 1 \n" + document.getElementById("lvl1List").innerText + "\n   Level 2 \n" + document.getElementById("lvl2List").innerText + "\n   Level 3 \n" + document.getElementById("lvl3List").innerText + "\n   Level 4 \n" + document.getElementById("lvl4List").innerText + "\n   Level 5 \n" + document.getElementById("lvl5List").innerText + "\n   Level 6 \n" + document.getElementById("lvl6List").innerText;
+  }
+  else{
+    textToSave = document.title + " \n(Wizard Level " + document.getElementById("reqLevel").value + ")" + document.getElementById("ltp").innerText + " \n   Level 1 \n" + document.getElementById("lvl1List").innerText + "\n   Level 2 \n" + document.getElementById("lvl2List").innerText + "\n   Level 3 \n" + document.getElementById("lvl3List").innerText + "\n   Level 4 \n" + document.getElementById("lvl4List").innerText + "\n   Level 5 \n" + document.getElementById("lvl5List").innerText + "\n   Level 6 \n" + document.getElementById("lvl6List").innerText;
+  }
+  const textData = textToSave;
+
+  const lines = textData.split('\n');
+  const title = lines[0];
+  const entries = [];
+
+  let currentLevel = '';
+  for (let i = 1; i < lines.length; i++) {
+    const line = lines[i].trim();
+    if (line.startsWith('Level')) {
+      currentLevel = line;
+    } else if (line.includes('Experienced')) {
+    } else if (line.startsWith('-')) {
+      if (entries.length > 0) {
+        entries[entries.length - 1].flavor = line.slice(1).trim();
+      }
+    } else if (line) {
+      entries.push({ level: currentLevel, text: line, flavor: '' });
+    }
+  }
+
+// collapsing armor so it doesn't eat two lines
+  for (let i = 0; i < entries.length; i++) {
+    for (let j = i + 1; j < entries.length; j++) {
+      if (entries[i].text === entries[j].text) {
+        // replace first instance with 2x iff there are two
+        entries[i] = { level: entries[i].level, text: entries[i].text.replace("1", "2"), flavor: entries[i].flavor };
+        entries.splice(j,j)
+      }
+    }
+    if ([entries[i].text + entries[i].flavor].length + 3 >79){
+     entries[i].lines = 2
+   } else {entries[i].lines = 1}
+ }
+
+
+// Split onto up to 3 cards
+ numchunks = 3
+maxchunlines = 10 // this may be right for 9pt
+chunks = []
+currchlines = 0
+cut = []
+for (let i = 0; i < entries.length; i++) {
+  currchlines = currchlines + entries[i].lines
+  // console.log(currchlines)
+  if (currchlines >= maxchunlines){
+    cut.push(i)
+    // console.log(i)
+    currchlines = entries[i].lines
+  }
+}
+console.log(cut)
+console.log(cut.length)
+
+if (cut.length == 1){
+  chunks = [entries.slice(0, cut[0]), entries.slice(cut[0], cut[1])];
+}
+else if (cut.length == 2){
+  chunks = [entries.slice(0, cut[0]), entries.slice(cut[0], cut[1]), entries.slice(cut[1])];
+} 
+else {
+  chunks = [entries];
+}
+
+const htmlContent = `
+<html>
+<head>
+  <title>Printable Spell Cards</title>
+  <style>
+    @media print {
+      body {
+        margin: 0;
+        padding: 0;
+      }
+    }
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .card {
+      width: 4.5in;
+      height: 2.6in;
+      box-sizing: border-box;
+      border: 1px solid #000;
+      padding: 0.1in;
+      margin: 0.1in;
+      display: inline-block;
+      vertical-align: top;
+      font-size: 10pt;
+    }
+    .entry {
+      margin-bottom: 0.2em;
+    }
+    .title {
+      font-weight: bold;
+      margin-bottom: 0.5em;
+    }
+  </style>
+</head>
+<body>
+  ${chunks.map(chunk => `
+    <div class="card">
+      <div class="title">${title}</div>
+    ${chunk.map(entry => `
+        <div class="entry">${entry.text}${entry.flavor ? ' - ' + entry.flavor : ''}</div>
+      `).join('')}
+    </div>
+    `).join('')}
+  <script>window.onload = () => window.print();</script>
+</body>
+</html>
+`;
+
+const blob = new Blob([htmlContent], { type: 'text/html' });
+const url = URL.createObjectURL(blob);
+window.open(url, '_blank');
+}
+
 
 function titleList(){
   let newTitle = prompt("Enter a title for this list:");
