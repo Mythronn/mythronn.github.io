@@ -247,6 +247,7 @@ function toggleList(incantOnly){
       document.getElementById("hlp3").hidden = true;
       document.getElementById("hlp4").hidden = true;
       document.getElementById("hlp5").hidden = true;
+      document.querySelector('footer').hidden = true;
       if(curLevel < 2){
         document.getElementById("2ndHeader").hidden = true;
       }
@@ -281,6 +282,7 @@ function toggleList(incantOnly){
       document.getElementById("4thHeader").hidden = false;
       document.getElementById("5thHeader").hidden = false;
       document.getElementById("6thHeader").hidden = false;
+      document.querySelector('footer').hidden = false;
     } 
   }   
 }
