@@ -1179,9 +1179,9 @@ const Banish = {
   name: "Banish", type: "Verbal",  freq: "1/Life",
   school: "Spirit", range: "20", materials: "",
   incant: "<I>The Spirits banish thee from this place</I>  x3", 
-  effect: "Target Insubstantial player must return to their base where their Insubstantial State immediately ends", 
+  effect: "Target Insubstantial player must return to their base where their Insubstantial State immediately ends. ", 
   limitations: "",
-  notes: "The target's Insubstantial State is replaced with a new insubstantial state from Banish. If the Insubstantial State is ended before reaching the base, the rest of the effect is ended as well. If Banish is cast on self, the caster may end this Insubstantial state at any time by using the exit incantation for Insubstantial.",
+  notes: "The target's Insubstantial State is replaced with a new Insubstantial State from Banish. If the Insubstantial State is ended before reaching the base, the rest of the effect is ended as well. If Banish is cast on self, the caster may end this Insubstantial State at any time by using the exit incantation for Insubstantial. This is a Forced Movement effect.",
   text: ""
 };
 const WeaponShort = {
@@ -1281,7 +1281,7 @@ const Shove = {
   incant: "<I>My power shoves thee</I> x3", 
   effect: "Target player is moved back 20' in a straight line away from the caster. Works on Stopped players. If the caster is the target, the caster may choose the direction they move.", 
   limitations: "",
-  notes: "",
+  notes: "This is a Forced Movement effect.",
   text: ""
 };
 
@@ -1394,9 +1394,9 @@ const Teleport = {
   name: "Teleport", type: "Verbal",  freq: "1/Life",
   school: "Sorcery", range: "Touch", materials: "",
   incant: "<I>I travel through the aether</I> x5", 
-  effect: "Target willing player becomes Insubstantial and moves directly to a chosen location chosen by the caster at the time of casting. This must be a fixed location (not relative to a player or to a moveable object). Upon arrival, they must immediately end the effect as per Insubstantial", 
+  effect: "Target willing player becomes Insubstantial and moves directly to a chosen location chosen by the caster at the time of casting. This must be a fixed location (not relative to a player or to a moveable object). Upon arrival, they must immediately end the effect as per Insubstantial.", 
   limitations: "",
-  notes: "If the player’s Insubstantial state is removed before they have reached their destination, the effects of Teleport end. If Teleport is cast on self, the caster may end this Insubstantial state at any time by using the exit incantation for Insubstantial",
+  notes: "If the player's Insubstantial State is removed before they have reached their destination, the effects of Teleport end. If Teleport is cast on self, the caster may end this Insubstantial State at any time by using the exit incantation for Insubstantial. This is a Forced Movement effect.",
   text: ""
 };
 /*__________________________________________*/
@@ -1535,9 +1535,9 @@ const Throw = {
   name: "Throw", type: "Verbal",  freq: "1/Ref",
   school: "Sorcery", range: "20", materials: "",
   incant: "<I>My power throws thee</I> x3", 
-  effect: "Target player is moved 50’ in a straight line away from the caster. Works on Stopped players. If the caster is the target, the caster may choose the direction they move.", 
+  effect: "Target player is moved 50' in a straight line away from the caster. Works on Stopped players. If the caster is the target, the caster may choose the direction they move.", 
   limitations: "",
-  notes: "",
+  notes: "This is a Forced Movement effect.",
   text: ""
 };
 
@@ -1880,9 +1880,9 @@ const SphereofAnnihilation = {
   name: "Sphere of Annihilation", type: "Magic Ball",  freq: "1 Ball Unlimited",
   school: "Sorcery", range: "Ball", materials: "Black Magic Ball",
   incant: "<I>The power of void is mine to evoke</I> x3", 
-  effect: "This Magic Ball is Phasing and ignores armor. Additionally, will have one of the following effects:<BR> 1. A weapon hit is destroyed<BR> 2. A shield hit is subject to Shield Destroying.<BR> 3. A player hit dies and is Cursed.", 
-  limitations: "Unlike most Phasing effects, Sphere of Annihilation does not ignore Traits, such as Missile Block. ",
-  notes: "",
+  effect: "This Magic Ball ignores armor and Enchantments. Additionally, will have one of the following effects:<BR> 1. A weapon hit is destroyed<BR> 2. A shield hit is subject to Shield Destroying.<BR> 3. A player hit dies and is Cursed.", 
+  limitations: "",
+  notes: "Because Sphere of Annihilation ignores Enchantments, A player enchanted with Phoenix Tears would remain dead after being killed, and an Imbued Shield would still be destroyed.",
   text: ""
 };
 const Warlock = {

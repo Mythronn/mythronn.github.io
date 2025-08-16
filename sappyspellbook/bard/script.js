@@ -1160,9 +1160,9 @@ const Shove = {
   name: "Shove", type: "Verbal",  freq: "1/Life",
   school: "Sorcery", range: "20", materials: "",
   incant: "<I>My power shoves thee</I> x3", 
-  effect: "Target player is moved back 20' in a straight line away from the caster. Works on Stopped players. If the caster is the target, the caster may choose the direction they move", 
+  effect: "Target player is moved back 20' in a straight line away from the caster. Works on Stopped players. If the caster is the target, the caster may choose the direction they move.", 
   limitations: "",
-  notes: "",
+  notes: "This is a Forced Movement effect.",
   text: ""
 };
 const SongofDetermination = {
@@ -1275,9 +1275,9 @@ const SongofVisit = {
   name: "Song of Visit", type: "Enchantment",  freq: "Unlimited",
   school: "Protection", range: "Self", materials: "",
   incant: "<I>I sing to entertain friend and foe</I> x3", 
-  effect: "Bearer cannot be Wounded and is Immune to all schools. Bearer is Stopped. Bearer must Chant 'Song of Visit' or sing a song regarding their general good nature and friendly disposition. Singing in place of the normal Chant is still a Chant and must follow all Chant rules. When Song of Visit is removed player becomes Insubstantial and must immediately move directly to their base. Upon arrival, they must immediately end the effect as per Insubstantial", 
-  limitations: "Bearer may not wield weapons, interact with game objects, impede play, gain further Enchantments, or target any player",
-  notes: "This Enchantment can be removed by Dispel Magic and similar Magic and Abilities. If the Insubstantial State is ended, the rest of the effect is ended as well.",
+  effect: "Bearer cannot be wounded and is Immune to all Schools. Bearer is Stopped. Bearer must Chant “Song of Visit” or sing a song regarding their general good nature and friendly disposition. Singing in place of the normal Chant is still a Chant and must follow all Chant rules. When Song of Visit is removed player becomes Insubstantial and must immediately move directly to their base as a Forced Movement effect. Upon arrival, they must immediately end the effect as per Insubstantial.", 
+  limitations: "Bearer may not wield weapons, interact with game objects, impede play, gain further Enchantments, or target any player.",
+  notes: "This Enchantment can be removed by Dispel Magic and similar abilities. If the Insubstantial State is ended, the rest of the effect is ended as well.",
   text: ""
 };
 /*__________________________________________*/
@@ -1290,9 +1290,9 @@ const Awe = {
   name: "Awe", type: "Verbal",  freq: "1/Life",
   school: "Command", range: "20", materials: "",
   incant: "<I>I command thee awed</I> x3", 
-  effect: "Target may not attack or cast Magical abilities at the caster or their carried equipment. Target must remain at least 20’ away from the caster unless forced there by another ability. Lasts 30 seconds", 
+  effect: "Target may not attack or cast Magical abilities at the caster or their carried equipment. Target must remain at least 20' away from the caster unless forced there by another Forced Movement effect. Lasts 30 seconds.", 
   limitations: "",
-  notes: "If the caster attacks the target, begins casting another magic at the target or their carried equipment, or dies, this spell’s effect is negated",
+  notes: "If the caster attacks the target, begins casting another Magical ability at the target or their carried equipment, or dies, this ability's effect is negated. This is a Forced Movement effect.",
   text: ""
 };
 const BattlefieldTriage = {
@@ -1433,7 +1433,7 @@ const SongofDeflection = {
   name: "Song of Deflection", type: "Enchantment",  freq: "Unlimited",
   school: "Protection", range: "Self", materials: "",
   incant: "<I>I sing of my nimble acrobatics</I>", 
-  effect: "Bearer is unaffected by ammunition, thrown javelins, rocks, and thrown weapons. Engulfing effects from those objects, such as Pinning Arrow, do not affect the player. Bearer must Chant “Song of Deflection” or sing a song of their acrobatic prowess. Singing in place of the normal Chant is still a Chant and must follow all Chant rules", 
+  effect: "Bearer is unaffected by ammunition, thrown Javelins, Rocks, and thrown weapons. Engulfing effects from those objects, such as Pinning Arrow, do not affect the player. Bearer must Chant “Song of Deflection” or sing a song of their acrobatic prowess. Singing in place of the normal Chant is still a Chant and must follow all Chant rules.", 
   limitations: "",
   notes: "Does not protect the bearer against Magic Balls.",
   text: ""
@@ -1489,9 +1489,9 @@ const Terror = {
   name: "Terror", type: "Verbal",  freq: "1/Ref",
   school: "Death", range: "20", materials: "",
   incant: "<I>Death makes thee terrified</I> x3", 
-  effect: "Target may not attack or cast Magical abilities at the caster or their carried equipment. Target must remain at least 50’ away from the caster unless forced there by another ability. Lasts 30 seconds", 
+  effect: "Target may not attack or cast Magical abilities at the caster or their carried equipment. Target must remain at least 50’ away from the caster unless forced there by another Forced Movement effect. Lasts 30 seconds", 
   limitations: "",
-  notes: "If the caster attacks the target, begins casting another magical ability at the target or their carried equipment, or dies, this ability’s effect is negated",
+  notes: "If the caster attacks the target, begins casting another Magical ability at the target or their carried equipment, or dies, this ability's effect is negated. This is a Forced Movement effect.",
   text: ""
 };
 
@@ -1506,9 +1506,9 @@ const Agoraphobia = {
   name: "Agoraphobia", type: "Verbal",  freq: "1/Ref",
   school: "Command", range: "20", materials: "",
   incant: "<I>I command thee to be alone</I> x3", 
-  effect: "Target must remain at least 20’ away from all other living players unless forced there by another ability. Lasts 30 seconds.", 
+  effect: "Target must remain at least 20' away from all other living players unless forced there by another Forced Movement effect. Lasts 30 seconds.", 
   limitations: "",
-  notes: "",
+  notes: "This is a Forced Movement effect.",
   text: ""
 };
 const Ambulant = {
@@ -1576,9 +1576,9 @@ const Lost = {
   name: "Lost", type: "Verbal",  freq: "1/Life",
   school: "Command", range: "20", materials: "",
   incant: "<I>I command thee to be lost</I> x3", 
-  effect: "Player becomes Insubstantial and must move directly to their base. Player must end their Insubstantial State as per normal once they reach their base", 
+  effect: "Player becomes Insubstantial and must move directly to their base. Player must end their Insubstantial State as per normal once they reach their base.", 
   limitations: "",
-  notes: "If the Insubstantial State is ended before reaching the base, the rest of the effect is ended as well. If Lost is cast on self, the caster may end this Insubstantial state at any time by using the exit incantation for Insubstantial",
+  notes: "If the Insubstantial State is ended before reaching the base, the rest of the effect is ended as well. If Lost is cast on self, the caster may end this Insubstantial State at any time by using the exit incantation for Insubstantial. This is a Forced Movement effect.",
   text: ""
 };
 const SongofSurvival = {
@@ -1590,7 +1590,7 @@ const SongofSurvival = {
   name: "Song of Survival", type: "Enchantment",  freq: "Unlimited",
   school: "Protection", range: "Self", materials: "",
   incant: "<I>I sing of my numerous close calls</I>", 
-  effect: "When the bearer would otherwise die, they instead declare “Song of Survival” and become Insubstantial. The caster treats the triggering event as though it had no effect on them other than triggering Song of Survival. Song of Survival immediately ends and bearer must stop their Chant. Bearer may choose to return directly to their base immediately after Song of Survival activates. Bearer must Chant “Song of Survival” or sing a song regarding their many escapes from certain doom. Singing in place of the normal Chant is still a Chant and must follow all Chant rules.", 
+  effect: "When the bearer would otherwise die, they instead declare “Song of Survival” and become Insubstantial. The caster treats the triggering event as though it had no effect on them other than triggering Song of Survival. Song of Survival immediately ends and bearer must stop their Chant. Bearer may choose to return directly to their base immediately after Song of Survival activates as a Forced Movement effect. Bearer must Chant “Song of Survival” or sing a song regarding their many escapes from certain doom. Singing in place of the normal Chant is still a Chant and must follow all Chant rules.", 
   limitations: "Once Song of Survival has activated to protect the bearer it may not be cast nor activated again on the same life.",
   notes: "Bearer may end the Insubstantial state caused by Song of Survival at any time with the standard Incantation. If the Insubstantial State is ended by any means before reaching the base, the rest of the effect is ended as well.",
   text: ""

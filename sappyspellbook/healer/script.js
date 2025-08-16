@@ -1066,9 +1066,9 @@ const Banish = {
   name: "Banish", type: "Verbal",  freq: "1/Life",
   school: "Spirit", range: "20", materials: "",
   incant: "<I>The Spirits banish thee from this place</I>  x3", 
-  effect: "Target Insubstantial player must return to their base where their Insubstantial State immediately ends", 
+  effect: "Target Insubstantial player must return to their base where their Insubstantial State immediately ends.", 
   limitations: "",
-  notes: "The target's Insubstantial State is replaced with a new insubstantial state from Banish. If the Insubstantial State is ended before reaching the base, the rest of the effect is ended as well. If Banish is cast on self, the caster may end this Insubstantial state at any time by using the exit incantation for Insubstantial.",
+  notes: "The target's Insubstantial State is replaced with a new Insubstantial State from Banish. If the Insubstantial State is ended before reaching the base, the rest of the effect is ended as well. If Banish is cast on self, the caster may end this Insubstantial State at any time by using the exit incantation for Insubstantial. This is a Forced Movement effect.",
   text: ""
 };
 const BlessingAgainstWounds = {
@@ -1281,9 +1281,9 @@ const SeverSpirit = {
   name: "Sever Spirit", type: "Verbal",  freq: "1/Life Chg x3",
   school: "Spirit", range: "20", materials: "",
   incant: "<I>The spirits lay a curse on thee.</I> x3", 
-  effect: "May only target dead players. Player is Cursed. Any Enchantments on the player are removed", 
-  limitations: "",
-  notes: "Will always remove enchantments if successfully cast on a valid target, regardless of the player’s Traits, States, Immunities, Ongoing Effects, or Enchantments",
+  effect: "Target dead player is Cursed. Any Enchantments on the player are removed.", 
+  limitations: "Target must be dead when the caster begins the Incantation",
+  notes: "Will always remove enchantments if successfully cast on a valid target, regardless of the player's Traits, States, Immunities, Ongoing Effects, or Enchantments (except Sleight of Mind).",
   text: ""
 };
 const Shove = {
@@ -1297,7 +1297,7 @@ const Shove = {
   incant: "<I>My power shoves thee</I> x3", 
   effect: "Target player is moved back 20' in a straight line away from the caster. Works on Stopped players. If the caster is the target, the caster may choose the direction they move.", 
   limitations: "",
-  notes: "",
+  notes: "This is a Forced Movement effect.",
   text: ""
 };
 const SummonDead = {
@@ -1465,7 +1465,7 @@ const CircleofProtection = {
   name: "Circle of Protection", type: "Verbal",  freq: "1/Ref Chg x10",
   school: "Protection", range: "Self", materials: "",
   incant: "<I>Circle of Protection</I> x3", 
-  effect: "The caster and up to five willing players within Touch range of the caster immediately have all States and Ongoing Effects removed and then become Insubstantial. All targets: - May not move from their starting location, and are unaffected by abilities that allow or require the player to move. - May use abilities on players and their carried equipment who became Insubstantial due to the same casting of Circle of Protection as though they were not Insubstantial. - May end this Insubstantial state at any time by using the exit incantation for Insubstantial. The caster may end Circle of Protection for all targets at any time by using the exit incantation for Insubstantial. If the Insubstantial state is ended for a target, the ongoing effects of Circle of Protection no longer apply to that player", 
+  effect: "The caster and up to five willing players within Touch range of the caster immediately have all States and Ongoing Effects removed and then become Insubstantial. All targets:<BR>- May not move from their starting location, and are unaffected by Forced Movement effects. <BR>- May use abilities on players and their carried equipment who became Insubstantial due to the same casting of Circle of Protection as though they were not Insubstantial. <BR>- May end this Insubstantial State at any time by using the exit incantation for Insubstantial. If the caster ends Circle of Protection by using the exit incantation for Insubstantial, the effect ends for all targets. If the Insubstantial State is ended for a target, the Ongoing Effects of Circle of Protection no longer apply to that player.", 
   limitations: "",
   notes: "If a player is prevented from becoming Insubstantial, they are unaffected by Circle of Protection.",
   text: ""
@@ -1507,9 +1507,9 @@ const ProtectionfromProjectiles = {
   name: "Protection from Projectiles", type: "Enchantment",  freq: "1/Ref",
   school: "Protection", range: "Other", materials: "White Strip",
   incant: "<I>I enchant thee with Protection from Projectiles</I> x3", 
-  effect: "Bearer is unaffected by ammunition, thrown javelins, rocks, and thrown weapons. Engulfing effects from those objects, such as Pinning Arrow, do not affect the player", 
+  effect: "Bearer is unaffected by ammunition, thrown javelins, rocks, and thrown weapons. Engulfing effects from those objects, such as Pinning Arrow, do not affect the player.", 
   limitations: "",
-  notes: "Equipment can still be affected by the above. Does not protect bearer against Magic Balls",
+  notes: "Equipment can still be affected by the above. Does not protect bearer against Magic Balls.",
   text: ""
 };
 const Swift = {
@@ -1535,9 +1535,9 @@ const Teleport = {
   name: "Teleport", type: "Verbal",  freq: "1/Life",
   school: "Sorcery", range: "Touch", materials: "",
   incant: "<I>I travel through the aether</I> x5", 
-  effect: "Target willing player becomes Insubstantial and moves directly to a chosen location chosen by the caster at the time of casting. This must be a fixed location (not relative to a player or to a moveable object). Upon arrival, they must immediately end the effect as per Insubstantial", 
+  effect: "Target willing player becomes Insubstantial and moves directly to a chosen location chosen by the caster at the time of casting. This must be a fixed location (not relative to a player or to a moveable object). Upon arrival, they must immediately end the effect as per Insubstantial.", 
   limitations: "",
-  notes: "If the player’s Insubstantial state is removed before they have reached their destination, the effects of Teleport end. If Teleport is cast on self, the caster may end this Insubstantial state at any time by using the exit incantation for Insubstantial",
+  notes: "If the player's Insubstantial State is removed before they have reached their destination, the effects of Teleport end. If Teleport is cast on self, the caster may end this Insubstantial State at any time by using the exit incantation for Insubstantial. This is a Forced Movement effect.",
   text: ""
 };
 const DispelMagic = {
@@ -1667,8 +1667,8 @@ const AncestralArmor = {
   school: "Protection", range: "Other", materials: "White Strip",
   incant: "<I>May this armor protect thee from all forms of harm.<BR>- May the flames of the fire not burn thee.<BR>- May the bolts from the heavens not strike thee.<BR>- May the arrows of your enemies not pierce thee.<BR>- May this armor protect thee from all forms of harm.</I>", 
   effect: "The effects of a Magic Ball, projectile weapon, or melee weapon which just struck armor worn by the player are ignored, even if the object would not otherwise affect the armor. The armor loses one point of value in the location struck. This effect will not trigger if the armor has no points left in the location struck. Ancestral Armor is not expended after use and will continue to provide protection until removed with Dispel Magic or similar abilities", 
-  limitations: "Phase Arrow and Phase Bolt interact with armor worn by the bearer as though Ancestral Armor was not present",
-  notes: "Engulfing Effects that do not strike the bearer's armor and abilities that ignore armor entirely do not trigger Ancestral Armor",
+  limitations: "",
+  notes: "Engulfing Effects that do not strike the bearer's armor, abilities that ignore armor entirely, and abilities that have been entirely negated due to Ability Order do not trigger Ancestral Armor. Phasing equipment interacts with armor worn by the bearer as though Ancestral Armor was not present.",
   text: ""
 };
 const MassHealing = {
@@ -1722,9 +1722,9 @@ const PhoenixTears = {
   name: "Phoenix Tears", type: "Enchantment",  freq: "1/Ref",
   school: "Spirit", range: "Other", materials: "Two White Strips",
   incant: "<I>May the tears of the phoenix wash over thee</I> x3", 
-  effect: "Enchanted player does not die as normal. When the player would otherwise die they instead remove a strip and become Frozen for 30 seconds. When the Frozen State is ended, the bearer is affected as follows: <BR>1. All Wounds are removed. <BR>2. All States that would be removed by Death or Respawning are removed. <BR>3. All ongoing effects with a timer expire. <BR>4. All of their carried equipment is fully repaired. <BR>5. All non-persistent enchantments, other than Phoenix Tears, are removed. Additionally Phoenix Tears allows you to wear an extra Enchantment from the Protection School. This extra enchantment is considered Persistent as long as Phoenix Tears is present. The additional Enchantment is not removed once Phoenix Tears is removed. ", 
+  effect: "Enchanted player does not die as normal. When the player would otherwise die they instead become Frozen for 30 seconds. If the player is still enchanted when the Frozen State elapses or is removed: <BR>1. Remove all wounds. <BR>2. Remove all States that would be removed by death or respawning. <BR>3. Remove all Ongoing Effects with a timer. <BR>4. Repair all carried equipment. <BR>5. Remove all non-persistent enchantments other than Phoenix Tears.<BR>6. Remove a strip.<BR> Additionally, Phoenix Tears allows you to wear an extra Enchantment from the Protection School. This extra enchantment is considered Persistent as long as Phoenix Tears is present. The additional Enchantment is not removed once Phoenix Tears is removed.", 
   limitations: "",
-  notes: "Phoenix Tears is removed when the last strip is removed. If Phoenix Tears is removed, the bearer chooses which (m) Enchantments to lose to meet their new Enchantment limit, if necessary.",
+  notes: "Phoenix Tears is removed when the last strip is removed If Phoenix Tears is removed, the bearer chooses which (m) Enchantments to lose to meet their new Enchantment limit, if necessary.",
   text: ""
 };
 const Priest = {
