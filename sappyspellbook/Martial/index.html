@@ -876,7 +876,7 @@ are Immune to Flame.
                 T: Verbal S: Sorcery R: Self<BR>
                 I: <I>“I vanish from sight”</I><BR>
                 E: Player becomes Insubstantial. While Insubstantial in this way, player can move as they wish as long as they remain within 50' from their starting point.<BR>
-                L: Caster may not end State within 10' of a living enemy.<BR>
+                L: Caster may not end State within 10' of a living enemy. Blink fails if the caster is Stopped.<BR>
                 N: If the Insubstantial State is ended, the rest of the effect is ended as well. Caster may end this Insubstantial state at any time by using the exit incantation for Insubstantial.
                 
             </td>
@@ -1002,7 +1002,7 @@ are Immune to Flame.
                  T: Verbal S: Sorcery R: Self<BR>
                  I: <I>“I vanish from sight”</I><BR>
                  E: Player becomes Insubstantial. While Insubstantial in this way, player can move as they wish as long as they remain within 50' from their starting point.<BR>
-                 L: Caster may not end State within 10' of a living enemy.<BR>
+                 L: Caster may not end State within 10' of a living enemy. Blink fails if the caster is Stopped.<BR>
                  N: If the Insubstantial State is ended, the rest of the effect is ended as well. Caster may end this Insubstantial state at any time by using the exit incantation for Insubstantial.
                  
              </td>
@@ -1123,7 +1123,7 @@ are Immune to Flame.
                  T: Verbal S: Sorcery R: Self<BR>
                  I: <I>“I vanish from sight”</I><BR>
                  E: Player becomes Insubstantial. While Insubstantial in this way, player can move as they wish as long as they remain within 50' from their starting point.<BR>
-                 L: Caster may not end State within 10' of a living enemy.<BR>
+                 L: Caster may not end State within 10' of a living enemy. Blink fails if the caster is Stopped.<BR>
                  N: If the Insubstantial State is ended, the rest of the effect is ended as well. Caster may end this Insubstantial state at any time by using the exit incantation for Insubstantial.
                  
              </td>
@@ -1248,7 +1248,7 @@ the effect.
         <TR><TD></TD><TD><u>Unlimited (ex)</u><BR>
             T: Verbal S: Spirit R: Self<BR>
             I: <I>“Blood and Thunder!”</I><BR>
-            E: Player gains Blessing Against Wounds.<BR>
+            E: Player gains Blessing Against Wounds (ex).<BR>
             L: Kill Trigger.<BR>
             N: Player must still wear a white strip to denote Blessing Against Wounds.<BR><BR>
                 <I>Blessing Against Wounds</I><BR>
@@ -1340,7 +1340,7 @@ the effect.
         <TR><TD></TD><TD><u>Unlimited (ex)</u><BR>
             T: Verbal S: Spirit R: Self<BR>
             I: <I>“Blood and Thunder!”</I><BR>
-            E: Player gains Blessing Against Wounds.<BR>
+            E: Player gains Blessing Against Wounds (ex).<BR>
             L: Kill Trigger.<BR>
             N: Player must still wear a white strip to denote Blessing Against Wounds.<BR><BR>
                 <I>Blessing Against Wounds</I><BR>
@@ -1688,6 +1688,8 @@ Movement effect.
                 I: <I>“The spirits lay a curse on thee.”</I> x3<BR>
                 E: May only target dead players. Player is Cursed. Any
                 Enchantments on the player are removed.<BR>
+                L: Target must be dead when the caster begins
+the Incantation.<BR>
                 N: Will always remove enchantments if successfully
                 cast on a valid target, regardless of the player's
                 Traits, States, Immunities, Ongoing Effects,
@@ -1877,7 +1879,7 @@ Movement effect.
             I: <I>“May the blessing of my god protect thee”</I> x3<BR>
             M: White strip<BR>
             E: The target player gains either Immune to Command or Immune to Death.<BR>
-            L: Type of Ability must be chosen at the time of casting and may not be changed. The caster may only have one instance of Extend Immunities active at a time.</TD></TR>
+            L: Type of Ability must be chosen at the time of casting and may not be changed. The caster may only have one instance of Extend Immunities at a time.</TD></TR>
         <tr>
             <td>4th</td>
             <td><b>Greater Resurrect</b> </td>
@@ -1895,8 +1897,9 @@ Movement effect.
         <TR><TD></TD><TD><u>1/Life (m)</u><BR>
             T: Verbal S: Command R: 20'<BR>
             I: <I>“I command thee awed”</I> x3<BR>
-            E: Target may not attack or cast magic at the caster or their carried equipment. Target must remain at least 20' away from the caster unless forced there by another Ability. Lasts 30 seconds.<BR>
-            N: If the caster attacks the target, begins casting another magic at the target or their carried equipment, or dies, this spell's effect is negated.</TD></TR>
+            E: Target may not attack or cast magic at the caster or their carried equipment. Target must remain at least 20' away from the caster unless forced there by another Forced Movement effect. Lasts 30 seconds.<BR>
+            N: If the caster attacks the target, begins casting another magic at the target or their carried equipment, or dies, this spell's effect is negated. This is a Forced
+Movement effect.</TD></TR>
         <tr>
             <td>6th</td>
             <td><b>Protection from Magic</b></td>
@@ -1913,7 +1916,7 @@ Movement effect.
     <p><a class="Paladin" onclick="showText('GuardianText')"><b>Guardian</b></a><BR>
         T: Archetype S: Neutral<BR>
         E: Gain Imbue Shield (Touch) 1/Life (m) and Martyr (Other) 2/Life Charge x3 (ex).<BR>
-        L: Loses all instances of Protection from Magic and Extend Immunities. May only have one instance of Imbue Shield active at a time.
+        L: Loses all instances of Protection from Magic and Extend Immunities. May only have one instance of Imbue Shield at a time.
      </p>
  
      <p><a class="Paladin" onclick="showText('InquisitorText')"><b>Inquisitor</b></a><BR>
@@ -1966,7 +1969,8 @@ Movement effect.
             T: Verbal S: Spirit R: Other<BR>
             I: <I>“Thy burdens are mine to bear.”</I><BR>
             E: A single State is removed from target willing player. The caster gains the removed State with a new duration of 10 seconds.<BR>
-            L: Cannot be cast while Cursed.</TD></TR>
+            L: Cannot be cast while Cursed. Caster may not remove
+themselves from Insubstantial states gained this way.</TD></TR>
         <tr>
             <td>N/A</td>
             <td><b>Greater Resurrect</b> </td>
@@ -1984,8 +1988,9 @@ Movement effect.
         <TR><TD></TD><TD><u>1/Life (m)</u><BR>
             T: Verbal S: Command R: 20'<BR>
             I: <I>“I command thee awed”</I> x3<BR>
-            E: Target may not attack or cast magic at the caster or their carried equipment. Target must remain at least 20' away from the caster unless forced there by another Ability. Lasts 30 seconds.<BR>
-            N: If the caster attacks the target, begins casting another magic at the target or their carried equipment, or dies, this spell's effect is negated.</TD></TR>
+            E: Target may not attack or cast magic at the caster or their carried equipment. Target must remain at least 20' away from the caster unless forced there by another Forced Movement effect. Lasts 30 seconds.<BR>
+            N: If the caster attacks the target, begins casting another magic at the target or their carried equipment, or dies, this spell's effect is negated. This is a Forced
+Movement effect.</TD></TR>
         <tr>
             <td>N/A</td>
             <td><b>Imbue Shield</b></td>
@@ -2003,7 +2008,7 @@ Movement effect.
     <p><b>Guardian</b><BR>
         T: Archetype S: Neutral<BR>
         E: Gain Imbue Shield (Touch) 1/Life (m) and Martyr (Other) 2/Life Charge x3 (ex).<BR>
-        L: Loses all instances of Protection from Magic and Extend Immunities. May only have one instance of Imbue Shield active at a time.
+        L: Loses all instances of Protection from Magic and Extend Immunities. May only have one instance of Imbue Shield at a time.
         </p>
             
 </div>
@@ -2049,8 +2054,9 @@ Movement effect.
             <TR><TD></TD><TD><u>1/Life (m)</u><BR>
                  T: Verbal S: Command R: 20'<BR>
                  I: <I>“I command thee awed”</I> x3<BR>
-                 E: Target may not attack or cast magic at the caster or their carried equipment. Target must remain at least 20' away from the caster unless forced there by another Ability. Lasts 30 seconds.<BR>
-                 N: If the caster attacks the target, begins casting another magic at the target or their carried equipment, or dies, this spell's effect is negated.</TD></TR>
+                 E: Target may not attack or cast magic at the caster or their carried equipment. Target must remain at least 20' away from the caster unless forced there by another Forced Movement effect. Lasts 30 seconds.<BR>
+            N: If the caster attacks the target, begins casting another magic at the target or their carried equipment, or dies, this spell's effect is negated. This is a Forced
+Movement effect.</TD></TR>
             <tr>
                 <td>N/A</td>
                 <td><b>Extend Immunities</b></td>
@@ -2060,7 +2066,7 @@ Movement effect.
                 I: <I>“May the blessing of my god protect thee”</I> x3<BR>
                 M: White strip<BR>
                 E: The target player gains either Immune to Command or Immune to Death.<BR>
-                L: Type of Ability must be chosen at the time of casting and may not be changed. The caster may only have one instance of Extend Immunities active at a time.</TD></TR>
+                L: Type of Ability must be chosen at the time of casting and may not be changed. The caster may only have one instance of Extend Immunities at a time.</TD></TR>
             <tr>
                 <td>N/A</td>
                 <td><b>Sacred Blades</b> </td>
@@ -2511,7 +2517,9 @@ Movement effect.
             I: <I>“May this armor protect thee from all forms of harm.”</I> <br>
             M: White strip<br>
             E: The effects of a Magic Ball, projectile weapon, or melee weapon which just struck armor worn by the player are ignored, even if the object would not otherwise affect the armor. The armor loses one point of value in the location struck. This effect will not trigger if the armor has no points left in the location struck. Ancestral Armor is not expended after use and will continue to provide protection until removed with Dispel Magic or similar abilities.<BR>
-            N: Engulfing Effects that do not strike the bearer's armor and abilities that ignore armor entirely do not trigger Ancestral Armor. Phasing equipment interacts with armor worn by the bearer as though Ancestral Armor was not present.</TD></TR>
+            N: Engulfing Effects that do not strike the bearer's armor and abilities that ignore armor entirely do not trigger Ancestral Armorentirely, and abilities that have
+been entirely negated due to Ability Order do not trigger
+Ancestral Armor. Phasing equipment interacts with armor worn by the bearer as though Ancestral Armor was not present.</TD></TR>
     </table>  
 
     <h3>Optional Archetypes</h3>
@@ -2602,7 +2610,9 @@ Movement effect.
              I: <I>“May this armor protect thee from all forms of harm.”</I><br>
              M: White strip<br>
              E: The effects of a Magic Ball, projectile weapon, or melee weapon which just struck armor worn by the player are ignored, even if the object would not otherwise affect the armor. The armor loses one point of value in the location struck. This effect will not trigger if the armor has no points left in the location struck. Ancestral Armor is not expended after use and will continue to provide protection until removed with Dispel Magic or similar abilities.<BR>
-             N: Engulfing Effects that do not strike the bearer's armor and abilities that ignore armor entirely do not trigger Ancestral Armor. Phasing equipment interacts with armor worn by the bearer as though Ancestral Armor was not present.</TD></TR>
+             N: Engulfing Effects that do not strike the bearer's armor and abilities that ignore armor entirely do not trigger Ancestral Armorentirely, and abilities that have
+been entirely negated due to Ability Order do not trigger
+Ancestral Armor. Phasing equipment interacts with armor worn by the bearer as though Ancestral Armor was not present.</TD></TR>
         <tr>
         <td>N/A</td>
         <td><b>Momentum</b></td>
@@ -2695,14 +2705,19 @@ Movement effect.
             T: Enchantment S: Spirit R: Self<br>
             I: <I>“May the tears of the phoenix wash over thee”</I> x3<br>
             M: Two white strips<br>
-            E: Enchanted player does not die as normal. When the player would otherwise die they instead remove a strip and become Frozen for 30 seconds. When the Frozen State is ended, the bearer is affected as follows:<BR>
-            1. All Wounds are removed.<BR>
-            2. All States that would be removed by Death or Respawning are removed.<BR>
-            3. All ongoing effects with a timer expire.<BR>
-            4. All of their carried equipment is fully repaired.<BR>
-            5. All non-persistent enchantments, other than Phoenix Tears, are removed.<BR>
-            Additionally Phoenix Tears allows you to wear an extra Enchantment from the Protection School. This extra enchantment is considered Persistent as long as Phoenix Tears is present. The additional Enchantment is not removed once Phoenix Tears is removed.<br>
-            N: Phoenix Tears is removed when the last strip is removed.</TD></TR>
+            E: Enchanted player does not die as normal. When the
+player would otherwise die they instead become Frozen
+for 30 seconds. If the player is still enchanted when the
+Frozen State elapses or is removed:<BR>
+            1. Remove all wounds.<BR>
+            2. Remove all States that would be removed by death or respawning.<BR>
+            3. Remove all Ongoing Effects with a timer.<BR>
+            4. Repair all carried equipment.<BR>
+            5. Remove all non-persistent enchantments other than Phoenix Tears.<BR>
+            6. Remove a strip.<BR>
+                Additionally Phoenix Tears allows you to wear an extra Enchantment from the Protection School. This extra enchantment is considered Persistent as long as Phoenix Tears is present. The additional Enchantment is not removed once Phoenix Tears is removed.<br>
+            N: Phoenix Tears is removed when the last strip is removed. If Phoenix Tears is removed, the bearer chooses which (m) Enchantments to lose to meet
+their new Enchantment limit, if necessary.</TD></TR>
      </table>  
  
      <h3>Archetype Info</h3>
