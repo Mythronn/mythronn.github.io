@@ -267,6 +267,7 @@ function toggleList(incantOnly){
       lists[i].style.display = "none";
       document.getElementById("saveList").hidden = true;
       document.getElementById("titleList").hidden = true;
+      document.getElementById("printCards").hidden = true;
       document.getElementById("toggleIncants").hidden = true;
       document.getElementById("hlp1").hidden = false;
       document.getElementById("hlp2").hidden = false;
