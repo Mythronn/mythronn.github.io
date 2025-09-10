@@ -1180,7 +1180,7 @@ const Release = {
   pointTotalId: "Releaseval",
   name: "Release", type: "Verbal",  freq: "2/Life Chg x3",
   school: "Sorcery", range: "Touch", materials: "",
-  incant: "<I>From thy bindings thou art released</I> x3", 
+  incant: "<I>From thy bindings thou art released</I> x5", 
   effect: "A single ongoing effect or State is removed from the target. Casters choice", 
   limitations: "Cannot remove Cursed. When used to end a State or Ongoing Effect imposed by an ability with multiple effects, all other States and Ongoing Effects from the same source are also ended",
   notes: "",

@@ -1354,7 +1354,7 @@ const PlanarGrounding = {
   incant: "<I>My power closes the aether to you</I> x3", 
   effect: "Target player has their Insubstantial State removed and may not become Insubstantial for 30 seconds. May be cast on players who are not currently Insubstantial", 
   limitations: "",
-  notes: "Planar Grounding causes Enchantments that automatically render their bearer Insubstantial, such as Undead Minion, to fail and be removed if they activate while Planar Grounding is in effect",
+  notes: "Planar Grounding causes Enchantments that automatically render their bearer Insubstantial, such as Gift of Air, to fail and be removed if they activate while Planar Grounding is in effect",
   text: ""
 };
 const Release = {
