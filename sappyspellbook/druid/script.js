@@ -151,6 +151,16 @@ function toggleIncants(){
 }
 /*##################################*/
 function toggleList(incantOnly){
+
+  const qrcode = new QRCode(document.getElementById('qrcode'), {
+    text: window.location.href,
+    width: 128,
+    height: 128,
+    colorDark : '#000',
+    colorLight : '#fff',
+    correctLevel : QRCode.CorrectLevel.L,
+    typenumber: 4
+  });
   var tables = [];
   var lists = [];
   var levelList = ["", "", "", "", "", "", ""];
@@ -1625,14 +1635,15 @@ function printCards(){
     toggleIncants();
   }
   if(document.title == "Druid Spellbook"){
-    textToSave = "Druid Level " + document.getElementById("reqLevel").value + document.getElementById("ltp").innerText + " \n   Level 1 \n" + document.getElementById("lvl1List").innerText + "\n   Level 2 \n" + document.getElementById("lvl2List").innerText + "\n   Level 3 \n" + document.getElementById("lvl3List").innerText + "\n   Level 4 \n" + document.getElementById("lvl4List").innerText + "\n   Level 5 \n" + document.getElementById("lvl5List").innerText + "\n   Level 6 \n" + document.getElementById("lvl6List").innerText;
+    textToSave = "Druid Level " + document.getElementById("reqLevel").value + "\n   Level 1 \n" + document.getElementById("lvl1List").innerText + "\n   Level 2 \n" + document.getElementById("lvl2List").innerText + "\n   Level 3 \n" + document.getElementById("lvl3List").innerText + "\n   Level 4 \n" + document.getElementById("lvl4List").innerText + "\n   Level 5 \n" + document.getElementById("lvl5List").innerText + "\n   Level 6 \n" + document.getElementById("lvl6List").innerText;
   }
   else{
-    textToSave = document.title + " \n(Druid Level " + document.getElementById("reqLevel").value + ")" + document.getElementById("ltp").innerText + " \n   Level 1 \n" + document.getElementById("lvl1List").innerText + "\n   Level 2 \n" + document.getElementById("lvl2List").innerText + "\n   Level 3 \n" + document.getElementById("lvl3List").innerText + "\n   Level 4 \n" + document.getElementById("lvl4List").innerText + "\n   Level 5 \n" + document.getElementById("lvl5List").innerText + "\n   Level 6 \n" + document.getElementById("lvl6List").innerText;
+    textToSave = document.title + " (Druid Level " + document.getElementById("reqLevel").value + ")" + "\n   Level 1 \n" + document.getElementById("lvl1List").innerText + "\n   Level 2 \n" + document.getElementById("lvl2List").innerText + "\n   Level 3 \n" + document.getElementById("lvl3List").innerText + "\n   Level 4 \n" + document.getElementById("lvl4List").innerText + "\n   Level 5 \n" + document.getElementById("lvl5List").innerText + "\n   Level 6 \n" + document.getElementById("lvl6List").innerText;
   }
   const textData = textToSave;
 
-  const lines = textData.split('\n');
+  const lines = textData.split('\n'); // this is "lines" but it's not column-limited! Limit to 69 (nice) characters to prevent wrap
+
   const title = lines[0];
   const entries = [];
 
@@ -1641,9 +1652,9 @@ function printCards(){
     const line = lines[i].trim();
     if (line.startsWith('Level')) {
       currentLevel = line;
-    } else if (line.includes('Experienced')) {
+    } else if (line.includes('Experienced')) { // roll purchases of Experienced into the spell it's purchased for to avoide wasting space on the card
     } else if (line.startsWith('-')) {
-      if (entries.length > 0) {
+    if (entries.length > 0) {
         entries[entries.length - 1].flavor = line.slice(1).trim();
       }
     } else if (line) {
@@ -1651,48 +1662,60 @@ function printCards(){
     }
   }
 
-// collapsing armor so it doesn't eat two lines
   for (let i = 0; i < entries.length; i++) {
-    for (let j = i + 1; j < entries.length; j++) {
-      if (entries[i].text === entries[j].text) {
-        // replace first instance with 2x iff there are two
-        entries[i] = { level: entries[i].level, text: entries[i].text.replace("1", "2"), flavor: entries[i].flavor };
-        entries.splice(j,j)
-      }
-    }
-    if ([entries[i].text + entries[i].flavor].length + 3 >79){
+   txt = entries[i].text
+   flv = entries[i].flavor
+   if (txt.length + flv.length + 6 > 66){
      entries[i].lines = 2
    } else {entries[i].lines = 1}
  }
 
 
 // Split onto up to 3 cards
- numchunks = 3
-maxchunlines = 10 // this may be right for 9pt
+numchunks = 3
+maxchunlines = 14 // this may be right for 9pt
 chunks = []
 currchlines = 0
 cut = []
 for (let i = 0; i < entries.length; i++) {
   currchlines = currchlines + entries[i].lines
-  // console.log(currchlines)
+  console.log(currchlines)
   if (currchlines >= maxchunlines){
     cut.push(i)
-    // console.log(i)
+    console.log(entries[i].lines)
     currchlines = entries[i].lines
   }
 }
 console.log(cut)
 console.log(cut.length)
 
+chunks.push({num: 1, max: 1, qr: true, entries: []})
+
 if (cut.length == 1){
-  chunks = [entries.slice(0, cut[0]), entries.slice(cut[0], cut[1])];
+  divs = [entries.slice(0, cut[0]-1), entries.slice(cut[0]-1)];
+  chunks[0].entries = divs[0]
+  chunks.push({num: 2, max: 2, qr: false, entries: divs[1]})
+  chunks[0].max = 2
 }
 else if (cut.length == 2){
-  chunks = [entries.slice(0, cut[0]), entries.slice(cut[0], cut[1]), entries.slice(cut[1])];
-} 
+divs = [entries.slice(0, cut[0]-1), entries.slice(cut[0]-1, cut[1]-1), entries.slice(cut[1]-1)];
+  chunks[0].entries = divs[0]
+  chunks.push({num: 2, max: 3, qr: false, entries: divs[1]})
+  chunks.push({num: 3, max: 3, qr: false, entries: divs[2]})
+  chunks[0].max = 3} 
 else {
-  chunks = [entries];
+divs = [entries];
+chunks[0].entries = divs
 }
+console.log(chunks)
+
+
+
+// get the qr and put it where it goes 
+var qr = document.getElementById('qrcode')
+var qrcanvas = qr.querySelector('canvas');
+console.log(qrcanvas) // wtf
+qrImageSrc = qrcanvas.toDataURL();
 
 const htmlContent = `
 <html>
@@ -1731,9 +1754,10 @@ const htmlContent = `
 <body>
   ${chunks.map(chunk => `
     <div class="card">
-      <div class="title">${title}</div>
-    ${chunk.map(entry => `
-        <div class="entry">${entry.text}${entry.flavor ? ' - ' + entry.flavor : ''}</div>
+    <img ${chunk.num == 1 ? '' : 'hidden '}style="float: right; width: 60px; height: auto" src=${qrImageSrc}></img>
+      <div class="title"><u>${title}</u>  ${chunk.num}/${chunk.max}</div> 
+      ${chunk.entries.map(entry => `
+        <div class="entry"><b>${entry.text}</b><i>${entry.flavor ? ' - ' + entry.flavor : ''}</i></div>
       `).join('')}
     </div>
     `).join('')}
