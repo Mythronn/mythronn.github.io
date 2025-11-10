@@ -1823,7 +1823,7 @@ function printCards(){
 
 // Split onto up to 3 cards
 numchunks = 3
-maxchunlines = 14 // this may be right for 9pt
+maxchunlines = 13 // this may be right for 9pt
 chunks = []
 currchlines = 0
 cut = []
