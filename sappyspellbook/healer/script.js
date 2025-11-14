@@ -1941,7 +1941,7 @@ divs = [entries.slice(0, cut[0]-1), entries.slice(cut[0]-1, cut[1]-1), entries.s
   chunks[0].max = 3} 
 else {
 divs = [entries];
-chunks[0].entries = divs
+chunks[0].entries = divs[0]
 }
 console.log(chunks)
 
