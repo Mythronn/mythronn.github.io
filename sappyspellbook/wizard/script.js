@@ -187,15 +187,6 @@ function toggleIncants(){
 }
 /*##################################*/
 function toggleList(incantOnly){
-  const qrcode = new QRCode(document.getElementById('qrcode'), {
-    text: window.location.href,
-    width: 128,
-    height: 128,
-    colorDark : '#000',
-    colorLight : '#fff',
-    correctLevel : QRCode.CorrectLevel.L,
-    typenumber: 4
-  });
   var tables = [];
   var lists = [];
   var levelList = ["", "", "", "", "", "", ""];
@@ -1998,6 +1989,21 @@ function saveList(){
 }
 
 function printCards(){
+  
+  const elementToRemove = document.getElementById('qrcode');
+  if (elementToRemove) {
+      elementToRemove.replaceChildren();
+  }
+  qrcode = new QRCode(document.getElementById('qrcode'), {
+    text: document.URL,
+    width: 128,
+    height: 128,
+    colorDark : '#000',
+    colorLight : '#fff',
+    correctLevel : QRCode.CorrectLevel.L,
+    typenumber: 4
+  });
+
   let textToSave = "";
   if (showIncants != true){
     toggleIncants();
