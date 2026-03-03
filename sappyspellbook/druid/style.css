@@ -18,6 +18,14 @@ input[type="number"] {
   appearance: none;            /* Modern browsers fallback */
 }
 
+input[type="number"]:disabled {
+  opacity: 1;                         
+  -webkit-opacity: 1;                  
+  -webkit-text-fill-color: #000000;    /* iOS overrides color with this property */
+  background-color: #ffffff;           /* Prevent grey background tint */
+}
+
+
 input[type="number"]::placeholder {
   color: #8b6f4d;
   opacity: 1; 
