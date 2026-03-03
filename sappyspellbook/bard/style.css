@@ -20,6 +20,14 @@ input[type="number"] {
   -moz-appearance: textfield !important;  /* Hide arrows in Firefox */
 }
 
+input[type="number"]:disabled {
+  opacity: 1;                          
+  -webkit-opacity: 1;                  /* Safari fallback */
+  -webkit-text-fill-color: #000000;    /* iOS overrides color with this property */
+  background-color: #ffffff;           /* Prevent grey background tint */
+}
+
+
 input[type="number"]::placeholder {
   color: #8b6f4d;
   opacity: 1; 
