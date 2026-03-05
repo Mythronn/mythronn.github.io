@@ -1925,6 +1925,7 @@ function loadSavedList(saveName) {
     if (hash) {
       window.location.hash = "#" + hash;
       showToast('Loaded "' + saveName + '"');
+      console.log("On load saveName: " + saveName);
       document.getElementById('titleShow').innerHTML = saveName;
       closeModal();
       return;
