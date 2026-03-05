@@ -1841,9 +1841,7 @@ const abilities = [Priest,	//0
 function getAbilities(){return abilities}
 
 // ============================================================
-//  SAVE / LOAD SYSTEM  —  replaces the old saveList() txt download
-//  Drop this into your existing JS file, replacing saveList().
-//  Also swap in the two new buttons (see bottom of this file).
+//  SAVE / LOAD SYSTEM  
 // ============================================================
 
 const STORAGE_KEY = "sappySpellbook_lists";
