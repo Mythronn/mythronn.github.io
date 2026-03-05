@@ -1928,6 +1928,7 @@ function loadSavedList(saveName) {
       console.log("On load saveName: " + saveName);
       document.getElementById('titleShow').innerHTML = saveName;
       closeModal();
+      createURL();
       return;
     }
   }
