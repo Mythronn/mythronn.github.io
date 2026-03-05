@@ -1893,8 +1893,11 @@ function saveList() {
 function doSave(saveName, current) {
   if (!saveName || !saveName.trim()) return;
   saveName = saveName.trim().replace(/[^a-zA-Z0-9 _-]/g, "").substring(0, 40);
-
+  
+  console.log(current.listTitle);
   current.listTitle = saveName; //this is what we are worried about!!
+  console.log(current.listTitle);
+  
   document.title = saveName;
   document.getElementById('titleShow').innerHTML = saveName;
   createURL();
