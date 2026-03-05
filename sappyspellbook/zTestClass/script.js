@@ -1916,12 +1916,13 @@ function loadSavedList(saveName) {
   const data  = lists[saveName];
   if (!data) { showToast('Could not find list "' + saveName + '"'); return; }
 
-  document.getElementById('titleShow').innerHTML = saveName;
+  
   if (data.url) {
     const hash = data.url.split("#")[1];
     if (hash) {
       window.location.hash = "#" + hash;
       showToast('Loaded "' + saveName + '"');
+      document.getElementById('titleShow').innerHTML = saveName;
       closeModal();
       return;
     }
