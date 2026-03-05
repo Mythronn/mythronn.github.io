@@ -1894,6 +1894,9 @@ function doSave(saveName, current) {
   if (!saveName || !saveName.trim()) return;
   saveName = saveName.trim().replace(/[^a-zA-Z0-9 _-]/g, "").substring(0, 40);
 
+  current.listTitle = saveName; //this is what we are worried about!!
+  document.title = saveName;
+  
   const lists = getAllSavedLists();
   lists[saveName] = {
     ...current,
