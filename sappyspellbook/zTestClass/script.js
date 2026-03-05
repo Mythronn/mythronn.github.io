@@ -1897,6 +1897,7 @@ function doSave(saveName, current) {
   current.listTitle = saveName; //this is what we are worried about!!
   document.title = saveName;
   document.getElementById('titleShow').innerHTML = saveName;
+  createURL();
   
   const lists = getAllSavedLists();
   lists[saveName] = {
@@ -2256,7 +2257,6 @@ function titleList(){
   let newTitle = prompt("Enter a title for this list:", document.getElementById('titleShow').innerHTML);
   if (newTitle) {
     newTitle = newTitle.replace(/[^a-zA-Z0-9 ]/g, '');
-    //newTitle = newTitle.replace(/ /g, "_");
     document.title = newTitle;
     document.getElementById('titleShow').innerHTML = newTitle;
     createURL();
