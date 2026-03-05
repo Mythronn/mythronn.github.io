@@ -1896,6 +1896,7 @@ function doSave(saveName, current) {
 
   current.listTitle = saveName; //this is what we are worried about!!
   document.title = saveName;
+  getElementById("titleShow").innerHTML = saveName;
   
   const lists = getAllSavedLists();
   lists[saveName] = {
