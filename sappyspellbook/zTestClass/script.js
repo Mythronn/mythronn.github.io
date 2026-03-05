@@ -1896,7 +1896,7 @@ function doSave(saveName, current) {
 
   current.listTitle = saveName; //this is what we are worried about!!
   document.title = saveName;
-  getElementById("titleShow").innerHTML = saveName;
+  document.getElementById('titleShow').innerHTML = saveName;
   
   const lists = getAllSavedLists();
   lists[saveName] = {
@@ -1915,6 +1915,7 @@ function loadSavedList(saveName) {
   const data  = lists[saveName];
   if (!data) { showToast('Could not find list "' + saveName + '"'); return; }
 
+  document.getElementById('titleShow').innerHTML = saveName;
   if (data.url) {
     const hash = data.url.split("#")[1];
     if (hash) {
