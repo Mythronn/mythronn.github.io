@@ -1838,13 +1838,15 @@ const abilities = [Priest,	//0
 
 function getAbilities(){return abilities}
 
-// ============================================================
+/*##################################*/
 //  SAVE / LOAD SYSTEM  
-// ============================================================
+/*##################################*/
 
+//TODO: This needs to be different for each class
 const STORAGE_KEY = "sappySpellbook_lists";
 
-// ---------- low-level storage helpers ----------
+
+/*##################################*/
 
 function getAllSavedLists() {
   try {
@@ -1858,7 +1860,7 @@ function persistLists(lists) {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(lists));
 }
 
-// ---------- capture current state ----------
+/*##################################*/
 
 function getCurrentListData() {
   const reqLevel  = document.getElementById("reqLevel").value;
@@ -1866,7 +1868,7 @@ function getCurrentListData() {
   const listTitle = document.title;
   const url       = window.location.href;
 
-  // spell purchases: index → count
+ 
   const purchased = {};
   for (let i = 0; i < abilityCount; i++) {
     if (abilities[i].purchased > 0) {
@@ -1880,7 +1882,7 @@ function getCurrentListData() {
   return { reqLevel, ltp, listTitle, url, purchased, exp1, exp2 };
 }
 
-// ---------- SAVE ----------
+/*##################################*/
 
 function saveList() {
   const lists   = getAllSavedLists();
@@ -1913,7 +1915,7 @@ function doSave(saveName, current) {
   closeModal();
 }
 
-// ---------- LOAD ----------
+/*##################################*/
 
 function loadSavedList(saveName) {
   const lists = getAllSavedLists();
@@ -1936,7 +1938,7 @@ function loadSavedList(saveName) {
   showToast("Could not restore list — no URL data found.");
 }
 
-// ---------- DELETE ----------
+/*##################################*/
 
 function deleteSavedList(saveName) {
   const lists = getAllSavedLists();
@@ -1945,7 +1947,7 @@ function deleteSavedList(saveName) {
   renderManagePanel(document.getElementById("ssl-manage-list"));
 }
 
-// ---------- MODAL INFRASTRUCTURE ----------
+/*##################################*/
 
 function ensureModalExists() {
   if (document.getElementById("ssl-modal")) return;
@@ -2016,7 +2018,7 @@ function closeModal() {
   if (m) m.classList.remove("open");
 }
 
-// ---------- SAVE MODAL UI ----------
+/*##################################*/
 
 function showSaveModal(lists, current) {
   openModal(() => {
@@ -2056,7 +2058,7 @@ function showSaveModal(lists, current) {
   }, 50);
 }
 
-// ---------- MANAGE / LOAD MODAL UI ----------
+/*##################################*/
 
 function manageLists() {
   openModal(() => {
@@ -2100,6 +2102,9 @@ function renderManagePanel(container) {
     `;
   }).join("");
 }
+/*##################################*/
+//End of SAVE / LOAD system
+/*##################################*/
 
 function printCards(){
   
