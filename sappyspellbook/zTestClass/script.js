@@ -1895,13 +1895,14 @@ function doSave(saveName, current) {
   saveName = saveName.trim().replace(/[^a-zA-Z0-9 _-]/g, "").substring(0, 40);
   
   console.log(current);
-  current.listTitle = saveName; //this is what we are worried about!!
+  current.listTitle = saveName;
+  createURL();
+  current = getCurrentListData(); //this is what we are worried about!!
   console.log(current);
   
   document.title = saveName;
   document.getElementById('titleShow').innerHTML = saveName;
-  createURL();
-  
+    
   const lists = getAllSavedLists();
   lists[saveName] = {
     ...current,
@@ -1928,7 +1929,6 @@ function loadSavedList(saveName) {
       console.log("On load saveName: " + saveName);
       document.getElementById('titleShow').innerHTML = saveName;
       closeModal();
-      createURL();
       return;
     }
   }
