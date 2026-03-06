@@ -1896,12 +1896,14 @@ function doSave(saveName, current) {
   
   console.log(current);
   current.listTitle = saveName;
+  document.getElementById('titleShow').innerHTML = saveName;
+   document.title = saveName;
   createURL();
   current = getCurrentListData(); //this is what we are worried about!!
   console.log(current);
   
-  document.title = saveName;
-  document.getElementById('titleShow').innerHTML = saveName;
+ 
+ 
     
   const lists = getAllSavedLists();
   lists[saveName] = {
