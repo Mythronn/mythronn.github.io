@@ -237,7 +237,6 @@ function toggleList(incantOnly){
       tables[i].style.display = "none";
       lists[i].style.display = "block";
       document.getElementById("saveList").hidden = false;
-      document.getElementById("titleList").hidden = false;
       document.getElementById("printCards").hidden = false;
       document.getElementById("toggleIncants").hidden = false;
       document.getElementById("hlp1").hidden = true;
@@ -266,7 +265,6 @@ function toggleList(incantOnly){
       tables[i].style.display = "block";
       lists[i].style.display = "none";
       document.getElementById("saveList").hidden = false;
-      document.getElementById("titleList").hidden = false;
       document.getElementById("printCards").hidden = false;
       document.getElementById("toggleIncants").hidden = true;
       document.getElementById("hlp1").hidden = false;
