@@ -2033,7 +2033,7 @@ function showSaveModal(lists, current) {
       <h2>&#x1F4BE; Save Spell List</h2>
       <label style="font-size:.85rem;color:#aaa">Save name</label>
       <input type="text" id="ssl-save-name" maxlength="40"
-             placeholder="e.g. My Tank Druid"
+             placeholder="e.g. Magic Ball Necro"
              value="${suggested}">
       <div>
         <button class="ssl-btn ssl-btn-primary"
