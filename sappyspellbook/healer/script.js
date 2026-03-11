@@ -237,7 +237,6 @@ function toggleList(incantOnly){
       tables[i].style.display = "none";
       lists[i].style.display = "block";
       document.getElementById("saveList").hidden = false;
-      document.getElementById("titleList").hidden = false;
       document.getElementById("printCards").hidden = false;
       document.getElementById("toggleIncants").hidden = false;
       document.getElementById("hlp1").hidden = true;
@@ -265,9 +264,8 @@ function toggleList(incantOnly){
     else if(incantOnly != 'incants'){
       tables[i].style.display = "block";
       lists[i].style.display = "none";
-      document.getElementById("saveList").hidden = true;
-      document.getElementById("titleList").hidden = true;
-      document.getElementById("printCards").hidden = true;
+      document.getElementById("saveList").hidden = false;
+      document.getElementById("printCards").hidden = false;
       document.getElementById("toggleIncants").hidden = true;
       document.getElementById("hlp1").hidden = false;
       document.getElementById("hlp2").hidden = false;
@@ -1840,22 +1838,6 @@ const abilities = [Priest,	//0
 
 function getAbilities(){return abilities}
 
-function saveList(){
-  let textToSave = "";
-    if(document.title == "Healer Spellbook"){
-      textToSave = "Healer Level " + document.getElementById("reqLevel").value + document.getElementById("ltp").innerText + " \n   Level 1 \n" + document.getElementById("lvl1List").innerText + "\n   Level 2 \n" + document.getElementById("lvl2List").innerText + "\n   Level 3 \n" + document.getElementById("lvl3List").innerText + "\n   Level 4 \n" + document.getElementById("lvl4List").innerText + "\n   Level 5 \n" + document.getElementById("lvl5List").innerText + "\n   Level 6 \n" + document.getElementById("lvl6List").innerText;
-    }
-    else{
-      textToSave = document.title + " \n(Healer Level " + document.getElementById("reqLevel").value + ")" + document.getElementById("ltp").innerText + " \n   Level 1 \n" + document.getElementById("lvl1List").innerText + "\n   Level 2 \n" + document.getElementById("lvl2List").innerText + "\n   Level 3 \n" + document.getElementById("lvl3List").innerText + "\n   Level 4 \n" + document.getElementById("lvl4List").innerText + "\n   Level 5 \n" + document.getElementById("lvl5List").innerText + "\n   Level 6 \n" + document.getElementById("lvl6List").innerText;
-    }    
-    const blob = new Blob([textToSave], { type: 'text/plain' });
-    const link = document.createElement('a');
-    link.href = URL.createObjectURL(blob);
-    link.download = document.title + '.txt'; 
-    link.click();
-    URL.revokeObjectURL(link.href);
-}
-
 function printCards(){
   
   const elementToRemove = document.getElementById('qrcode');
@@ -2036,3 +2018,271 @@ function showToast(message) {
     toast.classList.remove('show');
   }, duration);
 }
+
+/*##################################*/
+//  SAVE / LOAD SYSTEM  
+/*##################################*/
+
+//TODO: This needs to be different for each class
+const STORAGE_KEY = "healerSpellbook_lists";
+
+
+/*##################################*/
+
+function getAllSavedLists() {
+  try {
+    return JSON.parse(localStorage.getItem(STORAGE_KEY)) || {};
+  } catch {
+    return {};
+  }
+}
+
+function persistLists(lists) {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(lists));
+}
+
+/*##################################*/
+
+function getCurrentListData() {
+  const reqLevel  = document.getElementById("reqLevel").value;
+  const ltp       = document.getElementById("ltpCheckBox").checked;
+  const listTitle = document.title;
+  const url       = window.location.href;
+
+ 
+  const purchased = {};
+  for (let i = 0; i < abilityCount; i++) {
+    if (abilities[i].purchased > 0) {
+      purchased[i] = abilities[i].purchased;
+    }
+  }
+
+  const exp1 = abilities[4].selectedAbility1;
+  const exp2 = abilities[4].selectedAbility2;
+
+  return { reqLevel, ltp, listTitle, url, purchased, exp1, exp2 };
+}
+
+/*##################################*/
+
+function saveList() {
+  const lists   = getAllSavedLists();
+  const current = getCurrentListData();
+  showSaveModal(lists, current);
+}
+
+function doSave(saveName, current) {
+  if (!saveName || !saveName.trim()) return;
+  saveName = saveName.trim().replace(/[^a-zA-Z0-9 _-]/g, "").substring(0, 40);
+  
+  console.log(current);
+  current.listTitle = saveName;
+  document.getElementById('titleShow').innerHTML = saveName;
+   document.title = saveName;
+  createURL();
+  current = getCurrentListData(); //this is what we are worried about!!
+  console.log(current);
+  
+ 
+ 
+    
+  const lists = getAllSavedLists();
+  lists[saveName] = {
+    ...current,
+    savedAt: new Date().toISOString(),
+  };
+  persistLists(lists);
+  showToast('List saved as "' + saveName + '"');
+  closeModal();
+}
+
+/*##################################*/
+
+function loadSavedList(saveName) {
+  const lists = getAllSavedLists();
+  const data  = lists[saveName];
+  if (!data) { showToast('Could not find list "' + saveName + '"'); return; }
+
+  
+  if (data.url) {
+    const hash = data.url.split("#")[1];
+    if (hash) {
+      window.location.hash = "#" + hash;
+      showToast('Loaded "' + saveName + '"');
+      console.log("On load saveName: " + saveName);
+      document.getElementById('titleShow').innerHTML = saveName;
+      closeModal();
+      return;
+    }
+  }
+
+  showToast("Could not restore list — no URL data found.");
+}
+
+/*##################################*/
+
+function deleteSavedList(saveName) {
+  const lists = getAllSavedLists();
+  delete lists[saveName];
+  persistLists(lists);
+  renderManagePanel(document.getElementById("ssl-manage-list"));
+}
+
+/*##################################*/
+
+function ensureModalExists() {
+  if (document.getElementById("ssl-modal")) return;
+
+  const modal = document.createElement("div");
+  modal.id = "ssl-modal";
+  modal.innerHTML = `
+    <div id="ssl-backdrop" onclick="closeModal()"></div>
+    <div id="ssl-box">
+      <button id="ssl-close" onclick="closeModal()">&#x2715;</button>
+      <div id="ssl-content"></div>
+    </div>
+  `;
+  document.body.appendChild(modal);
+
+  const style = document.createElement("style");
+  style.textContent = `
+    #ssl-modal { display:none; position:fixed; inset:0; z-index:9999; }
+    #ssl-modal.open { display:block; }
+    #ssl-backdrop { position:absolute; inset:0; background:rgba(0,0,0,.55); }
+    #ssl-box {
+      position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+      background:#1a1a2e; color:#e0e0e0; border:1px solid #555;
+      border-radius:8px; padding:1.2rem 1.4rem; min-width:300px; max-width:94vw;
+      max-height:80vh; overflow-y:auto; z-index:1;
+    }
+    #ssl-close {
+      position:absolute; top:.6rem; right:.8rem; background:none;
+      border:none; color:#aaa; font-size:1.2rem; cursor:pointer;
+    }
+    #ssl-close:hover { color:#fff; }
+    #ssl-box h2 { margin:0 0 .8rem; font-size:1.1rem; color:#ffd700; }
+    #ssl-box input[type=text] {
+      width:100%; box-sizing:border-box; padding:.4rem .6rem;
+      background:#0d0d1a; border:1px solid #555; border-radius:4px;
+      color:#e0e0e0; font-size:.95rem; margin-bottom:.6rem;
+    }
+    #ssl-box button.ssl-btn {
+      padding:.4rem .9rem; border-radius:4px; border:none;
+      cursor:pointer; font-size:.9rem; margin:.2rem .2rem 0 0;
+    }
+    .ssl-btn-primary  { background:#ffd700; color:#000; font-weight:bold; }
+    .ssl-btn-primary:hover  { background:#ffe84d; }
+    .ssl-btn-secondary { background:#333; color:#e0e0e0; }
+    .ssl-btn-secondary:hover { background:#444; }
+    .ssl-btn-danger   { background:#8b0000; color:#fff; }
+    .ssl-btn-danger:hover   { background:#b00000; }
+    .ssl-saved-item {
+      display:flex; align-items:center; justify-content:space-between;
+      padding:.45rem .5rem; border-bottom:1px solid #333; gap:.5rem;
+    }
+    .ssl-saved-item:last-child { border-bottom:none; }
+    .ssl-saved-name { flex:1; font-weight:bold; font-size:.95rem; }
+    .ssl-saved-meta { font-size:.75rem; color:#888; }
+    .ssl-empty { color:#888; font-style:italic; }
+  `;
+  document.head.appendChild(style);
+}
+
+function openModal(contentFn) {
+  ensureModalExists();
+  document.getElementById("ssl-modal").classList.add("open");
+  contentFn();
+}
+
+function closeModal() {
+  const m = document.getElementById("ssl-modal");
+  if (m) m.classList.remove("open");
+}
+
+/*##################################*/
+
+function showSaveModal(lists, current) {
+  openModal(() => {
+    const box = document.getElementById("ssl-content");
+    const existingNames = Object.keys(lists);
+
+    // Suggest the custom title if one has been set
+    const defaultTitles = ["Druid Spellbook","Bard Spellbook","Healer Spellbook","Wizard Spellbook"];
+    const suggested = defaultTitles.includes(current.listTitle) ? "" : current.listTitle;
+
+    box.innerHTML = `
+      <h2>&#x1F4BE; Save Spell List</h2>
+      <label style="font-size:.85rem;color:#aaa">Save name</label>
+      <input type="text" id="ssl-save-name" maxlength="40"
+             placeholder="e.g. My Tank Druid"
+             value="${suggested}">
+      <div>
+        <button class="ssl-btn ssl-btn-primary"
+          onclick="doSave(document.getElementById('ssl-save-name').value, window._sslCurrent)">
+          Save
+        </button>
+        <button class="ssl-btn ssl-btn-secondary" onclick="closeModal()">Cancel</button>
+      </div>
+      ${existingNames.length ? `
+        <p style="margin:.9rem 0 .3rem;font-size:.85rem;color:#aaa">Overwrite existing:</p>
+        <div>${existingNames.map(n => `
+          <button class="ssl-btn ssl-btn-secondary" style="margin:.15rem"
+            onclick="document.getElementById('ssl-save-name').value=\`${n}\`">${n}</button>
+        `).join("")}</div>` : ""}
+    `;
+    window._sslCurrent = current;
+  });
+
+  setTimeout(() => {
+    const inp = document.getElementById("ssl-save-name");
+    if (inp) { inp.focus(); inp.select(); }
+  }, 50);
+}
+
+/*##################################*/
+
+function manageLists() {
+  openModal(() => {
+    const box = document.getElementById("ssl-content");
+    box.innerHTML = `
+      <h2>&#x1F4D6; Saved Spell Lists</h2>
+      <div id="ssl-manage-list"></div>
+    `;
+    renderManagePanel(document.getElementById("ssl-manage-list"));
+  });
+}
+
+function renderManagePanel(container) {
+  const lists = getAllSavedLists();
+  const names = Object.keys(lists);
+
+  if (!names.length) {
+    container.innerHTML = `<p class="ssl-empty">No saved lists yet. Build a spell list and click "Save List".</p>`;
+    return;
+  }
+
+  container.innerHTML = names.map(name => {
+    const item  = lists[name];
+    const date  = item.savedAt ? new Date(item.savedAt).toLocaleDateString() : "";
+    const level = item.reqLevel ? "Level " + item.reqLevel : "";
+    const ltp   = item.ltp ? " · LtP" : "";
+    const safeName = name.replace(/`/g, "\\`");
+    return `
+      <div class="ssl-saved-item">
+        <div>
+          <div class="ssl-saved-name">${name}</div>
+          <div class="ssl-saved-meta">${level}${ltp}${date ? " &middot; " + date : ""}</div>
+        </div>
+        <div style="display:flex;gap:.3rem">
+          <button class="ssl-btn ssl-btn-primary"
+            onclick="loadSavedList(\`${safeName}\`)">Load</button>
+          <button class="ssl-btn ssl-btn-danger"
+            onclick="if(confirm('Delete \\'${safeName}\\' ?')) deleteSavedList(\`${safeName}\`)">&#x2715;</button>
+        </div>
+      </div>
+    `;
+  }).join("");
+}
+/*##################################*/
+//End of SAVE / LOAD system
+/*##################################*/
