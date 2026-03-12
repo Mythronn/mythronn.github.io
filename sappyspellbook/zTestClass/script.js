@@ -1892,7 +1892,7 @@ function saveList() {
 
 function doSave(saveName, current) {
   if (!saveName || !saveName.trim()) return;
-  saveName = saveName.trim().replace(/[^a-zA-Z0-9 _-]/g, "").substring(0, 40);
+  saveName = saveName.trim().replace(/[^a-zA-Z0-9 ]/g, "").substring(0, 40);
   
   console.log(current);
   current.listTitle = saveName;
