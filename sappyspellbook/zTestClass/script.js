@@ -2031,7 +2031,7 @@ function showSaveModal(lists, current) {
 
     box.innerHTML = `
       <h2>&#x1F4BE; Save Spell List</h2>
-      <label style="font-size:.85rem;color:#aaa">Save name<BR>(Only letters, numbers, and spaces)</label>
+      <label style="font-size:.85rem;color:#aaa">Save name (Only letters, numbers, and spaces)</label>
       <input type="text" id="ssl-save-name" maxlength="40"
              placeholder="Letters, numbers, space only."
              value="${suggested}">

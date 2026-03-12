@@ -2205,7 +2205,7 @@ function saveList() {
 
 function doSave(saveName, current) {
   if (!saveName || !saveName.trim()) return;
-  saveName = saveName.trim().replace(/[^a-zA-Z0-9 _-]/g, "").substring(0, 40);
+  saveName = saveName.trim().replace(/[^a-zA-Z0-9 ]/g, "").substring(0, 40);
   
   console.log(current);
   current.listTitle = saveName;
@@ -2344,7 +2344,7 @@ function showSaveModal(lists, current) {
 
     box.innerHTML = `
       <h2>&#x1F4BE; Save Spell List</h2>
-      <label style="font-size:.85rem;color:#aaa">Save name</label>
+      <label style="font-size:.85rem;color:#aaa">Save name (Only letters, numbers, and spaces)</label>
       <input type="text" id="ssl-save-name" maxlength="40"
              placeholder="e.g. Magic Ball Necro"
              value="${suggested}">
