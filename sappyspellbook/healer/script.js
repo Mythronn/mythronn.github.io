@@ -2073,6 +2073,10 @@ function saveList() {
 
 function doSave(saveName, current) {
   if (!saveName || !saveName.trim()) return;
+    if(saveName.trim().replace(/[^a-zA-Z0-9 ]/g, "").substring(0, 40) != saveName.trim().substring(0, 40)){
+      showToast('Only Upercase, Lowercase and Spaces allowed.');
+      return;
+  }
   saveName = saveName.trim().replace(/[^a-zA-Z0-9 ]/g, "").substring(0, 40);
   
   console.log(current);
