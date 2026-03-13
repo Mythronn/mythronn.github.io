@@ -106,17 +106,17 @@ table {
   -webkit-tap-highlight-color: transparent;
 }
 th {
-    background-color: #9A2A2A;
+    background-color: #220070;
     color: #fff;
     padding: 6px;
     font-size: 1.4 em;
     text-align: Center;
-    border-bottom: 1px solid #6B0000;
+    border-bottom: 1px solid #07006b;
   font-family: 'helvetica';
 }
 /* Table Rows */
 tr{
-  border-right: 10px solid #9A2A2A;
+  border-right: 10px solid #220070;
 }
 tr:nth-child(even) {
     background-color: #ece4d8;
