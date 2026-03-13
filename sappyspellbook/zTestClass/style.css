@@ -170,7 +170,7 @@ margin-bottom: 30px;
 }
 
 .fantasy-button {
-    background-color: #8B0000; /* Rich green color */
+    background-color: #7800af; /* Rich green color */
     color: #FFF; /* White text */
     padding: 2px 10px; /* Padding for the button */
     border: 2px solid #c47f3b; /* Darker border for contrast */
@@ -186,14 +186,14 @@ margin-bottom: 30px;
 
 /* Hover Effect */
 .fantasy-button:hover {
-    background-color: #DD0000 ; /*#a07e4c Lighter brown on hover */
+    background-color: #7657ff ; /*#a07e4c Lighter brown on hover */
     border-color: #c47f3b; /* Brighter border on hover */
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.7); /* Enhanced shadow on hover */
 }
 
 /* Active Effect */
 .fantasy-button:active {
-    background-color: #DD0000; /* #7a4d2a Darker brown when clicked */
+    background-color: #7657ff; /* #7a4d2a Darker brown when clicked */
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.4); /* Reduced shadow */
     transform: translateY(2px); /* Slight push-down effect */
 }
@@ -215,7 +215,7 @@ margin-bottom: 30px;
 .popup .popuptext {
   visibility: hidden;
   width: 180px;
-  background-color: #8B0000;
+  background-color: #7800af;
   color: #fff;
   text-align: left;
   border-radius: 10px;
@@ -252,7 +252,7 @@ margin-bottom: 30px;
 
 /*DROPDOWN STUFF*/
 .dropdown {
-    background-color: #8B0000; 
+    background-color: #7800af; 
     color: #fff; 
     padding: 2px 10px; 
     border: 2px solid #c47f3b; 
@@ -267,7 +267,7 @@ margin-bottom: 30px;
     transition: background-color 0.3s ease; 
 }
 .dropdown:hover {
-    background-color: #DD0000; 
+    background-color: #7657ff; 
     border-color: #c47f3b;
 }
 .dropdown:focus {
@@ -275,7 +275,7 @@ margin-bottom: 30px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
 }
 .dropdown option {
-    background-color: #8B0000; /* Same rich brown as select */
+    background-color: #7800af; /* Same rich brown as select */
     color: #fff; /* White text */
     font-family: 'Ariel', bold;
     padding: 10px;
@@ -367,7 +367,7 @@ text-decoration: none;
   bottom: 60px;
   left: 20px;
   width: 180px;
-  background-color: #8B0000;
+  background-color: #7800af;
   color: #fff;
   text-align: left;
   border-radius: 10px;
