@@ -1932,6 +1932,7 @@ function loadSavedList(saveName) {
   if (data.url) {
     const hash = data.url.split("#")[1];
     if (hash) {
+      resetPoints(true);
       window.location.hash = "#" + hash;
       showToast('Loaded "' + saveName + '"');
       console.log("On load saveName: " + saveName);
