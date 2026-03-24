@@ -1937,6 +1937,22 @@ function showToast(message) {
   }, duration);
 }
 
+function saveTxt(){
+  let textToSave = "";
+  if(document.title == "Spellbook"){
+    textToSave = "Level " + document.getElementById("reqLevel").value + document.getElementById("ltp").innerText + " \n   Level 1 \n" + document.getElementById("lvl1List").innerText + "\n   Level 2 \n" + document.getElementById("lvl2List").innerText + "\n   Level 3 \n" + document.getElementById("lvl3List").innerText + "\n   Level 4 \n" + document.getElementById("lvl4List").innerText + "\n   Level 5 \n" + document.getElementById("lvl5List").innerText + "\n   Level 6 \n" + document.getElementById("lvl6List").innerText;
+  }
+  else{
+    textToSave = document.title + " \n(Bard Level " + document.getElementById("reqLevel").value + ")" + document.getElementById("ltp").innerText + " \n   Level 1 \n" + document.getElementById("lvl1List").innerText + "\n   Level 2 \n" + document.getElementById("lvl2List").innerText + "\n   Level 3 \n" + document.getElementById("lvl3List").innerText + "\n   Level 4 \n" + document.getElementById("lvl4List").innerText + "\n   Level 5 \n" + document.getElementById("lvl5List").innerText + "\n   Level 6 \n" + document.getElementById("lvl6List").innerText;
+  }    
+  const blob = new Blob([textToSave], { type: 'text/plain' });
+  const link = document.createElement('a');
+  link.href = URL.createObjectURL(blob);
+  link.download = document.title + '.txt'; 
+  link.click();
+  URL.revokeObjectURL(link.href);
+}
+
 /*##################################*/
 //  SAVE / LOAD SYSTEM  
 /*##################################*/
