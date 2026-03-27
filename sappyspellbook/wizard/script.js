@@ -236,6 +236,7 @@ function toggleList(incantOnly){
       document.getElementById("saveList").hidden = false;
       document.getElementById("printCards").hidden = false;
       document.getElementById("toggleIncants").hidden = false;
+      document.getElementById("export").hidden = false;
       document.getElementById("hlp1").hidden = true;
       document.getElementById("hlp2").hidden = true;
       document.getElementById("hlp3").hidden = true;
@@ -264,6 +265,7 @@ function toggleList(incantOnly){
       document.getElementById("saveList").hidden = false;
       document.getElementById("printCards").hidden = true;
       document.getElementById("toggleIncants").hidden = true;
+      document.getElementById("export").hidden = true;
       document.getElementById("hlp1").hidden = false;
       document.getElementById("hlp2").hidden = false;
       document.getElementById("hlp3").hidden = false;
@@ -2439,3 +2441,19 @@ function renderManagePanel(container) {
 /*##################################*/
 //End of SAVE / LOAD system
 /*##################################*/
+
+function exportTxt(){
+  let textToSave = "";
+  if(document.title == "Spellbook"){
+    textToSave = "Level " + document.getElementById("reqLevel").value + document.getElementById("ltp").innerText + " \n   Level 1 \n" + document.getElementById("lvl1List").innerText + "\n   Level 2 \n" + document.getElementById("lvl2List").innerText + "\n   Level 3 \n" + document.getElementById("lvl3List").innerText + "\n   Level 4 \n" + document.getElementById("lvl4List").innerText + "\n   Level 5 \n" + document.getElementById("lvl5List").innerText + "\n   Level 6 \n" + document.getElementById("lvl6List").innerText;
+  }
+  else{
+    textToSave = document.title + " \n(Wizard Level " + document.getElementById("reqLevel").value + ")" + document.getElementById("ltp").innerText + " \n   Level 1 \n" + document.getElementById("lvl1List").innerText + "\n   Level 2 \n" + document.getElementById("lvl2List").innerText + "\n   Level 3 \n" + document.getElementById("lvl3List").innerText + "\n   Level 4 \n" + document.getElementById("lvl4List").innerText + "\n   Level 5 \n" + document.getElementById("lvl5List").innerText + "\n   Level 6 \n" + document.getElementById("lvl6List").innerText;
+  }    
+  const blob = new Blob([textToSave], { type: 'text/plain' });
+  const link = document.createElement('a');
+  link.href = URL.createObjectURL(blob);
+  link.download = document.title + '.txt'; 
+  link.click();
+  URL.revokeObjectURL(link.href);
+}

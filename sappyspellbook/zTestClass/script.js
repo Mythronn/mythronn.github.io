@@ -2115,7 +2115,7 @@ function renderManagePanel(container) {
 //End of SAVE / LOAD system
 /*##################################*/
 
-function saveTxt(){
+function exportTxt(){
   let textToSave = "";
   if(document.title == "Spellbook"){
     textToSave = "Level " + document.getElementById("reqLevel").value + document.getElementById("ltp").innerText + " \n   Level 1 \n" + document.getElementById("lvl1List").innerText + "\n   Level 2 \n" + document.getElementById("lvl2List").innerText + "\n   Level 3 \n" + document.getElementById("lvl3List").innerText + "\n   Level 4 \n" + document.getElementById("lvl4List").innerText + "\n   Level 5 \n" + document.getElementById("lvl5List").innerText + "\n   Level 6 \n" + document.getElementById("lvl6List").innerText;
