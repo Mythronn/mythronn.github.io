@@ -8,7 +8,9 @@ window.addEventListener('hashchange', function() {
   var referrer = document.referrer;
   //console.log("The referrer is: " + referrer);
   //if (referrer === "" || !referrer.includes(window.location.origin)) 
-
+  if(selectionMode == false){
+        toggleList();
+    }
   parseURL();
   updateTable();;  
 });
@@ -195,7 +197,7 @@ function toggleList(incantOnly){
     levelList[i] = levelList[i].slice(4);
     lists[i].innerHTML = levelList[i];
     if(tables[i].style.display == "block" && incantOnly != 'incants'){
-
+      selectionMode = false;
       tables[i].style.display = "none";
       lists[i].style.display = "block";
       document.getElementById("saveList").hidden = false;
@@ -225,6 +227,7 @@ function toggleList(incantOnly){
       }
     }
     else if(incantOnly != 'incants'){
+      selectionMode = false;
       tables[i].style.display = "block";
       lists[i].style.display = "none";
       document.getElementById("saveList").hidden = false;
@@ -295,6 +298,9 @@ function resetPoints(fullReset){
   if(fullReset){
     updateExperienced();
     createURL(); //new
+    if(selectionMode == false){
+      toggleList();
+    }
   }
   updatePointsAvailable();
 }
@@ -1026,6 +1032,7 @@ var pointsAvailable = [0, 5,  5,  5,  5,  5,  6];
 var pointsSpent = [0, 0,  0,  0,  0,  0,  0];
 var higherLevelPoints = [0, 0,  0,  0,  0,  0,  0];
 var showIncants = false;
+var selectionMode = true;
 
 /*ABILITY DATA
 |||||||||||||||||||||||||||||||||||
