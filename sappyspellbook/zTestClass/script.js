@@ -335,6 +335,9 @@ function resetPoints(fullReset){
   if(fullReset){
     updateExperienced();
     createURL(); //new
+    if(selectionMode == false){
+      toggleList();
+    }
   }
   processNecromancerMinus();
   processWarderMinus();
