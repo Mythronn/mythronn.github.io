@@ -14,6 +14,7 @@ window.addEventListener('hashchange', function() {
   //if (referrer === "" || !referrer.includes(window.location.origin)) 
   if(selectionMode == false){
         toggleList();
+        selectionMode = true;
     }
   parseURL();
   updateTable();;  
@@ -337,6 +338,7 @@ function resetPoints(fullReset){
     createURL(); //new
     if(selectionMode == false){
       toggleList();
+      selectionMode = true;
     }
   }
   updatePointsAvailable();
