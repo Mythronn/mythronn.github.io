@@ -334,12 +334,16 @@ function resetPoints(fullReset){
     document.getElementById("ltp").innerText = "";
   }
   if(fullReset){
+    
     updateExperienced();
+    
     createURL(); //new
+    
     if(selectionMode == false){
       toggleList();
       selectionMode = true;
     }
+    
     
   }
   processNecromancerMinus();

@@ -266,7 +266,7 @@ function toggleList(incantOnly){
       }
     }
     else if(incantOnly != 'incants'){
-      selectionMode = false;
+      selectionMode = true;
       tables[i].style.display = "block";
       lists[i].style.display = "none";
       document.getElementById("saveList").hidden = false;
