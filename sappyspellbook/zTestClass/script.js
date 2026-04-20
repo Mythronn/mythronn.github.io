@@ -838,7 +838,7 @@ function freeableFrom(index, c, rl, r){
   let debt = 0;
 
   for(i = 1; i < lvl; i++){
-    debt = debt + higherLevelPoints[i] + pointsSpent[i] - 5; 
+    debt = debt + (higherLevelPoints[i] - 5); 
   }
   
   
