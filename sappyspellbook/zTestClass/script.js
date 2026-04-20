@@ -860,7 +860,7 @@ function freeableFrom(index, c, rl, r){
         highestLevel = i;
         i = 7;
       }
-      if(req == true && i == reqLevel){
+      if(req == true && i == reqLvl){
          highestLevel = i;
         i = 7;
          }
