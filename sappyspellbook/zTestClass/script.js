@@ -826,18 +826,23 @@ function updatePointsAvailable(fc){
 
 function freeableFrom(index, c, rl, r){
   //console.log("level: " + index + " LTP Checked: " + c + " ReqLevel: " + rl + " is ltp required:" + r);
-  let lvl = index;
-  let req = r;
-  let lookThePartChecked = c;
+  let lvl = index; //4
+  let req = r; //true
+  let lookThePartChecked = c; //true
   let reqLvl = rl;
   let highestLevel = 0;
   let outputString = "";
   let tempTotal = 0;
+  console.log("HigherLevelPoints at 1: " + higherLevelPoints[1]);
+  console.log("HigherLevelPoints at 2: " + higherLevelPoints[2]);
+  console.log("HigherLevelPoints at 3: " + higherLevelPoints[3]);
+  console.log("HigherLevelPoints at 4: " + higherLevelPoints[4]);
+  console.log("HigherLevelPoints at 5: " + higherLevelPoints[5]);
   if(higherLevelPoints[lvl] == 0){
     return "";
   }
   if(lookThePartChecked == false){
-    tempTotal = higherLevelPoints[lvl];
+    tempTotal = higherLevelPoints[lvl]; 
     for(let i = lvl + 1; i < 7; i++){
       if(tempTotal + (higherLevelPoints[i] - 5) <= 0 && higherLevelPoints[i] == 0){
         highestLevel = i;
@@ -849,7 +854,7 @@ function freeableFrom(index, c, rl, r){
    }
     
    if(lookThePartChecked == true){
-    tempTotal = higherLevelPoints[lvl];
+    tempTotal = higherLevelPoints[lvl]; //4
     for(let i = lvl + 1; i < 7; i++){
       if(tempTotal + (higherLevelPoints[i] - 5) <= 0 && higherLevelPoints[i] == 0){
         highestLevel = i;
