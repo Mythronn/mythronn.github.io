@@ -833,17 +833,21 @@ function freeableFrom(index, c, rl, r){
   let highestLevel = 0;
   let outputString = "";
   let tempTotal = 0;
-  console.log("HigherLevelPoints at 1: " + higherLevelPoints[1]);
-  console.log("HigherLevelPoints at 2: " + higherLevelPoints[2]);
-  console.log("HigherLevelPoints at 3: " + higherLevelPoints[3]);
-  console.log("HigherLevelPoints at 4: " + higherLevelPoints[4]);
-  console.log("HigherLevelPoints at 5: " + higherLevelPoints[5]);
+  
+  let i = 0;
+  let debt = 0;
+
+  for(i = 1; i < lvl; i++){
+    debt = debt + higherLevelPoints[i] + pointsSpent[i] - 5; 
+  }
+  
+  
   if(higherLevelPoints[lvl] == 0){
     return "";
   }
   if(lookThePartChecked == false){
-    tempTotal = higherLevelPoints[lvl]; 
-    for(let i = lvl + 1; i < 7; i++){
+    tempTotal = higherLevelPoints[lvl] + debt; 
+    for(i = lvl + 1; i < 7; i++){
       if(tempTotal + (higherLevelPoints[i] - 5) <= 0 && higherLevelPoints[i] == 0){
         highestLevel = i;
         i = 7;
@@ -855,12 +859,12 @@ function freeableFrom(index, c, rl, r){
     
    if(lookThePartChecked == true){
     tempTotal = higherLevelPoints[lvl]; //4
-    for(let i = lvl + 1; i < 7; i++){
+    for(i = lvl + 1; i < 7; i++){
       if(tempTotal + (higherLevelPoints[i] - 5) <= 0 && higherLevelPoints[i] == 0){
         highestLevel = i;
         i = 7;
       }
-      if(req == true && i == reqLvl){
+      if(req == true && i == reqLevel){
          highestLevel = i;
         i = 7;
          }
