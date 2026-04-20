@@ -840,12 +840,15 @@ function freeableFrom(index, c, rl, r){
   let debt = 0;
 
   for(i = 1; i < lvl; i++){
-    debt = debt + (higherLevelPoints[i] - 5); 
+    debt = debt + (pointsSpent[i] - 5); 
+    if(debt < 0){
+      debt = 0;
+    }
   }
   if(index == 4){
-    console.log("1 Higher Level Points: " + higherLevelPoints[1]);
-    console.log("1 Higher Level Points: " + higherLevelPoints[2]);
-    console.log("1 Higher Level Points: " + higherLevelPoints[3]);
+    console.log("1 Points Spent: " + pointsSpent[1]);
+    console.log("2 Points Spent: " + pointsSpent[2]);
+    console.log("3 Points Spent: " + pointsSpent[3]);
     console.log("" + "Debt: " + debt);
   }
   
