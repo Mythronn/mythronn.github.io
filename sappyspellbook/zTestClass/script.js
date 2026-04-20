@@ -834,8 +834,6 @@ function freeableFrom(index, c, rl, r){
   let outputString = "";
   let tempTotal = 0;
   
-  
-
   let i = 0;
   let debt = 0;
 
@@ -845,13 +843,6 @@ function freeableFrom(index, c, rl, r){
       debt = 0;
     }
   }
-  if(index == 4){
-    console.log("1 Points Spent: " + pointsSpent[1]);
-    console.log("2 Points Spent: " + pointsSpent[2]);
-    console.log("3 Points Spent: " + pointsSpent[3]);
-    console.log("" + "Debt: " + debt);
-  }
-  
   
   if(higherLevelPoints[lvl] == 0){
     return "";

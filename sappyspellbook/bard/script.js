@@ -848,48 +848,60 @@ else if(reqLevel == 6){
 
 function freeableFrom(index, c, rl, r){
   //console.log("level: " + index + " LTP Checked: " + c + " ReqLevel: " + rl + " is ltp required:" + r);
-  let lvl = index;
-  let req = r;
-  let lookThePartChecked = c;
+  let lvl = index; //4
+  let req = r; //true
+  let lookThePartChecked = c; //true
   let reqLvl = rl;
   let highestLevel = 0;
   let outputString = "";
   let tempTotal = 0;
+  
+  let i = 0;
+  let debt = 0;
+
+  for(i = 1; i < lvl; i++){
+    debt = debt + (pointsSpent[i] - 5); 
+    if(debt < 0){
+      debt = 0;
+    }
+  }
+  
   if(higherLevelPoints[lvl] == 0){
     return "";
   }
   if(lookThePartChecked == false){
-    tempTotal = higherLevelPoints[lvl];
-    for(let i = lvl + 1; i < 7; i++){
-      if(tempTotal + (higherLevelPoints[i] - 5) <= 0 && higherLevelPoints[i] == 0){
+    tempTotal = pointsSpent[lvl] - 5 + debt; 
+    for(i = lvl + 1; i < 7; i++){
+      if(tempTotal + (pointsSpent[i] - 5) <= 0 && higherLevelPoints[i] == 0){
         highestLevel = i;
         i = 7;
       }
-      tempTotal = tempTotal + (higherLevelPoints[i] - 5);
+      tempTotal = tempTotal + (pointsSpent[i] - 5);
     }
     //console.log(higherLevelPoints[highestLevel] + " " + pointsAvailable[highestLevel] + " " + highestLevel);
-  }
-
-  if(lookThePartChecked == true){
-    tempTotal = higherLevelPoints[lvl];
-    for(let i = lvl + 1; i < 7; i++){
-      if(tempTotal + (higherLevelPoints[i] - 5) <= 0 && higherLevelPoints[i] == 0){
+   }
+    
+   if(lookThePartChecked == true){
+    tempTotal = pointsSpent[lvl]- 5 + debt; //4
+    for(i = lvl + 1; i < 7; i++){
+      if(tempTotal + (pointsSpent[i] - 5) <= 0 && higherLevelPoints[i] == 0){
         highestLevel = i;
         i = 7;
       }
       if(req == true && i == reqLevel){
-       highestLevel = i;
-       i = 7;
-     }
-     tempTotal = tempTotal + (higherLevelPoints[i] - 5);
-   }
+         highestLevel = i;
+        i = 7;
+         }
+      tempTotal = tempTotal + (pointsSpent[i] - 5);
+    }
     //console.log(higherLevelPoints[highestLevel] + " " + pointsAvailable[highestLevel] + " " + highestLevel);
- }
-
- outputString = "[Level " + highestLevel + "]";
-
- return outputString; 
+   }
+  
+    outputString = "[Level " + highestLevel + "]";
+    
+  return outputString; 
 }
+
 /*##################################*/
 function pointMinus(index) {
   var a = index;    
