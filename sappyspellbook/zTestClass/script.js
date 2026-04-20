@@ -857,21 +857,21 @@ function freeableFrom(index, c, rl, r){
     return "";
   }
   if(lookThePartChecked == false){
-    tempTotal = higherLevelPoints[lvl] + debt; 
+    tempTotal = pointsSpent[lvl] - 5 + debt; 
     for(i = lvl + 1; i < 7; i++){
-      if(tempTotal + (higherLevelPoints[i] - 5) <= 0 && higherLevelPoints[i] == 0){
+      if(tempTotal + (pointsSpent[i] - 5) <= 0 && higherLevelPoints[i] == 0){
         highestLevel = i;
         i = 7;
       }
-      tempTotal = tempTotal + (higherLevelPoints[i] - 5);
+      tempTotal = tempTotal + (pointsSpent[i] - 5);
     }
     //console.log(higherLevelPoints[highestLevel] + " " + pointsAvailable[highestLevel] + " " + highestLevel);
    }
     
    if(lookThePartChecked == true){
-    tempTotal = higherLevelPoints[lvl]; //4
+    tempTotal = pointsSpent[lvl]- 5 + debt; //4
     for(i = lvl + 1; i < 7; i++){
-      if(tempTotal + (higherLevelPoints[i] - 5) <= 0 && higherLevelPoints[i] == 0){
+      if(tempTotal + (pointsSpent[i] - 5) <= 0 && higherLevelPoints[i] == 0){
         highestLevel = i;
         i = 7;
       }
@@ -879,7 +879,7 @@ function freeableFrom(index, c, rl, r){
          highestLevel = i;
         i = 7;
          }
-      tempTotal = tempTotal + (higherLevelPoints[i] - 5);
+      tempTotal = tempTotal + (pointsSpent[i] - 5);
     }
     //console.log(higherLevelPoints[highestLevel] + " " + pointsAvailable[highestLevel] + " " + highestLevel);
    }
