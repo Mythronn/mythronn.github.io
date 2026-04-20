@@ -843,6 +843,9 @@ function freeableFrom(index, c, rl, r){
     debt = debt + (higherLevelPoints[i] - 5); 
   }
   if(index == 4){
+    console.log("1 Higher Level Points: " + higherLevelPoints[1]);
+    console.log("1 Higher Level Points: " + higherLevelPoints[2]);
+    console.log("1 Higher Level Points: " + higherLevelPoints[3]);
     console.log("" + "Debt: " + debt);
   }
   
