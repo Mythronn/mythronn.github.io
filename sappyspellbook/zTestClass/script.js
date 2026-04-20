@@ -834,11 +834,16 @@ function freeableFrom(index, c, rl, r){
   let outputString = "";
   let tempTotal = 0;
   
+  
+
   let i = 0;
   let debt = 0;
 
   for(i = 1; i < lvl; i++){
     debt = debt + (higherLevelPoints[i] - 5); 
+  }
+  if(index == 4){
+    console.log("" + "Debt: " + debt);
   }
   
   
