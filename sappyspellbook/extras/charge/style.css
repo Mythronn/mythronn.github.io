@@ -264,4 +264,8 @@ body {
   .ui-body {
     animation: medieval-fade-in 1s ease-in-out;
   }
+
+  .mainblock {
+    font-size: 18px;
+  }
   
