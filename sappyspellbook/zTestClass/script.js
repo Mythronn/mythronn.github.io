@@ -2160,20 +2160,245 @@ function exportTxt(){
 function printMartial(archetype){
 
  let archetypeText = "";
- if(archetype == "Paladin"){
+
+ if(archetype == "Antipaladin"){
   archetypeText = `<div class="card">
-      <div class="title"><u>Paladin</u>  1/2</div> 
-      
-        <div class="entry"><b>Greater Heal: 1/Life Charge x3 (m)</b><i> - By the grace of the divine thou art healed x5</i></div>
-      
-        <div class="entry"><b>Extend Immunities: 1/Refresh Charge x5 (ex)</b><i> - May the blessing of my god protect thee x3</i></div>
-      
-        <div class="entry"><b>Greater Resurrect: 1/Life (m)</b><i> - By the grace of the divine thou art resurrected x5</i></div>
-      
-        <div class="entry"><b>Awe: 2/Life (m)(LTP)</b><i> - I command thee awed x3</i></div>
-      
-        <div class="entry"><b>Protection from Magic: 2/Refresh (m)</b><i> - I enchant thee with protection from magic x3</i></div>
-              
+      <div class="title"><u>Paladin</u></div>       
+        <div class="entry"><b>Poison: (Self) 1/Life Charge x3 (ex)</b><i> - I coat these weapons with a deadly poison x2</i></div>      
+        <div class="entry"><b>Steal Life Essence: 1/Life Charge x5 (m)</b><i> - Steal life</i></div>      
+        <div class="entry"><b>Brutal Strike: 1/Life Charge x10 (ex)(Ambulant)</b><i> - And stay down!</i></div>      
+        <div class="entry"><b>Terror: 2/Life (m)(LTP)</b><i> - Death makes thee terrified x3</i></div>      
+        <div class="entry"><b>Flame Blade: 	(Self) 2/Refresh (ex)</b><i> - The element of fire shall infuse your weapons x3</i></div>              
+    </div>`;
+ } 
+  if(archetype == "Corruptor"){
+  archetypeText = `<div class="card">
+      <div class="title"><u>Paladin</u></div>       
+        <div class="entry"><b>Greater Heal: 1/Life Charge x3 (m)</b><i> - By the grace of the divine thou art healed x5</i></div>      
+        <div class="entry"><b>Extend Immunities: 1/Refresh Charge x5 (ex)</b><i> - May the blessing of my god protect thee x3</i></div>      
+        <div class="entry"><b>Greater Resurrect: 1/Life (m)</b><i> - By the grace of the divine thou art resurrected x5</i></div>      
+        <div class="entry"><b>Awe: 2/Life (m)(LTP)</b><i> - I command thee awed x3</i></div>      
+        <div class="entry"><b>Protection from Magic: 2/Refresh (m)</b><i> - I enchant thee with protection from magic x3</i></div>              
+    </div>`;
+ } 
+  if(archetype == "Infernal"){
+  archetypeText = `<div class="card">
+      <div class="title"><u>Paladin</u></div>       
+        <div class="entry"><b>Greater Heal: 1/Life Charge x3 (m)</b><i> - By the grace of the divine thou art healed x5</i></div>      
+        <div class="entry"><b>Extend Immunities: 1/Refresh Charge x5 (ex)</b><i> - May the blessing of my god protect thee x3</i></div>      
+        <div class="entry"><b>Greater Resurrect: 1/Life (m)</b><i> - By the grace of the divine thou art resurrected x5</i></div>      
+        <div class="entry"><b>Awe: 2/Life (m)(LTP)</b><i> - I command thee awed x3</i></div>      
+        <div class="entry"><b>Protection from Magic: 2/Refresh (m)</b><i> - I enchant thee with protection from magic x3</i></div>              
+    </div>`;
+ } 
+  if(archetype == "Archer"){
+  archetypeText = `<div class="card">
+      <div class="title"><u>Paladin</u></div>       
+        <div class="entry"><b>Greater Heal: 1/Life Charge x3 (m)</b><i> - By the grace of the divine thou art healed x5</i></div>      
+        <div class="entry"><b>Extend Immunities: 1/Refresh Charge x5 (ex)</b><i> - May the blessing of my god protect thee x3</i></div>      
+        <div class="entry"><b>Greater Resurrect: 1/Life (m)</b><i> - By the grace of the divine thou art resurrected x5</i></div>      
+        <div class="entry"><b>Awe: 2/Life (m)(LTP)</b><i> - I command thee awed x3</i></div>      
+        <div class="entry"><b>Protection from Magic: 2/Refresh (m)</b><i> - I enchant thee with protection from magic x3</i></div>              
+    </div>`;
+ } 
+  if(archetype == "Sniper"){
+  archetypeText = `<div class="card">
+      <div class="title"><u>Paladin</u></div>       
+        <div class="entry"><b>Greater Heal: 1/Life Charge x3 (m)</b><i> - By the grace of the divine thou art healed x5</i></div>      
+        <div class="entry"><b>Extend Immunities: 1/Refresh Charge x5 (ex)</b><i> - May the blessing of my god protect thee x3</i></div>      
+        <div class="entry"><b>Greater Resurrect: 1/Life (m)</b><i> - By the grace of the divine thou art resurrected x5</i></div>      
+        <div class="entry"><b>Awe: 2/Life (m)(LTP)</b><i> - I command thee awed x3</i></div>      
+        <div class="entry"><b>Protection from Magic: 2/Refresh (m)</b><i> - I enchant thee with protection from magic x3</i></div>              
+    </div>`;
+ } 
+  if(archetype == "Artificer"){
+  archetypeText = `<div class="card">
+      <div class="title"><u>Paladin</u></div>       
+        <div class="entry"><b>Greater Heal: 1/Life Charge x3 (m)</b><i> - By the grace of the divine thou art healed x5</i></div>      
+        <div class="entry"><b>Extend Immunities: 1/Refresh Charge x5 (ex)</b><i> - May the blessing of my god protect thee x3</i></div>      
+        <div class="entry"><b>Greater Resurrect: 1/Life (m)</b><i> - By the grace of the divine thou art resurrected x5</i></div>      
+        <div class="entry"><b>Awe: 2/Life (m)(LTP)</b><i> - I command thee awed x3</i></div>      
+        <div class="entry"><b>Protection from Magic: 2/Refresh (m)</b><i> - I enchant thee with protection from magic x3</i></div>              
+    </div>`;
+ } 
+  if(archetype == "Assassin"){
+  archetypeText = `<div class="card">
+      <div class="title"><u>Paladin</u></div>       
+        <div class="entry"><b>Greater Heal: 1/Life Charge x3 (m)</b><i> - By the grace of the divine thou art healed x5</i></div>      
+        <div class="entry"><b>Extend Immunities: 1/Refresh Charge x5 (ex)</b><i> - May the blessing of my god protect thee x3</i></div>      
+        <div class="entry"><b>Greater Resurrect: 1/Life (m)</b><i> - By the grace of the divine thou art resurrected x5</i></div>      
+        <div class="entry"><b>Awe: 2/Life (m)(LTP)</b><i> - I command thee awed x3</i></div>      
+        <div class="entry"><b>Protection from Magic: 2/Refresh (m)</b><i> - I enchant thee with protection from magic x3</i></div>              
+    </div>`;
+ } 
+  if(archetype == "Rogue"){
+  archetypeText = `<div class="card">
+      <div class="title"><u>Paladin</u></div>       
+        <div class="entry"><b>Greater Heal: 1/Life Charge x3 (m)</b><i> - By the grace of the divine thou art healed x5</i></div>      
+        <div class="entry"><b>Extend Immunities: 1/Refresh Charge x5 (ex)</b><i> - May the blessing of my god protect thee x3</i></div>      
+        <div class="entry"><b>Greater Resurrect: 1/Life (m)</b><i> - By the grace of the divine thou art resurrected x5</i></div>      
+        <div class="entry"><b>Awe: 2/Life (m)(LTP)</b><i> - I command thee awed x3</i></div>      
+        <div class="entry"><b>Protection from Magic: 2/Refresh (m)</b><i> - I enchant thee with protection from magic x3</i></div>              
+    </div>`;
+ } 
+  if(archetype == "Spy"){
+  archetypeText = `<div class="card">
+      <div class="title"><u>Paladin</u></div>       
+        <div class="entry"><b>Greater Heal: 1/Life Charge x3 (m)</b><i> - By the grace of the divine thou art healed x5</i></div>      
+        <div class="entry"><b>Extend Immunities: 1/Refresh Charge x5 (ex)</b><i> - May the blessing of my god protect thee x3</i></div>      
+        <div class="entry"><b>Greater Resurrect: 1/Life (m)</b><i> - By the grace of the divine thou art resurrected x5</i></div>      
+        <div class="entry"><b>Awe: 2/Life (m)(LTP)</b><i> - I command thee awed x3</i></div>      
+        <div class="entry"><b>Protection from Magic: 2/Refresh (m)</b><i> - I enchant thee with protection from magic x3</i></div>              
+    </div>`;
+ } 
+  if(archetype == "Barbarian"){
+  archetypeText = `<div class="card">
+      <div class="title"><u>Paladin</u></div>       
+        <div class="entry"><b>Greater Heal: 1/Life Charge x3 (m)</b><i> - By the grace of the divine thou art healed x5</i></div>      
+        <div class="entry"><b>Extend Immunities: 1/Refresh Charge x5 (ex)</b><i> - May the blessing of my god protect thee x3</i></div>      
+        <div class="entry"><b>Greater Resurrect: 1/Life (m)</b><i> - By the grace of the divine thou art resurrected x5</i></div>      
+        <div class="entry"><b>Awe: 2/Life (m)(LTP)</b><i> - I command thee awed x3</i></div>      
+        <div class="entry"><b>Protection from Magic: 2/Refresh (m)</b><i> - I enchant thee with protection from magic x3</i></div>              
+    </div>`;
+ } 
+  if(archetype == "Raider"){
+  archetypeText = `<div class="card">
+      <div class="title"><u>Paladin</u></div>       
+        <div class="entry"><b>Greater Heal: 1/Life Charge x3 (m)</b><i> - By the grace of the divine thou art healed x5</i></div>      
+        <div class="entry"><b>Extend Immunities: 1/Refresh Charge x5 (ex)</b><i> - May the blessing of my god protect thee x3</i></div>      
+        <div class="entry"><b>Greater Resurrect: 1/Life (m)</b><i> - By the grace of the divine thou art resurrected x5</i></div>      
+        <div class="entry"><b>Awe: 2/Life (m)(LTP)</b><i> - I command thee awed x3</i></div>      
+        <div class="entry"><b>Protection from Magic: 2/Refresh (m)</b><i> - I enchant thee with protection from magic x3</i></div>              
+    </div>`;
+ } 
+  if(archetype == "Berserker"){
+  archetypeText = `<div class="card">
+      <div class="title"><u>Paladin</u></div>       
+        <div class="entry"><b>Greater Heal: 1/Life Charge x3 (m)</b><i> - By the grace of the divine thou art healed x5</i></div>      
+        <div class="entry"><b>Extend Immunities: 1/Refresh Charge x5 (ex)</b><i> - May the blessing of my god protect thee x3</i></div>      
+        <div class="entry"><b>Greater Resurrect: 1/Life (m)</b><i> - By the grace of the divine thou art resurrected x5</i></div>      
+        <div class="entry"><b>Awe: 2/Life (m)(LTP)</b><i> - I command thee awed x3</i></div>      
+        <div class="entry"><b>Protection from Magic: 2/Refresh (m)</b><i> - I enchant thee with protection from magic x3</i></div>              
+    </div>`;
+ } 
+  if(archetype == "Monk"){
+  archetypeText = `<div class="card">
+      <div class="title"><u>Paladin</u></div>       
+        <div class="entry"><b>Greater Heal: 1/Life Charge x3 (m)</b><i> - By the grace of the divine thou art healed x5</i></div>      
+        <div class="entry"><b>Extend Immunities: 1/Refresh Charge x5 (ex)</b><i> - May the blessing of my god protect thee x3</i></div>      
+        <div class="entry"><b>Greater Resurrect: 1/Life (m)</b><i> - By the grace of the divine thou art resurrected x5</i></div>      
+        <div class="entry"><b>Awe: 2/Life (m)(LTP)</b><i> - I command thee awed x3</i></div>      
+        <div class="entry"><b>Protection from Magic: 2/Refresh (m)</b><i> - I enchant thee with protection from magic x3</i></div>              
+    </div>`;
+ } 
+  if(archetype == "Medium"){
+  archetypeText = `<div class="card">
+      <div class="title"><u>Paladin</u></div>       
+        <div class="entry"><b>Greater Heal: 1/Life Charge x3 (m)</b><i> - By the grace of the divine thou art healed x5</i></div>      
+        <div class="entry"><b>Extend Immunities: 1/Refresh Charge x5 (ex)</b><i> - May the blessing of my god protect thee x3</i></div>      
+        <div class="entry"><b>Greater Resurrect: 1/Life (m)</b><i> - By the grace of the divine thou art resurrected x5</i></div>      
+        <div class="entry"><b>Awe: 2/Life (m)(LTP)</b><i> - I command thee awed x3</i></div>      
+        <div class="entry"><b>Protection from Magic: 2/Refresh (m)</b><i> - I enchant thee with protection from magic x3</i></div>              
+    </div>`;
+ } 
+  if(archetype == "Mystic"){
+  archetypeText = `<div class="card">
+      <div class="title"><u>Paladin</u></div>       
+        <div class="entry"><b>Greater Heal: 1/Life Charge x3 (m)</b><i> - By the grace of the divine thou art healed x5</i></div>      
+        <div class="entry"><b>Extend Immunities: 1/Refresh Charge x5 (ex)</b><i> - May the blessing of my god protect thee x3</i></div>      
+        <div class="entry"><b>Greater Resurrect: 1/Life (m)</b><i> - By the grace of the divine thou art resurrected x5</i></div>      
+        <div class="entry"><b>Awe: 2/Life (m)(LTP)</b><i> - I command thee awed x3</i></div>      
+        <div class="entry"><b>Protection from Magic: 2/Refresh (m)</b><i> - I enchant thee with protection from magic x3</i></div>              
+    </div>`;
+ } 
+  if(archetype == "Paladin"){
+  archetypeText = `<div class="card">
+      <div class="title"><u>Paladin</u></div>       
+        <div class="entry"><b>Greater Heal: 1/Life Charge x3 (m)</b><i> - By the grace of the divine thou art healed x5</i></div>      
+        <div class="entry"><b>Extend Immunities: 1/Refresh Charge x5 (ex)</b><i> - May the blessing of my god protect thee x3</i></div>      
+        <div class="entry"><b>Greater Resurrect: 1/Life (m)</b><i> - By the grace of the divine thou art resurrected x5</i></div>      
+        <div class="entry"><b>Awe: 2/Life (m)(LTP)</b><i> - I command thee awed x3</i></div>      
+        <div class="entry"><b>Protection from Magic: 2/Refresh (m)</b><i> - I enchant thee with protection from magic x3</i></div>              
+    </div>`;
+ } 
+  if(archetype == "Guardian"){
+  archetypeText = `<div class="card">
+      <div class="title"><u>Paladin</u></div>       
+        <div class="entry"><b>Greater Heal: 1/Life Charge x3 (m)</b><i> - By the grace of the divine thou art healed x5</i></div>      
+        <div class="entry"><b>Extend Immunities: 1/Refresh Charge x5 (ex)</b><i> - May the blessing of my god protect thee x3</i></div>      
+        <div class="entry"><b>Greater Resurrect: 1/Life (m)</b><i> - By the grace of the divine thou art resurrected x5</i></div>      
+        <div class="entry"><b>Awe: 2/Life (m)(LTP)</b><i> - I command thee awed x3</i></div>      
+        <div class="entry"><b>Protection from Magic: 2/Refresh (m)</b><i> - I enchant thee with protection from magic x3</i></div>              
+    </div>`;
+ } 
+  if(archetype == "Inquisitor"){
+  archetypeText = `<div class="card">
+      <div class="title"><u>Paladin</u></div>       
+        <div class="entry"><b>Greater Heal: 1/Life Charge x3 (m)</b><i> - By the grace of the divine thou art healed x5</i></div>      
+        <div class="entry"><b>Extend Immunities: 1/Refresh Charge x5 (ex)</b><i> - May the blessing of my god protect thee x3</i></div>      
+        <div class="entry"><b>Greater Resurrect: 1/Life (m)</b><i> - By the grace of the divine thou art resurrected x5</i></div>      
+        <div class="entry"><b>Awe: 2/Life (m)(LTP)</b><i> - I command thee awed x3</i></div>      
+        <div class="entry"><b>Protection from Magic: 2/Refresh (m)</b><i> - I enchant thee with protection from magic x3</i></div>              
+    </div>`;
+ } 
+  if(archetype == "Scout"){
+  archetypeText = `<div class="card">
+      <div class="title"><u>Paladin</u></div>       
+        <div class="entry"><b>Greater Heal: 1/Life Charge x3 (m)</b><i> - By the grace of the divine thou art healed x5</i></div>      
+        <div class="entry"><b>Extend Immunities: 1/Refresh Charge x5 (ex)</b><i> - May the blessing of my god protect thee x3</i></div>      
+        <div class="entry"><b>Greater Resurrect: 1/Life (m)</b><i> - By the grace of the divine thou art resurrected x5</i></div>      
+        <div class="entry"><b>Awe: 2/Life (m)(LTP)</b><i> - I command thee awed x3</i></div>      
+        <div class="entry"><b>Protection from Magic: 2/Refresh (m)</b><i> - I enchant thee with protection from magic x3</i></div>              
+    </div>`;
+ } 
+  if(archetype == "Hunter"){
+  archetypeText = `<div class="card">
+      <div class="title"><u>Paladin</u></div>       
+        <div class="entry"><b>Greater Heal: 1/Life Charge x3 (m)</b><i> - By the grace of the divine thou art healed x5</i></div>      
+        <div class="entry"><b>Extend Immunities: 1/Refresh Charge x5 (ex)</b><i> - May the blessing of my god protect thee x3</i></div>      
+        <div class="entry"><b>Greater Resurrect: 1/Life (m)</b><i> - By the grace of the divine thou art resurrected x5</i></div>      
+        <div class="entry"><b>Awe: 2/Life (m)(LTP)</b><i> - I command thee awed x3</i></div>      
+        <div class="entry"><b>Protection from Magic: 2/Refresh (m)</b><i> - I enchant thee with protection from magic x3</i></div>              
+    </div>`;
+ } 
+  if(archetype == "Apex"){
+  archetypeText = `<div class="card">
+      <div class="title"><u>Paladin</u></div>       
+        <div class="entry"><b>Greater Heal: 1/Life Charge x3 (m)</b><i> - By the grace of the divine thou art healed x5</i></div>      
+        <div class="entry"><b>Extend Immunities: 1/Refresh Charge x5 (ex)</b><i> - May the blessing of my god protect thee x3</i></div>      
+        <div class="entry"><b>Greater Resurrect: 1/Life (m)</b><i> - By the grace of the divine thou art resurrected x5</i></div>      
+        <div class="entry"><b>Awe: 2/Life (m)(LTP)</b><i> - I command thee awed x3</i></div>      
+        <div class="entry"><b>Protection from Magic: 2/Refresh (m)</b><i> - I enchant thee with protection from magic x3</i></div>              
+    </div>`;
+ } 
+  if(archetype == "Warrior"){
+  archetypeText = `<div class="card">
+      <div class="title"><u>Paladin</u></div>       
+        <div class="entry"><b>Greater Heal: 1/Life Charge x3 (m)</b><i> - By the grace of the divine thou art healed x5</i></div>      
+        <div class="entry"><b>Extend Immunities: 1/Refresh Charge x5 (ex)</b><i> - May the blessing of my god protect thee x3</i></div>      
+        <div class="entry"><b>Greater Resurrect: 1/Life (m)</b><i> - By the grace of the divine thou art resurrected x5</i></div>      
+        <div class="entry"><b>Awe: 2/Life (m)(LTP)</b><i> - I command thee awed x3</i></div>      
+        <div class="entry"><b>Protection from Magic: 2/Refresh (m)</b><i> - I enchant thee with protection from magic x3</i></div>              
+    </div>`;
+ } 
+  if(archetype == "Marauder"){
+  archetypeText = `<div class="card">
+      <div class="title"><u>Paladin</u></div>       
+        <div class="entry"><b>Greater Heal: 1/Life Charge x3 (m)</b><i> - By the grace of the divine thou art healed x5</i></div>      
+        <div class="entry"><b>Extend Immunities: 1/Refresh Charge x5 (ex)</b><i> - May the blessing of my god protect thee x3</i></div>      
+        <div class="entry"><b>Greater Resurrect: 1/Life (m)</b><i> - By the grace of the divine thou art resurrected x5</i></div>      
+        <div class="entry"><b>Awe: 2/Life (m)(LTP)</b><i> - I command thee awed x3</i></div>      
+        <div class="entry"><b>Protection from Magic: 2/Refresh (m)</b><i> - I enchant thee with protection from magic x3</i></div>              
+    </div>`;
+ } 
+  if(archetype == "Juggernaut"){
+  archetypeText = `<div class="card">
+      <div class="title"><u>Paladin</u></div>       
+        <div class="entry"><b>Greater Heal: 1/Life Charge x3 (m)</b><i> - By the grace of the divine thou art healed x5</i></div>      
+        <div class="entry"><b>Extend Immunities: 1/Refresh Charge x5 (ex)</b><i> - May the blessing of my god protect thee x3</i></div>      
+        <div class="entry"><b>Greater Resurrect: 1/Life (m)</b><i> - By the grace of the divine thou art resurrected x5</i></div>      
+        <div class="entry"><b>Awe: 2/Life (m)(LTP)</b><i> - I command thee awed x3</i></div>      
+        <div class="entry"><b>Protection from Magic: 2/Refresh (m)</b><i> - I enchant thee with protection from magic x3</i></div>              
     </div>`;
  } 
 
