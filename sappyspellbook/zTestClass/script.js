@@ -2157,6 +2157,70 @@ function exportTxt(){
   URL.revokeObjectURL(link.href);
 }
 
+function printMartial(archetype){
+
+ let archetypeText = "";
+ if(archetype == "Paladin"){
+  archetypeText = `<div class="card">
+      <div class="title"><u>Paladin</u>  1/2</div> 
+      
+        <div class="entry"><b>Greater Heal: 1/Life Charge x3 (m)</b><i> - By the grace of the divine thou art healed x5</i></div>
+      
+        <div class="entry"><b>Extend Immunities: 1/Refresh Charge x5 (ex)</b><i> - May the blessing of my god protect thee x3</i></div>
+      
+        <div class="entry"><b>Greater Resurrect: 1/Life (m)</b><i> - By the grace of the divine thou art resurrected x5</i></div>
+      
+        <div class="entry"><b>Awe: 2/Life (m)(LTP)</b><i> - I command thee awed x3</i></div>
+      
+        <div class="entry"><b>Protection from Magic: 2/Refresh (m)</b><i> - I enchant thee with protection from magic x3</i></div>
+              
+    </div>`;
+ } 
+
+let htmlContent =  `<html>
+<head>
+  <title>Printable Spell Cards</title>
+  <style>
+    @media print {
+      body {
+        margin: 0;
+        padding: 0;
+      }
+    }
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .card {
+      width: 4.5in;
+      height: 2.6in;
+      box-sizing: border-box;
+      border: 1px solid #000;
+      padding: 0.1in;
+      margin: 0.1in;
+      display: inline-block;
+      vertical-align: top;
+      font-size: 10pt;
+    }
+    .entry {
+      margin-bottom: 0.2em;
+    }
+    .title {
+      font-weight: bold;
+      margin-bottom: 0.5em;
+    }
+  </style>
+</head>
+<body>` + archetypeText +
+
+  `<script>window.onload = () => window.print();</script>
+</body>
+</html>`
+
+const blob = new Blob([htmlContent], { type: 'text/html' });
+const url = URL.createObjectURL(blob);
+window.open(url, '_blank');
+}
+
 function printCards(){
   
   const elementToRemove = document.getElementById('qrcode');
