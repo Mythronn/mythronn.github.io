@@ -2220,7 +2220,7 @@ function printMartial(archetype){
   archetypeText = `<div class="card">
       <div class="title"><u>Artificer</u></div>       
         <div class="entry"><b>Reload: 1/Life Charge x5 (ex)</b><i> - I nocked my arrows to my bow, I let them fly, my quiver is low. Now I pause to go reload. x3</i></div>      
-        <div class="entry"><b>Mend: 2/Life Charge x3 (ex)</b><i> - I make this item whole again x5</i></div>     
+        <div class="entry"><b>Mend: 2/Life Charge x3 Casting Mend on weapons or ahields does not consume a use of Mend. (ex)</b><i> - I make this item whole again x5</i></div>     
         <div class="entry"><b>Pinning Arrow: 4 Arrows / Unlimited (ex)(LTP)</b><i> - Pinning Arrow</i></div>   
         <div class="entry"><b>Suppression Arrow: 1 Arrow / Unlimited (ex)</b><i> - Suppression Arrow</i></div>    
         <div class="entry"><b>Phase Arrow: 1 Arrow / Unlimited (ex)</b><i> - Phase Arrow</i></div>    
@@ -2232,8 +2232,8 @@ function printMartial(archetype){
       <div class="title"><u>Assassin</u></div>       
         <div class="entry"><b>Assassinate: Unlimited (ex) (Ambulant)</b><i> - Assassinate</i></div>      
         <div class="entry"><b>Shadow Step: 2/Life (ex) (Ambulant)</b><i> - I step into the shadows</i></div>      
-        <div class="entry"><b>Poison: (Self) 1/Life Charge x3 (ex)</b><i> - I coat these weapons with a deadly poison x2</i></div>      
-        <div class="entry"><b>Poison Arrow: 2 Arrows / Unlimited (ex)</b><i> - Poison Arrow</i></div>      
+        <div class="entry"><b>Poison: (Self) 1/Life Charge x3 (ex)(LTP)</b><i> - I coat these weapons with a deadly poison x2</i></div>      
+        <div class="entry"><b>Poison Arrow: 2 Arrows / Unlimited (ex)(LTP)</b><i> - Poison Arrow</i></div>      
         <div class="entry"><b>Blink: 2/Life (ex) (Ambulant)</b><i> - I vanish from sight</i></div>
         <div class="entry"><b>Hold Person: 1/Life (m)</b><i> - I command thee to stop x3</i></div>
         <div class="entry"><b>Teleport: (Self) 2/Life (ex) (Ambulant)</b><i> - I travel through the aether x5</i></div>
@@ -2243,81 +2243,86 @@ function printMartial(archetype){
   if(archetype == "Rogue"){
   archetypeText = `<div class="card">
       <div class="title"><u>Rogue</u></div>       
-        <div class="entry"><b>Greater Heal: 1/Life Charge x3 (m)</b><i> - By the grace of the divine thou art healed x5</i></div>      
-        <div class="entry"><b>Extend Immunities: 1/Refresh Charge x5 (ex)</b><i> - May the blessing of my god protect thee x3</i></div>      
-        <div class="entry"><b>Greater Resurrect: 1/Life (m)</b><i> - By the grace of the divine thou art resurrected x5</i></div>      
-        <div class="entry"><b>Awe: 2/Life (m)(LTP)</b><i> - I command thee awed x3</i></div>      
-        <div class="entry"><b>Protection from Magic: 2/Refresh (m)</b><i> - I enchant thee with protection from magic x3</i></div>              
+        <div class="entry"><b>Assassinate: Unlimited (ex) (Ambulant)</b><i> - Assassinate</i></div>      
+        <div class="entry"><b>Shadow Step: 2/Life (ex) (Ambulant)</b><i> - I step into the shadows</i></div>      
+        <div class="entry"><b>Poison: (Self) 1/Life Charge x3 (ex)(LTP)</b><i> - I coat these weapons with a deadly poison x2</i></div> 
+        <div class="entry"><b>Blink: 2/Life (ex) (Ambulant)</b><i> - I vanish from sight</i></div>
+        <div class="entry"><b>Hold Person: 1/Life (m)</b><i> - I command thee to stop x3</i></div>
+        <div class="entry"><b>Teleport: (Self) 2/Life (ex) (Ambulant)</b><i> - I travel through the aether x5</i></div>
+        <div class="entry"><b>Coup de Grace: 	1/Life Regain a use upon killing a player with a thrown weapon. (m)</b><i> - Death shall come for thee x3</i></div>               
     </div>`;
  } 
   if(archetype == "Spy"){
   archetypeText = `<div class="card">
       <div class="title"><u>Spy</u></div>       
-        <div class="entry"><b>Greater Heal: 1/Life Charge x3 (m)</b><i> - By the grace of the divine thou art healed x5</i></div>      
-        <div class="entry"><b>Extend Immunities: 1/Refresh Charge x5 (ex)</b><i> - May the blessing of my god protect thee x3</i></div>      
-        <div class="entry"><b>Greater Resurrect: 1/Life (m)</b><i> - By the grace of the divine thou art resurrected x5</i></div>      
-        <div class="entry"><b>Awe: 2/Life (m)(LTP)</b><i> - I command thee awed x3</i></div>      
-        <div class="entry"><b>Protection from Magic: 2/Refresh (m)</b><i> - I enchant thee with protection from magic x3</i></div>              
+        <div class="entry"><b>Assassinate: Unlimited (ex) (Ambulant)</b><i> - Assassinate</i></div>      
+        <div class="entry"><b>Shadow Step: 2/Life Charge x3 (ex) (Ambulant)</b><i> - I step into the shadows</i></div>      
+        <div class="entry"><b>Poison: (Self) 1/Life Charge x3 (ex)(LTP)</b><i> - I coat these weapons with a deadly poison x2</i></div>      
+        <div class="entry"><b>Poison Arrow: 2 Arrows / Unlimited (ex)(LTP)</b><i> - Poison Arrow</i></div>      
+        <div class="entry"><b>Blink: 2/Life Charge x3 (ex) (Ambulant)</b><i> - I vanish from sight</i></div>
+        <div class="entry"><b>Hold Person: 1/Life (m)</b><i> - I command thee to stop x3</i></div>
+        <div class="entry"><b>Teleport: (Self) 2/Life (ex) (Ambulant)</b><i> - I travel through the aether x5</i></div>
+        <div class="entry"><b>Coup de Grace: 	1/Life (m)</b><i> - Death shall come for thee x3</i></div>              
     </div>`;
  } 
   if(archetype == "Barbarian"){
   archetypeText = `<div class="card">
       <div class="title"><u>Barbarian</u></div>       
-        <div class="entry"><b>Greater Heal: 1/Life Charge x3 (m)</b><i> - By the grace of the divine thou art healed x5</i></div>      
-        <div class="entry"><b>Extend Immunities: 1/Refresh Charge x5 (ex)</b><i> - May the blessing of my god protect thee x3</i></div>      
-        <div class="entry"><b>Greater Resurrect: 1/Life (m)</b><i> - By the grace of the divine thou art resurrected x5</i></div>      
-        <div class="entry"><b>Awe: 2/Life (m)(LTP)</b><i> - I command thee awed x3</i></div>      
-        <div class="entry"><b>Protection from Magic: 2/Refresh (m)</b><i> - I enchant thee with protection from magic x3</i></div>              
+        <div class="entry"><b>Rage: 3/Refresh Charge x10 (ex)(LTP) (Ambulant)</b><i> - I am filled with rage!</i></div>      
+        <div class="entry"><b>Adrenaline: Unlimited (ex)</b><i> - Adrenaline</i></div>      
+        <div class="entry"><b>Brutal Strike: 1/Life Charge x3 (ex) (Ambulant)</b><i> - And stay down!</i></div>      
+        <div class="entry"><b>Blood and Thunder: 	Unlimited (ex)</b><i> - Blood and Thunder!</i></div>                  
     </div>`;
  } 
   if(archetype == "Raider"){
   archetypeText = `<div class="card">
       <div class="title"><u>Raider</u></div>       
-        <div class="entry"><b>Greater Heal: 1/Life Charge x3 (m)</b><i> - By the grace of the divine thou art healed x5</i></div>      
-        <div class="entry"><b>Extend Immunities: 1/Refresh Charge x5 (ex)</b><i> - May the blessing of my god protect thee x3</i></div>      
-        <div class="entry"><b>Greater Resurrect: 1/Life (m)</b><i> - By the grace of the divine thou art resurrected x5</i></div>      
-        <div class="entry"><b>Awe: 2/Life (m)(LTP)</b><i> - I command thee awed x3</i></div>      
-        <div class="entry"><b>Protection from Magic: 2/Refresh (m)</b><i> - I enchant thee with protection from magic x3</i></div>              
+        <div class="entry"><b>Bear Strength: 1/Life (ex)</b><i> - I enchant thee with the strength of the bear x3</i></div>      
+        <div class="entry"><b>Adrenaline: Unlimited (ex)</b><i> - Adrenaline</i></div>      
+        <div class="entry"><b>Brutal Strike: 2/Life Charge x3 (ex)(LTP) (Ambulant)</b><i> - And stay down!</i></div>      
+        <div class="entry"><b>Blood and Thunder: 	Unlimited (ex)</b><i> - Blood and Thunder!</i></div>           
     </div>`;
  } 
   if(archetype == "Berserker"){
   archetypeText = `<div class="card">
       <div class="title"><u>Berserker</u></div>       
-        <div class="entry"><b>Greater Heal: 1/Life Charge x3 (m)</b><i> - By the grace of the divine thou art healed x5</i></div>      
-        <div class="entry"><b>Extend Immunities: 1/Refresh Charge x5 (ex)</b><i> - May the blessing of my god protect thee x3</i></div>      
-        <div class="entry"><b>Greater Resurrect: 1/Life (m)</b><i> - By the grace of the divine thou art resurrected x5</i></div>      
-        <div class="entry"><b>Awe: 2/Life (m)(LTP)</b><i> - I command thee awed x3</i></div>      
-        <div class="entry"><b>Protection from Magic: 2/Refresh (m)</b><i> - I enchant thee with protection from magic x3</i></div>              
+        <div class="entry"><b>Rage: 3/Refresh Charge x10 (ex)(LTP) (Ambulant)</b><i> - I am filled with rage!</i></div>      
+        <div class="entry"><b>Adrenaline: Unlimited (ex)</b><i> - Adrenaline</i></div>      
+        <div class="entry"><b>Brutal Strike: 1/Life Charge x3 (ex) (Ambulant)</b><i> - And stay down!</i></div>      
+        <div class="entry"><b>Momentum: Unlimited (ex) (Ambulant)</b><i> - Momentum</i></div>             
     </div>`;
  } 
   if(archetype == "Monk"){
   archetypeText = `<div class="card">
       <div class="title"><u>Monk</u></div>       
-        <div class="entry"><b>Greater Heal: 1/Life Charge x3 (m)</b><i> - By the grace of the divine thou art healed x5</i></div>      
-        <div class="entry"><b>Extend Immunities: 1/Refresh Charge x5 (ex)</b><i> - May the blessing of my god protect thee x3</i></div>      
-        <div class="entry"><b>Greater Resurrect: 1/Life (m)</b><i> - By the grace of the divine thou art resurrected x5</i></div>      
-        <div class="entry"><b>Awe: 2/Life (m)(LTP)</b><i> - I command thee awed x3</i></div>      
-        <div class="entry"><b>Protection from Magic: 2/Refresh (m)</b><i> - I enchant thee with protection from magic x3</i></div>              
+        <div class="entry"><b>Banish: 1/Life Charge x5 (ex)</b><i> - The spirits banish thee from this place x3</i></div>      
+        <div class="entry"><b>Sanctuary: 1/Life Charge x5 (ex) (Ambulant)</b><i> - Sanctuary</i></div>      
+        <div class="entry"><b>Heal: 2/Life Charge x3 (ex)(LTP)</b><i> - The white light of healing hath healed thee. x5</i></div>      
+        <div class="entry"><b>Resurrect: 1/Refresh Charge x5 (m)</b><i> - Sword Cut, spear stab mace smash, arrow jab, Let the white light of healing descend on thee. Let the white light of healing stop thy spilling blood. Let the white light of healing mend thy bones. Let the white light of healing close thy wounds. Let the white light of healing restore thy vigor. The white light of healing hath resurrected thee.</i></div>      
+        <div class="entry"><b>Innate: 1/Life (ex)</b><i> - Innate</i></div>              
     </div>`;
  } 
   if(archetype == "Medium"){
   archetypeText = `<div class="card">
       <div class="title"><u>Medium</u></div>       
-        <div class="entry"><b>Greater Heal: 1/Life Charge x3 (m)</b><i> - By the grace of the divine thou art healed x5</i></div>      
-        <div class="entry"><b>Extend Immunities: 1/Refresh Charge x5 (ex)</b><i> - May the blessing of my god protect thee x3</i></div>      
-        <div class="entry"><b>Greater Resurrect: 1/Life (m)</b><i> - By the grace of the divine thou art resurrected x5</i></div>      
-        <div class="entry"><b>Awe: 2/Life (m)(LTP)</b><i> - I command thee awed x3</i></div>      
-        <div class="entry"><b>Protection from Magic: 2/Refresh (m)</b><i> - I enchant thee with protection from magic x3</i></div>              
+        <div class="entry"><b>Banish: 1/Life Charge x5 (ex)</b><i> - The spirits banish thee from this place x3</i></div>      
+        <div class="entry"><b>Sanctuary: 1/Life Charge x5 (ex) (Ambulant)</b><i> - Sanctuary</i></div>      
+        <div class="entry"><b>Heal: 2/Life Charge x3 (ex)(LTP)</b><i> - The white light of healing hath healed thee. x5</i></div>      
+        <div class="entry"><b>Resurrect: 1/Refresh Charge x5 (m)</b><i> - Sword Cut, spear stab mace smash, arrow jab, Let the white light of healing descend on thee. Let the white light of healing stop thy spilling blood. Let the white light of healing mend thy bones. Let the white light of healing close thy wounds. Let the white light of healing restore thy vigor. The white light of healing hath resurrected thee.</i></div>      
+        <div class="entry"><b>Innate: 1/Life (ex)</b><i> - Innate</i></div>
+        <div class="entry"><b>Blessing Against Wounds: 1/Life (ex)</b><i> - Innate</i></div> 
+        <div class="entry"><b>Sever Spirit: 1/Life (ex)</b><i> - Innate</i></div> 
+        <div class="entry"><b>Swift: 2/Life (ex)</b><i> - Swift</i></div>               
     </div>`;
  } 
   if(archetype == "Mystic"){
   archetypeText = `<div class="card">
       <div class="title"><u>Mystic</u></div>       
-        <div class="entry"><b>Greater Heal: 1/Life Charge x3 (m)</b><i> - By the grace of the divine thou art healed x5</i></div>      
-        <div class="entry"><b>Extend Immunities: 1/Refresh Charge x5 (ex)</b><i> - May the blessing of my god protect thee x3</i></div>      
-        <div class="entry"><b>Greater Resurrect: 1/Life (m)</b><i> - By the grace of the divine thou art resurrected x5</i></div>      
-        <div class="entry"><b>Awe: 2/Life (m)(LTP)</b><i> - I command thee awed x3</i></div>      
-        <div class="entry"><b>Protection from Magic: 2/Refresh (m)</b><i> - I enchant thee with protection from magic x3</i></div>              
+        <div class="entry"><b>Banish: 1/Life Charge x5 (ex)</b><i> - The spirits banish thee from this place x3</i></div>      
+        <div class="entry"><b>Sanctuary: 1/Life Charge x5 (ex) (Ambulant)</b><i> - Sanctuary</i></div>      
+        <div class="entry"><b>Heal: 2/Life Charge x3 (ex)(LTP)</b><i> - The white light of healing hath healed thee. x5</i></div>      
+        <div class="entry"><b>Resurrect: 1/Refresh Charge x5 (m)</b><i> - Sword Cut, spear stab mace smash, arrow jab, Let the white light of healing descend on thee. Let the white light of healing stop thy spilling blood. Let the white light of healing mend thy bones. Let the white light of healing close thy wounds. Let the white light of healing restore thy vigor. The white light of healing hath resurrected thee.</i></div>      
+        <div class="entry"><b>Innate: 1/Life (ex)</b><i> - Innate</i></div>                
     </div>`;
  } 
   if(archetype == "Paladin"){
