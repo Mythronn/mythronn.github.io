@@ -2340,10 +2340,10 @@ function printMartial(archetype){
   archetypeText = `<div class="card">
       <div class="title"><u>Guardian</u></div>       
         <div class="entry"><b>Greater Heal: 1/Life Charge x3 (m)</b><i> - By the grace of the divine thou art healed x5</i></div>      
-        <div class="entry"><b>Extend Immunities: 1/Refresh Charge x5 (ex)</b><i> - May the blessing of my god protect thee x3</i></div>      
+        <div class="entry"><b>Martyr: 2/Life Charge x3 (ex)</b><i> - Thy burdens are mine to bear</i></div>      
         <div class="entry"><b>Greater Resurrect: 1/Life (m)</b><i> - By the grace of the divine thou art resurrected x5</i></div>      
         <div class="entry"><b>Awe: 2/Life (m)(LTP)</b><i> - I command thee awed x3</i></div>      
-        <div class="entry"><b>Protection from Magic: 2/Refresh (m)</b><i> - I enchant thee with protection from magic x3</i></div>              
+        <div class="entry"><b>Imbue Shield: 1/Life (m)</b><i> - This shield shall neither bend nor break x3</i></div>              
     </div>`;
  } 
   if(archetype == "Inquisitor"){
@@ -2351,7 +2351,7 @@ function printMartial(archetype){
       <div class="title"><u>Inquisitor</u></div>       
         <div class="entry"><b>Greater Heal: 1/Life Charge x3 (m)</b><i> - By the grace of the divine thou art healed x5</i></div>      
         <div class="entry"><b>Extend Immunities: 1/Refresh Charge x5 (ex)</b><i> - May the blessing of my god protect thee x3</i></div>      
-        <div class="entry"><b>Greater Resurrect: 1/Life (m)</b><i> - By the grace of the divine thou art resurrected x5</i></div>      
+        <div class="entry"><b>Sacred Blades: 1/Life (ex)</b><i> - I sanctify these weapons to smite the wicked x2</i></div>      
         <div class="entry"><b>Awe: 2/Life (m)(LTP)</b><i> - I command thee awed x3</i></div>      
         <div class="entry"><b>Protection from Magic: 2/Refresh (m)</b><i> - I enchant thee with protection from magic x3</i></div>              
     </div>`;
