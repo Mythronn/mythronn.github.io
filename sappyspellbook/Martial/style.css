@@ -92,7 +92,7 @@ body {
     color: black;    
   }
 /*MIDNAV ***************************/
-    .midnav a.Anti-Paladin {
+    a.Anti-Paladin {
         background-image: linear-gradient(rgb(124, 124, 124), rgb(255, 255, 255));
         color: rgb(0, 0, 0);        
         display:inline-block;
@@ -100,35 +100,35 @@ body {
         margin-right: 5px;
         margin-left: 5px;
     }
-    .midnav a.Archer {
+    a.Archer {
         background-color: #ff6600;
         color: White;        
         display:inline-block;
         margin-top: 10px;
         margin-right: 5px;
     }
-    .midnav a.Assassin {
+    a.Assassin {
         background-color: #000000;
         color: White;        
         display:inline-block;
         margin-top: 10px;
         margin-right: 5px;
     }
-    .midnav a.Barbarian {
+    a.Barbarian {
         background-color: #ffffff;
         color: rgb(0, 0, 0);        
         display:inline-block;
         margin-top: 10px;
         margin-right: 5px;
     }
-    .midnav a.Monk {
+    a.Monk {
         background-color: #7c7c7c;
         color: White;        
         display:inline-block;
         margin-top: 10px;
         margin-right: 5px;
     }
-    .midnav a.Paladin {
+    a.Paladin {
         background-image: linear-gradient(rgb(255, 166, 0), rgb(255, 248, 230));
         color: black;        
         display:inline-block;
@@ -136,14 +136,14 @@ body {
         margin-right: 5px;
         margin-left: 5px;
     }
-    .midnav a.Scout {
+    a.Scout {
         background-color: #00a800;
         color: White;        
         display:inline-block;
         margin-top: 10px;
         margin-right: 5px;
     }
-    .midnav a.Warrior {
+    a.Warrior {
         background-color: #8400b8;
         color: White;        
         display:inline-block;
