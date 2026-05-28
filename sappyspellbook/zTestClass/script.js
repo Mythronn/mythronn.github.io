@@ -2232,8 +2232,8 @@ function printMartial(archetype){
       <div class="title"><u>Assassin</u></div>       
         <div class="entry"><b>Assassinate: Unlimited (ex) (Ambulant)</b><i> - Assassinate</i></div>      
         <div class="entry"><b>Shadow Step: 2/Life (ex) (Ambulant)</b><i> - I step into the shadows</i></div>      
-        <div class="entry"><b>Poison: 1/Life Charge x3 (ex)(LTP)</b><i> - I coat these weapons with a deadly poison x2</i></div>      
-        <div class="entry"><b>Poison Arrow: 2 Arrows / Unlimited (ex)(LTP)</b><i> - Poison Arrow</i></div>      
+        <div class="entry"><b>Poison: 0-1/Life Charge x3 (ex)(LTP)</b><i> - I coat these weapons with a deadly poison x2</i></div>      
+        <div class="entry"><b>Poison Arrow: 0-2 Arrows / Unlimited (ex)(LTP)</b><i> - Poison Arrow</i></div>      
         <div class="entry"><b>Blink: 2/Life (ex) (Ambulant)</b><i> - I vanish from sight</i></div>
         <div class="entry"><b>Hold Person: 1/Life (m)</b><i> - I command thee to stop x3</i></div>
         <div class="entry"><b>Teleport: 2/Life (ex) (Ambulant)</b><i> - I travel through the aether x5</i></div>
@@ -2245,7 +2245,7 @@ function printMartial(archetype){
       <div class="title"><u>Rogue</u></div>       
         <div class="entry"><b>Assassinate: Unlimited (ex) (Ambulant)</b><i> - Assassinate</i></div>      
         <div class="entry"><b>Shadow Step: 2/Life (ex) (Ambulant)</b><i> - I step into the shadows</i></div>      
-        <div class="entry"><b>Poison: 1/Life Charge x3 (ex)(LTP)</b><i> - I coat these weapons with a deadly poison x2</i></div> 
+        <div class="entry"><b>Poison: 0-1/Life Charge x3 (ex)(LTP)</b><i> - I coat these weapons with a deadly poison x2</i></div> 
         <div class="entry"><b>Blink: 2/Life (ex) (Ambulant)</b><i> - I vanish from sight</i></div>
         <div class="entry"><b>Hold Person: 1/Life (m)</b><i> - I command thee to stop x3</i></div>
         <div class="entry"><b>Teleport: 2/Life (ex) (Ambulant)</b><i> - I travel through the aether x5</i></div>
@@ -2257,8 +2257,8 @@ function printMartial(archetype){
       <div class="title"><u>Spy</u></div>       
         <div class="entry"><b>Assassinate: Unlimited (ex) (Ambulant)</b><i> - Assassinate</i></div>      
         <div class="entry"><b>Shadow Step: 2/Life Charge x3 (ex) (Ambulant)</b><i> - I step into the shadows</i></div>      
-        <div class="entry"><b>Poison: 1/Life Charge x3 (ex)(LTP)</b><i> - I coat these weapons with a deadly poison x2</i></div>      
-        <div class="entry"><b>Poison Arrow: 2 Arrows / Unlimited (ex)(LTP)</b><i> - Poison Arrow</i></div>      
+        <div class="entry"><b>Poison: 0-1/Life Charge x3 (ex)(LTP)</b><i> - I coat these weapons with a deadly poison x2</i></div>      
+        <div class="entry"><b>Poison Arrow: 0-2 Arrows / Unlimited (ex)(LTP)</b><i> - Poison Arrow</i></div>      
         <div class="entry"><b>Blink: 2/Life Charge x3 (ex) (Ambulant)</b><i> - I vanish from sight</i></div>
         <div class="entry"><b>Hold Person: 1/Life (m)</b><i> - I command thee to stop x3</i></div>
         <div class="entry"><b>Teleport: 2/Life (ex) (Ambulant)</b><i> - I travel through the aether x5</i></div>
@@ -2367,8 +2367,8 @@ function printMartial(archetype){
         <div class="entry"><b>Release: 1/Life Charge x3 (ex)</b><i> - From thy bindings thou art released x5</i></div>      
         <div class="entry"><b>Dispel Magic: 1/Refresh Charge x5 (ex)</b><i> - By my power I dispel that magic x3</i></div>      
         <div class="entry"><b>Shadow Step: 1/Life (ex) (Ambulant)</b><i> - I step into the shadows</i></div>
-        <div class="entry"><b>Hold Person: 1/Life (m)</b><i> - I command thee to stop x3</i></div>
-        <div class="entry"><b>Pinning Arrow: 1 Arrow / Unlimited (ex)</b><i> - Pinning Arrow</i></div>
+        <div class="entry"><b>Hold Person: 0-1/Life (m)</b><i> - I command thee to stop x3</i></div>
+        <div class="entry"><b>Pinning Arrow: 0-1 Arrow / Unlimited (ex)</b><i> - Pinning Arrow</i></div>
         <div class="entry"><b>Adaptive Protection: 1/Life (ex)</b><i> - I enchant thee with this protection x3</i></div>              
     </div>`;
  } 
@@ -2379,8 +2379,8 @@ function printMartial(archetype){
         <div class="entry"><b>Heal: 2/Life (ex)(LTP)</b><i> - The white light of healing hath healed thee x5</i></div>      
         <div class="entry"><b>Dispel Magic: 1/Refresh Charge x5 (ex)</b><i> - By my power I dispel that magic x3</i></div>      
         <div class="entry"><b>Shadow Step: 1/Life (ex) (Ambulant)</b><i> - I step into the shadows</i></div>
-        <div class="entry"><b>Hold Person: 1/Life Charge x3 (m)</b><i> - I command thee to stop x3</i></div>
-        <div class="entry"><b>Pinning Arrow: 2 Arrow / Unlimited (ex)</b><i> - Pinning Arrow</i></div>
+        <div class="entry"><b>Hold Person: 0-1/Life Charge x3 (m)</b><i> - I command thee to stop x3</i></div>
+        <div class="entry"><b>Pinning Arrow: 0-2 Arrow / Unlimited (ex)</b><i> - Pinning Arrow</i></div>
         <div class="entry"><b>Adaptive Protection: 1/Life (ex)</b><i> - I enchant thee with this protection x3</i></div>              
     </div>`;
  } 
