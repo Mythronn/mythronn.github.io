@@ -2309,7 +2309,10 @@ function printMartial(archetype){
         <div class="entry"><b>Sanctuary: 1/Life Charge x5 (ex) (Ambulant)</b><i> - Sanctuary</i></div>      
         <div class="entry"><b>Heal: 2/Life Charge x3 (ex)(LTP)</b><i> - The white light of healing hath healed thee. x5</i></div>      
         <div class="entry"><b>Resurrect: 1/Refresh Charge x5 (m)</b><i> - Sword Cut, spear stab mace smash, arrow jab, Let the white light of healing descend on thee. Let the white light of healing stop thy spilling blood. Let the white light of healing mend thy bones. Let the white light of healing close thy wounds. Let the white light of healing restore thy vigor. The white light of healing hath resurrected thee.</i></div>      
-        <div class="entry"><b>Innate: 1/Life (ex)</b><i> - Innate</i></div>
+        <div class="entry"><b>Innate: 1/Life (ex)</b><i> - Innate</i></div>            
+    </div>
+    <div class="card">
+      <div class="title"><u>Medium</u></div>       
         <div class="entry"><b>Blessing Against Wounds: 1/Life (ex)</b><i> - I enchant thee against wounds x3</i></div> 
         <div class="entry"><b>Sever Spirit: 1/Life Charge x3 (ex)</b><i> - The spirits lay a curse on thee x3</i></div> 
         <div class="entry"><b>Swift: 2/Life (ex)</b><i> - Swift</i></div>               
