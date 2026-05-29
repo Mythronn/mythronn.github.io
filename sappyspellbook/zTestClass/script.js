@@ -315,9 +315,7 @@ function updateTable(){
       }
       else
         document.getElementById(pointLabels[i]).style.background = "";
-  }
-  
-  
+  }  
 }
 /*##################################*/
 function resetPoints(fullReset){
