@@ -357,12 +357,13 @@ function resetPoints(fullReset){
       selectionMode = true;
     }
 
-    updatePointLabels();    
+    
     
   }
   processNecromancerMinus();
   processWarderMinus();
   updatePointsAvailable();
+  updatePointLabels(); 
 }
 /*##################################*/
 function updateExperienced(){
