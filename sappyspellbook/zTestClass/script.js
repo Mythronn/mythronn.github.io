@@ -352,13 +352,7 @@ function resetPoints(fullReset){
       selectionMode = true;
     }
 
-      for(i = 0; i < 6; i++){
-        if(document.getElementById(pointLabels[i]).value != 0){
-          document.getElementById(pointLabels[i]).style.background = "#FFD700";
-        }
-        else
-          document.getElementById(pointLabels[i]).style.background = "";
-    }  
+
     
     
   }
