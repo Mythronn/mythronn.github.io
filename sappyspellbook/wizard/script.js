@@ -288,7 +288,6 @@ function toggleList(incantOnly){
 /*##################################*/
 function updateTable(){
   var cell;
-  const pointLabels = ["level1Points", "level2Points", "level3Points", "level4Points", "level5Points", "level6Points"];
   for(let i = 0; i < abilityCount; i++){
     cell = document.getElementById(i + "max");
     if(abilities[i].max == 31){
@@ -305,13 +304,18 @@ function updateTable(){
     else
       document.getElementById(abilities[i].pointTotalId).style.background = "";
   }
-  for(i = 0; i < 6; i++){
+  updatePointLabels(); 
+}
+/*##################################*/
+function updatePointLabels(){
+  const pointLabels = ["level1Points", "level2Points", "level3Points", "level4Points", "level5Points", "level6Points"];
+  for(let i = 0; i < 6; i++){
       if(document.getElementById(pointLabels[i]).value != 0){
         document.getElementById(pointLabels[i]).style.background = "#FFD700";
       }
       else
         document.getElementById(pointLabels[i]).style.background = "";
-  }  
+  } 
 }
 /*##################################*/
 function resetPoints(fullReset){
@@ -344,6 +348,7 @@ function resetPoints(fullReset){
     }
   }
   updatePointsAvailable();
+  updatePointLabels(); 
 }
 /*##################################*/
 function updateExperienced(){
