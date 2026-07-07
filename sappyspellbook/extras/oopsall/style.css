@@ -8,7 +8,6 @@ body {
     font-family: 'Helvetica';
     color: #4b2c20;
     background-color: #EAE0CC;
-    text-align: center;
     padding: 5px 10px;
     font-size: 18px;
     
@@ -18,6 +17,15 @@ body {
     border-color: #202020;
     cursor: pointer;
     transform: scale(1.1);
+
+
+        text-align: center;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
  button{
