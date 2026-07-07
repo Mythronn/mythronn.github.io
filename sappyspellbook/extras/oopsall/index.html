@@ -26,7 +26,6 @@
 <body>
  
 <button onclick="showRandomWords()">Generate Choices</button>
-<div id="result"></div>
 <div class="midnav">
         <a   class="Anti-Paladin" hidden>ANTI-PALADIN</a>
         <a   class="Archer" hidden>ARCHER</a>
@@ -64,7 +63,6 @@
 
     const shuffled = [...words].sort(() => Math.random() - 0.5);
     const chosen = shuffled.slice(0, 3);
-    document.getElementById("result").textContent = chosen.join(", ");
     document.getElementsByClassName(chosen[0])[0].style.display = "inline-block";
     document.getElementsByClassName(chosen[1])[0].style.display = "inline-block";
     document.getElementsByClassName(chosen[2])[0].style.display = "inline-block";
