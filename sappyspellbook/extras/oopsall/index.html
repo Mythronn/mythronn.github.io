@@ -49,25 +49,25 @@
                  "Warrior", "Scout", "Bard", "Druid", "Healer", "Wizard"];
  
   function showRandomWords() {
-    document.getElementsByClassName("Anti-Paladin").hidden = true;
-    document.getElementsByClassName("Archer").hidden = true;
-    document.getElementsByClassName("Assassin").hidden = true;
-    document.getElementsByClassName("Barbarian").hidden = true;
-    document.getElementsByClassName("Monk").hidden = true;
-    document.getElementsByClassName("Paladin").hidden = true;
-    document.getElementsByClassName("Scout").hidden = true;
-    document.getElementsByClassName("Warrior").hidden = true;
-    document.getElementsByClassName("Druid").hidden = true;
-    document.getElementsByClassName("Healer").hidden = true;
-    document.getElementsByClassName("Bard").hidden = true;
-    document.getElementsByClassName("Wizard").hidden = true;
+    document.getElementsByClassName("Anti-Paladin")[0].style.display = "none";
+    document.getElementsByClassName("Archer")[0].style.display = "none";
+    document.getElementsByClassName("Assassin")[0].style.display = "none";
+    document.getElementsByClassName("Barbarian")[0].style.display = "none";
+    document.getElementsByClassName("Monk")[0].style.display = "none";
+    document.getElementsByClassName("Paladin")[0].style.display = "none";
+    document.getElementsByClassName("Scout")[0].style.display = "none";
+    document.getElementsByClassName("Warrior")[0].style.display = "none";
+    document.getElementsByClassName("Druid")[0].style.display = "none";
+    document.getElementsByClassName("Healer")[0].style.display = "none";
+    document.getElementsByClassName("Bard")[0].style.display = "none";
+    document.getElementsByClassName("Wizard")[0].style.display = "none";
 
     const shuffled = [...words].sort(() => Math.random() - 0.5);
     const chosen = shuffled.slice(0, 3);
     document.getElementById("result").textContent = chosen.join(", ");
-    document.getElementsByClassName(chosen[0]).hidden = false;
-    document.getElementsByClassName(chosen[1]).hidden = false;
-    document.getElementsByClassName(chosen[2]).hidden = false;
+    document.getElementsByClassName(chosen[0])[0].style.display = "inline-block";
+    document.getElementsByClassName(chosen[1])[0].style.display = "inline-block";
+    document.getElementsByClassName(chosen[2])[0].style.display = "inline-block";
     
   }
 </script>
