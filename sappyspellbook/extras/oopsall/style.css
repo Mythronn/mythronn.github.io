@@ -178,6 +178,35 @@ body {
         margin-right: 5px;
     }
 
+    .midnav a.Bard {
+    background-color: #0047AB;
+    color: White;
+    display:inline-block;
+        margin-top: 10px;
+        margin-right: 5px;
+  }
+  .midnav a.Druid {
+    background-color: #83441a;
+    color: White;
+    display:inline-block;
+        margin-top: 10px;
+        margin-right: 5px;
+  }
+  .midnav a.Healer {
+    background-color: #ac0404;
+    color: White;
+    display:inline-block;
+        margin-top: 10px;
+        margin-right: 5px;
+  }
+  .midnav a.Wizard {
+    background-color: #FFD700;
+    color: black; 
+    display:inline-block;
+        margin-top: 10px;
+        margin-right: 5px;   
+  }
+
   /* Section Styling */
   .ui-body {
     margin: 40px auto;
