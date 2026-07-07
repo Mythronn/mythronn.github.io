@@ -28,29 +28,47 @@
 <button onclick="showRandomWords()">Generate Choices</button>
 <div id="result"></div>
 <div class="midnav">
-        <a   class="Anti-Paladin">ANTI-PALADIN</a>
-        <a   class="Archer">ARCHER</a>
-        <a   class="Assassin">ASSASSIN</a>
-        <a   class="Barbarian">BARBARIAN</a>
-        <a   class="Monk">MONK</a>
-        <a   class="Paladin">PALADIN</a>
-        <a   class="Scout">SCOUT</a>
-        <a   class="Warrior">WARRIOR</a>
-        <a   class="Druid">DRUID</a>
-        <a   class="Healer">HEALER</a>
-        <a   class="Bard">BARD</a>
-        <a   class="Wizard">WIZARD</a>
+        <a   class="Anti-Paladin" hidden>ANTI-PALADIN</a>
+        <a   class="Archer" hidden>ARCHER</a>
+        <a   class="Assassin" hidden>ASSASSIN</a>
+        <a   class="Barbarian" hidden>BARBARIAN</a>
+        <a   class="Monk" hidden>MONK</a>
+        <a   class="Paladin" hidden>PALADIN</a>
+        <a   class="Scout" hidden>SCOUT</a>
+        <a   class="Warrior" hidden>WARRIOR</a>
+        <a   class="Druid" hidden>DRUID</a>
+        <a   class="Healer" hidden>HEALER</a>
+        <a   class="Bard" hidden>BARD</a>
+        <a   class="Wizard" hidden>WIZARD</a>
       </div>  
  
 <script>
+    
+
   const words = ["Archer", "Assassin", "Paladin", "Anti-Paladin", "Monk", "Barbarian",
                  "Warrior", "Scout", "Bard", "Druid", "Healer", "Wizard"];
  
   function showRandomWords() {
-    // Shuffle a copy of the array and take the first 3
+    document.getElementsByClassName("Anti-Paladin").hidden = true;
+    document.getElementsByClassName("Archer").hidden = true;
+    document.getElementsByClassName("Assassin").hidden = true;
+    document.getElementsByClassName("Barbarian").hidden = true;
+    document.getElementsByClassName("Monk").hidden = true;
+    document.getElementsByClassName("Paladin").hidden = true;
+    document.getElementsByClassName("Scout").hidden = true;
+    document.getElementsByClassName("Warrior").hidden = true;
+    document.getElementsByClassName("Druid").hidden = true;
+    document.getElementsByClassName("Healer").hidden = true;
+    document.getElementsByClassName("Bard").hidden = true;
+    document.getElementsByClassName("Wizard").hidden = true;
+
     const shuffled = [...words].sort(() => Math.random() - 0.5);
     const chosen = shuffled.slice(0, 3);
     document.getElementById("result").textContent = chosen.join(", ");
+    document.getElementsByClassName(chosen[0]).hidden = false;
+    document.getElementsByClassName(chosen[1]).hidden = false;
+    document.getElementsByClassName(chosen[2]).hidden = false;
+    
   }
 </script>
  
