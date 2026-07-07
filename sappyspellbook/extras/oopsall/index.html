@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Healer Spellbook</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
+
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7JR53Y27TN"></script>
+<script src="https://cdn.jsdelivr.net/gh/davidshimjs/qrcodejs/qrcode.min.js"></script>
+
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-7JR53Y27TN');
+</script>
+<title>Oops All!</title>
+
+</head>
+<body>
+ 
+<button onclick="showRandomWords()">Generate Choices</button>
+<div id="result"></div>
+ 
+<script>
+  const words = ["Archer", "Assassin", "Paladin", "Anti-Paladin", "Monk", "Barbarian",
+                 "Warrior", "Scout", "Bard", "Druid", "Healer", "Wizard"];
+ 
+  function showRandomWords() {
+    // Shuffle a copy of the array and take the first 3
+    const shuffled = [...words].sort(() => Math.random() - 0.5);
+    const chosen = shuffled.slice(0, 3);
+    document.getElementById("result").textContent = chosen.join(", ");
+  }
+</script>
+ 
+</body>
+</html>
