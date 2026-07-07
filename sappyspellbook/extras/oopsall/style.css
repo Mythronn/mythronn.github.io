@@ -38,6 +38,10 @@ body {
     background-color: #83441a;
     color: White;
     font-size: 32px;
+     border-radius: 15px;
+     border-radius: 15px;
+    border-color: #202020;
+        border-width: 2px;
  }
   
   /* Navigation Bar */
