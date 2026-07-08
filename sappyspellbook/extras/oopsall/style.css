@@ -138,6 +138,17 @@ body {
         margin-left: 10px;
         animation: medieval-fade-in 1s ease-in-out;
     }
+    .midnav a.placeholder {
+      background-color: #EAE0CC;
+        color: #EAE0CC;        
+        display:none;
+        margin-top: 10px;
+        margin-right: 5px;
+        margin-left: 10px;
+        animation: medieval-fade-in 1s ease-in-out;
+
+      
+    }
     .midnav a.Assassin {
         background-color: #000000;
         color: White;        

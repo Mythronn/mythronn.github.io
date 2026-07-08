@@ -39,6 +39,7 @@
         <a   class="Healer" hidden>HEALER</a>
         <a   class="Bard" hidden>BARD</a>
         <a   class="Wizard" hidden>WIZARD</a>
+        <a   class="placeholder" >PLACEHOLDER</a>
       </div>  
  
 <script>
@@ -60,6 +61,7 @@
     document.getElementsByClassName("Healer")[0].style.display = "none";
     document.getElementsByClassName("Bard")[0].style.display = "none";
     document.getElementsByClassName("Wizard")[0].style.display = "none";
+    document.getElementsByClassName("placeholder")[0].style.display = "none";
 
     const shuffled = [...words].sort(() => Math.random() - 0.5);
     const chosen = shuffled.slice(0, 3);
