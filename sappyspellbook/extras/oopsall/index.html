@@ -63,6 +63,8 @@
 
     const shuffled = [...words].sort(() => Math.random() - 0.5);
     const chosen = shuffled.slice(0, 3);
+
+    const element = document.getElementsByClassName(chosen[0])[0];
     console.log(document.getElementsByClassName(chosen[0]));
 console.log(document.getElementsByClassName(chosen[0])[0]);
 console.log(chosen[0]);
