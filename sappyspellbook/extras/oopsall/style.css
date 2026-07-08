@@ -15,7 +15,6 @@ body {
     border-width: 0px;
     border-radius: 20px;
     border-color: #202020;
-    cursor: pointer;
 
 
         text-align: center;
@@ -29,6 +28,7 @@ body {
 
  button{
   font-family: 'MedievalSharp';
+  cursor: pointer;
     background-color: #2e1a13;
     overflow: hidden;
     text-align: center;
@@ -145,6 +145,7 @@ body {
         margin-top: 10px;
         margin-right: 5px;
         margin-left: 10px;
+        border-width: 0px;
         animation: medieval-fade-in 1s ease-in-out;
 
       
