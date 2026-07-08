@@ -141,7 +141,7 @@ body {
     .midnav a.placeholder {
       background-color: #EAE0CC;
         color: #EAE0CC;        
-        display:none;
+        display:inline-block;
         margin-top: 10px;
         margin-right: 5px;
         margin-left: 10px;
