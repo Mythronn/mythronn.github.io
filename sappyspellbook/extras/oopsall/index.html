@@ -65,9 +65,11 @@
     const chosen = shuffled.slice(0, 3);
 
     const element = document.getElementsByClassName(chosen[0])[0];
-    console.log(document.getElementsByClassName(chosen[0]));
-console.log(document.getElementsByClassName(chosen[0])[0]);
-console.log(chosen[0]);
+
+    element.style.animation = "none";
+element.offsetHeight; // force reflow
+element.style.animation = "";
+
     element.classList.remove('medieval-fade-in');
     element.classList.add('medieval-fade-in');
     document.getElementsByClassName(chosen[0])[0].style.display = "inline-block";
