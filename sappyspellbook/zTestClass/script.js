@@ -238,7 +238,7 @@ function toggleList(subToggle){
           levelList[i] = levelList[i] + "<BR>- " + abilities[k].incant;
         }
         if(showMaterials && abilities[k].materials != ""){
-          levelList[i] = levelList[i] + "<BR>   (" + abilities[k].materials + ")";
+          levelList[i] = levelList[i] + "<BR>--(" + abilities[k].materials + ")";
         }
        }
     }
