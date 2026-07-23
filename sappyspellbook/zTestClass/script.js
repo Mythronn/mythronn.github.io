@@ -190,7 +190,12 @@ function toggleIncants(){
   toggleList("incants");
 }
 /*##################################*/
-function toggleList(incantOnly){
+function toggleMaterials(){
+  showMaterials = !showMaterials;
+  toggleList("materials");
+}
+/*##################################*/
+function toggleList(subToggle){
   var tables = [];
   var lists = [];
   var levelList = ["", "", "", "", "", "", ""];
@@ -232,17 +237,21 @@ function toggleList(incantOnly){
         if(showIncants && abilities[k].incant != ""){
           levelList[i] = levelList[i] + "<BR>- " + abilities[k].incant;
         }
+        if(showMaterials && abilities[k].materials != ""){
+          levelList[i] = levelList[i] + "<BR>- " + abilities[k].materials;
+        }
        }
     }
     levelList[i] = levelList[i].slice(4);
     lists[i].innerHTML = levelList[i];
-    if(tables[i].style.display == "block" && incantOnly != 'incants'){
+    if(tables[i].style.display == "block" && subToggle == NULL){
       selectionMode = false;
       tables[i].style.display = "none";
       lists[i].style.display = "block";
       document.getElementById("saveList").hidden = false;
       document.getElementById("printCards").hidden = false;
       document.getElementById("toggleIncants").hidden = false;
+      document.getElementById("toggleMaterials").hidden = false;
       document.getElementById("export").hidden = false;
       document.getElementById("hlp1").hidden = true;
       document.getElementById("hlp2").hidden = true;
@@ -266,13 +275,14 @@ function toggleList(incantOnly){
         document.getElementById("6thHeader").hidden = true;
       }
     }
-    else if(incantOnly != 'incants'){
+    else if(subToggle == NULL){
       selectionMode = true;
       tables[i].style.display = "block";
       lists[i].style.display = "none";
       document.getElementById("saveList").hidden = false;
       document.getElementById("printCards").hidden = true;
       document.getElementById("toggleIncants").hidden = true;
+      document.getElementById("toggleMaterials").hidden = true;
       document.getElementById("export").hidden = true;
       document.getElementById("hlp1").hidden = false;
       document.getElementById("hlp2").hidden = false;
@@ -1092,6 +1102,7 @@ var pointsAvailable = [0, 5,  5,  5,  5,  5,  6];
 var pointsSpent = [0, 0,  0,  0,  0,  0,  0];
 var higherLevelPoints = [0, 0,  0,  0,  0,  0,  0];
 var showIncants = false;
+var showMaterials = false;
 var selectionMode = true;
 
 /*ABILITY DATA
