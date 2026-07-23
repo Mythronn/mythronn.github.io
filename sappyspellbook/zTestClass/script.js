@@ -244,7 +244,7 @@ function toggleList(subToggle){
     }
     levelList[i] = levelList[i].slice(4);
     lists[i].innerHTML = levelList[i];
-    if(tables[i].style.display == "block" && subToggle == NULL){
+    if(tables[i].style.display == "block" && subToggle == null){
       selectionMode = false;
       tables[i].style.display = "none";
       lists[i].style.display = "block";
@@ -275,7 +275,7 @@ function toggleList(subToggle){
         document.getElementById("6thHeader").hidden = true;
       }
     }
-    else if(subToggle == NULL){
+    else if(subToggle == null){
       selectionMode = true;
       tables[i].style.display = "block";
       lists[i].style.display = "none";
