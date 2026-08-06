@@ -694,7 +694,7 @@ function evokerCheck(index){
 function warlockCheck(index){
   var a = index;
   if(abilities[51].purchased > 0){
-    if(abilities[a].type == "Verbal" && !(abilities[a].school == "Death" || abilities[a].school == "Flame")){
+    if((abilities[a].type == "Verbal" || abilities[a].type == "Magic Ball" ) && !(abilities[a].school == "Death" || abilities[a].school == "Flame")){
       
        return false;
        }
@@ -704,7 +704,7 @@ function warlockCheck(index){
   }  
   if(abilities[a].name == "Warlock"){
     for(let i = 0; i < abilityCount; i++){
-      if((abilities[i].type == "Verbal" && !(abilities[i].school == "Death" || abilities[i].school == "Flame")) && abilities[i].purchased > 0){
+      if(((abilities[a].type == "Verbal" || abilities[a].type == "Magic Ball" ) && !(abilities[i].school == "Death" || abilities[i].school == "Flame")) && abilities[i].purchased > 0){
         
         return false; 
         }
@@ -1150,6 +1150,10 @@ function processWarlockPlus(){
   abilities[40].freq = "2/Ref";
   abilities[41].freq = "2/Life";
   abilities[47].freq = "2/Ref";
+  abilities[23].freq = "2 Balls Unlimited";
+  abilities[23].use = "2";
+  abilities[29].freq = "2 Balls Unlimited";
+  abilities[29].use = "2";
   updateAbilityText(6);
   updateAbilityText(18);
   updateAbilityText(24);
@@ -1158,6 +1162,8 @@ function processWarlockPlus(){
   updateAbilityText(40);
   updateAbilityText(41);
   updateAbilityText(47);
+  updateAbilityText(23);
+  updateAbilityText(29);
 }
 function processWarlockMinus(){
   abilities[6].freq = "1/Life";
@@ -1168,6 +1174,10 @@ function processWarlockMinus(){
   abilities[40].freq = "1/Ref";
   abilities[41].freq = "1/Life";
   abilities[47].freq = "1/Ref";
+  abilities[23].freq = "1 Balls Unlimited";
+  abilities[23].use = "1";
+  abilities[29].freq = "1 Balls Unlimited";
+  abilities[29].use = "1";
   updateAbilityText(6);
   updateAbilityText(18);
   updateAbilityText(24);
@@ -1176,6 +1186,8 @@ function processWarlockMinus(){
   updateAbilityText(40);
   updateAbilityText(41);
   updateAbilityText(47);
+  updateAbilityText(23);
+  updateAbilityText(29);
 }
 
 function popFunc(elementId, index) {
@@ -1212,7 +1224,7 @@ const Banish = {
   name: "Banish", type: "Verbal",  freq: "1/Life",
   school: "Spirit", range: "20", materials: "",
   incant: "<I>The Spirits banish thee from this place</I>  x3", 
-  effect: "Target Insubstantial player must return to their base where their Insubstantial State immediately ends. ", 
+  effect: "Target Insubstantial player must return to their base. Upon arrival, they must immediately end the effect as per Insubstantial. ", 
   limitations: "",
   notes: "The target's Insubstantial State is replaced with a new Insubstantial State from Banish. If the Insubstantial State is ended before reaching the base, the rest of the effect is ended as well. If Banish is cast on self, the caster may end this Insubstantial State at any time by using the exit incantation for Insubstantial. This is a Forced Movement effect.",
   text: ""
@@ -1223,7 +1235,7 @@ const WeaponShort = {
   cost: 2,
   max: 1, charge: "", use: -1, per: "",
   pointTotalId: "WeaponShortval",
-  name: "Weapon Short", type: "Neutral",  freq: "",
+  name: "Weapon Short", type: "Trait",  freq: "",
   school: "", range: "", materials: "",
   incant: "", 
   effect: "May wield one short weapon at a time for each instance purchased (but may carry extras)", 
@@ -1251,7 +1263,7 @@ const Experienced = {
   cost: 2,
   max: 2, charge: "", use: -1, per: "",
   pointTotalId: "Experiencedval",
-  name: "Experienced", type: "Neutral",  freq: "",
+  name: "Experienced", type: "Trait",  freq: "",
   school: "Neutral", range: "", materials: "",
   incant: "", 
   effect: "A single per-life Verbal purchased becomes Charge x5 in addition to the normal frequency OR a single per- refresh Verbal purchased becomes Charge x10 in addition to the normal frequency. This Verbal must be determined before the game begins and cannot be changed", 
@@ -1270,7 +1282,7 @@ const ForceBolt = {
   name: "Force Bolt", type: "Magic Ball",  freq: "3 Balls/Unlimited",
   school: "Sorcery", range: "Ball", materials: "Blue Magic Ball",
   incant: "<I>Forcebolt</I> x3", 
-  effect: "Force Bolt will have one of the following effects on the object first struck: <BR>1. A weapon hit is destroyed <BR>2. Armor hit with Armor Points remaining is subject to Armor Breaking <BR>3. A player hit receives a Wound to that hit location", 
+  effect: "This Magic Ball is Weapon Destroying and Armor Breaking. Player hit receives a wound to that hit location.", 
   limitations: "",
   notes: "",
   text: ""
@@ -1283,7 +1295,7 @@ const HeatWeapon = {
   pointTotalId: "HeatWeaponval",
   name: "Heat Weapon", type: "Verbal",  freq: "1/Life",
   school: "Flame", range: "20", materials: "",
-  incant: "<I>I call upon flame to heat that [type of weapon]</I> x3", 
+  incant: "<I>I call upon flame to heat thy weapon</I> x3", 
   effect: "Target weapon may not be wielded for 30 seconds. Players who are Immune to Flame may continue to wield the weapon", 
   limitations: "",
   notes: "The equipment, not the person, is the target of Heat Weapon. The equipment is the only thing required to be within range and visible for this spell to affect it",
@@ -1312,9 +1324,9 @@ const Shove = {
   name: "Shove", type: "Verbal",  freq: "1/Life Chg x3",
   school: "Sorcery", range: "20", materials: "",
   incant: "<I>My power shoves thee</I> x3", 
-  effect: "Target player is moved back 20' in a straight line away from the caster. Works on Stopped players. If the caster is the target, the caster may choose the direction they move.", 
+  effect: "Target player is moved back 20' in a straight line away from the caster. Works on Stopped and Stunned players. If the caster is the target, the caster may choose the direction they move.", 
   limitations: "",
-  notes: "This is a Forced Movement effect.",
+  notes: "This is a Forced Movement effect. This effect is ended if the target is affected by another Forced Movement effect or becomes Frozen, Insubstantial, Invulnerable, or Stunned.",
   text: ""
 };
 
@@ -1384,7 +1396,7 @@ const PlanarGrounding = {
   pointTotalId: "PlanarGroundingval",
   name: "Planar Grounding", type: "Verbal",  freq: "1/Ref",
   school: "Sorcery", range: "20", materials: "",
-  incant: "<I>My power closes the aether to you</I> x3", 
+  incant: "<I>My power closes the aether to thee</I> x3", 
   effect: "Target player has their Insubstantial State removed and may not become Insubstantial for 30 seconds. May be cast on players who are not currently Insubstantial", 
   limitations: "",
   notes: "Planar Grounding causes Enchantments that automatically render their bearer Insubstantial, such as Gift of Air, to fail and be removed if they activate while Planar Grounding is in effect",
@@ -1441,10 +1453,10 @@ const DispelMagic = {
   pointTotalId: "DispelMagicval",
   name: "Dispel Magic", type: "Verbal",  freq: "1/Ref Chg x3",
   school: "Sorcery", range: "20", materials: "",
-  incant: "<I>By my power I dispel that magic</I> x3", 
-  effect: "All Enchantments on target are removed", 
+  incant: "<I>By my power I dispel thy magic</I> x3", 
+  effect: "All Enchantments on target are removed. Will always remove enchantments if successfully cast on a valid target, regardless of the player’s Traits, States, Immunities, Ongoing Effects, or Enchantments (except Sleight of Mind)", 
   limitations: "",
-  notes: "Will always remove enchantments if successfully cast on a valid target, regardless of the player’s Traits, States, Immunities, Ongoing Effects, or Enchantments (except Sleight of Mind)",
+  notes: "Does not affect Invulnerable players.",
   text: ""
 };
 const DraggedBelow = {
@@ -1484,7 +1496,7 @@ const GreaterMend = {
   name: "Greater Mend", type: "Verbal",  freq: "1/Ref",
   school: "Sorcery", range: "Touch", materials: "",
   incant: "<I>Return this [object name] to its former glory</I> x5", 
-  effect: "Will restore all armor points in one location or repair a damaged or broken item.", 
+  effect: "Will restore all armor points in one location, repair one armor point in each location, or repair a damaged or broken item.", 
   limitations: "",
   notes: "",
   text: ""
@@ -1553,7 +1565,7 @@ const ShatterWeapon = {
   pointTotalId: "ShatterWeaponval",
   name: "Shatter Weapon", type: "Verbal",  freq: "1/Ref",
   school: "Sorcery", range: "20", materials: "",
-  incant: "<I>My power destroys thy [type of weapon]</I> x3", 
+  incant: "<I>My power destroys thy weapon</I> x3", 
   effect: "Target weapon is destroyed", 
   limitations: "",
   notes: "The equipment, not the person, is the target of Shatter Weapon. The equipment is the only thing required to be within range and visible for this spell to affect it",
@@ -1568,9 +1580,9 @@ const Throw = {
   name: "Throw", type: "Verbal",  freq: "1/Ref",
   school: "Sorcery", range: "20", materials: "",
   incant: "<I>My power throws thee</I> x3", 
-  effect: "Target player is moved 50' in a straight line away from the caster. Works on Stopped players. If the caster is the target, the caster may choose the direction they move.", 
+  effect: "Target player is moved 50' in a straight line away from the caster. Works on Stopped and Stunned players. If the caster is the target, the caster may choose the direction they move.", 
   limitations: "",
-  notes: "This is a Forced Movement effect.",
+  notes: "This is a Forced Movement effect. This effect is ended if the target is affected by another Forced Movement effect or becomes Frozen, Insubstantial, Invulnerable, or Stunned.",
   text: ""
 };
 
@@ -1613,7 +1625,7 @@ const Fireball = {
   name: "Fireball", type: "Magic Ball",  freq: "1 Ball Unlimited",
   school: "Flame", range: "Ball", materials: "Red Magic Ball",
   incant: "<I>The flame of fire is mine to evoke</I> x3", 
-  effect: "Fireball will have one of the following effects on the object first struck: <BR>1. A weapon hit is destroyed <BR>2. A shield hit is subject to Shield Destroying <BR>3. Armor hit with Armor Points remaining is subject to Armor Destroying. <BR>4. A player hit dies.", 
+  effect: "This Magic Ball is Weapon Destroying, Armor Destroying, and Shield Destroying. Player hit dies.", 
   limitations: "",
   notes: "",
   text: ""
@@ -1622,7 +1634,7 @@ const IcyBlast = {
   purchased: 0,
   level: 4,
   cost: 1,
-  max: 31, charge: "", use: 1, per: "Refresh",
+  max: 4, charge: "", use: 1, per: "Refresh",
   pointTotalId: "IcyBlastval",
   name: "Icy Blast", type: "Verbal",  freq: "1/Ref",
   school: "Sorcery", range: "20", materials: "",
@@ -1636,7 +1648,7 @@ const Shatter = {
   purchased: 0,
   level: 4,
   cost: 1,
-  max: 31, charge: "", use: 1, per: "Refresh",
+  max: 4, charge: "", use: 1, per: "Refresh",
   pointTotalId: "Shatterval",
   name: "Shatter", type: "Verbal",  freq: "1/Ref",
   school: "Sorcery", range: "20", materials: "",
@@ -1714,7 +1726,7 @@ const Ambulant = {
   name: "Ambulant", type: "Meta-Magic",  freq: "1/Life",
   school: "Neutral", range: "", materials: "",
   incant: "<I>Ambulant</I>", 
-  effect: "An incantation may be said while moving.", 
+  effect: "The next Enchantment, Magic Ball, or Verbal may be said while moving.", 
   limitations: "May not be used on the Charge incantation",
   notes: "Using Ambulant allows both the target indication and Ambulant to be said while moving, but not other Meta-Magics.",
   text: ""
@@ -1739,7 +1751,7 @@ const LongWeapon = {
   cost: 4,
   max: 1, charge: "", use: -1, per: "",
   pointTotalId: "LongWeaponval",
-  name: "Long Weapon", type: "Neutral",  freq: "",
+  name: "Long Weapon", type: "Trait",  freq: "",
   school: "", range: "", materials: "",
   incant: "", 
   effect: "May wield one long weapon at a time for each instance purchased (but may carry extras)", 
@@ -1756,7 +1768,7 @@ const PhaseBolt = {
   name: "Phase Bolt", type: "Magic Ball",  freq: "1 Ball Unlimited",
   school: "Sorcery", range: "Ball", materials: "Grey Magic Ball",
   incant: "<I>The power of sorcery is mine to evoke</I> x3", 
-  effect: "This Magic Ball is Phasing. Additionally, will have one of the following effects: <BR>1. A weapon hit is destroyed <BR>2. Armor hit with Armor Points remaining is subject to Armor Breaking. <BR>3. A player hit receives a wound in that hit location.", 
+  effect: "This Magic Ball is Phasing, Weapon Destroying, and Armor Breaking. Player hit receives a wound to that hit location.", 
   limitations: "",
   notes: "",
   text: ""
@@ -1784,9 +1796,9 @@ const StealLifeEssence = {
   name: "Steal Life Essence", type: "Verbal",  freq: "1/Life",
   school: "Death", range: "Touch", materials: "",
   incant: "<I>Steal Life</I>", 
-  effect: "Caster may heal a Wound or instantly Charge an ability", 
-  limitations: "May only be used on a dead player. That player is Cursed. Does not work on Cursed players. The caster does not gain the effect if the dead player is unaffected",
-  notes: "In order to charge an ability, the name of the ability being charged must still be stated immediately after the incantation.",
+  effect: "Target dead player is Cursed. Caster may heal a Wound or instantly Charge an ability", 
+  limitations: "Does not work on Cursed players.",
+  notes: "Caster will always benefit if successfully cast on a valid target, regardless of the caster's Traits, States, Immunities, Ongoing Effects, or Enchantments. In order to charge an ability, the name of the ability being charged must still be stated immediately after the incantation.",
   text: ""
 };
 const VoidTouched = {
@@ -1803,16 +1815,16 @@ const VoidTouched = {
   notes: "This effect does not interact with other Enchantments worn by the bearer",
   text: ""
 };
-const WardSelf = {
+const BlessingAgainstHarm = {
   purchased: 0,
   level: 5,
   cost: 1,
   max: 2, charge: "", use: 1, per: "Refresh",
-  pointTotalId: "WardSelfval",
-  name: "Ward Self", type: "Enchantment",  freq: "1/Ref",
+  pointTotalId: "BlessingAgainstHarmval",
+  name: "Blessing Against Harm", type: "Enchantment",  freq: "1/Ref",
   school: "Protection", range: "Self", materials: "White Strip",
-  incant: "<I>The power of magic defends me</I> x3", 
-  effect: "Resistant to all effects from the next source which would inflict a Wound, Death, or State. Does not trigger against effects cast by the player", 
+  incant: "<I>I enchant thee against all harm</I> x3", 
+  effect: "Bearer is resistant to all effects from the next source which would inflict a wound, death, State, or other negative effect. Does not trigger against effects cast by the bearer.", 
   limitations: "",
   notes: "",
   text: ""
@@ -1913,7 +1925,7 @@ const SphereofAnnihilation = {
   name: "Sphere of Annihilation", type: "Magic Ball",  freq: "1 Ball Unlimited",
   school: "Sorcery", range: "Ball", materials: "Black Magic Ball",
   incant: "<I>The power of void is mine to evoke</I> x3", 
-  effect: "This Magic Ball ignores armor and Enchantments. Additionally, will have one of the following effects:<BR> 1. A weapon hit is destroyed<BR> 2. A shield hit is subject to Shield Destroying.<BR> 3. A player hit dies and is Cursed.", 
+  effect: "This Magic Ball is Weapon Destroying, Shield Destroying, and ignores armor and Enchantments. Player hit dies and is Cursed.", 
   limitations: "",
   notes: "Because Sphere of Annihilation ignores Enchantments, A player enchanted with Phoenix Tears would remain dead after being killed, and an Imbued Shield would still be destroyed.",
   text: ""
@@ -1927,8 +1939,8 @@ const Warlock = {
   name: "Warlock", type: "Archetype",  freq: "",
   school: "Neutral", range: "", materials: "",
   incant: "", 
-  effect: "Each Verbal purchased in the Death and Flame Schools gives double the uses. Example: 1/Life Charge x3 becomes 2/life Charge x3, 2/life becomes 4/life", 
-  limitations: "Player may not purchase Verbals from any School other than the Death and Flame Schools",
+  effect: "Verbals and Magic Balls purchased in the Death and Flame Schools gives double the uses. Example: 1/Life Charge x3 becomes 2/life Charge x3, 2/life becomes 4/life", 
+  limitations: "Player may not purchase Verbals or Magic Balls from any School other than the Death and Flame Schools.",
   notes: "",
   text: ""
 };
@@ -1991,7 +2003,7 @@ const abilities = [Banish, //0
   Pyrotechnics, //40
   StealLifeEssence, //41
   VoidTouched, //42
-  WardSelf, //43
+  BlessingAgainstHarm, //43
   Battlemage, //44
   ElementalBarrage, //45
   Evoker, //46
