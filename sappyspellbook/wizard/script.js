@@ -1844,7 +1844,7 @@ const Battlemage = {
   effect: "Use of Ambulant becomes unlimited", 
   limitations: "May not purchase Enchantments or Magic Balls",
   notes: "",
-  text: ""
+  text: "" 
 };
 const ElementalBarrage = {
   purchased: 0,
