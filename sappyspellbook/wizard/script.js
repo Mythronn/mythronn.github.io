@@ -704,7 +704,7 @@ function warlockCheck(index){
   }  
   if(abilities[a].name == "Warlock"){
     for(let i = 0; i < abilityCount; i++){
-      if(((abilities[a].type == "Verbal" || abilities[a].type == "Magic Ball" ) && !(abilities[i].school == "Death" || abilities[i].school == "Flame")) && abilities[i].purchased > 0){
+      if(((abilities[i].type == "Verbal" || abilities[i].type == "Magic Ball" ) && !(abilities[i].school == "Death" || abilities[i].school == "Flame")) && abilities[i].purchased > 0){
         
         return false; 
         }
@@ -732,7 +732,7 @@ function pointPlus(index, fromClick) {
     return false;
   }
   if(warlockCheck(a) == false){
-    showToast("Warlocks may not purchase Verbals from any School other than the Death and Flame Schools.");
+    showToast("Warlocks may not purchase Verbals or Magic Balls from any School other than the Death and Flame Schools.");
     return false;
   }
   
