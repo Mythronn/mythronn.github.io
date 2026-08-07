@@ -1538,7 +1538,7 @@ const LightningBolt = {
   name: "Lightning Bolt", type: "Magic Ball",  freq: "1 Ball Unlimited",
   school: "Flame", range: "Ball", materials: "Yellow Magic Ball",
   incant: "<I>The flame of storms is mine to evoke</I> x3", 
-  effect: "A player struck is subject to an Engulfing Stopped effect for 60 seconds. In addition Lightning Bolt will have one of the following effects on the object first struck: <BR>1. A weapon hit is destroyed <BR>2. Armor hit with Armor Points remaining is subject to Armor Breaking <BR>3. A player hit receives a Wound in that hit location", 
+  effect: "This Magic Ball is Weapon Destroying and Armor Breaking. Player hit receives a wound to that hit location. Player struck is Stopped for 60 seconds. Engulfing.", 
   limitations: "",
   notes: "",
   text: ""
