@@ -1091,7 +1091,7 @@ const WeaponShort = {
   cost: 2,
   max: 2, charge: "", use: -1, per: "",
   pointTotalId: "WeaponShortval",
-  name: "Weapon Short", type: "Neutral",
+  name: "Weapon Short", type: "Trait",
   incant: "", 
   text: "<p2>Weapon Short</p2><BR><p3>Freq:</p3> N/A<BR><p3>Type:</p3>  Neutral<BR><p3>Effect:</p3> May wield one short weapon at a time for each instance purchased (but may carry extras)"
 };
@@ -1101,7 +1101,7 @@ const Experienced = {
   cost: 2,
   max: 2, charge: "", use: -1, per: "",
   pointTotalId: "Experiencedval",
-  name: "Experienced", type: "Neutral",
+  name: "Experienced", type: "Trait",
   selectedAbility1: "Select Spell",
   selectedAbility2: "Select Spell",
   incant: "", 
@@ -1114,18 +1114,18 @@ const HeatWeapon = {
   max: 31, charge: "Charge x3", use: 1, per: "Life",
   pointTotalId: "HeatWeaponval",
   name: "Heat Weapon", type: "Verbal",
-  incant: "<I>I call upon flame to heat that [type of weapon]</I> x3", 
+  incant: "<I>I call upon flame to heat thy weapon</I> x3", 
   text: "<p2>Heat Weapon</p2><BR><p3>Freq:</p3> 1/Life Chg x3<BR><p3>Type:</p3>  Verbal<BR><p3>School:</p3> Flame<BR><p3>Range:</p3> 20<BR><p3>Incant:</p3> <I>I call upon flame to heat that [type of weapon]</I> x3<BR><p3>Effect:</p3> Target weapon may not be wielded for 30 seconds. Players who are Immune to Flame may continue to wield the weapon<BR><p3>Notes:</p3>The equipment, not the person, is the target of Heat Weapon. The equipment is the only thing required to be within range and visible for this spell to affect it"
 };
-const ImbueArmor = {
+const HardenArmor = {
   purchased: 0,
   level: 1,
   cost: 1,
   max: 31, charge: "", use: 1, per: "Life",
-  pointTotalId: "ImbueArmorval",
+  pointTotalId: "HardenArmorval",
   name: "Imbue Armor", type: "Enchantment",
   incant: "<I>I enchant thee with Imbued Armor</I> x3", 
-  text: "<p2>Imbue Armor</p2><BR><p3>Freq:</p3>  1/Life<BR><p3>Type:</p3>  Enchantment<BR><p3>School:</p3> Protection<BR><p3>Range:</p3> Other<BR><p3>Incant:</p3> <I>I enchant thee with Imbued Armor</I> x3<BR><p3>Materials:</p3> White Strip<BR><p3>Effect:</p3>Armor worn by the bearer gains 1 Armor Point to its current and maximum rating in each location, up to the bearer's class maximum.<BR><p3>Limitations:</p3>  Does not apply to magic armor. A player may only benefit from one instance of Imbue Armor.<BR><p3>Notes:</p3> When this enchantment is removed, the bearer loses 1 current and maximum Armor Point in each location."
+  text: "<p2>Harden Armor</p2><BR><p3>Freq:</p3>  1/Life<BR><p3>Type:</p3>  Enchantment<BR><p3>School:</p3> Protection<BR><p3>Range:</p3> Other<BR><p3>Incant:</p3> <I>I enchant thee with harden armor</I> x3<BR><p3>Materials:</p3> White Strip<BR><p3>Effect:</p3>Armor Breaking strikes to the bearer's armor are treated as regular strikes.<BR><p3>Limitations:</p3>  Does not apply to magic armor.<BR>"
 };
 const Mend = {
   purchased: 0,
@@ -1146,7 +1146,7 @@ const ShieldSmall = {
   cost: 4,
   max: 1, charge: "", use: -1, per: "",
   pointTotalId: "ShieldSmallval",
-  name: "Shield Small", type: "Neutral",
+  name: "Shield Small", type: "Trait",
   incant: "", 
   text: "<p2>Shield Small</p2><BR><p3>Freq:</p3> N/A<BR><p3>Type:</p3>  Neutral<BR><p3>Effect:</p3> May wield a small shield"
 };
@@ -1188,7 +1188,7 @@ const ForceBolt = {
   pointTotalId: "ForceBoltval",
   name: "Force Bolt", type: "Magic Ball",
   incant: "<I>Forcebolt</I> x3", 
-  text: "<p2>Force Bolt</p2><BR><p3>Freq:</p3> 2 Balls/Unlimited<BR><p3>Type:</p3>  Magic Ball<BR><p3>School:</p3> Sorcery<BR><p3>Range:</p3> Ball<BR><p3>Incant:</p3> <I>Forcebolt</I> x3<BR><p3>Materials:</p3> Blue Magic Ball<BR><p3>Effect:</p3> Force Bolt will have one of the following effects on the object first struck:<BR>1. A weapon hit is destroyed<BR>2. Armor hit with Armor Points remaining is subject to Armor Breaking<BR>3. A player hit receives a Wound to that hit location"
+  text: "<p2>Force Bolt</p2><BR><p3>Freq:</p3> 2 Balls/Unlimited<BR><p3>Type:</p3>  Magic Ball<BR><p3>School:</p3> Sorcery<BR><p3>Range:</p3> Ball<BR><p3>Incant:</p3> <I>Forcebolt</I> x3<BR><p3>Materials:</p3> Blue Magic Ball<BR><p3>Effect:</p3> This Magic Ball is Weapon Destroying and Armor Breaking. Player hit receives a wound to that hit location."
 };
 const Innate = {
   purchased: 0,
@@ -1241,7 +1241,7 @@ const Attuned = {
   pointTotalId: "Attunedval",
   name: "Attuned", type: "Enchantment",
   incant: "<I>I enchant thee with attune</I> x3", 
-  text: "<p2>Attuned</p2><BR><p3>Freq:</p3>  1/Refresh<BR><p3>Type:</p3>  Enchantment<BR><p3>School:</p3> Sorcery<BR><p3>Range:</p3> Other<BR><p3>Incant:</p3> <I>I enchant thee with attune</I> x3<BR><p3>Materials:</p3> Yellow strip<BR><p3>Effect:</p3> May wear an additional Enchantment. Attuned does not count towards the bearer’s Enchantment limit<BR><p3>Limitations:</p3> This ability may not be used in conjunction with any other similar ability<BR><p3>Notes:</p3> If Attuned is removed, the bearer chooses which (m) Enchantments to lose to meet their new Enchantment limit, if necessary"
+  text: "<p2>Attuned</p2><BR><p3>Freq:</p3>  1/Refresh<BR><p3>Type:</p3>  Enchantment<BR><p3>School:</p3> Sorcery<BR><p3>Range:</p3> Other<BR><p3>Incant:</p3> <I>I enchant thee with attune</I> x3<BR><p3>Materials:</p3> Yellow strip<BR><p3>Effect:</p3> May wear an additional Enchantment. Attuned does not count towards the bearer’s Enchantment limit<BR><p3>Limitations:</p3> This ability may not be used in conjunction with itself or any other similar abilities.<BR><p3>Notes:</p3> If Attuned is removed, the bearer chooses which (m) Enchantments to lose to meet their new Enchantment limit, if necessary"
 };
 const BearStrength = {
   purchased: 0,
@@ -1260,8 +1260,8 @@ const DispelMagic = {
   max: 31, charge: "", use: 1, per: "Refresh",
   pointTotalId: "DispelMagicval",
   name: "Dispel Magic", type: "Verbal",
-  incant: "<I>By my power I dispel that magic</I> x3", 
-  text: "<p2>Dispel Magic</p2><BR><p3>Freq:</p3>  1/Refresh<BR><p3>Type:</p3>  Verbal<BR><p3>School:</p3> Sorcery<BR><p3>Range:</p3> 20<BR><p3>Incant:</p3> <I>By my power I dispel that magic</I> x3<BR><p3>Effect:</p3> All Enchantments on target are removed<BR><p3>Notes:</p3>Will always remove enchantments if successfully cast on a valid target, regardless of the player’s Traits, States, Immunities, Ongoing Effects, or Enchantments (except Sleight of Mind)"
+  incant: "<I>By my power I dispel thy magic</I> x3", 
+  text: "<p2>Dispel Magic</p2><BR><p3>Freq:</p3>  1/Refresh<BR><p3>Type:</p3>  Verbal<BR><p3>School:</p3> Sorcery<BR><p3>Range:</p3> 20<BR><p3>Incant:</p3> <I>By my power I dispel that magic</I> x3<BR><p3>Effect:</p3> All Enchantments on target are removed. Will always remove Enchantments if successfully cast on a valid target, regardless of the player's Traits, States, Immunities, Ongoing Effects, or Enchantments (except Sleight of Mind).<BR><p3>Notes:</p3> Does not affect Invulnerable players."
 };
 const Extension = {
   purchased: 0,
@@ -1291,7 +1291,7 @@ const GreaterMend = {
   pointTotalId: "GreaterMendval",
   name: "Greater Mend", type: "Verbal",
   incant: "<I>Return this [object name] to its former glory</I> x5", 
-  text: "<p2>Greater Mend</p2><BR><p3>Freq:</p3>  1/Refresh<BR><p3>Type:</p3>  Verbal<BR><p3>School:</p3> Sorcery<BR><p3>Range:</p3> Touch<BR><p3>Incant:</p3> <I>Return this [object name] to its former glory</I> x5<BR><p3>Effect:</p3> Will restore all armor points in one location or repair a damaged or broken item. "
+  text: "<p2>Greater Mend</p2><BR><p3>Freq:</p3>  1/Refresh<BR><p3>Type:</p3>  Verbal<BR><p3>School:</p3> Sorcery<BR><p3>Range:</p3> Touch<BR><p3>Incant:</p3> <I>Return this [object name] to its former glory</I> x5<BR><p3>Effect:</p3> Will restore all armor points in one location, repair one armor point in each location, or repair a damaged or broken item."
 };
 const IcyBlast = {
   purchased: 0,
@@ -1332,7 +1332,7 @@ const WeaponLong = {
   cost: 4,
   max: 1, charge: "", use: -1, per: "",
   pointTotalId: "WeaponLongval",
-  name: "Weapon Long", type: "Neutral",
+  name: "Weapon Long", type: "Trait",
   incant: "", 
   text: "<p2>Weapon Long</p2><BR><p3>Freq:</p3> N/A<BR><p3>Type:</p3>  Neutral<BR><p3>Effect:</p3> May wield one long weapon at a time for each instance purchased (but may carry extras)"
 };
@@ -1344,7 +1344,7 @@ const FlameBlade = {
   pointTotalId: "FlameBladeval",
   name: "Flame Blade", type: "Enchantment",
   incant: "<I>The element of fire shall infuse your weapons</I> x3", 
-  text: "<p2>Flame Blade</p2><BR><p3>Freq:</p3>  1/Refresh<BR><p3>Type:</p3>  Enchantment<BR><p3>School:</p3> Flame<BR><p3>Range:</p3> Other<BR><p3>Incant:</p3> <I>The element of fire shall infuse your weapons</I> x3<BR><p3>Materials:</p3> Red Strip and White Strip<BR><p3>Effect:</p3> Bearer's wielded melee weapons are Armor Breaking and Shield Crushing. Bearer and their wielded weapons are Immune to Flame."
+  text: "<p2>Flame Blade</p2><BR><p3>Freq:</p3>  1/Refresh<BR><p3>Type:</p3>  Enchantment<BR><p3>School:</p3> Flame<BR><p3>Range:</p3> Other<BR><p3>Incant:</p3> <I>The element of fire shall infuse thy weapons</I> x3<BR><p3>Materials:</p3> Red Strip and White Strip<BR><p3>Effect:</p3> Bearer's wielded melee weapons are Armor Breaking and Shield Crushing. Bearer and their wielded weapons are Immune to Flame."
 };
 const Iceball = {
   purchased: 0,
@@ -1374,7 +1374,7 @@ const Golem = {
   pointTotalId: "Golemval",
   name: "Golem", type: "Enchantment",
   incant: "<I>From earth and clay I form thee</I> x3", 
-  text: "<p2>Golem</p2><BR><p3>Freq:</p3>  1/Refresh<BR><p3>Type:</p3>  Enchantment<BR><p3>School:</p3> Sorcery<BR><p3>Range:</p3> Other<BR><p3>Incant:</p3> <I>From earth and clay I form thee</I> x3<BR><p3>Materials:</p3>  White Strip and Yellow Strip<BR><p3>Effect:</p3> Bearer is Immune to Death. Bearer is Cursed. Bearer can remove a wound via Mend. Bearer may use the caster as an alternate respawn point while the caster is alive. Bearer may treat the caster as a base for the purposes of the effects which require the bearer to go to their base. Non-magical armor worn affected as per Imbue Armor. All Enchantments worn by the Bearer, including Golem, are Persistent while Golem is worn.<BR><p3>Limitations:</p3> A caster may only have a single Golem Enchantment at a time.<BR><p3>Notes:</p3> Greater Mend and Word of Mending will not remove a wound."
+  text: "<p2>Golem</p2><BR><p3>Freq:</p3>  1/Refresh<BR><p3>Type:</p3>  Enchantment<BR><p3>School:</p3> Sorcery<BR><p3>Range:</p3> Other<BR><p3>Incant:</p3> <I>From earth and clay I form thee</I> x3<BR><p3>Materials:</p3>  White Strip and Yellow Strip<BR><p3>Effect:</p3> Bearer is Immune to Death. Bearer is Cursed. Bearer can remove a wound via Mend. Bearer may use the caster as an alternate respawn point while the caster is alive. Bearer may treat the caster as an Alternate Base. All Enchantments worn by the Bearer, including Golem, are Persistent while Golem is worn. Golem remains active while the bearer is dead.<BR><p3>Limitations:</p3> A caster may only have a single Golem Enchantment at a time and may not use Alternate Bases. Bearer may not be treated as an Alternate Base.<BR><p3>Notes:</p3> Greater Mend and Word of Mending will not remove a wound."
 };
 const Lycanthropy = {
   purchased: 0,
@@ -1417,7 +1417,7 @@ const Ambulant = {
   pointTotalId: "Ambulantval",
   name: "Ambulant", type: "Meta-Magic",
   incant: "<I>Ambulant</I>", 
-  text: "<p2>Ambulant</p2><BR><p3>Freq:</p3> 1/Life<BR><p3>Type:</p3>  Meta-Magic<BR><p3>School:</p3> Neutral<BR><p3>Incant:</p3> <I>Ambulant</I><BR><p3>Effect:</p3> An incantation may be said while moving. <BR><p3>Limitations:</p3> May not be used on the Charge incantation  <BR><p3>Notes:</p3> Using Ambulant allows both the target indication and Ambulant to be said while moving, but not other Meta-Magics."
+  text: "<p2>Ambulant</p2><BR><p3>Freq:</p3> 1/Life<BR><p3>Type:</p3>  Meta-Magic<BR><p3>School:</p3> Neutral<BR><p3>Incant:</p3> <I>Ambulant</I><BR><p3>Effect:</p3>  The next Enchantment, Magic Ball, or Verbal may be cast while moving.<BR><p3>Notes:</p3> Using Ambulant allows both the target indication and Ambulant to be said while moving, but not other Meta-Magics."
 };
 const WeaponGreat = {
   purchased: 0,
@@ -1425,7 +1425,7 @@ const WeaponGreat = {
   cost: 5,
   max: 1, charge: "", use: -1, per: "",
   pointTotalId: "WeaponGreatval",
-  name: "Weapon Great", type: "Neutral",
+  name: "Weapon Great", type: "Trait",
   incant: "", 
   text: "<p2>Weapon Great</p2><BR><p3>Freq:</p3> N/A<BR><p3>Type:</p3>  Neutral<BR><p3>Effect:</p3> May wield one great weapon at a time for each instance purchased (but may carry extras)"
 };
@@ -1437,7 +1437,7 @@ const EssenceGraft = {
   pointTotalId: "EssenceGraftval",
   name: "Essence Graft", type: "Enchantment",
   incant: "<I>I enchant thee with essence graft</I> x3", 
-  text: "<p2>Essence Graft</p2><BR><p3>Freq:</p3>  1/Refresh<BR><p3>Type:</p3>  Enchantment<BR><p3>School:</p3> Sorcery<BR><p3>Range:</p3> Other<BR><p3>Incant:</p3> <I>I enchant thee with essence graft</I> x3<BR><p3>Materials:</p3> Yellow strip<BR><p3>Effect:</p3> Bearer may wear up to three additional Enchantments. Essence Graft does not count towards the bearer’s Enchantment limit<BR><p3>Limitations:</p3> Bearer may only wear (m) Enchantments from the caster of Essence Graft. This ability may not be used in conjunction with any other similar abilities<BR><p3>Notes:</p3> If Essence Graft is removed, the bearer chooses which (m) Enchantments to lose to meet their new Enchantment limit, if necessary"
+  text: "<p2>Essence Graft</p2><BR><p3>Freq:</p3>  1/Refresh<BR><p3>Type:</p3>  Enchantment<BR><p3>School:</p3> Sorcery<BR><p3>Range:</p3> Other<BR><p3>Incant:</p3> <I>I enchant thee with essence graft</I> x3<BR><p3>Materials:</p3> Yellow strip<BR><p3>Effect:</p3> Bearer may wear up to three additional Enchantments. Essence Graft does not count towards the bearer’s Enchantment limit<BR><p3>Limitations:</p3> Bearer may only wear (m) Enchantments from the caster of Essence Graft. This ability may not be used in conjunction with itself or any other similar abilities.<BR><p3>Notes:</p3> If Essence Graft is removed, the bearer chooses which (m) Enchantments to lose to meet their new Enchantment limit, if necessary"
 };
 const GiftofAir = {
   purchased: 0,
@@ -1447,7 +1447,7 @@ const GiftofAir = {
   pointTotalId: "GiftofAirval",
   name: "Gift of Air", type: "Enchantment",
   incant: "<I>I grant thee a gift of the air</I> x3", 
-  text: "<p2>Gift of Air</p2><BR><p3>Freq:</p3>  1/Refresh<BR><p3>Type:</p3>  Enchantment<BR><p3>School:</p3> Protection<BR><p3>Range:</p3> Other<BR><p3>Incant:</p3> <I>I grant thee a gift of the air</I> x3<BR><p3>Materials:</p3> White Strip<BR><p3>Effect:</p3> The effects of any weapon or ammunition which just struck the bearer are ignored, instead the bearer declares “Gift of Air” and becomes Insubstantial. If the bearer is wearing armor it is affected as normal in addition to triggering Gift of Air. Bearer may choose to return directly to their base immediately after Gift of Air activates as a Forced Movement effect. Melee weapons with the Siege, Armor Breaking, Armor Destroying, Shield Crushing, or Shield Destroying Special Effects will affect the bearer as normal and do not trigger Gift of Air.<BR><p3>Limitations:</p3> Bearer may not wield weapons or Shields.<BR><p3>Notes:</p3> If the Insubstantial State is ended, the player is not required to continue returning to base. Bearer may end this Insubstantial State at any time by using the exit incantation for Insubstantial."
+  text: "<p2>Gift of Air</p2><BR><p3>Freq:</p3>  1/Refresh<BR><p3>Type:</p3>  Enchantment<BR><p3>School:</p3> Protection<BR><p3>Range:</p3> Other<BR><p3>Incant:</p3> <I>I grant thee a gift of the air</I> x3<BR><p3>Materials:</p3> White Strip<BR><p3>Effect:</p3> The effects of any weapon or arrow which just struck the bearer are ignored, instead the bearer declares “Gift of Air” and becomes Insubstantial. If the bearer is wearing armor it is affected as normal in addition to triggering Gift of Air. Immediately after Gift of Air activates, bearer must choose one of the following: <BR>1. Bearer becomes Insubstantial in place, but may exit Insubstantial at any time using the exit incantation for Insubstantial. <BR>2. Bearer becomes Insubstantial and must return to their base as a Forced Movement effect, but may not exit early. They must exit Insubstantial immediately upon reaching their base<BR><p3>Limitations:</p3> Bearer may not wield weapons or Shields.<BR><p3>Notes:</p3> If the Insubstantial State is ended, the player is not required to continue returning to base. Bearer may end this Insubstantial State at any time by using the exit incantation for Insubstantial."
 };
 const HeartoftheSwarm = {
   purchased: 0,
@@ -1457,7 +1457,7 @@ const HeartoftheSwarm = {
   pointTotalId: "HeartoftheSwarmval",
   name: "Heart of the Swarm", type: "Enchantment",
   incant: "<I>Let all those who oppose the hive feel the wrath of the swarm</I> x3", 
-  text: "<p2>Heart of the Swarm</p2><BR><p3>Freq:</p3>  1/Refresh<BR><p3>Type:</p3>  Enchantment<BR><p3>School:</p3> Spirit<BR><p3>Range:</p3> Self<BR><p3>Incant:</p3> <I>Let all those who oppose the hive feel the wrath of the swarm</I> x3<BR><p3>Materials:</p3> Yellow strip<BR><p3>Effect:</p3> Bearer is Stopped. Any player on the bearer’s team may use the bearer as their respawn point as per the normal game rules. Players respawning at the caster do so by announcing <I>My life for the swarm.</I> Players on the bearer’s team may treat the bearer as a base for the purposes of the effects which require the teammate to go to their base<BR><p3>Limitations:</p3> Players cannot respawn at the bearer if there are living enemy players or a game objective within 20’ of the bearer"
+  text: "<p2>Heart of the Swarm</p2><BR><p3>Freq:</p3>  1/Refresh<BR><p3>Type:</p3>  Enchantment<BR><p3>School:</p3> Spirit<BR><p3>Range:</p3> Self<BR><p3>Incant:</p3> <I>Let all those who oppose the hive feel the wrath of the swarm</I> x3<BR><p3>Materials:</p3> Yellow strip<BR><p3>Effect:</p3> Bearer is Stopped. Any player on the bearer’s team may use the bearer as their respawn point as per the normal game rules. Players respawning at the caster do so by declaring <I>“My life for the swarm.”</I> Friendly players may treat the caster as an Alternate Base. <p3>Limitations:</p3> Players cannot respawn at the bearer if there are living enemy players or game objectives within 20’ of the bearer"
 };
 const Ironskin = {
   purchased: 0,
@@ -1487,7 +1487,7 @@ const Resurrect = {
   pointTotalId: "Resurrectval",
   name: "Resurrect", type: "Verbal",
   incant: "<I>Sword Cut, spear stab, mace smash, arrow jab,<BR>- Let the white light of healing descend on thee<BR>- Let the white light of healing stop thy spilling blood<BR>- Let the white light of healing mend thy bones<BR>- Let the white light of healing close thy wounds.<BR>- Let the white light of healing restore thy vigor.<BR>- The white light of healing hath resurrected thee.</I>", 
-  text: "<p2>Resurrect</p2><BR><p3>Freq:</p3>  1/Refresh<BR><p3>Type:</p3>  Verbal<BR><p3>School:</p3> Spirit<BR><p3>Range:</p3> Touch<BR><p3>Incant:</p3> <I>Sword Cut, spear stab, mace smash, arrow jab,<BR>  Let the white light of healing descend on thee<BR>  Let the white light of healing stop thy spilling blood<BR>  Let the white light of healing mend thy bones<BR>  Let the white light of healing close thy wounds.<BR>  Let the white light of healing restore thy vigor.<BR>  The white light of healing hath resurrected thee.</I><BR><p3>Effect:</p3> Target Dead player who has not moved more than 5' from where they died is returned to life. Non-Persistent Enchantments on the player are removed before the player returns to life. Any Wounds on the player are healed."
+  text: "<p2>Resurrect</p2><BR><p3>Freq:</p3>  1/Refresh<BR><p3>Type:</p3>  Verbal<BR><p3>School:</p3> Spirit<BR><p3>Range:</p3> Touch<BR><p3>Incant:</p3> <I>Sword Cut, spear stab, mace smash, arrow jab,<BR>  Let the white light of healing descend on thee<BR>  Let the white light of healing stop thy spilling blood<BR>  Let the white light of healing mend thy bones<BR>  Let the white light of healing close thy wounds.<BR>  Let the white light of healing restore thy vigor.<BR>  The white light of healing hath resurrected thee.</I><BR><p3>Effect:</p3> Target willing Dead player who has not moved more than 5' from where they died is returned to life. Non-Persistent Enchantments on the player are removed before the player returns to life. Any Wounds on the player are healed."
 };
 const TrollBlood = {
   purchased: 0,
@@ -1505,7 +1505,7 @@ const TrollBlood = {
 const AvatarofNature = {
   purchased: 0,
   level: 6,
-  cost: 1,
+  cost: 2,
   max: 1, charge: "", use: -1, per: "",
   pointTotalId: "AvatarofNatureval",
   name: "Avatar of Nature", type: "Archetype",
@@ -1522,15 +1522,15 @@ const CallLightning = {
   incant: "<I>I call lightning’s flame to strike thee</I> x3", 
   text: "<p2>Call Lightning</p2><BR><p3>Freq:</p3>  1/Refresh<BR><p3>Type:</p3>  Verbal<BR><p3>School:</p3> Flame<BR><p3>Range:</p3> 20<BR><p3>Incant:</p3> <I>I call lightning’s flame to strike thee</I> x3<BR><p3>Effect:</p3> Target player dies"
 };
-const ImbueWeapon = {
+const ToxicBlades = {
   purchased: 0,
   level: 6,
   cost: 1,
   max: 31, charge: "", use: 1, per: "Refresh",
-  pointTotalId: "ImbueWeaponval",
-  name: "Imbue Weapon", type: "Enchantment",
+  pointTotalId: "ToxicBladesval",
+  name: "Toxic Blades", type: "Enchantment",
   incant: "<I>I enchant thee to slay all foes</I> x3", 
-  text: "<p2>Imbue Weapon</p2><BR><p3>Freq:</p3>  1/Refresh<BR><p3>Type:</p3>  Enchantment<BR><p3>School:</p3> Death<BR><p3>Range:</p3> Other<BR><p3>Incant:</p3> <I>I enchant thee to slay all foes</I> x3<BR><p3>Materials:</p3> Red Strip<BR><p3>Effect:</p3> Bearer's wielded melee weapons are Wounds Kill."
+  text: "<p2>Toxic Blades</p2><BR><p3>Freq:</p3>  1/Refresh<BR><p3>Type:</p3>  Enchantment<BR><p3>School:</p3> Death<BR><p3>Range:</p3> Other<BR><p3>Incant:</p3> <I>I enchant thee to slay all foes</I> x3<BR><p3>Materials:</p3> Red Strip<BR><p3>Effect:</p3> Bearer's wielded melee weapons are Wounds Kill."
 };
 const NaturalizeMagic = {
   purchased: 0,
@@ -1559,7 +1559,7 @@ const SnaringVines = {
   max: 1, charge: "", use: 1, per: "Refresh",
   pointTotalId: "SnaringVinesval",
   name: "Snaring Vines", type: "Enchantment",
-  incant: "<I>The hands of the earth rise to your bidding</I> x3", 
+  incant: "<I>The hands of the earth rise to thy bidding</I> x3", 
   text: "<p2>Snaring Vines</p2><BR><p3>Freq:</p3>  1/Refresh<BR><p3>Type:</p3>  Enchantment<BR><p3>School:</p3> Command<BR><p3>Range:</p3> Self<BR><p3>Incant:</p3> <I>The hands of the earth rise to your bidding</I> x3<BR><p3>Materials:</p3> Three Red Strips<BR><p3>Effect:</p3> Bearer may cast Hold Person (m) by incanting <I>[Player] stop at my command.</I> and removing an enchantment strip. Enchantment is removed when the last strip is removed."
 };
 const Summoner = {
@@ -1628,7 +1628,7 @@ Resurrect, //41
 TrollBlood, //42
 AvatarofNature, //43
 CallLightning, //44
-ImbueWeapon, //45
+ToxicBlades, //45
 NaturalizeMagic, //46
 Barkskin, //47
 SnaringVines, //48
