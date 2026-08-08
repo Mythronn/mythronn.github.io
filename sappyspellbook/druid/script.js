@@ -1123,8 +1123,8 @@ const HardenArmor = {
   cost: 1,
   max: 31, charge: "", use: 1, per: "Life",
   pointTotalId: "HardenArmorval",
-  name: "Imbue Armor", type: "Enchantment",
-  incant: "<I>I enchant thee with Imbued Armor</I> x3", 
+  name: "Harden Armor", type: "Enchantment",
+  incant: "<I>I enchant thee with Harden Armor</I> x3", 
   text: "<p2>Harden Armor</p2><BR><p3>Freq:</p3>  1/Life<BR><p3>Type:</p3>  Enchantment<BR><p3>School:</p3> Protection<BR><p3>Range:</p3> Other<BR><p3>Incant:</p3> <I>I enchant thee with harden armor</I> x3<BR><p3>Materials:</p3> White Strip<BR><p3>Effect:</p3>Armor Breaking strikes to the bearer's armor are treated as regular strikes.<BR><p3>Limitations:</p3>  Does not apply to magic armor.<BR>"
 };
 const Mend = {
@@ -1589,7 +1589,7 @@ Entangle, //2
 WeaponShort, //3
 Experienced, //4
 HeatWeapon, //5
-ImbueArmor, //6
+HardenArmor, //6
 Mend, //7
 ShieldSmall, //8
 CorrosiveMist, //9
