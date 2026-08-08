@@ -1134,7 +1134,7 @@ const WeaponShort = {
   cost: 2,
   max: 2, charge: "", use: -1, per: "",
   pointTotalId: "WeaponShortval",
-  name: "Weapon Short", type: "Neutral",  freq: "",
+  name: "Weapon Short", type: "Trait",  freq: "",
   school: "", range: "", materials: "",
   incant: "", 
   effect: "May wield one short weapon at a time for each instance purchased (but may carry extras)", 
@@ -1148,7 +1148,7 @@ const Experienced = {
   cost: 2,
   max: 2, charge: "", use: -1, per: "",
   pointTotalId: "Experiencedval",
-  name: "Experienced", type: "Neutral",  freq: "",
+  name: "Experienced", type: "Trait",  freq: "",
   school: "Neutral", range: "", materials: "",
   incant: "", 
   effect: "A single per-life Verbal purchased becomes Charge x5 in addition to the normal frequency OR a single per- refresh Verbal purchased becomes Charge x10 in addition to the normal frequency. This Verbal must be determined before the game begins and cannot be changed", 
@@ -1195,9 +1195,9 @@ const Shove = {
   name: "Shove", type: "Verbal",  freq: "1/Life",
   school: "Sorcery", range: "20", materials: "",
   incant: "<I>My power shoves thee</I> x3", 
-  effect: "Target player is moved back 20' in a straight line away from the caster. Works on Stopped players. If the caster is the target, the caster may choose the direction they move.", 
+  effect: "Target player is moved back 20' in a straight line away from the caster. Works on Stopped and Stunned players. If the caster is the target, the caster may choose the direction they move.", 
   limitations: "",
-  notes: "This is a Forced Movement effect.",
+  notes: "This is a Forced Movement effect. This effect is ended if the target is affected by another Forced Movement effect or becomes Frozen, Insubstantial, Invulnerable, or Stunned.",
   text: ""
 };
 const SongofDetermination = {
@@ -1237,7 +1237,7 @@ const Armor1Point = {
   cost: 3,
   max: 1, charge: "", use: -1, per: "",
   pointTotalId: "Armor1Pointval",
-  name: "Armor 1 Point", type: "Neutral",  freq: "",
+  name: "Armor 1 Point", type: "Trait",  freq: "",
   school: "", range: "", materials: "",
   incant: "", 
   effect: "Your class maximum armor limit increases one additional point", 
@@ -1310,9 +1310,9 @@ const SongofVisit = {
   name: "Song of Visit", type: "Enchantment",  freq: "Unlimited",
   school: "Protection", range: "Self", materials: "",
   incant: "<I>I sing to entertain friend and foe</I> x3", 
-  effect: "Bearer cannot be wounded and is Immune to all Schools. Bearer is Stopped. Bearer must Chant “Song of Visit” or sing a song regarding their general good nature and friendly disposition. Singing in place of the normal Chant is still a Chant and must follow all Chant rules. When Song of Visit is removed player becomes Insubstantial and must immediately move directly to their base as a Forced Movement effect. Upon arrival, they must immediately end the effect as per Insubstantial.", 
-  limitations: "Bearer may not wield weapons, interact with game objects, impede play, gain further Enchantments, or target any player.",
-  notes: "This Enchantment can be removed by Dispel Magic and similar abilities. If the Insubstantial State is ended, the rest of the effect is ended as well.",
+  effect: "Bearer is Stopped and Invulnerable. Bearer must Chant “Song of Visit” or sing a song regarding their general good nature and friendly disposition. Singing in place of the normal Chant is still a Chant and must follow all Chant rules. Immediately when Song of Visit is removed, the bearer becomes Invulnerable and must move directly to their base as a Forced Movement effect. Upon arrival, bearer must declare <I>I return from my visit</I>, at which point the Invulnerable state is removed and the Forced Movement effect ends.", 
+  limitations: "Bearer may not impede play.",
+  notes: "",
   text: ""
 };
 /*__________________________________________*/
@@ -1339,7 +1339,7 @@ const BattlefieldTriage = {
   name: "Battlefield Triage", type: "Enchantment",  freq: "1/Ref",
   school: "Spirit", range: "Touch", materials: "3 Yellow strips",
   incant: "<I>Be a bastion of healing</I> x3", 
-  effect: "Bearer may cast Heal (m) by incanting “[Player] thou art made whole” and removing an enchantment strip. Enchantment is removed when the last strip is removed.", 
+  effect: "Bearer may cast Heal (m) by incanting “Thou art made whole” and removing an enchantment strip. Enchantment is removed when the last strip is removed.", 
   limitations: "",
   notes: "",
   text: ""
@@ -1378,7 +1378,7 @@ const ShieldSmall = {
   cost: 2,
   max: 1, charge: "", use: -1, per: "",
   pointTotalId: "ShieldSmallval",
-  name: "Shield Small", type: "Neutral",  freq: "",
+  name: "Shield Small", type: "Trait",  freq: "",
   school: "", range: "", materials: "",
   incant: "", 
   effect: "May wield a small shield", 
@@ -1423,7 +1423,7 @@ const LongWeapon = {
   cost: 3,
   max: 1, charge: "", use: -1, per: "",
   pointTotalId: "LongWeaponval",
-  name: "Long Weapon", type: "Neutral",  freq: "",
+  name: "Long Weapon", type: "Trait",  freq: "",
   school: "", range: "", materials: "",
   incant: "", 
   effect: "May wield one long weapon at a time for each instance purchased (but may carry extras)", 
@@ -1483,7 +1483,7 @@ const SongofPower = {
   school: "Protection", range: "Self", materials: "",
   incant: "<I>I sing to inspire my comrades-in-arms</I>", 
   effect: "Friendly players within 20’ of the bearer have their Charging Incantation repetitions divided by 2, rounded down, to a minimum of 1. Bearer is Stopped. Bearer must Chant 'Song of Power' or sing an inspiring song. Singing in place of the normal Chant is still a Chant and must follow all Chant rules", 
-  limitations: "Players can only benefit from one instance of Song of Power at a time",
+  limitations: "Players can only benefit from one instance of Song of Power at a time. Song of Power ends if the bearer moves from their starting location.",
   notes: "",
   text: ""
 };
@@ -1555,8 +1555,8 @@ const Ambulant = {
   name: "Ambulant", type: "Meta-Magic",  freq: "1/Life",
   school: "Neutral", range: "", materials: "",
   incant: "<I>Ambulant</I>", 
-  effect: "An incantation may be said while moving.", 
-  limitations: "May not be used on the Charge incantation.",
+  effect: "The next Enchantment, Magic Ball, or Verbal may be cast while moving.", 
+  limitations: "",
   notes: "Using Ambulant allows both the target indication and Ambulant to be said while moving, but not other Meta-Magics.",
   text: ""
 };
@@ -1580,7 +1580,7 @@ const ShieldMedium = {
   cost: 3,
   max: 	1, charge: "", use: -1, per: "",
   pointTotalId: "ShieldMediumval",
-  name: "Shield Medium", type: "Neutral",  freq: "",
+  name: "Shield Medium", type: "Trait",  freq: "",
   school: "", range: "", materials: "",
   incant: "", 
   effect: "May wield up to a medium shield", 
@@ -1597,7 +1597,7 @@ const HeartoftheSwarm = {
   name: "Heart of the Swarm", type: "Enchantment",  freq: "1/Ref",
   school: "Spirit", range: "Self", materials: "Yellow Strip",
   incant: "<I>Let all those who oppose the hive feel the wrath of the swarm</I> x3", 
-  effect: "Bearer is Stopped. Any player on the bearer’s team may use the bearer as their respawn point as per the normal game rules. Players respawning at the caster do so by announcing 'My life for the swarm.' Players on the bearer’s team may treat the bearer as a base for the purposes of the effects which require the teammate to go to their base", 
+  effect: "Bearer is Stopped. Friendly players may use the bearer as their respawn point as per the normal game rules. Players respawning at the caster do so by declaring “My life for the swarm.” Friendly players may treat the caster as an Alternate Base.", 
   limitations: "Players can not respawn at the bearer if there are living enemy players or a game objective within 20’ of the bearer",
   notes: "",
   text: ""
@@ -1625,7 +1625,7 @@ const SongofSurvival = {
   name: "Song of Survival", type: "Enchantment",  freq: "Unlimited",
   school: "Protection", range: "Self", materials: "",
   incant: "<I>I sing of my numerous close calls</I>", 
-  effect: "When the bearer would otherwise die, they instead declare “Song of Survival” and become Insubstantial. The caster treats the triggering event as though it had no effect on them other than triggering Song of Survival. Song of Survival immediately ends and bearer must stop their Chant. Bearer may choose to return directly to their base immediately after Song of Survival activates as a Forced Movement effect. Bearer must Chant “Song of Survival” or sing a song regarding their many escapes from certain doom. Singing in place of the normal Chant is still a Chant and must follow all Chant rules.", 
+  effect: "When the bearer would otherwise die, they instead declare “Song of Survival” and become Insubstantial. The caster treats the triggering event as though it had no effect on them other than triggering Song of Survival. Song of Survival immediately ends and bearer must stop their Chant. Immediately after Song of Survival activates, bearer must choose one of the following: <BR>1. Bearer becomes Insubstantial in place, but may exit Insubstantial at any time using the exit incantation for Insubstantial. <BR>2. Bearer becomes Insubstantial and must return to their base as a Forced Movement effect, but may not exit early. They must exit Insubstantial immediately upon reaching their base. Bearer must Chant “Song of Survival” or sing a song regarding their many escapes from certain doom. Singing in place of the normal Chant is still a Chant and must follow all Chant rules.", 
   limitations: "Once Song of Survival has activated to protect the bearer it may not be cast nor activated again on the same life.",
   notes: "Bearer may end the Insubstantial state caused by Song of Survival at any time with the standard Incantation. If the Insubstantial State is ended by any means before reaching the base, the rest of the effect is ended as well.",
   text: ""
@@ -1667,7 +1667,7 @@ const Armor1Point2 = {
   cost: 2,
   max: 1, charge: "", use: -1, per: "",
   pointTotalId: "Armor1Point2val",
-  name: "Armor 1 Point", type: "Neutral",  freq: "",
+  name: "Armor 1 Point", type: "Trait",  freq: "",
   school: "", range: "", materials: "",
   incant: "", 
   effect: "Your class maximum armor limit increases one additional point", 
