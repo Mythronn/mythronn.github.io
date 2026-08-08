@@ -26,7 +26,7 @@
     <a href="https://mythronn.github.io/sappyspellbook/healer/" class="Healer" >HEALER</a>
     <a href="https://mythronn.github.io/sappyspellbook/wizard/" class="Wizard" >WIZARD</a>
   </div>
-  <a href="https://mythronn.github.io/sappyspellbook/">BACK | Version: 8.7</a>
+  <a href="https://mythronn.github.io/sappyspellbook/">BACK | Version: 8.08</a>
    <div class="ui-body ui-body-a ui-corner-all" id="buttons">
      <H1>Martial Classes</H1>
  
@@ -118,13 +118,9 @@
                     <u>1/Life Charge x5 (m)</u><br>
                     T: Verbal S: Death R: Touch<br>
                     I: <I>“Steal life”</I><br>
-                    E: Caster may heal a wound or instantly Charge an ability.
-May only be used on a dead player. That player is Cursed<br>
-                    L: Does not work on Cursed players. The caster does not
-gain the effect if the dead player is unaffected.<br>
-                    N: In order to charge an ability, the name of the ability
-                    being charged must still be stated immediately after the
-                    incantation. 
+                    E: Target dead player is Cursed. Caster may heal a wound or instantly Charge an ability.<br>
+                    L: Does not work on Cursed players.<br>
+                    N: Caster will always benefit if successfully cast on a valid target, regardless of the caster's Traits, States, Immunities, Ongoing Effects, or Enchantments. In order to charge an ability, the name of the ability being charged must still be stated immediately after the incantation. 
                 </td>
             </tr>
             <tr>
@@ -137,7 +133,7 @@ gain the effect if the dead player is unaffected.<br>
                     <u>1/Life Charge x10 (ex) (Ambulant)</u><br>
                     T: Verbal S: Death R: Unlimited<br>
                     I: <I>“And stay down!”</I><br>
-                    E: Target is Cursed. Target is also Suppressed for 30 seconds.<br>
+                    E: Target is Cursed indefinitely. Target is also Suppressed for 30 seconds.<br>
                     L: Wound Trigger.<br>
                     N: Brutal Strike targets the wounded or dead player and does not require verbal targeting.
                 </td>
@@ -165,7 +161,7 @@ gain the effect if the dead player is unaffected.<br>
                     <td>
                         <u>2/Refresh (ex)</u><BR>
                         T: Enchantment S: Flame R: Self<BR>
-                        I: <I>“The element of fire shall infuse your weapons”</I> x3<BR>
+                        I: <I>“The element of fire shall infuse thy weapons”</I> x3<BR>
                         M: Red strip and white strip<BR>
                         E: Bearer's melee weapons are Armor Breaking and Shield Crushing. Bearer and weapons they hold are Immune to Flame.
                     </td>
@@ -237,13 +233,9 @@ Life Essence.
                     <u>1/Life Charge x5 (m)</u><br>
                     T: Verbal S: Death R: Touch<br>
                     I: <I>“Steal life”</I><br>
-                    E: Caster may heal a wound or instantly Charge an ability.
-May only be used on a dead player. That player is Cursed. <br>
-                    L: Does not work on Cursed players. The caster does not
-gain the effect if the dead player is unaffected.<br>
-                    N: In order to charge an ability, the name of the ability
-being charged must still be stated immediately after the
-incantation. 
+                    E: Target dead player is Cursed. Caster may heal a wound or instantly Charge an ability.<br>
+                    L: Does not work on Cursed players.<br>
+                    N: Caster will always benefit if successfully cast on a valid target, regardless of the caster's Traits, States, Immunities, Ongoing Effects, or Enchantments. In order to charge an ability, the name of the ability being charged must still be stated immediately after the incantation.
                 </td>
             </tr>
             <tr>
@@ -256,7 +248,7 @@ incantation.
                     <u>1/Life Charge x10 (ex) (Ambulant)</u><br>
                     T: Verbal S: Death R: Unlimited<br>
                     I: <I>“And stay down!”</I><br>
-                    E: Target is Cursed. Target is also Suppressed for 30 seconds.<br>
+                    E: Target is Cursed indefinitely. Target is also Suppressed for 30 seconds.<br>
                     L: Wound Trigger.<br>
                     N: Brutal Strike targets the wounded or dead player and does not require verbal targeting.
                 </td>
@@ -368,7 +360,7 @@ worn by the bearer.
                 <u>1/Life Charge x10 (ex) (Ambulant)</u><br>
                 T: Verbal S: Death R: Unlimited<br>
                 I: <I>“And stay down!”</I><br>
-                E: Target is Cursed. Target is also Suppressed for 30 seconds.<br>
+                E: Target is Cursed indefinitely. Target is also Suppressed for 30 seconds.<br>
                 L: Wound Trigger.<br>
                 N: Brutal Strike targets the wounded or dead player and does not require verbal targeting.
             </td>
@@ -402,7 +394,7 @@ Movement effect.
                 <td>
                     <u>2/Refresh Charge x5 (ex)</u><BR>
                     T: Enchantment S: Flame R: Self<BR>
-                    I: <I>“The element of fire shall infuse your weapons”</I> x3<BR>
+                    I: <I>“The element of fire shall infuse thy weapons”</I> x3<BR>
                     M: Red strip and white strip<BR>
                     E: Bearer's wielded melee weapons are Armor Breaking
 and Shield Crushing. Bearer and their wielded weapons
@@ -420,11 +412,7 @@ are Immune to Flame.
                 T: Magic Ball S: Flame<br>
                 I: <I>“The flame of fire is mine to evoke”</I> x3<br>
                 M: Red Magic Ball<br>
-                E: Fireball will have one of the following effects on the object first struck:<br>
-                1. A weapon hit is destroyed<br>
-                2. A shield hit is subject to Shield Destroying<br>
-                3. Armor hit with Armor Points remaining is subject to Armor Destroying<br>
-                4. A player hit dies.
+                E: This Magic Ball is Weapon Destroying, Armor Destroying, and Shield Destroying. Player hit dies.
             </td>
         </tr>
     </table>
@@ -465,8 +453,8 @@ are Immune to Flame.
                 T: Verbal S: Sorcery R: Self<BR>
                 I: <I>“I nocked my arrows to my bow, I let them fly, my quiver is low. Now I pause to go reload.”</I> x3<BR>
                 E: Player becomes Invulnerable and may move about the field retrieving their arrows. The player may remove their Invulnerable state in the location they started or at base by stating, <I>“I return with a full quiver”</I> x3.<BR>
-                L: Must stay at least 10' away from other players at all times. A player may not exit Reload at an alternate base location, such as Heart of the Swarm, in this way.<BR>
-                N: May ask reeve for assistance in retrieving arrows that are within 10' of other players.</td></tr>
+                L: Must stay at least 10' away from combat at all times.<BR>
+                N: A player may not exit Reload at an Alternate Base. May ask reeve for assistance in retrieving arrows that are within 10' of other players.</td></tr>
                 <tr><td>1st</td><td><b>Pick two of three:</b></td></tr>
                     <tr><td></td><td>
                 Destruction Arrow - 1 Arrow / Unlimited (ex)<BR>
@@ -500,7 +488,7 @@ are Immune to Flame.
             <td>4th</td>
             <td><b>Suppression Arrow</b></td>
         </tr><tr><td></td><td>
-            1 Arrow / Unlimited (ex)
+            2 Arrow / Unlimited (ex)
         </td>
         <tr>
             <td>5th</td>
@@ -515,7 +503,7 @@ are Immune to Flame.
             <td>6th</td>
             <td><b>Phase Arrow</b> - </td>
         </tr><tr><td></td><td>
-            1 Arrow / Unlimited (ex)
+            2 Arrow / Unlimited (ex)
         </td>
     </tr>
 
@@ -575,8 +563,8 @@ are Immune to Flame.
         L: Rather than the normal amount of Specialty Arrows for
         an Archer, gain:<BR>
          - Pinning Arrow 3 Arrow / Unlimited (ex)<BR>
-         - Phase Arrow 1 Arrow / Unlimited (ex)<BR>
-         - Suppression Arrow 1 Arrow / Unlimited (ex)<BR>
+         - Phase Arrow 2 Arrow / Unlimited (ex)<BR>
+         - Suppression Arrow 2 Arrow / Unlimited (ex)<BR>
         Look the Part becomes a fourth Pinning Arrow.<BR>
         N: Player must still have a use of Mend remaining to
         cast on weapons or shields.
@@ -611,8 +599,8 @@ are Immune to Flame.
                 T: Verbal S: Sorcery R: Self<BR>
                 I: <I>“I nocked my arrows to my bow, I let them fly, my quiver is low. Now I pause to go reload.”</I> x3<BR>
                 E: Player becomes Invulnerable and may move about the field retrieving their arrows. The player may remove their Invulnerable state in the location they started or at base by stating, <I>“I return with a full quiver”</I> x3.<BR>
-                L: Must stay at least 10' away from other players at all times. A player may not exit Reload at an alternate base location, such as Heart of the Swarm, in this way.<BR>
-                N: May ask reeve for assistance in retrieving arrows that are within 10' of other players.</td>
+                L: Must stay at least 10' away from combat at all times.<BR>
+                N: A player may not exit Reload at an Alternate Base. May ask reeve for assistance in retrieving arrows that are within 10' of other players.</td>
                 
         <tr>
             <td>N/A</td>
@@ -712,8 +700,8 @@ are Immune to Flame.
                 T: Verbal S: Sorcery R: Self<BR>
                 I: <I>“I nocked my arrows to my bow, I let them fly, my quiver is low. Now I pause to go reload.”</I> x3<BR>
                 E: Player becomes Invulnerable and may move about the field retrieving their arrows. The player may remove their Invulnerable state in the location they started or at base by stating, <I>“I return with a full quiver”</I> x3.<BR>
-                L: Must stay at least 10' away from other players at all times. A player may not exit Reload at an alternate base location, such as Heart of the Swarm, in this way.<BR>
-                N: May ask reeve for assistance in retrieving arrows that are within 10' of other players.</td>
+                L: Must stay at least 10' away from combat at all times.<BR>
+                N: A player may not exit Reload at an Alternate Base. May ask reeve for assistance in retrieving arrows that are within 10' of other players.</td>
                 
             
         </tr>
@@ -740,13 +728,13 @@ are Immune to Flame.
             <td>N/A</td>
             <td><b>Suppression Arrow</b></td>
         </tr>
-        <tr><td></td><td>1 Arrow / Unlimited (ex)</td></tr>
+        <tr><td></td><td>2 Arrow / Unlimited (ex)</td></tr>
        
         <tr>
             <td>N/A</td>
             <td><b>Phase Arrow</b></td>
         </tr>
-        <tr><td></td><td>1 Arrow / Unlimited (ex)</td></tr>
+        <tr><td></td><td>2 Arrow / Unlimited (ex)</td></tr>
         <tr>
             <td>N/A</td>
             <td><b>Greater Mend</b></td>
@@ -757,7 +745,7 @@ are Immune to Flame.
             <td><u>2/Refresh Charge x10 (ex)</u><BR>
                 T: Verbal S: Sorcery R: Touch<BR>
                 I: <I>“Return this [object name] to its former glory”</I> x5<BR>
-                E: Will restore all armor points in one location or repair a damaged or broken item.</td>
+                E: Will restore all armor points in one location, repair one armor point in each location, or repair a damaged or broken item.</td>
         </tr>
         <BR>
     </table>
@@ -795,8 +783,8 @@ are Immune to Flame.
             L: Rather than the normal amount of Specialty Arrows for
             an Archer, gain:<BR>
              - Pinning Arrow 3 Arrow / Unlimited (ex)<BR>
-             - Phase Arrow 1 Arrow / Unlimited (ex)<BR>
-             - Suppression Arrow 1 Arrow / Unlimited (ex)<BR>
+             - Phase Arrow 2 Arrow / Unlimited (ex)<BR>
+             - Suppression Arrow 2 Arrow / Unlimited (ex)<BR>
             Look the Part becomes a fourth Pinning Arrow.<BR>
             N: Player must still have a use of Mend remaining to
             cast on weapons or shields.
@@ -921,7 +909,7 @@ are Immune to Flame.
     <h3>Optional Archetypes</h3>
     <p><a class="Assassin" onclick="showText('RogueText')"><b>Rogue</b></a><BR>
        T: Archetype S: Neutral<BR>
-       E: Regain a use of Coup de Grace upon killing a player with a thrown weapon.<BR>
+       E: Regain a use of Coup de Grace upon killing an enemy with a thrown weapon.<BR>
        L: May not wield Long weapons or Bows.
     </p>
     <p><a class="Assassin" onclick="showText('SpyText')"><b>Spy</b></a><BR>
@@ -1043,7 +1031,7 @@ are Immune to Flame.
      <h3>Archetype Info</h3>
      <p><b>Rogue</b><BR>
         T: Archetype S: Neutral<BR>
-        E: Regain a use of Coup de Grace upon killing a player with a thrown weapon.<BR>
+        E: Regain a use of Coup de Grace upon killing an enemy with a thrown weapon.<BR>
         L: May not wield Long weapons or Bows.
      </p>
 </div>
@@ -1209,11 +1197,7 @@ are Immune to Flame.
         <TR><TD></TD><TD><u>1/Refresh Charge x10 (ex) (Ambulant)</u><BR>
             T: Verbal S: Sorcery R: Self<BR>
             I: <I>“I am filled with rage!”</I><BR>
-            E: Caster is unaffected by Verbal abilities and their
-wielded melee weapons are Shield Crushing and
-Armor Breaking for seven seconds. Caster must count
-this time out loud, audible to 50'; failure to count ends
-the effect.
+            E: Caster is unaffected by Verbal abilities and their wielded melee weapons are Shield Crushing and Armor Breaking for seven seconds. Caster must count this time out loud, audible to 50'. Failure to count or starting an Incantation ends the effect.
              </TD></TR>
         <tr>
             <td>3rd</td>
@@ -1231,11 +1215,7 @@ the effect.
         <TR><TD></TD><TD><u>1/Refresh Charge x10 (ex) (Ambulant)</u><BR>
             T: Verbal S: Sorcery R: Self<BR>
             I: <I>“I am filled with rage!”</I><BR>
-            E: Caster is unaffected by Verbal abilities and their
-wielded melee weapons are Shield Crushing and
-Armor Breaking for seven seconds. Caster must count
-this time out loud, audible to 50'; failure to count ends
-the effect.
+            E: Caster is unaffected by Verbal abilities and their wielded melee weapons are Shield Crushing and Armor Breaking for seven seconds. Caster must count this time out loud, audible to 50'. Failure to count or starting an Incantation ends the effect.
              </TD></TR>
         <tr>
             <td>5th</td>
@@ -1244,7 +1224,7 @@ the effect.
         <TR><TD></TD><TD><u>1/Life Charge x3 (ex) (Ambulant)</u><BR>
             T: Verbal S: Death R: Unlimited<BR>
             I: <I>“And stay down!”</I><BR>
-            E: Target is Cursed. Target is also Suppressed for 30 seconds.<BR>
+            E: Target player is Cursed indefinitely. Target is also Suppressed for 30 seconds.<BR>
             L: Wound Trigger.<BR>
             N: Brutal Strike targets the wounded or dead player and does not require verbal targeting.</TD></TR>
         <tr>
@@ -1328,7 +1308,7 @@ the effect.
         <TR><TD></TD><TD> <u>1/Life Charge x3 (ex) (Ambulant)</u><BR>
             T: Verbal S: Death R: Unlimited<BR>
             I: <I>“And stay down!”</I><BR>
-            E: Target is Cursed. Target is also Suppressed for 30 seconds.<BR>
+            E: Target player is Cursed indefinitely. Target is also Suppressed for 30 seconds.<BR>
             L: Wound Trigger.<BR>
             N: Brutal Strike targets the wounded or dead player and does not require verbal targeting.</TD></TR>
         <tr>
@@ -1403,11 +1383,7 @@ the effect.
         <TR><TD></TD><TD><u>2/Refresh Charge x10 (ex) (Ambulant)</u><BR>
             T: Verbal S: Sorcery R: Self<BR>
             I: <I>“I am filled with rage!”</I><BR>
-            E: Caster is unaffected by Verbal abilities and their
-wielded melee weapons are Shield Crushing and
-Armor Breaking for seven seconds. Caster must count
-this time out loud, audible to 50'; failure to count ends
-the effect.
+            E: Caster is unaffected by Verbal abilities and their wielded melee weapons are Shield Crushing and Armor Breaking for seven seconds. Caster must count this time out loud, audible to 50'. Failure to count or starting an Incantation ends the effect.
              </TD></TR>
         <tr>
             <td>N/A</td>
@@ -1427,7 +1403,7 @@ the effect.
         <TR><TD></TD><TD> <u>1/Life Charge x3 (ex) (Ambulant)</u><BR>
             T: Verbal S: Death R: Unlimited<BR>
             I: <I>“And stay down!”</I><BR>
-            E: Target is Cursed. Target is also Suppressed for 30 seconds.<BR>
+            E: Target player is Cursed indefinitely. Target is also Suppressed for 30 seconds.<BR>
             L: Wound Trigger.<BR>
             N: Brutal Strike targets the wounded or dead player and does not require verbal targeting.</TD></TR>        
         <tr>
@@ -1493,18 +1469,11 @@ the effect.
             <td>2nd</td>
             <td><b>Banish</b> </td>
         </tr>
-        <TR><TD></TD><TD><u>1/Life Charge x5 (ex)</u><BR>
+        <TR><TD></TD><TD><u>1/Life Charge x5 (m)</u><BR>
             T: Verbal S: Spirit R: 20'<BR>
             I: <I>“The spirits banish thee from this place”</I> x3<BR>
-            E: Target Insubstantial player must return to their base
-            where their Insubstantial State immediately ends.<BR>
-            N: The target's Insubstantial State is replaced with a new
-            insubstantial state from Banish. If the Insubstantial State
-            is ended before reaching the base, the rest of the effect
-            is ended as well. If Banish is cast on self, the caster may
-            end this Insubstantial state at any time by using the exit
-            incantation for Insubstantial. This is a Forced
-Movement effect.
+            E: Target Insubstantial player must return to their base. Upon arrival, they must immediately end the effect as per Insubstantial.<BR>
+            N: The target's Insubstantial State is replaced with a new Insubstantial State from Banish. If the Insubstantial State is ended before reaching the base, the rest of the effect is ended as well. If Banish is cast on self, the caster may end this Insubstantial State at any time by using the exit incantation for Insubstantial. This is a Forced Movement effect.
         </TD></TR>
         <tr>
             <td>3rd</td>
@@ -1513,8 +1482,8 @@ Movement effect.
         <TR><TD></TD><TD><u>1/Life Charge x5 (ex) (Ambulant)</u><BR>
             T: Verbal S: Protection R: Self<BR>
             I: <I>“Sanctuary”</I><BR>
-            E: Player and their carried equipment are unaffected by hostile actions originating from within 20'. Must Chant “sanctuary”. Player may end Sanctuary at any time by ceasing to chant and declaring “No longer in sanctuary” or by by picking up a weapon with their hand.<BR>
-            L: If the player is voluntarily touching (other than blocking) or carrying weapons in any fashion (tucked under arms, tied to thongs, etc) at any point during Sanctuary then they may only voluntarily end Sanctuary within 20' of a friendly base, and must continue chanting until there. Player may not cast this ability while they have any weapons in hand. Cannot interact with game items nor game objectives, nor impede the play of other people in any manner, and must immediately move to avoid such situations. May not come within 20' of a nonfriendly base.<BR>
+            E: Caster and their carried equipment are unaffected by hostile actions originating from within 20'. Must Chant “sanctuary”. Caster may end Sanctuary at any time by ceasing to chant and declaring “No longer in sanctuary”.<BR>
+            L: Caster may not come within 20' of an unfriendly base, interact with game items nor game objectives, nor impede the play of other people in any manner, and must immediately move to avoid such situations. If the caster voluntarily carries or touches a weapon in any fashion (other than blocking) at any point during Sanctuary, they may only voluntarily end Sanctuary at base and must continue chanting until there.<BR>
             N: The exit declaration must be audible out to 20 feet.
         </TD></TR>
         <tr>
@@ -1539,7 +1508,7 @@ Movement effect.
             Let the white light of healing close thy wounds.
             Let the white light of healing restore thy vigor.
             The white light of healing hath resurrected thee.”</I><BR>
-            E: Target Dead player who has not moved more than 5'
+            E: Target willing Dead player who has not moved more than 5'
             from where they died is returned to life. Non-Persistent
             Enchantments on the player are removed before the
             player returns to life. Any Wounds on the player
@@ -1549,7 +1518,7 @@ Movement effect.
             <td>6th</td>
             <td><b>Innate</b></td>
         </tr>
-        <TR><TD></TD><TD><u>1/Life (ex)</u><BR>
+        <TR><TD></TD><TD><u>2/Life (ex)</u><BR>
             T: Meta-Magic S: Neutral<BR>
             I: <I>“Innate”</I><BR>
             E: May be used to instantly Charge a single magic or
@@ -1564,7 +1533,7 @@ Movement effect.
 
     <p><a class="Monk" onclick="showText('MysticText')"><b>Mystic</b></a><BR>
        T: Archetype S: Neutral<BR>
-       E: Gain Force Bolt 4 Balls/Unlimited (m). Gain Suppression Bolt 2 Balls/Unlimited (m).<BR>
+       E: Gain Force Bolt 3 Balls/Unlimited (m), Phase Bolt 1 Ball / Unlimited (m), and Suppression Bolt 2 Balls/Unlimited (m).<BR>
        L: May not wield Heavy Thrown. Lose all instances of Ressurrect.
     </p>
 </div>
@@ -1613,18 +1582,11 @@ Movement effect.
             <td>N/A</td>
             <td><b>Banish</b> </td>
         </tr>
-        <TR><TD></TD><TD><u>1/Life Charge x3 (ex)</u><BR>
+        <TR><TD></TD><TD><u>1/Life Charge x3 (m)</u><BR>
             T: Verbal S: Spirit R: 20'<BR>
             I: <I>“The spirits banish thee from this place”</I> x3<BR>
-            E: Target Insubstantial player must return to their base
-            where their Insubstantial State immediately ends.<BR>
-            N: The target's Insubstantial State is replaced with a new
-            insubstantial state from Banish. If the Insubstantial State
-            is ended before reaching the base, the rest of the effect
-            is ended as well. If Banish is cast on self, the caster may
-            end this Insubstantial state at any time by using the exit
-            incantation for Insubstantial. This is a Forced
-Movement effect.
+            E: Target Insubstantial player must return to their base. Upon arrival, they must immediately end the effect as per Insubstantial.<BR>
+            N: The target's Insubstantial State is replaced with a new Insubstantial State from Banish. If the Insubstantial State is ended before reaching the base, the rest of the effect is ended as well. If Banish is cast on self, the caster may end this Insubstantial State at any time by using the exit incantation for Insubstantial. This is a Forced Movement effect.
         </TD></TR>
         <tr>
             <td>N/A</td>
@@ -1633,8 +1595,8 @@ Movement effect.
         <TR><TD></TD><TD><u>1/Life Charge x5 (ex) (Ambulant)</u><BR>
             T: Verbal S: Protection R: Self<BR>
             I: <I>“Sanctuary”</I><BR>
-            E: Player and their carried equipment are unaffected by hostile actions originating from within 20'. Must Chant “sanctuary”. Player may end Sanctuary at any time by ceasing to chant and declaring “No longer in sanctuary” or by by picking up a weapon with their hand.<BR>
-            L: If the player is voluntarily touching (other than blocking) or carrying weapons in any fashion (tucked under arms, tied to thongs, etc) at any point during Sanctuary then they may only voluntarily end Sanctuary within 20' of a friendly base, and must continue chanting until there. Player may not cast this ability while they have any weapons in hand. Cannot interact with game items nor game objectives, nor impede the play of other people in any manner, and must immediately move to avoid such situations. May not come within 20' of a nonfriendly base.<BR>
+            E: Caster and their carried equipment are unaffected by hostile actions originating from within 20'. Must Chant “sanctuary”. Caster may end Sanctuary at any time by ceasing to chant and declaring “No longer in sanctuary”.<BR>
+            L: Caster may not come within 20' of an unfriendly base, interact with game items nor game objectives, nor impede the play of other people in any manner, and must immediately move to avoid such situations. If the caster voluntarily carries or touches a weapon in any fashion (other than blocking) at any point during Sanctuary, they may only voluntarily end Sanctuary at base and must continue chanting until there.<BR>
             N: The exit declaration must be audible out to 20 feet.
         </TD></TR>
         <tr>
@@ -1659,7 +1621,7 @@ Movement effect.
             Let the white light of healing close thy wounds.
             Let the white light of healing restore thy vigor.
             The white light of healing hath resurrected thee.”</I><BR>
-            E: Target Dead player who has not moved more than 5'
+            E: Target willing Dead player who has not moved more than 5'
             from where they died is returned to life. Non-Persistent
             Enchantments on the player are removed before the
             player returns to life. Any Wounds on the player
@@ -1669,7 +1631,7 @@ Movement effect.
             <td>N/A</td>
             <td><b>Innate</b></td>
         </tr>
-        <TR><TD></TD><TD><u>1/Life (ex)</u><BR>
+        <TR><TD></TD><TD><u>2/Life (ex)</u><BR>
             T: Meta-Magic S: Neutral<BR>
             I: <I>“Innate”</I><BR>
             E: May be used to instantly Charge a single magic or
@@ -1771,18 +1733,11 @@ the Incantation.<BR>
             <td>N/A</td>
             <td><b>Banish</b> </td>
         </tr>
-        <TR><TD></TD><TD><u>1/Life Charge x5 (ex)</u><BR>
+        <TR><TD></TD><TD><u>1/Life Charge x5 (m)</u><BR>
             T: Verbal S: Spirit R: 20'<BR>
             I: <I>“The spirits banish thee from this place”</I> x3<BR>
-            E: Target Insubstantial player must return to their base
-            where their Insubstantial State immediately ends.<BR>
-            N: The target's Insubstantial State is replaced with a new
-            insubstantial state from Banish. If the Insubstantial State
-            is ended before reaching the base, the rest of the effect
-            is ended as well. If Banish is cast on self, the caster may
-            end this Insubstantial state at any time by using the exit
-            incantation for Insubstantial. This is a Forced
-Movement effect.
+            E: Target Insubstantial player must return to their base. Upon arrival, they must immediately end the effect as per Insubstantial.<BR>
+            N: The target's Insubstantial State is replaced with a new Insubstantial State from Banish. If the Insubstantial State is ended before reaching the base, the rest of the effect is ended as well. If Banish is cast on self, the caster may end this Insubstantial State at any time by using the exit incantation for Insubstantial. This is a Forced Movement effect.
         </TD></TR>
         <tr>
             <td>N/A</td>
@@ -1791,8 +1746,8 @@ Movement effect.
         <TR><TD></TD><TD><u>1/Life Charge x5 (ex) (Ambulant)</u><BR>
             T: Verbal S: Protection R: Self<BR>
             I: <I>“Sanctuary”</I><BR>
-            E: Player and their carried equipment are unaffected by hostile actions originating from within 20'. Must Chant “sanctuary”. Player may end Sanctuary at any time by ceasing to chant and declaring “No longer in sanctuary” or by by picking up a weapon with their hand.<BR>
-            L: If the player is voluntarily touching (other than blocking) or carrying weapons in any fashion (tucked under arms, tied to thongs, etc) at any point during Sanctuary then they may only voluntarily end Sanctuary within 20' of a friendly base, and must continue chanting until there. Player may not cast this ability while they have any weapons in hand. Cannot interact with game items nor game objectives, nor impede the play of other people in any manner, and must immediately move to avoid such situations. May not come within 20' of a nonfriendly base.<BR>
+            E: Caster and their carried equipment are unaffected by hostile actions originating from within 20'. Must Chant “sanctuary”. Caster may end Sanctuary at any time by ceasing to chant and declaring “No longer in sanctuary”.<BR>
+            L: Caster may not come within 20' of an unfriendly base, interact with game items nor game objectives, nor impede the play of other people in any manner, and must immediately move to avoid such situations. If the caster voluntarily carries or touches a weapon in any fashion (other than blocking) at any point during Sanctuary, they may only voluntarily end Sanctuary at base and must continue chanting until there.<BR>
             N: The exit declaration must be audible out to 20 feet.
         </TD></TR>
         <tr>
@@ -1808,7 +1763,7 @@ Movement effect.
             <td>N/A</td>
             <td><b>Innate</b></td>
         </tr>
-        <TR><TD></TD><TD><u>1/Life (ex)</u><BR>
+        <TR><TD></TD><TD><u>2/Life (ex)</u><BR>
             T: Meta-Magic S: Neutral<BR>
             I: <I>“Innate”</I><BR>
             E: May be used to instantly Charge a single magic or
@@ -1839,11 +1794,21 @@ Movement effect.
             I: <I>“The strength of suppression is mine to evoke”</I> x3<BR>
             M: Purple Magic Ball<BR>
             E: Target is Suppressed for 60 seconds. Engulfing.</TD></TR>
+
+        <tr>
+            <td>N/A</td>
+            <td><b>Phase Bolt</b></td>
+        </tr>
+        <TR><TD></TD><TD><u>1 Ball/Unlimited (m)</u><BR>
+            T: Magic Ball S: Sorcery<BR>
+            I: <I>"The power of sorcery is mine to evoke"</I> x3<BR>
+            M: Gray Magic Ball<BR>
+            E: This Magic Ball is Phasing, Weapon Destroying, and Armor Breaking. Player hit receives a wound to that hit location.</TD></TR>
     </table>
     <h3>Archetype Info</h3>
     <p><b>Mystic</b><BR>
         T: Archetype S: Neutral<BR>
-        E: Gain Force Bolt 4 Balls/Unlimited (m). Gain Suppression Bolt 2 Balls/Unlimited (m).<BR>
+        E: Gain Force Bolt 3 Balls/Unlimited (m), Phase Bolt 1 Ball / Unlimited (m), and Suppression Bolt 2 Balls/Unlimited (m).<BR>
         May not wield Heavy Thrown. Lose all instances of Ressurrect.
     </p>
 </div>
@@ -1884,14 +1849,14 @@ Movement effect.
              </TD></TR>
         <tr>
             <td>3rd</td>
-            <td><b>Extend Immunities</b></td>
+            <td><b>Protection from Evil</b></td>
         </tr>
         <TR><TD></TD><TD><u>1/Refresh Charge x5 (ex)</u><BR>
             T: Enchantment S: Protection R: Other<BR>
             I: <I>“May the blessing of my god protect thee”</I> x3<BR>
             M: White strip<BR>
-            E: The target player gains either Immune to Command or Immune to Death.<BR>
-            L: Type of Ability must be chosen at the time of casting and may not be changed. The caster may only have one instance of Extend Immunities at a time.</TD></TR>
+            E: Bearer is Immune to the Death School. This enchantment is Persistent and remains active while the bearer is dead.<BR>
+            L: The caster may only have one instance of Protection from Evil active at a time.</TD></TR>
         <tr>
             <td>4th</td>
             <td><b>Greater Resurrect</b> </td>
@@ -1899,7 +1864,7 @@ Movement effect.
         <TR><TD></TD><TD><u>1/Life (m)</u><BR>
             T: Verbal S: Spirit R: Touch<BR>
             I: <I>“By the grace of the divine thou art resurrected”</I> x5<BR>
-            E: Target Dead player who has not moved more than 5' from where they died is returned to life. Any wounds on the player are healed. Works regardless of any States on the target, and removes Cursed if present.<BR>
+            E: Target willing Dead player who has not moved more than 5' from where they died is returned to life. Any wounds on the player are healed. Works regardless of any States on the target, and removes Cursed if present.<BR>
             N: Enchantments on the player are retained.
              </TD></TR>
         <tr>
@@ -1927,8 +1892,8 @@ Movement effect.</TD></TR>
     <h3>Optional Archetypes</h3>
     <p><a class="Paladin" onclick="showText('GuardianText')"><b>Guardian</b></a><BR>
         T: Archetype S: Neutral<BR>
-        E: Gain Imbue Shield 1/Life (m) and Martyr 2/Life Charge x3 (ex).<BR>
-        L: Loses all instances of Protection from Magic and Extend Immunities. May only have one instance of Imbue Shield at a time.
+        E: Gain Imbue 1/Life (m) and Martyr 2/Life Charge x3 (ex).<BR>
+        L: Loses all instances of Protection from Magic and Protection from Evil. May only have one instance of Imbue Shield at a time.
      </p>
  
      <p><a class="Paladin" onclick="showText('InquisitorText')"><b>Inquisitor</b></a><BR>
@@ -1991,7 +1956,7 @@ themselves from Insubstantial states gained this way.</TD></TR>
         <TR><TD></TD><TD><u>1/Life (m)</u><BR>
             T: Verbal S: Spirit R: Touch<BR>
                 I: <I>“By the grace of the divine thou art resurrected”</I> x5<BR>
-                E: Target Dead player who has not moved more than 5' from where they died is returned to life. Any wounds on the player are healed. Works regardless of any States on the target, and removes Cursed if present.<BR>
+                E: Target willing Dead player who has not moved more than 5' from where they died is returned to life. Any wounds on the player are healed. Works regardless of any States on the target, and removes Cursed if present.<BR>
                 N: Enchantments on the player are retained.
                 </TD></TR>
         <tr>
@@ -2006,22 +1971,20 @@ themselves from Insubstantial states gained this way.</TD></TR>
 Movement effect.</TD></TR>
         <tr>
             <td>N/A</td>
-            <td><b>Imbue Shield</b></td>
+            <td><b>Imbue</b></td>
         </tr>
         <TR><TD></TD><TD><u>1/Life (m)</u><BR>
             T: Enchantment S: Protection R: Touch<BR>
-            I: <I>“This shield shall neither bend nor break”</I> x3<BR>
+            I: <I>“This item shall neither bend nor break”</I> x3<BR>
             M: White strip<BR>
-            E: Shield wielded by the player cannot be destroyed
-            nor damaged. Engulfing effects hitting the shield
-            are ignored.</TD></TR>
+            E: Bearer chooses either shield or weapons. Wielded equipment of the chosen type cannot be destroyed nor damaged. Engulfing effects hitting wielded equipment of the chosen type are ignored.</TD></TR>
     </table>  
 
     <h3>Archetype Info</h3>
     <p><b>Guardian</b><BR>
         T: Archetype S: Neutral<BR>
-        E: Gain Imbue Shield 1/Life (m) and Martyr 2/Life Charge x3 (ex).<BR>
-        L: Loses all instances of Protection from Magic and Extend Immunities. May only have one instance of Imbue Shield at a time.
+        E: Gain Imbue 1/Life (m) and Martyr 2/Life Charge x3 (ex).<BR>
+        L: Loses all instances of Protection from Magic and Protection from Evil. May only have one instance of Imbue Shield at a time.
         </p>
             
 </div>
@@ -2072,14 +2035,14 @@ Movement effect.</TD></TR>
 Movement effect.</TD></TR>
             <tr>
                 <td>N/A</td>
-                <td><b>Extend Immunities</b></td>
+                <td><b>Protection from Evil</b></td>
             </tr>
             <TR><TD></TD><TD><u>1/Refresh Charge x5 (ex)</u><BR>
                 T: Enchantment S: Protection R: Other<BR>
                 I: <I>“May the blessing of my god protect thee”</I> x3<BR>
                 M: White strip<BR>
-                E: The target player gains either Immune to Command or Immune to Death.<BR>
-                L: Type of Ability must be chosen at the time of casting and may not be changed. The caster may only have one instance of Extend Immunities at a time.</TD></TR>
+                E: Bearer is Immune to the Death School. This enchantment is Persistent and remains active while the bearer is dead.<BR>
+                L: The caster may only have one instance of Protection from Evil active at a time</TD></TR>
             <tr>
                 <td>N/A</td>
                 <td><b>Sacred Blades</b> </td>
@@ -2118,7 +2081,7 @@ Movement effect.</TD></TR>
     <span class="midnav"><a class="Scout" onclick="printMartial('Scout')">Print Cards</a></span>
     <h2>Scout</h2>
     <p><b>Garb:</b> Green sash and medieval/sword and sorcery-looking garb.<BR>
-       <b>Look The Part:</b> Heal 1/Life (ex)<BR>
+       <b>Look The Part:</b> Heal 1/Life Charge x5 (ex)<BR>
        <b>Armor:</b> 3pts<BR>
        <b>Shields:</b> Small<BR>
        <b>Weapons:</b> Dagger, Short, Long, Heavy Thrown, Bow
@@ -2140,12 +2103,22 @@ Movement effect.</TD></TR>
                 E: Target Insubstantial player immediately has their Insubstantial effect ended.
             </td>
          </TR>
+
+         <tr>
+             <td>1st</td>
+             <td><b>Evolution</b> </td>
+         </tr>
+         <TR><TD></TD><TD>(<u>T</u>)<BR>
+            T: Granted as Trait S: Sorcery R: Self<BR>
+                E: May wear an additional Enchantment. Evolution does not count towards the bearer's Enchantment limit.<BR>
+                N: This ability does work in conjunction with Attuned, Essence Graft, or Phoenix Tears so long as the other limitations of those Enchantments are followed.
+              </TD></TR>
          
          <tr>
              <td>2nd</td>
              <td><b>Heal</b> </td>
          </tr>
-         <TR><TD></TD><TD><u>1/Life (ex)</u><BR>
+         <TR><TD></TD><TD><u>1/Life Charge x5 (ex)</u><BR>
             T: Verbal S: Spirit R: Touch<BR>
             I: <I>“The white light of healing hath healed thee.”</I> x5<BR>
             E: Target player heals a wound.
@@ -2170,9 +2143,9 @@ Movement effect.</TD></TR>
          </tr>
          <TR><TD></TD><TD><u>1/Refresh Charge x5 (ex)</u><BR>
             T: Verbal S: Sorcery R: 20'<BR>
-            I: <I>“By my power I dispel that magic”</I> x3<BR>
-            E: All Enchantments on target are removed.<BR>
-            N: Will always remove enchantments if successfully cast on a valid target, regardless of the player's Traits, States, Immunities, Ongoing Effects, or Enchantments (except Sleight of Mind).</TD></TR>
+            I: <I>“By my power I dispel thy magic”</I> x3<BR>
+            E: All Enchantments on target are removed. Will always remove Enchantments if successfully cast on a valid target, regardless of the player's Traits, States, Immunities, Ongoing Effects, or Enchantments (except Sleight of Mind).<BR>
+            N: Does not affect Invulnerable players.</TD></TR>
          <tr>
 
         <tr>
@@ -2203,13 +2176,24 @@ Movement effect.</TD></TR>
          
         <tr>
              <td>5th</td>
-             <td><b>Evolution</b> </td>
+             <td><b>Heal</b> </td>
          </tr>
-         <TR><TD></TD><TD>(<u>T</u>)<BR>
-            T: Granted as Trait S: Sorcery R: Self<BR>
-                E: May wear an additional Enchantment. Evolution does not count towards the bearer's Enchantment limit.<BR>
-                N: This ability does work in conjunction with Attuned, Essence Graft, or Phoenix Tears so long as the other limitations of those Enchantments are followed.
+         <TR><TD></TD><TD><u>1/Life Charge x5 (ex)</u><BR>
+            T: Verbal S: Spirit R: Touch<BR>
+            I: <I>“The white light of healing hath healed thee.”</I> x5<BR>
+            E: Target player heals a wound.
               </TD></TR>
+              
+            <tr>
+            <td>5th</td>
+            <td><b>Release</b> </td>
+        </tr>
+        <TR><TD></TD><TD> <u>1/Life Charge x3 (ex)</u><BR>
+            T: Verbal S: Sorcery R: Touch<BR>
+            I: <I>“From thy bindings thou art released”</I> x5<BR>
+            E: A single ongoing effect or State is removed from the target. Casters choice.<BR>
+            L: Cannot remove Cursed.
+                </TD></TR>
          <tr>
              <td>6th</td>
              <td><b>Adaptive Protection</b></td>
@@ -2246,7 +2230,7 @@ Movement effect.</TD></TR>
     <span class="midnav"><a class="Scout" onclick="printMartial('Hunter')">Print Cards</a></span>
     <h2>Hunter</h2>
     <p><b>Garb:</b> Green sash and medieval/sword and sorcery-looking garb.<BR>
-       <b>Look The Part:</b> Heal 1/Life (ex)<BR>
+       <b>Look The Part:</b> Heal 1/Life Charge x5 (ex)<BR>
        <b>Armor:</b> 3pts<BR>
        <b>Shields:</b> NONE<BR>
        <b>Weapons:</b> Dagger, Short, Long, Heavy Thrown, Great, Javelins, Bow
@@ -2273,7 +2257,7 @@ Movement effect.</TD></TR>
              <td>N/A</td>
              <td><b>Heal</b> </td>
          </tr>
-         <TR><TD></TD><TD><u>1/Life (ex)</u><BR>
+         <TR><TD></TD><TD><u>2/Life Charge x5 (ex)</u><BR>
             T: Verbal S: Spirit R: Touch<BR>
             I: <I>“The white light of healing hath healed thee.”</I> x5<BR>
             E: Target player heals a wound.
@@ -2285,9 +2269,9 @@ Movement effect.</TD></TR>
          </tr>
          <TR><TD></TD><TD><u>1/Refresh Charge x5 (ex)</u><BR>
             T: Verbal S: Sorcery R: 20'<BR>
-            I: <I>“By my power I dispel that magic”</I> x3<BR>
-            E: All Enchantments on target are removed.<BR>
-            N: Will always remove enchantments if successfully cast on a valid target, regardless of the player's Traits, States, Immunities, Ongoing Effects, or Enchantments (except Sleight of Mind).</TD></TR>
+            I: <I>“By my power I dispel thy magic”</I> x3<BR>
+            E: All Enchantments on target are removed. Will always remove Enchantments if successfully cast on a valid target, regardless of the player's Traits, States, Immunities, Ongoing Effects, or Enchantments (except Sleight of Mind).<BR>
+            N: Does not affect Invulnerable players.</TD></TR>
          <tr>
 
         <tr>
@@ -2345,7 +2329,7 @@ Movement effect.</TD></TR>
     <span class="midnav"><a class="Scout" onclick="printMartial('Apex')">Print Cards</a></span>
     <h2>Apex</h2>
     <p><b>Garb:</b> Green sash and medieval/sword and sorcery-looking garb.<BR>
-       <b>Look The Part:</b> Heal 1/Life (ex)<BR>
+       <b>Look The Part:</b> Heal 1/Life Charge x5 (ex)<BR>
        <b>Armor:</b> 3pts<BR>
        <b>Shields:</b> Small<BR>
        <b>Weapons:</b> Dagger, Short, Long, Heavy Thrown, Bow
@@ -2372,7 +2356,7 @@ Movement effect.</TD></TR>
              <td>N/A</td>
              <td><b>Heal</b> </td>
          </tr>
-         <TR><TD></TD><TD><u>1/Life (ex)</u><BR>
+         <TR><TD></TD><TD><u>2/Life Charge x5 (ex)</u><BR>
             T: Verbal S: Spirit R: Touch<BR>
             I: <I>“The white light of healing hath healed thee.”</I> x5<BR>
             E: Target player heals a wound.
@@ -2382,7 +2366,7 @@ Movement effect.</TD></TR>
             <td>N/A</td>
             <td><b>Release</b> </td>
         </tr>
-        <TR><TD></TD><TD><u>1/Life Charge x3 (ex)</u> <BR>
+        <TR><TD></TD><TD><u>2/Life Charge x3 (ex)</u> <BR>
             T: Verbal S: Sorcery R: Touch<BR>
             I: <I>“From thy bindings thou art released”</I> x5<BR>
             E: A single ongoing effect or State is removed from the target. Casters choice.<BR>
@@ -2397,9 +2381,9 @@ Movement effect.</TD></TR>
          </tr>
          <TR><TD></TD><TD><u>1/Refresh Charge x5 (ex)</u><BR>
             T: Verbal S: Sorcery R: 20'<BR>
-            I: <I>“By my power I dispel that magic”</I> x3<BR>
-            E: All Enchantments on target are removed.<BR>
-            N: Will always remove enchantments if successfully cast on a valid target, regardless of the player's Traits, States, Immunities, Ongoing Effects, or Enchantments (except Sleight of Mind).</TD></TR>
+            I: <I>“By my power I dispel thy magic”</I> x3<BR>
+            E: All Enchantments on target are removed. Will always remove Enchantments if successfully cast on a valid target, regardless of the player's Traits, States, Immunities, Ongoing Effects, or Enchantments (except Sleight of Mind).<BR>
+            N: Does not affect Invulnerable players.</TD></TR>
          <tr>
 
         <tr>
@@ -2496,7 +2480,7 @@ Movement effect.</TD></TR>
         <TR><TD></TD><TD><u>Unlimited (ex)</u><br>
             T: Verbal S: Sorcery R: Self <br>
             I: <I>“Scavenge”</I><br>
-            E: Destroyed or damaged item is repaired, or one point of armor in one location is repaired.<br>
+            E: A destroyed or damaged item carried by the caster is repaired, or one point of armor in one of the caster’s hit locations is repaired.<br>
             L: Kill Trigger.
              </TD></TR>
         <tr>
@@ -2521,10 +2505,11 @@ Movement effect.</TD></TR>
             <td>5th</td>
             <td><b>Shake It Off</b></td>
         </tr>
-        <TR><TD></TD><TD><u>1/Refresh Charge x3 (ex)</u><br>
+        <TR><TD></TD><TD><u>1/Life Charge x3 (ex)</u><br>
             T: Verbal S: Spirit R: Self<br>
             I: <I>“I shall overcome”</I><br>
-            E: 10 seconds after casting Shake It Off the player may remove from themselves any number of States or Effects of their choice. Shake It Off may be cast at any time the player is alive, even while the player would otherwise be prevented from casting abilities by Stunned, Suppressed, or similar.</TD></TR>
+            E: 10 seconds after casting Shake It Off the caster may remove from themselves any number of States or Ongoing Effects of their choice. Shake It Off may be cast at any time the caster is alive, even while the caster would otherwise be prevented from casting abilities by Stunned, Suppressed, or similar.<BR>
+            N: Immunity to Shake It Off only matters when the ability is cast, not after 10 seconds.</TD></TR>
         <tr>
             <td>6th</td>
             <td><b>Ancestral Armor</b></td>
@@ -2551,7 +2536,7 @@ not present.</TD></TR>
 
     <p><a class="Warrior" onclick="showText('JuggernautText')"><b>Juggernaut</b></a><br>
        T: Archetype S: Neutral<br>
-       E: Replaces Harden with Greater Harden (ex) at the same frequency. Gain Phoenix Tears 3/Refresh (ex) (Swift) and Imbue Armor (T).<br>
+       E: Gain Harden Armor (Self) 1/Life (ex) and Phoenix Tears (Self) 3/Refresh (ex) (Swift). Replace Harden with Greater Harden (Self) (ex) at the same frequency.<br>
        L: Loses all instances of Ancestral Armor and True Grit.
     </p>
 </div>
@@ -2591,7 +2576,7 @@ not present.</TD></TR>
          <TR><TD></TD><TD><u>Unlimited (ex)</u><br>
              T: Verbal S: Sorcery R: Self <br>
              I: <I>“Scavenge”</I><br>
-             E: Destroyed or damaged item is repaired, or one point of armor in one location is repaired.<br>
+             E: A destroyed or damaged item carried by the caster is repaired, or one point of armor in one of the caster’s hit locations is repaired.<br>
              L: Kill Trigger.
               </TD></TR>
          <tr>
@@ -2617,10 +2602,11 @@ not present.</TD></TR>
              <td>N/A</td>
              <td><b>Shake It Off</b></td>
          </tr>
-         <TR><TD></TD><TD><u>1/Refresh Charge x3 (ex)</u><br>
+         <TR><TD></TD><TD><u>1/Life Charge x3 (ex)</u><br>
              T: Verbal S: Spirit R: Self<br>
              I: <I>“I shall overcome”</I><br>
-             E: 10 seconds after casting Shake It Off the player may remove from themselves any number of States or Effects of their choice. Shake It Off may be cast at any time the player is alive, even while the player would otherwise be prevented from casting abilities by Stunned, Suppressed, or similar.</TD></TR>
+             E: 10 seconds after casting Shake It Off the caster may remove from themselves any number of States or Ongoing Effects of their choice. Shake It Off may be cast at any time the caster is alive, even while the caster would otherwise be prevented from casting abilities by Stunned, Suppressed, or similar.<BR>
+             N: Immunity to Shake It Off only matters when the ability is cast, not after 10 seconds.</TD></TR>
          <tr>
              <td>N/A</td>
              <td><b>Ancestral Armor</b></td>
@@ -2691,18 +2677,10 @@ not present.</TD></TR>
          <TR><TD></TD><TD><u>Unlimited (ex)</u><br>
              T: Verbal S: Sorcery R: Self <br>
              I: <I>“Scavenge”</I><br>
-             E: Destroyed or damaged item is repaired, or one point of armor in one location is repaired.<br>
+             E: A destroyed or damaged item carried by the caster is repaired, or one point of armor in one of the caster’s hit locations is repaired.<br>
              L: Kill Trigger.
               </TD></TR>
-         <tr>
-             <td>N/A</td>
-             <td><b>Imbue Armor</b></td>
-         </tr>
-         <TR><TD></TD><TD>(<u>T</u>)<br>
-            T: Granted as a Trait S: Protection R: Self<br>
-            E: Armor worn by the bearer gains 1 Armor Point to its current and maximum rating in each location, up to the bearer's class maximum.<BR>
-            L: Does not apply to magic armor. A player may only benefit from one instance of Imbue Armor.<BR>
-            N: When this enchantment is removed, the bearer loses 1 current and maximum Armor Point in each location.</TD></TR>
+         
          <tr>
              <td>N/A</td>
              <td><b>Insult</b> </td>
@@ -2717,10 +2695,22 @@ not present.</TD></TR>
              <td>N/A</td>
              <td><b>Shake It Off</b></td>
          </tr>
-         <TR><TD></TD><TD><u>1/Refresh Charge x3 (ex)</u><br>
+         <TR><TD></TD><TD><u>1/Life Charge x3 (ex)</u><br>
              T: Verbal S: Spirit R: Self<br>
              I: <I>“I shall overcome”</I><br>
-             E: 10 seconds after casting Shake It Off the player may remove from themselves any number of States or Effects of their choice. Shake It Off may be cast at any time the player is alive, even while the player would otherwise be prevented from casting abilities by Stunned, Suppressed, or similar.</TD></TR>
+             E: 10 seconds after casting Shake It Off the caster may remove from themselves any number of States or Ongoing Effects of their choice. Shake It Off may be cast at any time the caster is alive, even while the caster would otherwise be prevented from casting abilities by Stunned, Suppressed, or similar.<BR>
+             N: Immunity to Shake It Off only matters when the ability is cast, not after 10 seconds.</TD></TR>
+         
+         <tr>
+             <td>N/A</td>
+             <td><b>Harden Armor</b></td>
+         </tr>
+         <TR><TD></TD><TD><u>1/Life Charge x3 (ex)</u><br>
+             T: Enchantment S: Protection R: Self<br>
+             I: <I>“I enchant thee with harden armor”</I> x3<br>
+             E: Armor Breaking strikes to the bearer's armor are treated as regular strikes.<BR>
+             L: Does not apply to Magic Armor.</TD></TR>
+         
          <tr>
              <td>N/A</td>
              <td><b>Phoenix Tears</b></td>
@@ -2729,26 +2719,22 @@ not present.</TD></TR>
             T: Enchantment S: Spirit R: Self<br>
             I: <I>“May the tears of the phoenix wash over thee”</I> x3<br>
             M: Two white strips<br>
-            E: Enchanted player does not die as normal. When the
-player would otherwise die they instead become Frozen
-for 30 seconds. If the player is still enchanted when the
-Frozen State elapses or is removed:<BR>
-            1. Remove all wounds.<BR>
-            2. Remove all States that would be removed by death or respawning.<BR>
-            3. Remove all Ongoing Effects with a timer.<BR>
-            4. Repair all carried equipment.<BR>
-            5. Remove all non-persistent enchantments other than Phoenix Tears.<BR>
-            6. Remove a strip.<BR>
-                Additionally Phoenix Tears allows you to wear an extra Enchantment from the Protection School. This extra enchantment is considered Persistent as long as Phoenix Tears is present. The additional Enchantment is not removed once Phoenix Tears is removed.<br>
-            N: Phoenix Tears is removed when the last strip is removed. If Phoenix Tears is removed, the bearer chooses which (m) Enchantments to lose to meet
-their new Enchantment limit, if necessary.</TD></TR>
+            E: Bearer does not die as normal. When the bearer would otherwise die they instead remove all wounds and become Frozen for 30 seconds. If the bearer is still enchanted when the Frozen State elapses or is removed:<BR> 
+                1. Remove the Cursed state, if Cursed <BR>
+                2. Repair all carried equipment. <BR>
+                3. Remove all non-persistent enchantments other than Phoenix Tears. <BR>
+                4. Remove a strip. <BR>
+                Additionally, Phoenix Tears allows the bearer to wear an extra Enchantment from the Protection School. This extra enchantment is considered Persistent as long as Phoenix Tears is present. The additional Enchantment is not removed once Phoenix Tears is removed.<br>
+            L: May not be worn with Attuned or Essence Graft. <BR>
+            N: Phoenix Tears is removed when the last strip is removed If Phoenix Tears is removed, the bearer chooses which (m) Enchantments to lose to meet their new Enchantment limit, if necessary.
+        </TD></TR>
      </table>  
  
      <h3>Archetype Info</h3>
  
      <p><b>Juggernaut</b><br>
         T: Archetype S: Neutral<br>
-        E: Replaces Harden with Greater Harden (ex) at the same frequency. Gain Phoenix Tears 3/Refresh (ex) (Swift) and Imbue Armor (T).<br>
+        E: Gain Harden Armor (Self) 1/Life (ex) and Phoenix Tears (Self) 3/Refresh (ex) (Swift). Replace Harden with Greater Harden (Self) (ex) at the same frequency.<br>
         L: Loses all instances of Ancestral Armor and True Grit.
      </p>
 </div>

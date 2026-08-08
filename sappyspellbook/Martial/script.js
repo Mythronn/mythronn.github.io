@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function() {
         <div class="entry"><b>Steal Life Essence: 1/Life Charge x5 (m)</b><i> - Steal life</i></div>      
         <div class="entry"><b>Brutal Strike: 1/Life Charge x10 (ex)(Ambulant)</b><i> - And stay down!</i></div>      
         <div class="entry"><b>Terror: 2/Life (m)(LTP)</b><i> - Death makes thee terrified x3</i></div>      
-        <div class="entry"><b>Flame Blade: 	2/Refresh (ex)</b><i> - The element of fire shall infuse your weapons x3</i></div>              
+        <div class="entry"><b>Flame Blade: 	2/Refresh (ex)</b><i> - The element of fire shall infuse thy weapons x3</i></div>              
     </div>`;
  } 
   if(archetype == "Corruptor"){
@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", function() {
         <div class="entry"><b>Poison: 1/Life Charge x3 (ex)</b><i> - I coat these weapons with a deadly poison x2</i></div>    
         <div class="entry"><b>Brutal Strike: 1/Life Charge x10 (ex)(Ambulant)</b><i> - And stay down!</i></div>  
         <div class="entry"><b>Terror: 2/Life Charge (m)(LTP)</b><i> - Death makes thee terrified x3</i></div> 
-        <div class="entry"><b>Flame Blade: 2/Refresh Charge x5 (ex)</b><i> - The element of fire shall infuse your weapons x3</i></div> 
+        <div class="entry"><b>Flame Blade: 2/Refresh Charge x5 (ex)</b><i> - The element of fire shall infuse thy weapons x3</i></div> 
         <div class="entry"><b>Fireball:	2 Ball / Unlimited (m)</b><i> - The flame of fire is mine to evoke x3</i></div>                        
     </div>`;
  } 
@@ -76,8 +76,8 @@ document.addEventListener("DOMContentLoaded", function() {
         <div class="entry"><b>Destruction Arrow: 0-4 Arrows / Unlimited (ex)(LTP)</b><i> - Destruction Arrow</i></div>
         <div class="entry"><b>Pinning Arrow: 0-4 Arrows / Unlimited (ex)(LTP)</b><i> - Pinning Arrow</i></div>    
         <div class="entry"><b>Poison Arrow: 0-4 Arrows / Unlimited (ex)(LTP)</b><i> - Poison Arrow</i></div>    
-        <div class="entry"><b>Suppression Arrow: 1 Arrow / Unlimited (ex)</b><i> - Suppression Arrow</i></div>    
-        <div class="entry"><b>Phase Arrow: 1 Arrow / Unlimited (ex)</b><i> - Phase Arrow</i></div>                       
+        <div class="entry"><b>Suppression Arrow: 2 Arrow / Unlimited (ex)</b><i> - Suppression Arrow</i></div>    
+        <div class="entry"><b>Phase Arrow: 2 Arrow / Unlimited (ex)</b><i> - Phase Arrow</i></div>                       
     </div>`;
  } 
   if(archetype == "Sniper"){
@@ -99,8 +99,8 @@ document.addEventListener("DOMContentLoaded", function() {
         <div class="entry"><b>Reload: 1/Life Charge x5 (ex)</b><i> - I nocked my arrows to my bow, I let them fly, my quiver is low. Now I pause to go reload. x3</i></div>      
         <div class="entry"><b>Mend: 2/Life Charge x3 Casting Mend on weapons or ahields does not consume a use of Mend. (ex)</b><i> - I make this item whole again x5</i></div>     
         <div class="entry"><b>Pinning Arrow: 4 Arrows / Unlimited (ex)(LTP)</b><i> - Pinning Arrow</i></div>   
-        <div class="entry"><b>Suppression Arrow: 1 Arrow / Unlimited (ex)</b><i> - Suppression Arrow</i></div>    
-        <div class="entry"><b>Phase Arrow: 1 Arrow / Unlimited (ex)</b><i> - Phase Arrow</i></div>    
+        <div class="entry"><b>Suppression Arrow: 2 Arrow / Unlimited (ex)</b><i> - Suppression Arrow</i></div>    
+        <div class="entry"><b>Phase Arrow: 2 Arrow / Unlimited (ex)</b><i> - Phase Arrow</i></div>    
         <div class="entry"><b>Greater Mend: 2/Refresh Charge x10 (ex)</b><i> - Return this [object name] to its former glory x5</i></div>           
     </div>`;
  } 
@@ -172,21 +172,21 @@ document.addEventListener("DOMContentLoaded", function() {
   if(archetype == "Monk"){
   archetypeText = `<div class="card">
       <div class="title"><u>Monk</u></div>       
-        <div class="entry"><b>Banish: 1/Life Charge x5 (ex)</b><i> - The spirits banish thee from this place x3</i></div>      
+        <div class="entry"><b>Banish: 1/Life Charge x5 (m)</b><i> - The spirits banish thee from this place x3</i></div>      
         <div class="entry"><b>Sanctuary: 1/Life Charge x5 (ex) (Ambulant)</b><i> - Sanctuary</i></div>      
         <div class="entry"><b>Heal: 2/Life Charge x3 (ex)(LTP)</b><i> - The white light of healing hath healed thee. x5</i></div>      
         <div class="entry"><b>Resurrect: 1/Refresh Charge x5 (m)</b><i> - Sword Cut, spear stab mace smash, arrow jab, Let the white light of healing descend on thee. Let the white light of healing stop thy spilling blood. Let the white light of healing mend thy bones. Let the white light of healing close thy wounds. Let the white light of healing restore thy vigor. The white light of healing hath resurrected thee.</i></div>      
-        <div class="entry"><b>Innate: 1/Life (ex)</b><i> - Innate</i></div>              
+        <div class="entry"><b>Innate: 2/Life (ex)</b><i> - Innate</i></div>              
     </div>`;
  } 
   if(archetype == "Medium"){
   archetypeText = `<div class="card">
       <div class="title"><u>Medium</u></div>       
-        <div class="entry"><b>Banish: 1/Life Charge x5 (ex)</b><i> - The spirits banish thee from this place x3</i></div>      
+        <div class="entry"><b>Banish: 1/Life Charge x5 (m)</b><i> - The spirits banish thee from this place x3</i></div>      
         <div class="entry"><b>Sanctuary: 1/Life Charge x5 (ex) (Ambulant)</b><i> - Sanctuary</i></div>      
         <div class="entry"><b>Heal: 2/Life Charge x3 (ex)(LTP)</b><i> - The white light of healing hath healed thee. x5</i></div>      
         <div class="entry"><b>Resurrect: 1/Refresh Charge x5 (m)</b><i> - Sword Cut, spear stab mace smash, arrow jab, Let the white light of healing descend on thee. Let the white light of healing stop thy spilling blood. Let the white light of healing mend thy bones. Let the white light of healing close thy wounds. Let the white light of healing restore thy vigor. The white light of healing hath resurrected thee.</i></div>      
-        <div class="entry"><b>Innate: 1/Life (ex)</b><i> - Innate</i></div>            
+        <div class="entry"><b>Innate: 2/Life (ex)</b><i> - Innate</i></div>            
     </div>
     <div class="card">
       <div class="title"><u>Medium</u></div>       
@@ -198,19 +198,20 @@ document.addEventListener("DOMContentLoaded", function() {
   if(archetype == "Mystic"){
   archetypeText = `<div class="card">
       <div class="title"><u>Mystic</u></div>       
-        <div class="entry"><b>Banish: 1/Life Charge x5 (ex)</b><i> - The spirits banish thee from this place x3</i></div>      
+        <div class="entry"><b>Banish: 1/Life Charge x5 (m)</b><i> - The spirits banish thee from this place x3</i></div>      
         <div class="entry"><b>Sanctuary: 1/Life Charge x5 (ex) (Ambulant)</b><i> - Sanctuary</i></div>      
         <div class="entry"><b>Heal: 2/Life Charge x3 (ex)(LTP)</b><i> - The white light of healing hath healed thee. x5</i></div>      
-        <div class="entry"><b>Force Bolt: 4 Balls/Unlimited (m)</b><i> - Forcebolt x3</i></div>     
+        <div class="entry"><b>Force Bolt: 3 Balls/Unlimited (m)</b><i> - Forcebolt x3</i></div>
+        <div class="entry"><b>Phase Bolt: 1 Ball/Unlimited (m)</b><i> - The power of sorcery is mine to evoke x3</i></div>      
         <div class="entry"><b>Suppression Bolt: 2 Balls/Unlimited (m)</b><i> - The strength of suppression is mine to evoke x3</i></div>      
-        <div class="entry"><b>Innate: 1/Life (ex)</b><i> - Innate</i></div>                
+        <div class="entry"><b>Innate: 2/Life (ex)</b><i> - Innate</i></div>                
     </div>`;
  } 
   if(archetype == "Paladin"){
   archetypeText = `<div class="card">
       <div class="title"><u>Paladin</u></div>       
         <div class="entry"><b>Greater Heal: 1/Life Charge x3 (m)</b><i> - By the grace of the divine thou art healed x5</i></div>      
-        <div class="entry"><b>Extend Immunities: 1/Refresh Charge x5 (ex)</b><i> - May the blessing of my god protect thee x3</i></div>      
+        <div class="entry"><b>Protection from Evil: 1/Refresh Charge x5 (ex)</b><i> - May the blessing of my god protect thee x3</i></div>      
         <div class="entry"><b>Greater Resurrect: 1/Life (m)</b><i> - By the grace of the divine thou art resurrected x5</i></div>      
         <div class="entry"><b>Awe: 2/Life (m)(LTP)</b><i> - I command thee awed x3</i></div>      
         <div class="entry"><b>Protection from Magic: 2/Refresh (m)</b><i> - I enchant thee with protection from magic x3</i></div>              
@@ -223,14 +224,14 @@ document.addEventListener("DOMContentLoaded", function() {
         <div class="entry"><b>Martyr: 2/Life Charge x3 (ex)</b><i> - Thy burdens are mine to bear</i></div>      
         <div class="entry"><b>Greater Resurrect: 1/Life (m)</b><i> - By the grace of the divine thou art resurrected x5</i></div>      
         <div class="entry"><b>Awe: 2/Life (m)(LTP)</b><i> - I command thee awed x3</i></div>      
-        <div class="entry"><b>Imbue Shield: 1/Life (m)</b><i> - This shield shall neither bend nor break x3</i></div>              
+        <div class="entry"><b>Imbue: 1/Life (m)</b><i> - This item shall neither bend nor break x3</i></div>              
     </div>`;
  } 
   if(archetype == "Inquisitor"){
   archetypeText = `<div class="card">
       <div class="title"><u>Inquisitor</u></div>       
         <div class="entry"><b>Greater Heal: 1/Life Charge x3 (m)</b><i> - By the grace of the divine thou art healed x5</i></div>      
-        <div class="entry"><b>Extend Immunities: 1/Refresh Charge x5 (ex)</b><i> - May the blessing of my god protect thee x3</i></div>      
+        <div class="entry"><b>Protection from Evil: 1/Refresh Charge x5 (ex)</b><i> - May the blessing of my god protect thee x3</i></div>      
         <div class="entry"><b>Sacred Blades: 1/Life (ex)</b><i> - I sanctify these weapons to smite the wicked x2</i></div>      
         <div class="entry"><b>Awe: 2/Life (m)(LTP)</b><i> - I command thee awed x3</i></div>      
         <div class="entry"><b>Protection from Magic: 2/Refresh (m)</b><i> - I enchant thee with protection from magic x3</i></div>              
@@ -240,9 +241,9 @@ document.addEventListener("DOMContentLoaded", function() {
   archetypeText = `<div class="card">
       <div class="title"><u>Scout</u></div>       
         <div class="entry"><b>Tracking: 2/Life Charge x3 (ex) (Ambulant)</b><i> - Tracking x3</i></div>      
-        <div class="entry"><b>Heal: 2/Life (ex)(LTP)</b><i> - The white light of healing hath healed thee x5</i></div>      
-        <div class="entry"><b>Release: 1/Life Charge x3 (ex)</b><i> - From thy bindings thou art released x5</i></div>      
-        <div class="entry"><b>Dispel Magic: 1/Refresh Charge x5 (ex)</b><i> - By my power I dispel that magic x3</i></div>      
+        <div class="entry"><b>Heal: 3/Life Charge x5 (ex)(LTP)</b><i> - The white light of healing hath healed thee x5</i></div>      
+        <div class="entry"><b>Release: 2/Life Charge x3 (ex)</b><i> - From thy bindings thou art released x5</i></div>      
+        <div class="entry"><b>Dispel Magic: 1/Refresh Charge x5 (ex)</b><i> - By my power I dispel thy magic x3</i></div>      
         <div class="entry"><b>Shadow Step: 1/Life (ex) (Ambulant)</b><i> - I step into the shadows</i></div>
         <div class="entry"><b>Hold Person: 0-1/Life (m)</b><i> - I command thee to stop x3</i></div>
         <div class="entry"><b>Pinning Arrow: 0-1 Arrow / Unlimited (ex)</b><i> - Pinning Arrow</i></div>
@@ -253,8 +254,8 @@ document.addEventListener("DOMContentLoaded", function() {
   archetypeText = `<div class="card">
       <div class="title"><u>Hunter</u></div>       
         <div class="entry"><b>Tracking: 2/Life Charge x3 (ex) (Ambulant)</b><i> - Tracking x3</i></div>      
-        <div class="entry"><b>Heal: 2/Life (ex)(LTP)</b><i> - The white light of healing hath healed thee x5</i></div>      
-        <div class="entry"><b>Dispel Magic: 1/Refresh Charge x5 (ex)</b><i> - By my power I dispel that magic x3</i></div>      
+        <div class="entry"><b>Heal: 3/Life Charge x5 (ex)(LTP)</b><i> - The white light of healing hath healed thee x5</i></div>      
+        <div class="entry"><b>Dispel Magic: 1/Refresh Charge x5 (ex)</b><i> - By my power I dispel thy magic x3</i></div>      
         <div class="entry"><b>Shadow Step: 1/Life (ex) (Ambulant)</b><i> - I step into the shadows</i></div>
         <div class="entry"><b>Hold Person: 0-1/Life Charge x3 (m)</b><i> - I command thee to stop x3</i></div>
         <div class="entry"><b>Pinning Arrow: 0-2 Arrow / Unlimited (ex)</b><i> - Pinning Arrow</i></div>
@@ -265,9 +266,9 @@ document.addEventListener("DOMContentLoaded", function() {
   archetypeText = `<div class="card">
       <div class="title"><u>Apex</u></div>       
         <div class="entry"><b>Tracking: 2/Life Charge x3 (ex) (Ambulant)</b><i> - Tracking x3</i></div>      
-        <div class="entry"><b>Heal: 2/Life (ex)(LTP)</b><i> - The white light of healing hath healed thee x5</i></div>      
-        <div class="entry"><b>Release: 1/Life Charge x3 (ex)</b><i> - From thy bindings thou art released x5</i></div>      
-        <div class="entry"><b>Dispel Magic: 1/Refresh Charge x5 (ex)</b><i> - By my power I dispel that magic x3</i></div>      
+        <div class="entry"><b>Heal: 3/Life Charge x5 (ex)(LTP)</b><i> - The white light of healing hath healed thee x5</i></div>      
+        <div class="entry"><b>Release: 2/Life Charge x3 (ex)</b><i> - From thy bindings thou art released x5</i></div>      
+        <div class="entry"><b>Dispel Magic: 1/Refresh Charge x5 (ex)</b><i> - By my power I dispel thy magic x3</i></div>      
         <div class="entry"><b>Shadow Step: 1/Life (ex) (Ambulant)</b><i> - I step into the shadows</i></div>
         <div class="entry"><b>Sleight of Mind: 1/Life (ex)</b><i> - May thy power remain x3</i></div>
         <div class="entry"><b>Mend: 1/Life (ex)</b><i> - I make this item whole again x5</i></div>
@@ -281,7 +282,7 @@ document.addEventListener("DOMContentLoaded", function() {
         <div class="entry"><b>Scavenge: Unlimited (ex)</b><i> - Scavenge</i></div>      
         <div class="entry"><b>True Grit: 2/Refresh (ex)</b><i> - The wicked flee when I pursue</i></div>      
         <div class="entry"><b>Insult: 2/Life (m) (Ambulant)(LTP)</b><i> - I command thy attention x3</i></div>      
-        <div class="entry"><b>Shake It Off: 1/Refresh Charge x3 (ex)</b><i> - I shall overcome</i></div>
+        <div class="entry"><b>Shake It Off: 1/Life Charge x3 (ex)</b><i> - I shall overcome</i></div>
         <div class="entry"><b>Ancestral Armor: 3/Refresh Charge x10 (ex) (Swift)</b><i> - May this armor protect thee from all forms of harm</i></div>              
     </div>`;
  } 
@@ -292,7 +293,7 @@ document.addEventListener("DOMContentLoaded", function() {
         <div class="entry"><b>Scavenge: Unlimited (ex)</b><i> - Scavenge</i></div>      
         <div class="entry"><b>True Grit: 2/Refresh (ex)</b><i> - The wicked flee when I pursue</i></div>      
         <div class="entry"><b>Insult: 2/Life Charge x5 (m) (Ambulant)(LTP)</b><i> - I command thy attention x3</i></div>      
-        <div class="entry"><b>Shake It Off: 1/Refresh Charge x3 (ex)</b><i> - I shall overcome</i></div>
+        <div class="entry"><b>Shake It Off: 1/Life Charge x3 (ex)</b><i> - I shall overcome</i></div>
         <div class="entry"><b>Ancestral Armor: 3/Refresh (ex) (Swift)</b><i> - May this armor protect thee from all forms of harm</i></div>
         <div class="entry"><b>Momentum: Unlimited (ex) (Ambulant)</b><i> - Momentum</i></div>               
     </div>`;
@@ -303,7 +304,8 @@ document.addEventListener("DOMContentLoaded", function() {
         <div class="entry"><b>Greater Harden: 1/Life (ex)</b><i> - I enchant thee with Greater Harden x3</i></div>      
         <div class="entry"><b>Scavenge: Unlimited (ex)</b><i> - Scavenge</i></div>      
         <div class="entry"><b>Insult: 2/Life (m) (Ambulant)(LTP)</b><i> - I command thy attention x3</i></div>      
-        <div class="entry"><b>Shake It Off: 1/Refresh Charge x3 (ex)</b><i> - I shall overcome</i></div>
+        <div class="entry"><b>Shake It Off: 1/Life Charge x3 (ex)</b><i> - I shall overcome</i></div>
+        <div class="entry"><b>Harden Armor: 1/Life (ex)</b><i> - I enchant thee with harden armor x3</i></div>
         <div class="entry"><b>Phoenix Tears: 3/Refresh (ex) (Swift)</b><i> - May the tears of the phoenix wash over thee x3</i></div>              
     </div>`;
  } 

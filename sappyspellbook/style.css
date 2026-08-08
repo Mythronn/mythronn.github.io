@@ -139,7 +139,7 @@ a.Quizzes {
   padding: 20px;
   width: 80%;
   max-width: 500px;
-  background-image: linear-gradient(rgb(255 235 228), rgb(92 171 0 / 49%));
+  background-image: linear-gradient(rgb(255 235 228), rgba(255 227 31 / 86%));
   border: 2px solid #4b2c20;
   border-radius: 15px;
   box-shadow: 4px 4px 12px rgb(96 53 6 / 74%);
