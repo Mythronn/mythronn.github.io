@@ -1100,7 +1100,7 @@ const Banish = {
   name: "Banish", type: "Verbal",  freq: "1/Life",
   school: "Spirit", range: "20", materials: "",
   incant: "<I>The Spirits banish thee from this place</I>  x3", 
-  effect: "Target Insubstantial player must return to their base where their Insubstantial State immediately ends.", 
+  effect: "Target Insubstantial player must return to their base. Upon arrival, they must immediately end the effect as per Insubstantial.", 
   limitations: "",
   notes: "The target's Insubstantial State is replaced with a new Insubstantial State from Banish. If the Insubstantial State is ended before reaching the base, the rest of the effect is ended as well. If Banish is cast on self, the caster may end this Insubstantial State at any time by using the exit incantation for Insubstantial. This is a Forced Movement effect.",
   text: ""
@@ -1139,7 +1139,7 @@ const ShieldSmall = {
   cost: 2,
   max: 1, charge: "", use: -1, per: "",
   pointTotalId: "ShieldSmallval",
-  name: "Small Shield", type: "Neutral",  freq: "",
+  name: "Small Shield", type: "Trait",  freq: "",
   school: "", range: "", materials: "",
   incant: "", 
   effect: "May wield a small shield", 
@@ -1153,7 +1153,7 @@ const WeaponShort = {
   cost: 3,
   max: 2, charge: "", use: -1, per: "",
   pointTotalId: "WeaponShortval",
-  name: "Weapon Short", type: "Neutral",  freq: "",
+  name: "Weapon Short", type: "Trait",  freq: "",
   school: "", range: "", materials: "",
   incant: "", 
   effect: "May wield one short weapon at a time for each instance purchased (but may carry extras)", 
@@ -1167,7 +1167,7 @@ const Experienced = {
   cost: 2,
   max: 2, charge: "", use: -1, per: "",
   pointTotalId: "Experiencedval",
-  name: "Experienced", type: "Neutral",  freq: "",
+  name: "Experienced", type: "Trait",  freq: "",
   school: "Neutral", range: "", materials: "",
   incant: "", 
   effect: "A single per-life Verbal purchased becomes Charge x5 in addition to the normal frequency OR a single per- refresh Verbal purchased becomes Charge x10 in addition to the normal frequency. This Verbal must be determined before the game begins and cannot be changed", 
@@ -1245,7 +1245,7 @@ const Entangle = {
   name: "Entangle", type: "Magic Ball",  freq: "2 Balls/Unlimited",
   school: "Subdual", range: "Ball", materials: "Brown Magic Ball",
   incant: "<I>The strength of earth is mine to evoke</I> x3", 
-  effect: "Target is Stopped for 60 seconds. Engulfing", 
+  effect: "Player struck is Stopped for 60 seconds. Engulfing.", 
   limitations: "",
   notes: "",
   text: ""
@@ -1256,7 +1256,7 @@ const WeaponHinged = {
   cost: 3,
   max: 1, charge: "", use: -1, per: "",
   pointTotalId: "WeaponHingedval",
-  name: "Weapon Hinged", type: "Neutral",  freq: "",
+  name: "Weapon Hinged", type: "Trait",  freq: "",
   school: "", range: "", materials: "",
   incant: "", 
   effect: "May wield one hinged weapon at a time for each instance purchased (but may carry extras)", 
@@ -1329,9 +1329,9 @@ const Shove = {
   name: "Shove", type: "Verbal",  freq: "1/Life",
   school: "Sorcery", range: "20", materials: "",
   incant: "<I>My power shoves thee</I> x3", 
-  effect: "Target player is moved back 20' in a straight line away from the caster. Works on Stopped players. If the caster is the target, the caster may choose the direction they move.", 
+  effect: "Target player is moved back 20' in a straight line away from the caster. Works on Stopped and Stunned players. If the caster is the target, the caster may choose the direction they move.", 
   limitations: "",
-  notes: "This is a Forced Movement effect.",
+  notes: "This is a Forced Movement effect. This effect is ended if the target is affected by another Forced Movement effect or becomes Frozen, Insubstantial, Invulnerable, or Stunned.",
   text: ""
 };
 const SummonDead = {
@@ -1383,7 +1383,7 @@ const ShieldMedium = {
   cost: 2,
   max: 1, charge: "", use: -1, per: "",
   pointTotalId: "ShieldMediumval",
-  name: "Medium Shield", type: "Neutral",  freq: "",
+  name: "Medium Shield", type: "Trait",  freq: "",
   school: "", range: "", materials: "",
   incant: "", 
   effect: "May wield up to a medium shield", 
@@ -1456,7 +1456,7 @@ const Resurrect = {
   name: "Resurrect", type: "Verbal",  freq: "1/Ref Chg x5",
   school: "Spirit", range: "Touch", materials: "",
   incant: "<I>Sword Cut, spear stab, mace smash, arrow jab, <BR>- Let the white light of healing descend on thee <BR>- Let the white light of healing stop thy spilling blood <BR>- Let the white light of healing mend thy bones <BR>- Let the white light of healing close thy wounds. <BR>- Let the white light of healing restore thy vigor. <BR>- The white light of healing hath resurrected thee.</I>", 
-  effect: "Target Dead player who has not moved more than 5' from where they died is returned to life. Non-Persistent Enchantments on the player are removed before the player returns to life. Any Wounds on the player are healed.", 
+  effect: "Target willing dead player who has not moved more than 5' from where they died is returned to life. Non-Persistent Enchantments on the player are removed before the player returns to life. Any wounds on the player are healed.", 
   limitations: "",
   notes: "",
   text: ""
@@ -1480,9 +1480,9 @@ const BlessingAgainstHarm = {
   purchased: 0,
   level: 4,
   cost: 1,
-  max: 31, charge: "", use: 1, per: "Refresh",
+  max: 2, charge: "", use: 1, per: "Life",
   pointTotalId: "BlessingAgainstHarmval",
-  name: "Blessing Against Harm", type: "Enchantment",  freq: "1/Ref",
+  name: "Blessing Against Harm", type: "Enchantment",  freq: "1/Life",
   school: "Protection", range: "Other", materials: "White Strip",
   incant: "<I>I enchant thee against all harm</I> x3", 
   effect: "Resistant to all effects from the next source which would inflict a Wound, Death, State, or other negative effect. Does not trigger against effects cast by the player", 
@@ -1499,7 +1499,7 @@ const CircleofProtection = {
   name: "Circle of Protection", type: "Verbal",  freq: "1/Ref Chg x10",
   school: "Protection", range: "Self", materials: "",
   incant: "<I>Circle of Protection</I> x3", 
-  effect: "The caster and up to five willing players within Touch range of the caster immediately have all States and Ongoing Effects removed and then become Insubstantial. All targets:<BR>- May not move from their starting location, and are unaffected by Forced Movement effects. <BR>- May use abilities on players and their carried equipment who became Insubstantial due to the same casting of Circle of Protection as though they were not Insubstantial. <BR>- May end this Insubstantial State at any time by using the exit incantation for Insubstantial. If the caster ends Circle of Protection by using the exit incantation for Insubstantial, the effect ends for all targets. If the Insubstantial State is ended for a target, the Ongoing Effects of Circle of Protection no longer apply to that player.", 
+  effect: "The caster and up to five willing players within Touch range of the caster immediately have all States and Ongoing Effects removed and then become Insubstantial. All targets:<BR>- May not move from their starting location, and are unaffected by Forced Movement effects other than Banish. <BR>- May use abilities on players and their carried equipment who became Insubstantial due to the same casting of Circle of Protection as though they were not Insubstantial. <BR>- May end this Insubstantial State at any time by using the exit incantation for Insubstantial. If the caster ends Circle of Protection by using the exit incantation for Insubstantial, the effect ends for all targets. If the Insubstantial State is ended for a target, the Ongoing Effects of Circle of Protection no longer apply to that player.", 
   limitations: "",
   notes: "If a player is prevented from becoming Insubstantial, they are unaffected by Circle of Protection.",
   text: ""
@@ -1518,16 +1518,16 @@ const GreaterHeal = {
   notes: "",
   text: ""
 };
-const ImbueShield = {
+const Imbue = {
   purchased: 0,
   level: 4,
   cost: 1,
   max: 2, charge: "", use: 2, per: "Refresh",
-  pointTotalId: "ImbueShieldval",
-  name: "Imbue Shield", type: "Enchantment",  freq: "2/Ref",
+  pointTotalId: "Imbueval",
+  name: "Imbue", type: "Enchantment",  freq: "2/Ref",
   school: "Protection", range: "Other", materials: "White Strip",
-  incant: "<I>This shield shall neither bend nor break</I> x3", 
-  effect: "Shield wielded by the player cannot be destroyed nor damaged. Engulfing effects hitting the wielded shield are ignored.", 
+  incant: "<I>This item shall neither bend nor break</I> x3", 
+  effect: "Bearer chooses either shield or weapons. Wielded equipment of the chosen type cannot be destroyed nor damaged. Engulfing effects hitting wielded equipment of the chosen type are ignored.", 
   limitations: "",
   notes: "",
   text: ""
@@ -1582,10 +1582,10 @@ const DispelMagic = {
   pointTotalId: "DispelMagicval",
   name: "Dispel Magic", type: "Verbal",  freq: "1/Ref",
   school: "Sorcery", range: "20", materials: "",
-  incant: "<I>By my power I dispel that magic</I> x3", 
-  effect: "All Enchantments on target are removed", 
+  incant: "<I>By my power I dispel thy magic</I> x3", 
+  effect: "All Enchantments on target are removed. Will always remove Enchantments if successfully cast on a valid target, regardless of the player's Traits, States, Immunities, Ongoing Effects, or Enchantments (except Sleight of Mind).", 
   limitations: "",
-  notes: "Will always remove enchantments if successfully cast on a valid target, regardless of the player’s Traits, States, Immunities, Ongoing Effects, or Enchantments (except Sleight of Mind)",
+  notes: "Does not affect Invulnerable players.",
   text: ""
 };
 /*__________________________________________*/
@@ -1612,18 +1612,18 @@ const Ambulant = {
   name: "Ambulant", type: "Meta-Magic",  freq: "1/Ref",
   school: "Neutral", range: "", materials: "",
   incant: "<I>Ambulant</I>", 
-  effect: "An incantation may be said while moving", 
-  limitations: "May not be used on the Charge incantation",
-  notes: "Using Ambulant allows both the target indication and Ambulant to be said while moving, but not other Meta-Magics.",
+  effect: "The next Enchantment, Magic Ball, or Verbal may be cast while moving.", 
+  limitations: "",
+  notes: " Using Ambulant allows both the target indication and Ambulant to be said while moving, but not other MetaMagics.",
   text: ""
 };
 const BlessedAura = {
   purchased: 0,
   level: 5,
   cost: 1,
-  max: 31, charge: "", use: 1, per: "Refresh",
+  max: 2, charge: "", use: 1, per: "Life",
   pointTotalId: "BlessedAuraval",
-  name: "Blessed Aura", type: "Enchantment",  freq: "1/Ref",
+  name: "Blessed Aura", type: "Enchantment",  freq: "1/Life",
   school: "Protection", range: "Other", materials: "White Strip",
   incant: "<I>I enchant thy person, arms, and armor</I> x3", 
   effect: "Resistant to all effects from the next source which would inflict a Wound, Death, State, or negatively affect them or their carried equipment. Does not trigger against effects cast by the player", 
@@ -1655,7 +1655,7 @@ const GreaterResurrect = {
   name: "Greater Resurrect", type: "Verbal",  freq: "1/Ref",
   school: "Spirit", range: "Touch", materials: "",
   incant: "<I>By the grace of the divine thou art resurrected</I> x5", 
-  effect: "Target Dead player who has not moved more than 5' from where they died is returned to life. Any wounds on the player are healed. Works regardless of any States on the target, and removes Cursed if present.", 
+  effect: "Target willing dead player who has not moved more than 5' from where they died is returned to life. Any wounds on the player are healed. Works regardless of any States on the target, and removes Cursed if present.", 
   limitations: "",
   notes: "Enchantments on the player are retained.",
   text: ""
@@ -1668,9 +1668,9 @@ const UndeadMinion = {
   pointTotalId: "UndeadMinionval",
   name: "Undead Minion", type: "Enchantment",  freq: "1/Ref",
   school: "Death", range: "Other", materials: "Yellow Strip",
-  incant: "<I>By the power of my will, arise my minion!</I> x5", 
-  effect: "Bearer is Cursed and cannot Respawn. While the bearer is enchanted, the caster gains Raise Dead (Unlimited) (m) which can only be cast with the bearer as the target, and ignores the requirement for the bearer to have not moved from where they died. For the duration of the Enchantment, the bearer may treat the caster as a base for the purposes of the effects which require the bearer to go to their base. This enchantment is Persistent, and remains active while the bearer is dead.",
-  limitations: "The caster may not have more than three Undead Minion Enchantments.",
+  incant: "<I>Cheat thy death and arise, my undead minion!</I> x5", 
+  effect: "Bearer is Cursed and cannot Respawn. While the bearer is enchanted, the caster gains Raise Dead (Unlimited) (m) which can only be cast with the bearer as the target, and ignores the requirement for the bearer to have not moved from where they died. Bearer may treat the caster as an Alternate Base. This enchantment is Persistent, and remains active while the bearer is dead.",
+  limitations: "The caster may not have more than three Undead Minion Enchantments and may not use Alternate Bases. Bearer may not be treated as an Alternate Base.",
   notes: "",
   text: ""
 };
@@ -1683,9 +1683,9 @@ const StealLifeEssence = {
   name: "Steal Life Essence", type: "Verbal",  freq: "1/Life",
   school: "Death", range: "Touch", materials: "",
   incant: "<I>Steal Life</I>", 
-  effect: "Caster may heal a Wound or instantly Charge an ability", 
+  effect: "Target dead player is Cursed. Caster may heal a wound or instantly Charge an ability.", 
   limitations: "May only be used on a dead player. That player is Cursed. Does not work on Cursed players. The caster does not gain the effect if the dead player is unaffected",
-  notes: "In order to charge an ability, the name of the ability being charged must still be stated immediately after the incantation.",
+  notes: "Caster will always benefit if successfully cast on a valid target, regardless of the caster's Traits, States, Immunities, Ongoing Effects, or Enchantments. In order to charge an ability, the name of the ability being charged must still be stated immediately after the incantation.",
   text: ""
 };
 
@@ -1699,7 +1699,7 @@ const AncestralArmor = {
   pointTotalId: "AncestralArmorval",
   name: "Ancestral Armor", type: "Enchantment",  freq: "1/Ref",
   school: "Protection", range: "Other", materials: "White Strip",
-  incant: "<I>May this armor protect thee from all forms of harm.<BR>- May the flames of the fire not burn thee.<BR>- May the bolts from the heavens not strike thee.<BR>- May the arrows of your enemies not pierce thee.<BR>- May this armor protect thee from all forms of harm.</I>", 
+  incant: "<I>May this armor protect thee from all forms of harm</I> x3", 
   effect: "The effects of a Magic Ball, projectile weapon, or melee weapon which just struck armor worn by the player are ignored, even if the object would not otherwise affect the armor. The armor loses one point of value in the location struck. This effect will not trigger if the armor has no points left in the location struck. Ancestral Armor is not expended after use and will continue to provide protection until removed with Dispel Magic or similar abilities", 
   limitations: "",
   notes: "Engulfing Effects that do not strike the bearer's armor, abilities that ignore armor entirely, and abilities that have been entirely negated due to Ability Order do not trigger Ancestral Armor. Phasing equipment interacts with armor worn by the bearer as though Ancestral Armor was not present.",
@@ -1722,7 +1722,7 @@ const MassHealing = {
 const Necromancer = {
   purchased: 0,
   level: 6,
-  cost: 1,
+  cost: 2,
   max: 1, charge: "", use: -1, per: "",
   pointTotalId: "Necromancerval",
   name: "Necromancer", type: "Archetype",  freq: "",
@@ -1756,8 +1756,8 @@ const PhoenixTears = {
   name: "Phoenix Tears", type: "Enchantment",  freq: "1/Ref",
   school: "Spirit", range: "Other", materials: "Two White Strips",
   incant: "<I>May the tears of the phoenix wash over thee</I> x3", 
-  effect: "Enchanted player does not die as normal. When the player would otherwise die they instead become Frozen for 30 seconds. If the player is still enchanted when the Frozen State elapses or is removed: <BR>1. Remove all wounds. <BR>2. Remove all States that would be removed by death or respawning. <BR>3. Remove all Ongoing Effects with a timer. <BR>4. Repair all carried equipment. <BR>5. Remove all non-persistent enchantments other than Phoenix Tears.<BR>6. Remove a strip.<BR> Additionally, Phoenix Tears allows you to wear an extra Enchantment from the Protection School. This extra enchantment is considered Persistent as long as Phoenix Tears is present. The additional Enchantment is not removed once Phoenix Tears is removed.", 
-  limitations: "",
+  effect: "Bearer does not die as normal. When the bearer would otherwise die they instead remove all wounds and become Frozen for 30 seconds. If the bearer is still enchanted when the Frozen State elapses or is removed: <BR>1. Remove the Cursed state, if Cursed. <BR>2. Repair all carried equipment. <BR>3. Remove all non-persistent enchantments other than Phoenix Tears. <BR>4. Remove a strip. <BR> Additionally, Phoenix Tears allows the bearer to wear an extra Enchantment from the Protection School. This extra enchantment is considered Persistent as long as Phoenix Tears is present. The additional Enchantment is not removed once Phoenix Tears is removed.", 
+  limitations: "May not be worn with Attuned or Essence Graft.",
   notes: "Phoenix Tears is removed when the last strip is removed If Phoenix Tears is removed, the bearer chooses which (m) Enchantments to lose to meet their new Enchantment limit, if necessary.",
   text: ""
 };
@@ -1849,7 +1849,7 @@ const abilities = [Priest,	//0
   BlessingAgainstHarm,	//27
   CircleofProtection,	//28
   GreaterHeal,	//29
-  ImbueShield,	//30
+  Imbue,	//30
   ProtectionfromProjectiles,	//31
   Swift,	//32
   Teleport,	//33
