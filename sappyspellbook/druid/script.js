@@ -1457,7 +1457,7 @@ const HeartoftheSwarm = {
   pointTotalId: "HeartoftheSwarmval",
   name: "Heart of the Swarm", type: "Enchantment",
   incant: "<I>Let all those who oppose the hive feel the wrath of the swarm</I> x3", 
-  text: "<p2>Heart of the Swarm</p2><BR><p3>Freq:</p3>  1/Refresh<BR><p3>Type:</p3>  Enchantment<BR><p3>School:</p3> Spirit<BR><p3>Range:</p3> Self<BR><p3>Incant:</p3> <I>Let all those who oppose the hive feel the wrath of the swarm</I> x3<BR><p3>Materials:</p3> Yellow strip<BR><p3>Effect:</p3> Bearer is Stopped. Any player on the bearer’s team may use the bearer as their respawn point as per the normal game rules. Players respawning at the caster do so by declaring <I>“My life for the swarm.”</I> Friendly players may treat the caster as an Alternate Base. <p3>Limitations:</p3> Players cannot respawn at the bearer if there are living enemy players or game objectives within 20’ of the bearer"
+  text: "<p2>Heart of the Swarm</p2><BR><p3>Freq:</p3>  1/Refresh<BR><p3>Type:</p3>  Enchantment<BR><p3>School:</p3> Spirit<BR><p3>Range:</p3> Self<BR><p3>Incant:</p3> <I>Let all those who oppose the hive feel the wrath of the swarm</I> x3<BR><p3>Materials:</p3> Yellow strip<BR><p3>Effect:</p3> Bearer is Stopped. Any player on the bearer’s team may use the bearer as their respawn point as per the normal game rules. Players respawning at the caster do so by declaring <I>“My life for the swarm.”</I> Friendly players may treat the caster as an Alternate Base. <BR><p3>Limitations:</p3> Players cannot respawn at the bearer if there are living enemy players or game objectives within 20’ of the bearer"
 };
 const Ironskin = {
   purchased: 0,
