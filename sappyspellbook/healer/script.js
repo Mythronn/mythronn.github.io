@@ -1455,7 +1455,7 @@ const Resurrect = {
   pointTotalId: "Resurrectval",
   name: "Resurrect", type: "Verbal",  freq: "1/Ref Chg x5",
   school: "Spirit", range: "Touch", materials: "",
-  incant: "<I>Sword Cut, spear stab, mace smash, arrow jab, <BR>- Let the white light of healing descend on thee <BR>- Let the white light of healing stop thy spilling blood <BR>- Let the white light of healing mend thy bones <BR>- Let the white light of healing close thy wounds. <BR>- Let the white light of healing restore thy vigor. <BR>- The white light of healing hath resurrected thee.</I>", 
+  incant: "<I>Sword Cut, spear stab, mace smash, arrow jab, <BR> Let the white light of healing descend on thee <BR> Let the white light of healing stop thy spilling blood <BR> Let the white light of healing mend thy bones <BR> Let the white light of healing close thy wounds. <BR> Let the white light of healing restore thy vigor. <BR> The white light of healing hath resurrected thee.</I>", 
   effect: "Target willing dead player who has not moved more than 5' from where they died is returned to life. Non-Persistent Enchantments on the player are removed before the player returns to life. Any wounds on the player are healed.", 
   limitations: "",
   notes: "",
