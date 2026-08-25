@@ -1975,45 +1975,60 @@ chunks[0].entries = divs[0]
 */
 
 // Measure each entry's real rendered height using the same styles as the final card
-const measureContainer = document.createElement('div');
-measureContainer.style.position = 'absolute';
-measureContainer.style.visibility = 'hidden';
-measureContainer.style.width = '4.3in'; // card width minus 2 x 0.1in padding
-measureContainer.style.fontFamily = 'Arial, sans-serif';
-measureContainer.style.fontSize = '10pt';
-document.body.appendChild(measureContainer);
+function buildHiddenCard(includeQr) {
+  const card = document.createElement('div');
+  card.className = 'card';
+  card.style.position = 'absolute';
+  card.style.visibility = 'hidden';
+  card.style.left = '-9999px';
+  // Match the real .card box exactly (width/height/padding/font are inherited from the .card class,
+  // but position/visibility overrides above keep it off-screen and non-interactive)
 
-for (let i = 0; i < entries.length; i++) {
-  const entryDiv = document.createElement('div');
-  entryDiv.className = 'entry';
-  entryDiv.style.marginBottom = '0.2em';
-  entryDiv.innerHTML = `<b>${entries[i].text}</b><i>${entries[i].flavor ? ' - ' + entries[i].flavor : ''}</i>`;
-  measureContainer.appendChild(entryDiv);
-  entries[i].height = entryDiv.getBoundingClientRect().height;
-  measureContainer.removeChild(entryDiv);
+  const titleDiv = document.createElement('div');
+  titleDiv.className = 'title';
+  titleDiv.innerHTML = `<u>${title}</u> X/X`; // placeholder, same length as real title
+  card.appendChild(titleDiv);
+
+  if (includeQr) {
+    const img = document.createElement('img');
+    img.style.float = 'right';
+    img.style.width = '60px';
+    img.style.height = '60px';
+    img.src = qrImageSrc || '';
+    card.appendChild(img);
+  }
+
+  document.body.appendChild(card);
+  return card;
 }
-document.body.removeChild(measureContainer);
-
-// Pack entries into cards 
-const pxPerIn = 96;
-const cardHeightIn = 2.6, paddingIn = 0.1;
-const titleHeightPx = 24; // approx space taken by the title row 
-const maxContentHeightPx = (cardHeightIn - paddingIn * 2) * pxPerIn - titleHeightPx;
 
 const packedChunks = [];
-let currentEntries = [];
-let currentHeight = 0;
+let entryIndex = 0;
 
-for (let i = 0; i < entries.length; i++) {
-  if (currentHeight + entries[i].height > maxContentHeightPx && currentEntries.length > 0) {
-    packedChunks.push(currentEntries);
-    currentEntries = [];
-    currentHeight = 0;
+while (entryIndex < entries.length) {
+  const isFirstCard = packedChunks.length === 0;
+  const testCard = buildHiddenCard(isFirstCard);
+  const cardEntries = [];
+
+  while (entryIndex < entries.length) {
+    const entryDiv = document.createElement('div');
+    entryDiv.className = 'entry';
+    entryDiv.innerHTML = `<b>${entries[entryIndex].text}</b><i>${entries[entryIndex].flavor ? ' - ' + entries[entryIndex].flavor : ''}</i>`;
+    testCard.appendChild(entryDiv);
+
+    if (testCard.scrollHeight > testCard.clientHeight && cardEntries.length > 0) {
+      // Doesn't fit — back it out and stop this card
+      testCard.removeChild(entryDiv);
+      break;
+    }
+
+    cardEntries.push(entries[entryIndex]);
+    entryIndex++;
   }
-  currentEntries.push(entries[i]);
-  currentHeight += entries[i].height;
+
+  document.body.removeChild(testCard);
+  packedChunks.push(cardEntries);
 }
-if (currentEntries.length > 0) packedChunks.push(currentEntries);
 
 const chunks = packedChunks.map((chunkEntries, idx) => ({
   num: idx + 1,
@@ -2021,7 +2036,6 @@ const chunks = packedChunks.map((chunkEntries, idx) => ({
   qr: idx === 0,
   entries: chunkEntries
 }));
-
 
 console.log(chunks)
 
