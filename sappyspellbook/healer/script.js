@@ -1921,13 +1921,19 @@ function printCards(){
     }
   }
 
-  for (let i = 0; i < entries.length; i++) {
+  /*for (let i = 0; i < entries.length; i++) {
    txt = entries[i].text
    flv = entries[i].flavor
    if (txt.length + flv.length + 6 > 66){
      entries[i].lines = 2
    } else {entries[i].lines = 1}
- }
+ }*/
+
+   for (let i = 0; i < entries.length; i++) {
+ txt = entries[i].text
+ flv = entries[i].flavor
+ entries[i].lines = Math.max(1, Math.ceil((txt.length + flv.length + 6) / 66))
+}
 
 
 // Split onto up to 3 cards
@@ -2003,6 +2009,8 @@ const htmlContent = `
     }
     .entry {
       margin-bottom: 0.2em;
+        overflow-wrap: break-word;
+        word-wrap: break-word;
     }
     .title {
       font-weight: bold;
