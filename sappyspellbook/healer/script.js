@@ -1936,8 +1936,8 @@ function printCards(){
 }
 
 
-// Split onto up to 3 cards
-numchunks = 3
+// Old version
+/*numchunks = 3
 maxchunlines = 14 // this may be right for 9pt
 chunks = []
 currchlines = 0
@@ -1972,6 +1972,57 @@ else {
 divs = [entries];
 chunks[0].entries = divs[0]
 }
+*/
+
+// Measure each entry's real rendered height using the same styles as the final card
+const measureContainer = document.createElement('div');
+measureContainer.style.position = 'absolute';
+measureContainer.style.visibility = 'hidden';
+measureContainer.style.width = '4.3in'; // card width minus 2 x 0.1in padding
+measureContainer.style.fontFamily = 'Arial, sans-serif';
+measureContainer.style.fontSize = '10pt';
+document.body.appendChild(measureContainer);
+
+for (let i = 0; i < entries.length; i++) {
+  const entryDiv = document.createElement('div');
+  entryDiv.className = 'entry';
+  entryDiv.style.marginBottom = '0.2em';
+  entryDiv.innerHTML = `<b>${entries[i].text}</b><i>${entries[i].flavor ? ' - ' + entries[i].flavor : ''}</i>`;
+  measureContainer.appendChild(entryDiv);
+  entries[i].height = entryDiv.getBoundingClientRect().height;
+  measureContainer.removeChild(entryDiv);
+}
+document.body.removeChild(measureContainer);
+
+// Pack entries into cards 
+const pxPerIn = 96;
+const cardHeightIn = 2.6, paddingIn = 0.1;
+const titleHeightPx = 24; // approx space taken by the title row 
+const maxContentHeightPx = (cardHeightIn - paddingIn * 2) * pxPerIn - titleHeightPx;
+
+const packedChunks = [];
+let currentEntries = [];
+let currentHeight = 0;
+
+for (let i = 0; i < entries.length; i++) {
+  if (currentHeight + entries[i].height > maxContentHeightPx && currentEntries.length > 0) {
+    packedChunks.push(currentEntries);
+    currentEntries = [];
+    currentHeight = 0;
+  }
+  currentEntries.push(entries[i]);
+  currentHeight += entries[i].height;
+}
+if (currentEntries.length > 0) packedChunks.push(currentEntries);
+
+const chunks = packedChunks.map((chunkEntries, idx) => ({
+  num: idx + 1,
+  max: packedChunks.length,
+  qr: idx === 0,
+  entries: chunkEntries
+}));
+
+
 console.log(chunks)
 
 
