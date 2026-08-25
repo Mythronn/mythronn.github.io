@@ -1921,23 +1921,18 @@ function printCards(){
     }
   }
 
-  /*for (let i = 0; i < entries.length; i++) {
+  for (let i = 0; i < entries.length; i++) {
    txt = entries[i].text
    flv = entries[i].flavor
    if (txt.length + flv.length + 6 > 66){
      entries[i].lines = 2
    } else {entries[i].lines = 1}
- }*/
+ }
 
-   for (let i = 0; i < entries.length; i++) {
- txt = entries[i].text
- flv = entries[i].flavor
- entries[i].lines = Math.max(1, Math.ceil((txt.length + flv.length + 6) / 66))
-}
 
 
 // Old version
-/*numchunks = 3
+numchunks = 3
 maxchunlines = 14 // this may be right for 9pt
 chunks = []
 currchlines = 0
@@ -1972,70 +1967,9 @@ else {
 divs = [entries];
 chunks[0].entries = divs[0]
 }
-*/
 
-// Measure each entry's real rendered height using the same styles as the final card
-function buildHiddenCard(includeQr) {
-  const card = document.createElement('div');
-  card.className = 'card';
-  card.style.position = 'absolute';
-  card.style.visibility = 'hidden';
-  card.style.left = '-9999px';
-  // Match the real .card box exactly (width/height/padding/font are inherited from the .card class,
-  // but position/visibility overrides above keep it off-screen and non-interactive)
 
-  const titleDiv = document.createElement('div');
-  titleDiv.className = 'title';
-  titleDiv.innerHTML = `<u>${title}</u> X/X`; // placeholder, same length as real title
-  card.appendChild(titleDiv);
 
-  if (includeQr) {
-    const img = document.createElement('img');
-    img.style.float = 'right';
-    img.style.width = '60px';
-    img.style.height = '60px';
-    img.src = qrImageSrc || '';
-    card.appendChild(img);
-  }
-
-  document.body.appendChild(card);
-  return card;
-}
-
-const packedChunks = [];
-let entryIndex = 0;
-
-while (entryIndex < entries.length) {
-  const isFirstCard = packedChunks.length === 0;
-  const testCard = buildHiddenCard(isFirstCard);
-  const cardEntries = [];
-
-  while (entryIndex < entries.length) {
-    const entryDiv = document.createElement('div');
-    entryDiv.className = 'entry';
-    entryDiv.innerHTML = `<b>${entries[entryIndex].text}</b><i>${entries[entryIndex].flavor ? ' - ' + entries[entryIndex].flavor : ''}</i>`;
-    testCard.appendChild(entryDiv);
-
-    if (testCard.scrollHeight > testCard.clientHeight && cardEntries.length > 0) {
-      // Doesn't fit — back it out and stop this card
-      testCard.removeChild(entryDiv);
-      break;
-    }
-
-    cardEntries.push(entries[entryIndex]);
-    entryIndex++;
-  }
-
-  document.body.removeChild(testCard);
-  packedChunks.push(cardEntries);
-}
-
-const chunks = packedChunks.map((chunkEntries, idx) => ({
-  num: idx + 1,
-  max: packedChunks.length,
-  qr: idx === 0,
-  entries: chunkEntries
-}));
 
 console.log(chunks)
 
