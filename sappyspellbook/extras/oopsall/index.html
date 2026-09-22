@@ -20,12 +20,17 @@
 
   gtag('config', 'G-7JR53Y27TN');
 </script>
-<title>Oops All!</title>
 
 </head>
 <body>
- 
-<button onclick="showRandomWords()">Generate Choice</button>
+
+<button id="spinButton" onclick="showRandomWords()">Generate Choice</button>
+
+<div class="wheel-wrap">
+  <div class="wheel-pointer"></div>
+  <canvas id="wheel"></canvas>
+</div>
+
 <div class="midnav">
         <a   class="Anti-Paladin" hidden>ANTI-PAL</a>
         <a   class="Archer" hidden>ARCHER</a>
@@ -40,48 +45,146 @@
         <a   class="Bard" hidden>BARD</a>
         <a   class="Wizard" hidden>WIZARD</a>
         <a   class="placeholder" >PLACEHOLDER</a>
-      </div>  
- 
-<script>
-    
+      </div>
 
-  const words = ["Archer", "Assassin", "Paladin", "Anti-Paladin", "Monk", "Barbarian",
-                 "Warrior", "Scout", "Bard", "Druid", "Healer", "Wizard"];
- 
-  function showRandomWords() {
-    document.getElementsByClassName("Anti-Paladin")[0].style.display = "none";
-    document.getElementsByClassName("Archer")[0].style.display = "none";
-    document.getElementsByClassName("Assassin")[0].style.display = "none";
-    document.getElementsByClassName("Barbarian")[0].style.display = "none";
-    document.getElementsByClassName("Monk")[0].style.display = "none";
-    document.getElementsByClassName("Paladin")[0].style.display = "none";
-    document.getElementsByClassName("Scout")[0].style.display = "none";
-    document.getElementsByClassName("Warrior")[0].style.display = "none";
-    document.getElementsByClassName("Druid")[0].style.display = "none";
-    document.getElementsByClassName("Healer")[0].style.display = "none";
-    document.getElementsByClassName("Bard")[0].style.display = "none";
-    document.getElementsByClassName("Wizard")[0].style.display = "none";
+<script>
+  // Wheel order is arranged so similar colors aren't side by side.
+  // Colors match the .midnav styles in style.css.
+  const classes = [
+    { name: "Archer",       label: "ARCHER",    fill: "#ff6600", text: "#ffffff" },
+    { name: "Assassin",     label: "ASSASSIN",  fill: "#000000", text: "#ffffff" },
+    { name: "Paladin",      label: "PALADIN",   gradient: ["rgb(255,166,0)", "rgb(255,248,230)"], text: "#000000" },
+    { name: "Warrior",      label: "WARRIOR",   fill: "#8400b8", text: "#ffffff" },
+    { name: "Anti-Paladin", label: "ANTI-PAL",  gradient: ["rgb(124,124,124)", "rgb(255,255,255)"], text: "#000000" },
+    { name: "Scout",        label: "SCOUT",     fill: "#00a800", text: "#ffffff" },
+    { name: "Barbarian",    label: "BARBARIAN", fill: "#ffffff", text: "#000000" },
+    { name: "Bard",         label: "BARD",      fill: "#0047AB", text: "#ffffff" },
+    { name: "Wizard",       label: "WIZARD",    fill: "#FFD700", text: "#000000" },
+    { name: "Healer",       label: "HEALER",    fill: "#ac0404", text: "#ffffff" },
+    { name: "Monk",         label: "MONK",      fill: "#7c7c7c", text: "#ffffff" },
+    { name: "Druid",        label: "DRUID",     fill: "#83441a", text: "#ffffff" }
+  ];
+
+  const canvas = document.getElementById("wheel");
+  const ctx = canvas.getContext("2d");
+  const spinButton = document.getElementById("spinButton");
+  const SIZE = 500;          // drawing size in CSS pixels
+  let rotation = 0;          // total rotation in degrees (keeps growing)
+  let spinning = false;
+
+  function drawWheel() {
+    const dpr = window.devicePixelRatio || 1;
+    canvas.width = SIZE * dpr;
+    canvas.height = SIZE * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+    const c = SIZE / 2;
+    const r = c - 8;
+    const seg = (2 * Math.PI) / classes.length;
+    ctx.clearRect(0, 0, SIZE, SIZE);
+
+    classes.forEach((cls, i) => {
+      // Segment 0 starts at the top (under the pointer) and goes clockwise
+      const start = -Math.PI / 2 + i * seg;
+      const end = start + seg;
+
+      ctx.beginPath();
+      ctx.moveTo(c, c);
+      ctx.arc(c, c, r, start, end);
+      ctx.closePath();
+
+      if (cls.gradient) {
+        const g = ctx.createRadialGradient(c, c, 0, c, c, r);
+        g.addColorStop(0, cls.gradient[0]);
+        g.addColorStop(1, cls.gradient[1]);
+        ctx.fillStyle = g;
+      } else {
+        ctx.fillStyle = cls.fill;
+      }
+      ctx.fill();
+      ctx.lineWidth = 2;
+      ctx.strokeStyle = "#202020";
+      ctx.stroke();
+
+      // Label, reading outward along the segment
+      ctx.save();
+      ctx.translate(c, c);
+      ctx.rotate(start + seg / 2);
+      ctx.textAlign = "right";
+      ctx.textBaseline = "middle";
+      ctx.fillStyle = cls.text;
+      ctx.font = "24px 'MedievalSharp', cursive";
+      ctx.fillText(cls.label, r - 18, 0);
+      ctx.restore();
+    });
+
+    // Outer rim
+    ctx.beginPath();
+    ctx.arc(c, c, r, 0, 2 * Math.PI);
+    ctx.lineWidth = 8;
+    ctx.strokeStyle = "#2e1a13";
+    ctx.stroke();
+
+    // Center hub
+    ctx.beginPath();
+    ctx.arc(c, c, 34, 0, 2 * Math.PI);
+    ctx.fillStyle = "#83441a";
+    ctx.fill();
+    ctx.lineWidth = 4;
+    ctx.strokeStyle = "#2e1a13";
+    ctx.stroke();
+  }
+
+  // Draw once the font is ready so the labels use MedievalSharp
+  if (document.fonts && document.fonts.load) {
+    document.fonts.load("24px 'MedievalSharp'").then(drawWheel, drawWheel);
+  } else {
+    drawWheel();
+  }
+
+  function hideAll() {
+    classes.forEach(cls => {
+      document.getElementsByClassName(cls.name)[0].style.display = "none";
+    });
+  }
+
+  function reveal(name) {
     document.getElementsByClassName("placeholder")[0].style.display = "none";
 
-    const shuffled = [...words].sort(() => Math.random() - 0.5);
-    const chosen = shuffled.slice(0, 3);
-
-    const element = document.getElementsByClassName(chosen[0])[0];
-
+    const element = document.getElementsByClassName(name)[0];
     element.style.animation = "none";
-element.offsetHeight; // force reflow
-element.style.animation = "";
+    element.offsetHeight; // force reflow so the fade restarts
+    element.style.animation = "";
+    element.style.display = "inline-block";
 
-    element.classList.remove('medieval-fade-in');
-    element.classList.add('medieval-fade-in');
-    document.getElementsByClassName(chosen[0])[0].style.display = "inline-block";
+    spinning = false;
+    spinButton.disabled = false;
+  }
 
-    
-    //document.getElementsByClassName(chosen[1])[0].style.display = "inline-block";
-    //document.getElementsByClassName(chosen[2])[0].style.display = "inline-block";
-    
+  function showRandomWords() {
+    if (spinning) return;
+    spinning = true;
+    spinButton.disabled = true;
+
+    // Hide the previous result; the placeholder holds the space meanwhile
+    hideAll();
+    document.getElementsByClassName("placeholder")[0].style.display = "inline-block";
+
+    const index = Math.floor(Math.random() * classes.length);
+    const segDeg = 360 / classes.length;
+
+    // Land somewhere inside the segment (not dead center) so it looks natural
+    const jitter = (Math.random() - 0.5) * segDeg * 0.7;
+    const target = (index + 0.5) * segDeg + jitter;
+
+    // Spin 5–7 full turns, then line the chosen segment up with the pointer
+    const spins = 5 + Math.floor(Math.random() * 3);
+    rotation = rotation - (rotation % 360) + spins * 360 + (360 - target);
+
+    canvas.style.transform = `rotate(${rotation}deg)`;
+    canvas.addEventListener("transitionend", () => reveal(classes[index].name), { once: true });
   }
 </script>
- 
+
 </body>
 </html>
