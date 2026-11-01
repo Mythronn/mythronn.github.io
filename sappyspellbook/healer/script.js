@@ -1043,7 +1043,7 @@ function processWarderMinus(){
   abilities[9].freq = "1/Life";
   abilities[18].freq = "1/Ref";
   abilities[22].freq = "1/Ref";
-  abilities[27].freq = "1/life";
+  abilities[27].freq = "1/Life";
   abilities[28].freq = "1/Ref Chg x10";
   abilities[30].freq = "2/Ref";
   abilities[31].freq = "1/Ref";
